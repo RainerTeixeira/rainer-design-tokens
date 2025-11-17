@@ -1,0 +1,149 @@
+MIT License
+
+Copyright (c) 2025 Rainer Teixeira
+All rights reserved.
+
+================================================================================
+SOFTWARE LICENSE AGREEMENT
+================================================================================
+
+This license governs the use of the @rainer/design-tokens software package
+and associated documentation files (collectively, the "Software").
+
+================================================================================
+DEFINITIONS
+================================================================================
+
+"Software" means the @rainer/design-tokens package, including but not limited
+to:
+- Source code files
+- Compiled and distributed files
+- Documentation files
+- Configuration files
+- Example files
+- Any other files included in the distribution
+
+"Author" or "Copyright Holder" means Rainer Teixeira and any contributors
+who have granted rights to the Software.
+
+"User" or "You" means any person or entity that obtains a copy of the Software.
+
+================================================================================
+GRANT OF LICENSE
+================================================================================
+
+Permission is hereby granted, free of charge, to any person or entity
+obtaining a copy of this Software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including without
+limitation the rights to:
+
+1. USE - Use the Software for any purpose, whether commercial or non-commercial
+2. COPY - Reproduce the Software in any medium or format
+3. MODIFY - Create derivative works based upon the Software
+4. MERGE - Combine the Software with other software
+5. PUBLISH - Publish the Software or derivative works
+6. DISTRIBUTE - Distribute copies of the Software or derivative works
+7. SUBLICENSE - Grant sublicenses of the Software or derivative works
+8. SELL - Sell copies of the Software or derivative works
+
+This license applies to the Software and each such recipient or user. The
+Software may be used, copied, modified, merged, published, distributed,
+sublicensed, and/or sold, provided that the following conditions are met:
+
+================================================================================
+CONDITIONS
+================================================================================
+
+The above copyright notice and this permission notice (including the next
+paragraph) shall be included in all copies or substantial portions of the
+Software.
+
+================================================================================
+NO WARRANTY
+================================================================================
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+LIMITATION OF LIABILITY
+================================================================================
+
+IN NO EVENT SHALL THE AUTHORS, COPYRIGHT HOLDERS, OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+================================================================================
+PATENT GRANT
+================================================================================
+
+Subject to the terms and conditions of this License, each Contributor hereby
+grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free,
+irrevocable (except as stated in this section) patent license to make, have
+made, use, offer to sell, sell, import, and otherwise transfer the Software,
+where such license applies only to those patent claims licensable by such
+Contributor that are necessarily infringed by their Contribution(s) alone or
+by combination of their Contribution(s) with the Software to which such
+Contribution(s) was submitted.
+
+================================================================================
+TRADEMARKS
+================================================================================
+
+This License does not grant permission to use the trade names, trademarks,
+service marks, or product names of the Copyright Holder, except as required
+for reasonable and customary use in describing the origin of the Software and
+reproducing the content of the NOTICE file.
+
+================================================================================
+TERMINATION
+================================================================================
+
+This License and the rights granted hereunder will terminate automatically if
+You fail to comply with terms herein and fail to cure such breach within 30
+days of becoming aware of the breach. All sublicenses to the Software which
+are properly granted shall survive any termination of this License. Provisions
+which, by their nature, must remain in effect beyond the termination of this
+License shall survive.
+
+================================================================================
+GOVERNING LAW
+================================================================================
+
+This License shall be governed by the laws of the jurisdiction in which the
+Copyright Holder resides, without regard to its conflict of law provisions.
+Any disputes arising under this License shall be subject to the exclusive
+jurisdiction of the courts of that jurisdiction.
+
+================================================================================
+CONTACT INFORMATION
+================================================================================
+
+For questions, support, or licensing inquiries regarding this Software,
+please contact:
+
+Rainer Teixeira
+Email: suporte@rainersoft.com.br
+Repository: https://github.com/rainer-teixeira/design-tokens
+Issues: https://github.com/rainer-teixeira/design-tokens/issues
+
+================================================================================
+ACKNOWLEDGMENTS
+================================================================================
+
+This Software may include third-party components that are subject to their
+own license terms. Please refer to the package.json file and documentation
+for information about third-party licenses.
+
+================================================================================
+END OF LICENSE
+================================================================================

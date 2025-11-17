@@ -1,0 +1,45 @@
+# Source files
+src/
+*.ts
+!*.d.ts
+
+# Development files
+tsconfig.json
+tsup.config.ts
+.eslintrc*
+.prettierrc*
+jest.config.*
+*.test.ts
+*.spec.ts
+
+# Build tools
+node_modules/
+.npm/
+.yarn/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.github/
+
+# Docs (mantém apenas README.md e PUBLISH.md)
+docs/
+*.md
+!README.md
+!PUBLISH.md
+
+# Test coverage
+coverage/
+.nyc_output/
+

@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json.schemastore.org/theme.json",
+  "$description": "Light theme color palette - Modern and professional design with WCAG AA compliance",
+  "colors": {
+    "primary": {
+      "base": "#0891b2",
+      "hover": "#0e7490",
+      "active": "#155e75",
+      "disabled": "#d4d4d4",
+      "focus": "#0891b2",
+      "background": "#ecfeff",
+      "backgroundHover": "#cffafe",
+      "backgroundActive": "#a5f3fc",
+      "border": "#0891b2",
+      "borderHover": "#0e7490",
+      "borderFocus": "#06b6d4",
+      "text": "#ffffff",
+      "textHover": "#ffffff",
+      "textDisabled": "#a3a3a3"
+    },
+    "secondary": {
+      "base": "#9333ea",
+      "hover": "#7e22ce",
+      "active": "#6b21a8",
+      "disabled": "#d4d4d4",
+      "focus": "#9333ea",
+      "background": "#faf5ff",
+      "backgroundHover": "#f3e8ff",
+      "backgroundActive": "#e9d5ff",
+      "border": "#9333ea",
+      "borderHover": "#7e22ce",
+      "borderFocus": "#a855f7",
+      "text": "#ffffff",
+      "textHover": "#ffffff",
+      "textDisabled": "#a3a3a3"
+    },
+    "accent": {
+      "base": "#db2777",
+      "hover": "#be185d",
+      "active": "#9f1239",
+      "disabled": "#d4d4d4",
+      "focus": "#db2777",
+      "background": "#fdf2f8",
+      "backgroundHover": "#fce7f3",
+      "backgroundActive": "#fbcfe8",
+      "border": "#db2777",
+      "borderHover": "#be185d",
+      "borderFocus": "#ec4899",
+      "text": "#ffffff",
+      "textHover": "#ffffff",
+      "textDisabled": "#a3a3a3"
+    },
+    "background": {
+      "primary": "#ffffff",
+      "secondary": "#fafafa",
+      "tertiary": "#f5f5f5",
+      "inverse": "#0a0a0f",
+      "overlay": "rgba(0, 0, 0, 0.5)",
+      "muted": "#f9fafb"
+    },
+    "surface": {
+      "primary": "#ffffff",
+      "secondary": "#fafafa",
+      "tertiary": "#f5f5f5",
+      "elevated": "#ffffff",
+      "overlay": "rgba(0, 0, 0, 0.5)",
+      "hover": "#f9fafb",
+      "active": "#f3f4f6"
+    },
+    "text": {
+      "primary": "#171717",
+      "secondary": "#404040",
+      "tertiary": "#737373",
+      "inverse": "#ffffff",
+      "disabled": "#a3a3a3",
+      "link": "#0891b2",
+      "linkHover": "#0e7490",
+      "linkActive": "#155e75",
+      "linkVisited": "#7e22ce",
+      "onPrimary": "#ffffff",
+      "onSecondary": "#ffffff",
+      "onAccent": "#ffffff",
+      "onBackground": "#171717",
+      "onSurface": "#171717"
+    },
+    "border": {
+      "primary": "#e5e5e5",
+      "secondary": "#d4d4d4",
+      "tertiary": "#a3a3a3",
+      "focus": "#0891b2",
+      "focusRing": "#06b6d4",
+      "inverse": "#404040",
+      "hover": "#d4d4d4",
+      "active": "#a3a3a3",
+      "disabled": "#e5e5e5"
+    },
+    "status": {
+      "success": {
+        "base": "#22c55e",
+        "hover": "#16a34a",
+        "active": "#15803d",
+        "background": "#f0fdf4",
+        "backgroundHover": "#dcfce7",
+        "border": "#86efac",
+        "text": "#ffffff",
+        "textOnBackground": "#166534"
+      },
+      "warning": {
+        "base": "#f59e0b",
+        "hover": "#d97706",
+        "active": "#b45309",
+        "background": "#fffbeb",
+        "backgroundHover": "#fef3c7",
+        "border": "#fcd34d",
+        "text": "#ffffff",
+        "textOnBackground": "#92400e"
+      },
+      "error": {
+        "base": "#ef4444",
+        "hover": "#dc2626",
+        "active": "#b91c1c",
+        "background": "#fef2f2",
+        "backgroundHover": "#fee2e2",
+        "border": "#fca5a5",
+        "text": "#ffffff",
+        "textOnBackground": "#991b1b"
+      },
+      "info": {
+        "base": "#3b82f6",
+        "hover": "#2563eb",
+        "active": "#1d4ed8",
+        "background": "#eff6ff",
+        "backgroundHover": "#dbeafe",
+        "border": "#93c5fd",
+        "text": "#ffffff",
+        "textOnBackground": "#1e40af"
+      }
+    },
+    "interactive": {
+      "default": "#0891b2",
+      "hover": "#0e7490",
+      "active": "#155e75",
+      "disabled": "#d4d4d4",
+      "disabledText": "#a3a3a3",
+      "focus": "#0891b2",
+      "focusRing": "#06b6d4"
+    }
+  }
+}

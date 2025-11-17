@@ -1,0 +1,26 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ColorPaletteStories from './ColorPalette.stories';
+
+<Meta of={ColorPaletteStories} />
+
+# Color Palette
+
+Visualização completa da paleta de cores dos design tokens.
+
+## Temas Disponíveis
+
+- **Light Theme**: Tema claro com cores vibrantes
+- **Dark Theme**: Tema escuro estilo Cyberpunk
+
+## Estrutura de Cores
+
+Cada tema inclui:
+- Cores primárias, secundárias e de destaque
+- Cores de status (success, warning, error, info)
+- Cores neutras (background, surface, text)
+
+Use os stories abaixo para visualizar todas as cores disponíveis.
+
+<Story of={ColorPaletteStories.LightTheme} />
+<Story of={ColorPaletteStories.DarkTheme} />
+

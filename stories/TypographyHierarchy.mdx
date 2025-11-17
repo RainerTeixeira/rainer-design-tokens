@@ -1,0 +1,37 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as TypographyHierarchyStories from './TypographyHierarchy.stories';
+
+<Meta of={TypographyHierarchyStories} />
+
+# Typography Hierarchy
+
+Hierarquia tipográfica completa dos design tokens.
+
+## Elementos Disponíveis
+
+### Headings (H1-H6)
+Títulos principais com tamanhos decrescentes e pesos variados.
+
+### Subtítulos
+- Large, Medium, Small
+
+### Corpo de Texto
+- Large, Medium, Small
+
+### Legendas
+- Large, Medium, Small
+
+### Botões e Labels
+- Large, Medium, Small
+
+### Código
+- Inline e Block
+
+Cada elemento inclui: fontFamily, fontSize, lineHeight, letterSpacing, fontWeight e marginBottom.
+
+Use os stories abaixo para visualizar toda a hierarquia tipográfica.
+
+<Story of={TypographyHierarchyStories.Headings} />
+<Story of={TypographyHierarchyStories.Subtitles} />
+<Story of={TypographyHierarchyStories.BodyText} />
+

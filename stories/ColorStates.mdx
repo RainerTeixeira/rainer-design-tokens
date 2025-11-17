@@ -1,0 +1,31 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as ColorStatesStories from './ColorStates.stories';
+
+<Meta of={ColorStatesStories} />
+
+# Color States
+
+Demonstração completa dos estados de cores disponíveis nos design tokens.
+
+## Estados Disponíveis
+
+Cada cor (primary, secondary, accent) possui os seguintes estados:
+- **base**: Cor padrão
+- **hover**: Cor ao passar o mouse
+- **active**: Cor quando ativo/pressionado
+- **disabled**: Cor quando desabilitado
+- **focus**: Cor quando em foco (acessibilidade)
+
+## Variações
+
+Cada estado possui variações para:
+- **background**: Cor de fundo
+- **border**: Cor de borda
+- **text**: Cor de texto
+
+Use os stories abaixo para visualizar todos os estados e variações.
+
+<Story of={ColorStatesStories.PrimaryStates} />
+<Story of={ColorStatesStories.SecondaryStates} />
+<Story of={ColorStatesStories.AccentStates} />
+

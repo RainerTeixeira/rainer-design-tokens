@@ -1,0 +1,27 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as AccessibilityStories from './Accessibility.stories';
+
+<Meta of={AccessibilityStories} />
+
+# Accessibility
+
+Validação de contraste WCAG AA/AAA para garantir acessibilidade em todas as combinações de cores.
+
+## Padrões WCAG
+
+- **WCAG AA**: Contraste mínimo de 4.5:1 para texto normal, 3:1 para texto grande
+- **WCAG AAA**: Contraste mínimo de 7:1 para texto normal, 4.5:1 para texto grande
+
+## Validações Disponíveis
+
+Use os stories abaixo para validar:
+- Contraste de cores primárias
+- Contraste de cores de status
+- Contraste de elementos interativos
+
+Todas as combinações são testadas automaticamente e indicam se passam ou falham nos padrões WCAG.
+
+<Story of={AccessibilityStories.PrimaryContrast} />
+<Story of={AccessibilityStories.StatusColorsContrast} />
+<Story of={AccessibilityStories.InteractiveElements} />
+
