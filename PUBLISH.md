@@ -5,7 +5,7 @@
 ### 1. Criar repositório no GitHub
 
 1. Acesse https://github.com/new
-2. Nome do repositório: `@rainer-design-tokens`
+2. Nome do repositório: `rainer-design-tokens` (sem o @ - GitHub não permite @ no nome)
 3. Descrição: "Enterprise-grade design tokens library for modern design systems"
 4. Visibilidade: **Public** (para poder publicar no npm)
 5. Não inicialize com README, .gitignore ou license (já temos)
@@ -16,10 +16,10 @@
 cd C:\Desenvolvimento\@rainer-design-tokens
 
 # Adicionar remote
-git remote add origin https://github.com/RainerTeixeira/@rainer-design-tokens.git
+git remote add origin https://github.com/RainerTeixeira/rainer-design-tokens.git
 
 # Ou se preferir SSH
-git remote add origin git@github.com:RainerTeixeira/@rainer-design-tokens.git
+git remote add origin git@github.com:RainerTeixeira/rainer-design-tokens.git
 ```
 
 ### 3. Fazer commit e push inicial
@@ -93,7 +93,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "@rainer/design-tokens": "github:RainerTeixeira/@rainer-design-tokens"
+    "@rainer/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
   }
 }
 ```

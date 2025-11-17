@@ -107,10 +107,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RainerTeixeira/@rainer-design-tokens.git"
+    "url": "https://github.com/RainerTeixeira/rainer-design-tokens.git"
   },
   "bugs": {
-    "url": "https://github.com/RainerTeixeira/@rainer-design-tokens/issues"
+    "url": "https://github.com/RainerTeixeira/rainer-design-tokens/issues"
   },
-  "homepage": "https://github.com/RainerTeixeira/@rainer-design-tokens#readme"
+  "homepage": "https://github.com/RainerTeixeira/rainer-design-tokens#readme"
 }
