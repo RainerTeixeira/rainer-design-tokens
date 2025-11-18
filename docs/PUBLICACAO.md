@@ -61,10 +61,10 @@ pnpm run build
 pnpm pack --dry-run
 
 # Publicar
-pnpm publish --access public
+pnpm publish
 ```
 
-**Nota**: O `--access public` é necessário para pacotes com escopo (`@rainer/`).
+**Nota**: O pacote `rainer-design-tokens` é público e não requer `--access public` (não tem escopo).
 
 ### Atualizações futuras
 
