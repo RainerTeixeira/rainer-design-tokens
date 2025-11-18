@@ -696,29 +696,29 @@ var GRADIENT_DIRECTIONS = {
   TO_BR: "bg-gradient-to-br"
 };
 var GRADIENTS = {
-  // Gradientes de texto
-  TEXT_PRIMARY: "bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent",
-  // Gradientes decorativos
-  DECORATIVE_PRIMARY: "bg-gradient-to-br from-cyan-500 via-purple-500 to-pink-500",
-  DECORATIVE_CYAN_PURPLE: "bg-gradient-to-r from-cyan-500 to-purple-500",
-  DECORATIVE_GREEN_EMERALD: "bg-gradient-to-br from-green-500 to-emerald-500",
-  // Gradientes de botões
-  BUTTON_CYAN_BLUE: "bg-gradient-to-r from-cyan-500 to-blue-500",
-  BUTTON_PURPLE_PINK: "bg-gradient-to-r from-purple-500 to-pink-500"
+  // Gradientes de texto usando tokens CSS
+  TEXT_PRIMARY: "bg-linear-to-r from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)] bg-clip-text text-transparent",
+  // Gradientes decorativos usando tokens CSS
+  DECORATIVE_PRIMARY: "bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]",
+  DECORATIVE_CYAN_PURPLE: "bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-secondary-base)]",
+  DECORATIVE_GREEN_EMERALD: "bg-linear-to-br from-[var(--color-status-success)] to-[var(--color-accent-base)]",
+  // Gradientes de botões usando tokens CSS
+  BUTTON_CYAN_BLUE: "bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]",
+  BUTTON_PURPLE_PINK: "bg-linear-to-r from-[var(--color-secondary-base)] to-[var(--color-accent-base)]"
 };
 var BACKGROUND = {
-  // Background completo
-  FULL: "bg-background",
-  // Overlay de gradiente
-  GRADIENT_OVERLAY: "bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10",
-  // Divisores premium
-  PREMIUM_DIVIDER_CONTAINER: "bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent",
-  PREMIUM_DIVIDER_LINE: "bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent",
-  // Backgrounds de seção
-  SECTION_CYAN: "bg-gradient-to-br from-cyan-500/5 via-cyan-500/3 to-transparent",
-  SECTION_CYAN_VIA: "bg-gradient-to-br from-transparent via-cyan-500/5 to-transparent",
-  SECTION_PURPLE_VIA: "bg-gradient-to-br from-transparent via-purple-500/5 to-transparent",
-  SECTION_PINK_VIA: "bg-gradient-to-br from-transparent via-pink-500/5 to-transparent"
+  // Background completo usando token CSS
+  FULL: "bg-[var(--color-background-primary)]",
+  // Overlay de gradiente usando tokens CSS
+  GRADIENT_OVERLAY: "bg-linear-to-br from-[var(--color-primary-base)]/10 via-[var(--color-secondary-base)]/10 to-[var(--color-accent-base)]/10",
+  // Divisores premium usando tokens CSS
+  PREMIUM_DIVIDER_CONTAINER: "bg-linear-to-b from-transparent via-[var(--color-primary-base)]/5 to-transparent",
+  PREMIUM_DIVIDER_LINE: "bg-linear-to-r from-transparent via-[var(--color-primary-base)]/50 to-transparent",
+  // Backgrounds de seção usando tokens CSS
+  SECTION_CYAN: "bg-linear-to-br from-[var(--color-primary-base)]/5 via-[var(--color-primary-base)]/3 to-transparent",
+  SECTION_CYAN_VIA: "bg-linear-to-br from-transparent via-[var(--color-primary-base)]/5 to-transparent",
+  SECTION_PURPLE_VIA: "bg-linear-to-br from-transparent via-[var(--color-secondary-base)]/5 to-transparent",
+  SECTION_PINK_VIA: "bg-linear-to-br from-transparent via-[var(--color-accent-base)]/5 to-transparent"
 };
 
 // tokens/accessibility.ts
@@ -895,4 +895,4 @@ export {
  * const theme = lightTheme;
  * ```
  */
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.mjs.map

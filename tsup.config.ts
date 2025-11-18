@@ -54,4 +54,9 @@ export default defineConfig({
   minify: false,
   target: 'es2020',
   outDir: 'dist',
+  outExtension({ format }) {
+    return {
+      js: format === 'esm' ? '.mjs' : '.cjs',
+    };
+  },
 });
