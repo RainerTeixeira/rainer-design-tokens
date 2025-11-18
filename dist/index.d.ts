@@ -566,7 +566,7 @@ var darkColors = {
 	colors: colors
 };
 
-var typography$1 = {
+var typography = {
 	fontFamily: {
 		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
@@ -826,11 +826,11 @@ var typography$1 = {
 		}
 	}
 };
-var typography = {
-	typography: typography$1
+var typography$1 = {
+	typography: typography
 };
 
-var spacing$1 = {
+var spacing = {
 	"0": "0px",
 	"1": "0.25rem",
 	"2": "0.5rem",
@@ -867,11 +867,11 @@ var spacing$1 = {
 	"2.5": "0.625rem",
 	"3.5": "0.875rem"
 };
-var spacing = {
-	spacing: spacing$1
+var spacing$1 = {
+	spacing: spacing
 };
 
-var radius$1 = {
+var radius = {
 	none: "0px",
 	sm: "0.125rem",
 	base: "0.25rem",
@@ -882,11 +882,11 @@ var radius$1 = {
 	"3xl": "1.5rem",
 	full: "9999px"
 };
-var radius = {
-	radius: radius$1
+var radius$1 = {
+	radius: radius
 };
 
-var shadows$1 = {
+var shadows = {
 	light: {
 		xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
 		sm: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
@@ -914,8 +914,68 @@ var shadows$1 = {
 		}
 	}
 };
-var shadows = {
-	shadows: shadows$1
+var shadows$1 = {
+	shadows: shadows
+};
+
+var animations = {
+	"accordion-down": {
+		name: "accordion-down",
+		duration: "0.2s",
+		timingFunction: "ease-out",
+		keyframes: {
+			from: {
+				height: "0"
+			},
+			to: {
+				height: "var(--radix-accordion-content-height)"
+			}
+		}
+	},
+	"accordion-up": {
+		name: "accordion-up",
+		duration: "0.2s",
+		timingFunction: "ease-out",
+		keyframes: {
+			from: {
+				height: "var(--radix-accordion-content-height)"
+			},
+			to: {
+				height: "0"
+			}
+		}
+	},
+	"slide-in": {
+		name: "slide-in",
+		duration: "0.3s",
+		timingFunction: "ease-out",
+		keyframes: {
+			"0%": {
+				transform: "translateY(-10px)",
+				opacity: "0"
+			},
+			"100%": {
+				transform: "translateY(0)",
+				opacity: "1"
+			}
+		}
+	},
+	"fade-in": {
+		name: "fade-in",
+		duration: "0.5s",
+		timingFunction: "ease-in",
+		keyframes: {
+			"0%": {
+				opacity: "0"
+			},
+			"100%": {
+				opacity: "1"
+			}
+		}
+	}
+};
+var animations$1 = {
+	animations: animations
 };
 
 /**
@@ -960,14 +1020,14 @@ var shadows = {
  * ```
  */
 declare const GRADIENT_DIRECTIONS: {
-    readonly TO_TOP: "bg-gradient-to-t";
-    readonly TO_BOTTOM: "bg-gradient-to-b";
-    readonly TO_LEFT: "bg-gradient-to-l";
-    readonly TO_RIGHT: "bg-gradient-to-r";
-    readonly TO_TL: "bg-gradient-to-tl";
-    readonly TO_TR: "bg-gradient-to-tr";
-    readonly TO_BL: "bg-gradient-to-bl";
-    readonly TO_BR: "bg-gradient-to-br";
+    readonly TO_TOP: "bg-linear-to-t";
+    readonly TO_BOTTOM: "bg-linear-to-b";
+    readonly TO_LEFT: "bg-linear-to-l";
+    readonly TO_RIGHT: "bg-linear-to-r";
+    readonly TO_TL: "bg-linear-to-tl";
+    readonly TO_TR: "bg-linear-to-tr";
+    readonly TO_BL: "bg-linear-to-bl";
+    readonly TO_BR: "bg-linear-to-br";
 };
 /**
  * Gradientes decorativos e utilitários como classes Tailwind CSS
@@ -1041,6 +1101,80 @@ declare const GRADIENTS: {
  * </div>
  * ```
  */
+/**
+ * Gradientes compostos - Direção + Cores (Padrão Enterprise)
+ *
+ * @description
+ * Combina direção e cores em um único token para uso direto.
+ * Elimina necessidade de concatenar strings manualmente.
+ * Padrão usado por grandes empresas (Google Material, Microsoft Fluent, Shopify Polaris).
+ *
+ * @type {Object}
+ * @property {string} HORIZONTAL_PRIMARY - Gradiente horizontal com cores primárias
+ * @property {string} HORIZONTAL_SECONDARY - Gradiente horizontal com cores secundárias
+ * @property {string} HORIZONTAL_DECORATIVE - Gradiente horizontal decorativo
+ * @property {string} VERTICAL_PRIMARY - Gradiente vertical com cores primárias
+ * @property {string} VERTICAL_SECONDARY - Gradiente vertical com cores secundárias
+ * @property {string} DIAGONAL_PRIMARY - Gradiente diagonal com cores primárias
+ * @property {string} DIAGONAL_SECONDARY - Gradiente diagonal com cores secundárias
+ *
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { GRADIENT_COMPOSITES } from '@rainersoft/design-tokens';
+ *
+ * // Usar diretamente sem concatenar
+ * <div className={GRADIENT_COMPOSITES.HORIZONTAL_PRIMARY}>
+ *   Conteúdo
+ * </div>
+ * ```
+ */
+declare const GRADIENT_COMPOSITES: {
+    readonly HORIZONTAL_PRIMARY: "bg-linear-to-r bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]";
+    readonly HORIZONTAL_SECONDARY: "bg-linear-to-r bg-linear-to-r from-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
+    readonly HORIZONTAL_DECORATIVE: "bg-linear-to-r bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
+    readonly HORIZONTAL_CYAN_PURPLE: "bg-linear-to-r bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-secondary-base)]";
+    readonly VERTICAL_PRIMARY: "bg-linear-to-b bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]";
+    readonly VERTICAL_SECONDARY: "bg-linear-to-b bg-linear-to-r from-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
+    readonly VERTICAL_DECORATIVE: "bg-linear-to-b bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
+    readonly DIAGONAL_PRIMARY: "bg-linear-to-br bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
+    readonly DIAGONAL_SECONDARY: "bg-linear-to-br bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-secondary-base)]";
+    readonly DIAGONAL_GREEN_EMERALD: "bg-linear-to-br bg-linear-to-br from-[var(--color-status-success)] to-[var(--color-accent-base)]";
+};
+/**
+ * Gradientes de cores específicas usando tokens de cor
+ *
+ * @description
+ * Elimina valores hardcoded como "from-gray-500". Todos os gradientes
+ * usam tokens de cor do sistema para garantir consistência.
+ *
+ * @type {Object}
+ * @property {string} GRAY_SCALE - Gradiente em escala de cinza usando tokens
+ * @property {string} BLUE_SCALE - Gradiente em escala de azul usando tokens primários
+ * @property {string} SUCCESS_SCALE - Gradiente em escala de verde (sucesso) usando tokens
+ * @property {string} TEXT_MUTED - Gradiente para texto muted usando tokens
+ *
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { GRADIENT_COLORS } from '@rainersoft/design-tokens';
+ *
+ * // Usar gradiente de cinza sem valores hardcoded
+ * <div className={GRADIENT_COLORS.GRAY_SCALE}>
+ *   Conteúdo
+ * </div>
+ * ```
+ */
+declare const GRADIENT_COLORS: {
+    readonly GRAY_SCALE: "bg-linear-to-r from-[var(--color-text-tertiary)] to-[var(--color-text-secondary)]";
+    readonly BLUE_SCALE: "bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]";
+    readonly SUCCESS_SCALE: "bg-linear-to-r from-[var(--color-status-success)] to-[var(--color-status-success-hover)]";
+    readonly TEXT_MUTED: "bg-linear-to-r from-[var(--color-text-tertiary)] to-[var(--color-text-secondary)]";
+};
 declare const BACKGROUND: {
     readonly FULL: "bg-[var(--color-background-primary)]";
     readonly GRADIENT_OVERLAY: "bg-linear-to-br from-[var(--color-primary-base)]/10 via-[var(--color-secondary-base)]/10 to-[var(--color-accent-base)]/10";
@@ -1068,6 +1202,22 @@ type GradientDirections = typeof GRADIENT_DIRECTIONS;
  * Tipo que representa todos os gradientes pré-configurados disponíveis.
  */
 type Gradients = typeof GRADIENTS;
+/**
+ * Tipo TypeScript para gradientes compostos
+ *
+ * @typedef {Object} GradientComposites
+ * @description
+ * Tipo que representa todos os gradientes compostos (direção + cores).
+ */
+type GradientComposites = typeof GRADIENT_COMPOSITES;
+/**
+ * Tipo TypeScript para gradientes de cores
+ *
+ * @typedef {Object} GradientColors
+ * @description
+ * Tipo que representa todos os gradientes de cores específicas.
+ */
+type GradientColors = typeof GRADIENT_COLORS;
 /**
  * Tipo TypeScript para backgrounds
  *
@@ -1281,6 +1431,7 @@ declare function validateContrast(foreground: string, background: string, option
  * @property {Object} spacing - Tokens de espaçamento (margens, paddings)
  * @property {Object} radius - Tokens de raio de borda
  * @property {Object} shadows - Tokens de sombras para ambos os temas
+ * @property {Object} animations - Tokens de animações (keyframes e durações)
  *
  * @constant
  * @readonly
@@ -2192,6 +2343,62 @@ declare const tokens: {
                 pink: string;
                 purple: string;
                 green: string;
+            };
+        };
+    };
+    readonly animations: {
+        "accordion-down": {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            keyframes: {
+                from: {
+                    height: string;
+                };
+                to: {
+                    height: string;
+                };
+            };
+        };
+        "accordion-up": {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            keyframes: {
+                from: {
+                    height: string;
+                };
+                to: {
+                    height: string;
+                };
+            };
+        };
+        "slide-in": {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            keyframes: {
+                "0%": {
+                    transform: string;
+                    opacity: string;
+                };
+                "100%": {
+                    transform: string;
+                    opacity: string;
+                };
+            };
+        };
+        "fade-in": {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            keyframes: {
+                "0%": {
+                    opacity: string;
+                };
+                "100%": {
+                    opacity: string;
+                };
             };
         };
     };
@@ -3201,6 +3408,81 @@ declare const shadowTokens: {
     };
 };
 /**
+ * Tokens de animações
+ *
+ * @description
+ * Exporta todos os tokens de animações, incluindo keyframes, durações
+ * e funções de timing para transições e animações do sistema.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { animationTokens } from 'rainer-design-tokens';
+ *
+ * const slideIn = animationTokens['slide-in'];
+ * const fadeIn = animationTokens['fade-in'];
+ * ```
+ */
+declare const animationTokens: {
+    "accordion-down": {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        keyframes: {
+            from: {
+                height: string;
+            };
+            to: {
+                height: string;
+            };
+        };
+    };
+    "accordion-up": {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        keyframes: {
+            from: {
+                height: string;
+            };
+            to: {
+                height: string;
+            };
+        };
+    };
+    "slide-in": {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        keyframes: {
+            "0%": {
+                transform: string;
+                opacity: string;
+            };
+            "100%": {
+                transform: string;
+                opacity: string;
+            };
+        };
+    };
+    "fade-in": {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        keyframes: {
+            "0%": {
+                opacity: string;
+            };
+            "100%": {
+                opacity: string;
+            };
+        };
+    };
+};
+/**
  * Tipo TypeScript para todos os tokens
  *
  * @typedef {Object} Tokens
@@ -3232,7 +3514,7 @@ type DarkColors = typeof darkColors.colors;
  * @description
  * Tipo que representa todos os tokens de tipografia.
  */
-type Typography = typeof typography.typography;
+type Typography = typeof typography$1.typography;
 /**
  * Tipo TypeScript para tokens de espaçamento
  *
@@ -3240,7 +3522,7 @@ type Typography = typeof typography.typography;
  * @description
  * Tipo que representa todos os tokens de espaçamento.
  */
-type Spacing = typeof spacing.spacing;
+type Spacing = typeof spacing$1.spacing;
 /**
  * Tipo TypeScript para tokens de raio de borda
  *
@@ -3248,7 +3530,7 @@ type Spacing = typeof spacing.spacing;
  * @description
  * Tipo que representa todos os tokens de raio de borda.
  */
-type Radius = typeof radius.radius;
+type Radius = typeof radius$1.radius;
 /**
  * Tipo TypeScript para tokens de sombras
  *
@@ -3256,7 +3538,15 @@ type Radius = typeof radius.radius;
  * @description
  * Tipo que representa todos os tokens de sombras.
  */
-type Shadows = typeof shadows.shadows;
+type Shadows = typeof shadows$1.shadows;
+/**
+ * Tipo TypeScript para tokens de animações
+ *
+ * @typedef {Object} Animations
+ * @description
+ * Tipo que representa todos os tokens de animações.
+ */
+type Animations = typeof animations$1.animations;
 
 /**
  * @fileoverview Tema Claro - Rainer Design System
@@ -5850,4 +6140,4 @@ declare const themes: {
  */
 type Themes = typeof themes;
 
-export { BACKGROUND, type Background, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_DIRECTIONS, type GradientDirections, type Gradients, type LightColors, type LightTheme, type Radius, type Shadows, type Spacing, type Themes, type Tokens, type Typography, darkTheme, darkThemeColors, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast };
+export { type Animations, BACKGROUND, type Background, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, type Radius, type Shadows, type Spacing, type Themes, type Tokens, type Typography, animationTokens, darkTheme, darkThemeColors, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast };

@@ -15,11 +15,12 @@
  * 
  * @example
  * ```typescript
- * // tailwind.config.js
- * const { tailwindConfig } = require('rainer-design-tokens/formats/tailwind.config');
+ * // tailwind.config.ts
+ * import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
  * 
- * module.exports = {
+ * export default {
  *   ...tailwindConfig,
+ *   content: ['./src/**/*.{js,ts,jsx,tsx}'],
  *   // Suas configurações adicionais
  * };
  * ```

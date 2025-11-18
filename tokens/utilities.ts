@@ -41,14 +41,14 @@
  * ```
  */
 export const GRADIENT_DIRECTIONS = {
-  TO_TOP: 'bg-gradient-to-t',
-  TO_BOTTOM: 'bg-gradient-to-b',
-  TO_LEFT: 'bg-gradient-to-l',
-  TO_RIGHT: 'bg-gradient-to-r',
-  TO_TL: 'bg-gradient-to-tl',
-  TO_TR: 'bg-gradient-to-tr',
-  TO_BL: 'bg-gradient-to-bl',
-  TO_BR: 'bg-gradient-to-br',
+  TO_TOP: 'bg-linear-to-t',
+  TO_BOTTOM: 'bg-linear-to-b',
+  TO_LEFT: 'bg-linear-to-l',
+  TO_RIGHT: 'bg-linear-to-r',
+  TO_TL: 'bg-linear-to-tl',
+  TO_TR: 'bg-linear-to-tr',
+  TO_BL: 'bg-linear-to-bl',
+  TO_BR: 'bg-linear-to-br',
 } as const;
 
 /**
@@ -129,6 +129,94 @@ export const GRADIENTS = {
  * </div>
  * ```
  */
+/**
+ * Gradientes compostos - Direção + Cores (Padrão Enterprise)
+ * 
+ * @description
+ * Combina direção e cores em um único token para uso direto.
+ * Elimina necessidade de concatenar strings manualmente.
+ * Padrão usado por grandes empresas (Google Material, Microsoft Fluent, Shopify Polaris).
+ * 
+ * @type {Object}
+ * @property {string} HORIZONTAL_PRIMARY - Gradiente horizontal com cores primárias
+ * @property {string} HORIZONTAL_SECONDARY - Gradiente horizontal com cores secundárias
+ * @property {string} HORIZONTAL_DECORATIVE - Gradiente horizontal decorativo
+ * @property {string} VERTICAL_PRIMARY - Gradiente vertical com cores primárias
+ * @property {string} VERTICAL_SECONDARY - Gradiente vertical com cores secundárias
+ * @property {string} DIAGONAL_PRIMARY - Gradiente diagonal com cores primárias
+ * @property {string} DIAGONAL_SECONDARY - Gradiente diagonal com cores secundárias
+ * 
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { GRADIENT_COMPOSITES } from '@rainersoft/design-tokens';
+ * 
+ * // Usar diretamente sem concatenar
+ * <div className={GRADIENT_COMPOSITES.HORIZONTAL_PRIMARY}>
+ *   Conteúdo
+ * </div>
+ * ```
+ */
+export const GRADIENT_COMPOSITES = {
+  // Gradientes horizontais (left-to-right)
+  HORIZONTAL_PRIMARY: `${GRADIENT_DIRECTIONS.TO_RIGHT} ${GRADIENTS.BUTTON_CYAN_BLUE}`,
+  HORIZONTAL_SECONDARY: `${GRADIENT_DIRECTIONS.TO_RIGHT} ${GRADIENTS.BUTTON_PURPLE_PINK}`,
+  HORIZONTAL_DECORATIVE: `${GRADIENT_DIRECTIONS.TO_RIGHT} ${GRADIENTS.DECORATIVE_PRIMARY}`,
+  HORIZONTAL_CYAN_PURPLE: `${GRADIENT_DIRECTIONS.TO_RIGHT} ${GRADIENTS.DECORATIVE_CYAN_PURPLE}`,
+  
+  // Gradientes verticais (top-to-bottom)
+  VERTICAL_PRIMARY: `${GRADIENT_DIRECTIONS.TO_BOTTOM} ${GRADIENTS.BUTTON_CYAN_BLUE}`,
+  VERTICAL_SECONDARY: `${GRADIENT_DIRECTIONS.TO_BOTTOM} ${GRADIENTS.BUTTON_PURPLE_PINK}`,
+  VERTICAL_DECORATIVE: `${GRADIENT_DIRECTIONS.TO_BOTTOM} ${GRADIENTS.DECORATIVE_PRIMARY}`,
+  
+  // Gradientes diagonais
+  DIAGONAL_PRIMARY: `${GRADIENT_DIRECTIONS.TO_BR} ${GRADIENTS.DECORATIVE_PRIMARY}`,
+  DIAGONAL_SECONDARY: `${GRADIENT_DIRECTIONS.TO_BR} ${GRADIENTS.DECORATIVE_CYAN_PURPLE}`,
+  DIAGONAL_GREEN_EMERALD: `${GRADIENT_DIRECTIONS.TO_BR} ${GRADIENTS.DECORATIVE_GREEN_EMERALD}`,
+} as const;
+
+/**
+ * Gradientes de cores específicas usando tokens de cor
+ * 
+ * @description
+ * Elimina valores hardcoded como "from-gray-500". Todos os gradientes
+ * usam tokens de cor do sistema para garantir consistência.
+ * 
+ * @type {Object}
+ * @property {string} GRAY_SCALE - Gradiente em escala de cinza usando tokens
+ * @property {string} BLUE_SCALE - Gradiente em escala de azul usando tokens primários
+ * @property {string} SUCCESS_SCALE - Gradiente em escala de verde (sucesso) usando tokens
+ * @property {string} TEXT_MUTED - Gradiente para texto muted usando tokens
+ * 
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { GRADIENT_COLORS } from '@rainersoft/design-tokens';
+ * 
+ * // Usar gradiente de cinza sem valores hardcoded
+ * <div className={GRADIENT_COLORS.GRAY_SCALE}>
+ *   Conteúdo
+ * </div>
+ * ```
+ */
+export const GRADIENT_COLORS = {
+  // Escala de cinza usando tokens de texto
+  GRAY_SCALE: `${GRADIENT_DIRECTIONS.TO_RIGHT} from-[var(--color-text-tertiary)] to-[var(--color-text-secondary)]`,
+  
+  // Escala de azul usando tokens primários
+  BLUE_SCALE: `${GRADIENT_DIRECTIONS.TO_RIGHT} from-[var(--color-primary-base)] to-[var(--color-primary-hover)]`,
+  
+  // Escala de verde (sucesso) usando tokens de status
+  SUCCESS_SCALE: `${GRADIENT_DIRECTIONS.TO_RIGHT} from-[var(--color-status-success)] to-[var(--color-status-success-hover)]`,
+  
+  // Gradiente para texto muted
+  TEXT_MUTED: `${GRADIENT_DIRECTIONS.TO_RIGHT} from-[var(--color-text-tertiary)] to-[var(--color-text-secondary)]`,
+} as const;
+
 export const BACKGROUND = {
   // Background completo usando token CSS
   FULL: 'bg-[var(--color-background-primary)]',
@@ -165,6 +253,24 @@ export type GradientDirections = typeof GRADIENT_DIRECTIONS;
  * Tipo que representa todos os gradientes pré-configurados disponíveis.
  */
 export type Gradients = typeof GRADIENTS;
+
+/**
+ * Tipo TypeScript para gradientes compostos
+ * 
+ * @typedef {Object} GradientComposites
+ * @description
+ * Tipo que representa todos os gradientes compostos (direção + cores).
+ */
+export type GradientComposites = typeof GRADIENT_COMPOSITES;
+
+/**
+ * Tipo TypeScript para gradientes de cores
+ * 
+ * @typedef {Object} GradientColors
+ * @description
+ * Tipo que representa todos os gradientes de cores específicas.
+ */
+export type GradientColors = typeof GRADIENT_COLORS;
 
 /**
  * Tipo TypeScript para backgrounds

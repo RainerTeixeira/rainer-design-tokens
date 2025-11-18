@@ -1,6 +1,6 @@
 {
   "name": "@rainersoft/design-tokens",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "Design tokens profissionais seguindo padrões W3C/DTCG, com estrutura modular e suporte a tokens primitivos e semânticos.",
   "author": "Rainer Teixeira <suporte@rainersoft.com.br>",
@@ -25,31 +25,26 @@
     "8pt-grid",
     "modular-scale"
   ],
-  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.mjs"
     },
     "./css": {
       "types": "./dist/css.d.ts",
-      "import": "./dist/css.mjs",
-      "require": "./dist/css.js"
+      "import": "./dist/css.mjs"
     },
     "./tailwind": {
       "types": "./dist/tailwind.d.ts",
-      "import": "./dist/tailwind.mjs",
-      "require": "./dist/tailwind.js"
+      "import": "./dist/tailwind.mjs"
     },
     "./formats/css-vars.css": "./formats/css-vars.css",
     "./formats/tokens.json": "./formats/tokens.json",
     "./formats/tailwind.config": {
       "types": "./formats/tailwind.config.ts",
-      "import": "./formats/tailwind.config.ts",
-      "require": "./formats/tailwind.config.ts"
+      "import": "./formats/tailwind.config.ts"
     },
     "./package.json": "./package.json"
   },
@@ -76,7 +71,7 @@
     "prepare:publish": "node scripts/prepare-publish.js",
     "setup:auth": "node scripts/setup-npm-auth.js",
     "prepublishOnly": "pnpm run build:formats && pnpm run update:version && pnpm run type-check",
-    "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
+    "clean": "pnpm exec rimraf dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "update:dates": "tsx scripts/update-dates.ts",

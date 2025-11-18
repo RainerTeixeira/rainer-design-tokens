@@ -1,10 +1,18 @@
 /**
  * Script para configurar autenticação npm a partir de .env local
  * Usa NPM_TOKEN do .env se existir, caso contrário usa o .npmrc existente
+ * 
+ * @fileoverview Script de configuração de autenticação npm
+ * @author Rainer Teixeira
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Lê .env manualmente (sem dependência dotenv)
 function loadEnv() {

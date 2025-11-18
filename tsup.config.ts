@@ -1,12 +1,13 @@
 /**
  * @fileoverview Configuração do tsup para build da biblioteca
- * 
+ *
  * @description
- * Configuração do tsup (TypeScript bundler) para compilar a biblioteca
- * em múltiplos formatos (CommonJS e ESM) com suporte a TypeScript.
- * 
+ * Build moderno usando apenas ES Modules (ESM) e TypeScript.
+ * Gera definições de tipos (.d.ts), sourcemaps e saída otimizada.
+ * Nenhum formato legado (CommonJS) é incluído.
+ *
  * @module tsup.config
- * @version 4.0.0
+ * @version 5.0.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -17,18 +18,17 @@ import { defineConfig } from 'tsup';
  * Configuração do tsup para build da biblioteca
  * 
  * @description
- * Define as configurações de build da biblioteca, incluindo formatos
- * de saída, geração de tipos TypeScript, sourcemaps e outras opções.
+ * Define as configurações de build moderno da biblioteca, usando apenas
+ * ES Modules (ESM) com suporte completo a TypeScript, sourcemaps e minificação.
  * 
  * @type {import('tsup').Options}
  * @property {string[]} entry - Arquivo de entrada principal
- * @property {string[]} format - Formatos de saída (CommonJS e ESM)
+ * @property {string[]} format - Formato de saída (apenas ESM)
  * @property {boolean} dts - Gera arquivos de definição TypeScript (.d.ts)
- * @property {boolean} splitting - Habilita code splitting (desabilitado)
  * @property {boolean} sourcemap - Gera sourcemaps para debug
  * @property {boolean} clean - Limpa o diretório de saída antes do build
- * @property {boolean} minify - Minifica o código (desabilitado)
- * @property {string} target - Versão do ECMAScript alvo (ES2020)
+ * @property {boolean} minify - Minifica o código para produção
+ * @property {string} target - Versão do ECMAScript alvo (ES2022)
  * @property {string} outDir - Diretório de saída dos arquivos compilados
  * 
  * @constant
@@ -39,24 +39,21 @@ import { defineConfig } from 'tsup';
  * pnpm run build
  * 
  * # Isso gerará arquivos em:
- * # - dist/index.js (CommonJS)
  * # - dist/index.mjs (ESM)
  * # - dist/index.d.ts (TypeScript definitions)
+ * # - dist/index.mjs.map (Source maps)
  * ```
  */
 export default defineConfig({
-  entry: ['index.ts'],
-  format: ['cjs', 'esm'],
-  dts: true,
-  splitting: false,
-  sourcemap: true,
-  clean: true,
-  minify: false,
-  target: 'es2020',
-  outDir: 'dist',
+  entry: ['index.ts'],          // Arquivo de entrada principal
+  format: ['esm'],              // Apenas ESM (moderno)
+  dts: true,                    // Gera arquivos de definição TypeScript
+  sourcemap: true,              // Gera sourcemaps para debug
+  clean: true,                  // Limpa dist antes do build
+  minify: true,                 // Minifica para produção
+  target: 'es2022',             // ECMAScript alvo mais atual
+  outDir: 'dist',               // Diretório de saída
   outExtension({ format }) {
-    return {
-      js: format === 'esm' ? '.mjs' : '.cjs',
-    };
+    return { js: format === 'esm' ? '.mjs' : '.js' };
   },
 });
