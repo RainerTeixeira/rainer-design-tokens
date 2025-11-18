@@ -24,6 +24,17 @@ interface ColorToken {
   [key: string]: string | ColorToken;
 }
 
+interface AnimationKeyframes {
+  [key: string]: Record<string, string | number>;
+}
+
+interface AnimationToken {
+  name: string;
+  duration: string;
+  timingFunction: string;
+  keyframes: AnimationKeyframes;
+}
+
 interface Tokens {
   colors: {
     light: ColorToken;
@@ -42,6 +53,7 @@ interface Tokens {
     light: Record<string, string>;
     dark: Record<string, string | { glow?: Record<string, string> }>;
   };
+  animations: Record<string, AnimationToken>;
 }
 
 /**
@@ -113,7 +125,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     ' * @description',
     ' * Objeto de configuração completo do Tailwind CSS que estende o tema padrão',
     ' * com todos os tokens de design do sistema. Inclui cores, tipografia,',
-    ' * espaçamento, raios de borda e sombras.',
+    ' * espaçamento, raios de borda, sombras e animações.',
     ' * ',
     ' * @type {Object}',
     ' * @property {Object} theme - Configurações de tema do Tailwind',
@@ -127,6 +139,8 @@ function generateTailwindConfig(tokens: Tokens): string {
     ' * @property {Object} theme.extend.spacing - Espaçamentos dos tokens',
     ' * @property {Object} theme.extend.borderRadius - Raios de borda dos tokens',
     ' * @property {Object} theme.extend.boxShadow - Sombras dos tokens (incluindo efeitos glow)',
+    ' * @property {Object} theme.extend.animation - Animações dos tokens (nome, duração, timing)',
+    ' * @property {Object} theme.extend.keyframes - Keyframes das animações',
     ' * @property {string} darkMode - Modo escuro configurado como \'class\'',
     ' * ',
     ' * @constant',
@@ -278,6 +292,35 @@ function generateTailwindConfig(tokens: Tokens): string {
     }
   }
   lines.push('      },');
+  
+  // Animations
+  lines.push('      animation: {');
+  if (tokens.animations) {
+    for (const [key, animation] of Object.entries(tokens.animations)) {
+      const animationValue = `${animation.name} ${animation.duration} ${animation.timingFunction}`;
+      lines.push(`        '${key}': '${animationValue}',`);
+    }
+  }
+  lines.push('      },');
+  
+  // Keyframes
+  lines.push('      keyframes: {');
+  if (tokens.animations) {
+    for (const [, animation] of Object.entries(tokens.animations)) {
+      lines.push(`        '${animation.name}': {`);
+      for (const [frame, properties] of Object.entries(animation.keyframes)) {
+        lines.push(`          '${frame}': {`);
+        for (const [prop, value] of Object.entries(properties)) {
+          const valueStr = typeof value === 'string' ? `'${value}'` : value;
+          lines.push(`            ${prop}: ${valueStr},`);
+        }
+        lines.push(`          },`);
+      }
+      lines.push(`        },`);
+    }
+  }
+  lines.push('      },');
+  
   lines.push('    },');
   lines.push('  },');
   lines.push("  darkMode: 'class',");
@@ -322,6 +365,9 @@ function loadTokens(): Tokens {
   const shadows = JSON.parse(
     readFileSync(join(tokensDir, 'shadows.json'), 'utf-8')
   );
+  const animations = JSON.parse(
+    readFileSync(join(tokensDir, 'animations.json'), 'utf-8')
+  );
 
   return {
     colors: {
@@ -332,6 +378,7 @@ function loadTokens(): Tokens {
     spacing: spacing.spacing,
     radius: radius.radius,
     shadows: shadows.shadows,
+    animations: animations.animations,
   };
 }
 

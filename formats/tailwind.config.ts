@@ -33,7 +33,7 @@ import { tokens } from '../tokens';
  * @description
  * Objeto de configuração completo do Tailwind CSS que estende o tema padrão
  * com todos os tokens de design do sistema. Inclui cores, tipografia,
- * espaçamento, raios de borda e sombras.
+ * espaçamento, raios de borda, sombras e animações.
  * 
  * @type {Object}
  * @property {Object} theme - Configurações de tema do Tailwind
@@ -47,6 +47,8 @@ import { tokens } from '../tokens';
  * @property {Object} theme.extend.spacing - Espaçamentos dos tokens
  * @property {Object} theme.extend.borderRadius - Raios de borda dos tokens
  * @property {Object} theme.extend.boxShadow - Sombras dos tokens (incluindo efeitos glow)
+ * @property {Object} theme.extend.animation - Animações dos tokens (nome, duração, timing)
+ * @property {Object} theme.extend.keyframes - Keyframes das animações
  * @property {string} darkMode - Modo escuro configurado como 'class'
  * 
  * @constant
@@ -229,6 +231,48 @@ export const tailwindConfig = {
         'glow-pink': '0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3)',
         'glow-purple': '0 0 20px rgba(125, 0, 255, 0.5), 0 0 40px rgba(125, 0, 255, 0.3)',
         'glow-green': '0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3)',
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'slide-in': 'slide-in 0.3s ease-out',
+        'fade-in': 'fade-in 0.5s ease-in',
+      },
+      keyframes: {
+        'accordion-down': {
+          'from': {
+            height: '0',
+          },
+          'to': {
+            height: 'var(--radix-accordion-content-height)',
+          },
+        },
+        'accordion-up': {
+          'from': {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          'to': {
+            height: '0',
+          },
+        },
+        'slide-in': {
+          '0%': {
+            transform: 'translateY(-10px)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateY(0)',
+            opacity: '1',
+          },
+        },
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
       },
     },
   },

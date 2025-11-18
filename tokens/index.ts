@@ -18,6 +18,7 @@ import typography from './typography.json';
 import spacing from './spacing.json';
 import radius from './radius.json';
 import shadows from './shadows.json';
+import animations from './animations.json';
 
 // Utility tokens (Tailwind CSS classes)
 export * from './utilities';
@@ -40,6 +41,7 @@ export * from './accessibility';
  * @property {Object} spacing - Tokens de espaçamento (margens, paddings)
  * @property {Object} radius - Tokens de raio de borda
  * @property {Object} shadows - Tokens de sombras para ambos os temas
+ * @property {Object} animations - Tokens de animações (keyframes e durações)
  * 
  * @constant
  * @readonly
@@ -64,6 +66,7 @@ export const tokens = {
   spacing: spacing.spacing,
   radius: radius.radius,
   shadows: shadows.shadows,
+  animations: animations.animations,
 } as const;
 
 /**
@@ -187,6 +190,27 @@ export const radiusTokens = radius.radius;
 export const shadowTokens = shadows.shadows;
 
 /**
+ * Tokens de animações
+ * 
+ * @description
+ * Exporta todos os tokens de animações, incluindo keyframes, durações
+ * e funções de timing para transições e animações do sistema.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { animationTokens } from 'rainer-design-tokens';
+ * 
+ * const slideIn = animationTokens['slide-in'];
+ * const fadeIn = animationTokens['fade-in'];
+ * ```
+ */
+export const animationTokens = animations.animations;
+
+/**
  * Tipo TypeScript para todos os tokens
  * 
  * @typedef {Object} Tokens
@@ -249,6 +273,15 @@ export type Radius = typeof radius.radius;
  * Tipo que representa todos os tokens de sombras.
  */
 export type Shadows = typeof shadows.shadows;
+
+/**
+ * Tipo TypeScript para tokens de animações
+ * 
+ * @typedef {Object} Animations
+ * @description
+ * Tipo que representa todos os tokens de animações.
+ */
+export type Animations = typeof animations.animations;
 
 /**
  * Exportação padrão dos tokens

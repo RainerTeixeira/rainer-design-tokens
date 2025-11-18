@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-3.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.4-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
 ![Size](https://img.shields.io/badge/size-<5KB-success)
@@ -29,6 +29,7 @@
 - ♿ **Acessível** - WCAG AA compliant por padrão
 - 📏 **8pt Grid** - Sistema de espaçamento consistente
 - 🎭 **Cyberpunk Theme** - Dark mode com efeitos neon
+- 🎬 **Animações** - Keyframes e animações prontas (accordion, slide-in, fade-in)
 - 📚 **Storybook** - Documentação visual interativa de todos os tokens
 
 ---
@@ -143,6 +144,7 @@ Acesse `http://localhost:6006` para explorar:
 - 📏 **Spacing** - Escala de espaçamento (8pt grid)
 - 🔲 **Radius** - Raios de borda
 - 🌑 **Shadows** - Sombras e efeitos glow
+- 🎬 **Animations** - Animações e keyframes (accordion, slide-in, fade-in)
 
 > **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [Estrutura do Storybook](./docs/ESTRUTURA_STORYBOOK.md) para mais detalhes.
 
@@ -180,7 +182,8 @@ Acesse `http://localhost:6006` para explorar:
 │   ├── typography.json            # Sistema de tipografia completo
 │   ├── spacing.json               # Escala de espaçamento (8pt grid)
 │   ├── radius.json                # Escala de raio de borda
-│   └── shadows.json               # Sombras e efeitos glow
+│   ├── shadows.json               # Sombras e efeitos glow
+│   └── animations.json            # Animações e keyframes
 │
 ├── 🎨 themes/                     # Temas compostos
 │   ├── index.ts                   # Exportações dos temas
@@ -200,7 +203,8 @@ Acesse `http://localhost:6006` para explorar:
 │   ├── prepare-publish.js         # Prepara publicação npm
 │   ├── setup-github.sh            # Setup GitHub Actions
 │   ├── fix-storybook.ps1          # Script PowerShell para Storybook
-│   └── update-dates.ts            # Atualiza datas na documentação
+│   ├── update-dates.ts            # Atualiza datas na documentação
+│   └── update-version.ts          # Atualiza versão no README automaticamente
 │
 ├── 📚 stories/                    # Stories do Storybook (apenas tokens)
 │   ├── assets/                    # Assets das stories
@@ -213,6 +217,7 @@ Acesse `http://localhost:6006` para explorar:
 │   ├── Spacing.stories.tsx        # Escala de espaçamento
 │   ├── Radius.stories.tsx         # Raios de borda
 │   ├── Shadows.stories.tsx        # Sombras e efeitos
+│   ├── Animations.stories.tsx     # Animações e keyframes
 │   └── *.mdx                      # Documentação MDX das stories
 │
 ├── ⚙️ .storybook/                 # Configuração do Storybook
@@ -493,6 +498,7 @@ O Storybook da lib documenta **apenas design tokens**, não componentes UI.
 - 📏 **Spacing** - Escala de espaçamento (8pt grid)
 - 🔲 **Radius** - Raios de borda
 - 🌑 **Shadows** - Sombras e efeitos glow
+- 🎬 **Animations** - Animações e keyframes (accordion, slide-in, fade-in)
 
 **Separação de responsabilidades:**
 - ✅ **Este Storybook**: Apenas tokens (cores, tipografia, espaçamento, etc.)

@@ -1,0 +1,59 @@
+{
+  "animations": {
+    "accordion-down": {
+      "name": "accordion-down",
+      "duration": "0.2s",
+      "timingFunction": "ease-out",
+      "keyframes": {
+        "from": {
+          "height": "0"
+        },
+        "to": {
+          "height": "var(--radix-accordion-content-height)"
+        }
+      }
+    },
+    "accordion-up": {
+      "name": "accordion-up",
+      "duration": "0.2s",
+      "timingFunction": "ease-out",
+      "keyframes": {
+        "from": {
+          "height": "var(--radix-accordion-content-height)"
+        },
+        "to": {
+          "height": "0"
+        }
+      }
+    },
+    "slide-in": {
+      "name": "slide-in",
+      "duration": "0.3s",
+      "timingFunction": "ease-out",
+      "keyframes": {
+        "0%": {
+          "transform": "translateY(-10px)",
+          "opacity": "0"
+        },
+        "100%": {
+          "transform": "translateY(0)",
+          "opacity": "1"
+        }
+      }
+    },
+    "fade-in": {
+      "name": "fade-in",
+      "duration": "0.5s",
+      "timingFunction": "ease-in",
+      "keyframes": {
+        "0%": {
+          "opacity": "0"
+        },
+        "100%": {
+          "opacity": "1"
+        }
+      }
+    }
+  }
+}
+
