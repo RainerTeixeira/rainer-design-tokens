@@ -68,9 +68,12 @@ export { darkTheme, type DarkTheme } from './dark';
  * const darkShadows = themes.dark.shadows;
  * ```
  */
+import { lightTheme } from './light';
+import { darkTheme } from './dark';
+
 export const themes = {
-  light: require('./light').lightTheme,
-  dark: require('./dark').darkTheme,
+  light: lightTheme,
+  dark: darkTheme,
 } as const;
 
 /**

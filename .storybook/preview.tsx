@@ -1,10 +1,9 @@
 import type { Preview } from '@storybook/react';
-import React from 'react';
 import '../formats/css-vars.css';
 
 // Helper para acessar tokens com fallback seguro
 // Usando valores padrão para evitar erros de carregamento
-const getColor = (path: string[], fallback: string = '#000000'): string => {
+const getColor = (_path: string[], fallback: string = '#000000'): string => {
   // Retorna fallback diretamente - tokens serão carregados nas stories
   return fallback;
 };

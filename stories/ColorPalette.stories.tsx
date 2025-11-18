@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { tokens } from '../tokens';
 
@@ -23,58 +22,6 @@ type Story = StoryObj<typeof meta>;
 export const LightTheme: Story = {
   render: () => {
     const colors = tokens.colors.light;
-
-    const ColorGroup = ({ title, colorObj }: { title: string; colorObj: any }) => (
-      <div style={{ marginBottom: '2rem' }}>
-        <h3 style={{ marginBottom: '1rem', fontSize: '1.25rem', fontWeight: 600 }}>
-          {title}
-        </h3>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-            gap: '1rem',
-          }}
-        >
-          {Object.entries(colorObj).map(([key, value]) => {
-            if (typeof value === 'string') {
-              return (
-                <div
-                  key={key}
-                  style={{
-                    border: '1px solid #e5e5e5',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                  }}
-                >
-                  <div
-                    style={{
-                      height: '100px',
-                      backgroundColor: value as string,
-                    }}
-                  />
-                  <div style={{ padding: '0.75rem' }}>
-                    <div style={{ fontWeight: 600, marginBottom: '0.25rem' }}>
-                      {key}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: '0.875rem',
-                        color: '#737373',
-                        fontFamily: 'monospace',
-                      }}
-                    >
-                      {value as string}
-                    </div>
-                  </div>
-                </div>
-              );
-            }
-            return null;
-          })}
-        </div>
-      </div>
-    );
 
     const NestedColorGroup = ({ title, colorObj }: { title: string; colorObj: any }) => (
       <div style={{ marginBottom: '2rem' }}>

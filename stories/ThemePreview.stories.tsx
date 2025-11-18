@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { tokens } from '../tokens';
 
@@ -69,7 +68,7 @@ export const LightThemePreview: Story = {
             <button
               style={{
                 padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
-                backgroundColor: theme.brand.primary,
+                backgroundColor: theme.primary.base,
                 color: theme.text.inverse,
                 border: 'none',
                 borderRadius: tokens.radius.md,
@@ -83,7 +82,7 @@ export const LightThemePreview: Story = {
             <button
               style={{
                 padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
-                backgroundColor: theme.brand.secondary,
+                backgroundColor: theme.secondary.base,
                 color: theme.text.inverse,
                 border: 'none',
                 borderRadius: tokens.radius.md,
@@ -176,7 +175,7 @@ export const DarkThemePreview: Story = {
             <button
               style={{
                 padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
-                backgroundColor: theme.brand.primary,
+                backgroundColor: theme.primary.base,
                 color: theme.text.inverse,
                 border: `1px solid ${theme.border.neon}`,
                 borderRadius: tokens.radius.md,
@@ -191,7 +190,7 @@ export const DarkThemePreview: Story = {
             <button
               style={{
                 padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
-                backgroundColor: theme.brand.secondary,
+                backgroundColor: theme.secondary.base,
                 color: theme.text.inverse,
                 border: `1px solid ${theme.border.neon}`,
                 borderRadius: tokens.radius.md,

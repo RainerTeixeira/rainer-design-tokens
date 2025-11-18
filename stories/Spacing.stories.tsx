@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { tokens } from '../tokens';
 
@@ -120,14 +119,14 @@ export const SpacingExamples: Story = {
                 <div
                   key={size}
                   style={{
-                    padding: spacing[size],
+                    padding: spacing[size as keyof typeof spacing],
                     backgroundColor: '#f5f5f5',
                     border: '1px solid #e5e5e5',
                     borderRadius: '8px',
                     fontSize: '0.875rem',
                   }}
                 >
-                  p-{size} ({spacing[size]})
+                  p-{size} ({spacing[size as keyof typeof spacing]})
                 </div>
               ))}
             </div>
@@ -143,7 +142,7 @@ export const SpacingExamples: Story = {
                 <div
                   key={size}
                   style={{
-                    marginLeft: spacing[size],
+                    marginLeft: spacing[size as keyof typeof spacing],
                     padding: spacing['4'],
                     backgroundColor: '#f5f5f5',
                     border: '1px solid #e5e5e5',
@@ -151,7 +150,7 @@ export const SpacingExamples: Story = {
                     fontSize: '0.875rem',
                   }}
                 >
-                  ml-{size} ({spacing[size]})
+                  ml-{size} ({spacing[size as keyof typeof spacing]})
                 </div>
               ))}
             </div>

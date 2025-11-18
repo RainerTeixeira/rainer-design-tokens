@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { tokens } from '../tokens';
 
@@ -121,14 +120,14 @@ export const RadiusExamples: Story = {
                     padding: '1.5rem',
                     backgroundColor: '#f5f5f5',
                     border: '1px solid #e5e5e5',
-                    borderRadius: radius[size],
+                    borderRadius: radius[size as keyof typeof radius],
                   }}
                 >
                   <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>
                     Card {size}
                   </div>
                   <div style={{ fontSize: '0.875rem', color: '#737373' }}>
-                    borderRadius: {radius[size]}
+                    borderRadius: {radius[size as keyof typeof radius]}
                   </div>
                 </div>
               ))}
@@ -149,7 +148,7 @@ export const RadiusExamples: Story = {
                     backgroundColor: '#0891b2',
                     color: '#ffffff',
                     border: 'none',
-                    borderRadius: radius[size],
+                    borderRadius: radius[size as keyof typeof radius],
                     fontSize: '0.875rem',
                     fontWeight: 600,
                     cursor: 'pointer',

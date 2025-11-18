@@ -320,7 +320,7 @@ var darkColors = {
 	colors: colors
 };
 
-var typography$1 = {
+var typography = {
 	fontFamily: {
 		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
@@ -580,11 +580,11 @@ var typography$1 = {
 		}
 	}
 };
-var typography = {
-	typography: typography$1
+var typography$1 = {
+	typography: typography
 };
 
-var spacing$1 = {
+var spacing = {
 	"0": "0px",
 	"1": "0.25rem",
 	"2": "0.5rem",
@@ -621,11 +621,11 @@ var spacing$1 = {
 	"2.5": "0.625rem",
 	"3.5": "0.875rem"
 };
-var spacing = {
-	spacing: spacing$1
+var spacing$1 = {
+	spacing: spacing
 };
 
-var radius$1 = {
+var radius = {
 	none: "0px",
 	sm: "0.125rem",
 	base: "0.25rem",
@@ -636,11 +636,11 @@ var radius$1 = {
 	"3xl": "1.5rem",
 	full: "9999px"
 };
-var radius = {
-	radius: radius$1
+var radius$1 = {
+	radius: radius
 };
 
-var shadows$1 = {
+var shadows = {
 	light: {
 		xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
 		sm: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
@@ -668,8 +668,8 @@ var shadows$1 = {
 		}
 	}
 };
-var shadows = {
-	shadows: shadows$1
+var shadows$1 = {
+	shadows: shadows
 };
 
 /**
@@ -1041,7 +1041,7 @@ declare function validateContrast(foreground: string, background: string, option
  *
  * @example
  * ```typescript
- * import { tokens } from '@rainer/rainer-design-tokens';
+ * import { tokens } from 'rainer-design-tokens';
  *
  * // Acessar cor primária do tema claro
  * const primaryColor = tokens.colors.light.brand.primary;
@@ -1716,7 +1716,7 @@ declare const tokens: {
  *
  * @example
  * ```typescript
- * import { lightThemeColors } from '@rainer/rainer-design-tokens';
+ * import { lightThemeColors } from 'rainer-design-tokens';
  *
  * const primaryColor = lightThemeColors.brand.primary;
  * ```
@@ -1878,7 +1878,7 @@ declare const lightThemeColors: {
  *
  * @example
  * ```typescript
- * import { darkThemeColors } from '@rainer/rainer-design-tokens';
+ * import { darkThemeColors } from 'rainer-design-tokens';
  *
  * const neonColor = darkThemeColors.accent.cyan;
  * ```
@@ -2065,7 +2065,7 @@ declare const darkThemeColors: {
  *
  * @example
  * ```typescript
- * import { typographyTokens } from '@rainer/rainer-design-tokens';
+ * import { typographyTokens } from 'rainer-design-tokens';
  *
  * const fontSize = typographyTokens.fontSize.lg;
  * const fontFamily = typographyTokens.fontFamily.sans;
@@ -2344,7 +2344,7 @@ declare const typographyTokens: {
  *
  * @example
  * ```typescript
- * import { spacingTokens } from '@rainer/rainer-design-tokens';
+ * import { spacingTokens } from 'rainer-design-tokens';
  *
  * const margin = spacingTokens.md;
  * const padding = spacingTokens.lg;
@@ -2399,7 +2399,7 @@ declare const spacingTokens: {
  *
  * @example
  * ```typescript
- * import { radiusTokens } from '@rainer/rainer-design-tokens';
+ * import { radiusTokens } from 'rainer-design-tokens';
  *
  * const borderRadius = radiusTokens.md;
  * ```
@@ -2428,7 +2428,7 @@ declare const radiusTokens: {
  *
  * @example
  * ```typescript
- * import { shadowTokens } from '@rainer/rainer-design-tokens';
+ * import { shadowTokens } from 'rainer-design-tokens';
  *
  * const shadow = shadowTokens.light.md;
  * const glow = shadowTokens.dark.glow.cyan;
@@ -2494,7 +2494,7 @@ type DarkColors = typeof darkColors.colors;
  * @description
  * Tipo que representa todos os tokens de tipografia.
  */
-type Typography = typeof typography.typography;
+type Typography = typeof typography$1.typography;
 /**
  * Tipo TypeScript para tokens de espaçamento
  *
@@ -2502,7 +2502,7 @@ type Typography = typeof typography.typography;
  * @description
  * Tipo que representa todos os tokens de espaçamento.
  */
-type Spacing = typeof spacing.spacing;
+type Spacing = typeof spacing$1.spacing;
 /**
  * Tipo TypeScript para tokens de raio de borda
  *
@@ -2510,7 +2510,7 @@ type Spacing = typeof spacing.spacing;
  * @description
  * Tipo que representa todos os tokens de raio de borda.
  */
-type Radius = typeof radius.radius;
+type Radius = typeof radius$1.radius;
 /**
  * Tipo TypeScript para tokens de sombras
  *
@@ -2518,7 +2518,7 @@ type Radius = typeof radius.radius;
  * @description
  * Tipo que representa todos os tokens de sombras.
  */
-type Shadows = typeof shadows.shadows;
+type Shadows = typeof shadows$1.shadows;
 
 /**
  * @fileoverview Tema Claro - Rainer Design System
@@ -3630,7 +3630,7 @@ type DarkTheme = typeof darkTheme;
  *
  * @example
  * ```typescript
- * import { themes, lightTheme, darkTheme } from 'rainer-design-tokens';
+ * import { themes, lightTheme, darkTheme } from '@rainersoft/design-tokens';
  *
  * // Usar tema completo
  * const currentTheme = themes.light;
@@ -3648,34 +3648,967 @@ type DarkTheme = typeof darkTheme;
  * @see {LightTheme} Para o tipo TypeScript do tema claro
  */
 
-/**
- * Objeto contendo todos os temas disponíveis
- *
- * @description
- * Objeto que agrupa todos os temas do sistema, permitindo acesso
- * fácil e organizado aos diferentes temas disponíveis.
- *
- * @type {Object}
- * @property {LightTheme} light - Tema claro
- * @property {DarkTheme} dark - Tema escuro (cyberpunk)
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { themes } from 'rainer-design-tokens';
- *
- * // Acessar tema claro
- * const lightColors = themes.light.colors;
- *
- * // Acessar tema escuro
- * const darkShadows = themes.dark.shadows;
- * ```
- */
 declare const themes: {
-    readonly light: any;
-    readonly dark: any;
+    readonly light: {
+        readonly colors: {
+            primary: {
+                base: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                focus: string;
+                background: string;
+                backgroundHover: string;
+                backgroundActive: string;
+                border: string;
+                borderHover: string;
+                borderFocus: string;
+                text: string;
+                textHover: string;
+                textDisabled: string;
+            };
+            secondary: {
+                base: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                focus: string;
+                background: string;
+                backgroundHover: string;
+                backgroundActive: string;
+                border: string;
+                borderHover: string;
+                borderFocus: string;
+                text: string;
+                textHover: string;
+                textDisabled: string;
+            };
+            accent: {
+                base: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                focus: string;
+                background: string;
+                backgroundHover: string;
+                backgroundActive: string;
+                border: string;
+                borderHover: string;
+                borderFocus: string;
+                text: string;
+                textHover: string;
+                textDisabled: string;
+            };
+            background: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                inverse: string;
+                overlay: string;
+                muted: string;
+            };
+            surface: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                elevated: string;
+                overlay: string;
+                hover: string;
+                active: string;
+            };
+            text: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                inverse: string;
+                disabled: string;
+                link: string;
+                linkHover: string;
+                linkActive: string;
+                linkVisited: string;
+                onPrimary: string;
+                onSecondary: string;
+                onAccent: string;
+                onBackground: string;
+                onSurface: string;
+            };
+            border: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                focus: string;
+                focusRing: string;
+                inverse: string;
+                hover: string;
+                active: string;
+                disabled: string;
+            };
+            status: {
+                success: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+                warning: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+                error: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+                info: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+            };
+            interactive: {
+                default: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                disabledText: string;
+                focus: string;
+                focusRing: string;
+            };
+        };
+        readonly typography: {
+            fontFamily: {
+                sans: string;
+                serif: string;
+                mono: string;
+                display: string;
+                body: string;
+                code: string;
+            };
+            fontSize: {
+                xs: string;
+                sm: string;
+                base: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+                "3xl": string;
+                "4xl": string;
+                "5xl": string;
+                "6xl": string;
+                "7xl": string;
+                "8xl": string;
+                "9xl": string;
+            };
+            fontWeight: {
+                thin: string;
+                extralight: string;
+                light: string;
+                normal: string;
+                medium: string;
+                semibold: string;
+                bold: string;
+                extrabold: string;
+                black: string;
+            };
+            lineHeight: {
+                none: string;
+                tight: string;
+                snug: string;
+                normal: string;
+                relaxed: string;
+                loose: string;
+            };
+            letterSpacing: {
+                tighter: string;
+                tight: string;
+                normal: string;
+                wide: string;
+                wider: string;
+                widest: string;
+            };
+            headings: {
+                h1: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h2: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h3: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h4: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h5: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h6: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+            };
+            subtitle: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+            };
+            body: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            caption: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            button: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            label: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            code: {
+                inline: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                block: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+        };
+        readonly spacing: {
+            "0": string;
+            px: string;
+            "0.5": string;
+            "1": string;
+            "1.5": string;
+            "2": string;
+            "2.5": string;
+            "3": string;
+            "3.5": string;
+            "4": string;
+            "5": string;
+            "6": string;
+            "7": string;
+            "8": string;
+            "9": string;
+            "10": string;
+            "11": string;
+            "12": string;
+            "14": string;
+            "16": string;
+            "20": string;
+            "24": string;
+            "28": string;
+            "32": string;
+            "36": string;
+            "40": string;
+            "44": string;
+            "48": string;
+            "52": string;
+            "56": string;
+            "60": string;
+            "64": string;
+            "72": string;
+            "80": string;
+            "96": string;
+        };
+        readonly radius: {
+            none: string;
+            sm: string;
+            base: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            "3xl": string;
+            full: string;
+        };
+        readonly shadows: {
+            xs: string;
+            sm: string;
+            base: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            inner: string;
+        };
+    };
+    readonly dark: {
+        readonly colors: {
+            primary: {
+                base: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                focus: string;
+                background: string;
+                backgroundHover: string;
+                backgroundActive: string;
+                border: string;
+                borderHover: string;
+                borderFocus: string;
+                text: string;
+                textHover: string;
+                textDisabled: string;
+            };
+            secondary: {
+                base: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                focus: string;
+                background: string;
+                backgroundHover: string;
+                backgroundActive: string;
+                border: string;
+                borderHover: string;
+                borderFocus: string;
+                text: string;
+                textHover: string;
+                textDisabled: string;
+            };
+            accent: {
+                base: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                focus: string;
+                background: string;
+                backgroundHover: string;
+                backgroundActive: string;
+                border: string;
+                borderHover: string;
+                borderFocus: string;
+                text: string;
+                textHover: string;
+                textDisabled: string;
+            };
+            background: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                inverse: string;
+                overlay: string;
+                muted: string;
+            };
+            surface: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                elevated: string;
+                overlay: string;
+                glass: string;
+                glassHover: string;
+                hover: string;
+                active: string;
+            };
+            text: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                inverse: string;
+                disabled: string;
+                link: string;
+                linkHover: string;
+                linkActive: string;
+                linkVisited: string;
+                onPrimary: string;
+                onSecondary: string;
+                onAccent: string;
+                onBackground: string;
+                onSurface: string;
+                glow: string;
+                neonCyan: string;
+                neonPink: string;
+                neonPurple: string;
+                neonGreen: string;
+            };
+            border: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                focus: string;
+                focusRing: string;
+                inverse: string;
+                neon: string;
+                neonGlow: string;
+                hover: string;
+                active: string;
+                disabled: string;
+            };
+            status: {
+                success: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+                warning: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+                error: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+                info: {
+                    base: string;
+                    hover: string;
+                    active: string;
+                    background: string;
+                    backgroundHover: string;
+                    border: string;
+                    text: string;
+                    textOnBackground: string;
+                };
+            };
+            interactive: {
+                default: string;
+                hover: string;
+                active: string;
+                disabled: string;
+                disabledText: string;
+                focus: string;
+                focusRing: string;
+            };
+            effects: {
+                glowCyan: string;
+                glowPink: string;
+                glowPurple: string;
+                glowGreen: string;
+                shadowSm: string;
+                shadowMd: string;
+                shadowLg: string;
+            };
+            gradients: {
+                primary: string;
+                secondary: string;
+                accent: string;
+                background: string;
+            };
+        };
+        readonly typography: {
+            fontFamily: {
+                sans: string;
+                serif: string;
+                mono: string;
+                display: string;
+                body: string;
+                code: string;
+            };
+            fontSize: {
+                xs: string;
+                sm: string;
+                base: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+                "3xl": string;
+                "4xl": string;
+                "5xl": string;
+                "6xl": string;
+                "7xl": string;
+                "8xl": string;
+                "9xl": string;
+            };
+            fontWeight: {
+                thin: string;
+                extralight: string;
+                light: string;
+                normal: string;
+                medium: string;
+                semibold: string;
+                bold: string;
+                extrabold: string;
+                black: string;
+            };
+            lineHeight: {
+                none: string;
+                tight: string;
+                snug: string;
+                normal: string;
+                relaxed: string;
+                loose: string;
+            };
+            letterSpacing: {
+                tighter: string;
+                tight: string;
+                normal: string;
+                wide: string;
+                wider: string;
+                widest: string;
+            };
+            headings: {
+                h1: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h2: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h3: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h4: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h5: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                h6: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+            };
+            subtitle: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontSizeMobile: string;
+                    fontSizeTablet: string;
+                    fontSizeDesktop: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    marginBottom: string;
+                };
+            };
+            body: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            caption: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            button: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            label: {
+                large: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                medium: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                small: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+            code: {
+                inline: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+                block: {
+                    fontFamily: string;
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                };
+            };
+        };
+        readonly spacing: {
+            "0": string;
+            px: string;
+            "0.5": string;
+            "1": string;
+            "1.5": string;
+            "2": string;
+            "2.5": string;
+            "3": string;
+            "3.5": string;
+            "4": string;
+            "5": string;
+            "6": string;
+            "7": string;
+            "8": string;
+            "9": string;
+            "10": string;
+            "11": string;
+            "12": string;
+            "14": string;
+            "16": string;
+            "20": string;
+            "24": string;
+            "28": string;
+            "32": string;
+            "36": string;
+            "40": string;
+            "44": string;
+            "48": string;
+            "52": string;
+            "56": string;
+            "60": string;
+            "64": string;
+            "72": string;
+            "80": string;
+            "96": string;
+        };
+        readonly radius: {
+            none: string;
+            sm: string;
+            base: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            "3xl": string;
+            full: string;
+        };
+        readonly shadows: {
+            xs: string;
+            sm: string;
+            base: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            inner: string;
+            glow: {
+                cyan: string;
+                pink: string;
+                purple: string;
+                green: string;
+            };
+        };
+    };
 };
 /**
  * Tipo TypeScript para todos os temas

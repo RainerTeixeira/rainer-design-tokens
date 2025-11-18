@@ -9,7 +9,6 @@
  * - Botões e Labels
  */
 
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { tokens } from '../tokens';
 

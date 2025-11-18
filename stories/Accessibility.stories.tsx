@@ -4,7 +4,6 @@
  * Documenta validação de contraste e conformidade WCAG AA/AAA
  */
 
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { tokens, validateContrast, getContrastInfo } from '../tokens';
 

@@ -1,3 +1,48 @@
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// index.ts
+var index_exports = {};
+__export(index_exports, {
+  BACKGROUND: () => BACKGROUND,
+  GRADIENTS: () => GRADIENTS,
+  GRADIENT_DIRECTIONS: () => GRADIENT_DIRECTIONS,
+  darkTheme: () => darkTheme,
+  darkThemeColors: () => darkThemeColors,
+  getContrast: () => getContrast,
+  getContrastInfo: () => getContrastInfo,
+  getLuminance: () => getLuminance,
+  hexToRgb: () => hexToRgb,
+  lightTheme: () => lightTheme,
+  lightThemeColors: () => lightThemeColors,
+  meetsWCAGAA: () => meetsWCAGAA,
+  meetsWCAGAAA: () => meetsWCAGAAA,
+  radiusTokens: () => radiusTokens,
+  shadowTokens: () => shadowTokens,
+  spacingTokens: () => spacingTokens,
+  themes: () => themes_default,
+  tokens: () => tokens_default,
+  typographyTokens: () => typographyTokens,
+  validateContrast: () => validateContrast
+});
+module.exports = __toCommonJS(index_exports);
+
 // tokens/colors/light.json
 var light_default = {
   $schema: "https://json.schemastore.org/theme.json",
@@ -845,7 +890,8 @@ var themes = {
   dark: darkTheme
 };
 var themes_default = themes;
-export {
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
   BACKGROUND,
   GRADIENTS,
   GRADIENT_DIRECTIONS,
@@ -862,11 +908,11 @@ export {
   radiusTokens,
   shadowTokens,
   spacingTokens,
-  themes_default as themes,
-  tokens_default as tokens,
+  themes,
+  tokens,
   typographyTokens,
   validateContrast
-};
+});
 /**
  * @fileoverview Ponto de entrada principal da biblioteca @rainersoft/design-tokens
  * 
@@ -895,4 +941,4 @@ export {
  * const theme = lightTheme;
  * ```
  */
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.cjs.map
