@@ -48,6 +48,9 @@ Thumbs.db
 .env.local
 .env.*.local
 
+# NPM config (contém tokens - não commitar)
+.npmrc
+
 
 *storybook.log
 storybook-static
