@@ -68,6 +68,7 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "prepare:publish": "node scripts/prepare-publish.js",
+    "setup:auth": "node scripts/setup-npm-auth.js",
     "prepublishOnly": "pnpm run build && pnpm run type-check",
     "clean": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\"",
     "storybook": "storybook dev -p 6006",
