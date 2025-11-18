@@ -7,7 +7,7 @@ Este documento explica como funciona o sistema de build automatizado da bibliote
 **JSON como Fonte Única de Verdade**
 
 - ✅ **Edite apenas**: `tokens/*.json`
-- ✅ **Formats são gerados automaticamente**: Execute `npm run build:formats`
+- ✅ **Formats são gerados automaticamente**: Execute `pnpm run build:formats`
 - ❌ **NÃO edite manualmente**: `formats/*` (serão sobrescritos)
 
 ## 📦 Scripts Disponíveis
@@ -16,15 +16,15 @@ Este documento explica como funciona o sistema de build automatizado da bibliote
 
 ```bash
 # Gera todos os formatos (CSS, Tailwind, JSON)
-npm run build:formats
+pnpm run build:formats
 
 # Gera formatos individuais
-npm run build:css          # Gera formats/css-vars.css
-npm run build:tailwind     # Gera formats/tailwind.config.ts
-npm run build:tokens-json  # Gera formats/tokens.json
+pnpm run build:css          # Gera formats/css-vars.css
+pnpm run build:tailwind     # Gera formats/tailwind.config.ts
+pnpm run build:tokens-json  # Gera formats/tokens.json
 
 # Build completo (formats + TypeScript)
-npm run build
+pnpm run build
 ```
 
 ## 🔄 Fluxo de Build
@@ -52,7 +52,7 @@ dist/* (SAÍDA COMPILADA)
 
 **Uso**:
 ```bash
-npm run build:formats
+pnpm run build:formats
 ```
 
 ### `scripts/build-css.ts`
@@ -70,7 +70,7 @@ npm run build:formats
 
 **Uso**:
 ```bash
-npm run build:css
+pnpm run build:css
 ```
 
 ### `scripts/build-tailwind.ts`
@@ -91,7 +91,7 @@ npm run build:css
 
 **Uso**:
 ```bash
-npm run build:tailwind
+pnpm run build:tailwind
 ```
 
 ### `scripts/build-tokens-json.ts`
@@ -110,7 +110,7 @@ npm run build:tailwind
 
 **Uso**:
 ```bash
-npm run build:tokens-json
+pnpm run build:tokens-json
 ```
 
 ## 🚀 Workflow de Desenvolvimento
@@ -136,7 +136,7 @@ Edite os arquivos JSON em `tokens/`:
 Execute o build de formatos:
 
 ```bash
-npm run build:formats
+pnpm run build:formats
 ```
 
 Isso irá:
@@ -149,7 +149,7 @@ Isso irá:
 Execute o build completo:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Isso irá:
@@ -279,7 +279,7 @@ chmod -R 755 formats/
 
 **Solução**: Execute o build novamente:
 ```bash
-npm run build:formats
+pnpm run build:formats
 ```
 
 ## 📚 Referências

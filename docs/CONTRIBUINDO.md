@@ -54,10 +54,10 @@ Para sugerir novas funcionalidades:
 3. **Faça suas alterações**
 4. **Teste suas alterações**:
    ```bash
-   npm run test
-   npm run type-check
-   npm run lint
-   npm run build
+   pnpm test
+   pnpm run type-check
+   pnpm run lint
+   pnpm run build
    ```
 5. **Commit suas mudanças** seguindo as [Convenções de Commit](#convenções-de-commit)
 6. **Push para sua branch**:
@@ -71,7 +71,7 @@ Para sugerir novas funcionalidades:
 ### Pré-requisitos
 
 - Node.js >= 18.0.0
-- npm >= 9.0.0 (ou yarn/pnpm)
+- pnpm >= 9.0.0 (ou npm/yarn)
 - Git
 
 ### Setup Inicial
@@ -82,42 +82,42 @@ git clone https://github.com/rainer-teixeira/design-tokens.git
 cd design-tokens
 
 # Instale as dependências
-npm install
+pnpm install
 
 # Verifique se tudo está funcionando
-npm run build
-npm run test
+pnpm run build
+pnpm test
 ```
 
 ### Scripts Disponíveis
 
 ```bash
 # Build de produção
-npm run build
+pnpm run build
 
 # Build em modo watch (desenvolvimento)
-npm run dev
+pnpm run dev
 
 # Verificação de tipos TypeScript
-npm run type-check
+pnpm run type-check
 
 # Linting
-npm run lint
+pnpm run lint
 
 # Testes
-npm run test
+pnpm test
 
 # Testes em watch mode
-npm run test:watch
+pnpm run test:watch
 
 # Testes com cobertura
-npm run test:coverage
+pnpm run test:coverage
 
 # Gerar tokens em diferentes formatos
-npm run generate:tokens
+pnpm run generate:tokens
 
 # Validar tokens
-npm run validate:tokens
+pnpm run validate:tokens
 ```
 
 ## 📁 Estrutura do Projeto
@@ -335,10 +335,11 @@ test(colors): adiciona testes para paleta de cores ciano
 ### Checklist Antes de Submeter
 
 - [ ] Código segue as convenções do projeto
-- [ ] Testes passam (`npm run test`)
-- [ ] Type check passa (`npm run type-check`)
-- [ ] Lint passa (`npm run lint`)
-- [ ] Build passa (`npm run build`)
+- [ ] Testes passam (`pnpm test`)
+- [ ] Type check passa (`pnpm run type-check`)
+- [ ] Lint passa (`pnpm run lint`)
+- [ ] Build passa (`pnpm run build`)
+- [ ] **`dist/` atualizado e commitado** (veja [PUBLICACAO.md](./PUBLICACAO.md#-por-que-dist-está-commitado))
 - [ ] Documentação atualizada
 - [ ] JSDoc adicionado/atualizado
 - [ ] Commits seguem o padrão Conventional Commits

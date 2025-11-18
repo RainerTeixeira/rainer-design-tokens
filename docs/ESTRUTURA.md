@@ -103,7 +103,7 @@ import { lightTheme, darkTheme } from '@rainer/design-tokens';
 
 **Como gerar**:
 ```bash
-npm run build:formats
+pnpm run build:formats
 ```
 
 ### `scripts/` - Scripts de Build
@@ -119,12 +119,12 @@ npm run build:formats
 **Uso**:
 ```bash
 # Gerar todos os formatos
-npm run build:formats
+pnpm run build:formats
 
 # Gerar formatos individuais
-npm run build:css
-npm run build:tailwind
-npm run build:tokens-json
+pnpm run build:css
+pnpm run build:tailwind
+pnpm run build:tokens-json
 ```
 
 ### `dist/` - Saída Compilada
@@ -138,7 +138,7 @@ npm run build:tokens-json
 
 **Geração**:
 ```bash
-npm run build  # Compila TypeScript + gera formats
+pnpm run build  # Compila TypeScript + gera formats
 ```
 
 ### `docs/` - Documentação
@@ -196,7 +196,7 @@ export default {
 1. **Visualizar tokens no Storybook da lib**:
 ```bash
 cd @rainer-design-tokens
-npm run storybook
+pnpm run storybook
 ```
 
 Acesse `http://localhost:6006` para ver todas as stories:
@@ -243,14 +243,14 @@ import tokens from '@rainer/design-tokens/dist/index.js';
 ### Para Desenvolvedores da Biblioteca
 
 1. **Edite tokens** em `tokens/*.json`
-2. **Execute build**: `npm run build:formats`
+2. **Execute build**: `pnpm run build:formats`
 3. **Formatos são gerados** automaticamente em `formats/`
-4. **Compile TypeScript**: `npm run build`
-5. **Teste**: `npm test`
+4. **Compile TypeScript**: `pnpm run build`
+5. **Teste**: `pnpm test`
 
 ### Para Consumidores da Biblioteca
 
-1. **Instale**: `npm install @rainer/design-tokens`
+1. **Instale**: `pnpm add @rainer/design-tokens`
 2. **Importe tokens**: `import { tokens } from '@rainer/design-tokens'`
 3. **Use formatos**: `import '@rainer/design-tokens/formats/css-vars.css'`
 

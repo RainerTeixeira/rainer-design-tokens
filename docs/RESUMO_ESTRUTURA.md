@@ -118,9 +118,9 @@ C:\Desenvolvimento\
 ```bash
 cd @rainer-design-tokens
 # Editar tokens/*.json
-npm run build:formats
-npm run build
-npm run storybook  # Ver tokens
+pnpm run build:formats
+pnpm run build
+pnpm run storybook  # Ver tokens
 ```
 
 ### 2. Usar Tokens (Frontend)
@@ -130,7 +130,7 @@ cd rainer-portfolio-frontend
 # Importar tokens
 import { tokens } from '@rainer/design-tokens';
 # Criar componentes usando tokens
-npm run storybook  # Ver componentes
+pnpm run storybook  # Ver componentes
 ```
 
 ## 📚 Documentação

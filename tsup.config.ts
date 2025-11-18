@@ -36,7 +36,7 @@ import { defineConfig } from 'tsup';
  * @example
  * ```bash
  * # Build da biblioteca
- * npm run build
+ * pnpm run build
  * 
  * # Isso gerará arquivos em:
  * # - dist/index.js (CommonJS)

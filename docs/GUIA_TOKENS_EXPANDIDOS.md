@@ -345,11 +345,11 @@ const styles = {
 
 Veja exemplos completos em:
 - Frontend: `/app/exemplos-tokens/page.tsx`
-- Storybook: Execute `npm run storybook` na biblioteca
+- Storybook: Execute `pnpm run storybook` na biblioteca
 
 ## ✅ Checklist de Implementação
 
-- [ ] Instalar/atualizar biblioteca: `npm install @rainer/design-tokens@latest`
+- [ ] Instalar/atualizar biblioteca: `pnpm add @rainer/design-tokens@latest`
 - [ ] Configurar Tailwind: Importar `tailwindConfig` no `tailwind.config.ts`
 - [ ] Atualizar componentes: Substituir cores hardcoded por tokens
 - [ ] Validar acessibilidade: Usar `validateContrast` para verificar contraste

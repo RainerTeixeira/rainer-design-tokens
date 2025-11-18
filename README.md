@@ -36,11 +36,11 @@
 ## 🚀 Installation
 
 ```bash
-npm install @rainer/design-tokens
+pnpm add @rainer/design-tokens
 ```
 
 ```bash
-pnpm add @rainer/design-tokens
+npm install @rainer/design-tokens
 ```
 
 ```bash
@@ -104,7 +104,7 @@ export default {
 O Storybook da lib é focado **apenas em design tokens**, não em componentes UI.
 
 ```bash
-npm run storybook
+pnpm run storybook
 ```
 
 Acesse `http://localhost:6006` para explorar:
@@ -451,6 +451,7 @@ pnpm run clean:all          # Remove node_modules, lock, dist, etc.
 5. **Compile o TypeScript**: `pnpm run build` (já inclui build:formats + tsup)
 6. **Visualize no Storybook**: `pnpm run storybook` para ver todos os tokens de forma interativa
 7. **Execute testes**: `pnpm test` antes de commitar
+8. **⚠️ IMPORTANTE**: Sempre commit `dist/` após build (veja [PUBLICACAO.md](./docs/PUBLICACAO.md#-por-que-dist-está-commitado))
 
 ### 📚 Storybook - Visualização dos Tokens
 

@@ -4,7 +4,18 @@ node_modules/
 .pnp.js
 
 # Build output
-# dist/ será incluído no commit para publicação no GitHub/npm
+# dist/ NÃO está no .gitignore - deve ser commitado para publicação
+# 
+# Razão: O diretório dist/ contém os arquivos compilados (JavaScript, TypeScript definitions)
+# que são necessários quando o pacote é instalado via npm ou GitHub Packages.
+# 
+# Sem dist/ commitado:
+# - Instalação via npm falharia (arquivos compilados não existem)
+# - Instalação via GitHub falharia (precisa executar build, mas pode não ter as dependências)
+# - TypeScript definitions (.d.ts) não estariam disponíveis para consumidores
+#
+# IMPORTANTE: Sempre execute `pnpm run build` antes de commitar para garantir
+# que dist/ está atualizado com a versão mais recente do código.
 build/
 *.tsbuildinfo
 

@@ -59,10 +59,10 @@ git push -u origin main
 pnpm run build
 
 # Verificar o que será publicado
-npm pack --dry-run
+pnpm pack --dry-run
 
 # Publicar
-npm publish --access public
+pnpm publish --access public
 ```
 
 **Nota**: O `--access public` é necessário para pacotes com escopo (`@rainer/`).
@@ -128,4 +128,127 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 - [ ] `.npmignore` configurado corretamente
 - [ ] `files` no `package.json` inclui todos os arquivos necessários
 - [ ] Repository URL correto no `package.json`
+- [ ] **`dist/` commitado e atualizado** (veja seção abaixo)
+
+## 📦 Por que `dist/` está commitado?
+
+### ❓ Pergunta Comum
+
+> **"Por que o diretório `dist/` (arquivos compilados) está commitado no Git? Não deveria estar no `.gitignore`?"**
+
+### ✅ Resposta: `dist/` DEVE estar commitado
+
+O diretório `dist/` **NÃO está no `.gitignore`** e **deve ser commitado** pelos seguintes motivos:
+
+#### 1. **Instalação via npm/npm packages**
+
+Quando alguém instala o pacote via `pnpm add @rainer/design-tokens`, o npm não executa build - ele apenas baixa e instala os arquivos publicados. Os arquivos em `dist/` são os que serão instalados.
+
+**Sem `dist/` commitado:**
+```bash
+pnpm add @rainer/design-tokens
+# ❌ Erro: Arquivos não encontrados (dist/index.js, dist/index.d.ts)
+```
+
+**Com `dist/` commitado:**
+```bash
+pnpm add @rainer/design-tokens
+# ✅ Funciona: Arquivos compilados prontos para uso
+```
+
+#### 2. **Instalação via GitHub Packages/GitHub**
+
+Quando alguém instala via `pnpm add github:RainerTeixeira/rainer-design-tokens`, o pnpm/clone pode não ter todas as dependências de build instaladas ou pode não executar o build automaticamente.
+
+**Sem `dist/` commitado:**
+- Instalação pode falhar se dependências de build não estiverem disponíveis
+- TypeScript definitions não estariam disponíveis
+- Consumidores precisariam executar build manualmente
+
+**Com `dist/` commitado:**
+- Instalação funciona imediatamente
+- TypeScript definitions disponíveis automaticamente
+- Sem necessidade de executar build no projeto consumidor
+
+#### 3. **TypeScript Definitions (.d.ts)**
+
+Os arquivos `.d.ts` em `dist/` são essenciais para:
+- Autocomplete em IDEs
+- Type checking em projetos TypeScript
+- Importação correta dos tipos
+
+**Sem `dist/` commitado:**
+```typescript
+import { tokens } from '@rainer/design-tokens';
+// ❌ Erro: Cannot find module '@rainer/design-tokens' or its type definitions
+```
+
+**Com `dist/` commitado:**
+```typescript
+import { tokens } from '@rainer/design-tokens';
+// ✅ Funciona: Tipos disponíveis automaticamente
+```
+
+#### 4. **Package.json `files` field**
+
+O `package.json` especifica `dist` no campo `files`:
+
+```json
+{
+  "files": [
+    "dist",
+    "formats",
+    "tokens",
+    "themes",
+    "README.md",
+    "LICENSE"
+  ]
+}
+```
+
+Isso significa que o npm **só publicará** os arquivos listados. Se `dist/` não estiver commitado, não estará disponível para publicação.
+
+### ⚠️ Importante: Sempre Build antes de Commit
+
+**SEMPRE execute o build antes de commitar:**
+
+```bash
+# 1. Fazer alterações no código
+# 2. Executar build
+pnpm run build
+
+# 3. Verificar se dist/ foi atualizado
+git status
+
+# 4. Commit incluindo dist/
+git add dist/
+git commit -m "feat: nova feature"
+```
+
+### 🔍 Verificação
+
+Antes de fazer push, verifique:
+
+```bash
+# Verificar se dist/ tem os arquivos esperados
+ls dist/
+# Deve mostrar: index.js, index.mjs, index.d.ts, index.d.mts, etc.
+
+# Verificar se dist/ está no commit
+git status
+# dist/ deve aparecer como modificado ou novo
+
+# Verificar se será publicado
+pnpm pack --dry-run
+# Deve mostrar dist/ na lista de arquivos
+```
+
+### 📚 Comparação com Outras Estratégias
+
+| Estratégia | Prós | Contras | Usado por |
+|------------|------|---------|-----------|
+| **Commit `dist/`** ✅ | - Instalação funciona imediatamente<br>- Sem build no consumidor<br>- TypeScript definitions disponíveis | - Repositório maior<br>- Precisa rebuild antes de commit | @rainer/design-tokens, react, vue |
+| **Ignorar `dist/`** | - Repositório menor<br>- Sem arquivos gerados | - Consumidor precisa executar build<br>- Pode falhar se dependências não disponíveis | Alguns projetos internos |
+
+**Decisão**: Para uma biblioteca pública, **commit `dist/`** é a prática recomendada e amplamente usada na comunidade npm.
 

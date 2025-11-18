@@ -64,5 +64,5 @@ console.log('   1. git add .');
 console.log('   2. git commit -m "chore: prepare for release"');
 console.log('   3. git push origin main');
 console.log('   4. Criar release no GitHub');
-console.log('   5. npm publish (se quiser publicar no npm)');
+console.log('   5. pnpm publish (se quiser publicar no npm)');
 

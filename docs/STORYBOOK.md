@@ -6,10 +6,10 @@ Este documento explica como usar o Storybook para visualizar e documentar os des
 
 ```bash
 # Instalar dependências (se ainda não instalou)
-npm install
+pnpm install
 
 # Iniciar o Storybook em modo desenvolvimento
-npm run storybook
+pnpm run storybook
 ```
 
 O Storybook será aberto em `http://localhost:6006`
@@ -19,7 +19,7 @@ O Storybook será aberto em `http://localhost:6006`
 Para gerar uma versão estática do Storybook:
 
 ```bash
-npm run build-storybook
+pnpm run build-storybook
 ```
 
 A saída será gerada em `storybook-static/`
@@ -195,14 +195,14 @@ const shadow = tokens.shadows.light.md;
 
 **Solução**: Certifique-se de que os tokens foram compilados:
 ```bash
-npm run build
+pnpm run build
 ```
 
 ### Erro: "React is not defined"
 
 **Solução**: O Storybook já inclui React. Se o erro persistir:
 ```bash
-npm install react react-dom --save-dev
+pnpm add -D react react-dom
 ```
 
 ### Storybook não inicia
@@ -210,8 +210,8 @@ npm install react react-dom --save-dev
 **Solução**: Limpe o cache e reinstale:
 ```bash
 rm -rf node_modules/.cache
-npm install
-npm run storybook
+pnpm install
+pnpm run storybook
 ```
 
 ### Erro: "CSF: missing default export"
@@ -228,7 +228,7 @@ export default meta; // ⚠️ OBRIGATÓRIO
 
 **Solução**: Certifique-se de que os tokens foram compilados:
 ```bash
-npm run build
+pnpm run build
 ```
 
 ## 🚀 Deploy
@@ -237,7 +237,7 @@ Para fazer deploy do Storybook:
 
 1. Gere o build estático:
 ```bash
-npm run build-storybook
+pnpm run build-storybook
 ```
 
 2. A pasta `storybook-static/` contém todos os arquivos estáticos
@@ -252,7 +252,7 @@ npm run build-storybook
 
 ```bash
 # Build command
-npm run build-storybook
+pnpm run build-storybook
 
 # Publish directory
 storybook-static

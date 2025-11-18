@@ -50,12 +50,12 @@ tokens.colors.light.primary.text
 ```bash
 # Na biblioteca
 cd C:\Desenvolvimento\@rainer-design-tokens
-npm run build
+pnpm run build
 
 # No frontend
 cd C:\Desenvolvimento\rainer-portfolio-frontend
 # Se usar link local:
-npm link @rainer/design-tokens
+pnpm link @rainer/design-tokens
 # Ou atualizar a versão no package.json
 ```
 
@@ -124,7 +124,7 @@ Agora você pode usar:
 
 ## ✅ Checklist de Migração
 
-- [ ] Compilar biblioteca: `npm run build` na biblioteca
+- [ ] Compilar biblioteca: `pnpm run build` na biblioteca
 - [ ] Atualizar dependência no frontend
 - [ ] Atualizar imports de cores: `brand.primary` → `primary.base`
 - [ ] Adicionar estados de interação (hover, active, focus)
@@ -147,7 +147,7 @@ Agora você pode usar:
 **Solução:** A biblioteca não foi compilada ou atualizada. Execute:
 ```bash
 cd C:\Desenvolvimento\@rainer-design-tokens
-npm run build
+pnpm run build
 ```
 
 ### Erro: "validateContrast is not exported"
@@ -162,8 +162,8 @@ export * from './accessibility';
 **Solução:** Reinstale os tipos:
 ```bash
 # No frontend
-npm install @rainer/design-tokens@latest
+pnpm add @rainer/design-tokens@latest
 # Ou se usar link local:
-npm link @rainer/design-tokens
+pnpm link @rainer/design-tokens
 ```
 

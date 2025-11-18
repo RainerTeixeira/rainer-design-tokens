@@ -25,7 +25,7 @@ function runScript(scriptPath: string) {
   const fullPath = join(__dirname, scriptPath);
   console.log(`\n📦 Executando: ${scriptPath}`);
   try {
-    execSync(`npx tsx "${fullPath}"`, {
+    execSync(`pnpm exec tsx "${fullPath}"`, {
       stdio: 'inherit',
       cwd: join(__dirname, '..'),
       shell: true,
