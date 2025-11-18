@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-4.0.0-blue)
+![Version](https://img.shields.io/badge/version-3.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
 ![Size](https://img.shields.io/badge/size-<5KB-success)
@@ -57,9 +57,9 @@ yarn add @rainer/design-tokens
 import { tokens, lightTheme, darkTheme } from '@rainer/design-tokens';
 
 // Use tokens diretamente
-const primaryColor = tokens.colors.light.brand.primary; // #0891b2
+const primaryColor = tokens.colors.light.primary.base; // #0891b2
 const spacing = tokens.spacing['4']; // 1rem
-const fontSize = tokens.typography.fontSize.base; // 1rem
+const fontSize = tokens.typography.headings.h1.fontSize; // 2.25rem
 
 // Ou use temas
 const theme = lightTheme;
@@ -179,19 +179,19 @@ Acesse `http://localhost:6006` para explorar:
 ### Light Theme
 ```typescript
 {
-  background: { primary: '#ffffff', secondary: '#fafafa' },
-  text: { primary: '#171717', secondary: '#404040' },
-  brand: { primary: '#0891b2', secondary: '#9333ea' },
-  status: { success: '#22c55e', error: '#ef4444' }
+  primary: { base: '#0891b2', hover: '#06b6d4', active: '#0891b2' },
+  secondary: { base: '#9333ea', hover: '#a855f7', active: '#9333ea' },
+  accent: { base: '#db2777', hover: '#e11d48', active: '#db2777' },
+  status: { success: '#22c55e', error: '#ef4444', warning: '#f59e0b', info: '#3b82f6' }
 }
 ```
 
 ### Dark Theme (Cyberpunk)
 ```typescript
 {
-  background: { primary: '#0a0a0f', secondary: '#0f0f1a' },
-  text: { primary: '#b3ffff', neonCyan: '#00e6ff' },
-  brand: { primary: '#00e6ff', secondary: '#7d00ff' },
+  primary: { base: '#00e6ff', hover: '#33eeff', active: '#00e6ff' },
+  secondary: { base: '#7d00ff', hover: '#9333ea', active: '#7d00ff' },
+  accent: { base: '#ff006e', hover: '#ff3385', active: '#ff006e' },
   effects: { glowCyan: '0 0 20px rgba(0, 230, 255, 0.5)' }
 }
 ```
@@ -200,20 +200,21 @@ Acesse `http://localhost:6006` para explorar:
 
 ## 📏 Typography
 
+Sistema hierárquico completo com headings, subtítulos, body, captions, buttons e labels:
+
 ```typescript
 {
-  fontFamily: {
-    sans: 'ui-sans-serif, system-ui, ...',
-    display: 'var(--font-orbitron, ui-sans-serif)',
-    body: 'var(--font-inter, ui-sans-serif)'
+  headings: {
+    h1: { fontSize: '2.25rem', fontWeight: '700', lineHeight: '1.2' },
+    h2: { fontSize: '1.875rem', fontWeight: '600', lineHeight: '1.3' },
+    // ... h3, h4, h5, h6
   },
-  fontSize: {
-    xs: '0.75rem',
-    base: '1rem',
-    xl: '1.25rem',
-    4xl: '2.25rem',
-    9xl: '8rem'
-  }
+  body: {
+    large: { fontSize: '1.125rem', lineHeight: '1.75' },
+    medium: { fontSize: '1rem', lineHeight: '1.5' },
+    small: { fontSize: '0.875rem', lineHeight: '1.5' }
+  },
+  // ... subtitle, caption, button, label, code
 }
 ```
 
@@ -240,23 +241,27 @@ function ThemeToggle() {
 
 ## 📚 Documentation
 
-📖 **[Documentação Completa](./docs/README.md)** - Índice geral de toda a documentação
+📖 **[Documentação Completa](./docs/INDICE.md)** - Índice geral de toda a documentação
 
 ### Guias Principais
 
 - [**Guidelines**](./docs/guidelines.md) - Como usar os tokens
-- [**Structure**](./docs/STRUCTURE.md) - Estrutura detalhada da biblioteca
-- [**Build System**](./docs/BUILD_SYSTEM.md) - Sistema de build automatizado
+- [**ESTRUTURA.md**](./docs/ESTRUTURA.md) - Estrutura detalhada da biblioteca
+- [**SISTEMA_BUILD.md**](./docs/SISTEMA_BUILD.md) - Sistema de build automatizado
 - [**Roadmap**](./docs/roadmap.md) - Futuras features e versões
+- [**GUIA_TOKENS_EXPANDIDOS**](./docs/GUIA_TOKENS_EXPANDIDOS.md) - Guia dos tokens expandidos (cores e tipografia)
+- [**GUIA_MIGRACAO**](./docs/GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
+- [**PUBLICACAO**](./docs/PUBLICACAO.md) - Guia de publicação no GitHub/npm
 
 ### Storybook
 
 - [**STORYBOOK.md**](./docs/STORYBOOK.md) - Documentação visual dos tokens
-- [**STORYBOOK_STRUCTURE.md**](./docs/STORYBOOK_STRUCTURE.md) - Separação entre tokens e componentes
+- [**ESTRUTURA_STORYBOOK.md**](./docs/ESTRUTURA_STORYBOOK.md) - Separação entre tokens e componentes
 
 ### Referência Rápida
 
-- [**STRUCTURE_SUMMARY.md**](./docs/STRUCTURE_SUMMARY.md) - Resumo da estrutura
+- [**RESUMO_ESTRUTURA.md**](./docs/RESUMO_ESTRUTURA.md) - Resumo da estrutura
+- [**HISTORICO_MUDANCAS.md**](./docs/HISTORICO_MUDANCAS.md) - Histórico de mudanças
 
 ---
 
@@ -318,8 +323,9 @@ import '@rainer/design-tokens/formats/css-vars.css';
 import { tokens } from '@rainer/design-tokens';
 
 export const shadcnTheme = {
-  primary: tokens.colors.light.brand.primary,
-  secondary: tokens.colors.light.brand.secondary,
+  primary: tokens.colors.light.primary.base,
+  secondary: tokens.colors.light.secondary.base,
+  accent: tokens.colors.light.accent.base,
   // ... map other tokens
 };
 ```
@@ -409,7 +415,7 @@ Para mais detalhes sobre a estrutura, consulte [**Estrutura do Storybook**](./do
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please read our [Contributing Guide](./CONTRIBUTING.md) first.
+Contributions are welcome! Please read our [Contributing Guide](./docs/CONTRIBUINDO.md) first.
 
 ---
 
@@ -421,8 +427,8 @@ MIT © [Rainer Teixeira](https://github.com/rainer-teixeira)
 
 ## 🔗 Links
 
-- **GitHub**: [rainer-teixeira/design-tokens](https://github.com/rainer-teixeira/design-tokens)
-- **NPM**: [@rainer/design-tokens](https://www.npmjs.com/package/@rainer/design-tokens)
+- **GitHub**: [RainerTeixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
+- **NPM**: [@rainer/design-tokens](https://www.npmjs.com/package/@rainer/design-tokens) (em breve)
 - **Website**: [rainersoft.com.br](https://rainersoft.com.br)
 - **Email**: suporte@rainersoft.com.br
 

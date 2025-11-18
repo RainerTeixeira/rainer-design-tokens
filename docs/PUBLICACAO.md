@@ -1,4 +1,4 @@
-# Guia de Publicação
+# 📦 Guia de Publicação
 
 ## 📦 Publicação no GitHub
 
@@ -74,26 +74,45 @@ npm publish --access public
 3. Criar release no GitHub
 4. O GitHub Actions publicará automaticamente no npm
 
-## 🔄 Uso na Vercel
+## 🔄 Atualizar Frontend para Usar do GitHub
 
-Após publicar no GitHub, você pode usar na Vercel de duas formas:
-
-### Opção 1: Via npm (Recomendado)
-
-```json
-{
-  "dependencies": {
-    "@rainer/design-tokens": "^3.0.0"
-  }
-}
-```
-
-### Opção 2: Via GitHub (Durante desenvolvimento)
+Após publicar no GitHub, atualize o `package.json` do frontend:
 
 ```json
 {
   "dependencies": {
     "@rainer/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
+  }
+}
+```
+
+Depois execute:
+
+```bash
+cd C:\Desenvolvimento\rainer-portfolio-frontend
+pnpm install
+```
+
+## 🌐 Uso na Vercel
+
+Após publicar no GitHub, você pode usar na Vercel de duas formas:
+
+### Opção 1: Via GitHub (Recomendado para Vercel)
+
+```json
+{
+  "dependencies": {
+    "@rainer/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
+  }
+}
+```
+
+### Opção 2: Via npm (Após publicação no npm)
+
+```json
+{
+  "dependencies": {
+    "@rainer/design-tokens": "^3.0.0"
   }
 }
 ```

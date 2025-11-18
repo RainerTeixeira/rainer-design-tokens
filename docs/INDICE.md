@@ -12,13 +12,13 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
    - Melhores práticas
    - Integração com Tailwind, CSS, React
 
-2. **[Structure](./STRUCTURE.md)** - Estrutura detalhada da biblioteca
+2. **[ESTRUTURA.md](./ESTRUTURA.md)** - Estrutura detalhada da biblioteca
    - Organização de diretórios
    - Fonte única de verdade (JSON)
    - Formatos gerados automaticamente
    - Fluxo de trabalho
 
-3. **[Build System](./BUILD_SYSTEM.md)** - Sistema de build automatizado
+3. **[SISTEMA_BUILD.md](./SISTEMA_BUILD.md)** - Sistema de build automatizado
    - Scripts de geração de formatos
    - Como funciona o build
    - Troubleshooting
@@ -32,7 +32,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
    - Criar novas stories
    - Deploy do Storybook
 
-5. **[STORYBOOK_STRUCTURE.md](./STORYBOOK_STRUCTURE.md)** - Separação de responsabilidades
+5. **[ESTRUTURA_STORYBOOK.md](./ESTRUTURA_STORYBOOK.md)** - Separação de responsabilidades
    - Storybook da lib (tokens)
    - Storybook do frontend (componentes)
    - Integração entre os dois
@@ -40,7 +40,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 📁 Estrutura
 
-6. **[STRUCTURE_SUMMARY.md](./STRUCTURE_SUMMARY.md)** - Resumo da estrutura
+6. **[RESUMO_ESTRUTURA.md](./RESUMO_ESTRUTURA.md)** - Resumo da estrutura
    - Visão geral da organização
    - Separação de responsabilidades
    - Fluxo de trabalho
@@ -59,33 +59,41 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 ### Para Usuários
 
 1. Leia [Guidelines](./guidelines.md) para começar a usar os tokens
-2. Veja [Structure](./STRUCTURE.md) para entender a organização
-3. Explore o [Storybook](./STORYBOOK.md) para visualizar os tokens
+2. Veja [ESTRUTURA.md](./ESTRUTURA.md) para entender a organização
+3. Explore o [STORYBOOK.md](./STORYBOOK.md) para visualizar os tokens
 
 ### Para Desenvolvedores
 
-1. Leia [Build System](./BUILD_SYSTEM.md) para entender o sistema de build
-2. Veja [Structure](./STRUCTURE.md) para entender a arquitetura
-3. Consulte [STORYBOOK_STRUCTURE.md](./STORYBOOK_STRUCTURE.md) para a estrutura de Storybooks
+1. Leia [SISTEMA_BUILD.md](./SISTEMA_BUILD.md) para entender o sistema de build
+2. Veja [ESTRUTURA.md](./ESTRUTURA.md) para entender a arquitetura
+3. Consulte [ESTRUTURA_STORYBOOK.md](./ESTRUTURA_STORYBOOK.md) para a estrutura de Storybooks
 
 ## 📋 Índice por Tópico
 
 ### Instalação e Configuração
 - [Guidelines - Instalação](./guidelines.md#-uso-dos-tokens)
-- [Structure - Como usar em projetos](./STRUCTURE.md#-como-usar-em-projetos)
+- [ESTRUTURA.md - Como usar em projetos](./ESTRUTURA.md#-como-usar-em-projetos)
 
 ### Desenvolvimento
-- [Build System - Workflow](./BUILD_SYSTEM.md#-workflow-de-desenvolvimento)
-- [Structure - Fluxo de Trabalho](./STRUCTURE.md#-fluxo-de-trabalho)
+- [SISTEMA_BUILD.md - Workflow](./SISTEMA_BUILD.md#-workflow-de-desenvolvimento)
+- [ESTRUTURA.md - Fluxo de Trabalho](./ESTRUTURA.md#-fluxo-de-trabalho)
 
 ### Storybook
 - [STORYBOOK.md](./STORYBOOK.md) - Guia completo
-- [STORYBOOK_STRUCTURE.md](./STORYBOOK_STRUCTURE.md) - Estrutura
+- [ESTRUTURA_STORYBOOK.md](./ESTRUTURA_STORYBOOK.md) - Estrutura
 
 ### Arquitetura
-- [Structure](./STRUCTURE.md) - Estrutura detalhada
-- [STRUCTURE_SUMMARY.md](./STRUCTURE_SUMMARY.md) - Resumo
-- [Build System](./BUILD_SYSTEM.md) - Sistema de build
+- [ESTRUTURA.md](./ESTRUTURA.md) - Estrutura detalhada
+- [RESUMO_ESTRUTURA.md](./RESUMO_ESTRUTURA.md) - Resumo
+- [SISTEMA_BUILD.md](./SISTEMA_BUILD.md) - Sistema de build
+
+### Guias Adicionais
+- [GUIA_TOKENS_EXPANDIDOS.md](./GUIA_TOKENS_EXPANDIDOS.md) - Tokens expandidos (cores e tipografia)
+- [GUIA_MIGRACAO.md](./GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
+- [PUBLICACAO.md](./PUBLICACAO.md) - Guia de publicação no GitHub/npm
+- [CONFIGURACAO_PNPM.md](./CONFIGURACAO_PNPM.md) - Configuração do pnpm
+- [CONTRIBUINDO.md](./CONTRIBUINDO.md) - Guia de contribuição
+- [HISTORICO_MUDANCAS.md](./HISTORICO_MUDANCAS.md) - Histórico de mudanças
 
 ### Planejamento
 - [Roadmap](./roadmap.md) - Futuras features
@@ -93,7 +101,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 ## 🔗 Links Úteis
 
 - **README Principal**: [../README.md](../README.md)
-- **GitHub**: [rainer-teixeira/design-tokens](https://github.com/rainer-teixeira/design-tokens)
+- **GitHub**: [RainerTeixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
 - **NPM**: [@rainer/design-tokens](https://www.npmjs.com/package/@rainer/design-tokens)
 
 ## 📝 Convenções
@@ -125,7 +133,7 @@ Para contribuir com a documentação:
 ## 📅 Última Atualização
 
 **Data**: Novembro de 2025
-**Versão**: 4.0.0  
+**Versão**: 3.0.0  
 **Última revisão**: Documentação sincronizada com a estrutura atual do projeto
 
 ---
