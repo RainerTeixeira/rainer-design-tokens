@@ -141,6 +141,129 @@ var colors$1 = {
 		disabledText: "#a3a3a3",
 		focus: "#0891b2",
 		focusRing: "#06b6d4"
+	},
+	primitive: {
+		cyan: {
+			"50": "#ecfeff",
+			"100": "#cffafe",
+			"200": "#a5f3fc",
+			"300": "#67e8f9",
+			"400": "#22d3ee",
+			"500": "#06b6d4",
+			"600": "#0891b2",
+			"700": "#0e7490",
+			"800": "#155e75",
+			"900": "#164e63"
+		},
+		purple: {
+			"50": "#faf5ff",
+			"100": "#f3e8ff",
+			"200": "#e9d5ff",
+			"300": "#d8b4fe",
+			"400": "#c084fc",
+			"500": "#a855f7",
+			"600": "#9333ea",
+			"700": "#7e22ce",
+			"800": "#6b21a8",
+			"900": "#581c87"
+		},
+		pink: {
+			"50": "#fdf2f8",
+			"100": "#fce7f3",
+			"200": "#fbcfe8",
+			"300": "#f9a8d4",
+			"400": "#f472b6",
+			"500": "#ec4899",
+			"600": "#db2777",
+			"700": "#be185d",
+			"800": "#9f1239",
+			"900": "#831843"
+		},
+		blue: {
+			"50": "#eff6ff",
+			"100": "#dbeafe",
+			"200": "#bfdbfe",
+			"300": "#93c5fd",
+			"400": "#60a5fa",
+			"500": "#3b82f6",
+			"600": "#2563eb",
+			"700": "#1d4ed8",
+			"800": "#1e40af",
+			"900": "#1e3a8a"
+		},
+		green: {
+			"50": "#f0fdf4",
+			"100": "#dcfce7",
+			"200": "#bbf7d0",
+			"300": "#86efac",
+			"400": "#4ade80",
+			"500": "#22c55e",
+			"600": "#16a34a",
+			"700": "#15803d",
+			"800": "#166534",
+			"900": "#14532d"
+		},
+		orange: {
+			"50": "#fff7ed",
+			"100": "#ffedd5",
+			"200": "#fed7aa",
+			"300": "#fdba74",
+			"400": "#fb923c",
+			"500": "#f97316",
+			"600": "#ea580c",
+			"700": "#c2410c",
+			"800": "#9a3412",
+			"900": "#7c2d12"
+		},
+		red: {
+			"50": "#fef2f2",
+			"100": "#fee2e2",
+			"200": "#fecaca",
+			"300": "#fca5a5",
+			"400": "#f87171",
+			"500": "#ef4444",
+			"600": "#dc2626",
+			"700": "#b91c1c",
+			"800": "#991b1b",
+			"900": "#7f1d1d"
+		},
+		amber: {
+			"50": "#fffbeb",
+			"100": "#fef3c7",
+			"200": "#fde68a",
+			"300": "#fcd34d",
+			"400": "#fbbf24",
+			"500": "#f59e0b",
+			"600": "#d97706",
+			"700": "#b45309",
+			"800": "#92400e",
+			"900": "#78350f"
+		},
+		emerald: {
+			"50": "#ecfdf5",
+			"100": "#d1fae5",
+			"200": "#a7f3d0",
+			"300": "#6ee7b7",
+			"400": "#34d399",
+			"500": "#10b981",
+			"600": "#059669",
+			"700": "#047857",
+			"800": "#065f46",
+			"900": "#064e3b"
+		},
+		neutral: {
+			"50": "#fafafa",
+			"100": "#f5f5f5",
+			"200": "#e5e5e5",
+			"300": "#d4d4d4",
+			"400": "#a3a3a3",
+			"500": "#737373",
+			"600": "#525252",
+			"700": "#404040",
+			"800": "#262626",
+			"900": "#171717",
+			"950": "#0a0a0f"
+		}
 	}
 };
 var lightColors = {
@@ -314,6 +437,129 @@ var colors = {
 		secondary: "linear-gradient(135deg, #ff00ff 0%, #00e6ff 100%)",
 		accent: "linear-gradient(135deg, #ff7d00 0%, #ff00ff 100%)",
 		background: "linear-gradient(180deg, #0a0a0f 0%, #0f0f1a 100%)"
+	},
+	primitive: {
+		cyan: {
+			"50": "rgba(0, 230, 255, 0.1)",
+			"100": "rgba(0, 230, 255, 0.15)",
+			"200": "rgba(0, 230, 255, 0.2)",
+			"300": "#4dffff",
+			"400": "#1affff",
+			"500": "#00e6ff",
+			"600": "#00b8cc",
+			"700": "#008a99",
+			"800": "#005c66",
+			"900": "#003d44"
+		},
+		purple: {
+			"50": "rgba(125, 0, 255, 0.1)",
+			"100": "rgba(125, 0, 255, 0.15)",
+			"200": "rgba(125, 0, 255, 0.2)",
+			"300": "#ab4dff",
+			"400": "#941aff",
+			"500": "#7d00ff",
+			"600": "#6400cc",
+			"700": "#4b0099",
+			"800": "#320066",
+			"900": "#190033"
+		},
+		pink: {
+			"50": "rgba(255, 0, 255, 0.1)",
+			"100": "rgba(255, 0, 255, 0.15)",
+			"200": "rgba(255, 0, 255, 0.2)",
+			"300": "#ff4dff",
+			"400": "#ff1aff",
+			"500": "#ff00ff",
+			"600": "#cc00cc",
+			"700": "#990099",
+			"800": "#660066",
+			"900": "#330033"
+		},
+		blue: {
+			"50": "rgba(0, 125, 255, 0.1)",
+			"100": "rgba(0, 125, 255, 0.15)",
+			"200": "rgba(0, 125, 255, 0.2)",
+			"300": "#80c7ff",
+			"400": "#4dabff",
+			"500": "#007dff",
+			"600": "#0064cc",
+			"700": "#004b99",
+			"800": "#003266",
+			"900": "#001933"
+		},
+		green: {
+			"50": "rgba(0, 255, 0, 0.1)",
+			"100": "rgba(0, 255, 0, 0.15)",
+			"200": "rgba(0, 255, 0, 0.2)",
+			"300": "#80ff80",
+			"400": "#4dff4d",
+			"500": "#00ff00",
+			"600": "#00cc00",
+			"700": "#009900",
+			"800": "#006600",
+			"900": "#003300"
+		},
+		orange: {
+			"50": "rgba(255, 125, 0, 0.1)",
+			"100": "rgba(255, 125, 0, 0.15)",
+			"200": "rgba(255, 125, 0, 0.2)",
+			"300": "#ffc880",
+			"400": "#ffab4d",
+			"500": "#ff7d00",
+			"600": "#cc6400",
+			"700": "#994b00",
+			"800": "#663200",
+			"900": "#331900"
+		},
+		red: {
+			"50": "rgba(239, 68, 68, 0.1)",
+			"100": "rgba(239, 68, 68, 0.15)",
+			"200": "rgba(239, 68, 68, 0.2)",
+			"300": "#fecaca",
+			"400": "#fca5a5",
+			"500": "#f87171",
+			"600": "#c55a5a",
+			"700": "#924343",
+			"800": "#5f2c2c",
+			"900": "#2c1515"
+		},
+		amber: {
+			"50": "rgba(255, 125, 0, 0.1)",
+			"100": "rgba(255, 125, 0, 0.15)",
+			"200": "rgba(255, 125, 0, 0.2)",
+			"300": "#ffc880",
+			"400": "#ffab4d",
+			"500": "#ff7d00",
+			"600": "#cc6400",
+			"700": "#994b00",
+			"800": "#663200",
+			"900": "#331900"
+		},
+		emerald: {
+			"50": "rgba(0, 255, 0, 0.1)",
+			"100": "rgba(0, 255, 0, 0.15)",
+			"200": "rgba(0, 255, 0, 0.2)",
+			"300": "#80ff80",
+			"400": "#4dff4d",
+			"500": "#00ff00",
+			"600": "#00cc00",
+			"700": "#009900",
+			"800": "#006600",
+			"900": "#003300"
+		},
+		neutral: {
+			"50": "#0f0f1a",
+			"100": "#171717",
+			"200": "#262626",
+			"300": "#404040",
+			"400": "#525252",
+			"500": "#737373",
+			"600": "#a3a3a3",
+			"700": "#d4d4d4",
+			"800": "#e5e5e5",
+			"900": "#f5f5f5",
+			"950": "#ffffff"
+		}
 	}
 };
 var darkColors = {
@@ -1196,6 +1442,129 @@ declare const tokens: {
                 focus: string;
                 focusRing: string;
             };
+            primitive: {
+                cyan: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                purple: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                pink: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                blue: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                green: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                orange: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                red: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                amber: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                emerald: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                neutral: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                    "950": string;
+                };
+            };
         };
         readonly dark: {
             primary: {
@@ -1364,6 +1733,129 @@ declare const tokens: {
                 secondary: string;
                 accent: string;
                 background: string;
+            };
+            primitive: {
+                cyan: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                purple: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                pink: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                blue: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                green: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                orange: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                red: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                amber: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                emerald: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                neutral: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                    "950": string;
+                };
             };
         };
     };
@@ -1865,6 +2357,129 @@ declare const lightThemeColors: {
         focus: string;
         focusRing: string;
     };
+    primitive: {
+        cyan: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        purple: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        pink: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        blue: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        green: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        orange: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        red: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        amber: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        emerald: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        neutral: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+            "950": string;
+        };
+    };
 };
 /**
  * Cores do tema escuro
@@ -2050,6 +2665,129 @@ declare const darkThemeColors: {
         secondary: string;
         accent: string;
         background: string;
+    };
+    primitive: {
+        cyan: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        purple: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        pink: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        blue: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        green: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        orange: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        red: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        amber: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        emerald: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        neutral: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+            "950": string;
+        };
     };
 };
 /**
@@ -2716,6 +3454,129 @@ declare const lightTheme: {
             focus: string;
             focusRing: string;
         };
+        primitive: {
+            cyan: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            purple: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            pink: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            blue: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            green: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            orange: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            red: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            amber: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            emerald: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            neutral: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+                "950": string;
+            };
+        };
     };
     readonly typography: {
         fontFamily: {
@@ -3273,6 +4134,129 @@ declare const darkTheme: {
             accent: string;
             background: string;
         };
+        primitive: {
+            cyan: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            purple: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            pink: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            blue: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            green: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            orange: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            red: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            amber: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            emerald: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            neutral: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+                "950": string;
+            };
+        };
     };
     readonly typography: {
         fontFamily: {
@@ -3794,6 +4778,129 @@ declare const themes: {
                 focus: string;
                 focusRing: string;
             };
+            primitive: {
+                cyan: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                purple: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                pink: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                blue: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                green: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                orange: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                red: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                amber: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                emerald: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                neutral: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                    "950": string;
+                };
+            };
         };
         readonly typography: {
             fontFamily: {
@@ -4282,6 +5389,129 @@ declare const themes: {
                 secondary: string;
                 accent: string;
                 background: string;
+            };
+            primitive: {
+                cyan: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                purple: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                pink: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                blue: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                green: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                orange: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                red: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                amber: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                emerald: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                };
+                neutral: {
+                    "50": string;
+                    "100": string;
+                    "200": string;
+                    "300": string;
+                    "400": string;
+                    "500": string;
+                    "600": string;
+                    "700": string;
+                    "800": string;
+                    "900": string;
+                    "950": string;
+                };
             };
         };
         readonly typography: {

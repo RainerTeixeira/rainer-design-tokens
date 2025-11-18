@@ -1,6 +1,6 @@
 {
   "name": "@rainersoft/design-tokens",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "description": "Design tokens profissionais seguindo padrões W3C/DTCG, com estrutura modular e suporte a tokens primitivos e semânticos.",
   "author": "Rainer Teixeira <suporte@rainersoft.com.br>",
