@@ -16,7 +16,7 @@
  * @example
  * ```typescript
  * // tailwind.config.js
- * const { tailwindConfig } = require('@rainer/design-tokens/formats/tailwind.config');
+ * const { tailwindConfig } = require('rainer-design-tokens/formats/tailwind.config');
  * 
  * module.exports = {
  *   ...tailwindConfig,
@@ -54,7 +54,7 @@ import { tokens } from '../tokens';
  * 
  * @example
  * ```typescript
- * import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+ * import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
  * 
  * // Usar em tailwind.config.js
  * export default {

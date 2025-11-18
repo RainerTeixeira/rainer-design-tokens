@@ -978,7 +978,7 @@ export {
   validateContrast
 };
 /**
- * @fileoverview Ponto de entrada principal da biblioteca @rainer/design-tokens
+ * @fileoverview Ponto de entrada principal da biblioteca rainer-design-tokens
  * 
  * @description
  * Biblioteca enterprise-grade de design tokens para sistemas de design modernos.
@@ -988,7 +988,7 @@ export {
  * em qualquer framework ou tecnologia, garantindo consistência visual em toda
  * a aplicação.
  * 
- * @module @rainer/design-tokens
+ * @module rainer-design-tokens
  * @version 4.0.0
  * @author Rainer Teixeira
  * @license MIT
@@ -996,7 +996,7 @@ export {
  * 
  * @example
  * ```typescript
- * import { tokens, themes, lightTheme, darkTheme } from '@rainer/design-tokens';
+ * import { tokens, themes, lightTheme, darkTheme } from 'rainer-design-tokens';
  * 
  * // Usar tokens diretamente
  * const primaryColor = tokens.colors.light.brand.primary;

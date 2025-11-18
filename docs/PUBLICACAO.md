@@ -49,8 +49,7 @@ git push -u origin main
    ```
 
 3. **Verificar nome do pacote**:
-   - O nome `@rainer/design-tokens` requer escopo
-   - Certifique-se de que o escopo `@rainer` está disponível ou use outro
+    - O nome `rainer-design-tokens` está correto (sem escopo)
 
 ### Publicação
 
@@ -81,7 +80,7 @@ Após publicar no GitHub, atualize o `package.json` do frontend:
 ```json
 {
   "dependencies": {
-    "@rainer/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
+    "rainer-design-tokens": "github:RainerTeixeira/rainer-design-tokens"
   }
 }
 ```
@@ -102,7 +101,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "@rainer/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
+    "rainer-design-tokens": "github:RainerTeixeira/rainer-design-tokens"
   }
 }
 ```
@@ -112,7 +111,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "@rainer/design-tokens": "^3.0.0"
+    "rainer-design-tokens": "^3.0.0"
   }
 }
 ```
@@ -142,17 +141,17 @@ O diretório `dist/` **NÃO está no `.gitignore`** e **deve ser commitado** pel
 
 #### 1. **Instalação via npm/npm packages**
 
-Quando alguém instala o pacote via `pnpm add @rainer/design-tokens`, o npm não executa build - ele apenas baixa e instala os arquivos publicados. Os arquivos em `dist/` são os que serão instalados.
+Quando alguém instala o pacote via `pnpm add rainer-design-tokens`, o npm não executa build - ele apenas baixa e instala os arquivos publicados. Os arquivos em `dist/` são os que serão instalados.
 
 **Sem `dist/` commitado:**
 ```bash
-pnpm add @rainer/design-tokens
+pnpm add rainer-design-tokens
 # ❌ Erro: Arquivos não encontrados (dist/index.js, dist/index.d.ts)
 ```
 
 **Com `dist/` commitado:**
 ```bash
-pnpm add @rainer/design-tokens
+pnpm add rainer-design-tokens
 # ✅ Funciona: Arquivos compilados prontos para uso
 ```
 
@@ -179,13 +178,13 @@ Os arquivos `.d.ts` em `dist/` são essenciais para:
 
 **Sem `dist/` commitado:**
 ```typescript
-import { tokens } from '@rainer/design-tokens';
-// ❌ Erro: Cannot find module '@rainer/design-tokens' or its type definitions
+import { tokens } from 'rainer-design-tokens';
+// ❌ Erro: Cannot find module 'rainer-design-tokens' or its type definitions
 ```
 
 **Com `dist/` commitado:**
 ```typescript
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 // ✅ Funciona: Tipos disponíveis automaticamente
 ```
 
@@ -247,7 +246,7 @@ pnpm pack --dry-run
 
 | Estratégia | Prós | Contras | Usado por |
 |------------|------|---------|-----------|
-| **Commit `dist/`** ✅ | - Instalação funciona imediatamente<br>- Sem build no consumidor<br>- TypeScript definitions disponíveis | - Repositório maior<br>- Precisa rebuild antes de commit | @rainer/design-tokens, react, vue |
+| **Commit `dist/`** ✅ | - Instalação funciona imediatamente<br>- Sem build no consumidor<br>- TypeScript definitions disponíveis | - Repositório maior<br>- Precisa rebuild antes de commit | rainer-design-tokens, react, vue |
 | **Ignorar `dist/`** | - Repositório menor<br>- Sem arquivos gerados | - Consumidor precisa executar build<br>- Pode falhar se dependências não disponíveis | Alguns projetos internos |
 
 **Decisão**: Para uma biblioteca pública, **commit `dist/`** é a prática recomendada e amplamente usada na comunidade npm.

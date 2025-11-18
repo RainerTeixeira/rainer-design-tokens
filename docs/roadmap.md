@@ -1,4 +1,4 @@
-# Roadmap - @rainer/design-tokens
+# Roadmap - rainer-design-tokens
 
 ## 🎯 Versão Atual: 4.0.0 (2025-11-15)
 
@@ -204,7 +204,7 @@ Seguimos [Semantic Versioning](https://semver.org/):
 ## 📞 Contato
 
 - **Email**: suporte@rainersoft.com.br
-- **GitHub**: [rainer-teixeira/design-tokens](https://github.com/rainer-teixeira/design-tokens)
+- **GitHub**: [rainer-teixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
 - **Issues**: Para bugs e features
 - **Discussions**: Para perguntas e ideias
 

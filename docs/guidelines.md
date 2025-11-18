@@ -2,7 +2,7 @@
 
 ## 📚 Visão Geral
 
-@rainer/design-tokens é uma biblioteca enterprise de tokens de design que define a linguagem visual do Rainer Design System. Os tokens são agnósticos de tecnologia e podem ser usados em qualquer projeto (web, mobile, desktop, jogos).
+rainer-design-tokens é uma biblioteca enterprise de tokens de design que define a linguagem visual do Rainer Design System. Os tokens são agnósticos de tecnologia e podem ser usados em qualquer projeto (web, mobile, desktop, jogos).
 
 ## 🎯 Objetivos
 
@@ -41,7 +41,7 @@
 ### 1. Importação Direta (TypeScript)
 
 ```typescript
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 
 // Acessar cores
 const primaryColor = tokens.colors.light.brand.primary; // #0891b2
@@ -56,7 +56,7 @@ const spacing4 = tokens.spacing['4']; // 1rem
 ### 2. Usar Temas
 
 ```typescript
-import { lightTheme, darkTheme } from '@rainer/design-tokens';
+import { lightTheme, darkTheme } from 'rainer-design-tokens';
 
 // Aplicar tema light
 const theme = lightTheme;
@@ -72,7 +72,7 @@ console.log(darkMode.colors.background.primary); // #0a0a0f
 No seu `tailwind.config.ts`:
 
 ```typescript
-import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
 
 export default {
   ...tailwindConfig,
@@ -94,7 +94,7 @@ Agora use as classes:
 Importe no seu CSS global:
 
 ```css
-@import '@rainer/design-tokens/formats/css-vars.css';
+@import 'rainer-design-tokens/formats/css-vars.css';
 ```
 
 Use as variáveis:
@@ -244,16 +244,16 @@ function ThemeToggle() {
 
 ```typescript
 // Tokens brutos
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 
 // Temas
-import { lightTheme, darkTheme } from '@rainer/design-tokens/themes';
+import { lightTheme, darkTheme } from 'rainer-design-tokens/themes';
 
 // Formatos
-import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
 
 // Tokens específicos
-import { lightThemeColors, darkThemeColors } from '@rainer/design-tokens/tokens';
+import { lightThemeColors, darkThemeColors } from 'rainer-design-tokens/tokens';
 ```
 
 ## 🔧 Extensibilidade
@@ -268,7 +268,7 @@ Para adicionar novos tokens:
 
 ## 📚 Referências
 
-- [W3C Design Tokens Spec](https://design-tokens.github.io/community-group/format/)
+- [W3C Design Tokens Spec](https://rainer-design-tokens.github.io/community-group/format/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Material Design Guidelines](https://m3.material.io/)
 - [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)

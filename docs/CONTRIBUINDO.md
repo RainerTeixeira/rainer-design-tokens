@@ -1,6 +1,6 @@
 # Guia de Contribuição
 
-Obrigado por considerar contribuir para `@rainer/design-tokens`! Este documento fornece diretrizes e informações sobre como contribuir para o projeto.
+Obrigado por considerar contribuir para `rainer-design-tokens`! Este documento fornece diretrizes e informações sobre como contribuir para o projeto.
 
 ## 📋 Índice
 
@@ -24,7 +24,7 @@ Este projeto segue um código de conduta. Ao participar, você concorda em mante
 
 Se você encontrou um bug:
 
-1. Verifique se o bug já não foi reportado nas [Issues](https://github.com/rainer-teixeira/design-tokens/issues)
+1. Verifique se o bug já não foi reportado nas [Issues](https://github.com/RainerTeixeira/rainer-design-tokens/issues)
 2. Se não foi reportado, crie uma nova issue com:
    - Descrição clara do problema
    - Passos para reproduzir
@@ -78,8 +78,8 @@ Para sugerir novas funcionalidades:
 
 ```bash
 # Clone o repositório
-git clone https://github.com/rainer-teixeira/design-tokens.git
-cd design-tokens
+git clone https://github.com/RainerTeixeira/rainer-design-tokens.git
+cd rainer-design-tokens
 
 # Instale as dependências
 pnpm install
@@ -275,7 +275,7 @@ Exemplo:
  * 
  * @example
  * ```tsx
- * import { ANIMATION_DURATION_MS } from '@rainer/design-tokens';
+ * import { ANIMATION_DURATION_MS } from 'rainer-design-tokens';
  * 
  * <motion.div
  *   transition={{ duration: ANIMATION_DURATION_MS.NORMAL }}
@@ -424,9 +424,9 @@ Ao adicionar novos tokens ou funcionalidades:
 Se você tiver dúvidas sobre como contribuir:
 
 1. Verifique a [documentação](./docs/)
-2. Abra uma [issue](https://github.com/rainer-teixeira/design-tokens/issues) com a tag `question`
+2. Abra uma [issue](https://github.com/RainerTeixeira/rainer-design-tokens/issues) com a tag `question`
 3. Entre em contato com os mantenedores
 
 ## 🙏 Agradecimentos
 
-Obrigado por contribuir para `@rainer/design-tokens`! Sua contribuição ajuda a tornar esta biblioteca melhor para todos.
+Obrigado por contribuir para `rainer-design-tokens`! Sua contribuição ajuda a tornar esta biblioteca melhor para todos.

@@ -55,7 +55,7 @@ function loadTokens() {
  * Gera o arquivo tokens.json consolidado
  */
 function generateTokensJSON() {
-  const tokens = loadTokens();
+  loadTokens(); // Carrega tokens para validação
   
   // Lê o package.json para pegar a versão
   const packageJson = JSON.parse(
@@ -63,7 +63,7 @@ function generateTokensJSON() {
   );
 
   const consolidated = {
-    $schema: 'https://json.schemastore.org/design-tokens.json',
+    $schema: 'https://json.schemastore.org/rainer-design-tokens.json',
     name: packageJson.name,
     version: packageJson.version,
     description: 'Universal design tokens export for Rainer Design System',
@@ -102,7 +102,7 @@ function generateTokensJSON() {
       $path: 'tokens/shadows.json',
     },
     meta: {
-      repository: packageJson.repository?.url || 'https://github.com/rainer-teixeira/design-tokens',
+      repository: packageJson.repository?.url || 'https://github.com/RainerTeixeira/rainer-design-tokens',
       author: packageJson.author || 'Rainer Teixeira',
       license: packageJson.license || 'MIT',
       generatedAt: new Date().toISOString(),

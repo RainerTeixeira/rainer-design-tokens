@@ -1,4 +1,4 @@
-# @rainer/design-tokens
+# rainer-design-tokens
 
 <div align="center">
 
@@ -17,7 +17,7 @@
 
 ## 📖 Overview
 
-@rainer/design-tokens é uma biblioteca profissional de design tokens que define a linguagem visual do Rainer Design System. Agnóstica de tecnologia, escalável e pronta para produção.
+`rainer-design-tokens` é uma biblioteca profissional de design tokens que define a linguagem visual do Rainer Design System. Agnóstica de tecnologia, escalável e pronta para produção.
 
 ### ✨ Features
 
@@ -36,15 +36,15 @@
 ## 🚀 Installation
 
 ```bash
-pnpm add @rainer/design-tokens
+pnpm add rainer-design-tokens
 ```
 
 ```bash
-npm install @rainer/design-tokens
+npm install rainer-design-tokens
 ```
 
 ```bash
-yarn add @rainer/design-tokens
+yarn add rainer-design-tokens
 ```
 
 ---
@@ -54,7 +54,7 @@ yarn add @rainer/design-tokens
 ### TypeScript/JavaScript
 
 ```typescript
-import { tokens, lightTheme, darkTheme } from '@rainer/design-tokens';
+import { tokens, lightTheme, darkTheme } from 'rainer-design-tokens';
 
 // Use tokens diretamente
 const primaryColor = tokens.colors.light.primary.base; // #0891b2
@@ -70,7 +70,7 @@ console.log(theme.colors.background.primary); // #ffffff
 
 ```typescript
 // tailwind.config.ts
-import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
 
 export default {
   ...tailwindConfig,
@@ -89,7 +89,7 @@ export default {
 
 ```css
 /* Import CSS vars */
-@import '@rainer/design-tokens/formats/css-vars.css';
+@import 'rainer-design-tokens/formats/css-vars.css';
 
 /* Use variables */
 .button {
@@ -343,7 +343,7 @@ Para componentes, use:
 
 ```typescript
 // tailwind.config.ts
-import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
 
 export default tailwindConfig;
 ```
@@ -363,14 +363,14 @@ export default function RootLayout({ children }: { children: React.Node }) {
 
 ```typescript
 // main.ts
-import '@rainer/design-tokens/formats/css-vars.css';
+import 'rainer-design-tokens/formats/css-vars.css';
 ```
 
 ### shadcn/ui
 
 ```typescript
 // Use tokens as base for shadcn/ui theming
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 
 export const shadcnTheme = {
   primary: tokens.colors.light.primary.base,
@@ -386,7 +386,7 @@ export const shadcnTheme = {
 
 ```typescript
 // Main tokens
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 
 // Individual token categories
 import { 
@@ -396,13 +396,13 @@ import {
   spacingTokens,
   radiusTokens,
   shadowTokens 
-} from '@rainer/design-tokens/tokens';
+} from 'rainer-design-tokens/tokens';
 
 // Themes
-import { lightTheme, darkTheme } from '@rainer/design-tokens/themes';
+import { lightTheme, darkTheme } from 'rainer-design-tokens/themes';
 
 // Formats
-import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
 ```
 
 ---
@@ -481,15 +481,14 @@ Contributions are welcome! Please read our [Contributing Guide](./docs/CONTRIBUI
 
 ## 📄 License
 
-MIT © [Rainer Teixeira](https://github.com/rainer-teixeira)
+MIT © [Rainer Teixeira](https://github.com/RainerTeixeira)
 
 ---
 
 ## 🔗 Links
 
 - **GitHub**: [RainerTeixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
-- **GitHub Packages**: `@rainer/design-tokens` (publicado automaticamente)
-- **NPM**: [@rainer/design-tokens](https://www.npmjs.com/package/@rainer/design-tokens) (publicado após GitHub Packages)
+- **NPM**: [rainer-design-tokens](https://www.npmjs.com/package/rainer-design-tokens)
 - **Website**: [rainersoft.com.br](https://rainersoft.com.br)
 - **Email**: suporte@rainersoft.com.br
 

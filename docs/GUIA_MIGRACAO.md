@@ -55,7 +55,7 @@ pnpm run build
 # No frontend
 cd C:\Desenvolvimento\rainer-portfolio-frontend
 # Se usar link local:
-pnpm link @rainer/design-tokens
+pnpm link rainer-design-tokens
 # Ou atualizar a versão no package.json
 ```
 
@@ -63,13 +63,13 @@ pnpm link @rainer/design-tokens
 
 **Antes:**
 ```typescript
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 const primary = tokens.colors.light.brand.primary;
 ```
 
 **Agora:**
 ```typescript
-import { tokens, validateContrast } from '@rainer/design-tokens';
+import { tokens, validateContrast } from 'rainer-design-tokens';
 const primary = tokens.colors.light.primary.base;
 ```
 
@@ -107,7 +107,7 @@ const primary = tokens.colors.light.primary.base;
 
 ```typescript
 // tailwind.config.ts
-import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
 
 export default {
   ...tailwindConfig,
@@ -162,8 +162,8 @@ export * from './accessibility';
 **Solução:** Reinstale os tipos:
 ```bash
 # No frontend
-pnpm add @rainer/design-tokens@latest
+pnpm add rainer-design-tokens@latest
 # Ou se usar link local:
-pnpm link @rainer/design-tokens
+pnpm link rainer-design-tokens
 ```
 

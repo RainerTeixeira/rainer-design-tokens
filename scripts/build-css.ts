@@ -94,37 +94,37 @@ function generateCSS(tokens: Tokens): string {
 
   // Background colors
   lines.push('  /* Background */');
-  if (tokens.colors.light.background) {
+  if (tokens.colors.light.background && typeof tokens.colors.light.background === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.light.background, 'color-background'));
   }
 
   lines.push('');
   lines.push('  /* Surface */');
-  if (tokens.colors.light.surface) {
+  if (tokens.colors.light.surface && typeof tokens.colors.light.surface === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.light.surface, 'color-surface'));
   }
 
   lines.push('');
   lines.push('  /* Text */');
-  if (tokens.colors.light.text) {
+  if (tokens.colors.light.text && typeof tokens.colors.light.text === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.light.text, 'color-text'));
   }
 
   lines.push('');
   lines.push('  /* Border */');
-  if (tokens.colors.light.border) {
+  if (tokens.colors.light.border && typeof tokens.colors.light.border === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.light.border, 'color-border'));
   }
 
   lines.push('');
   lines.push('  /* Brand */');
-  if (tokens.colors.light.brand) {
+  if (tokens.colors.light.brand && typeof tokens.colors.light.brand === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.light.brand, 'color-brand'));
   }
 
   lines.push('');
   lines.push('  /* Status */');
-  if (tokens.colors.light.status) {
+  if (tokens.colors.light.status && typeof tokens.colors.light.status === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.light.status, 'color-status'));
   }
 
@@ -153,37 +153,37 @@ function generateCSS(tokens: Tokens): string {
 
   // Dark theme colors
   lines.push('  /* Background */');
-  if (tokens.colors.dark.background) {
+  if (tokens.colors.dark.background && typeof tokens.colors.dark.background === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.dark.background, 'color-background'));
   }
 
   lines.push('');
   lines.push('  /* Surface */');
-  if (tokens.colors.dark.surface) {
+  if (tokens.colors.dark.surface && typeof tokens.colors.dark.surface === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.dark.surface, 'color-surface'));
   }
 
   lines.push('');
   lines.push('  /* Text */');
-  if (tokens.colors.dark.text) {
+  if (tokens.colors.dark.text && typeof tokens.colors.dark.text === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.dark.text, 'color-text'));
   }
 
   lines.push('');
   lines.push('  /* Border */');
-  if (tokens.colors.dark.border) {
+  if (tokens.colors.dark.border && typeof tokens.colors.dark.border === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.dark.border, 'color-border'));
   }
 
   lines.push('');
   lines.push('  /* Brand */');
-  if (tokens.colors.dark.brand) {
+  if (tokens.colors.dark.brand && typeof tokens.colors.dark.brand === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.dark.brand, 'color-brand'));
   }
 
   lines.push('');
   lines.push('  /* Status */');
-  if (tokens.colors.dark.status) {
+  if (tokens.colors.dark.status && typeof tokens.colors.dark.status === 'object') {
     lines.push(...flattenToCSSVars(tokens.colors.dark.status, 'color-status'));
   }
 
@@ -205,7 +205,7 @@ function generateCSS(tokens: Tokens): string {
   }
 
   // Dark theme gradients
-  if (tokens.colors.dark.gradients) {
+  if (tokens.colors.dark.gradients && typeof tokens.colors.dark.gradients === 'object') {
     lines.push('');
     lines.push('  /* Gradients */');
     lines.push(...flattenToCSSVars(tokens.colors.dark.gradients, 'gradient'));

@@ -29,10 +29,10 @@ This release transforms the library into a professional-grade design tokens syst
 - **Type Safety**: Improved TypeScript types and utilities
 
 #### New Exports
-- `@rainer/design-tokens/primitives` - Primitive tokens
-- `@rainer/design-tokens/semantic` - Semantic tokens
-- `@rainer/design-tokens/formats/w3c` - W3C format utilities
-- `@rainer/design-tokens/utils/validation` - Validation utilities
+- `rainer-design-tokens/primitives` - Primitive tokens
+- `rainer-design-tokens/semantic` - Semantic tokens
+- `rainer-design-tokens/formats/w3c` - W3C format utilities
+- `rainer-design-tokens/utils/validation` - Validation utilities
 
 ### 🔄 Changed
 
@@ -77,6 +77,6 @@ This release transforms the library into a professional-grade design tokens syst
 - Tailwind support
 - TypeScript support
 
-[3.0.0]: https://github.com/rainer-teixeira/design-tokens/compare/v2.0.0...v3.0.0
-[2.0.0]: https://github.com/rainer-teixeira/design-tokens/compare/v1.0.0...v2.0.0
-[1.0.0]: https://github.com/rainer-teixeira/design-tokens/releases/tag/v1.0.0
+[3.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v2.0.0...v3.0.0
+[2.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.0...v2.0.0
+[1.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/releases/tag/v1.0.0

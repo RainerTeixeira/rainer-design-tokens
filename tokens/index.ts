@@ -46,7 +46,7 @@ export * from './accessibility';
  * 
  * @example
  * ```typescript
- * import { tokens } from '@rainer/design-tokens';
+ * import { tokens } from 'rainer-design-tokens';
  * 
  * // Acessar cor primária do tema claro
  * const primaryColor = tokens.colors.light.brand.primary;
@@ -78,7 +78,7 @@ export const tokens = {
  * 
  * @example
  * ```typescript
- * import { lightThemeColors } from '@rainer/design-tokens';
+ * import { lightThemeColors } from 'rainer-design-tokens';
  * 
  * const primaryColor = lightThemeColors.brand.primary;
  * ```
@@ -97,7 +97,7 @@ export const lightThemeColors = lightColors.colors;
  * 
  * @example
  * ```typescript
- * import { darkThemeColors } from '@rainer/design-tokens';
+ * import { darkThemeColors } from 'rainer-design-tokens';
  * 
  * const neonColor = darkThemeColors.accent.cyan;
  * ```
@@ -117,7 +117,7 @@ export const darkThemeColors = darkColors.colors;
  * 
  * @example
  * ```typescript
- * import { typographyTokens } from '@rainer/design-tokens';
+ * import { typographyTokens } from 'rainer-design-tokens';
  * 
  * const fontSize = typographyTokens.fontSize.lg;
  * const fontFamily = typographyTokens.fontFamily.sans;
@@ -138,7 +138,7 @@ export const typographyTokens = typography.typography;
  * 
  * @example
  * ```typescript
- * import { spacingTokens } from '@rainer/design-tokens';
+ * import { spacingTokens } from 'rainer-design-tokens';
  * 
  * const margin = spacingTokens.md;
  * const padding = spacingTokens.lg;
@@ -158,7 +158,7 @@ export const spacingTokens = spacing.spacing;
  * 
  * @example
  * ```typescript
- * import { radiusTokens } from '@rainer/design-tokens';
+ * import { radiusTokens } from 'rainer-design-tokens';
  * 
  * const borderRadius = radiusTokens.md;
  * ```
@@ -178,7 +178,7 @@ export const radiusTokens = radius.radius;
  * 
  * @example
  * ```typescript
- * import { shadowTokens } from '@rainer/design-tokens';
+ * import { shadowTokens } from 'rainer-design-tokens';
  * 
  * const shadow = shadowTokens.light.md;
  * const glow = shadowTokens.dark.glow.cyan;

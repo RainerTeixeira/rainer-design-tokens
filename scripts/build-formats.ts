@@ -28,7 +28,7 @@ function runScript(scriptPath: string) {
     execSync(`pnpm exec tsx "${fullPath}"`, {
       stdio: 'inherit',
       cwd: join(__dirname, '..'),
-      shell: true,
+      shell: process.platform === 'win32' ? 'cmd.exe' : '/bin/bash',
     });
   } catch (error) {
     console.error(`❌ Erro ao executar ${scriptPath}:`, error);

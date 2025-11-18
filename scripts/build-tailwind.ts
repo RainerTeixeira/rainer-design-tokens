@@ -92,7 +92,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     ' * @example',
     ' * ```typescript',
     ' * // tailwind.config.js',
-    ' * const { tailwindConfig } = require(\'@rainer/design-tokens/formats/tailwind.config\');',
+    ' * const { tailwindConfig } = require(\'rainer-design-tokens/formats/tailwind.config\');',
     ' * ',
     ' * module.exports = {',
     ' *   ...tailwindConfig,',
@@ -130,7 +130,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     ' * ',
     ' * @example',
     ' * ```typescript',
-    ' * import { tailwindConfig } from \'@rainer/design-tokens/formats/tailwind.config\';',
+    ' * import { tailwindConfig } from \'rainer-design-tokens/formats/tailwind.config\';',
     ' * ',
     ' * // Usar em tailwind.config.js',
     ' * export default {',
@@ -149,7 +149,7 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Primary colors
   lines.push('        // Primary colors');
-  if (tokens.colors.light.primary) {
+  if (tokens.colors.light.primary && typeof tokens.colors.light.primary === 'object') {
     lines.push(`        primary: {`);
     lines.push(toTailwindObject(tokens.colors.light.primary, 10));
     lines.push(`        },`);
@@ -157,7 +157,7 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Secondary colors
   lines.push('        // Secondary colors');
-  if (tokens.colors.light.secondary) {
+  if (tokens.colors.light.secondary && typeof tokens.colors.light.secondary === 'object') {
     lines.push(`        secondary: {`);
     lines.push(toTailwindObject(tokens.colors.light.secondary, 10));
     lines.push(`        },`);
@@ -165,7 +165,7 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Accent colors
   lines.push('        // Accent colors');
-  if (tokens.colors.light.accent) {
+  if (tokens.colors.light.accent && typeof tokens.colors.light.accent === 'object') {
     lines.push(`        accent: {`);
     lines.push(toTailwindObject(tokens.colors.light.accent, 10));
     lines.push(`        },`);
@@ -173,7 +173,7 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Background colors
   lines.push('        // Background colors');
-  if (tokens.colors.light.background) {
+  if (tokens.colors.light.background && typeof tokens.colors.light.background === 'object') {
     lines.push(`        background: {`);
     lines.push(toTailwindObject(tokens.colors.light.background, 10));
     lines.push(`        },`);
@@ -181,7 +181,7 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Surface colors
   lines.push('        // Surface colors');
-  if (tokens.colors.light.surface) {
+  if (tokens.colors.light.surface && typeof tokens.colors.light.surface === 'object') {
     lines.push(`        surface: {`);
     lines.push(toTailwindObject(tokens.colors.light.surface, 10));
     lines.push(`        },`);
@@ -189,7 +189,7 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Text colors
   lines.push('        // Text colors');
-  if (tokens.colors.light.text) {
+  if (tokens.colors.light.text && typeof tokens.colors.light.text === 'object') {
     lines.push(`        text: {`);
     lines.push(toTailwindObject(tokens.colors.light.text, 10));
     lines.push(`        },`);
@@ -197,7 +197,7 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Border colors
   lines.push('        // Border colors');
-  if (tokens.colors.light.border) {
+  if (tokens.colors.light.border && typeof tokens.colors.light.border === 'object') {
     lines.push(`        border: {`);
     lines.push(toTailwindObject(tokens.colors.light.border, 10));
     lines.push(`        },`);

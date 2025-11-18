@@ -7,14 +7,14 @@ All rights reserved.
 SOFTWARE LICENSE AGREEMENT
 ================================================================================
 
-This license governs the use of the @rainer/design-tokens software package
+This license governs the use of the rainer-design-tokens software package
 and associated documentation files (collectively, the "Software").
 
 ================================================================================
 DEFINITIONS
 ================================================================================
 
-"Software" means the @rainer/design-tokens package, including but not limited
+"Software" means the rainer-design-tokens package, including but not limited
 to:
 - Source code files
 - Compiled and distributed files
@@ -133,8 +133,8 @@ please contact:
 
 Rainer Teixeira
 Email: suporte@rainersoft.com.br
-Repository: https://github.com/rainer-teixeira/design-tokens
-Issues: https://github.com/rainer-teixeira/design-tokens/issues
+Repository: https://github.com/RainerTeixeira/rainer-design-tokens
+Issues: https://github.com/RainerTeixeira/rainer-design-tokens/issues
 
 ================================================================================
 ACKNOWLEDGMENTS

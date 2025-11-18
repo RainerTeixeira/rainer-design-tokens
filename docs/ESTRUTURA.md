@@ -1,6 +1,6 @@
 # 📁 Estrutura da Biblioteca
 
-Este documento explica a estrutura ideal da biblioteca `@rainer/design-tokens` e como cada parte funciona.
+Este documento explica a estrutura ideal da biblioteca `rainer-design-tokens` e como cada parte funciona.
 
 ## 🎯 Visão Geral
 
@@ -87,7 +87,7 @@ A biblioteca segue o princípio de **JSON como fonte única de verdade**. Todos 
 
 **Uso**:
 ```typescript
-import { lightTheme, darkTheme } from '@rainer/design-tokens';
+import { lightTheme, darkTheme } from 'rainer-design-tokens';
 ```
 
 ### `formats/` - Conversões Automáticas
@@ -165,13 +165,13 @@ pnpm run build  # Compila TypeScript + gera formats
 
 1. **Importar CSS variables** no `globals.css`:
 ```css
-@import '@rainer/design-tokens/formats/css-vars.css';
+@import 'rainer-design-tokens/formats/css-vars.css';
 ```
 
 2. **Configurar Tailwind** para usar `formats/tailwind.config.ts`:
 ```typescript
 // tailwind.config.ts
-import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
+import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
 
 export default {
   ...tailwindConfig,
@@ -210,7 +210,7 @@ Acesse `http://localhost:6006` para ver todas as stories:
 2. **Usar tokens no Storybook do frontend**:
 ```typescript
 // stories/Button.stories.tsx (no frontend)
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 
 export const Primary = {
   render: () => (
@@ -233,9 +233,9 @@ export const Primary = {
 
 1. **Importar tokens como objeto JS**:
 ```typescript
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 // ou
-import tokens from '@rainer/design-tokens/dist/index.js';
+import tokens from 'rainer-design-tokens/dist/index.js';
 ```
 
 ## 🔄 Fluxo de Trabalho
@@ -250,9 +250,9 @@ import tokens from '@rainer/design-tokens/dist/index.js';
 
 ### Para Consumidores da Biblioteca
 
-1. **Instale**: `pnpm add @rainer/design-tokens`
-2. **Importe tokens**: `import { tokens } from '@rainer/design-tokens'`
-3. **Use formatos**: `import '@rainer/design-tokens/formats/css-vars.css'`
+1. **Instale**: `pnpm add rainer-design-tokens`
+2. **Importe tokens**: `import { tokens } from 'rainer-design-tokens'`
+3. **Use formatos**: `import 'rainer-design-tokens/formats/css-vars.css'`
 
 ## ✅ Checklist de Estrutura Ideal
 

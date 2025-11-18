@@ -107,7 +107,7 @@ C:\Desenvolvimento\
 - ✅ ... Outros componentes
 
 **Usa**:
-- ✅ Tokens da lib `@rainer/design-tokens`
+- ✅ Tokens da lib `rainer-design-tokens`
 - ✅ CSS variables da lib
 - ✅ Tailwind config da lib
 
@@ -128,7 +128,7 @@ pnpm run storybook  # Ver tokens
 ```bash
 cd rainer-portfolio-frontend
 # Importar tokens
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from 'rainer-design-tokens';
 # Criar componentes usando tokens
 pnpm run storybook  # Ver componentes
 ```

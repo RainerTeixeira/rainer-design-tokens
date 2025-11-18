@@ -707,7 +707,7 @@ var shadows$1 = {
  *
  * @example
  * ```typescript
- * import { GRADIENT_DIRECTIONS } from '@rainer/design-tokens';
+ * import { GRADIENT_DIRECTIONS } from 'rainer-design-tokens';
  *
  * // Aplicar gradiente de cima para baixo
  * <div className={GRADIENT_DIRECTIONS.TO_BOTTOM}>
@@ -743,7 +743,7 @@ declare const GRADIENT_DIRECTIONS: {
  *
  * @example
  * ```typescript
- * import { GRADIENTS } from '@rainer/design-tokens';
+ * import { GRADIENTS } from 'rainer-design-tokens';
  *
  * // Aplicar gradiente em texto
  * <h1 className={GRADIENTS.TEXT_PRIMARY}>Título com Gradiente</h1>
@@ -782,7 +782,7 @@ declare const GRADIENTS: {
  *
  * @example
  * ```typescript
- * import { BACKGROUND } from '@rainer/design-tokens';
+ * import { BACKGROUND } from 'rainer-design-tokens';
  *
  * // Aplicar background de seção
  * <section className={BACKGROUND.SECTION_CYAN}>
@@ -1041,7 +1041,7 @@ declare function validateContrast(foreground: string, background: string, option
  *
  * @example
  * ```typescript
- * import { tokens } from '@rainer/design-tokens';
+ * import { tokens } from '@rainer/rainer-design-tokens';
  *
  * // Acessar cor primária do tema claro
  * const primaryColor = tokens.colors.light.brand.primary;
@@ -1716,7 +1716,7 @@ declare const tokens: {
  *
  * @example
  * ```typescript
- * import { lightThemeColors } from '@rainer/design-tokens';
+ * import { lightThemeColors } from '@rainer/rainer-design-tokens';
  *
  * const primaryColor = lightThemeColors.brand.primary;
  * ```
@@ -1878,7 +1878,7 @@ declare const lightThemeColors: {
  *
  * @example
  * ```typescript
- * import { darkThemeColors } from '@rainer/design-tokens';
+ * import { darkThemeColors } from '@rainer/rainer-design-tokens';
  *
  * const neonColor = darkThemeColors.accent.cyan;
  * ```
@@ -2065,7 +2065,7 @@ declare const darkThemeColors: {
  *
  * @example
  * ```typescript
- * import { typographyTokens } from '@rainer/design-tokens';
+ * import { typographyTokens } from '@rainer/rainer-design-tokens';
  *
  * const fontSize = typographyTokens.fontSize.lg;
  * const fontFamily = typographyTokens.fontFamily.sans;
@@ -2344,7 +2344,7 @@ declare const typographyTokens: {
  *
  * @example
  * ```typescript
- * import { spacingTokens } from '@rainer/design-tokens';
+ * import { spacingTokens } from '@rainer/rainer-design-tokens';
  *
  * const margin = spacingTokens.md;
  * const padding = spacingTokens.lg;
@@ -2399,7 +2399,7 @@ declare const spacingTokens: {
  *
  * @example
  * ```typescript
- * import { radiusTokens } from '@rainer/design-tokens';
+ * import { radiusTokens } from '@rainer/rainer-design-tokens';
  *
  * const borderRadius = radiusTokens.md;
  * ```
@@ -2428,7 +2428,7 @@ declare const radiusTokens: {
  *
  * @example
  * ```typescript
- * import { shadowTokens } from '@rainer/design-tokens';
+ * import { shadowTokens } from '@rainer/rainer-design-tokens';
  *
  * const shadow = shadowTokens.light.md;
  * const glow = shadowTokens.dark.glow.cyan;
@@ -2554,7 +2554,7 @@ type Shadows = typeof shadows$1.shadows;
  *
  * @example
  * ```typescript
- * import { lightTheme } from '@rainer/design-tokens';
+ * import { lightTheme } from 'rainer-design-tokens';
  *
  * // Acessar cores do tema claro
  * const primaryColor = lightTheme.colors.brand.primary;
@@ -3086,7 +3086,7 @@ type LightTheme = typeof lightTheme;
  *
  * @example
  * ```typescript
- * import { darkTheme } from '@rainer/design-tokens';
+ * import { darkTheme } from 'rainer-design-tokens';
  *
  * // Acessar cores neon do tema escuro
  * const neonCyan = darkTheme.colors.accent.cyan;
@@ -3630,7 +3630,7 @@ type DarkTheme = typeof darkTheme;
  *
  * @example
  * ```typescript
- * import { themes, lightTheme, darkTheme } from '@rainer/design-tokens';
+ * import { themes, lightTheme, darkTheme } from 'rainer-design-tokens';
  *
  * // Usar tema completo
  * const currentTheme = themes.light;
@@ -3664,7 +3664,7 @@ type DarkTheme = typeof darkTheme;
  *
  * @example
  * ```typescript
- * import { themes } from '@rainer/design-tokens';
+ * import { themes } from 'rainer-design-tokens';
  *
  * // Acessar tema claro
  * const lightColors = themes.light.colors;

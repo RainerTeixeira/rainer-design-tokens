@@ -1,4 +1,4 @@
-# 📚 Documentação - @rainer/design-tokens
+# 📚 Documentação - rainer-design-tokens
 
 Bem-vindo à documentação completa da biblioteca de design tokens!
 
@@ -102,7 +102,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 - **README Principal**: [../README.md](../README.md)
 - **GitHub**: [RainerTeixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
-- **NPM**: [@rainer/design-tokens](https://www.npmjs.com/package/@rainer/design-tokens)
+- **NPM**: [rainer-design-tokens](https://www.npmjs.com/package/rainer-design-tokens)
 
 ## 📝 Convenções
 
