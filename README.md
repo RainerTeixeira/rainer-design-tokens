@@ -115,7 +115,7 @@ Acesse `http://localhost:6006` para explorar:
 - 🔲 **Radius** - Raios de borda
 - 🌑 **Shadows** - Sombras e efeitos glow
 
-> **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [Estrutura do Storybook](./docs/STORYBOOK_STRUCTURE.md) para mais detalhes.
+> **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [Estrutura do Storybook](./docs/ESTRUTURA_STORYBOOK.md) para mais detalhes.
 
 ---
 
@@ -124,53 +124,103 @@ Acesse `http://localhost:6006` para explorar:
 ```
 @rainer-design-tokens/
 │
-├── tokens/               # 🎯 FONTE ÚNICA DE VERDADE (JSON)
+├── 📄 index.ts                    # Ponto de entrada principal da biblioteca
+├── 📄 package.json                # Configuração do pacote npm
+├── 📄 pnpm-lock.yaml              # Lock file do pnpm
+├── 📄 tsconfig.json               # Configuração TypeScript
+├── 📄 tsup.config.ts              # Configuração do bundler tsup
+├── 📄 LICENSE                     # Licença MIT
+├── 📄 README.md                   # Este arquivo
+│
+├── 🔧 Configurações
+│   ├── .npmrc                     # Configuração pnpm (isolamento workspace)
+│   ├── .gitignore                 # Arquivos ignorados pelo Git
+│   ├── .npmignore                 # Arquivos ignorados na publicação npm
+│   ├── .prettierrc.json           # Configuração Prettier
+│   ├── .eslintrc.json             # Configuração ESLint
+│   ├── .cspell.json               # Configuração CSpell (verificação ortográfica)
+│   └── .env                       # Variáveis de ambiente (local, não commitado)
+│
+├── 🎯 tokens/                     # FONTE ÚNICA DE VERDADE (JSON + TypeScript)
+│   ├── index.ts                   # Exportações principais dos tokens
+│   ├── accessibility.ts           # Utilitários de acessibilidade (WCAG)
+│   ├── utilities.ts               # Utilitários e helpers
 │   ├── colors/
-│   │   ├── light.json   # Light theme palette
-│   │   └── dark.json    # Dark theme palette
-│   ├── typography.json  # Font families, sizes, weights
-│   ├── spacing.json     # Spacing scale (8pt grid)
-│   ├── radius.json      # Border radius scale
-│   └── shadows.json      # Shadow & elevation
+│   │   ├── light.json             # Paleta do tema claro
+│   │   └── dark.json              # Paleta do tema escuro (cyberpunk)
+│   ├── typography.json            # Sistema de tipografia completo
+│   ├── spacing.json               # Escala de espaçamento (8pt grid)
+│   ├── radius.json                # Escala de raio de borda
+│   └── shadows.json               # Sombras e efeitos glow
 │
-├── themes/              # Composed themes
-│   ├── light.ts         # Professional light theme
-│   └── dark.ts          # Cyberpunk dark theme
+├── 🎨 themes/                     # Temas compostos
+│   ├── index.ts                   # Exportações dos temas
+│   ├── light.ts                   # Tema claro profissional
+│   └── dark.ts                    # Tema escuro cyberpunk
 │
-├── formats/             # 📤 FORMATOS GERADOS AUTOMATICAMENTE
-│   ├── tailwind.config.ts  # Tailwind integration (gerado)
-│   ├── css-vars.css        # CSS custom properties (gerado)
-│   └── tokens.json         # Universal export (gerado)
+├── 📤 formats/                    # FORMATOS GERADOS AUTOMATICAMENTE
+│   ├── tailwind.config.ts         # Configuração Tailwind (gerado)
+│   ├── css-vars.css               # CSS custom properties (gerado)
+│   └── tokens.json                # Export JSON universal (gerado)
 │
-├── scripts/             # 🔧 Scripts de build
-│   ├── build-formats.ts    # Orquestrador principal
-│   ├── build-css.ts        # Gera CSS variables
-│   ├── build-tailwind.ts   # Gera Tailwind config
-│   └── build-tokens-json.ts # Gera tokens.json
+├── 🔧 scripts/                    # Scripts de build e utilitários
+│   ├── build-formats.ts           # Orquestrador principal de build
+│   ├── build-css.ts               # Gera CSS variables
+│   ├── build-tailwind.ts          # Gera Tailwind config
+│   ├── build-tokens-json.ts       # Gera tokens.json
+│   ├── prepare-publish.js         # Prepara publicação npm
+│   ├── setup-github.sh            # Setup GitHub Actions
+│   ├── fix-storybook.ps1          # Script PowerShell para Storybook
+│   └── update-dates.ts            # Atualiza datas na documentação
 │
-├── stories/            # 📚 Stories do Storybook (apenas tokens)
-│   ├── ColorPalette.stories.tsx  # Paleta de cores completa
-│   ├── ThemePreview.stories.tsx  # Preview dos temas
-│   ├── Typography.stories.tsx    # Tipografia
-│   ├── Spacing.stories.tsx       # Espaçamento
-│   ├── Radius.stories.tsx        # Raios de borda
-│   └── Shadows.stories.tsx       # Sombras
+├── 📚 stories/                    # Stories do Storybook (apenas tokens)
+│   ├── assets/                    # Assets das stories
+│   ├── Accessibility.stories.tsx  # Documentação de acessibilidade
+│   ├── ColorPalette.stories.tsx   # Paleta completa de cores
+│   ├── ColorStates.stories.tsx    # Estados de cores
+│   ├── ThemePreview.stories.tsx   # Preview dos temas
+│   ├── Typography.stories.tsx     # Sistema de tipografia
+│   ├── TypographyHierarchy.stories.tsx # Hierarquia tipográfica
+│   ├── Spacing.stories.tsx        # Escala de espaçamento
+│   ├── Radius.stories.tsx         # Raios de borda
+│   ├── Shadows.stories.tsx        # Sombras e efeitos
+│   └── *.mdx                      # Documentação MDX das stories
 │
-├── .storybook/         # ⚙️ Configuração do Storybook
-│   ├── main.ts         # Configuração principal
-│   └── preview.tsx     # Preview e tema
+├── ⚙️ .storybook/                 # Configuração do Storybook
+│   ├── main.ts                    # Configuração principal
+│   └── preview.tsx                # Preview e temas do Storybook
 │
-└── dist/                # 📦 Saída compilada (TypeScript)
-    ├── index.js
-    ├── index.mjs
-    └── index.d.ts
+├── 📦 dist/                       # Saída compilada (TypeScript)
+│   ├── index.js                   # CommonJS bundle
+│   ├── index.mjs                  # ESM bundle
+│   ├── index.d.ts                 # TypeScript definitions
+│   ├── index.d.mts                # ESM TypeScript definitions
+│   └── *.map                      # Source maps
+│
+└── 📖 docs/                       # Documentação completa
+    ├── INDICE.md                  # Índice geral da documentação
+    ├── ESTRUTURA.md               # Estrutura detalhada da biblioteca
+    ├── ESTRUTURA_STORYBOOK.md     # Estrutura do Storybook
+    ├── SISTEMA_BUILD.md           # Sistema de build automatizado
+    ├── guidelines.md              # Guidelines de uso
+    ├── GUIA_TOKENS_EXPANDIDOS.md  # Guia dos tokens expandidos
+    ├── GUIA_MIGRACAO.md           # Guia de migração
+    ├── PUBLICACAO.md              # Guia de publicação
+    ├── CONFIGURACAO_PNPM.md       # Configuração pnpm
+    ├── CONTRIBUINDO.md            # Guia de contribuição
+    ├── STORYBOOK.md               # Documentação do Storybook
+    ├── RESUMO_ESTRUTURA.md        # Resumo da estrutura
+    ├── HISTORICO_MUDANCAS.md      # Histórico de mudanças
+    └── roadmap.md                 # Roadmap do projeto
 ```
 
 ### 🎯 Princípio: JSON como Fonte Única de Verdade
 
-- ✅ **Edite apenas**: `tokens/*.json`
-- ✅ **Formats são gerados**: Execute `npm run build:formats`
-- ❌ **NÃO edite manualmente**: `formats/*` (serão sobrescritos)
+- ✅ **Edite apenas**: `tokens/*.json` (arquivos JSON na pasta `tokens/`)
+- ✅ **Edite também**: `tokens/*.ts` (utilitários e helpers em TypeScript)
+- ✅ **Formats são gerados**: Execute `pnpm run build:formats`
+- ❌ **NÃO edite manualmente**: `formats/*` (serão sobrescritos pelo build)
+- ⚙️ **Configurações**: Arquivos `.npmrc`, `.eslintrc.json`, `.prettierrc.json`, etc. na raiz
 
 ---
 
@@ -361,37 +411,46 @@ import { tailwindConfig } from '@rainer/design-tokens/formats/tailwind.config';
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Build tokens (gera formats + compila TypeScript)
-npm run build
+pnpm run build
 
 # Gerar apenas formatos (CSS, Tailwind, JSON)
-npm run build:formats
+pnpm run build:formats
 
 # Gerar formatos individuais
-npm run build:css          # Gera formats/css-vars.css
-npm run build:tailwind     # Gera formats/tailwind.config.ts
-npm run build:tokens-json  # Gera formats/tokens.json
+pnpm run build:css          # Gera formats/css-vars.css
+pnpm run build:tailwind     # Gera formats/tailwind.config.ts
+pnpm run build:tokens-json  # Gera formats/tokens.json
 
 # Storybook (visualização dos tokens)
-npm run storybook          # Inicia Storybook em http://localhost:6006
-npm run build-storybook    # Gera build estático do Storybook
+pnpm run storybook          # Inicia Storybook em http://localhost:6006
+pnpm run build-storybook    # Gera build estático do Storybook
 
 # Run tests
-npm test
+pnpm test
 
 # Type check
-npm run type-check
+pnpm run type-check
+
+# Lint
+pnpm run lint
+
+# Clean
+pnpm run clean              # Remove dist/
+pnpm run clean:all          # Remove node_modules, lock, dist, etc.
 ```
 
 ### 🔄 Workflow de Desenvolvimento
 
 1. **Edite os tokens** em `tokens/*.json` (fonte única de verdade)
-2. **Execute o build**: `npm run build:formats`
-3. **Os formatos são gerados automaticamente** em `formats/`
-4. **Compile o TypeScript**: `npm run build` (já inclui build:formats)
-5. **Visualize no Storybook**: `npm run storybook` para ver todos os tokens de forma interativa
+2. **Edite utilitários** em `tokens/*.ts` se necessário (accessibility, utilities)
+3. **Execute o build**: `pnpm run build:formats` (gera formatos)
+4. **Os formatos são gerados automaticamente** em `formats/`
+5. **Compile o TypeScript**: `pnpm run build` (já inclui build:formats + tsup)
+6. **Visualize no Storybook**: `pnpm run storybook` para ver todos os tokens de forma interativa
+7. **Execute testes**: `pnpm test` antes de commitar
 
 ### 📚 Storybook - Visualização dos Tokens
 
@@ -409,7 +468,7 @@ O Storybook da lib documenta **apenas design tokens**, não componentes UI.
 - ✅ **Este Storybook**: Apenas tokens (cores, tipografia, espaçamento, etc.)
 - ✅ **Storybook do Frontend**: Componentes UI (Button, Card, Input, etc.)
 
-Para mais detalhes sobre a estrutura, consulte [**Estrutura do Storybook**](./docs/STORYBOOK_STRUCTURE.md).
+Para mais detalhes sobre a estrutura, consulte [**Estrutura do Storybook**](./docs/ESTRUTURA_STORYBOOK.md).
 
 ---
 
@@ -428,9 +487,21 @@ MIT © [Rainer Teixeira](https://github.com/rainer-teixeira)
 ## 🔗 Links
 
 - **GitHub**: [RainerTeixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
-- **NPM**: [@rainer/design-tokens](https://www.npmjs.com/package/@rainer/design-tokens) (em breve)
+- **GitHub Packages**: `@rainer/design-tokens` (publicado automaticamente)
+- **NPM**: [@rainer/design-tokens](https://www.npmjs.com/package/@rainer/design-tokens) (publicado após GitHub Packages)
 - **Website**: [rainersoft.com.br](https://rainersoft.com.br)
 - **Email**: suporte@rainersoft.com.br
+
+## 🛠️ Tech Stack
+
+- **Language**: TypeScript 5.3+ (strict mode)
+- **Package Manager**: pnpm 9+
+- **Build Tool**: tsup (TypeScript bundler)
+- **Linter**: ESLint + TypeScript ESLint
+- **Formatter**: Prettier
+- **Testing**: Jest
+- **Documentation**: Storybook 10
+- **Publish**: GitHub Actions (GitHub Packages + npm)
 
 ---
 
