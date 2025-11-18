@@ -112,7 +112,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     ' * ',
     ' * export default {',
     ' *   ...tailwindConfig,',
-    ' *   content: [\'./src/**/*.{js,ts,jsx,tsx}\'],',
+    ' *   content: [\'./src/**/*.{js,ts,jsx,tsx}\'],', // eslint-disable-line
     ' *   // Suas configurações adicionais',
     ' * };',
     ' * ```',
