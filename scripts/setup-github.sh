@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Script para configurar e publicar @rainer-design-tokens no GitHub
+# Script para configurar e publicar @rainersoft/design-tokens no GitHub
 # Uso: bash scripts/setup-github.sh
 
 set -e
 
-echo "🚀 Configurando @rainer-design-tokens para GitHub..."
+echo "🚀 Configurando @rainersoft/design-tokens para GitHub..."
 
 # Cores para output
 GREEN='\033[0;32m'

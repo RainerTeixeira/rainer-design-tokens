@@ -12,7 +12,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 Preparando rainer-design-tokens para publicação...\n');
+console.log('🚀 Preparando @rainersoft/design-tokens para publicação...\n');
 
 // 1. Build dos formatos
 console.log('📦 Gerando formatos (CSS, Tailwind, JSON)...');

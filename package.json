@@ -1,12 +1,12 @@
 {
-  "name": "rainer-design-tokens",
-  "version": "3.0.0",
+"name": "@rainersoft/design-tokens",
+  "version": "1.0.0",
   "description": "Design tokens profissionais seguindo padrões W3C/DTCG, com estrutura modular e suporte a tokens primitivos e semânticos.",
   "author": "Rainer Teixeira <suporte@rainersoft.com.br>",
   "license": "MIT",
   "keywords": [
     "design-tokens",
-    "rainer-design-tokens",
+    "@rainersoft/design-tokens",
     "w3c",
     "dtcg",
     "storybook",
@@ -84,6 +84,7 @@
   "devDependencies": {
     "@storybook/addon-docs": "^10.0.8",
     "@storybook/addon-onboarding": "^10.0.8",
+    "@storybook/react": "^10.0.8",
     "@storybook/react-vite": "^10.0.8",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.10.0",

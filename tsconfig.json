@@ -3,6 +3,7 @@
     "target": "ES2020",
     "module": "ESNext",
     "lib": ["ES2020"],
+    "jsx": "react-jsx",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -26,7 +27,8 @@
     "tokens/**/*",
     "themes/**/*",
     "formats/**/*",
-    "scripts/**/*"
+    "scripts/**/*",
+    "stories/**/*"
   ],
   "exclude": [
     "node_modules",

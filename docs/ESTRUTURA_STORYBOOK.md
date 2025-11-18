@@ -4,12 +4,12 @@ Este documento explica a estrutura e organização do Storybook da biblioteca de
 
 ## 🎯 Visão Geral
 
-O Storybook da biblioteca `rainer-design-tokens` é focado **apenas em design tokens**, documentando e visualizando todos os tokens disponíveis na biblioteca.
+O Storybook da biblioteca `@rainersoft/design-tokens` é focado **apenas em design tokens**, documentando e visualizando todos os tokens disponíveis na biblioteca.
 
 ## 📁 Estrutura de Diretórios
 
 ```
-@rainer-design-tokens/
+@rainersoft/design-tokens/
 │
 ├─ tokens/                      # Fonte única de verdade (JSON)
 ├─ formats/                      # Formatos gerados (CSS, Tailwind, JSON)

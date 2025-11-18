@@ -13,7 +13,7 @@
 ### 2. Configurar repositório local
 
 ```bash
-cd C:\Desenvolvimento\@rainer-design-tokens
+cd C:\Desenvolvimento\rainer-design-tokens
 
 # Adicionar remote
 git remote add origin https://github.com/RainerTeixeira/rainer-design-tokens.git
@@ -49,7 +49,7 @@ git push -u origin main
    ```
 
 3. **Verificar nome do pacote**:
-    - O nome `rainer-design-tokens` está correto (sem escopo)
+    - O nome `@rainersoft/design-tokens` está correto (com escopo @rainersoft)
 
 ### Publicação
 
@@ -60,11 +60,11 @@ pnpm run build
 # Verificar o que será publicado
 pnpm pack --dry-run
 
-# Publicar
-pnpm publish
+# Publicar (com escopo, requer --access public)
+pnpm publish --access public
 ```
 
-**Nota**: O pacote `rainer-design-tokens` é público e não requer `--access public` (não tem escopo).
+**Nota**: O pacote `@rainersoft/design-tokens` é com escopo e requer `--access public` para publicação pública no npm.
 
 ### Atualizações futuras
 
@@ -80,7 +80,7 @@ Após publicar no GitHub, atualize o `package.json` do frontend:
 ```json
 {
   "dependencies": {
-    "rainer-design-tokens": "github:RainerTeixeira/rainer-design-tokens"
+    "@rainersoft/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
   }
 }
 ```
@@ -101,7 +101,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "rainer-design-tokens": "github:RainerTeixeira/rainer-design-tokens"
+    "@rainersoft/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
   }
 }
 ```
@@ -111,7 +111,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "rainer-design-tokens": "^3.0.0"
+    "@rainersoft/design-tokens": "^3.0.0"
   }
 }
 ```
@@ -141,17 +141,17 @@ O diretório `dist/` **NÃO está no `.gitignore`** e **deve ser commitado** pel
 
 #### 1. **Instalação via npm/npm packages**
 
-Quando alguém instala o pacote via `pnpm add rainer-design-tokens`, o npm não executa build - ele apenas baixa e instala os arquivos publicados. Os arquivos em `dist/` são os que serão instalados.
+Quando alguém instala o pacote via `pnpm add @rainersoft/design-tokens`, o npm não executa build - ele apenas baixa e instala os arquivos publicados. Os arquivos em `dist/` são os que serão instalados.
 
 **Sem `dist/` commitado:**
 ```bash
-pnpm add rainer-design-tokens
+pnpm add @rainersoft/design-tokens
 # ❌ Erro: Arquivos não encontrados (dist/index.js, dist/index.d.ts)
 ```
 
 **Com `dist/` commitado:**
 ```bash
-pnpm add rainer-design-tokens
+pnpm add @rainersoft/design-tokens
 # ✅ Funciona: Arquivos compilados prontos para uso
 ```
 
@@ -178,13 +178,13 @@ Os arquivos `.d.ts` em `dist/` são essenciais para:
 
 **Sem `dist/` commitado:**
 ```typescript
-import { tokens } from 'rainer-design-tokens';
-// ❌ Erro: Cannot find module 'rainer-design-tokens' or its type definitions
+import { tokens } from '@rainersoft/design-tokens';
+// ❌ Erro: Cannot find module '@rainersoft/design-tokens' or its type definitions
 ```
 
 **Com `dist/` commitado:**
 ```typescript
-import { tokens } from 'rainer-design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 // ✅ Funciona: Tipos disponíveis automaticamente
 ```
 
@@ -246,7 +246,7 @@ pnpm pack --dry-run
 
 | Estratégia | Prós | Contras | Usado por |
 |------------|------|---------|-----------|
-| **Commit `dist/`** ✅ | - Instalação funciona imediatamente<br>- Sem build no consumidor<br>- TypeScript definitions disponíveis | - Repositório maior<br>- Precisa rebuild antes de commit | rainer-design-tokens, react, vue |
+| **Commit `dist/`** ✅ | - Instalação funciona imediatamente<br>- Sem build no consumidor<br>- TypeScript definitions disponíveis | - Repositório maior<br>- Precisa rebuild antes de commit | @rainersoft/design-tokens, react, vue |
 | **Ignorar `dist/`** | - Repositório menor<br>- Sem arquivos gerados | - Consumidor precisa executar build<br>- Pode falhar se dependências não disponíveis | Alguns projetos internos |
 
 **Decisão**: Para uma biblioteca pública, **commit `dist/`** é a prática recomendada e amplamente usada na comunidade npm.

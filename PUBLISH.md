@@ -49,7 +49,7 @@ git push -u origin main
    ```
 
 3. **Verificar nome do pacote**:
-   - O nome `rainer-design-tokens` está correto (sem escopo)
+   - O nome `@rainersoft/design-tokens` está correto (com escopo @rainersoft)
 
 ### Publicação
 
@@ -60,11 +60,11 @@ pnpm run build
 # Verificar o que será publicado
 pnpm pack --dry-run
 
-# Publicar
-pnpm publish
+# Publicar (com escopo, requer --access public)
+pnpm publish --access public
 ```
 
-**Nota**: O pacote `rainer-design-tokens` é público e não requer `--access public` (não tem escopo).
+**Nota**: O pacote `@rainersoft/design-tokens` é com escopo e requer `--access public` para publicação pública no npm.
 
 ### Atualizações futuras
 
@@ -82,7 +82,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "rainer-design-tokens": "^3.0.0"
+    "@rainersoft/design-tokens": "^3.0.0"
   }
 }
 ```
@@ -92,7 +92,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "rainer-design-tokens": "github:RainerTeixeira/rainer-design-tokens"
+    "@rainersoft/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
   }
 }
 ```

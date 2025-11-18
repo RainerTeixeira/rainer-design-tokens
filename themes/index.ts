@@ -13,7 +13,7 @@
  * 
  * @example
  * ```typescript
- * import { themes, lightTheme, darkTheme } from 'rainer-design-tokens';
+ * import { themes, lightTheme, darkTheme } from '@rainersoft/design-tokens';
  * 
  * // Usar tema completo
  * const currentTheme = themes.light;
