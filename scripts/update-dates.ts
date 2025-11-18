@@ -11,7 +11,11 @@
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /**
  * Obtém a data atual formatada
@@ -132,8 +136,7 @@ function main() {
   }
 }
 
-if (require.main === module) {
-  main();
-}
+// Execute main function when script is run directly
+main();
 
 export { getCurrentDate, updateDatesInFile };
