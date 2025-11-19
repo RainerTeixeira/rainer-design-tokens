@@ -80,7 +80,7 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 
 ### v4.5.0 - Ferramentas
 - [ ] CLI para gerar tokens
-- [ ] Visual token editor (GUI)
+- [x] Visual token editor (GUI) ✅ **Concluído em v2.0.0**
 - [ ] Token validator
 - [ ] Migration tools
 - [ ] Design Lint integration

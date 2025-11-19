@@ -95,6 +95,22 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 - [CONTRIBUINDO.md](./CONTRIBUINDO.md) - Guia de contribuição
 - [HISTORICO_MUDANCAS.md](./HISTORICO_MUDANCAS.md) - Histórico de mudanças
 
+### 🎨 Ferramentas de Desenvolvimento
+- **[Token Editor](../token-editor/README.md)** - Editor visual 100% local para editar tokens
+  - 🚀 Funciona abrindo HTML diretamente no navegador (sem servidor)
+  - 🎨 Editor visual com inputs HTML (evita erros de sintaxe)
+  - 📝 Editor de código JSON tradicional
+  - 💾 Download de arquivos (sem servidor)
+  - ✅ Validação JSON em tempo real
+  - 🔄 Auto-backup no localStorage
+  - 🎯 Geração de formatos 100% local (CSS, Tailwind, JSON)
+
+- **[Testes](../tests/README.md)** - Suíte completa de testes
+  - 🧪 270 testes passando
+  - ✅ 100% de cobertura do Token Editor (136 testes)
+  - 📊 Cobertura completa de tokens, utilities, accessibility, themes
+  - 🔍 Testes de integração e casos de borda
+
 ### Planejamento
 - [Roadmap](./roadmap.md) - Futuras features
 
@@ -132,9 +148,9 @@ Para contribuir com a documentação:
 
 ## 📅 Última Atualização
 
-**Data**: Novembro de 2025
-**Versão**: 3.0.0  
-**Última revisão**: Documentação sincronizada com a estrutura atual do projeto
+**Data**: 19 de Novembro de 2025
+**Versão**: 2.0.0  
+**Última revisão**: Adicionado Token Editor e suíte completa de testes
 
 ---
 

@@ -2,9 +2,10 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-1.0.5-blue)
+![Version](https://img.shields.io/badge/version-2.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
+![Tests](https://img.shields.io/badge/tests-270%20passing-success)
 ![Size](https://img.shields.io/badge/size-<5KB-success)
 
 **Enterprise-grade design tokens for modern design systems**
@@ -31,6 +32,8 @@
 - 🎭 **Cyberpunk Theme** - Dark mode com efeitos neon
 - 🎬 **Animações** - Keyframes e animações prontas (accordion, slide-in, fade-in)
 - 📚 **Storybook** - Documentação visual interativa de todos os tokens
+- ✏️ **Token Editor** - Interface web para editar tokens visualmente
+- 🧪 **Testes Completos** - 270 testes com 100% de cobertura do Token Editor
 
 ---
 
@@ -486,6 +489,61 @@ pnpm run clean:all          # Remove node_modules, lock, dist, etc.
 6. **Visualize no Storybook**: `pnpm run storybook` para ver todos os tokens de forma interativa
 7. **Execute testes**: `pnpm test` antes de commitar
 8. **⚠️ IMPORTANTE**: Sempre commit `dist/` após build (veja [PUBLICACAO.md](./docs/PUBLICACAO.md#-por-que-dist-está-commitado))
+
+### ✏️ Token Editor - Editor Visual de Tokens
+
+Interface web **100% local** para editar tokens visualmente, sem necessidade de servidor.
+
+**Localização**: `token-editor/`
+
+**Características:**
+- 🚀 **100% Local** - Funciona abrindo HTML diretamente no navegador
+- 🎨 **Editor Visual** - Edite propriedades com inputs HTML (evita erros de sintaxe)
+- 📝 **Editor de Código** - Edição tradicional de JSON
+- ✅ **Validação em Tempo Real** - Detecta erros instantaneamente
+- 💾 **Download de Arquivos** - Salve JSON diretamente (sem servidor)
+- 🔄 **Auto-backup** - Salva automaticamente no localStorage
+- 🎯 **Zero Dependencies** - Apenas HTML, CSS e JavaScript puro
+
+**Como usar (Modo Local - Recomendado):**
+```bash
+# Simplesmente abra o arquivo HTML no navegador:
+# Windows: Clique duas vezes em token-editor/index.html
+# Mac/Linux: open token-editor/index.html
+```
+
+**Funcionalidades:**
+- 📂 Carregar arquivos JSON do computador
+- ✏️ Editar tokens com editor visual ou código
+- ✅ Validação JSON em tempo real
+- 💾 Salvar/Download de arquivos JSON
+- 🔨 Gerar formatos (requer servidor backend - opcional)
+- 👁️ Preview dos arquivos gerados
+- ⌨️ Atalhos de teclado (Ctrl+S, Ctrl+Shift+F, Ctrl+B)
+
+**Documentação completa**: Veja [Token Editor README](./token-editor/README.md)
+
+### 🧪 Testes
+
+Suíte completa de testes com **270 casos de teste** cobrindo toda a funcionalidade, incluindo **100% de cobertura do Token Editor** (136 testes específicos).
+
+**Executar testes:**
+```bash
+pnpm test              # Executa todos os testes
+pnpm test:watch        # Modo watch (desenvolvimento)
+pnpm test:coverage     # Com relatório de cobertura
+```
+
+**Cobertura:**
+- ✅ Tokens estrutura e exportações
+- ✅ Tokens utilitários (Tailwind classes)
+- ✅ Utilitários de acessibilidade (WCAG)
+- ✅ Estrutura de temas (light/dark)
+- ✅ **Token Editor (100% de cobertura - 136 testes)**
+- ✅ TypeScript types
+- ✅ Casos de uso reais
+
+Veja [Testes README](./tests/README.md) para mais detalhes.
 
 ### 📚 Storybook - Visualização dos Tokens
 

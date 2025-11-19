@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--
+  Token Editor - Editor Visual de Design Tokens
+  Rainer Design Tokens Library
+  
+  Este editor permite editar arquivos JSON de design tokens de forma visual,
+  evitando erros de sintaxe e facilitando a edição de propriedades.
+  
+  Funciona 100% localmente - não requer servidor backend. Gera formatos diretamente no navegador!
+  Basta abrir este arquivo HTML diretamente no navegador.
+  
+  Funcionalidades:
+  - Editor visual estruturado com inputs HTML
+  - Editor de código JSON tradicional
+  - Validação em tempo real
+  - Auto-backup no localStorage
+  - Geração de formatos (100% local - funciona diretamente no navegador)
+  
+  Autor: Rainer Teixeira
+  Versão: 2.0.0
+-->
+<html lang="pt-BR">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="Editor visual de design tokens - Rainer Design System">
+  <meta name="author" content="Rainer Teixeira">
+  
+  <!-- Título da Página -->
+  <title>Token Editor - Rainer Design Tokens</title>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Container Principal -->
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header>
+      <h1>🎨 Token Editor</h1>
+      <p class="subtitle">Editor de Design Tokens - Rainer Design System</p>
+    </header>
+
+    <!-- Barra de Ferramentas -->
+    <div class="toolbar" role="toolbar" aria-label="Ferramentas do editor">
+      <!-- Grupo: Seleção de Arquivo -->
+      <div class="toolbar-group">
+        <label for="tokenFile">Arquivo de Token:</label>
+        <!-- 
+          Dropdown com templates de arquivos (apenas para referência)
+          O carregamento real é feito via "Abrir Arquivo"
+        -->
+        <select id="tokenFile" aria-label="Selecione um template de arquivo">
+          <option value="">Selecione um arquivo...</option>
+          <option value="tokens/colors/light.json">Cores - Light Theme</option>
+          <option value="tokens/colors/dark.json">Cores - Dark Theme</option>
+          <option value="tokens/typography.json">Tipografia</option>
+          <option value="tokens/spacing.json">Espaçamento</option>
+          <option value="tokens/radius.json">Radius</option>
+          <option value="tokens/shadows.json">Sombras</option>
+          <option value="tokens/animations.json">Animações</option>
+        </select>
+        
+        <!-- Input de arquivo oculto (ativado pelo botão) -->
+        <input 
+          type="file" 
+          id="fileInput" 
+          accept=".json" 
+          style="display: none;"
+          aria-label="Selecionar arquivo JSON"
+        >
+        
+        <!-- Botão para abrir arquivo do sistema -->
+        <button 
+          id="loadFileBtn" 
+          class="btn btn-secondary" 
+          title="Carregar arquivo JSON do computador"
+          aria-label="Abrir arquivo do computador"
+        >
+          📁 Abrir Arquivo
+        </button>
+      </div>
+      
+      <!-- Grupo: Ações -->
+      <div class="toolbar-group">
+        <!-- Botão: Carregar template (gera template padrão) -->
+        <button 
+          id="loadBtn" 
+          class="btn btn-primary"
+          title="Carregar template padrão do arquivo selecionado"
+          aria-label="Carregar template"
+        >
+          📂 Carregar
+        </button>
+        
+        <!-- Botão: Salvar (download do arquivo) -->
+        <button 
+          id="saveBtn" 
+          class="btn btn-success" 
+          disabled 
+          title="Salvar arquivo (Ctrl+S)"
+          aria-label="Salvar arquivo JSON"
+        >
+          💾 Salvar
+        </button>
+        
+        <!-- Botão: Gerar formatos (100% local) -->
+        <button 
+          id="buildBtn" 
+          class="btn btn-warning" 
+          disabled
+          title="Gerar formatos CSS, Tailwind e JSON (100% local - funciona no navegador)"
+          aria-label="Gerar formatos"
+        >
+          🔨 Gerar Formatos
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra de Status -->
+    <div class="status-bar" id="statusBar" role="status" aria-live="polite" aria-atomic="true">
+      <span id="statusText">Pronto</span>
+    </div>
+
+    <!-- Container do Editor -->
+    <div class="editor-container">
+      <!-- Cabeçalho do Editor -->
+      <div class="editor-header">
+        <!-- Título e Indicador de Arquivo -->
+        <div>
+          <h2>Editor JSON</h2>
+          <!-- Indicador visual do arquivo atual e status de salvamento -->
+          <span 
+            id="fileIndicator" 
+            class="file-indicator" 
+            style="display: none;"
+            aria-label="Indicador de arquivo"
+          ></span>
+        </div>
+        
+        <!-- Tabs de Alternância: Visual / Código -->
+        <div class="editor-tabs" role="tablist" aria-label="Modo de edição">
+          <button 
+            id="visualTab" 
+            class="tab-btn active" 
+            role="tab"
+            aria-selected="true"
+            aria-controls="visualEditor"
+            title="Editor Visual - Edite propriedades com inputs HTML"
+          >
+            🎨 Visual
+          </button>
+          <button 
+            id="codeTab" 
+            class="tab-btn" 
+            role="tab"
+            aria-selected="false"
+            aria-controls="codeEditor"
+            title="Editor de Código - Edite JSON diretamente"
+          >
+            📝 Código
+          </button>
+        </div>
+        
+        <!-- Ações do Editor -->
+        <div class="editor-actions">
+          <!-- Busca rápida -->
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="🔍 Buscar propriedade..."
+            title="Buscar propriedade (Ctrl+F)"
+            aria-label="Buscar propriedade"
+          />
+          <button 
+            id="formatBtn" 
+            class="btn btn-secondary" 
+            title="Formatar JSON (Ctrl+Shift+F)"
+            aria-label="Formatar JSON"
+          >
+            Formatar
+          </button>
+          <button 
+            id="validateBtn" 
+            class="btn btn-secondary" 
+            title="Validar JSON"
+            aria-label="Validar JSON"
+          >
+            Validar
+          </button>
+        </div>
+      </div>
+      
+      <!-- Editor Visual: Edição estruturada com inputs HTML -->
+      <div 
+        id="visualEditor" 
+        class="visual-editor"
+        role="tabpanel"
+        aria-labelledby="visualTab"
+      >
+        <div id="visualEditorContent" class="visual-editor-content">
+          <div class="empty-message">
+            <p>Carregue um arquivo ou crie um novo JSON</p>
+            <button class="btn btn-primary" onclick="createNewJSON()" style="margin-top: 15px;">
+              ➕ Criar Novo JSON
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Editor de Código: Edição tradicional de JSON -->
+      <div 
+        id="codeEditor" 
+        class="code-editor" 
+        style="display: none;"
+        role="tabpanel"
+        aria-labelledby="codeTab"
+      >
+        <div class="editor-wrapper">
+          <!-- Textarea principal para edição de JSON -->
+          <textarea 
+            id="jsonEditor" 
+            placeholder="Selecione um arquivo e clique em 'Carregar' para começar a editar..." 
+            spellcheck="false"
+            aria-label="Editor de código JSON"
+          ></textarea>
+          
+          <!-- Informações do Editor (linha/coluna, total de linhas) -->
+          <div id="editorInfo" class="editor-info" aria-label="Informações do cursor"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Container de Preview: Mostra arquivos gerados -->
+    <div 
+      class="preview-container" 
+      id="previewContainer" 
+      style="display: none;"
+      role="region"
+      aria-label="Preview dos arquivos gerados"
+    >
+      <div class="preview-header">
+        <h2>Preview</h2>
+        <button 
+          id="closePreviewBtn" 
+          class="btn btn-secondary"
+          aria-label="Fechar preview"
+        >
+          ✕ Fechar
+        </button>
+      </div>
+      <!-- Conteúdo do preview será inserido aqui via JavaScript -->
+      <div id="previewContent"></div>
+    </div>
+  </div>
+
+  <!-- Script Principal: Lógica do editor -->
+  <script src="editor.js"></script>
+</body>
+</html>
+
+

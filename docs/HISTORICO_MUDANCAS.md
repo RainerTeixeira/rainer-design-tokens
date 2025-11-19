@@ -62,13 +62,70 @@ This release transforms the library into a professional-grade design tokens syst
 - Better tree-shaking support
 - Enhanced type definitions
 
-## [2.0.0] - Previous Version
+## [2.0.0] - 2025-11-19
 
-### Features
-- Complete token system
-- Tailwind CSS integration
-- CSS custom properties
-- Type-safe tokens
+### 🎉 Major Release - Token Editor & Enhanced Testing
+
+This release introduces a visual token editor and comprehensive test coverage, making the library more developer-friendly and production-ready.
+
+### ✨ Added
+
+#### Token Editor
+- **Visual Token Editor**: Web-based interface for editing design tokens
+  - Load and edit JSON token files
+  - Real-time JSON validation
+  - Format JSON with one click
+  - Save changes directly
+  - Generate formats (CSS, Tailwind, JSON) using existing build scripts
+  - Preview generated files
+  - Keyboard shortcuts (Ctrl+S, Ctrl+Shift+F, Ctrl+B)
+  - Located in `token-editor/` directory
+
+#### Testing Infrastructure
+- **Comprehensive Test Suite**: Full test coverage with Jest
+  - **270 tests** covering all major functionality
+  - Tests for tokens structure, utilities, accessibility, themes
+  - **100% coverage of Token Editor** with 136 dedicated tests
+  - TypeScript type testing
+  - Test structure mirrors code structure (`tests/tokens/`, `tests/themes/`, `tests/token-editor/`)
+  - Coverage reports with HTML output
+  - Test scripts: `pnpm test`, `pnpm test:watch`, `pnpm test:coverage`
+
+#### New Test Files
+- `tests/index.test.ts` - Main entry point tests
+- `tests/tokens/index.test.ts` - Token structure tests
+- `tests/tokens/utilities.test.ts` - Utility tokens tests
+- `tests/tokens/accessibility.test.ts` - WCAG accessibility tests
+- `tests/themes/index.test.ts` - Theme structure tests
+- `tests/token-editor/editor.test.ts` - **Token Editor comprehensive tests (136 tests)**
+  - Function utilities (toKebabCase, toCamelCase, flattenToCSSVars, toTailwindObject)
+  - Format generation (generateCSS, generateTailwindConfig, generateTokensJSON)
+  - Helper functions (getDefaultContent, storeLoadedToken, escapeHtml, getValueType)
+  - JSON manipulation (addNewProperty, removeProperty, addArrayItem, removeArrayItem, moveProperty)
+  - Edge cases and error handling
+  - Validations and integrations
+- `jest.config.js` - Jest configuration with ESM support
+- `tests/README.md` - Test documentation
+
+### 🔄 Changed
+
+- **Version**: Updated from 1.0.6 to 2.0.0 (major release)
+- **Test Scripts**: Updated `package.json` test scripts to use Jest properly
+- **Documentation**: Updated to reflect new Token Editor feature
+
+### 📚 Documentation
+
+- Added Token Editor documentation in `token-editor/README.md`
+- Updated test documentation in `tests/README.md`
+- Updated main documentation index
+
+### 🔧 Technical
+
+- Jest configuration with TypeScript and ESM support
+- **100% test coverage for Token Editor** - All functions, edge cases, and error scenarios tested
+- Test coverage for all exported functions and types
+- Improved developer experience with visual editor
+- Comprehensive test suite ensuring reliability and maintainability
 
 ## [1.0.0] - Initial Release
 
