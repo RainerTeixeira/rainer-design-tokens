@@ -26,7 +26,7 @@
  * ```
  */
 
-import { tokens } from '../tokens';
+import { tokens } from '@rainersoft/design-tokens';
 
 /**
  * Configuração do Tailwind CSS baseada nos design tokens
@@ -238,6 +238,11 @@ export const tailwindConfig = {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'slide-in': 'slide-in 0.3s ease-out',
         'fade-in': 'fade-in 0.5s ease-in',
+        'glitch': 'glitch 4s linear',
+        'neon-pulse': 'neon-pulse 2s ease-in-out',
+        'flicker': 'flicker 2s linear',
+        'scan-line': 'scan-line 4s linear',
+        'glitch-after': 'glitch-after 3s linear',
       },
       keyframes: {
         'accordion-down': {
@@ -272,6 +277,58 @@ export const tailwindConfig = {
           },
           '100%': {
             opacity: '1',
+          },
+        },
+        'glitch': {
+          '0%, 100%': {
+            transform: 'translate(0)',
+          },
+          '10%': {
+            transform: 'translate(-2px, 2px)',
+          },
+          '20%': {
+            transform: 'translate(2px, -2px)',
+          },
+          '30%, 50%, 70%, 90%': {
+            transform: 'translate(0)',
+          },
+        },
+        'neon-pulse': {
+          '0%, 100%': {
+            filter: 'brightness(1) saturate(1)',
+          },
+          '50%': {
+            filter: 'brightness(1.3) saturate(1.2)',
+          },
+        },
+        'flicker': {
+          '0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%': {
+            opacity: '1',
+            filter: 'brightness(1.2)',
+          },
+          '20%, 21.999%, 63%, 63.999%, 65%, 69.999%': {
+            opacity: '0.85',
+            filter: 'brightness(0.9)',
+          },
+        },
+        'scan-line': {
+          '0%': {
+            top: '0',
+          },
+          '100%': {
+            top: '100%',
+          },
+        },
+        'glitch-after': {
+          '0%, 100%': {
+            opacity: '0',
+          },
+          '5%, 10%': {
+            opacity: '0.8',
+            transform: 'translate(-3px, 3px)',
+          },
+          '15%, 95%': {
+            opacity: '0',
           },
         },
       },

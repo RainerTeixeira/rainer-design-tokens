@@ -972,6 +972,89 @@ var animations = {
 				opacity: "1"
 			}
 		}
+	},
+	glitch: {
+		name: "glitch",
+		duration: "4s",
+		timingFunction: "linear",
+		iterationCount: "infinite",
+		keyframes: {
+			"0%, 100%": {
+				transform: "translate(0)"
+			},
+			"10%": {
+				transform: "translate(-2px, 2px)"
+			},
+			"20%": {
+				transform: "translate(2px, -2px)"
+			},
+			"30%, 50%, 70%, 90%": {
+				transform: "translate(0)"
+			}
+		}
+	},
+	"neon-pulse": {
+		name: "neon-pulse",
+		duration: "2s",
+		timingFunction: "ease-in-out",
+		iterationCount: "infinite",
+		direction: "alternate",
+		keyframes: {
+			"0%, 100%": {
+				filter: "brightness(1) saturate(1)"
+			},
+			"50%": {
+				filter: "brightness(1.3) saturate(1.2)"
+			}
+		}
+	},
+	flicker: {
+		name: "flicker",
+		duration: "2s",
+		timingFunction: "linear",
+		iterationCount: "infinite",
+		keyframes: {
+			"0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {
+				opacity: "1",
+				filter: "brightness(1.2)"
+			},
+			"20%, 21.999%, 63%, 63.999%, 65%, 69.999%": {
+				opacity: "0.85",
+				filter: "brightness(0.9)"
+			}
+		}
+	},
+	"scan-line": {
+		name: "scan-line",
+		duration: "4s",
+		timingFunction: "linear",
+		iterationCount: "infinite",
+		keyframes: {
+			"0%": {
+				top: "0"
+			},
+			"100%": {
+				top: "100%"
+			}
+		}
+	},
+	"glitch-after": {
+		name: "glitch-after",
+		duration: "3s",
+		timingFunction: "linear",
+		iterationCount: "infinite",
+		keyframes: {
+			"0%, 100%": {
+				opacity: "0"
+			},
+			"5%, 10%": {
+				opacity: "0.8",
+				transform: "translate(-3px, 3px)"
+			},
+			"15%, 95%": {
+				opacity: "0"
+			}
+		}
 	}
 };
 var animations$1 = {
@@ -2401,6 +2484,381 @@ declare const tokens: {
                 };
             };
         };
+        glitch: {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            iterationCount: string;
+            keyframes: {
+                "0%, 100%": {
+                    transform: string;
+                };
+                "10%": {
+                    transform: string;
+                };
+                "20%": {
+                    transform: string;
+                };
+                "30%, 50%, 70%, 90%": {
+                    transform: string;
+                };
+            };
+        };
+        "neon-pulse": {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            iterationCount: string;
+            direction: string;
+            keyframes: {
+                "0%, 100%": {
+                    filter: string;
+                };
+                "50%": {
+                    filter: string;
+                };
+            };
+        };
+        flicker: {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            iterationCount: string;
+            keyframes: {
+                "0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {
+                    opacity: string;
+                    filter: string;
+                };
+                "20%, 21.999%, 63%, 63.999%, 65%, 69.999%": {
+                    opacity: string;
+                    filter: string;
+                };
+            };
+        };
+        "scan-line": {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            iterationCount: string;
+            keyframes: {
+                "0%": {
+                    top: string;
+                };
+                "100%": {
+                    top: string;
+                };
+            };
+        };
+        "glitch-after": {
+            name: string;
+            duration: string;
+            timingFunction: string;
+            iterationCount: string;
+            keyframes: {
+                "0%, 100%": {
+                    opacity: string;
+                };
+                "5%, 10%": {
+                    opacity: string;
+                    transform: string;
+                };
+                "15%, 95%": {
+                    opacity: string;
+                };
+            };
+        };
+    };
+    readonly hero: {
+        title: {
+            fontSize: {
+                mobile: string;
+                responsive: string;
+                desktop: string;
+                clamp: string;
+            };
+            lineHeight: string;
+            letterSpacing: string;
+            wordSpacing: string;
+            fontWeight: string;
+            filter: string;
+            textShadow: {
+                dark: string;
+                light: string;
+            };
+        };
+        subtitle: {
+            fontSize: {
+                mobile: string;
+                responsive: string;
+                desktop: string;
+                clamp: string;
+            };
+            lineHeight: string;
+            letterSpacing: string;
+            fontWeight: string;
+            maxWidth: string;
+            textShadow: {
+                dark: string;
+                light: string;
+            };
+        };
+        container: {
+            maxWidth: {
+                mobile: string;
+                sm: string;
+                md: string;
+                lg: string;
+            };
+            padding: {
+                top: string;
+                bottom: string;
+                x: {
+                    mobile: string;
+                    sm: string;
+                    md: string;
+                };
+            };
+            gap: string;
+        };
+        effects: {
+            cyberpunk: {
+                glitch: {
+                    animation: string;
+                    animationDelay: string;
+                };
+                neon: {
+                    animation: string;
+                };
+                flicker: {
+                    animation: string;
+                };
+            };
+        };
+    };
+    readonly effects: {
+        filter: {
+            brightness: {
+                subtle: string;
+                moderate: string;
+                intense: string;
+                strong: string;
+                extreme: string;
+            };
+            contrast: {
+                subtle: string;
+                moderate: string;
+                strong: string;
+                intense: string;
+            };
+            saturate: {
+                subtle: string;
+                moderate: string;
+                strong: string;
+                intense: string;
+            };
+            combined: {
+                "neon-subtle": string;
+                "neon-moderate": string;
+                "neon-intense": string;
+                "neon-extreme": string;
+                glass: string;
+                frosted: string;
+            };
+        };
+        blur: {
+            none: string;
+            xs: string;
+            sm: string;
+            base: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            "3xl": string;
+        };
+        backdrop: {
+            blur: {
+                none: string;
+                sm: string;
+                base: string;
+                md: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+                "3xl": string;
+            };
+            saturate: {
+                default: string;
+                enhanced: string;
+                strong: string;
+            };
+        };
+        glow: {
+            star: {
+                small: {
+                    radius: string;
+                    color: string;
+                };
+                medium: {
+                    radius: string;
+                    color: string;
+                };
+                large: {
+                    radius: string;
+                    color: string;
+                };
+            };
+            neon: {
+                cyan: {
+                    subtle: string;
+                    moderate: string;
+                    intense: string;
+                };
+                purple: {
+                    subtle: string;
+                    moderate: string;
+                    intense: string;
+                };
+                pink: {
+                    subtle: string;
+                    moderate: string;
+                    intense: string;
+                };
+                green: {
+                    subtle: string;
+                    moderate: string;
+                    intense: string;
+                };
+            };
+        };
+        textShadow: {
+            glow: {
+                "cyan-subtle": string;
+                "cyan-moderate": string;
+                "cyan-intense": string;
+            };
+            depth: {
+                subtle: string;
+                moderate: string;
+                strong: string;
+            };
+        };
+        boxShadow: {
+            cyberpunk: {
+                card: string;
+                cardHover: string;
+                elevated: string;
+            };
+            glass: {
+                subtle: string;
+                moderate: string;
+                strong: string;
+            };
+        };
+    };
+    readonly components: {
+        readonly celestialBackground: {
+            stars: {
+                default: {
+                    count: number;
+                    sizes: number[];
+                    opacity: number[];
+                    glow: {
+                        color: string;
+                        radius: number;
+                    };
+                };
+                dense: {
+                    count: number;
+                    sizes: number[];
+                    opacity: number[];
+                    glow: {
+                        color: string;
+                        radius: number;
+                    };
+                };
+                sparse: {
+                    count: number;
+                    sizes: number[];
+                    opacity: number[];
+                    glow: {
+                        color: string;
+                        radius: number;
+                    };
+                };
+            };
+            nebula: {
+                cyan: {
+                    position: {
+                        top: string;
+                        left: string;
+                    };
+                    size: {
+                        width: string;
+                        height: string;
+                    };
+                    gradient: {
+                        type: string;
+                        center: string;
+                        colorStops: {
+                            color: string;
+                            alpha: number;
+                            position: string;
+                        }[];
+                    };
+                    blur: string;
+                };
+                purple: {
+                    position: {
+                        top: string;
+                        right: string;
+                    };
+                    size: {
+                        width: string;
+                        height: string;
+                    };
+                    gradient: {
+                        type: string;
+                        center: string;
+                        colorStops: {
+                            color: string;
+                            alpha: number;
+                            position: string;
+                        }[];
+                    };
+                    blur: string;
+                };
+                pink: {
+                    position: {
+                        bottom: string;
+                        left: string;
+                    };
+                    size: {
+                        width: string;
+                        height: string;
+                    };
+                    gradient: {
+                        type: string;
+                        center: string;
+                        colorStops: {
+                            color: string;
+                            alpha: number;
+                            position: string;
+                        }[];
+                    };
+                    blur: string;
+                };
+            };
+            baseGradient: {
+                direction: string;
+                from: string;
+                via: {
+                    color: string;
+                    alpha: number;
+                };
+                to: string;
+            };
+        };
     };
 };
 /**
@@ -3479,6 +3937,351 @@ declare const animationTokens: {
             "100%": {
                 opacity: string;
             };
+        };
+    };
+    glitch: {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        iterationCount: string;
+        keyframes: {
+            "0%, 100%": {
+                transform: string;
+            };
+            "10%": {
+                transform: string;
+            };
+            "20%": {
+                transform: string;
+            };
+            "30%, 50%, 70%, 90%": {
+                transform: string;
+            };
+        };
+    };
+    "neon-pulse": {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        iterationCount: string;
+        direction: string;
+        keyframes: {
+            "0%, 100%": {
+                filter: string;
+            };
+            "50%": {
+                filter: string;
+            };
+        };
+    };
+    flicker: {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        iterationCount: string;
+        keyframes: {
+            "0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {
+                opacity: string;
+                filter: string;
+            };
+            "20%, 21.999%, 63%, 63.999%, 65%, 69.999%": {
+                opacity: string;
+                filter: string;
+            };
+        };
+    };
+    "scan-line": {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        iterationCount: string;
+        keyframes: {
+            "0%": {
+                top: string;
+            };
+            "100%": {
+                top: string;
+            };
+        };
+    };
+    "glitch-after": {
+        name: string;
+        duration: string;
+        timingFunction: string;
+        iterationCount: string;
+        keyframes: {
+            "0%, 100%": {
+                opacity: string;
+            };
+            "5%, 10%": {
+                opacity: string;
+                transform: string;
+            };
+            "15%, 95%": {
+                opacity: string;
+            };
+        };
+    };
+};
+/**
+ * Tokens de efeitos visuais
+ *
+ * @description
+ * Exporta todos os tokens de efeitos visuais, incluindo filters, blur,
+ * glow, backdrop effects e outros efeitos para criar elementos visuais sofisticados.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { effectTokens } from 'rainer-design-tokens';
+ *
+ * const blur = effectTokens.blur.md;
+ * const glow = effectTokens.glow.neon.cyan.moderate;
+ * ```
+ */
+declare const effectTokens: {
+    filter: {
+        brightness: {
+            subtle: string;
+            moderate: string;
+            intense: string;
+            strong: string;
+            extreme: string;
+        };
+        contrast: {
+            subtle: string;
+            moderate: string;
+            strong: string;
+            intense: string;
+        };
+        saturate: {
+            subtle: string;
+            moderate: string;
+            strong: string;
+            intense: string;
+        };
+        combined: {
+            "neon-subtle": string;
+            "neon-moderate": string;
+            "neon-intense": string;
+            "neon-extreme": string;
+            glass: string;
+            frosted: string;
+        };
+    };
+    blur: {
+        none: string;
+        xs: string;
+        sm: string;
+        base: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+        "3xl": string;
+    };
+    backdrop: {
+        blur: {
+            none: string;
+            sm: string;
+            base: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            "3xl": string;
+        };
+        saturate: {
+            default: string;
+            enhanced: string;
+            strong: string;
+        };
+    };
+    glow: {
+        star: {
+            small: {
+                radius: string;
+                color: string;
+            };
+            medium: {
+                radius: string;
+                color: string;
+            };
+            large: {
+                radius: string;
+                color: string;
+            };
+        };
+        neon: {
+            cyan: {
+                subtle: string;
+                moderate: string;
+                intense: string;
+            };
+            purple: {
+                subtle: string;
+                moderate: string;
+                intense: string;
+            };
+            pink: {
+                subtle: string;
+                moderate: string;
+                intense: string;
+            };
+            green: {
+                subtle: string;
+                moderate: string;
+                intense: string;
+            };
+        };
+    };
+    textShadow: {
+        glow: {
+            "cyan-subtle": string;
+            "cyan-moderate": string;
+            "cyan-intense": string;
+        };
+        depth: {
+            subtle: string;
+            moderate: string;
+            strong: string;
+        };
+    };
+    boxShadow: {
+        cyberpunk: {
+            card: string;
+            cardHover: string;
+            elevated: string;
+        };
+        glass: {
+            subtle: string;
+            moderate: string;
+            strong: string;
+        };
+    };
+};
+/**
+ * Tokens de componentes
+ *
+ * @description
+ * Exporta todos os tokens específicos de componentes, incluindo configurações
+ * para celestial background, carousels e outros componentes visuais.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { componentTokens } from 'rainer-design-tokens';
+ *
+ * const starConfig = componentTokens.celestialBackground.stars.default;
+ * ```
+ */
+declare const componentTokens: {
+    celestialBackground: {
+        stars: {
+            default: {
+                count: number;
+                sizes: number[];
+                opacity: number[];
+                glow: {
+                    color: string;
+                    radius: number;
+                };
+            };
+            dense: {
+                count: number;
+                sizes: number[];
+                opacity: number[];
+                glow: {
+                    color: string;
+                    radius: number;
+                };
+            };
+            sparse: {
+                count: number;
+                sizes: number[];
+                opacity: number[];
+                glow: {
+                    color: string;
+                    radius: number;
+                };
+            };
+        };
+        nebula: {
+            cyan: {
+                position: {
+                    top: string;
+                    left: string;
+                };
+                size: {
+                    width: string;
+                    height: string;
+                };
+                gradient: {
+                    type: string;
+                    center: string;
+                    colorStops: {
+                        color: string;
+                        alpha: number;
+                        position: string;
+                    }[];
+                };
+                blur: string;
+            };
+            purple: {
+                position: {
+                    top: string;
+                    right: string;
+                };
+                size: {
+                    width: string;
+                    height: string;
+                };
+                gradient: {
+                    type: string;
+                    center: string;
+                    colorStops: {
+                        color: string;
+                        alpha: number;
+                        position: string;
+                    }[];
+                };
+                blur: string;
+            };
+            pink: {
+                position: {
+                    bottom: string;
+                    left: string;
+                };
+                size: {
+                    width: string;
+                    height: string;
+                };
+                gradient: {
+                    type: string;
+                    center: string;
+                    colorStops: {
+                        color: string;
+                        alpha: number;
+                        position: string;
+                    }[];
+                };
+                blur: string;
+            };
+        };
+        baseGradient: {
+            direction: string;
+            from: string;
+            via: {
+                color: string;
+                alpha: number;
+            };
+            to: string;
         };
     };
 };
@@ -6140,4 +6943,4 @@ declare const themes: {
  */
 type Themes = typeof themes;
 
-export { type Animations, BACKGROUND, type Background, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, type Radius, type Shadows, type Spacing, type Themes, type Tokens, type Typography, animationTokens, darkTheme, darkThemeColors, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast };
+export { type Animations, BACKGROUND, type Background, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, type Radius, type Shadows, type Spacing, type Themes, type Tokens, type Typography, animationTokens, componentTokens, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast };

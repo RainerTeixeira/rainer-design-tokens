@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens para componente de background celestial - configurações de estrelas, nebulosas e efeitos espaciais",
+  "celestialBackground": {
+    "stars": {
+      "default": {
+        "count": 150,
+        "sizes": [1, 1.5, 2],
+        "opacity": [0.35, 0.55, 0.75],
+        "glow": {
+          "color": "rgba(255, 255, 255, 0.8)",
+          "radius": 2
+        }
+      },
+      "dense": {
+        "count": 250,
+        "sizes": [1, 1.5, 2, 2.5],
+        "opacity": [0.25, 0.45, 0.65, 0.85],
+        "glow": {
+          "color": "rgba(255, 255, 255, 0.8)",
+          "radius": 2
+        }
+      },
+      "sparse": {
+        "count": 80,
+        "sizes": [1, 1.5],
+        "opacity": [0.45, 0.65],
+        "glow": {
+          "color": "rgba(255, 255, 255, 0.8)",
+          "radius": 2
+        }
+      }
+    },
+    "nebula": {
+      "cyan": {
+        "position": {
+          "top": "0%",
+          "left": "0%"
+        },
+        "size": {
+          "width": "40%",
+          "height": "40%"
+        },
+        "gradient": {
+          "type": "radial",
+          "center": "0% 0%",
+          "colorStops": [
+            { "color": "cyan.400", "alpha": 0.06, "position": "0%" },
+            { "color": "cyan.400", "alpha": 0.04, "position": "30%" },
+            { "color": "transparent", "alpha": 0, "position": "70%" }
+          ]
+        },
+        "blur": "3xl"
+      },
+      "purple": {
+        "position": {
+          "top": "50%",
+          "right": "0%"
+        },
+        "size": {
+          "width": "35%",
+          "height": "35%"
+        },
+        "gradient": {
+          "type": "radial",
+          "center": "100% 50%",
+          "colorStops": [
+            { "color": "purple.400", "alpha": 0.06, "position": "0%" },
+            { "color": "purple.400", "alpha": 0.04, "position": "30%" },
+            { "color": "transparent", "alpha": 0, "position": "70%" }
+          ]
+        },
+        "blur": "3xl"
+      },
+      "pink": {
+        "position": {
+          "bottom": "0%",
+          "left": "25%"
+        },
+        "size": {
+          "width": "30%",
+          "height": "30%"
+        },
+        "gradient": {
+          "type": "radial",
+          "center": "25% 100%",
+          "colorStops": [
+            { "color": "pink.500", "alpha": 0.06, "position": "0%" },
+            { "color": "pink.500", "alpha": 0.04, "position": "30%" },
+            { "color": "transparent", "alpha": 0, "position": "70%" }
+          ]
+        },
+        "blur": "3xl"
+      }
+    },
+    "baseGradient": {
+      "direction": "to-bottom",
+      "from": "black",
+      "via": {
+        "color": "purple-950",
+        "alpha": 0.35
+      },
+      "to": "black"
+    }
+  }
+}

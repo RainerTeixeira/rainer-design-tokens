@@ -19,6 +19,9 @@ import spacing from './spacing.json';
 import radius from './radius.json';
 import shadows from './shadows.json';
 import animations from './animations.json';
+import hero from './hero.json';
+import effects from './effects.json';
+import celestialBackground from './components/celestial-background.json';
 
 // Utility tokens (Tailwind CSS classes)
 export * from './utilities';
@@ -67,6 +70,11 @@ export const tokens = {
   radius: radius.radius,
   shadows: shadows.shadows,
   animations: animations.animations,
+  hero: hero.hero,
+  effects: effects.effects,
+  components: {
+    celestialBackground: celestialBackground.celestialBackground,
+  },
 } as const;
 
 /**
@@ -209,6 +217,49 @@ export const shadowTokens = shadows.shadows;
  * ```
  */
 export const animationTokens = animations.animations;
+
+/**
+ * Tokens de efeitos visuais
+ * 
+ * @description
+ * Exporta todos os tokens de efeitos visuais, incluindo filters, blur,
+ * glow, backdrop effects e outros efeitos para criar elementos visuais sofisticados.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { effectTokens } from 'rainer-design-tokens';
+ * 
+ * const blur = effectTokens.blur.md;
+ * const glow = effectTokens.glow.neon.cyan.moderate;
+ * ```
+ */
+export const effectTokens = effects.effects;
+
+/**
+ * Tokens de componentes
+ * 
+ * @description
+ * Exporta todos os tokens específicos de componentes, incluindo configurações
+ * para celestial background, carousels e outros componentes visuais.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { componentTokens } from 'rainer-design-tokens';
+ * 
+ * const starConfig = componentTokens.celestialBackground.stars.default;
+ * ```
+ */
+export const componentTokens = {
+  celestialBackground: celestialBackground.celestialBackground,
+};
 
 /**
  * Tipo TypeScript para todos os tokens

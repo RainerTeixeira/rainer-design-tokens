@@ -118,7 +118,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     ' * ```',
     ' */',
     '',
-    "import { tokens } from '../tokens';",
+    "import { tokens } from '@rainersoft/design-tokens';",
     '',
     '/**',
     ' * Configuração do Tailwind CSS baseada nos design tokens',

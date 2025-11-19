@@ -1,6 +1,6 @@
 {
   "name": "@rainersoft/design-tokens",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "description": "Design tokens profissionais seguindo padrões W3C/DTCG, com estrutura modular e suporte a tokens primitivos e semânticos.",
   "author": "Rainer Teixeira <suporte@rainersoft.com.br>",
@@ -25,12 +25,15 @@
     "8pt-grid",
     "modular-scale"
   ],
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
     },
     "./css": {
       "types": "./dist/css.d.ts",
