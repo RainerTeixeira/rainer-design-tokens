@@ -59,7 +59,7 @@ export { darkTheme, type DarkTheme } from './dark';
  * 
  * @example
  * ```typescript
- * import { themes } from 'rainer-design-tokens';
+ * import { themes } from '@rainersoft/design-tokens';
  * 
  * // Acessar tema claro
  * const lightColors = themes.light.colors;

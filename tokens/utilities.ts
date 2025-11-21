@@ -34,7 +34,7 @@
  * 
  * @example
  * ```typescript
- * import { GRADIENT_DIRECTIONS } from 'rainer-design-tokens';
+ * import { GRADIENT_DIRECTIONS } from '@rainersoft/design-tokens';
  * 
  * // Aplicar gradiente de cima para baixo
  * <div className={GRADIENT_DIRECTIONS.TO_BOTTOM}>
@@ -71,7 +71,7 @@ export const GRADIENT_DIRECTIONS = {
  * 
  * @example
  * ```typescript
- * import { GRADIENTS } from 'rainer-design-tokens';
+ * import { GRADIENTS } from '@rainersoft/design-tokens';
  * 
  * // Aplicar gradiente em texto
  * <h1 className={GRADIENTS.TEXT_PRIMARY}>Título com Gradiente</h1>
@@ -116,7 +116,7 @@ export const GRADIENTS = {
  * 
  * @example
  * ```typescript
- * import { BACKGROUND } from 'rainer-design-tokens';
+ * import { BACKGROUND } from '@rainersoft/design-tokens';
  * 
  * // Aplicar background de seção
  * <section className={BACKGROUND.SECTION_CYAN}>

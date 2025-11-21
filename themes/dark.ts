@@ -35,7 +35,7 @@ import { tokens } from '../tokens';
  * 
  * @example
  * ```typescript
- * import { darkTheme } from 'rainer-design-tokens';
+ * import { darkTheme } from '@rainersoft/design-tokens';
  * 
  * // Acessar cores neon do tema escuro
  * const neonCyan = darkTheme.colors.accent.cyan;

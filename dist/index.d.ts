@@ -566,7 +566,7 @@ var darkColors = {
 	colors: colors
 };
 
-var typography = {
+var typography$1 = {
 	fontFamily: {
 		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
@@ -826,11 +826,11 @@ var typography = {
 		}
 	}
 };
-var typography$1 = {
-	typography: typography
+var typography = {
+	typography: typography$1
 };
 
-var spacing = {
+var spacing$1 = {
 	"0": "0px",
 	"1": "0.25rem",
 	"2": "0.5rem",
@@ -867,11 +867,11 @@ var spacing = {
 	"2.5": "0.625rem",
 	"3.5": "0.875rem"
 };
-var spacing$1 = {
-	spacing: spacing
+var spacing = {
+	spacing: spacing$1
 };
 
-var radius = {
+var radius$1 = {
 	none: "0px",
 	sm: "0.125rem",
 	base: "0.25rem",
@@ -882,11 +882,11 @@ var radius = {
 	"3xl": "1.5rem",
 	full: "9999px"
 };
-var radius$1 = {
-	radius: radius
+var radius = {
+	radius: radius$1
 };
 
-var shadows = {
+var shadows$1 = {
 	light: {
 		xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
 		sm: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
@@ -914,11 +914,11 @@ var shadows = {
 		}
 	}
 };
-var shadows$1 = {
-	shadows: shadows
+var shadows = {
+	shadows: shadows$1
 };
 
-var animations = {
+var animations$1 = {
 	"accordion-down": {
 		name: "accordion-down",
 		duration: "0.2s",
@@ -1057,11 +1057,11 @@ var animations = {
 		}
 	}
 };
-var animations$1 = {
-	animations: animations
+var animations = {
+	animations: animations$1
 };
 
-var motion = {
+var motion$1 = {
 	duration: {
 		instant: "0ms",
 		fast: "100ms",
@@ -1090,11 +1090,11 @@ var motion = {
 		long: "200ms"
 	}
 };
-var motion$1 = {
-	motion: motion
+var motion = {
+	motion: motion$1
 };
 
-var breakpoints = {
+var breakpoints$1 = {
 	xs: "0px",
 	sm: "640px",
 	md: "768px",
@@ -1103,10 +1103,10 @@ var breakpoints = {
 	"2xl": "1536px",
 	"3xl": "1920px"
 };
-var breakpoints$1 = {
-	breakpoints: breakpoints};
+var breakpoints = {
+	breakpoints: breakpoints$1};
 
-var zIndex = {
+var zIndex$1 = {
 	base: 0,
 	dropdown: 1000,
 	sticky: 1020,
@@ -1119,8 +1119,8 @@ var zIndex = {
 	notification: 1090,
 	max: 9999
 };
-var zIndex$1 = {
-	zIndex: zIndex};
+var zIndex = {
+	zIndex: zIndex$1};
 
 /**
  * @fileoverview Tokens utilitários - Classes Tailwind CSS
@@ -1157,7 +1157,7 @@ var zIndex$1 = {
  *
  * @example
  * ```typescript
- * import { GRADIENT_DIRECTIONS } from 'rainer-design-tokens';
+ * import { GRADIENT_DIRECTIONS } from '@rainersoft/design-tokens';
  *
  * // Aplicar gradiente de cima para baixo
  * <div className={GRADIENT_DIRECTIONS.TO_BOTTOM}>
@@ -1193,7 +1193,7 @@ declare const GRADIENT_DIRECTIONS: {
  *
  * @example
  * ```typescript
- * import { GRADIENTS } from 'rainer-design-tokens';
+ * import { GRADIENTS } from '@rainersoft/design-tokens';
  *
  * // Aplicar gradiente em texto
  * <h1 className={GRADIENTS.TEXT_PRIMARY}>Título com Gradiente</h1>
@@ -1232,7 +1232,7 @@ declare const GRADIENTS: {
  *
  * @example
  * ```typescript
- * import { BACKGROUND } from 'rainer-design-tokens';
+ * import { BACKGROUND } from '@rainersoft/design-tokens';
  *
  * // Aplicar background de seção
  * <section className={BACKGROUND.SECTION_CYAN}>
@@ -1856,7 +1856,7 @@ declare function validateContrast(foreground: string, background: string, option
  *
  * @example
  * ```typescript
- * import { tokens } from 'rainer-design-tokens';
+ * import { tokens } from '@rainersoft/design-tokens';
  *
  * // Acessar cor primária do tema claro
  * const primaryColor = tokens.colors.light.brand.primary;
@@ -3259,7 +3259,7 @@ declare const tokens: {
  *
  * @example
  * ```typescript
- * import { lightThemeColors } from 'rainer-design-tokens';
+ * import { lightThemeColors } from '@rainersoft/design-tokens';
  *
  * const primaryColor = lightThemeColors.brand.primary;
  * ```
@@ -3544,7 +3544,7 @@ declare const lightThemeColors: {
  *
  * @example
  * ```typescript
- * import { darkThemeColors } from 'rainer-design-tokens';
+ * import { darkThemeColors } from '@rainersoft/design-tokens';
  *
  * const neonColor = darkThemeColors.accent.cyan;
  * ```
@@ -3854,7 +3854,7 @@ declare const darkThemeColors: {
  *
  * @example
  * ```typescript
- * import { typographyTokens } from 'rainer-design-tokens';
+ * import { typographyTokens } from '@rainersoft/design-tokens';
  *
  * const fontSize = typographyTokens.fontSize.lg;
  * const fontFamily = typographyTokens.fontFamily.sans;
@@ -4133,7 +4133,7 @@ declare const typographyTokens: {
  *
  * @example
  * ```typescript
- * import { spacingTokens } from 'rainer-design-tokens';
+ * import { spacingTokens } from '@rainersoft/design-tokens';
  *
  * const margin = spacingTokens.md;
  * const padding = spacingTokens.lg;
@@ -4188,7 +4188,7 @@ declare const spacingTokens: {
  *
  * @example
  * ```typescript
- * import { radiusTokens } from 'rainer-design-tokens';
+ * import { radiusTokens } from '@rainersoft/design-tokens';
  *
  * const borderRadius = radiusTokens.md;
  * ```
@@ -4217,7 +4217,7 @@ declare const radiusTokens: {
  *
  * @example
  * ```typescript
- * import { shadowTokens } from 'rainer-design-tokens';
+ * import { shadowTokens } from '@rainersoft/design-tokens';
  *
  * const shadow = shadowTokens.light.md;
  * const glow = shadowTokens.dark.glow.cyan;
@@ -4264,7 +4264,7 @@ declare const shadowTokens: {
  *
  * @example
  * ```typescript
- * import { animationTokens } from 'rainer-design-tokens';
+ * import { animationTokens } from '@rainersoft/design-tokens';
  *
  * const slideIn = animationTokens['slide-in'];
  * const fadeIn = animationTokens['fade-in'];
@@ -4422,7 +4422,7 @@ declare const animationTokens: {
  *
  * @example
  * ```typescript
- * import { effectTokens } from 'rainer-design-tokens';
+ * import { effectTokens } from '@rainersoft/design-tokens';
  *
  * const blur = effectTokens.blur.md;
  * const glow = effectTokens.glow.neon.cyan.moderate;
@@ -4562,7 +4562,7 @@ declare const effectTokens: {
  *
  * @example
  * ```typescript
- * import { componentTokens } from 'rainer-design-tokens';
+ * import { componentTokens } from '@rainersoft/design-tokens';
  *
  * const starConfig = componentTokens.celestialBackground.stars.default;
  * ```
@@ -4684,7 +4684,7 @@ declare const componentTokens: {
  *
  * @example
  * ```typescript
- * import { motionTokens } from 'rainer-design-tokens';
+ * import { motionTokens } from '@rainersoft/design-tokens';
  *
  * const duration = motionTokens.duration.normal;
  * const easing = motionTokens.easing.standard.productive;
@@ -4732,7 +4732,7 @@ declare const motionTokens: {
  *
  * @example
  * ```typescript
- * import { breakpointTokens } from 'rainer-design-tokens';
+ * import { breakpointTokens } from '@rainersoft/design-tokens';
  *
  * const tabletSize = breakpointTokens.md;
  * const mediaQuery = breakpointTokens.mediaQueries.lg;
@@ -4760,7 +4760,7 @@ declare const breakpointTokens: {
  *
  * @example
  * ```typescript
- * import { zIndexTokens } from 'rainer-design-tokens';
+ * import { zIndexTokens } from '@rainersoft/design-tokens';
  *
  * const modalLayer = zIndexTokens.modal;
  * const tooltipLayer = zIndexTokens.tooltip;
@@ -4811,7 +4811,7 @@ type DarkColors = typeof darkColors.colors;
  * @description
  * Tipo que representa todos os tokens de tipografia.
  */
-type Typography = typeof typography$1.typography;
+type Typography = typeof typography.typography;
 /**
  * Tipo TypeScript para tokens de espaçamento
  *
@@ -4819,7 +4819,7 @@ type Typography = typeof typography$1.typography;
  * @description
  * Tipo que representa todos os tokens de espaçamento.
  */
-type Spacing = typeof spacing$1.spacing;
+type Spacing = typeof spacing.spacing;
 /**
  * Tipo TypeScript para tokens de raio de borda
  *
@@ -4827,7 +4827,7 @@ type Spacing = typeof spacing$1.spacing;
  * @description
  * Tipo que representa todos os tokens de raio de borda.
  */
-type Radius = typeof radius$1.radius;
+type Radius = typeof radius.radius;
 /**
  * Tipo TypeScript para tokens de sombras
  *
@@ -4835,7 +4835,7 @@ type Radius = typeof radius$1.radius;
  * @description
  * Tipo que representa todos os tokens de sombras.
  */
-type Shadows = typeof shadows$1.shadows;
+type Shadows = typeof shadows.shadows;
 /**
  * Tipo TypeScript para tokens de animações
  *
@@ -4843,7 +4843,7 @@ type Shadows = typeof shadows$1.shadows;
  * @description
  * Tipo que representa todos os tokens de animações.
  */
-type Animations = typeof animations$1.animations;
+type Animations = typeof animations.animations;
 /**
  * Tipo TypeScript para tokens de motion
  *
@@ -4851,7 +4851,7 @@ type Animations = typeof animations$1.animations;
  * @description
  * Tipo que representa todos os tokens de motion.
  */
-type Motion = typeof motion$1.motion;
+type Motion = typeof motion.motion;
 /**
  * Tipo TypeScript para tokens de breakpoints
  *
@@ -4859,7 +4859,7 @@ type Motion = typeof motion$1.motion;
  * @description
  * Tipo que representa todos os tokens de breakpoints responsivos.
  */
-type Breakpoints = typeof breakpoints$1.breakpoints;
+type Breakpoints = typeof breakpoints.breakpoints;
 /**
  * Tipo TypeScript para tokens de z-index
  *
@@ -4867,7 +4867,7 @@ type Breakpoints = typeof breakpoints$1.breakpoints;
  * @description
  * Tipo que representa todos os tokens de z-index.
  */
-type ZIndex = typeof zIndex$1.zIndex;
+type ZIndex = typeof zIndex.zIndex;
 
 /**
  * @fileoverview Tema Claro - Rainer Design System
@@ -4903,7 +4903,7 @@ type ZIndex = typeof zIndex$1.zIndex;
  *
  * @example
  * ```typescript
- * import { lightTheme } from 'rainer-design-tokens';
+ * import { lightTheme } from '@rainersoft/design-tokens';
  *
  * // Acessar cores do tema claro
  * const primaryColor = lightTheme.colors.brand.primary;
@@ -5558,7 +5558,7 @@ type LightTheme = typeof lightTheme;
  *
  * @example
  * ```typescript
- * import { darkTheme } from 'rainer-design-tokens';
+ * import { darkTheme } from '@rainersoft/design-tokens';
  *
  * // Acessar cores neon do tema escuro
  * const neonCyan = darkTheme.colors.accent.cyan;

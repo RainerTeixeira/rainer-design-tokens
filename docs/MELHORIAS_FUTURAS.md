@@ -1,4 +1,4 @@
-# 🚀 Melhorias Futuras - rainer-design-tokens
+# 🚀 Melhorias Futuras - @rainersoft/design-tokens
 
 Este documento lista todas as melhorias e funcionalidades que podem ser implementadas no projeto.
 

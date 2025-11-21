@@ -17,7 +17,7 @@ Esta biblioteca de design tokens foi expandida para incluir:
 Cada cor principal (`primary`, `secondary`, `accent`) possui estados completos:
 
 ```typescript
-import { tokens } from 'rainer-design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 
 const colors = tokens.colors.light.primary;
 
@@ -184,7 +184,7 @@ const colors = tokens.colors.light;
 ### Verificação de Contraste
 
 ```typescript
-import { validateContrast, getContrastInfo } from 'rainer-design-tokens';
+import { validateContrast, getContrastInfo } from '@rainersoft/design-tokens';
 
 // Validar contraste
 const validation = validateContrast('#0891b2', '#ffffff', {
@@ -229,7 +229,7 @@ console.log(info);
 
 ```typescript
 // tailwind.config.ts
-import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
+import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
 
 export default {
   ...tailwindConfig,
@@ -265,7 +265,7 @@ A biblioteca também gera CSS variables:
 
 ```css
 /* Importar no seu CSS */
-@import 'rainer-design-tokens/formats/css-vars.css';
+@import '@rainersoft/design-tokens/formats/css-vars.css';
 
 /* Usar */
 .my-element {
@@ -282,7 +282,7 @@ Os componentes do shadcn/ui podem ser atualizados para usar os tokens:
 
 ```typescript
 // components/ui/button.tsx
-import { tokens } from 'rainer-design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 import { cn } from '@/lib/utils';
 
 export function Button({ variant = 'default', ...props }) {
@@ -349,7 +349,7 @@ Veja exemplos completos em:
 
 ## ✅ Checklist de Implementação
 
-- [ ] Instalar/atualizar biblioteca: `pnpm add rainer-design-tokens@latest`
+- [ ] Instalar/atualizar biblioteca: `pnpm add @rainersoft/design-tokens@latest`
 - [ ] Configurar Tailwind: Importar `tailwindConfig` no `tailwind.config.ts`
 - [ ] Atualizar componentes: Substituir cores hardcoded por tokens
 - [ ] Validar acessibilidade: Usar `validateContrast` para verificar contraste

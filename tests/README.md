@@ -1,4 +1,4 @@
-# 🧪 Testes - rainer-design-tokens
+# 🧪 Testes - @rainersoft/design-tokens
 
 Estrutura de testes completa que espelha a organização do código fonte.
 

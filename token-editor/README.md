@@ -56,21 +56,9 @@ Interface web **100% local** para editar design tokens visualmente, sem necessid
 
 ## 🚀 Como Usar
 
-### 🌐 Modo Servidor (Recomendado para Desenvolvimento)
+### ⚡ Modo Local (Recomendado) – Sem Servidor
 
-**Inicie o servidor local na porta 3000:**
-
-```bash
-pnpm run dev:editor
-# ou
-pnpm run start:editor
-```
-
-Depois acesse: **http://localhost:3000**
-
-### ⚡ Modo Local (Sem Servidor)
-
-**O editor também funciona 100% localmente!** Basta abrir o arquivo HTML diretamente no navegador:
+O fluxo principal do editor é **100% local**, sem depender de nenhum servidor. Basta abrir o arquivo HTML diretamente no navegador:
 
 1. **Abra o arquivo** `index.html` diretamente no navegador:
    - **Windows**: Clique duas vezes no arquivo ou arraste para o navegador
@@ -96,6 +84,18 @@ Depois acesse: **http://localhost:3000**
    - Baixe os arquivos gerados (CSS, Tailwind Config, Tokens JSON)
    - **Dica**: Para formatos completos, carregue todos os arquivos de tokens primeiro
 
+### 🌐 Modo Servidor (Opcional para Desenvolvimento)
+
+Opcionalmente, você pode rodar um servidor HTTP simples durante o desenvolvimento, mas **não é obrigatório** para usar o editor:
+
+```bash
+pnpm run dev:editor
+# ou
+pnpm run start:editor
+```
+
+Depois acesse: **http://localhost:3000**
+
 ## 📁 Estrutura
 
 ```
@@ -104,10 +104,9 @@ token-editor/
 ├── styles.css              # Estilos CSS
 ├── editor.js               # Lógica do editor (JavaScript puro)
 ├── editor-extensions.js    # Extensões (validação, preview, histórico)
-├── export-formats.js      # Novos formatos de exportação (Figma, Android, iOS)
-├── server.js              # Servidor HTTP simples (porta 3000)
-├── README.md              # Este arquivo
-└── README_SERVER.md       # Documentação do servidor
+├── export-formats.js       # Novos formatos de exportação (Figma, Android, iOS)
+├── server.js               # (Opcional) Servidor HTTP simples para desenvolvimento
+└── README.md               # Este arquivo
 ```
 
 ### 📝 Comentários HTML
@@ -198,8 +197,9 @@ O editor visual permite editar JSON de forma estruturada, evitando erros de sint
 - **Breakpoints** - Breakpoints responsivos
 - **Z-Index** - Sistema de camadas
 
-### 🚀 Servidor Local
-- Servidor HTTP simples para desenvolvimento
+### 🚀 Servidor Local (Opcional)
+
+- Servidor HTTP simples apenas para desenvolvimento
 - Roda na porta 3000
 - Comando: `pnpm run dev:editor`
 - Acesse: http://localhost:3000

@@ -5,7 +5,7 @@
 ```
 C:\Desenvolvimento\
 │
-├─ @rainer-design-tokens/          # 📦 Biblioteca de Design Tokens
+├─ @rainersoft/design-tokens/      # 📦 Biblioteca de Design Tokens
 │   ├─ tokens/                      # 🎯 FONTE ÚNICA DE VERDADE (JSON)
 │   │   ├─ colors/
 │   │   │   ├─ light.json
@@ -78,7 +78,7 @@ C:\Desenvolvimento\
 
 ## 🎯 Separação de Responsabilidades
 
-### Storybook da Lib (@rainer-design-tokens)
+### Storybook da Lib (@rainersoft/design-tokens)
 
 **Foco**: Apenas design tokens
 
@@ -107,7 +107,7 @@ C:\Desenvolvimento\
 - ✅ ... Outros componentes
 
 **Usa**:
-- ✅ Tokens da lib `rainer-design-tokens`
+- ✅ Tokens da lib `@rainersoft/design-tokens`
 - ✅ CSS variables da lib
 - ✅ Tailwind config da lib
 
@@ -116,7 +116,7 @@ C:\Desenvolvimento\
 ### 1. Editar Tokens (Lib)
 
 ```bash
-cd @rainer-design-tokens
+cd @rainersoft/design-tokens
 # Editar tokens/*.json
 pnpm run build:formats
 pnpm run build
@@ -128,7 +128,7 @@ pnpm run storybook  # Ver tokens
 ```bash
 cd rainer-portfolio-frontend
 # Importar tokens
-import { tokens } from 'rainer-design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 # Criar componentes usando tokens
 pnpm run storybook  # Ver componentes
 ```

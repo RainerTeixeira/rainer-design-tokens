@@ -54,7 +54,7 @@ export * from './accessibility';
  * 
  * @example
  * ```typescript
- * import { tokens } from 'rainer-design-tokens';
+ * import { tokens } from '@rainersoft/design-tokens';
  * 
  * // Acessar cor primária do tema claro
  * const primaryColor = tokens.colors.light.brand.primary;
@@ -95,7 +95,7 @@ export const tokens = {
  * 
  * @example
  * ```typescript
- * import { lightThemeColors } from 'rainer-design-tokens';
+ * import { lightThemeColors } from '@rainersoft/design-tokens';
  * 
  * const primaryColor = lightThemeColors.brand.primary;
  * ```
@@ -114,7 +114,7 @@ export const lightThemeColors = lightColors.colors;
  * 
  * @example
  * ```typescript
- * import { darkThemeColors } from 'rainer-design-tokens';
+ * import { darkThemeColors } from '@rainersoft/design-tokens';
  * 
  * const neonColor = darkThemeColors.accent.cyan;
  * ```
@@ -134,7 +134,7 @@ export const darkThemeColors = darkColors.colors;
  * 
  * @example
  * ```typescript
- * import { typographyTokens } from 'rainer-design-tokens';
+ * import { typographyTokens } from '@rainersoft/design-tokens';
  * 
  * const fontSize = typographyTokens.fontSize.lg;
  * const fontFamily = typographyTokens.fontFamily.sans;
@@ -155,7 +155,7 @@ export const typographyTokens = typography.typography;
  * 
  * @example
  * ```typescript
- * import { spacingTokens } from 'rainer-design-tokens';
+ * import { spacingTokens } from '@rainersoft/design-tokens';
  * 
  * const margin = spacingTokens.md;
  * const padding = spacingTokens.lg;
@@ -175,7 +175,7 @@ export const spacingTokens = spacing.spacing;
  * 
  * @example
  * ```typescript
- * import { radiusTokens } from 'rainer-design-tokens';
+ * import { radiusTokens } from '@rainersoft/design-tokens';
  * 
  * const borderRadius = radiusTokens.md;
  * ```
@@ -195,7 +195,7 @@ export const radiusTokens = radius.radius;
  * 
  * @example
  * ```typescript
- * import { shadowTokens } from 'rainer-design-tokens';
+ * import { shadowTokens } from '@rainersoft/design-tokens';
  * 
  * const shadow = shadowTokens.light.md;
  * const glow = shadowTokens.dark.glow.cyan;
@@ -216,7 +216,7 @@ export const shadowTokens = shadows.shadows;
  * 
  * @example
  * ```typescript
- * import { animationTokens } from 'rainer-design-tokens';
+ * import { animationTokens } from '@rainersoft/design-tokens';
  * 
  * const slideIn = animationTokens['slide-in'];
  * const fadeIn = animationTokens['fade-in'];
@@ -237,7 +237,7 @@ export const animationTokens = animations.animations;
  * 
  * @example
  * ```typescript
- * import { effectTokens } from 'rainer-design-tokens';
+ * import { effectTokens } from '@rainersoft/design-tokens';
  * 
  * const blur = effectTokens.blur.md;
  * const glow = effectTokens.glow.neon.cyan.moderate;
@@ -258,7 +258,7 @@ export const effectTokens = effects.effects;
  * 
  * @example
  * ```typescript
- * import { componentTokens } from 'rainer-design-tokens';
+ * import { componentTokens } from '@rainersoft/design-tokens';
  * 
  * const starConfig = componentTokens.celestialBackground.stars.default;
  * ```
@@ -280,7 +280,7 @@ export const componentTokens = {
  * 
  * @example
  * ```typescript
- * import { motionTokens } from 'rainer-design-tokens';
+ * import { motionTokens } from '@rainersoft/design-tokens';
  * 
  * const duration = motionTokens.duration.normal;
  * const easing = motionTokens.easing.standard.productive;
@@ -301,7 +301,7 @@ export const motionTokens = motion.motion;
  * 
  * @example
  * ```typescript
- * import { breakpointTokens } from 'rainer-design-tokens';
+ * import { breakpointTokens } from '@rainersoft/design-tokens';
  * 
  * const tabletSize = breakpointTokens.md;
  * const mediaQuery = breakpointTokens.mediaQueries.lg;
@@ -322,7 +322,7 @@ export const breakpointTokens = breakpoints.breakpoints;
  * 
  * @example
  * ```typescript
- * import { zIndexTokens } from 'rainer-design-tokens';
+ * import { zIndexTokens } from '@rainersoft/design-tokens';
  * 
  * const modalLayer = zIndexTokens.modal;
  * const tooltipLayer = zIndexTokens.tooltip;

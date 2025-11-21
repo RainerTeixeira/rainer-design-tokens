@@ -35,7 +35,7 @@ import { tokens } from '../tokens';
  * 
  * @example
  * ```typescript
- * import { lightTheme } from 'rainer-design-tokens';
+ * import { lightTheme } from '@rainersoft/design-tokens';
  * 
  * // Acessar cores do tema claro
  * const primaryColor = lightTheme.colors.brand.primary;

@@ -58,35 +58,6 @@ yarn add @rainersoft/design-tokens
 
 ---
 
-## 🔄 Migração do Pacote Antigo
-
-Se você estava usando `rainer-design-tokens` ou `@rainer/design-tokens`, migre para o novo escopo da organização:
-
-```bash
-# Remover pacote antigo
-pnpm remove rainer-design-tokens
-# ou
-pnpm remove @rainer/design-tokens
-
-# Instalar novo pacote
-pnpm add @rainersoft/design-tokens
-```
-
-**Atualizar importações:**
-```typescript
-// Antes
-import { tokens } from 'rainer-design-tokens';
-// ou
-import { tokens } from '@rainer/design-tokens';
-
-// Depois
-import { tokens } from '@rainersoft/design-tokens';
-```
-
-> **Nota**: O pacote antigo continuará disponível por um período de transição, mas recomendamos migrar para `@rainersoft/design-tokens` para receber atualizações futuras.
-
----
-
 ## 🎯 Quick Start
 
 ### TypeScript/JavaScript
@@ -412,7 +383,7 @@ import '@rainersoft/design-tokens/formats/css-vars.css';
 
 ```typescript
 // Use tokens as base for shadcn/ui theming
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 
 export const shadcnTheme = {
   primary: tokens.colors.light.primary.base,
@@ -428,7 +399,7 @@ export const shadcnTheme = {
 
 ```typescript
 // Main tokens
-import { tokens } from '@rainer/design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 
 // Individual token categories
 import { 
