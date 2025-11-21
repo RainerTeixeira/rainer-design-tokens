@@ -84,18 +84,6 @@ O fluxo principal do editor é **100% local**, sem depender de nenhum servidor. 
    - Baixe os arquivos gerados (CSS, Tailwind Config, Tokens JSON)
    - **Dica**: Para formatos completos, carregue todos os arquivos de tokens primeiro
 
-### 🌐 Modo Servidor (Opcional para Desenvolvimento)
-
-Opcionalmente, você pode rodar um servidor HTTP simples durante o desenvolvimento, mas **não é obrigatório** para usar o editor:
-
-```bash
-pnpm run dev:editor
-# ou
-pnpm run start:editor
-```
-
-Depois acesse: **http://localhost:3000**
-
 ## 📁 Estrutura
 
 ```
@@ -105,7 +93,7 @@ token-editor/
 ├── editor.js               # Lógica do editor (JavaScript puro)
 ├── editor-extensions.js    # Extensões (validação, preview, histórico)
 ├── export-formats.js       # Novos formatos de exportação (Figma, Android, iOS)
-├── server.js               # (Opcional) Servidor HTTP simples para desenvolvimento
+├── server.js               # (Interno/opcional) Servidor HTTP simples usado apenas em cenários específicos de desenvolvimento
 └── README.md               # Este arquivo
 ```
 
@@ -197,14 +185,7 @@ O editor visual permite editar JSON de forma estruturada, evitando erros de sint
 - **Breakpoints** - Breakpoints responsivos
 - **Z-Index** - Sistema de camadas
 
-### 🚀 Servidor Local (Opcional)
-
-- Servidor HTTP simples apenas para desenvolvimento
-- Roda na porta 3000
-- Comando: `pnpm run dev:editor`
-- Acesse: http://localhost:3000
-
-## 🔧 Melhorias Futuras
+### 🔧 Melhorias Futuras
 
 - [ ] Suporte a múltiplos arquivos simultâneos (estrutura criada)
 - [ ] Comparação de versões avançada

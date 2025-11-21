@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2025-11-21
+
+### ✨ Added
+
+- Seção de documentação do **Token Editor** no README principal da biblioteca.
+- Melhor documentação do fluxo **100% local** do Token Editor (uso direto via navegador, sem servidor).
+
+### 🔄 Changed
+
+- Atualização de toda a documentação para usar apenas o pacote `@rainersoft/design-tokens`.
+- Limpeza de referências antigas ao pacote `rainer-design-tokens` e seções de migração.
+- Ajustes de exemplos de import para refletir os novos exports e o escopo `@rainersoft`.
+
+### 🐛 Fixed
+
+- Pequenos alinhamentos em exemplos de código e paths de formatos (Tailwind, CSS vars, tokens JSON).
+
 ## [3.0.0] - 2025-01-XX
 
 ### 🎉 Major Release - Professional Design Tokens System
@@ -134,6 +151,7 @@ This release introduces a visual token editor and comprehensive test coverage, m
 - Tailwind support
 - TypeScript support
 
+[3.1.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v2.0.0...v3.0.0
 [2.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/releases/tag/v1.0.0

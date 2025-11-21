@@ -420,6 +420,16 @@ import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.confi
 
 ---
 
+## 🎨 Token Editor (Editor Visual Local)
+
+Para editar os design tokens visualmente, sem servidor, use o **Token Editor** incluso no repositório:
+
+1. Localize a pasta `token-editor/` na raiz do projeto.
+2. Abra o arquivo `token-editor/index.html` diretamente no navegador (duplo clique ou arrastar/soltar).
+3. Carregue um arquivo JSON de tokens, edite visualmente ou via código e salve/gera formatos **100% local**, direto no navegador.
+
+---
+
 ## 🧪 Development
 
 ```bash
