@@ -204,6 +204,53 @@ function getDefaultContent(filePath) {
     }, null, 2);
   }
   
+  if (fileName.includes('motion.json')) {
+    return JSON.stringify({
+      "$schema": "https://json.schemastore.org/theme.json",
+      "$description": "Motion tokens - Durations, easings, and transitions",
+      "motion": {
+        "duration": {
+          "fast": "100ms",
+          "normal": "200ms",
+          "slow": "300ms"
+        },
+        "easing": {
+          "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+          "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+          "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+        }
+      }
+    }, null, 2);
+  }
+  
+  if (fileName.includes('breakpoints.json')) {
+    return JSON.stringify({
+      "$schema": "https://json.schemastore.org/theme.json",
+      "$description": "Responsive breakpoints - Mobile-first approach",
+      "breakpoints": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px",
+        "2xl": "1536px"
+      }
+    }, null, 2);
+  }
+  
+  if (fileName.includes('z-index.json')) {
+    return JSON.stringify({
+      "$schema": "https://json.schemastore.org/theme.json",
+      "$description": "Z-index scale - Layering system",
+      "zIndex": {
+        "base": 0,
+        "dropdown": 1000,
+        "modal": 1050,
+        "tooltip": 1070,
+        "toast": 1080
+      }
+    }, null, 2);
+  }
+  
   // Template genérico
   return JSON.stringify({
     "$schema": "https://json.schemastore.org/theme.json",
@@ -319,7 +366,10 @@ let loadedTokens = {
   spacing: null,
   radius: null,
   shadows: null,
-  animations: null
+  animations: null,
+  motion: null,
+  breakpoints: null,
+  zIndex: null
 };
 
 // Detectar tipo de arquivo e armazenar
@@ -341,6 +391,18 @@ function storeLoadedToken(filePath, content) {
       loadedTokens.shadows = json.shadows || json;
     } else if (filePath.includes('animations.json')) {
       loadedTokens.animations = json.animations || json;
+    } else if (filePath.includes('motion.json')) {
+      loadedTokens.motion = json.motion || json;
+    } else if (filePath.includes('breakpoints.json')) {
+      loadedTokens.breakpoints = json.breakpoints || json;
+    } else if (filePath.includes('z-index.json')) {
+      loadedTokens.zIndex = json.zIndex || json;
+    } else if (filePath.includes('motion.json')) {
+      loadedTokens.motion = json.motion || json;
+    } else if (filePath.includes('breakpoints.json')) {
+      loadedTokens.breakpoints = json.breakpoints || json;
+    } else if (filePath.includes('z-index.json')) {
+      loadedTokens.zIndex = json.zIndex || json;
     }
   } catch (e) {
     // Ignorar erros de parsing
@@ -379,17 +441,98 @@ function buildFormats() {
       }
     });
     
-    // Gerar formatos
-    const formats = {
-      css: generateCSS(),
-      tailwind: generateTailwindConfig(),
-      tokensJson: generateTokensJSON()
-    };
+    // Verificar o que está disponível antes de gerar
+    const hasColors = loadedTokens.colors.light && loadedTokens.colors.dark;
+    const hasTypography = loadedTokens.typography !== null;
+    const hasSpacing = loadedTokens.spacing !== null;
+    const hasRadius = loadedTokens.radius !== null;
+    const hasShadows = loadedTokens.shadows !== null;
+    const hasAnimations = loadedTokens.animations !== null;
     
-    // Mostrar preview e permitir download
-    showBuildResults(formats);
+    // Gerar formatos com tratamento de erros individual
+    const formats = {};
+    const errors = [];
     
-    updateStatus('Formatos gerados com sucesso!', 'success');
+    // CSS - requer cores light e dark
+    if (hasColors) {
+      try {
+        formats.css = generateCSS();
+      } catch (error) {
+        errors.push(`CSS: ${error.message}`);
+      }
+    } else {
+      errors.push('CSS: Cores light e dark são necessárias. Carregue tokens/colors/light.json e tokens/colors/dark.json');
+    }
+    
+    // Tailwind - requer cores light
+    if (hasColors && loadedTokens.colors.light) {
+      try {
+        formats.tailwind = generateTailwindConfig();
+      } catch (error) {
+        errors.push(`Tailwind: ${error.message}`);
+      }
+    } else {
+      errors.push('Tailwind: Cores light são necessárias. Carregue tokens/colors/light.json');
+    }
+    
+    // Tokens JSON - sempre pode gerar (mesmo que vazio)
+    try {
+      formats.tokensJson = generateTokensJSON();
+    } catch (error) {
+      errors.push(`Tokens JSON: ${error.message}`);
+    }
+    
+    // Novos formatos (se disponíveis)
+    if (typeof generateFigmaTokens !== 'undefined') {
+      try {
+        formats.figma = generateFigmaTokens();
+      } catch (error) {
+        errors.push(`Figma: ${error.message}`);
+      }
+    }
+    
+    if (typeof generateAndroidXML !== 'undefined') {
+      try {
+        formats.android = generateAndroidXML();
+      } catch (error) {
+        errors.push(`Android: ${error.message}`);
+      }
+    }
+    
+    if (typeof generateiOSSwift !== 'undefined') {
+      try {
+        formats.ios = generateiOSSwift();
+      } catch (error) {
+        errors.push(`iOS: ${error.message}`);
+      }
+    }
+    
+    // Se houver formatos gerados, mostrar resultados
+    if (Object.keys(formats).length > 0) {
+      showBuildResults(formats, errors);
+      if (errors.length > 0) {
+        updateStatus(`Formatos gerados com avisos: ${errors.length}`, 'warning');
+      } else {
+        updateStatus('Formatos gerados com sucesso!', 'success');
+      }
+    } else {
+      // Nenhum formato foi gerado
+      const errorMsg = errors.length > 0 
+        ? `Não foi possível gerar formatos:\n${errors.join('\n')}`
+        : 'Não foi possível gerar formatos. Carregue os arquivos de tokens necessários.';
+      updateStatus(errorMsg, 'error');
+      
+      // Mostrar mensagem mais detalhada
+      const missingFiles = [];
+      if (!hasColors) missingFiles.push('tokens/colors/light.json e tokens/colors/dark.json');
+      if (!hasTypography) missingFiles.push('tokens/typography.json');
+      if (!hasSpacing) missingFiles.push('tokens/spacing.json');
+      
+      if (missingFiles.length > 0) {
+        const detailMsg = `Arquivos necessários não encontrados:\n${missingFiles.join('\n')}\n\nUse "Abrir Arquivo" para carregar os tokens necessários.`;
+        alert(detailMsg);
+      }
+    }
   } catch (error) {
     updateStatus(`Erro ao gerar formatos: ${error.message}`, 'error');
     console.error('Erro ao gerar formatos:', error);
@@ -466,15 +609,37 @@ function showPreview(data) {
 }
 
 // Mostrar resultados do build com opção de download
-function showBuildResults(formats) {
+function showBuildResults(formats, errors = []) {
   previewContainer.style.display = 'block';
   const previewContent = document.getElementById('previewContent');
   
-  previewContent.innerHTML = `
-    <h3>✅ Formatos Gerados com Sucesso!</h3>
-    <p style="margin-bottom: 20px; color: #6b7280;">Clique nos botões abaixo para baixar os arquivos gerados:</p>
-    
-    <div style="display: flex; flex-direction: column; gap: 15px;">
+  let html = '';
+  
+  // Mostrar avisos/erros se houver
+  if (errors.length > 0) {
+    html += `
+      <div style="margin-bottom: 20px; padding: 15px; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b;">
+        <h4 style="margin: 0 0 10px 0; color: #92400e;">⚠️ Avisos</h4>
+        <ul style="margin: 0; padding-left: 20px; color: #78350f;">
+          ${errors.map(err => `<li>${escapeHtml(err)}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  }
+  
+  if (Object.keys(formats).length > 0) {
+    html += `<h3>✅ Formatos Gerados com Sucesso!</h3>`;
+    html += `<p style="margin-bottom: 20px; color: #6b7280;">Clique nos botões abaixo para baixar os arquivos gerados:</p>`;
+  } else {
+    html += `<h3>❌ Nenhum Formato Gerado</h3>`;
+    html += `<p style="margin-bottom: 20px; color: #6b7280;">Não foi possível gerar formatos. Verifique os avisos acima.</p>`;
+  }
+  
+  html += `<div style="display: flex; flex-direction: column; gap: 15px;">`;
+  
+  // CSS
+  if (formats.css) {
+    html += `
       <div style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0891b2;">
         <h4 style="margin: 0 0 10px 0; color: #212529;">📄 CSS Variables</h4>
         <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">Variáveis CSS para uso em qualquer projeto</p>
@@ -486,7 +651,12 @@ function showBuildResults(formats) {
           <pre style="margin-top: 10px; padding: 10px; background: #1e1e1e; color: #d4d4d4; border-radius: 4px; overflow-x: auto; font-size: 12px; max-height: 300px; overflow-y: auto;">${escapeHtml(formats.css.substring(0, 2000))}${formats.css.length > 2000 ? '\n... (arquivo truncado no preview)' : ''}</pre>
         </details>
       </div>
-      
+    `;
+  }
+  
+  // Tailwind
+  if (formats.tailwind) {
+    html += `
       <div style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #9333ea;">
         <h4 style="margin: 0 0 10px 0; color: #212529;">⚡ Tailwind Config</h4>
         <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">Configuração do Tailwind CSS</p>
@@ -498,7 +668,12 @@ function showBuildResults(formats) {
           <pre style="margin-top: 10px; padding: 10px; background: #1e1e1e; color: #d4d4d4; border-radius: 4px; overflow-x: auto; font-size: 12px; max-height: 300px; overflow-y: auto;">${escapeHtml(formats.tailwind.substring(0, 2000))}${formats.tailwind.length > 2000 ? '\n... (arquivo truncado no preview)' : ''}</pre>
         </details>
       </div>
-      
+    `;
+  }
+  
+  // Tokens JSON
+  if (formats.tokensJson) {
+    html += `
       <div style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #10b981;">
         <h4 style="margin: 0 0 10px 0; color: #212529;">📦 Tokens JSON Consolidado</h4>
         <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">JSON consolidado com referências</p>
@@ -510,14 +685,77 @@ function showBuildResults(formats) {
           <pre style="margin-top: 10px; padding: 10px; background: #1e1e1e; color: #d4d4d4; border-radius: 4px; overflow-x: auto; font-size: 12px; max-height: 300px; overflow-y: auto;">${escapeHtml(formats.tokensJson.substring(0, 2000))}${formats.tokensJson.length > 2000 ? '\n... (arquivo truncado no preview)' : ''}</pre>
         </details>
       </div>
-    </div>
+    `;
+  }
+  
+  // Figma Tokens
+  if (formats.figma) {
+    html += `
+      <div style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #18b6f6;">
+        <h4 style="margin: 0 0 10px 0; color: #212529;">🎨 Figma Tokens</h4>
+        <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">Tokens no formato Figma</p>
+        <button class="btn btn-primary" onclick="downloadFormat('figma-tokens.json', window.formats.figma, 'application/json')">
+          💾 Baixar figma-tokens.json
+        </button>
+        <details style="margin-top: 10px;">
+          <summary style="cursor: pointer; color: #18b6f6; font-size: 14px;">👁️ Preview</summary>
+          <pre style="margin-top: 10px; padding: 10px; background: #1e1e1e; color: #d4d4d4; border-radius: 4px; overflow-x: auto; font-size: 12px; max-height: 300px; overflow-y: auto;">${escapeHtml(formats.figma.substring(0, 2000))}${formats.figma.length > 2000 ? '\n... (arquivo truncado no preview)' : ''}</pre>
+        </details>
+      </div>
+    `;
+  }
+  
+  // Android XML
+  if (formats.android && typeof formats.android === 'object') {
+    html += `
+      <div style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3ddc84;">
+        <h4 style="margin: 0 0 10px 0; color: #212529;">🤖 Android XML</h4>
+        <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">Arquivos XML para Android</p>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+    `;
     
+    for (const [filename, content] of Object.entries(formats.android)) {
+      html += `
+          <button class="btn btn-primary" onclick="downloadFormat('${filename}', ${JSON.stringify(content)}, 'application/xml')">
+            💾 Baixar ${filename}
+          </button>
+      `;
+    }
+    
+    html += `
+        </div>
+      </div>
+    `;
+  }
+  
+  // iOS Swift
+  if (formats.ios) {
+    html += `
+      <div style="padding: 15px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007aff;">
+        <h4 style="margin: 0 0 10px 0; color: #212529;">🍎 iOS Swift</h4>
+        <p style="margin: 0 0 10px 0; color: #6b7280; font-size: 14px;">Código Swift para iOS</p>
+        <button class="btn btn-primary" onclick="downloadFormat('DesignTokens.swift', window.formats.ios, 'text/swift')">
+          💾 Baixar DesignTokens.swift
+        </button>
+        <details style="margin-top: 10px;">
+          <summary style="cursor: pointer; color: #007aff; font-size: 14px;">👁️ Preview</summary>
+          <pre style="margin-top: 10px; padding: 10px; background: #1e1e1e; color: #d4d4d4; border-radius: 4px; overflow-x: auto; font-size: 12px; max-height: 300px; overflow-y: auto;">${escapeHtml(formats.ios.substring(0, 2000))}${formats.ios.length > 2000 ? '\n... (arquivo truncado no preview)' : ''}</pre>
+        </details>
+      </div>
+    `;
+  }
+  
+  html += `</div>`;
+  
+  html += `
     <div style="margin-top: 20px; padding: 15px; background: #dbeafe; border-radius: 8px; border-left: 4px solid #3b82f6;">
       <p style="margin: 0; color: #1e40af; font-size: 14px;">
         <strong>💡 Dica:</strong> Para gerar formatos completos, carregue todos os arquivos de tokens (colors/light.json, colors/dark.json, typography.json, spacing.json, radius.json, shadows.json, animations.json).
       </p>
     </div>
   `;
+  
+  previewContent.innerHTML = html;
   
   // Tornar formats disponível globalmente para download
   window.formats = formats;
@@ -1863,6 +2101,12 @@ function toKebabCase(str) {
 // Converter kebab-case para camelCase
 function toCamelCase(str) {
   return str.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+}
+
+// Tornar funções disponíveis globalmente para uso em outros scripts
+if (typeof window !== 'undefined') {
+  window.toKebabCase = toKebabCase;
+  window.toCamelCase = toCamelCase;
 }
 
 // Flatten objeto aninhado para CSS vars

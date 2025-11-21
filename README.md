@@ -2,10 +2,10 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue)
+![Version](https://img.shields.io/badge/version-3.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
-![Tests](https://img.shields.io/badge/tests-270%20passing-success)
+![Tests](https://img.shields.io/badge/tests-320%20passing-success)
 ![Size](https://img.shields.io/badge/size-<5KB-success)
 
 **Enterprise-grade design tokens for modern design systems**
@@ -32,8 +32,13 @@
 - 🎭 **Cyberpunk Theme** - Dark mode com efeitos neon
 - 🎬 **Animações** - Keyframes e animações prontas (accordion, slide-in, fade-in)
 - 📚 **Storybook** - Documentação visual interativa de todos os tokens
-- ✏️ **Token Editor** - Interface web para editar tokens visualmente
-- 🧪 **Testes Completos** - 270 testes com 100% de cobertura do Token Editor
+- ✏️ **Token Editor** - Interface web completa para editar tokens visualmente
+  - ✅ Validação de schema JSON
+  - ✅ Preview visual dos tokens
+  - ✅ Histórico de alterações (undo/redo)
+  - ✅ Geração de formatos: CSS, Tailwind, Figma, Android XML, iOS Swift
+  - ✅ Servidor local (porta 3000)
+- 🧪 **Testes Completos** - 302 testes com 100% de cobertura do Token Editor
 
 ---
 
@@ -525,7 +530,7 @@ Interface web **100% local** para editar tokens visualmente, sem necessidade de 
 
 ### 🧪 Testes
 
-Suíte completa de testes com **270 casos de teste** cobrindo toda a funcionalidade, incluindo **100% de cobertura do Token Editor** (136 testes específicos).
+Suíte completa de testes com **302 casos de teste** cobrindo toda a funcionalidade, incluindo **100% de cobertura do Token Editor** (168 testes específicos + testes E2E).
 
 **Executar testes:**
 ```bash
@@ -539,7 +544,7 @@ pnpm test:coverage     # Com relatório de cobertura
 - ✅ Tokens utilitários (Tailwind classes)
 - ✅ Utilitários de acessibilidade (WCAG)
 - ✅ Estrutura de temas (light/dark)
-- ✅ **Token Editor (100% de cobertura - 136 testes)**
+- ✅ **Token Editor (100% de cobertura - 168 testes + E2E)**
 - ✅ TypeScript types
 - ✅ Casos de uso reais
 

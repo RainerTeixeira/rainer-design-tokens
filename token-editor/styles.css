@@ -1039,3 +1039,274 @@ input[type="range"]::-moz-range-thumb:hover {
   }
 }
 
+/* ============================================================================
+   ESTILOS PARA NOVAS FUNCIONALIDADES
+   ============================================================================ */
+
+/* Preview Visual de Tokens */
+.token-preview {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #dee2e6;
+}
+
+.token-preview h3 {
+  margin: 0 0 20px 0;
+  color: #212529;
+  font-size: 1.2rem;
+}
+
+.preview-section {
+  margin-bottom: 30px;
+}
+
+.preview-section h4 {
+  margin: 0 0 15px 0;
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Grid de Cores */
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.color-swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  border: 2px solid #dee2e6;
+  flex-shrink: 0;
+}
+
+.color-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.color-name {
+  font-weight: 600;
+  color: #212529;
+  font-size: 14px;
+  margin-bottom: 4px;
+  word-break: break-word;
+}
+
+.color-value {
+  font-size: 12px;
+  color: #6c757d;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+}
+
+/* Preview de Tipografia */
+.typography-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.typography-item {
+  padding: 8px;
+  border-left: 3px solid #0891b2;
+  padding-left: 12px;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Preview de Espaçamento */
+.spacing-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+}
+
+.spacing-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.spacing-bar {
+  height: 20px;
+  background: linear-gradient(90deg, #0891b2 0%, #9333ea 100%);
+  border-radius: 4px;
+  min-width: 20px;
+  border: 1px solid #dee2e6;
+}
+
+.spacing-label {
+  font-size: 14px;
+  color: #495057;
+  font-family: 'Courier New', monospace;
+  min-width: 120px;
+}
+
+/* Histórico de Alterações */
+.history-panel {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 400px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.history-panel.open {
+  right: 0;
+}
+
+.history-header {
+  padding: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-list {
+  padding: 15px;
+}
+
+.history-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.history-item:hover {
+  background: #e9ecef;
+}
+
+.history-item.active {
+  background: #dbeafe;
+  border-color: #0891b2;
+}
+
+.history-timestamp {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+/* Tabs de Múltiplos Arquivos */
+.file-tabs {
+  display: flex;
+  gap: 5px;
+  padding: 10px 15px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.file-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  position: relative;
+}
+
+.file-tab:hover {
+  background: #e9ecef;
+}
+
+.file-tab.active {
+  background: white;
+  border-color: #0891b2;
+  border-bottom: 1px solid white;
+  z-index: 1;
+  margin-bottom: -1px;
+}
+
+.file-tab.has-changes::after {
+  content: '●';
+  color: #f59e0b;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.file-tab-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #6c757d;
+  font-size: 16px;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.file-tab-close:hover {
+  background: #dee2e6;
+  color: #212529;
+}
+
+/* Responsividade para novas funcionalidades */
+@media (max-width: 768px) {
+  .colors-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .history-panel {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .file-tabs {
+    padding: 8px 10px;
+  }
+  
+  .file-tab {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+

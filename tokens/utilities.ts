@@ -7,7 +7,7 @@
  * facilitando o desenvolvimento e garantindo consistência visual.
  * 
  * @module tokens/utilities
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -244,6 +244,317 @@ export const BACKGROUND = {
  * Útil para type-checking e autocomplete em IDEs.
  */
 export type GradientDirections = typeof GRADIENT_DIRECTIONS;
+
+/**
+ * Utilidades responsivas para breakpoints
+ * 
+ * @description
+ * Classes e helpers para trabalhar com breakpoints responsivos,
+ * facilitando a criação de layouts mobile-first.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { RESPONSIVE } from '@rainersoft/design-tokens';
+ * 
+ * // Usar classes responsivas
+ * <div className={RESPONSIVE.HIDE_ON_MOBILE}>
+ *   Visível apenas em desktop
+ * </div>
+ * 
+ * // Usar container responsivo
+ * <div className={RESPONSIVE.CONTAINER.DEFAULT}>
+ *   Container com largura máxima responsiva
+ * </div>
+ * ```
+ */
+export const RESPONSIVE = {
+  // Visibilidade responsiva
+  HIDE_ON_MOBILE: 'hidden sm:block',
+  HIDE_ON_TABLET: 'hidden lg:block',
+  HIDE_ON_DESKTOP: 'block lg:hidden',
+  SHOW_ON_MOBILE: 'block sm:hidden',
+  SHOW_ON_TABLET: 'block lg:hidden',
+  SHOW_ON_DESKTOP: 'hidden lg:block',
+  
+  // Containers responsivos
+  CONTAINER: {
+    DEFAULT: 'w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl',
+    FLUID: 'w-full px-4 sm:px-6 lg:px-8',
+    TIGHT: 'w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl',
+    WIDE: 'w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl',
+    PROSE: 'w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-prose',
+  },
+  
+  // Grid responsivo
+  GRID: {
+    COLS_1_2: 'grid grid-cols-1 md:grid-cols-2 gap-4',
+    COLS_1_3: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4',
+    COLS_1_4: 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4',
+    COLS_2_3: 'grid grid-cols-2 lg:grid-cols-3 gap-4',
+    COLS_2_4: 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4',
+  },
+  
+  // Flex responsivo
+  FLEX: {
+    MOBILE_COLUMN: 'flex flex-col sm:flex-row',
+    TABLET_COLUMN: 'flex flex-col lg:flex-row',
+    MOBILE_REVERSE: 'flex flex-col-reverse sm:flex-row',
+    TABLET_REVERSE: 'flex flex-col-reverse lg:flex-row',
+  },
+  
+  // Text responsivo
+  TEXT: {
+    MOBILE_CENTER: 'text-center sm:text-left',
+    TABLET_CENTER: 'text-center lg:text-left',
+    RESPONSIVE_SIZE: 'text-sm sm:text-base lg:text-lg',
+    HEADING_SIZE: 'text-2xl sm:text-3xl lg:text-4xl xl:text-5xl',
+  },
+  
+  // Padding/Margin responsivo
+  SPACING: {
+    MOBILE_TIGHT: 'p-2 sm:p-4 lg:p-6',
+    TABLET_TIGHT: 'p-4 lg:p-8',
+    RESPONSIVE_Y: 'py-4 sm:py-6 lg:py-8 xl:py-12',
+    RESPONSIVE_X: 'px-4 sm:px-6 lg:px-8',
+  },
+} as const;
+
+/**
+ * Helpers de motion para animações
+ * 
+ * @description
+ * Classes utilitárias para aplicar motion tokens diretamente
+ * em elementos usando Tailwind CSS.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { MOTION } from '@rainersoft/design-tokens';
+ * 
+ * // Aplicar transição suave
+ * <button className={MOTION.TRANSITION.DEFAULT}>
+ *   Clique aqui
+ * </button>
+ * 
+ * // Aplicar animação de entrada
+ * <div className={MOTION.ANIMATE.FADE_IN}>
+ *   Conteúdo animado
+ * </div>
+ * ```
+ */
+export const MOTION = {
+  // Transições
+  TRANSITION: {
+    DEFAULT: 'transition-all duration-200 ease-in-out',
+    FAST: 'transition-all duration-100 ease-out',
+    SLOW: 'transition-all duration-300 ease-in-out',
+    COLOR: 'transition-colors duration-200 ease-in-out',
+    TRANSFORM: 'transition-transform duration-200 ease-in-out',
+    OPACITY: 'transition-opacity duration-150 ease-in-out',
+    SHADOW: 'transition-shadow duration-200 ease-in-out',
+  },
+  
+  // Animações
+  ANIMATE: {
+    FADE_IN: 'animate-fadeIn',
+    FADE_OUT: 'animate-fadeOut',
+    SLIDE_IN_UP: 'animate-slideInUp',
+    SLIDE_IN_DOWN: 'animate-slideInDown',
+    SLIDE_IN_LEFT: 'animate-slideInLeft',
+    SLIDE_IN_RIGHT: 'animate-slideInRight',
+    SCALE_IN: 'animate-scaleIn',
+    SCALE_OUT: 'animate-scaleOut',
+    ROTATE: 'animate-rotate',
+    PULSE: 'animate-pulse',
+    BOUNCE: 'animate-bounce',
+    SHAKE: 'animate-shake',
+    FLASH: 'animate-flash',
+  },
+  
+  // Durações
+  DURATION: {
+    INSTANT: 'duration-0',
+    FAST: 'duration-100',
+    NORMAL: 'duration-200',
+    SLOW: 'duration-300',
+    SLOWER: 'duration-500',
+    SLOWEST: 'duration-700',
+  },
+  
+  // Delays
+  DELAY: {
+    NONE: 'delay-0',
+    SHORT: 'delay-75',
+    MEDIUM: 'delay-150',
+    LONG: 'delay-300',
+    LONGER: 'delay-500',
+  },
+} as const;
+
+/**
+ * Constantes de cores principais para uso direto
+ * 
+ * @description
+ * Cores principais do tema light para uso direto em componentes.
+ * Retorna valores hexadecimais das cores base.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { COLORS } from '@rainersoft/design-tokens';
+ * 
+ * // Usar cor primária
+ * const primaryColor = COLORS.primary; // "#0891b2"
+ * 
+ * // Usar em estilo inline
+ * <div style={{ color: COLORS.primary }}>
+ *   Texto com cor primária
+ * </div>
+ * ```
+ */
+export const COLORS = {
+  primary: '#0891b2',
+  secondary: '#9333ea',
+  accent: '#db2777',
+  success: '#22c55e',
+  warning: '#f59e0b',
+  error: '#ef4444',
+  info: '#0891b2',
+} as const;
+
+/**
+ * Estrutura de navegação padrão
+ * 
+ * @description
+ * Array de itens de navegação para uso em componentes de layout.
+ * Pode ser sobrescrito ou estendido conforme necessário.
+ * 
+ * @type {Array<{href: string, label: string}>}
+ * @constant
+ * 
+ * @example
+ * ```typescript
+ * import { NAVIGATION } from '@rainersoft/design-tokens';
+ * 
+ * // Usar em componente
+ * {NAVIGATION.map(item => (
+ *   <Link key={item.href} href={item.href}>
+ *     {item.label}
+ *   </Link>
+ * ))}
+ * ```
+ */
+export const NAVIGATION: Array<{ href: string; label: string }> = [
+  { href: '/', label: 'Home' },
+  { href: '/sobre', label: 'Sobre' },
+  { href: '/projetos', label: 'Projetos' },
+  { href: '/contato', label: 'Contato' },
+];
+
+/**
+ * Helpers de shadows (sombras) como classes Tailwind CSS
+ * 
+ * @description
+ * Classes utilitárias para aplicar shadows tokens consistentes
+ * usando valores pré-definidos do tema light.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { SHADOWS } from '@rainersoft/design-tokens';
+ * 
+ * // Aplicar shadow large
+ * <div className={SHADOWS.LARGE}>
+ *   Content with large shadow
+ * </div>
+ * ```
+ */
+export const SHADOWS = {
+  XS: 'shadow-xs',
+  SMALL: 'shadow-sm',
+  BASE: 'shadow',
+  MEDIUM: 'shadow-md',
+  LARGE: 'shadow-lg',
+  XL: 'shadow-xl',
+  '2XL': 'shadow-2xl',
+  INNER: 'shadow-inner',
+} as const;
+
+/**
+ * Helpers de z-index para camadas
+ * 
+ * @description
+ * Classes utilitárias para aplicar z-index tokens consistentes
+ * usando valores pré-definidos.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { Z_INDEX } from '@rainersoft/design-tokens';
+ * 
+ * // Aplicar z-index para modal
+ * <div className={Z_INDEX.MODAL}>
+ *   Modal content
+ * </div>
+ * ```
+ */
+export const Z_INDEX = {
+  BASE: 'z-0',
+  DROPDOWN: 'z-[1000]',
+  STICKY: 'z-[1020]',
+  FIXED: 'z-[1030]',
+  BACKDROP: 'z-[1040]',
+  MODAL: 'z-[1050]',
+  POPOVER: 'z-[1060]',
+  TOOLTIP: 'z-[1070]',
+  TOAST: 'z-[1080]',
+  SPOTLIGHT: 'z-[1090]',
+  PRIORITY: 'z-[1100]',
+  MAX: 'z-[2147483647]',
+} as const;
+
+/**
+ * Tipo TypeScript para cores
+ * 
+ * @typedef {Object} Colors
+ * @description
+ * Tipo que representa todas as cores principais disponíveis.
+ */
+export type Colors = typeof COLORS;
+
+/**
+ * Tipo TypeScript para navegação
+ * 
+ * @typedef {Array<{href: string, label: string}>} Navigation
+ * @description
+ * Tipo que representa a estrutura de navegação.
+ */
+export type Navigation = typeof NAVIGATION;
+
+/**
+ * Tipo TypeScript para shadows
+ * 
+ * @typedef {Object} Shadows
+ * @description
+ * Tipo que representa todas as classes de shadows disponíveis.
+ */
+export type Shadows = typeof SHADOWS;
 
 /**
  * Tipo TypeScript para gradientes

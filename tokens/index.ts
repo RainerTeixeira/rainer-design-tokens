@@ -7,7 +7,7 @@
  * framework ou tecnologia, garantindo consistência visual.
  * 
  * @module tokens
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -22,6 +22,9 @@ import animations from './animations.json';
 import hero from './hero.json';
 import effects from './effects.json';
 import celestialBackground from './components/celestial-background.json';
+import motion from './motion.json';
+import breakpoints from './breakpoints.json';
+import zIndex from './z-index.json';
 
 // Utility tokens (Tailwind CSS classes)
 export * from './utilities';
@@ -70,6 +73,9 @@ export const tokens = {
   radius: radius.radius,
   shadows: shadows.shadows,
   animations: animations.animations,
+  motion: motion.motion,
+  breakpoints: breakpoints.breakpoints,
+  zIndex: zIndex.zIndex,
   hero: hero.hero,
   effects: effects.effects,
   components: {
@@ -262,6 +268,69 @@ export const componentTokens = {
 };
 
 /**
+ * Tokens de motion
+ * 
+ * @description
+ * Exporta todos os tokens relacionados a motion e animações, incluindo
+ * durações, easings, keyframes e transições seguindo Material Design e Fluent Design.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { motionTokens } from 'rainer-design-tokens';
+ * 
+ * const duration = motionTokens.duration.normal;
+ * const easing = motionTokens.easing.standard.productive;
+ * ```
+ */
+export const motionTokens = motion.motion;
+
+/**
+ * Tokens de breakpoints
+ * 
+ * @description
+ * Exporta todos os tokens de breakpoints responsivos para criar layouts
+ * mobile-first consistentes em todas as plataformas.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { breakpointTokens } from 'rainer-design-tokens';
+ * 
+ * const tabletSize = breakpointTokens.md;
+ * const mediaQuery = breakpointTokens.mediaQueries.lg;
+ * ```
+ */
+export const breakpointTokens = breakpoints.breakpoints;
+
+/**
+ * Tokens de z-index
+ * 
+ * @description
+ * Exporta todos os tokens de z-index para gerenciar camadas e sobreposições
+ * de forma consistente e escalável.
+ * 
+ * @type {Object}
+ * @constant
+ * @readonly
+ * 
+ * @example
+ * ```typescript
+ * import { zIndexTokens } from 'rainer-design-tokens';
+ * 
+ * const modalLayer = zIndexTokens.modal;
+ * const tooltipLayer = zIndexTokens.tooltip;
+ * ```
+ */
+export const zIndexTokens = zIndex.zIndex;
+
+/**
  * Tipo TypeScript para todos os tokens
  * 
  * @typedef {Object} Tokens
@@ -333,6 +402,33 @@ export type Shadows = typeof shadows.shadows;
  * Tipo que representa todos os tokens de animações.
  */
 export type Animations = typeof animations.animations;
+
+/**
+ * Tipo TypeScript para tokens de motion
+ * 
+ * @typedef {Object} Motion
+ * @description
+ * Tipo que representa todos os tokens de motion.
+ */
+export type Motion = typeof motion.motion;
+
+/**
+ * Tipo TypeScript para tokens de breakpoints
+ * 
+ * @typedef {Object} Breakpoints
+ * @description
+ * Tipo que representa todos os tokens de breakpoints responsivos.
+ */
+export type Breakpoints = typeof breakpoints.breakpoints;
+
+/**
+ * Tipo TypeScript para tokens de z-index
+ * 
+ * @typedef {Object} ZIndex
+ * @description
+ * Tipo que representa todos os tokens de z-index.
+ */
+export type ZIndex = typeof zIndex.zIndex;
 
 /**
  * Exportação padrão dos tokens

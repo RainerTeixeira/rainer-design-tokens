@@ -7,7 +7,7 @@
  * através de theme.extend para ter acesso a todos os tokens como classes utilitárias.
  * 
  * @module formats/tailwind.config
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  * @generated This file is auto-generated. Do not edit manually.

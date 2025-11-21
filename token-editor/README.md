@@ -36,6 +36,9 @@ Interface web **100% local** para editar design tokens visualmente, sem necessid
 - ✅ **CSS Variables** - Gera arquivo `css-vars.css` com variáveis CSS
 - ✅ **Tailwind Config** - Gera arquivo `tailwind.config.ts` completo
 - ✅ **Tokens JSON** - Gera arquivo `tokens.json` consolidado
+- ✅ **Figma Tokens** - Formato compatível com Figma
+- ✅ **Android XML** - colors.xml, dimens.xml, typography.xml
+- ✅ **iOS Swift** - Código Swift pronto para uso
 - ✅ **Download Direto** - Baixe os arquivos gerados com um clique
 - ✅ **Preview** - Visualize o conteúdo antes de baixar
 - ✅ **Cache Inteligente** - Usa tokens carregados anteriormente do localStorage
@@ -46,13 +49,28 @@ Interface web **100% local** para editar design tokens visualmente, sem necessid
 - ✅ **Restauração de Backup** - Oferece restaurar backup ao carregar arquivo
 - ✅ **Indicador de Mudanças** - Mostra se há alterações não salvas
 - ✅ **Informações do Editor** - Contador de linha/coluna, total de linhas/caracteres
-- ✅ **Atalhos de Teclado** - Ctrl+S (salvar), Ctrl+Shift+F (formatar), Ctrl+B (build)
+- ✅ **Atalhos de Teclado** - Ctrl+S (salvar), Ctrl+Shift+F (formatar), Ctrl+B (build), Ctrl+Z (undo), Ctrl+Y (redo)
+- ✅ **Validação de Schema** - Valida estrutura e valores dos tokens
+- ✅ **Preview Visual** - Visualize cores, tipografia e espaçamento
+- ✅ **Histórico** - Undo/Redo e restauração de versões
 
 ## 🚀 Como Usar
 
-### ⚡ Modo Local (Recomendado - Sem Servidor)
+### 🌐 Modo Servidor (Recomendado para Desenvolvimento)
 
-**O editor funciona 100% localmente!** Basta abrir o arquivo HTML diretamente no navegador:
+**Inicie o servidor local na porta 3000:**
+
+```bash
+pnpm run dev:editor
+# ou
+pnpm run start:editor
+```
+
+Depois acesse: **http://localhost:3000**
+
+### ⚡ Modo Local (Sem Servidor)
+
+**O editor também funciona 100% localmente!** Basta abrir o arquivo HTML diretamente no navegador:
 
 1. **Abra o arquivo** `index.html` diretamente no navegador:
    - **Windows**: Clique duas vezes no arquivo ou arraste para o navegador
@@ -82,10 +100,14 @@ Interface web **100% local** para editar design tokens visualmente, sem necessid
 
 ```
 token-editor/
-├── index.html      # Interface principal (HTML comentado e acessível)
-├── styles.css      # Estilos CSS
-├── editor.js       # Lógica do editor (JavaScript puro)
-└── README.md       # Este arquivo
+├── index.html              # Interface principal (HTML comentado e acessível)
+├── styles.css              # Estilos CSS
+├── editor.js               # Lógica do editor (JavaScript puro)
+├── editor-extensions.js    # Extensões (validação, preview, histórico)
+├── export-formats.js      # Novos formatos de exportação (Figma, Android, iOS)
+├── server.js              # Servidor HTTP simples (porta 3000)
+├── README.md              # Este arquivo
+└── README_SERVER.md       # Documentação do servidor
 ```
 
 ### 📝 Comentários HTML
@@ -119,6 +141,9 @@ O editor funciona **100% localmente** porque:
 - `Ctrl + S` - Salvar arquivo
 - `Ctrl + Shift + F` - Formatar JSON
 - `Ctrl + B` - Gerar formatos
+- `Ctrl + Z` - Desfazer (undo)
+- `Ctrl + Y` - Refazer (redo)
+- `Ctrl + F` - Buscar propriedade
 - `Tab` - Adicionar indentação (no editor de código)
 - `Shift + Tab` - Remover indentação (no editor de código)
 
@@ -142,11 +167,46 @@ O editor visual permite editar JSON de forma estruturada, evitando erros de sint
 4. **Veja mudanças em tempo real** no JSON (tab "📝 Código")
 5. **Objetos aninhados** podem ser expandidos/colapsados com o botão ▼/▶
 
+## ✨ Novas Funcionalidades (v2.0.0+)
+
+### ✅ Validação de Schema JSON
+- Validação baseada em padrões conhecidos dos tokens
+- Validação de cores hex/rgba
+- Validação de estrutura de tokens
+- Avisos e erros detalhados
+
+### ✅ Preview Visual dos Tokens
+- Preview de cores com swatches visuais
+- Preview de tipografia com exemplos
+- Preview de espaçamento com barras visuais
+- Atualização automática ao editar
+
+### ✅ Histórico de Alterações
+- Sistema de histórico completo (até 50 estados)
+- Undo/Redo com Ctrl+Z / Ctrl+Y
+- Painel de histórico visual
+- Restauração de versões anteriores
+- Comparação de versões
+
+### ✅ Novos Formatos de Exportação
+- **Figma Tokens** - Formato compatível com Figma
+- **Android XML** - colors.xml, dimens.xml, typography.xml
+- **iOS Swift** - Código Swift pronto para uso
+
+### ✅ Novos Tokens Suportados
+- **Motion Tokens** - Durations, easings, delays
+- **Breakpoints** - Breakpoints responsivos
+- **Z-Index** - Sistema de camadas
+
+### 🚀 Servidor Local
+- Servidor HTTP simples para desenvolvimento
+- Roda na porta 3000
+- Comando: `pnpm run dev:editor`
+- Acesse: http://localhost:3000
+
 ## 🔧 Melhorias Futuras
 
-- [ ] Validação de schema JSON
-- [ ] Preview visual dos tokens
-- [ ] Histórico de alterações
-- [ ] Comparação de versões
+- [ ] Suporte a múltiplos arquivos simultâneos (estrutura criada)
+- [ ] Comparação de versões avançada
 - [ ] Exportar/Importar tokens
-- [ ] Suporte a múltiplos arquivos simultâneos
+- [ ] Plugins e extensões

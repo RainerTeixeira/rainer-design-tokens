@@ -60,6 +60,9 @@
           <option value="tokens/radius.json">Radius</option>
           <option value="tokens/shadows.json">Sombras</option>
           <option value="tokens/animations.json">Animações</option>
+          <option value="tokens/motion.json">Motion (Durations, Easings)</option>
+          <option value="tokens/breakpoints.json">Breakpoints Responsivos</option>
+          <option value="tokens/z-index.json">Z-Index Scale</option>
         </select>
         
         <!-- Input de arquivo oculto (ativado pelo botão) -->
@@ -185,10 +188,26 @@
           <button 
             id="validateBtn" 
             class="btn btn-secondary" 
-            title="Validar JSON"
-            aria-label="Validar JSON"
+            title="Validar JSON e Schema"
+            aria-label="Validar JSON e Schema"
           >
-            Validar
+            ✅ Validar Schema
+          </button>
+          <button 
+            id="previewBtn" 
+            class="btn btn-secondary" 
+            title="Mostrar preview visual dos tokens"
+            aria-label="Preview visual"
+          >
+            👁️ Preview
+          </button>
+          <button 
+            id="historyBtn" 
+            class="btn btn-secondary" 
+            title="Histórico de alterações (Ctrl+Z para desfazer)"
+            aria-label="Histórico"
+          >
+            📜 Histórico
           </button>
         </div>
       </div>
@@ -258,6 +277,95 @@
 
   <!-- Script Principal: Lógica do editor -->
   <script src="editor.js"></script>
+  <!-- Novos Formatos: Figma, Android XML, iOS Swift -->
+  <script src="export-formats.js"></script>
+  <!-- Extensões: Novas funcionalidades (validação schema, preview, histórico, múltiplos arquivos) -->
+  <script src="editor-extensions.js"></script>
+  <script>
+    // Integrar extensões após carregar editor.js
+    // Substituir função validateJSON pela versão com schema
+    if (typeof validateJSONWithSchema !== 'undefined') {
+      // Substituir a função validateJSON original
+      const originalValidateJSON = validateJSON;
+      validateJSON = function(showSuccess = false) {
+        validateJSONWithSchema(showSuccess);
+      };
+      
+      // Carregar histórico ao iniciar
+      if (typeof loadHistory !== 'undefined') {
+        loadHistory();
+      }
+      
+      // Salvar no histórico quando JSON mudar
+      let historyTimeout;
+      jsonEditor.addEventListener('input', () => {
+        clearTimeout(historyTimeout);
+        historyTimeout = setTimeout(() => {
+          if (typeof saveToHistory !== 'undefined') {
+            saveToHistory(jsonEditor.value);
+          }
+        }, 1000); // Debounce de 1 segundo
+      });
+      
+      // Atalhos de teclado para histórico
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+          e.preventDefault();
+          if (typeof navigateHistory !== 'undefined') {
+            navigateHistory('undo');
+          }
+        } else if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || (e.key === 'z' && e.shiftKey))) {
+          e.preventDefault();
+          if (typeof navigateHistory !== 'undefined') {
+            navigateHistory('redo');
+          }
+        }
+      });
+      
+      // Atualizar preview quando JSON mudar
+      let previewTimeout;
+      jsonEditor.addEventListener('input', () => {
+        clearTimeout(previewTimeout);
+        previewTimeout = setTimeout(() => {
+          if (typeof showTokenPreview !== 'undefined') {
+            showTokenPreview();
+          }
+        }, 500); // Debounce de 500ms
+      });
+      
+      // Event listeners para novos botões
+      const previewBtn = document.getElementById('previewBtn');
+      const historyBtn = document.getElementById('historyBtn');
+      
+      if (previewBtn && typeof showTokenPreview !== 'undefined') {
+        previewBtn.addEventListener('click', () => {
+          showTokenPreview();
+          // Scroll para o preview se estiver na tab visual
+          if (visualTab.classList.contains('active')) {
+            const preview = document.getElementById('tokenPreview');
+            if (preview) {
+              preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          } else {
+            // Se estiver na tab código, alternar para visual
+            switchToVisual();
+            setTimeout(() => {
+              const preview = document.getElementById('tokenPreview');
+              if (preview) {
+                preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }, 100);
+          }
+        });
+      }
+      
+      if (historyBtn && typeof showHistoryPanel !== 'undefined') {
+        historyBtn.addEventListener('click', () => {
+          showHistoryPanel();
+        });
+      }
+    }
+  </script>
 </body>
 </html>
 

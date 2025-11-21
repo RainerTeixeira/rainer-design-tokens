@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/theme.json",
+  "$description": "Z-index scale - Layering system for UI elements",
+  "zIndex": {
+    "base": 0,
+    "dropdown": 1000,
+    "sticky": 1020,
+    "fixed": 1030,
+    "modalBackdrop": 1040,
+    "modal": 1050,
+    "popover": 1060,
+    "tooltip": 1070,
+    "toast": 1080,
+    "notification": 1090,
+    "max": 9999
+  },
+  "layers": {
+    "background": 0,
+    "base": 1,
+    "content": 10,
+    "overlay": 100,
+    "dropdown": 1000,
+    "modal": 2000,
+    "tooltip": 3000,
+    "notification": 4000
+  }
+}

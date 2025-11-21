@@ -2271,3 +2271,411 @@ describe('Token Editor - Validações e Integrações', () => {
   });
 });
 
+describe('Token Editor - Tratamento de Erros e Validações Avançadas', () => {
+  describe('generateCSS - Validação de estrutura completa', () => {
+    it('deve detectar quando cores light estão faltando', () => {
+      const tokensSemLight = {
+        colors: {
+          light: null,
+          dark: mockTokens.colors.dark
+        }
+      };
+      
+      expect(() => {
+        generateCSS(tokensSemLight);
+      }).toThrow('Cores light e dark são necessárias para gerar CSS');
+    });
+
+    it('deve detectar quando cores dark estão faltando', () => {
+      const tokensSemDark = {
+        colors: {
+          light: mockTokens.colors.light,
+          dark: null
+        }
+      };
+      
+      expect(() => {
+        generateCSS(tokensSemDark);
+      }).toThrow('Cores light e dark são necessárias para gerar CSS');
+    });
+
+    it('deve validar que tokens.colors existe', () => {
+      const tokensSemColors = {
+        typography: mockTokens.typography
+      };
+      
+      expect(() => {
+        generateCSS(tokensSemColors as any);
+      }).toThrow();
+    });
+
+    it('deve validar que tokens.colors.light é um objeto', () => {
+      const tokensComLightNull = {
+        colors: {
+          light: null,
+          dark: mockTokens.colors.dark
+        }
+      };
+      
+      expect(() => {
+        generateCSS(tokensComLightNull);
+      }).toThrow('Cores light e dark são necessárias para gerar CSS');
+    });
+
+    it('deve validar que tokens.colors.dark é um objeto', () => {
+      const tokensComDarkNull = {
+        colors: {
+          light: mockTokens.colors.light,
+          dark: null
+        }
+      };
+      
+      expect(() => {
+        generateCSS(tokensComDarkNull);
+      }).toThrow('Cores light e dark são necessárias para gerar CSS');
+    });
+  });
+
+  describe('generateTailwindConfig - Validação de estrutura completa', () => {
+    it('deve detectar quando cores light estão faltando para Tailwind', () => {
+      const tokensSemLight = {
+        colors: {}
+      };
+      
+      expect(() => {
+        generateTailwindConfig(tokensSemLight as any);
+      }).toThrow('Tokens de cores são necessários para gerar Tailwind config');
+    });
+
+    it('deve validar que tokens.colors existe', () => {
+      const tokensSemColors = {
+        typography: mockTokens.typography
+      };
+      
+      expect(() => {
+        generateTailwindConfig(tokensSemColors as any);
+      }).toThrow();
+    });
+
+    it('deve validar que tokens.colors.light existe', () => {
+      const tokensSemLight = {
+        colors: {}
+      };
+      
+      expect(() => {
+        generateTailwindConfig(tokensSemLight as any);
+      }).toThrow('Tokens de cores são necessários para gerar Tailwind config');
+    });
+  });
+
+  describe('generateTokensJSON - Validação de estrutura completa', () => {
+    it('deve gerar tokens JSON mesmo sem cores', () => {
+      const tokensSemCores = {
+        typography: mockTokens.typography,
+        spacing: mockTokens.spacing
+      };
+      
+      const json = generateTokensJSON(tokensSemCores);
+      const parsed = JSON.parse(json);
+      
+      expect(parsed).toHaveProperty('typography');
+      expect(parsed).toHaveProperty('spacing');
+      expect(parsed.colors).toBeUndefined();
+    });
+
+    it('deve lidar com tokens completamente vazios', () => {
+      const tokensVazios = {};
+      
+      const json = generateTokensJSON(tokensVazios);
+      const parsed = JSON.parse(json);
+      
+      expect(parsed).toHaveProperty('meta');
+      expect(parsed.colors).toBeUndefined();
+    });
+
+    it('deve lidar com tokens null', () => {
+      const tokensNull = {
+        colors: null,
+        typography: null
+      };
+      
+      const json = generateTokensJSON(tokensNull as any);
+      const parsed = JSON.parse(json);
+      
+      expect(parsed).toHaveProperty('meta');
+      expect(parsed.colors).toBeUndefined();
+    });
+  });
+
+  describe('storeLoadedToken - Tratamento de erros avançado', () => {
+    it('deve ignorar JSON inválido silenciosamente', () => {
+      const loadedTokens = {
+        colors: { light: null, dark: null },
+        typography: null,
+        spacing: null,
+        radius: null,
+        shadows: null,
+        animations: null
+      };
+      
+      expect(() => {
+        storeLoadedToken('tokens/colors/light.json', '{ invalid json }', loadedTokens);
+      }).not.toThrow();
+      
+      expect(loadedTokens.colors.light).toBeNull();
+    });
+
+    it('deve ignorar conteúdo vazio', () => {
+      const loadedTokens = {
+        colors: { light: null, dark: null },
+        typography: null,
+        spacing: null,
+        radius: null,
+        shadows: null,
+        animations: null
+      };
+      
+      expect(() => {
+        storeLoadedToken('tokens/colors/light.json', '', loadedTokens);
+      }).not.toThrow();
+    });
+
+    it('deve ignorar conteúdo null', () => {
+      const loadedTokens = {
+        colors: { light: null, dark: null },
+        typography: null,
+        spacing: null,
+        radius: null,
+        shadows: null,
+        animations: null
+      };
+      
+      expect(() => {
+        storeLoadedToken('tokens/colors/light.json', null as any, loadedTokens);
+      }).not.toThrow();
+    });
+  });
+
+  describe('flattenToCSSVars - Tratamento de casos extremos', () => {
+    it('deve lidar com objeto com propriedades undefined', () => {
+      const obj = {
+        key1: 'value1',
+        key2: undefined,
+        key3: 'value3'
+      };
+      
+      const result = flattenToCSSVars(obj, 'prefix');
+      
+      expect(result.length).toBe(2); // Apenas key1 e key3
+      expect(result).toContain('  --prefix-key1: value1;');
+      expect(result).toContain('  --prefix-key3: value3;');
+    });
+
+    it('deve lidar com objeto com propriedades vazias', () => {
+      const obj = {
+        empty: '',
+        filled: 'value'
+      };
+      
+      const result = flattenToCSSVars(obj, 'prefix');
+      
+      expect(result.length).toBe(2);
+      expect(result).toContain('  --prefix-empty: ;');
+      expect(result).toContain('  --prefix-filled: value;');
+    });
+
+    it('deve lidar com objeto com números como valores', () => {
+      const obj = {
+        number: 123 as any
+      };
+      
+      const result = flattenToCSSVars(obj, 'prefix');
+      
+      // Números não devem gerar CSS vars (apenas strings)
+      expect(result.length).toBe(0);
+    });
+  });
+
+  describe('toTailwindObject - Tratamento de casos extremos', () => {
+    it('deve lidar com objeto com propriedades undefined', () => {
+      const obj = {
+        key1: 'value1',
+        key2: undefined,
+        key3: 'value3'
+      };
+      
+      const result = toTailwindObject(obj, 8);
+      
+      expect(result).toContain("key1: 'value1'");
+      expect(result).toContain("key3: 'value3'");
+      expect(result).not.toContain('key2');
+    });
+
+    it('deve lidar com objeto com propriedades vazias', () => {
+      const obj = {
+        empty: '',
+        filled: 'value'
+      };
+      
+      const result = toTailwindObject(obj, 8);
+      
+      expect(result).toContain("empty: ''");
+      expect(result).toContain("filled: 'value'");
+    });
+
+    it('deve lidar com objeto com números como valores', () => {
+      const obj = {
+        number: 123 as any
+      };
+      
+      const result = toTailwindObject(obj, 8);
+      
+      // Números não devem gerar linhas (apenas strings)
+      expect(result).toBe('');
+    });
+  });
+
+  describe('getValueType - Casos extremos', () => {
+    it('deve lidar com undefined', () => {
+      expect(getValueType(undefined)).toBe('unknown');
+    });
+
+    it('deve lidar com valores especiais', () => {
+      expect(getValueType(NaN)).toBe('number');
+      expect(getValueType(Infinity)).toBe('number');
+      expect(getValueType(-Infinity)).toBe('number');
+    });
+
+    it('deve detectar cores hex com diferentes formatos', () => {
+      expect(getValueType('#abc')).toBe('string'); // 3 dígitos não detectados
+      expect(getValueType('#abcdef')).toBe('color');
+      expect(getValueType('#ABCDEF')).toBe('color');
+      expect(getValueType('#123456')).toBe('color');
+    });
+
+    it('deve detectar cores rgba/rgb com espaços', () => {
+      expect(getValueType('rgba(8, 145, 178, 0.5)')).toBe('color');
+      expect(getValueType('rgb(8,145,178)')).toBe('color');
+      expect(getValueType('rgba( 8 , 145 , 178 , 0.5 )')).toBe('color');
+    });
+  });
+
+  describe('Integração - Cenários de erro reais', () => {
+    it('deve gerar apenas tokens JSON quando cores estão faltando', () => {
+      const tokensParciais = {
+        typography: mockTokens.typography,
+        spacing: mockTokens.spacing
+      };
+      
+      // CSS deve falhar
+      expect(() => {
+        generateCSS(tokensParciais as any);
+      }).toThrow();
+      
+      // Tailwind deve falhar
+      expect(() => {
+        generateTailwindConfig(tokensParciais as any);
+      }).toThrow();
+      
+      // Tokens JSON deve funcionar
+      const json = generateTokensJSON(tokensParciais);
+      expect(() => JSON.parse(json)).not.toThrow();
+    });
+
+    it('deve gerar CSS e Tailwind quando apenas cores estão disponíveis', () => {
+      const tokensApenasCores = {
+        colors: mockTokens.colors
+      };
+      
+      const css = generateCSS(tokensApenasCores);
+      const tailwind = generateTailwindConfig(tokensApenasCores);
+      
+      expect(css).toContain(':root {');
+      expect(css).toContain('.dark {');
+      expect(tailwind).toContain('export const tailwindConfig');
+    });
+
+    it('deve gerar todos os formatos quando todos os tokens estão disponíveis', () => {
+      const css = generateCSS(mockTokens);
+      const tailwind = generateTailwindConfig(mockTokens);
+      const json = generateTokensJSON(mockTokens);
+      
+      expect(css).toContain(':root {');
+      expect(tailwind).toContain('export const tailwindConfig');
+      expect(() => JSON.parse(json)).not.toThrow();
+    });
+  });
+
+  describe('Validação de caminhos e estruturas', () => {
+    it('deve validar caminhos de propriedades aninhadas', () => {
+      const path = 'colors.primary.base';
+      const keys = path.split('.');
+      
+      expect(keys.length).toBe(3);
+      expect(keys[0]).toBe('colors');
+      expect(keys[1]).toBe('primary');
+      expect(keys[2]).toBe('base');
+    });
+
+    it('deve validar caminhos de arrays aninhados', () => {
+      const path = 'items[0].value';
+      const arrayMatch = path.match(/^(.+)\[(\d+)\](.+)$/);
+      
+      // Verifica que o regex funciona para arrays aninhados
+      expect(path).toContain('[');
+      expect(path).toContain(']');
+      expect(arrayMatch).not.toBeNull();
+      if (arrayMatch) {
+        expect(arrayMatch[1]).toBe('items');
+        expect(arrayMatch[2]).toBe('0');
+        expect(arrayMatch[3]).toBe('.value');
+      }
+    });
+
+    it('deve validar estrutura de objetos aninhados', () => {
+      const obj = {
+        level1: {
+          level2: {
+            level3: 'value'
+          }
+        }
+      };
+      
+      const result = flattenToCSSVars(obj, 'prefix');
+      
+      expect(result.length).toBe(1);
+      expect(result[0]).toContain('level1-level2-level3');
+      expect(result[0]).toContain('value');
+    });
+  });
+
+  describe('Performance e limites', () => {
+    it('deve processar objetos grandes sem travar', () => {
+      const largeObj: Record<string, string> = {};
+      for (let i = 0; i < 1000; i++) {
+        largeObj[`key${i}`] = `value${i}`;
+      }
+      
+      const start = Date.now();
+      const result = flattenToCSSVars(largeObj, 'prefix');
+      const duration = Date.now() - start;
+      
+      expect(result.length).toBe(1000);
+      expect(duration).toBeLessThan(1000); // Deve ser rápido mesmo com 1000 itens
+    });
+
+    it('deve processar objetos muito profundamente aninhados', () => {
+      let deepObj: any = { value: '#0891b2' };
+      for (let i = 0; i < 10; i++) {
+        deepObj = { level: deepObj };
+      }
+      
+      const result = flattenToCSSVars(deepObj, 'prefix');
+      
+      expect(result.length).toBe(1);
+      expect(result[0]).toContain('level');
+      expect(result[0]).toContain('#0891b2');
+    });
+  });
+});
+

@@ -1061,6 +1061,67 @@ var animations$1 = {
 	animations: animations
 };
 
+var motion = {
+	duration: {
+		instant: "0ms",
+		fast: "100ms",
+		normal: "200ms",
+		slow: "300ms",
+		slower: "500ms",
+		slowest: "800ms"
+	},
+	easing: {
+		linear: "linear",
+		easeIn: "cubic-bezier(0.4, 0, 1, 1)",
+		easeOut: "cubic-bezier(0, 0, 0.2, 1)",
+		easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
+		easeInQuad: "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+		easeOutQuad: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+		easeInOutQuad: "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+		easeInCubic: "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+		easeOutCubic: "cubic-bezier(0.215, 0.61, 0.355, 1)",
+		easeInOutCubic: "cubic-bezier(0.645, 0.045, 0.355, 1)",
+		spring: "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+	},
+	delay: {
+		none: "0ms",
+		short: "50ms",
+		medium: "100ms",
+		long: "200ms"
+	}
+};
+var motion$1 = {
+	motion: motion
+};
+
+var breakpoints = {
+	xs: "0px",
+	sm: "640px",
+	md: "768px",
+	lg: "1024px",
+	xl: "1280px",
+	"2xl": "1536px",
+	"3xl": "1920px"
+};
+var breakpoints$1 = {
+	breakpoints: breakpoints};
+
+var zIndex = {
+	base: 0,
+	dropdown: 1000,
+	sticky: 1020,
+	fixed: 1030,
+	modalBackdrop: 1040,
+	modal: 1050,
+	popover: 1060,
+	tooltip: 1070,
+	toast: 1080,
+	notification: 1090,
+	max: 9999
+};
+var zIndex$1 = {
+	zIndex: zIndex};
+
 /**
  * @fileoverview Tokens utilitários - Classes Tailwind CSS
  *
@@ -1070,7 +1131,7 @@ var animations$1 = {
  * facilitando o desenvolvimento e garantindo consistência visual.
  *
  * @module tokens/utilities
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -1278,6 +1339,280 @@ declare const BACKGROUND: {
  */
 type GradientDirections = typeof GRADIENT_DIRECTIONS;
 /**
+ * Utilidades responsivas para breakpoints
+ *
+ * @description
+ * Classes e helpers para trabalhar com breakpoints responsivos,
+ * facilitando a criação de layouts mobile-first.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { RESPONSIVE } from '@rainersoft/design-tokens';
+ *
+ * // Usar classes responsivas
+ * <div className={RESPONSIVE.HIDE_ON_MOBILE}>
+ *   Visível apenas em desktop
+ * </div>
+ *
+ * // Usar container responsivo
+ * <div className={RESPONSIVE.CONTAINER.DEFAULT}>
+ *   Container com largura máxima responsiva
+ * </div>
+ * ```
+ */
+declare const RESPONSIVE: {
+    readonly HIDE_ON_MOBILE: "hidden sm:block";
+    readonly HIDE_ON_TABLET: "hidden lg:block";
+    readonly HIDE_ON_DESKTOP: "block lg:hidden";
+    readonly SHOW_ON_MOBILE: "block sm:hidden";
+    readonly SHOW_ON_TABLET: "block lg:hidden";
+    readonly SHOW_ON_DESKTOP: "hidden lg:block";
+    readonly CONTAINER: {
+        readonly DEFAULT: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl";
+        readonly FLUID: "w-full px-4 sm:px-6 lg:px-8";
+        readonly TIGHT: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl";
+        readonly WIDE: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl";
+        readonly PROSE: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-prose";
+    };
+    readonly GRID: {
+        readonly COLS_1_2: "grid grid-cols-1 md:grid-cols-2 gap-4";
+        readonly COLS_1_3: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
+        readonly COLS_1_4: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4";
+        readonly COLS_2_3: "grid grid-cols-2 lg:grid-cols-3 gap-4";
+        readonly COLS_2_4: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4";
+    };
+    readonly FLEX: {
+        readonly MOBILE_COLUMN: "flex flex-col sm:flex-row";
+        readonly TABLET_COLUMN: "flex flex-col lg:flex-row";
+        readonly MOBILE_REVERSE: "flex flex-col-reverse sm:flex-row";
+        readonly TABLET_REVERSE: "flex flex-col-reverse lg:flex-row";
+    };
+    readonly TEXT: {
+        readonly MOBILE_CENTER: "text-center sm:text-left";
+        readonly TABLET_CENTER: "text-center lg:text-left";
+        readonly RESPONSIVE_SIZE: "text-sm sm:text-base lg:text-lg";
+        readonly HEADING_SIZE: "text-2xl sm:text-3xl lg:text-4xl xl:text-5xl";
+    };
+    readonly SPACING: {
+        readonly MOBILE_TIGHT: "p-2 sm:p-4 lg:p-6";
+        readonly TABLET_TIGHT: "p-4 lg:p-8";
+        readonly RESPONSIVE_Y: "py-4 sm:py-6 lg:py-8 xl:py-12";
+        readonly RESPONSIVE_X: "px-4 sm:px-6 lg:px-8";
+    };
+};
+/**
+ * Helpers de motion para animações
+ *
+ * @description
+ * Classes utilitárias para aplicar motion tokens diretamente
+ * em elementos usando Tailwind CSS.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { MOTION } from '@rainersoft/design-tokens';
+ *
+ * // Aplicar transição suave
+ * <button className={MOTION.TRANSITION.DEFAULT}>
+ *   Clique aqui
+ * </button>
+ *
+ * // Aplicar animação de entrada
+ * <div className={MOTION.ANIMATE.FADE_IN}>
+ *   Conteúdo animado
+ * </div>
+ * ```
+ */
+declare const MOTION: {
+    readonly TRANSITION: {
+        readonly DEFAULT: "transition-all duration-200 ease-in-out";
+        readonly FAST: "transition-all duration-100 ease-out";
+        readonly SLOW: "transition-all duration-300 ease-in-out";
+        readonly COLOR: "transition-colors duration-200 ease-in-out";
+        readonly TRANSFORM: "transition-transform duration-200 ease-in-out";
+        readonly OPACITY: "transition-opacity duration-150 ease-in-out";
+        readonly SHADOW: "transition-shadow duration-200 ease-in-out";
+    };
+    readonly ANIMATE: {
+        readonly FADE_IN: "animate-fadeIn";
+        readonly FADE_OUT: "animate-fadeOut";
+        readonly SLIDE_IN_UP: "animate-slideInUp";
+        readonly SLIDE_IN_DOWN: "animate-slideInDown";
+        readonly SLIDE_IN_LEFT: "animate-slideInLeft";
+        readonly SLIDE_IN_RIGHT: "animate-slideInRight";
+        readonly SCALE_IN: "animate-scaleIn";
+        readonly SCALE_OUT: "animate-scaleOut";
+        readonly ROTATE: "animate-rotate";
+        readonly PULSE: "animate-pulse";
+        readonly BOUNCE: "animate-bounce";
+        readonly SHAKE: "animate-shake";
+        readonly FLASH: "animate-flash";
+    };
+    readonly DURATION: {
+        readonly INSTANT: "duration-0";
+        readonly FAST: "duration-100";
+        readonly NORMAL: "duration-200";
+        readonly SLOW: "duration-300";
+        readonly SLOWER: "duration-500";
+        readonly SLOWEST: "duration-700";
+    };
+    readonly DELAY: {
+        readonly NONE: "delay-0";
+        readonly SHORT: "delay-75";
+        readonly MEDIUM: "delay-150";
+        readonly LONG: "delay-300";
+        readonly LONGER: "delay-500";
+    };
+};
+/**
+ * Constantes de cores principais para uso direto
+ *
+ * @description
+ * Cores principais do tema light para uso direto em componentes.
+ * Retorna valores hexadecimais das cores base.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { COLORS } from '@rainersoft/design-tokens';
+ *
+ * // Usar cor primária
+ * const primaryColor = COLORS.primary; // "#0891b2"
+ *
+ * // Usar em estilo inline
+ * <div style={{ color: COLORS.primary }}>
+ *   Texto com cor primária
+ * </div>
+ * ```
+ */
+declare const COLORS: {
+    readonly primary: "#0891b2";
+    readonly secondary: "#9333ea";
+    readonly accent: "#db2777";
+    readonly success: "#22c55e";
+    readonly warning: "#f59e0b";
+    readonly error: "#ef4444";
+    readonly info: "#0891b2";
+};
+/**
+ * Estrutura de navegação padrão
+ *
+ * @description
+ * Array de itens de navegação para uso em componentes de layout.
+ * Pode ser sobrescrito ou estendido conforme necessário.
+ *
+ * @type {Array<{href: string, label: string}>}
+ * @constant
+ *
+ * @example
+ * ```typescript
+ * import { NAVIGATION } from '@rainersoft/design-tokens';
+ *
+ * // Usar em componente
+ * {NAVIGATION.map(item => (
+ *   <Link key={item.href} href={item.href}>
+ *     {item.label}
+ *   </Link>
+ * ))}
+ * ```
+ */
+declare const NAVIGATION: Array<{
+    href: string;
+    label: string;
+}>;
+/**
+ * Helpers de shadows (sombras) como classes Tailwind CSS
+ *
+ * @description
+ * Classes utilitárias para aplicar shadows tokens consistentes
+ * usando valores pré-definidos do tema light.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { SHADOWS } from '@rainersoft/design-tokens';
+ *
+ * // Aplicar shadow large
+ * <div className={SHADOWS.LARGE}>
+ *   Content with large shadow
+ * </div>
+ * ```
+ */
+declare const SHADOWS: {
+    readonly XS: "shadow-xs";
+    readonly SMALL: "shadow-sm";
+    readonly BASE: "shadow";
+    readonly MEDIUM: "shadow-md";
+    readonly LARGE: "shadow-lg";
+    readonly XL: "shadow-xl";
+    readonly '2XL': "shadow-2xl";
+    readonly INNER: "shadow-inner";
+};
+/**
+ * Helpers de z-index para camadas
+ *
+ * @description
+ * Classes utilitárias para aplicar z-index tokens consistentes
+ * usando valores pré-definidos.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { Z_INDEX } from '@rainersoft/design-tokens';
+ *
+ * // Aplicar z-index para modal
+ * <div className={Z_INDEX.MODAL}>
+ *   Modal content
+ * </div>
+ * ```
+ */
+declare const Z_INDEX: {
+    readonly BASE: "z-0";
+    readonly DROPDOWN: "z-[1000]";
+    readonly STICKY: "z-[1020]";
+    readonly FIXED: "z-[1030]";
+    readonly BACKDROP: "z-[1040]";
+    readonly MODAL: "z-[1050]";
+    readonly POPOVER: "z-[1060]";
+    readonly TOOLTIP: "z-[1070]";
+    readonly TOAST: "z-[1080]";
+    readonly SPOTLIGHT: "z-[1090]";
+    readonly PRIORITY: "z-[1100]";
+    readonly MAX: "z-[2147483647]";
+};
+/**
+ * Tipo TypeScript para cores
+ *
+ * @typedef {Object} Colors
+ * @description
+ * Tipo que representa todas as cores principais disponíveis.
+ */
+type Colors = typeof COLORS;
+/**
+ * Tipo TypeScript para navegação
+ *
+ * @typedef {Array<{href: string, label: string}>} Navigation
+ * @description
+ * Tipo que representa a estrutura de navegação.
+ */
+type Navigation = typeof NAVIGATION;
+/**
  * Tipo TypeScript para gradientes
  *
  * @typedef {Object} Gradients
@@ -1319,7 +1654,7 @@ type Background = typeof BACKGROUND;
  * qualquer ambiente (web, mobile, desktop).
  *
  * @module tokens/accessibility
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -1494,7 +1829,7 @@ declare function validateContrast(foreground: string, background: string, option
  * framework ou tecnologia, garantindo consistência visual.
  *
  * @module tokens
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -2567,6 +2902,57 @@ declare const tokens: {
                 };
             };
         };
+    };
+    readonly motion: {
+        duration: {
+            instant: string;
+            fast: string;
+            normal: string;
+            slow: string;
+            slower: string;
+            slowest: string;
+        };
+        easing: {
+            linear: string;
+            easeIn: string;
+            easeOut: string;
+            easeInOut: string;
+            easeInQuad: string;
+            easeOutQuad: string;
+            easeInOutQuad: string;
+            easeInCubic: string;
+            easeOutCubic: string;
+            easeInOutCubic: string;
+            spring: string;
+        };
+        delay: {
+            none: string;
+            short: string;
+            medium: string;
+            long: string;
+        };
+    };
+    readonly breakpoints: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+        "3xl": string;
+    };
+    readonly zIndex: {
+        base: number;
+        dropdown: number;
+        sticky: number;
+        fixed: number;
+        modalBackdrop: number;
+        modal: number;
+        popover: number;
+        tooltip: number;
+        toast: number;
+        notification: number;
+        max: number;
     };
     readonly hero: {
         title: {
@@ -4286,6 +4672,114 @@ declare const componentTokens: {
     };
 };
 /**
+ * Tokens de motion
+ *
+ * @description
+ * Exporta todos os tokens relacionados a motion e animações, incluindo
+ * durações, easings, keyframes e transições seguindo Material Design e Fluent Design.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { motionTokens } from 'rainer-design-tokens';
+ *
+ * const duration = motionTokens.duration.normal;
+ * const easing = motionTokens.easing.standard.productive;
+ * ```
+ */
+declare const motionTokens: {
+    duration: {
+        instant: string;
+        fast: string;
+        normal: string;
+        slow: string;
+        slower: string;
+        slowest: string;
+    };
+    easing: {
+        linear: string;
+        easeIn: string;
+        easeOut: string;
+        easeInOut: string;
+        easeInQuad: string;
+        easeOutQuad: string;
+        easeInOutQuad: string;
+        easeInCubic: string;
+        easeOutCubic: string;
+        easeInOutCubic: string;
+        spring: string;
+    };
+    delay: {
+        none: string;
+        short: string;
+        medium: string;
+        long: string;
+    };
+};
+/**
+ * Tokens de breakpoints
+ *
+ * @description
+ * Exporta todos os tokens de breakpoints responsivos para criar layouts
+ * mobile-first consistentes em todas as plataformas.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { breakpointTokens } from 'rainer-design-tokens';
+ *
+ * const tabletSize = breakpointTokens.md;
+ * const mediaQuery = breakpointTokens.mediaQueries.lg;
+ * ```
+ */
+declare const breakpointTokens: {
+    xs: string;
+    sm: string;
+    md: string;
+    lg: string;
+    xl: string;
+    "2xl": string;
+    "3xl": string;
+};
+/**
+ * Tokens de z-index
+ *
+ * @description
+ * Exporta todos os tokens de z-index para gerenciar camadas e sobreposições
+ * de forma consistente e escalável.
+ *
+ * @type {Object}
+ * @constant
+ * @readonly
+ *
+ * @example
+ * ```typescript
+ * import { zIndexTokens } from 'rainer-design-tokens';
+ *
+ * const modalLayer = zIndexTokens.modal;
+ * const tooltipLayer = zIndexTokens.tooltip;
+ * ```
+ */
+declare const zIndexTokens: {
+    base: number;
+    dropdown: number;
+    sticky: number;
+    fixed: number;
+    modalBackdrop: number;
+    modal: number;
+    popover: number;
+    tooltip: number;
+    toast: number;
+    notification: number;
+    max: number;
+};
+/**
  * Tipo TypeScript para todos os tokens
  *
  * @typedef {Object} Tokens
@@ -4350,6 +4844,30 @@ type Shadows = typeof shadows$1.shadows;
  * Tipo que representa todos os tokens de animações.
  */
 type Animations = typeof animations$1.animations;
+/**
+ * Tipo TypeScript para tokens de motion
+ *
+ * @typedef {Object} Motion
+ * @description
+ * Tipo que representa todos os tokens de motion.
+ */
+type Motion = typeof motion$1.motion;
+/**
+ * Tipo TypeScript para tokens de breakpoints
+ *
+ * @typedef {Object} Breakpoints
+ * @description
+ * Tipo que representa todos os tokens de breakpoints responsivos.
+ */
+type Breakpoints = typeof breakpoints$1.breakpoints;
+/**
+ * Tipo TypeScript para tokens de z-index
+ *
+ * @typedef {Object} ZIndex
+ * @description
+ * Tipo que representa todos os tokens de z-index.
+ */
+type ZIndex = typeof zIndex$1.zIndex;
 
 /**
  * @fileoverview Tema Claro - Rainer Design System
@@ -4361,7 +4879,7 @@ type Animations = typeof animations$1.animations;
  * e profissionalismo.
  *
  * @module themes/light
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -5016,7 +5534,7 @@ type LightTheme = typeof lightTheme;
  * aplicações que buscam um visual futurista e impactante.
  *
  * @module themes/dark
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */
@@ -5701,7 +6219,7 @@ type DarkTheme = typeof darkTheme;
  * facilitando a aplicação de temas completos na aplicação.
  *
  * @module themes
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  *
@@ -6943,4 +7461,4 @@ declare const themes: {
  */
 type Themes = typeof themes;
 
-export { type Animations, BACKGROUND, type Background, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, type Radius, type Shadows, type Spacing, type Themes, type Tokens, type Typography, animationTokens, componentTokens, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast };
+export { type Animations, BACKGROUND, type Background, type Breakpoints, COLORS, type Colors, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, MOTION, type Motion, NAVIGATION, type Navigation, RESPONSIVE, type Radius, SHADOWS, type Shadows, type Spacing, type Themes, type Tokens, type Typography, type ZIndex, Z_INDEX, animationTokens, breakpointTokens, componentTokens, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, motionTokens, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast, zIndexTokens };

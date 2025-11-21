@@ -1,40 +1,118 @@
-name: CI
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main, master, development]
+    branches: [ main, develop ]
   pull_request:
-    branches: [main, master, development]
+    branches: [ main, develop ]
 
 jobs:
   test:
+    name: Run Tests
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
       
-      - uses: pnpm/action-setup@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          version: 9
+          version: 8
       
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'pnpm'
       
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       
-      - name: Build
-        run: pnpm run build
-      
-      - name: Type check
+      - name: Run type check
         run: pnpm run type-check
       
-      - name: Lint
-        continue-on-error: true
+      - name: Run linter
         run: pnpm run lint
       
-      - name: Test
-        continue-on-error: true
+      - name: Run tests
         run: pnpm test
+      
+      - name: Generate coverage report
+        run: pnpm run test:coverage
+      
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false
 
+  build:
+    name: Build Package
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build formats
+        run: pnpm run build:formats
+      
+      - name: Build package
+        run: pnpm run build
+      
+      - name: Check build output
+        run: |
+          test -f dist/index.mjs || exit 1
+          test -f dist/index.d.ts || exit 1
+          test -f formats/css-vars.css || exit 1
+          test -f formats/tailwind.config.ts || exit 1
+          test -f formats/tokens.json || exit 1
+
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    needs: [test, build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build package
+        run: pnpm run build
+      
+      - name: Publish to npm
+        run: pnpm publish --access public --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

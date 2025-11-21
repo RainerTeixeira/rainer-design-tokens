@@ -1,12 +1,13 @@
 # Roadmap - rainer-design-tokens
 
-## 🎯 Versão Atual: 4.0.0 (2025-11-15)
+## 🎯 Versão Atual: 3.1.0 (2025-11-21)
 
 Refatoração completa para padrão enterprise com estrutura modular e agnóstica de tecnologia.
+**Novos recursos:** Motion tokens, Breakpoints responsivos, Z-index scale.
 
 ---
 
-## ✅ Completado (v4.0.0)
+## ✅ Completado (v3.1.0)
 
 ### Estrutura de Tokens
 - [x] Separação de tokens em arquivos JSON
@@ -38,13 +39,19 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 
 ---
 
-## 🚧 Em Progresso (v4.1.0)
+## ✅ Completado (v3.0.0)
+
+### Novos Tokens Implementados
+- [x] Motion tokens (durations, easings, keyframes)
+- [x] Breakpoints responsivos (mobile-first)
+- [x] Z-index scale (layers, components)
+- [x] Utilidades responsivas em utilities.ts
+- [x] Motion helpers para Tailwind
+- [x] Z-index classes utilitárias
+
+## 🚧 Em Progresso (v3.1.0)
 
 ### Melhorias Planejadas
-- [ ] Adicionar animações aos tokens
-- [ ] Criar tokens para motion (durations, easings)
-- [ ] Adicionar breakpoints responsivos
-- [ ] Criar tokens para z-index
 
 ### Formatos Adicionais
 - [ ] Figma Tokens export
@@ -56,36 +63,36 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 
 ## 📋 Backlog (Futuras Versões)
 
-### v4.2.0 - Tokens Avançados
-- [ ] Gradient tokens
-- [ ] Animation tokens (keyframes)
-- [ ] Transition tokens (durations, timings)
-- [ ] Z-index scale
-- [ ] Breakpoints responsivos
+### v3.2.0 - Tokens Avançados
+- [ ] Gradient tokens avançados
 - [ ] Grid layout tokens
+- [ ] Aspect ratio tokens
+- [ ] Filter effect tokens
+- [ ] Backdrop blur tokens
+- [ ] Custom scrollbar tokens
 
-### v4.3.0 - Mais Temas
+### v3.3.0 - Mais Temas
 - [ ] High contrast theme
 - [ ] Colorblind-friendly themes
 - [ ] Gaming theme (neon + RGB)
 - [ ] Corporate theme (sóbrio)
 - [ ] Custom theme builder
 
-### v4.4.0 - Plataformas
+### v3.4.0 - Plataformas
 - [ ] React Native tokens
 - [ ] Flutter/Dart export
 - [ ] Unity C# export
 - [ ] Unreal Engine export
 - [ ] Godot theme export
 
-### v4.5.0 - Ferramentas
+### v3.5.0 - Ferramentas
 - [ ] CLI para gerar tokens
 - [x] Visual token editor (GUI) ✅ **Concluído em v2.0.0**
 - [ ] Token validator
 - [ ] Migration tools
 - [ ] Design Lint integration
 
-### v5.0.0 - Design System Completo
+### v4.0.0 - Design System Completo
 - [ ] Component tokens (Button, Input, Card, etc.)
 - [ ] Pattern library
 - [ ] Icon system integration
@@ -125,8 +132,9 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 
 ## 📅 Timeline Estimado
 
-**Q4 2025**
-- v4.1.0 - Motion tokens e formatos adicionais
+**Q4 2024**
+- v3.0.0 - ✅ Motion tokens, Breakpoints, Z-index (LANÇADO)
+- v3.1.0 - Formatos adicionais (Em desenvolvimento)
 
 **Q1 2025**
 - v4.2.0 - Tokens avançados
@@ -162,12 +170,15 @@ Features são priorizadas por:
 
 ## 📊 Métricas de Sucesso
 
-### v4.0.0 Targets (Atual)
+### v3.0.0 Targets (Atual - ATINGIDO)
 - ✅ 100% type-safe (TypeScript)
 - ✅ 0 dependências runtime
-- ✅ < 5KB bundle size
+- ✅ < 10KB bundle size
 - ✅ Suporte light + dark
 - ✅ Compatível Tailwind + shadcn/ui
+- ✅ Motion tokens completos
+- ✅ Breakpoints responsivos
+- ✅ Z-index scale profissional
 
 ### v4.x Targets (2025-2025)
 - [ ] 95% test coverage
@@ -210,6 +221,6 @@ Seguimos [Semantic Versioning](https://semver.org/):
 
 ---
 
-**Última Atualização:** 15 de Novembro de 2024
-**Versão do Roadmap:** 1.0.0
+**Última Atualização:** 20 de Novembro de 2024
+**Versão do Roadmap:** 2.0.0
 

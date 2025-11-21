@@ -8,7 +8,7 @@
  * aplicações que buscam um visual futurista e impactante.
  *
  * @module themes/dark
- * @version 4.0.0
+ * @version 3.1.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */

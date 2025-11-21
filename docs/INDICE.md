@@ -49,10 +49,19 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 ### 🗺️ Planejamento
 
 7. **[Roadmap](./roadmap.md)** - Roadmap e futuras features
-   - Versão atual (4.0.0)
+   - Versão atual (3.1.0)
    - Features em progresso
    - Backlog
    - Timeline estimado
+
+8. **[MELHORIAS_FUTURAS.md](./MELHORIAS_FUTURAS.md)** - Lista completa de melhorias
+   - Melhorias no Token Editor
+   - Novos formatos de exportação
+   - Novos tokens
+   - Testes e qualidade
+   - CI/CD e automação
+   - Melhorias técnicas
+   - Acessibilidade
 
 ## 🚀 Início Rápido
 
@@ -113,6 +122,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### Planejamento
 - [Roadmap](./roadmap.md) - Futuras features
+- [MELHORIAS_FUTURAS.md](./MELHORIAS_FUTURAS.md) - Lista completa de melhorias e tarefas
 
 ## 🔗 Links Úteis
 
