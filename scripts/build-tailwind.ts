@@ -149,7 +149,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     ' * ',
     ' * @example',
     ' * ```typescript',
-    ' * import { tailwindConfig } from \'rainer-design-tokens/formats/tailwind.config\';',
+    ' * import { tailwindConfig } from \'@rainersoft/design-tokens/formats/tailwind.config\';',
     ' * ',
     ' * // Usar em tailwind.config.js',
     ' * export default {',

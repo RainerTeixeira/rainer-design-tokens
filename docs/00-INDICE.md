@@ -6,19 +6,19 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 🎯 Guias Principais
 
-1. **[Guidelines](./guidelines.md)** - Como usar os tokens
+1. **[Guidelines](./01-guidelines.md)** - Como usar os tokens
    - Instalação e configuração
    - Exemplos de uso
    - Melhores práticas
    - Integração com Tailwind, CSS, React
 
-2. **[ESTRUTURA.md](./ESTRUTURA.md)** - Estrutura detalhada da biblioteca
+2. **[ESTRUTURA.md](./03-ESTRUTURA.md)** - Estrutura detalhada da biblioteca
    - Organização de diretórios
    - Fonte única de verdade (JSON)
    - Formatos gerados automaticamente
    - Fluxo de trabalho
 
-3. **[SISTEMA_BUILD.md](./SISTEMA_BUILD.md)** - Sistema de build automatizado
+3. **[SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md)** - Sistema de build automatizado
    - Scripts de geração de formatos
    - Como funciona o build
    - Troubleshooting
@@ -26,13 +26,13 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 📚 Storybook
 
-4. **[STORYBOOK.md](./STORYBOOK.md)** - Documentação do Storybook de tokens
+4. **[STORYBOOK.md](./05-STORYBOOK.md)** - Documentação do Storybook de tokens
    - Como iniciar o Storybook
    - Stories disponíveis
    - Criar novas stories
    - Deploy do Storybook
 
-5. **[ESTRUTURA_STORYBOOK.md](./ESTRUTURA_STORYBOOK.md)** - Separação de responsabilidades
+5. **[ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md)** - Separação de responsabilidades
    - Storybook da lib (tokens)
    - Storybook do frontend (componentes)
    - Integração entre os dois
@@ -40,7 +40,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 📁 Estrutura
 
-6. **[RESUMO_ESTRUTURA.md](./RESUMO_ESTRUTURA.md)** - Resumo da estrutura
+6. **[RESUMO_ESTRUTURA.md](./02-RESUMO_ESTRUTURA.md)** - Resumo da estrutura
    - Visão geral da organização
    - Separação de responsabilidades
    - Fluxo de trabalho
@@ -48,13 +48,13 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 🗺️ Planejamento
 
-7. **[Roadmap](./roadmap.md)** - Roadmap e futuras features
+7. **[Roadmap](./14-roadmap.md)** - Roadmap e futuras features
    - Versão atual (3.1.0)
    - Features em progresso
    - Backlog
    - Timeline estimado
 
-8. **[MELHORIAS_FUTURAS.md](./MELHORIAS_FUTURAS.md)** - Lista completa de melhorias
+8. **[MELHORIAS_FUTURAS.md](./13-MELHORIAS_FUTURAS.md)** - Lista completa de melhorias
    - Melhorias no Token Editor
    - Novos formatos de exportação
    - Novos tokens
@@ -67,42 +67,42 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### Para Usuários
 
-1. Leia [Guidelines](./guidelines.md) para começar a usar os tokens
-2. Veja [ESTRUTURA.md](./ESTRUTURA.md) para entender a organização
-3. Explore o [STORYBOOK.md](./STORYBOOK.md) para visualizar os tokens
+1. Leia [Guidelines](./01-guidelines.md) para começar a usar os tokens
+2. Veja [ESTRUTURA.md](./03-ESTRUTURA.md) para entender a organização
+3. Explore o [STORYBOOK.md](./05-STORYBOOK.md) para visualizar os tokens
 
 ### Para Desenvolvedores
 
-1. Leia [SISTEMA_BUILD.md](./SISTEMA_BUILD.md) para entender o sistema de build
-2. Veja [ESTRUTURA.md](./ESTRUTURA.md) para entender a arquitetura
-3. Consulte [ESTRUTURA_STORYBOOK.md](./ESTRUTURA_STORYBOOK.md) para a estrutura de Storybooks
+1. Leia [SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) para entender o sistema de build
+2. Veja [ESTRUTURA.md](./03-ESTRUTURA.md) para entender a arquitetura
+3. Consulte [ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) para a estrutura de Storybooks
 
 ## 📋 Índice por Tópico
 
 ### Instalação e Configuração
-- [Guidelines - Instalação](./guidelines.md#-uso-dos-tokens)
-- [ESTRUTURA.md - Como usar em projetos](./ESTRUTURA.md#-como-usar-em-projetos)
+- [Guidelines - Instalação](./01-guidelines.md#-uso-dos-tokens)
+- [ESTRUTURA.md - Como usar em projetos](./03-ESTRUTURA.md#-como-usar-em-projetos)
 
 ### Desenvolvimento
-- [SISTEMA_BUILD.md - Workflow](./SISTEMA_BUILD.md#-workflow-de-desenvolvimento)
-- [ESTRUTURA.md - Fluxo de Trabalho](./ESTRUTURA.md#-fluxo-de-trabalho)
+- [SISTEMA_BUILD.md - Workflow](./04-SISTEMA_BUILD.md#-workflow-de-desenvolvimento)
+- [ESTRUTURA.md - Fluxo de Trabalho](./03-ESTRUTURA.md#-fluxo-de-trabalho)
 
 ### Storybook
-- [STORYBOOK.md](./STORYBOOK.md) - Guia completo
-- [ESTRUTURA_STORYBOOK.md](./ESTRUTURA_STORYBOOK.md) - Estrutura
+- [STORYBOOK.md](./05-STORYBOOK.md) - Guia completo
+- [ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) - Estrutura
 
 ### Arquitetura
-- [ESTRUTURA.md](./ESTRUTURA.md) - Estrutura detalhada
-- [RESUMO_ESTRUTURA.md](./RESUMO_ESTRUTURA.md) - Resumo
-- [SISTEMA_BUILD.md](./SISTEMA_BUILD.md) - Sistema de build
+- [ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura detalhada
+- [RESUMO_ESTRUTURA.md](./02-RESUMO_ESTRUTURA.md) - Resumo
+- [SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build
 
 ### Guias Adicionais
-- [GUIA_TOKENS_EXPANDIDOS.md](./GUIA_TOKENS_EXPANDIDOS.md) - Tokens expandidos (cores e tipografia)
-- [GUIA_MIGRACAO.md](./GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
-- [PUBLICACAO.md](./PUBLICACAO.md) - Guia de publicação no GitHub/npm
-- [CONFIGURACAO_PNPM.md](./CONFIGURACAO_PNPM.md) - Configuração do pnpm
+- [GUIA_TOKENS_EXPANDIDOS.md](./07-GUIA_TOKENS_EXPANDIDOS.md) - Tokens expandidos (cores e tipografia)
+- [GUIA_MIGRACAO.md](./15-GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
+- [PUBLICACAO.md](./11-PUBLICACAO.md) - Guia de publicação no GitHub/npm
+- [CONFIGURACAO_PNPM.md](./09-CONFIGURACAO_PNPM.md) - Configuração do pnpm
 - [CONTRIBUINDO.md](./CONTRIBUINDO.md) - Guia de contribuição
-- [HISTORICO_MUDANCAS.md](./HISTORICO_MUDANCAS.md) - Histórico de mudanças
+- [HISTORICO_MUDANCAS.md](./12-HISTORICO_MUDANCAS.md) - Histórico de mudanças
 
 ### 🎨 Ferramentas de Desenvolvimento
 - **[Token Editor](../token-editor/README.md)** - Editor visual 100% local para editar tokens
@@ -121,8 +121,8 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
   - 🔍 Testes de integração e casos de borda
 
 ### Planejamento
-- [Roadmap](./roadmap.md) - Futuras features
-- [MELHORIAS_FUTURAS.md](./MELHORIAS_FUTURAS.md) - Lista completa de melhorias e tarefas
+- [Roadmap](./14-roadmap.md) - Futuras features
+- [MELHORIAS_FUTURAS.md](./13-MELHORIAS_FUTURAS.md) - Lista completa de melhorias e tarefas
 
 ## 🔗 Links Úteis
 

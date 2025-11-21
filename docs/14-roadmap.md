@@ -1,13 +1,13 @@
-# Roadmap - rainer-design-tokens
+# Roadmap - @rainersoft/design-tokens
 
-## 🎯 Versão Atual: 3.1.0 (2025-11-21)
+## Versão Atual: 3.1.0 (2025-11-21)
 
 Refatoração completa para padrão enterprise com estrutura modular e agnóstica de tecnologia.
 **Novos recursos:** Motion tokens, Breakpoints responsivos, Z-index scale.
 
 ---
 
-## ✅ Completado (v3.1.0)
+## Completado (v3.1.0)
 
 ### Estrutura de Tokens
 - [x] Separação de tokens em arquivos JSON
@@ -31,15 +31,15 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 - [x] Guidelines completo
 - [x] Roadmap
 - [x] Exemplos de uso
-- [x] Estrutura detalhada (STRUCTURE.md)
-- [x] Sistema de build (BUILD_SYSTEM.md)
-- [x] Storybook de tokens (STORYBOOK.md)
-- [x] Separação de responsabilidades (STORYBOOK_STRUCTURE.md)
-- [x] Índice de documentação (docs/README.md)
+- [x] Estrutura detalhada (03-ESTRUTURA.md)
+- [x] Sistema de build (04-SISTEMA_BUILD.md)
+- [x] Storybook de tokens (05-STORYBOOK.md)
+- [x] Separação de responsabilidades (06-ESTRUTURA_STORYBOOK.md)
+- [x] Índice de documentação (00-INDICE.md)
 
 ---
 
-## ✅ Completado (v3.0.0)
+## Completado (v3.0.0)
 
 ### Novos Tokens Implementados
 - [x] Motion tokens (durations, easings, keyframes)

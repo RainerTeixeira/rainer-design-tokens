@@ -105,14 +105,15 @@ function main() {
 
     const docsDir = join(__dirname, '..', 'docs');
     const files = [
-      'roadmap.md',
-      'README.md',
-      'guidelines.md',
-      'STRUCTURE.md',
-      'BUILD_SYSTEM.md',
-      'STORYBOOK.md',
-      'STORYBOOK_STRUCTURE.md',
-      'STRUCTURE_SUMMARY.md',
+      '14-roadmap.md',
+      '00-INDICE.md',
+      '01-guidelines.md',
+      '03-ESTRUTURA.md',
+      '04-SISTEMA_BUILD.md',
+      '05-STORYBOOK.md',
+      '06-ESTRUTURA_STORYBOOK.md',
+      '02-RESUMO_ESTRUTURA.md',
+      '13-MELHORIAS_FUTURAS.md',
     ];
 
     let updatedCount = 0;

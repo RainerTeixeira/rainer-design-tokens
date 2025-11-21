@@ -49,10 +49,10 @@ C:\Desenvolvimento\
 │   │   └─ index.d.ts
 │   │
 │   ├─ docs/                        # 📚 Documentação
-│   │   ├─ STRUCTURE.md
-│   │   ├─ BUILD_SYSTEM.md
-│   │   ├─ STORYBOOK.md
-│   │   ├─ STORYBOOK_STRUCTURE.md
+│   │   ├─ 03-ESTRUTURA.md
+│   │   ├─ 04-SISTEMA_BUILD.md
+│   │   ├─ 05-STORYBOOK.md
+│   │   ├─ 06-ESTRUTURA_STORYBOOK.md
 │   │   └─ ...
 │   │
 │   ├─ index.ts                     # Ponto de entrada
@@ -135,8 +135,7 @@ pnpm run storybook  # Ver componentes
 
 ## 📚 Documentação
 
-- [STRUCTURE.md](./STRUCTURE.md) - Estrutura detalhada
-- [BUILD_SYSTEM.md](./BUILD_SYSTEM.md) - Sistema de build
-- [STORYBOOK.md](./STORYBOOK.md) - Storybook de tokens
-- [STORYBOOK_STRUCTURE.md](./STORYBOOK_STRUCTURE.md) - Separação de responsabilidades
-
+- [03-ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura detalhada
+- [04-SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build
+- [05-STORYBOOK.md](./05-STORYBOOK.md) - Storybook de tokens
+- [06-ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) - Separação de responsabilidades

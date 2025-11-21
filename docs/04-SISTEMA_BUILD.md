@@ -285,6 +285,5 @@ pnpm run build:formats
 ## 📚 Referências
 
 - [README.md](../README.md) - Documentação principal
-- [STRUCTURE.md](./STRUCTURE.md) - Estrutura da biblioteca
-- [Guidelines](./guidelines.md) - Como usar os tokens
-
+- [STRUCTURE.md](./03-ESTRUTURA.md) - Estrutura da biblioteca
+- [Guidelines](./01-guidelines.md) - Como usar os tokens

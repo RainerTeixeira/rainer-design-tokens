@@ -1,8 +1,8 @@
 # Guia de Contribuição
 
-Obrigado por considerar contribuir para `rainer-design-tokens`! Este documento fornece diretrizes e informações sobre como contribuir para o projeto.
+Obrigado por considerar contribuir para `@rainersoft/design-tokens`! Este documento fornece diretrizes e informações sobre como contribuir para o projeto.
 
-## 📋 Índice
+## Índice
 
 - [Código de Conduta](#código-de-conduta)
 - [Como Contribuir](#como-contribuir)
@@ -14,11 +14,11 @@ Obrigado por considerar contribuir para `rainer-design-tokens`! Este documento f
 - [Testes](#testes)
 - [Documentação](#documentação)
 
-## 📜 Código de Conduta
+## Código de Conduta
 
 Este projeto segue um código de conduta. Ao participar, você concorda em manter este código. Por favor, seja respeitoso e profissional em todas as interações.
 
-## 🤝 Como Contribuir
+## Como Contribuir
 
 ### Reportar Bugs
 
@@ -66,7 +66,7 @@ Para sugerir novas funcionalidades:
    ```
 7. **Abra um Pull Request** com descrição clara das mudanças
 
-## 🛠️ Configuração do Ambiente
+## Configuração do Ambiente
 
 ### Pré-requisitos
 
@@ -120,10 +120,10 @@ pnpm run generate:tokens
 pnpm run validate:tokens
 ```
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
-@rainer-design-tokens/
+@rainersoft/design-tokens/
 ├── src/
 │   ├── index.ts                    # Exports principais (tokens legacy)
 │   ├── css.ts                      # Utilitários CSS (re-export)
@@ -162,7 +162,7 @@ pnpm run validate:tokens
 └── package.json                    # Configuração do pacote
 ```
 
-## ➕ Adicionando Novos Tokens
+## Adicionando Novos Tokens
 
 ### Tokens Primitivos
 
@@ -241,7 +241,7 @@ export const TOKEN_NAME = {
 } as const;
 ```
 
-## 📝 Convenções de Código
+## Convenções de Código
 
 ### Nomenclatura
 
@@ -275,7 +275,7 @@ Exemplo:
  * 
  * @example
  * ```tsx
- * import { ANIMATION_DURATION_MS } from 'rainer-design-tokens';
+ * import { ANIMATION_DURATION_MS } from '@rainersoft/design-tokens';
  * 
  * <motion.div
  *   transition={{ duration: ANIMATION_DURATION_MS.NORMAL }}
@@ -298,7 +298,7 @@ export const ANIMATION_DURATION_MS = {
 - Use aspas simples para strings
 - Mantenha linhas com máximo de 100 caracteres quando possível
 
-## 🔄 Convenções de Commit
+## Convenções de Commit
 
 Seguimos o padrão [Conventional Commits](https://www.conventionalcommits.org/):
 
@@ -330,7 +330,7 @@ refactor(css): refatora geração de CSS custom properties
 test(colors): adiciona testes para paleta de cores ciano
 ```
 
-## 🔍 Pull Requests
+## Pull Requests
 
 ### Checklist Antes de Submeter
 
@@ -339,7 +339,7 @@ test(colors): adiciona testes para paleta de cores ciano
 - [ ] Type check passa (`pnpm run type-check`)
 - [ ] Lint passa (`pnpm run lint`)
 - [ ] Build passa (`pnpm run build`)
-- [ ] **`dist/` atualizado e commitado** (veja [PUBLICACAO.md](./PUBLICACAO.md#-por-que-dist-está-commitado))
+- [ ] **`dist/` atualizado e commitado** (veja [11-PUBLICACAO.md](./11-PUBLICACAO.md#-por-que-dist-está-commitado))
 - [ ] Documentação atualizada
 - [ ] JSDoc adicionado/atualizado
 - [ ] Commits seguem o padrão Conventional Commits
@@ -367,7 +367,7 @@ Passos para testar as mudanças:
 - [ ] Sem breaking changes (ou documentados)
 ```
 
-## 🧪 Testes
+## Testes
 
 ### Adicionando Testes
 
@@ -398,7 +398,7 @@ describe('COLOR_CYAN', () => {
 });
 ```
 
-## 📚 Documentação
+## Documentação
 
 ### Atualizando Documentação
 
@@ -419,14 +419,14 @@ Ao adicionar novos tokens ou funcionalidades:
 - Inclua exemplos práticos
 - Mantenha formatação consistente
 
-## ❓ Dúvidas?
+## Dúvidas?
 
 Se você tiver dúvidas sobre como contribuir:
 
-1. Verifique a [documentação](./docs/)
+1. Verifique a [documentação](./00-INDICE.md)
 2. Abra uma [issue](https://github.com/RainerTeixeira/rainer-design-tokens/issues) com a tag `question`
 3. Entre em contato com os mantenedores
 
-## 🙏 Agradecimentos
+## Agradecimentos
 
-Obrigado por contribuir para `rainer-design-tokens`! Sua contribuição ajuda a tornar esta biblioteca melhor para todos.
+Obrigado por contribuir para `@rainersoft/design-tokens`! Sua contribuição ajuda a tornar esta biblioteca melhor para todos.

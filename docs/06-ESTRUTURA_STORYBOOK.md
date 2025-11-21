@@ -173,9 +173,8 @@ const shadow = tokens.shadows.light.md;
 4. **Documentação visual** - Visualização interativa de todos os tokens
 5. **Reutilização** - Tokens podem ser usados em múltiplos projetos
 
-## 📚 Referências
+## Referências
 
-- [STORYBOOK.md](./STORYBOOK.md) - Documentação completa do Storybook
-- [ESTRUTURA.md](./ESTRUTURA.md) - Estrutura geral da biblioteca
-- [SISTEMA_BUILD.md](./SISTEMA_BUILD.md) - Sistema de build dos tokens
-
+- [05-STORYBOOK.md](./05-STORYBOOK.md) - Documentação completa do Storybook
+- [03-ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura geral da biblioteca
+- [04-SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build dos tokens

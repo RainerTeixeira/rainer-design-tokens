@@ -10,7 +10,7 @@
 
 **Enterprise-grade design tokens for modern design systems**
 
-[Getting Started](#-installation) • [Documentation](#-documentation) • [Storybook](#-storybook---visualização-dos-tokens) • [Roadmap](./docs/roadmap.md)
+[Getting Started](#-installation) • [Documentation](#-documentation) • [Storybook](#-storybook---visualização-dos-tokens) • [Roadmap](./docs/14-roadmap.md)
 
 </div>
 
@@ -125,7 +125,7 @@ Acesse `http://localhost:6006` para explorar:
 - 🌑 **Shadows** - Sombras e efeitos glow
 - 🎬 **Animations** - Animações e keyframes (accordion, slide-in, fade-in)
 
-> **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [Estrutura do Storybook](./docs/ESTRUTURA_STORYBOOK.md) para mais detalhes.
+> **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [Estrutura do Storybook](./docs/06-ESTRUTURA_STORYBOOK.md) para mais detalhes.
 
 ---
 
@@ -211,20 +211,20 @@ Acesse `http://localhost:6006` para explorar:
 │   └── *.map                      # Source maps
 │
 └── 📖 docs/                       # Documentação completa
-    ├── INDICE.md                  # Índice geral da documentação
-    ├── ESTRUTURA.md               # Estrutura detalhada da biblioteca
-    ├── ESTRUTURA_STORYBOOK.md     # Estrutura do Storybook
-    ├── SISTEMA_BUILD.md           # Sistema de build automatizado
-    ├── guidelines.md              # Guidelines de uso
-    ├── GUIA_TOKENS_EXPANDIDOS.md  # Guia dos tokens expandidos
-    ├── GUIA_MIGRACAO.md           # Guia de migração
-    ├── PUBLICACAO.md              # Guia de publicação
-    ├── CONFIGURACAO_PNPM.md       # Configuração pnpm
+    ├── 00-INDICE.md               # Índice geral da documentação
+    ├── 03-ESTRUTURA.md            # Estrutura detalhada da biblioteca
+    ├── 06-ESTRUTURA_STORYBOOK.md  # Estrutura do Storybook
+    ├── 04-SISTEMA_BUILD.md        # Sistema de build automatizado
+    ├── 01-guidelines.md           # Guidelines de uso
+    ├── 07-GUIA_TOKENS_EXPANDIDOS.md  # Guia dos tokens expandidos
+    ├── 15-GUIA_MIGRACAO.md        # Guia de migração
+    ├── 11-PUBLICACAO.md           # Guia de publicação
+    ├── 09-CONFIGURACAO_PNPM.md    # Configuração pnpm
     ├── CONTRIBUINDO.md            # Guia de contribuição
-    ├── STORYBOOK.md               # Documentação do Storybook
-    ├── RESUMO_ESTRUTURA.md        # Resumo da estrutura
-    ├── HISTORICO_MUDANCAS.md      # Histórico de mudanças
-    └── roadmap.md                 # Roadmap do projeto
+    ├── 05-STORYBOOK.md            # Documentação do Storybook
+    ├── 02-RESUMO_ESTRUTURA.md     # Resumo da estrutura
+    ├── 12-HISTORICO_MUDANCAS.md   # Histórico de mudanças
+    └── 14-roadmap.md              # Roadmap do projeto
 ```
 
 ### 🎯 Princípio: JSON como Fonte Única de Verdade
@@ -304,27 +304,27 @@ function ThemeToggle() {
 
 ## 📚 Documentation
 
-📖 **[Documentação Completa](./docs/INDICE.md)** - Índice geral de toda a documentação
+📖 **[Documentação Completa](./docs/00-INDICE.md)** - Índice geral de toda a documentação
 
 ### Guias Principais
 
-- [**Guidelines**](./docs/guidelines.md) - Como usar os tokens
-- [**ESTRUTURA.md**](./docs/ESTRUTURA.md) - Estrutura detalhada da biblioteca
-- [**SISTEMA_BUILD.md**](./docs/SISTEMA_BUILD.md) - Sistema de build automatizado
-- [**Roadmap**](./docs/roadmap.md) - Futuras features e versões
-- [**GUIA_TOKENS_EXPANDIDOS**](./docs/GUIA_TOKENS_EXPANDIDOS.md) - Guia dos tokens expandidos (cores e tipografia)
-- [**GUIA_MIGRACAO**](./docs/GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
-- [**PUBLICACAO**](./docs/PUBLICACAO.md) - Guia de publicação no GitHub/npm
+- [**Guidelines**](./docs/01-guidelines.md) - Como usar os tokens
+- [**ESTRUTURA.md**](./docs/03-ESTRUTURA.md) - Estrutura detalhada da biblioteca
+- [**SISTEMA_BUILD.md**](./docs/04-SISTEMA_BUILD.md) - Sistema de build automatizado
+- [**Roadmap**](./docs/14-roadmap.md) - Futuras features e versões
+- [**GUIA_TOKENS_EXPANDIDOS**](./docs/07-GUIA_TOKENS_EXPANDIDOS.md) - Guia dos tokens expandidos (cores e tipografia)
+- [**GUIA_MIGRACAO**](./docs/15-GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
+- [**PUBLICACAO**](./docs/11-PUBLICACAO.md) - Guia de publicação no GitHub/npm
 
 ### Storybook
 
-- [**STORYBOOK.md**](./docs/STORYBOOK.md) - Documentação visual dos tokens
-- [**ESTRUTURA_STORYBOOK.md**](./docs/ESTRUTURA_STORYBOOK.md) - Separação entre tokens e componentes
+- [**STORYBOOK.md**](./docs/05-STORYBOOK.md) - Documentação visual dos tokens
+- [**ESTRUTURA_STORYBOOK.md**](./docs/06-ESTRUTURA_STORYBOOK.md) - Separação entre tokens e componentes
 
 ### Referência Rápida
 
-- [**RESUMO_ESTRUTURA.md**](./docs/RESUMO_ESTRUTURA.md) - Resumo da estrutura
-- [**HISTORICO_MUDANCAS.md**](./docs/HISTORICO_MUDANCAS.md) - Histórico de mudanças
+- [**RESUMO_ESTRUTURA.md**](./docs/02-RESUMO_ESTRUTURA.md) - Resumo da estrutura
+- [**HISTORICO_MUDANCAS.md**](./docs/12-HISTORICO_MUDANCAS.md) - Histórico de mudanças
 
 ---
 
@@ -474,7 +474,7 @@ pnpm run clean:all          # Remove node_modules, lock, dist, etc.
 5. **Compile o TypeScript**: `pnpm run build` (já inclui build:formats + tsup)
 6. **Visualize no Storybook**: `pnpm run storybook` para ver todos os tokens de forma interativa
 7. **Execute testes**: `pnpm test` antes de commitar
-8. **⚠️ IMPORTANTE**: Sempre commit `dist/` após build (veja [PUBLICACAO.md](./docs/PUBLICACAO.md#-por-que-dist-está-commitado))
+8. **⚠️ IMPORTANTE**: Sempre commit `dist/` após build (veja [PUBLICACAO.md](./docs/11-PUBLICACAO.md#-por-que-dist-está-commitado))
 
 ### ✏️ Token Editor - Editor Visual de Tokens
 
@@ -546,9 +546,9 @@ O Storybook da lib documenta **apenas design tokens**, não componentes UI.
 
 **Separação de responsabilidades:**
 - ✅ **Este Storybook**: Apenas tokens (cores, tipografia, espaçamento, etc.)
-- ✅ **Storybook do Frontend**: Componentes UI (Button, Card, Input, etc.)
+- ✅ **Storybook do Frontend**: Componentes UI (Button, Card, etc.)
 
-Para mais detalhes sobre a estrutura, consulte [**Estrutura do Storybook**](./docs/ESTRUTURA_STORYBOOK.md).
+Para mais detalhes sobre a estrutura, consulte [**Estrutura do Storybook**](./docs/06-ESTRUTURA_STORYBOOK.md).
 
 ---
 

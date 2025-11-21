@@ -1,17 +1,17 @@
-# 📁 Estrutura da Biblioteca
+# Estrutura da Biblioteca
 
-Este documento explica a estrutura ideal da biblioteca `rainer-design-tokens` e como cada parte funciona.
+Este documento explica a estrutura ideal da biblioteca `@rainersoft/design-tokens` e como cada parte funciona.
 
-## 🎯 Visão Geral
+## Visão Geral
 
 A biblioteca segue o princípio de **JSON como fonte única de verdade**. Todos os formatos (CSS, Tailwind, JSON consolidado) são gerados automaticamente a partir dos arquivos JSON em `tokens/`.
 
-## 📂 Estrutura de Diretórios
+## Estrutura de Diretórios
 
 ```
-@rainer-design-tokens/
+@rainersoft/design-tokens/
 │
-├── tokens/               # 🎯 FONTE ÚNICA DE VERDADE
+├── tokens/               # FONTE ÚNICA DE VERDADE
 │   ├── colors/
 │   │   ├── light.json   # Paleta do tema claro
 │   │   └── dark.json    # Paleta do tema escuro (cyberpunk)
@@ -25,23 +25,23 @@ A biblioteca segue o princípio de **JSON como fonte única de verdade**. Todos 
 │   ├── light.ts         # Tema claro profissional
 │   └── dark.ts          # Tema escuro cyberpunk
 │
-├── formats/             # 📤 FORMATOS GERADOS (NÃO EDITAR MANUALMENTE)
+├── formats/             # FORMATOS GERADOS (NÃO EDITAR MANUALMENTE)
 │   ├── css-vars.css        # Variáveis CSS (gerado)
 │   ├── tailwind.config.ts  # Configuração Tailwind (gerado)
 │   └── tokens.json         # JSON consolidado (gerado)
 │
-├── scripts/             # 🔧 Scripts de Build
+├── scripts/             # Scripts de Build
 │   ├── build-formats.ts    # Orquestrador principal
 │   ├── build-css.ts        # Gera CSS variables
 │   ├── build-tailwind.ts   # Gera Tailwind config
 │   └── build-tokens-json.ts # Gera tokens.json
 │
-├── dist/                # 📦 Saída Compilada (TypeScript)
+├── dist/                # Saída Compilada (TypeScript)
 │   ├── index.js            # CommonJS
 │   ├── index.mjs           # ESM
 │   └── index.d.ts          # TypeScript definitions
 │
-├── docs/                # 📚 Documentação
+├── docs/                # Documentação
 │   ├── guidelines.md       # Guia de uso
 │   ├── roadmap.md          # Roadmap
 │   ├── STRUCTURE.md        # Estrutura detalhada
@@ -58,15 +58,15 @@ A biblioteca segue o princípio de **JSON como fonte única de verdade**. Todos 
 └── .prettierrc.json    # Configuração Prettier
 ```
 
-## 🎯 O que cada parte representa
+## O que cada parte representa
 
 ### `tokens/` - Fonte Única de Verdade
 
 **Propósito**: Contém os arquivos JSON com todos os valores brutos dos tokens.
 
 **Regra de Ouro**: 
-- ✅ **SEMPRE edite apenas os arquivos em `tokens/`**
-- ❌ **NUNCA edite manualmente os arquivos em `formats/`**
+- **SEMPRE edite apenas os arquivos em `tokens/`**
+- **NUNCA edite manualmente os arquivos em `formats/`**
 
 **Estrutura**:
 - `colors/light.json` - Paleta de cores do tema claro
@@ -87,14 +87,14 @@ A biblioteca segue o princípio de **JSON como fonte única de verdade**. Todos 
 
 **Uso**:
 ```typescript
-import { lightTheme, darkTheme } from 'rainer-design-tokens';
+import { lightTheme, darkTheme } from '@rainersoft/design-tokens';
 ```
 
 ### `formats/` - Conversões Automáticas
 
 **Propósito**: Formatos gerados automaticamente a partir dos tokens JSON.
 
-**⚠️ IMPORTANTE**: Estes arquivos são **gerados automaticamente**. Não edite manualmente!
+**IMPORTANTE**: Estes arquivos são **gerados automaticamente**. Não edite manualmente!
 
 **Arquivos**:
 - `css-vars.css` - Variáveis CSS para uso em qualquer contexto CSS
@@ -159,19 +159,19 @@ pnpm run build  # Compila TypeScript + gera formats
 - `.eslintrc.json` - Configuração ESLint
 - `.prettierrc.json` - Configuração Prettier
 
-## 🚀 Como usar em projetos
+## Como usar em projetos
 
 ### No front-end (Next.js + Tailwind + shadcn/ui)
 
 1. **Importar CSS variables** no `globals.css`:
 ```css
-@import 'rainer-design-tokens/formats/css-vars.css';
+@import '@rainersoft/design-tokens/formats/css-vars.css';
 ```
 
 2. **Configurar Tailwind** para usar `formats/tailwind.config.ts`:
 ```typescript
 // tailwind.config.ts
-import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
+import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
 
 export default {
   ...tailwindConfig,
@@ -195,7 +195,7 @@ export default {
 
 1. **Visualizar tokens no Storybook da lib**:
 ```bash
-cd @rainer-design-tokens
+cd @rainersoft/design-tokens
 pnpm run storybook
 ```
 
@@ -210,7 +210,7 @@ Acesse `http://localhost:6006` para ver todas as stories:
 2. **Usar tokens no Storybook do frontend**:
 ```typescript
 // stories/Button.stories.tsx (no frontend)
-import { tokens } from 'rainer-design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 
 export const Primary = {
   render: () => (
@@ -227,18 +227,18 @@ export const Primary = {
 };
 ```
 
-> **Nota**: O Storybook da lib documenta apenas tokens. Componentes UI devem estar no Storybook do frontend. Veja [STORYBOOK_STRUCTURE.md](./STORYBOOK_STRUCTURE.md) para mais detalhes.
+> **Nota**: O Storybook da lib documenta apenas tokens. Componentes UI devem estar no Storybook do frontend. Veja [06-ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) para mais detalhes.
 
 ### Em outros projetos (React Native, Node)
 
 1. **Importar tokens como objeto JS**:
 ```typescript
-import { tokens } from 'rainer-design-tokens';
+import { tokens } from '@rainersoft/design-tokens';
 // ou
-import tokens from 'rainer-design-tokens/dist/index.js';
+import tokens from '@rainersoft/design-tokens/dist/index.js';
 ```
 
-## 🔄 Fluxo de Trabalho
+## Fluxo de Trabalho
 
 ### Para Desenvolvedores da Biblioteca
 
@@ -250,11 +250,11 @@ import tokens from 'rainer-design-tokens/dist/index.js';
 
 ### Para Consumidores da Biblioteca
 
-1. **Instale**: `pnpm add rainer-design-tokens`
-2. **Importe tokens**: `import { tokens } from 'rainer-design-tokens'`
-3. **Use formatos**: `import 'rainer-design-tokens/formats/css-vars.css'`
+1. **Instale**: `pnpm add @rainersoft/design-tokens`
+2. **Importe tokens**: `import { tokens } from '@rainersoft/design-tokens'`
+3. **Use formatos**: `import '@rainersoft/design-tokens/formats/css-vars.css'`
 
-## ✅ Checklist de Estrutura Ideal
+## Checklist de Estrutura Ideal
 
 - [x] `tokens/` → JSON com valores brutos (fonte única de verdade)
 - [x] `themes/` → Variações de paleta (light, dark, brand)
@@ -313,5 +313,4 @@ stories/
 └── Shadows.stories.tsx
 ```
 
-> **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [STORYBOOK_STRUCTURE.md](./STORYBOOK_STRUCTURE.md) para mais detalhes.
-
+> **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [06-ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) para mais detalhes.
