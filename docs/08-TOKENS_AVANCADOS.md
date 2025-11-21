@@ -1,4 +1,4 @@
-# Guia de Tokens Avançados - v3.0.0
+# Guia de Tokens Avançados - v2.0.0
 
 ## 📐 Motion Tokens
 
@@ -113,4 +113,4 @@ import { Z_INDEX } from '@rainersoft/design-tokens';
 
 ---
 
-**Última atualização:** 20/11/2024 | **Versão:** 3.0.0
+**Última atualização:** 21/11/2024 | **Versão:** 2.0.0

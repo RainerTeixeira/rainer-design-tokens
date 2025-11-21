@@ -49,7 +49,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 ### 🗺️ Planejamento
 
 7. **[Roadmap](./14-roadmap.md)** - Roadmap e futuras features
-   - Versão atual (3.1.0)
+   - Versão atual (2.0.0)
    - Features em progresso
    - Backlog
    - Timeline estimado
@@ -98,7 +98,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### Guias Adicionais
 - [GUIA_TOKENS_EXPANDIDOS.md](./07-GUIA_TOKENS_EXPANDIDOS.md) - Tokens expandidos (cores e tipografia)
-- [GUIA_MIGRACAO.md](./15-GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
+- [GUIA_MIGRACAO.md](./15-GUIA_MIGRACAO.md) - Guia de migração para v2.0.0
 - [PUBLICACAO.md](./11-PUBLICACAO.md) - Guia de publicação no GitHub/npm
 - [CONFIGURACAO_PNPM.md](./09-CONFIGURACAO_PNPM.md) - Configuração do pnpm
 - [CONTRIBUINDO.md](./CONTRIBUINDO.md) - Guia de contribuição

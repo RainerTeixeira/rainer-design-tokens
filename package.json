@@ -1,6 +1,6 @@
 {
   "name": "@rainersoft/design-tokens",
-  "version": "3.1.0",
+  "version": "2.0.0",
   "type": "module",
   "packageManager": "pnpm@9.0.0",
   "description": "Design tokens profissionais seguindo padrões W3C/DTCG, com estrutura modular e suporte a tokens primitivos e semânticos.",

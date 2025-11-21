@@ -7,7 +7,7 @@
  * através de theme.extend para ter acesso a todos os tokens como classes utilitárias.
  * 
  * @module formats/tailwind.config
- * @version 3.1.0
+ * @version 2.0.0
  * @author Rainer Teixeira
  * @since 1.0.0
  * @generated This file is auto-generated. Do not edit manually.
@@ -57,7 +57,7 @@ import { tokens } from '@rainersoft/design-tokens';
  * 
  * @example
  * ```typescript
- * import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
+ * import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
  * 
  * // Usar em tailwind.config.js
  * export default {

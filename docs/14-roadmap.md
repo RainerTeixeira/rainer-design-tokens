@@ -1,13 +1,13 @@
 # Roadmap - @rainersoft/design-tokens
 
-## Versão Atual: 3.1.0 (2025-11-21)
+## Versão Atual: 2.0.0 (2025-11-21)
 
 Refatoração completa para padrão enterprise com estrutura modular e agnóstica de tecnologia.
 **Novos recursos:** Motion tokens, Breakpoints responsivos, Z-index scale.
 
 ---
 
-## Completado (v3.1.0)
+## Completado (v2.0.0)
 
 ### Estrutura de Tokens
 - [x] Separação de tokens em arquivos JSON
@@ -39,8 +39,6 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 
 ---
 
-## Completado (v3.0.0)
-
 ### Novos Tokens Implementados
 - [x] Motion tokens (durations, easings, keyframes)
 - [x] Breakpoints responsivos (mobile-first)
@@ -49,21 +47,18 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 - [x] Motion helpers para Tailwind
 - [x] Z-index classes utilitárias
 
-## 🚧 Em Progresso (v3.1.0)
+## 🚧 Em Progresso (v2.1.0)
 
 ### Melhorias Planejadas
 
 ### Formatos Adicionais
-- [ ] Figma Tokens export
 - [ ] Sketch format
-- [ ] Android XML
-- [ ] iOS Swift
 
 ---
 
 ## 📋 Backlog (Futuras Versões)
 
-### v3.2.0 - Tokens Avançados
+### v2.1.0 - Tokens Avançados
 - [ ] Gradient tokens avançados
 - [ ] Grid layout tokens
 - [ ] Aspect ratio tokens
@@ -71,28 +66,28 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 - [ ] Backdrop blur tokens
 - [ ] Custom scrollbar tokens
 
-### v3.3.0 - Mais Temas
+### v2.2.0 - Mais Temas
 - [ ] High contrast theme
 - [ ] Colorblind-friendly themes
 - [ ] Gaming theme (neon + RGB)
 - [ ] Corporate theme (sóbrio)
 - [ ] Custom theme builder
 
-### v3.4.0 - Plataformas
+### v2.3.0 - Plataformas
 - [ ] React Native tokens
 - [ ] Flutter/Dart export
 - [ ] Unity C# export
 - [ ] Unreal Engine export
 - [ ] Godot theme export
 
-### v3.5.0 - Ferramentas
+### v2.4.0 - Ferramentas
 - [ ] CLI para gerar tokens
 - [x] Visual token editor (GUI) ✅ **Concluído em v2.0.0**
 - [ ] Token validator
 - [ ] Migration tools
 - [ ] Design Lint integration
 
-### v4.0.0 - Design System Completo
+### v3.0.0 - Design System Completo
 - [ ] Component tokens (Button, Input, Card, etc.)
 - [ ] Pattern library
 - [ ] Icon system integration
@@ -132,20 +127,19 @@ Refatoração completa para padrão enterprise com estrutura modular e agnóstic
 
 ## 📅 Timeline Estimado
 
-**Q4 2024**
-- v3.0.0 - ✅ Motion tokens, Breakpoints, Z-index (LANÇADO)
-- v3.1.0 - Formatos adicionais (Em desenvolvimento)
-
-**Q1 2025**
-- v4.2.0 - Tokens avançados
-- v4.3.0 - Mais temas
+**Q4 2024 - Q1 2025**
+- v2.0.0 - ✅ Sistema W3C, Motion tokens, Breakpoints, Z-index, Token Editor (LANÇADO)
 
 **Q2 2025**
-- v4.4.0 - Suporte multi-plataforma
-- v4.5.0 - Ferramentas e CLI
+- v2.1.0 - Tokens avançados
+- v2.2.0 - Mais temas
 
-**Q3-Q4 2025**
-- v5.0.0 - Design System completo
+**Q3 2025**
+- v2.3.0 - Suporte multi-plataforma
+- v2.4.0 - Ferramentas e CLI
+
+**Q4 2025**
+- v3.0.0 - Design System completo
 
 ---
 
@@ -170,7 +164,7 @@ Features são priorizadas por:
 
 ## 📊 Métricas de Sucesso
 
-### v3.0.0 Targets (Atual - ATINGIDO)
+### v2.0.0 Targets (Atual - ATINGIDO)
 - ✅ 100% type-safe (TypeScript)
 - ✅ 0 dependências runtime
 - ✅ < 10KB bundle size
@@ -180,14 +174,14 @@ Features são priorizadas por:
 - ✅ Breakpoints responsivos
 - ✅ Z-index scale profissional
 
-### v4.x Targets (2025-2025)
+### v2.x Targets (2025)
 - [ ] 95% test coverage
 - [ ] 5+ formatos de saída
 - [ ] 3+ temas oficiais
 - [ ] 50+ tokens documentados
 - [ ] 10+ projetos usando
 
-### v5.0 Targets (2025)
+### v3.0 Targets (2025-2026)
 - [ ] 100+ component tokens
 - [ ] 10+ platform exports
 - [ ] 1000+ downloads/month
@@ -201,8 +195,8 @@ Features são priorizadas por:
 Seguimos [Semantic Versioning](https://semver.org/):
 
 - **Major (x.0.0)**: Breaking changes
-- **Minor (4.x.0)**: New features, backwards compatible
-- **Patch (4.0.x)**: Bug fixes
+- **Minor (2.x.0)**: New features, backwards compatible
+- **Patch (2.0.x)**: Bug fixes
 
 ### Breaking Changes Policy
 - Anunciados com 1 mês de antecedência
@@ -221,6 +215,6 @@ Seguimos [Semantic Versioning](https://semver.org/):
 
 ---
 
-**Última Atualização:** 20 de Novembro de 2024
+**Última Atualização:** 21 de Novembro de 2024
 **Versão do Roadmap:** 2.0.0
 

@@ -11,7 +11,7 @@ var p={$schema:"https://json.schemastore.org/theme.json",$description:"Light the
  * a aplicação.
  * 
  * @module @rainersoft/design-tokens
- * @version 3.1.0
+ * @version 2.0.0
  * @author Rainer Teixeira
  * @license MIT
  * @since 1.0.0

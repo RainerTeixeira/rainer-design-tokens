@@ -59,10 +59,10 @@ function updateDatesInFile(filePath: string): boolean {
   content = content.replace(/Novembro 2024/g, dates.monthYear);
   content = content.replace(/Atualizado automaticamente/g, dates.ptBR);
 
-  // Atualizar padrão: Versão Atual: 3.1.0 (YYYY-MM-DD)
+  // Atualizar padrão: Versão Atual: 2.0.0 (YYYY-MM-DD)
   content = content.replace(
     /Versão Atual:\s*4\.0\.0\s*\(\d{4}-\d{2}-\d{2}\)/g,
-    `Versão Atual: 3.1.0 (${dates.iso})`
+    `Versão Atual: 2.0.0 (${dates.iso})`
   );
 
   // Atualizar padrão: **Última Atualização:** ou Última Atualização:

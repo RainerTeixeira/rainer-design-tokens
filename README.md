@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-3.1.0-blue)
+![Version](https://img.shields.io/badge/version-2.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
 ![Tests](https://img.shields.io/badge/tests-320%20passing-success)
@@ -36,8 +36,7 @@
   - ✅ Validação de schema JSON
   - ✅ Preview visual dos tokens
   - ✅ Histórico de alterações (undo/redo)
-  - ✅ Geração de formatos: CSS, Tailwind, Figma, Android XML, iOS Swift
-  - ✅ Servidor local (porta 3000)
+  - ✅ Geração de formatos: CSS, Tailwind, Figma, Android XML, iOS Swift (100% local no navegador)
 - 🧪 **Testes Completos** - 302 testes com 100% de cobertura do Token Editor
 
 ---
@@ -313,7 +312,7 @@ function ThemeToggle() {
 - [**SISTEMA_BUILD.md**](./docs/04-SISTEMA_BUILD.md) - Sistema de build automatizado
 - [**Roadmap**](./docs/14-roadmap.md) - Futuras features e versões
 - [**GUIA_TOKENS_EXPANDIDOS**](./docs/07-GUIA_TOKENS_EXPANDIDOS.md) - Guia dos tokens expandidos (cores e tipografia)
-- [**GUIA_MIGRACAO**](./docs/15-GUIA_MIGRACAO.md) - Guia de migração para v3.0.0
+- [**GUIA_MIGRACAO**](./docs/15-GUIA_MIGRACAO.md) - Guia de migração para v2.0.0
 - [**PUBLICACAO**](./docs/11-PUBLICACAO.md) - Guia de publicação no GitHub/npm
 
 ### Storybook

@@ -7,7 +7,7 @@
  * qualquer ambiente (web, mobile, desktop).
  * 
  * @module tokens/accessibility
- * @version 3.1.0
+ * @version 2.0.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */

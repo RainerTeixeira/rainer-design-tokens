@@ -309,7 +309,7 @@ Este documento lista todas as melhorias e funcionalidades que podem ser implemen
 - [ ] Suporte multi-idioma
 - [ ] CI/CD completo
 
-### v3.0.0 Targets
+### v2.x Targets
 - [ ] 5+ formatos de exportação
 - [ ] Sistema de plugins
 - [ ] 100% acessível (WCAG AAA)

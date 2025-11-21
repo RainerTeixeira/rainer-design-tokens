@@ -7,7 +7,7 @@
  * facilitando o desenvolvimento e garantindo consistência visual.
  * 
  * @module tokens/utilities
- * @version 3.1.0
+ * @version 2.0.0
  * @author Rainer Teixeira
  * @since 1.0.0
  */

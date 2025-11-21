@@ -48,28 +48,28 @@ tokens.colors.light.primary.text
 ### Passo 1: Atualizar a Biblioteca
 
 ```bash
-# Na biblioteca
-cd C:\Desenvolvimento\@rainer-design-tokens
+# Na biblioteca (novo pacote)
+cd C:\Desenvolvimento\@rainersoft\design-tokens
 pnpm run build
 
 # No frontend
 cd C:\Desenvolvimento\rainer-portfolio-frontend
 # Se usar link local:
-pnpm link rainer-design-tokens
+pnpm link @rainersoft/design-tokens
 # Ou atualizar a versão no package.json
 ```
 
 ### Passo 2: Atualizar Imports
 
-**Antes:**
+**Antes (pacote antigo):**
 ```typescript
 import { tokens } from 'rainer-design-tokens';
 const primary = tokens.colors.light.brand.primary;
 ```
 
-**Agora:**
+**Agora (pacote atual):**
 ```typescript
-import { tokens, validateContrast } from 'rainer-design-tokens';
+import { tokens, validateContrast } from '@rainersoft/design-tokens';
 const primary = tokens.colors.light.primary.base;
 ```
 
@@ -107,7 +107,7 @@ const primary = tokens.colors.light.primary.base;
 
 ```typescript
 // tailwind.config.ts
-import { tailwindConfig } from 'rainer-design-tokens/formats/tailwind.config';
+import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
 
 export default {
   ...tailwindConfig,
@@ -146,7 +146,7 @@ Agora você pode usar:
 
 **Solução:** A biblioteca não foi compilada ou atualizada. Execute:
 ```bash
-cd C:\Desenvolvimento\@rainer-design-tokens
+cd C:\Desenvolvimento\@rainersoft\design-tokens
 pnpm run build
 ```
 
@@ -159,11 +159,10 @@ export * from './accessibility';
 
 ### Tipos TypeScript não atualizados
 
-**Solução:** Reinstale os tipos:
+**Solução:** Reinstale o pacote novo:
 ```bash
 # No frontend
-pnpm add rainer-design-tokens@latest
+pnpm add @rainersoft/design-tokens@latest
 # Ou se usar link local:
-pnpm link rainer-design-tokens
+pnpm link @rainersoft/design-tokens
 ```
-

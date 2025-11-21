@@ -275,7 +275,7 @@ Para adicionar novos tokens:
 
 ---
 
-**Versão:** 3.1.0  
+**Versão:** 2.0.0  
 **Última Atualização:** 15 de Novembro de 2025
 **Autor:** Rainer Teixeira  
 **Licença:** MIT

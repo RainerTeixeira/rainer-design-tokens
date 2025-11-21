@@ -29,7 +29,7 @@ git remote add origin git@github.com:RainerTeixeira/rainer-design-tokens.git
 git add .
 
 # Commit inicial
-git commit -m "feat: initial release - design tokens library v3.0.0"
+git commit -m "feat: initial release - design tokens library v2.0.0"
 
 # Push para GitHub
 git push -u origin main
@@ -111,7 +111,7 @@ Após publicar no GitHub, você pode usar na Vercel de duas formas:
 ```json
 {
   "dependencies": {
-    "@rainersoft/design-tokens": "^3.0.0"
+    "@rainersoft/design-tokens": "^2.0.0"
   }
 }
 ```
