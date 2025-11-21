@@ -29,7 +29,7 @@ function runScript(scriptPath: string) {
   const fullPath = join(__dirname, scriptPath);
   console.log(`\n📦 Executando: ${scriptPath}`);
   try {
-    execSync(`pnpm exec tsx "${fullPath}"`, {
+    execSync(`npx tsx "${fullPath}"`, {
       stdio: 'inherit',
       cwd: join(__dirname, '..'),
       shell: process.platform === 'win32' ? 'cmd.exe' : '/bin/bash',
