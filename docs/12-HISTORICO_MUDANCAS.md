@@ -1,9 +1,9 @@
-# Changelog
+# Histórico de Mudanças
 
-All notable changes to this project will be documented in this file.
+Todas as mudanças relevantes neste projeto serão documentadas neste arquivo.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
+e este projeto segue [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
 
 ## [3.1.0] - 2025-11-21
 
@@ -24,132 +24,132 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - 2025-01-XX
 
-### 🎉 Major Release - Professional Design Tokens System
+### 🎉 Major Release - Sistema Profissional de Design Tokens
 
-This release transforms the library into a professional-grade design tokens system following W3C Design Tokens Format and industry best practices from companies like Google, Microsoft, and Apple.
+Esta versão transforma a biblioteca em um sistema de design tokens em nível profissional, seguindo o formato W3C Design Tokens (DTCG) e boas práticas de empresas como Google, Microsoft e Apple.
 
-### ✨ Added
+### ✨ Adicionado
 
-#### New Architecture
-- **Primitive Tokens**: Base token values (colors, spacing, typography) without semantic meaning
-- **Semantic Tokens**: Tokens with meaning that reference primitive tokens
-- **Modular Structure**: Tokens organized by category in separate files
-- **W3C Format Support**: Full support for W3C Design Tokens Format (DTCG)
+#### Nova Arquitetura
+- **Primitive Tokens**: Valores base (cores, espaçamento, tipografia) sem significado semântico.
+- **Semantic Tokens**: Tokens com significado que referenciam os tokens primitivos.
+- **Estrutura Modular**: Tokens organizados por categoria em arquivos separados.
+- **Suporte ao Formato W3C**: Suporte completo ao W3C Design Tokens Format (DTCG).
 
-#### New Features
-- **8pt Grid System**: Spacing scale based on 8pt grid (multiples of 4px)
-- **Modular Typography Scale**: Typography scale using modular scale ratio (1.25)
-- **Theme System**: Robust light/dark theme support with semantic tokens
-- **W3C JSON Export**: Export tokens in W3C Design Tokens Format
-- **Enhanced CSS Export**: Improved CSS custom properties with organized structure
-- **Token Validation**: Utilities for validating design tokens
-- **Type Safety**: Improved TypeScript types and utilities
+#### Novas Funcionalidades
+- **Sistema de Grid 8pt**: Escala de espaçamento baseada em grid de 8pt (múltiplos de 4px).
+- **Escala Tipográfica Modular**: Escala tipográfica usando razão modular (1.25).
+- **Sistema de Temas**: Suporte robusto a temas claro/escuro com tokens semânticos.
+- **Exportação W3C JSON**: Exportação de tokens no formato W3C Design Tokens.
+- **Exportação CSS Aprimorada**: Propriedades customizadas CSS com estrutura organizada.
+- **Validação de Tokens**: Utilitários para validar design tokens.
+- **Type Safety**: Tipos TypeScript aprimorados e utilitários tipados.
 
-#### New Exports
-- `rainer-design-tokens/primitives` - Primitive tokens
-- `rainer-design-tokens/semantic` - Semantic tokens
-- `rainer-design-tokens/formats/w3c` - W3C format utilities
-- `rainer-design-tokens/utils/validation` - Validation utilities
+#### Novos Exports
+- `rainer-design-tokens/primitives` - Tokens primitivos.
+- `rainer-design-tokens/semantic` - Tokens semânticos.
+- `rainer-design-tokens/formats/w3c` - Utilitários para o formato W3C.
+- `rainer-design-tokens/utils/validation` - Utilitários de validação.
 
-### 🔄 Changed
+### 🔄 Alterado
 
-- **Structure**: Tokens now organized in `src/tokens/primitives/` and `src/tokens/semantic/`
-- **Spacing**: Now based on 8pt grid system for consistency
-- **Typography**: Uses modular scale for better readability
-- **Colors**: Separated into primitives and semantic tokens
-- **CSS Export**: Enhanced with better organization and theme support
+- **Estrutura**: Tokens agora organizados em `src/tokens/primitives/` e `src/tokens/semantic/`.
+- **Espaçamento**: Agora baseado em sistema de grid 8pt para consistência.
+- **Tipografia**: Uso de escala modular para melhor legibilidade.
+- **Cores**: Separação entre tokens primitivos e semânticos.
+- **Exportação CSS**: Export mais organizado, com suporte a temas.
 
-### 🐛 Fixed
+### 🐛 Corrigido
 
-- Improved type safety across all tokens
-- Better error handling in validation
-- Fixed TypeScript type exports
+- Tipagem aprimorada em todos os tokens.
+- Tratamento de erros melhorado nas rotinas de validação.
+- Correções em exports de tipos TypeScript.
 
-### 📚 Documentation
+### 📚 Documentação
 
-- Updated README with new architecture
-- Added examples for primitive and semantic tokens
-- Added W3C format usage examples
-- Improved JSDoc documentation
+- README atualizado com a nova arquitetura.
+- Exemplos adicionados para tokens primitivos e semânticos.
+- Exemplos de uso do formato W3C adicionados.
+- Documentação JSDoc aprimorada.
 
-### 🔧 Technical
+### 🔧 Técnico
 
-- Updated to TypeScript 5.3+
-- Improved build process
-- Better tree-shaking support
-- Enhanced type definitions
+- Atualização para TypeScript 5.3+.
+- Processo de build aprimorado.
+- Melhor suporte a tree-shaking.
+- Definições de tipos melhoradas.
 
 ## [2.0.0] - 2025-11-19
 
-### 🎉 Major Release - Token Editor & Enhanced Testing
+### 🎉 Lançamento Principal - Token Editor & Testes Avançados
 
-This release introduces a visual token editor and comprehensive test coverage, making the library more developer-friendly and production-ready.
+Esta versão introduz um editor visual de tokens e uma suíte de testes abrangente, tornando a biblioteca mais amigável para desenvolvedores e pronta para produção.
 
-### ✨ Added
+### ✨ Adicionado
 
 #### Token Editor
-- **Visual Token Editor**: Web-based interface for editing design tokens
-  - Load and edit JSON token files
-  - Real-time JSON validation
-  - Format JSON with one click
-  - Save changes directly
-  - Generate formats (CSS, Tailwind, JSON) using existing build scripts
-  - Preview generated files
-  - Keyboard shortcuts (Ctrl+S, Ctrl+Shift+F, Ctrl+B)
-  - Located in `token-editor/` directory
+- **Editor Visual de Tokens**: Interface web para edição de design tokens.
+  - Carregamento e edição de arquivos JSON de tokens.
+  - Validação de JSON em tempo real.
+  - Formatação de JSON com um clique.
+  - Salvamento direto das alterações.
+  - Geração de formatos (CSS, Tailwind, JSON) usando os scripts de build existentes.
+  - Preview dos arquivos gerados.
+  - Atalhos de teclado (Ctrl+S, Ctrl+Shift+F, Ctrl+B).
+  - Localizado no diretório `token-editor/`.
 
-#### Testing Infrastructure
-- **Comprehensive Test Suite**: Full test coverage with Jest
-  - **270 tests** covering all major functionality
-  - Tests for tokens structure, utilities, accessibility, themes
-  - **100% coverage of Token Editor** with 136 dedicated tests
-  - TypeScript type testing
-  - Test structure mirrors code structure (`tests/tokens/`, `tests/themes/`, `tests/token-editor/`)
-  - Coverage reports with HTML output
-  - Test scripts: `pnpm test`, `pnpm test:watch`, `pnpm test:coverage`
+#### Infraestrutura de Testes
+- **Suíte de Testes Abrangente**: Cobertura completa com Jest.
+  - **270 testes** cobrindo toda a funcionalidade principal.
+  - Testes para estrutura de tokens, utilitários, acessibilidade e temas.
+  - **100% de cobertura do Token Editor** com 136 testes dedicados.
+  - Testes de tipos TypeScript.
+  - Estrutura de testes espelhando a estrutura de código (`tests/tokens/`, `tests/themes/`, `tests/token-editor/`).
+  - Relatórios de cobertura em HTML.
+  - Scripts de teste: `pnpm test`, `pnpm test:watch`, `pnpm test:coverage`.
 
-#### New Test Files
-- `tests/index.test.ts` - Main entry point tests
-- `tests/tokens/index.test.ts` - Token structure tests
-- `tests/tokens/utilities.test.ts` - Utility tokens tests
-- `tests/tokens/accessibility.test.ts` - WCAG accessibility tests
-- `tests/themes/index.test.ts` - Theme structure tests
-- `tests/token-editor/editor.test.ts` - **Token Editor comprehensive tests (136 tests)**
-  - Function utilities (toKebabCase, toCamelCase, flattenToCSSVars, toTailwindObject)
-  - Format generation (generateCSS, generateTailwindConfig, generateTokensJSON)
-  - Helper functions (getDefaultContent, storeLoadedToken, escapeHtml, getValueType)
-  - JSON manipulation (addNewProperty, removeProperty, addArrayItem, removeArrayItem, moveProperty)
-  - Edge cases and error handling
-  - Validations and integrations
-- `jest.config.js` - Jest configuration with ESM support
-- `tests/README.md` - Test documentation
+#### Novos Arquivos de Teste
+- `tests/index.test.ts` - Testes do entrypoint principal.
+- `tests/tokens/index.test.ts` - Testes da estrutura de tokens.
+- `tests/tokens/utilities.test.ts` - Testes dos tokens utilitários.
+- `tests/tokens/accessibility.test.ts` - Testes de acessibilidade (WCAG).
+- `tests/themes/index.test.ts` - Testes da estrutura de temas.
+- `tests/token-editor/editor.test.ts` - **Testes completos do Token Editor (136 testes)**
+  - Funções utilitárias (toKebabCase, toCamelCase, flattenToCSSVars, toTailwindObject).
+  - Geração de formatos (generateCSS, generateTailwindConfig, generateTokensJSON).
+  - Funções auxiliares (getDefaultContent, storeLoadedToken, escapeHtml, getValueType).
+  - Manipulação de JSON (addNewProperty, removeProperty, addArrayItem, removeArrayItem, moveProperty).
+  - Casos de borda e tratamento de erros.
+  - Validações e integrações.
+- `jest.config.js` - Configuração do Jest com suporte a ESM.
+- `tests/README.md` - Documentação dos testes.
 
-### 🔄 Changed
+### 🔄 Alterado
 
-- **Version**: Updated from 1.0.6 to 2.0.0 (major release)
-- **Test Scripts**: Updated `package.json` test scripts to use Jest properly
-- **Documentation**: Updated to reflect new Token Editor feature
+- **Versão**: Atualizada de 1.0.6 para 2.0.0 (major release).
+- **Scripts de Teste**: Scripts de teste no `package.json` atualizados para usar Jest corretamente.
+- **Documentação**: Documentação atualizada para refletir o novo Token Editor.
 
-### 📚 Documentation
+### 📚 Documentação
 
-- Added Token Editor documentation in `token-editor/README.md`
-- Updated test documentation in `tests/README.md`
-- Updated main documentation index
+- Documentação do Token Editor adicionada em `token-editor/README.md`.
+- Documentação de testes atualizada em `tests/README.md`.
+- Índice principal de documentação atualizado.
 
-### 🔧 Technical
+### 🔧 Técnico
 
-- Jest configuration with TypeScript and ESM support
-- **100% test coverage for Token Editor** - All functions, edge cases, and error scenarios tested
-- Test coverage for all exported functions and types
-- Improved developer experience with visual editor
-- Comprehensive test suite ensuring reliability and maintainability
+- Configuração do Jest com suporte a TypeScript e ESM.
+- **100% de cobertura de testes para o Token Editor** - Todas as funções, casos de borda e cenários de erro cobertos.
+- Cobertura de testes para todas as funções e tipos exportados.
+- Melhor experiência de desenvolvimento com o editor visual.
+- Suíte de testes abrangente garantindo confiabilidade e manutenibilidade.
 
-## [1.0.0] - Initial Release
+## [1.0.0] - Lançamento Inicial
 
-### Features
-- Basic design tokens
-- Tailwind support
-- TypeScript support
+### Funcionalidades
+- Design tokens básicos.
+- Suporte a Tailwind.
+- Suporte a TypeScript.
 
 [3.1.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v2.0.0...v3.0.0
