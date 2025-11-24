@@ -6,8 +6,9 @@
  * do Rainer Design System. Estes tokens podem ser utilizados em qualquer
  * framework ou tecnologia, garantindo consistência visual.
  * 
- * @module tokens
- * @version 2.0.0
+ * @module @rainersoft/design-tokens/tokens
+ * @version 2.2.0
+ * @license MIT
  * @author Rainer Teixeira
  * @since 1.0.0
  */

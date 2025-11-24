@@ -59,12 +59,14 @@ O arquivo `.npmrc` está configurado para:
 ### Erro: "No matching version found"
 
 **Solução**: Verifique se as versões no `package.json` estão corretas:
+
 - Storybook: `^10.0.8`
 - Addons: `^10.0.8`
 
 ### Erro: "Host version does not match binary version" (esbuild)
 
 **Solução**: Limpar e reinstalar:
+
 ```bash
 pnpm run clean:all
 pnpm install
@@ -73,6 +75,7 @@ pnpm install
 ### Erro: Storybook usando node_modules do frontend
 
 **Solução**: O `.npmrc` deve ter:
+
 ```ini
 link-workspace-packages=false
 node-linker=isolated
@@ -81,6 +84,7 @@ node-linker=isolated
 ### Dependências não instaladas
 
 **Solução**:
+
 ```bash
 # Limpar cache
 pnpm store prune
@@ -103,12 +107,10 @@ Antes de executar o Storybook:
 ## 📚 Próximos Passos
 
 Após setup bem-sucedido:
-
 1. Execute `pnpm run storybook`
-2. Acesse http://localhost:6006
+2. Acesse <http://localhost:6006>
 3. Explore as stories de documentação:
    - Design Tokens/Color Palette
    - Design Tokens/Color States
    - Design Tokens/Typography Hierarchy
    - Design Tokens/Accessibility
-

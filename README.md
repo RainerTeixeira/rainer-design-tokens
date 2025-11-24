@@ -1,593 +1,241 @@
 # @rainersoft/design-tokens
 
-<div align="center">
+[![Version](https://img.shields.io/badge/version-2.2.0-blue)](https://github.com/RainerTeixeira/rainer-design-tokens)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-![TypeScript](https://img.shields.io/badge/TypeScript-100%25-blue)
-![Tests](https://img.shields.io/badge/tests-320%20passing-success)
-![Size](https://img.shields.io/badge/size-<5KB-success)
+> Design tokens globais (CSS Variables, Tailwind config, temas) para o ecossistema Rainersoft
 
-**Enterprise-grade design tokens for modern design systems**
+**Versão 2.2.0** - Arquitetura limpa, zero redundância, fonte única de verdade
 
-[Getting Started](#-installation) • [Documentation](#-documentation) • [Storybook](#-storybook---visualização-dos-tokens) • [Roadmap](./docs/14-roadmap.md)
+## 📦 Responsabilidade
 
-</div>
+Este pacote é a **fonte única de verdade** para todos os tokens de design:
+- Cores, tipografia, espaçamento, radius, sombras
+- CSS Variables para temas dinâmicos
+- Configuração Tailwind pronta para uso
+- Suporte a múltiplos temas (light/dark)
 
----
-
-## 📖 Overview
-
-`@rainersoft/design-tokens` é uma biblioteca profissional de design tokens que define a linguagem visual do RainerSoft Design System. Agnóstica de tecnologia, escalável e pronta para produção.
-
-### ✨ Features
-
-- 🎨 **Temas Light & Dark** - Paletas profissionais para qualquer contexto
-- 🚀 **Zero Dependencies** - Pura performance, sem bloat
-- 📦 **Múltiplos Formatos** - Tailwind, CSS Vars, JSON universal
-- 🎯 **Type-Safe** - 100% TypeScript com tipos completos
-- 🌐 **Platform Agnostic** - Use em web, mobile, desktop, jogos
-- ♿ **Acessível** - WCAG AA compliant por padrão
-- 📏 **8pt Grid** - Sistema de espaçamento consistente
-- 🎭 **Cyberpunk Theme** - Dark mode com efeitos neon
-- 🎬 **Animações** - Keyframes e animações prontas (accordion, slide-in, fade-in)
-- 📚 **Storybook** - Documentação visual interativa de todos os tokens
-- ✏️ **Token Editor** - Interface web completa para editar tokens visualmente
-  - ✅ Validação de schema JSON
-  - ✅ Preview visual dos tokens
-  - ✅ Histórico de alterações (undo/redo)
-  - ✅ Geração de formatos: CSS, Tailwind, Figma, Android XML, iOS Swift (100% local no navegador)
-- 🧪 **Testes Completos** - 302 testes com 100% de cobertura do Token Editor
-
----
-
-## 🚀 Installation
+## 🚀 Instalação
 
 ```bash
+# Com pnpm (recomendado)
 pnpm add @rainersoft/design-tokens
-```
 
-```bash
+# Com npm
 npm install @rainersoft/design-tokens
 ```
 
-```bash
-yarn add @rainersoft/design-tokens
-```
+## 📖 Uso
 
----
-
-## 🎯 Quick Start
-
-### TypeScript/JavaScript
-
-```typescript
-import { tokens, lightTheme, darkTheme } from '@rainersoft/design-tokens';
-
-// Use tokens diretamente
-const primaryColor = tokens.colors.light.primary.base; // #0891b2
-const spacing = tokens.spacing['4']; // 1rem
-const fontSize = tokens.typography.headings.h1.fontSize; // 2.25rem
-
-// Ou use temas
-const theme = lightTheme;
-console.log(theme.colors.background.primary); // #ffffff
-```
-
-### Tailwind CSS
-
-```typescript
-// tailwind.config.ts
-import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
-
-export default {
-  ...tailwindConfig,
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
-};
-```
+### CSS Variables (Recomendado)
 
 ```tsx
-// Use as classes
-<div className="bg-brand text-text-primary p-4 rounded-lg shadow-md">
+// ✅ Use o formato gerado automaticamente (v2.1.0+)
+import '@rainersoft/design-tokens/formats/css-vars.css';
+
+// Os tokens estarão disponíveis globalmente
+<div style={{ color: 'var(--color-primary)' }}>
   Hello World
 </div>
 ```
 
-### CSS Variables
+> **Nota**: `src/css-vars.css` está **deprecated** desde v2.1.0 e será removido na v3.0.0.  
+> Use `formats/css-vars.css` que é gerado automaticamente dos tokens JSON.
 
-```css
-/* Import CSS vars */
-@import '@rainersoft/design-tokens/formats/css-vars.css';
-
-/* Use variables */
-.button {
-  background: var(--color-brand-primary);
-  padding: var(--spacing-4);
-  border-radius: var(--radius-md);
-}
-```
-
-### 📚 Storybook - Visualização dos Tokens
-
-O Storybook da lib é focado **apenas em design tokens**, não em componentes UI.
-
-```bash
-pnpm run storybook
-```
-
-Acesse `http://localhost:6006` para explorar:
-- 🎨 **ColorPalette** - Paletas completas (Light & Dark themes)
-- 🎭 **ThemePreview** - Preview dos temas mostrando tokens trabalhando juntos
-- 📝 **Typography** - Sistema de tipografia completo
-- 📏 **Spacing** - Escala de espaçamento (8pt grid)
-- 🔲 **Radius** - Raios de borda
-- 🌑 **Shadows** - Sombras e efeitos glow
-- 🎬 **Animations** - Animações e keyframes (accordion, slide-in, fade-in)
-
-> **Nota**: Componentes UI (Button, Card, etc.) devem estar no Storybook do frontend, não aqui. Veja [Estrutura do Storybook](./docs/06-ESTRUTURA_STORYBOOK.md) para mais detalhes.
-
----
-
-## 📁 Structure
-
-```
-@rainersoft/design-tokens/
-│
-├── 📄 index.ts                    # Ponto de entrada principal da biblioteca
-├── 📄 package.json                # Configuração do pacote npm
-├── 📄 pnpm-lock.yaml              # Lock file do pnpm
-├── 📄 tsconfig.json               # Configuração TypeScript
-├── 📄 tsup.config.ts              # Configuração do bundler tsup
-├── 📄 LICENSE                     # Licença MIT
-├── 📄 README.md                   # Este arquivo
-│
-├── 🔧 Configurações
-│   ├── .npmrc                     # Configuração pnpm (isolamento workspace)
-│   ├── .gitignore                 # Arquivos ignorados pelo Git
-│   ├── .npmignore                 # Arquivos ignorados na publicação npm
-│   ├── .prettierrc.json           # Configuração Prettier
-│   ├── .eslintrc.json             # Configuração ESLint
-│   ├── .cspell.json               # Configuração CSpell (verificação ortográfica)
-│   └── .env                       # Variáveis de ambiente (local, não commitado)
-│
-├── 🎯 tokens/                     # FONTE ÚNICA DE VERDADE (JSON + TypeScript)
-│   ├── index.ts                   # Exportações principais dos tokens
-│   ├── accessibility.ts           # Utilitários de acessibilidade (WCAG)
-│   ├── utilities.ts               # Utilitários e helpers
-│   ├── colors/
-│   │   ├── light.json             # Paleta do tema claro
-│   │   └── dark.json              # Paleta do tema escuro (cyberpunk)
-│   ├── typography.json            # Sistema de tipografia completo
-│   ├── spacing.json               # Escala de espaçamento (8pt grid)
-│   ├── radius.json                # Escala de raio de borda
-│   ├── shadows.json               # Sombras e efeitos glow
-│   └── animations.json            # Animações e keyframes
-│
-├── 🎨 themes/                     # Temas compostos
-│   ├── index.ts                   # Exportações dos temas
-│   ├── light.ts                   # Tema claro profissional
-│   └── dark.ts                    # Tema escuro cyberpunk
-│
-├── 📤 formats/                    # FORMATOS GERADOS AUTOMATICAMENTE
-│   ├── tailwind.config.ts         # Configuração Tailwind (gerado)
-│   ├── css-vars.css               # CSS custom properties (gerado)
-│   └── tokens.json                # Export JSON universal (gerado)
-│
-├── 🔧 scripts/                    # Scripts de build e utilitários
-│   ├── build-formats.ts           # Orquestrador principal de build
-│   ├── build-css.ts               # Gera CSS variables
-│   ├── build-tailwind.ts          # Gera Tailwind config
-│   ├── build-tokens-json.ts       # Gera tokens.json
-│   ├── prepare-publish.js         # Prepara publicação npm
-│   ├── setup-github.sh            # Setup GitHub Actions
-│   ├── fix-storybook.ps1          # Script PowerShell para Storybook
-│   ├── update-dates.ts            # Atualiza datas na documentação
-│   └── update-version.ts          # Atualiza versão no README automaticamente
-│
-├── 📚 stories/                    # Stories do Storybook (apenas tokens)
-│   ├── assets/                    # Assets das stories
-│   ├── Accessibility.stories.tsx  # Documentação de acessibilidade
-│   ├── ColorPalette.stories.tsx   # Paleta completa de cores
-│   ├── ColorStates.stories.tsx    # Estados de cores
-│   ├── ThemePreview.stories.tsx   # Preview dos temas
-│   ├── Typography.stories.tsx     # Sistema de tipografia
-│   ├── TypographyHierarchy.stories.tsx # Hierarquia tipográfica
-│   ├── Spacing.stories.tsx        # Escala de espaçamento
-│   ├── Radius.stories.tsx         # Raios de borda
-│   ├── Shadows.stories.tsx        # Sombras e efeitos
-│   ├── Animations.stories.tsx     # Animações e keyframes
-│   └── *.mdx                      # Documentação MDX das stories
-│
-├── ⚙️ .storybook/                 # Configuração do Storybook
-│   ├── main.ts                    # Configuração principal
-│   └── preview.tsx                # Preview e temas do Storybook
-│
-├── 📦 dist/                       # Saída compilada (TypeScript)
-│   ├── index.js                   # CommonJS bundle
-│   ├── index.mjs                  # ESM bundle
-│   ├── index.d.ts                 # TypeScript definitions
-│   ├── index.d.mts                # ESM TypeScript definitions
-│   └── *.map                      # Source maps
-│
-└── 📖 docs/                       # Documentação completa
-    ├── 00-INDICE.md               # Índice geral da documentação
-    ├── 03-ESTRUTURA.md            # Estrutura detalhada da biblioteca
-    ├── 06-ESTRUTURA_STORYBOOK.md  # Estrutura do Storybook
-    ├── 04-SISTEMA_BUILD.md        # Sistema de build automatizado
-    ├── 01-guidelines.md           # Guidelines de uso
-    ├── 07-GUIA_TOKENS_EXPANDIDOS.md  # Guia dos tokens expandidos
-    ├── 15-GUIA_MIGRACAO.md        # Guia de migração
-    ├── 11-PUBLICACAO.md           # Guia de publicação
-    ├── 09-CONFIGURACAO_PNPM.md    # Configuração pnpm
-    ├── CONTRIBUINDO.md            # Guia de contribuição
-    ├── 05-STORYBOOK.md            # Documentação do Storybook
-    ├── 02-RESUMO_ESTRUTURA.md     # Resumo da estrutura
-    ├── 12-HISTORICO_MUDANCAS.md   # Histórico de mudanças
-    └── 14-roadmap.md              # Roadmap do projeto
-```
-
-### 🎯 Princípio: JSON como Fonte Única de Verdade
-
-- ✅ **Edite apenas**: `tokens/*.json` (arquivos JSON na pasta `tokens/`)
-- ✅ **Edite também**: `tokens/*.ts` (utilitários e helpers em TypeScript)
-- ✅ **Formats são gerados**: Execute `pnpm run build:formats`
-- ❌ **NÃO edite manualmente**: `formats/*` (serão sobrescritos pelo build)
-- ⚙️ **Configurações**: Arquivos `.npmrc`, `.eslintrc.json`, `.prettierrc.json`, etc. na raiz
-
----
-
-## 🎨 Color System
-
-### Light Theme
-```typescript
-{
-  primary: { base: '#0891b2', hover: '#06b6d4', active: '#0891b2' },
-  secondary: { base: '#9333ea', hover: '#a855f7', active: '#9333ea' },
-  accent: { base: '#db2777', hover: '#e11d48', active: '#db2777' },
-  status: { success: '#22c55e', error: '#ef4444', warning: '#f59e0b', info: '#3b82f6' }
-}
-```
-
-### Dark Theme (Cyberpunk)
-```typescript
-{
-  primary: { base: '#00e6ff', hover: '#33eeff', active: '#00e6ff' },
-  secondary: { base: '#7d00ff', hover: '#9333ea', active: '#7d00ff' },
-  accent: { base: '#ff006e', hover: '#ff3385', active: '#ff006e' },
-  effects: { glowCyan: '0 0 20px rgba(0, 230, 255, 0.5)' }
-}
-```
-
----
-
-## 📏 Typography
-
-Sistema hierárquico completo com headings, subtítulos, body, captions, buttons e labels:
-
-```typescript
-{
-  headings: {
-    h1: { fontSize: '2.25rem', fontWeight: '700', lineHeight: '1.2' },
-    h2: { fontSize: '1.875rem', fontWeight: '600', lineHeight: '1.3' },
-    // ... h3, h4, h5, h6
-  },
-  body: {
-    large: { fontSize: '1.125rem', lineHeight: '1.75' },
-    medium: { fontSize: '1rem', lineHeight: '1.5' },
-    small: { fontSize: '0.875rem', lineHeight: '1.5' }
-  },
-  // ... subtitle, caption, button, label, code
-}
-```
-
----
-
-## 🌓 Theme Switching
+### Tokens TypeScript
 
 ```tsx
-// React example
-function ThemeToggle() {
-  const [theme, setTheme] = useState('light');
+import { colors, spacing, radius } from '@rainersoft/design-tokens';
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.documentElement.classList.toggle('dark');
-  };
-
-  return <button onClick={toggleTheme}>Toggle Theme</button>;
-}
+// Usar tokens programaticamente
+const primaryColor = colors.primary.DEFAULT;
+const largePadding = spacing['16'];
 ```
 
----
+### Temas Dinâmicos
 
-## 📚 Documentation
+```html
+<!-- Tema claro (padrão) -->
+<body data-theme="light">
 
-📖 **[Documentação Completa](./docs/00-INDICE.md)** - Índice geral de toda a documentação
-
-### Guias Principais
-
-- [**Guidelines**](./docs/01-guidelines.md) - Como usar os tokens
-- [**ESTRUTURA.md**](./docs/03-ESTRUTURA.md) - Estrutura detalhada da biblioteca
-- [**SISTEMA_BUILD.md**](./docs/04-SISTEMA_BUILD.md) - Sistema de build automatizado
-- [**Roadmap**](./docs/14-roadmap.md) - Futuras features e versões
-- [**GUIA_TOKENS_EXPANDIDOS**](./docs/07-GUIA_TOKENS_EXPANDIDOS.md) - Guia dos tokens expandidos (cores e tipografia)
-- [**GUIA_MIGRACAO**](./docs/15-GUIA_MIGRACAO.md) - Guia de migração para v2.0.0
-- [**PUBLICACAO**](./docs/11-PUBLICACAO.md) - Guia de publicação no GitHub/npm
-
-### Storybook
-
-- [**STORYBOOK.md**](./docs/05-STORYBOOK.md) - Documentação visual dos tokens
-- [**ESTRUTURA_STORYBOOK.md**](./docs/06-ESTRUTURA_STORYBOOK.md) - Separação entre tokens e componentes
-
-### Referência Rápida
-
-- [**RESUMO_ESTRUTURA.md**](./docs/02-RESUMO_ESTRUTURA.md) - Resumo da estrutura
-- [**HISTORICO_MUDANCAS.md**](./docs/12-HISTORICO_MUDANCAS.md) - Histórico de mudanças
-
----
-
-## 🎯 Use Cases
-
-### ✅ Perfect For
-
-- 🌐 Websites e aplicações web
-- 📱 Aplicativos mobile (React Native, Flutter)
-- 🖥️ Aplicações desktop (Electron, Tauri)
-- 🎮 Interfaces de jogos (Unity, Unreal, Godot)
-- 🎨 Design systems corporativos
-- 🚀 MVPs e protótipos rápidos
-
-### ❌ Not Included
-
-Esta biblioteca contém **apenas tokens**, não componentes UI.
-
-Para componentes, use:
-- [shadcn/ui](https://ui.shadcn.com/) com estes tokens
-- [Radix UI](https://www.radix-ui.com/) + custom styling
-- Sua própria biblioteca de componentes
-
----
-
-## 🔧 Integration Examples
-
-### Next.js + Tailwind
-
-```typescript
-// tailwind.config.ts
-import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
-
-export default tailwindConfig;
+<!-- Tema escuro -->
+<body data-theme="dark">
 ```
 
-```tsx
-// app/layout.tsx
-export default function RootLayout({ children }: { children: React.Node }) {
-  return (
-    <html lang="pt-BR" className="dark">
-      <body>{children}</body>
-    </html>
-  );
-}
-```
-
-### Vite + CSS
-
-```typescript
-// main.ts
-import '@rainersoft/design-tokens/formats/css-vars.css';
-```
-
-### shadcn/ui
-
-```typescript
-// Use tokens as base for shadcn/ui theming
-import { tokens } from '@rainersoft/design-tokens';
-
-export const shadcnTheme = {
-  primary: tokens.colors.light.primary.base,
-  secondary: tokens.colors.light.secondary.base,
-  accent: tokens.colors.light.accent.base,
-  // ... map other tokens
-};
-```
-
----
-
-## 📦 Exports
-
-```typescript
-// Main tokens
-import { tokens } from '@rainersoft/design-tokens';
-
-// Individual token categories
-import { 
-  lightThemeColors,
-  darkThemeColors,
-  typographyTokens,
-  spacingTokens,
-  radiusTokens,
-  shadowTokens 
-} from '@rainersoft/design-tokens/tokens';
-
-// Themes
-import { lightTheme, darkTheme } from '@rainersoft/design-tokens/themes';
-
-// Formats
-import { tailwindConfig } from '@rainersoft/design-tokens/formats/tailwind.config';
-```
-
----
-
-## 🎨 Token Editor (Editor Visual Local)
-
-Para editar os design tokens visualmente, sem servidor, use o **Token Editor** incluso no repositório:
-
-1. Localize a pasta `token-editor/` na raiz do projeto.
-2. Abra o arquivo `token-editor/index.html` diretamente no navegador (duplo clique ou arrastar/soltar).
-3. Carregue um arquivo JSON de tokens, edite visualmente ou via código e salve/gera formatos **100% local**, direto no navegador.
-
----
-
-## 🧪 Development
+## 🛠️ Scripts
 
 ```bash
-# Install dependencies
-pnpm install
+# Construir tokens
+pnpm build
 
-# Build tokens (gera formats + compila TypeScript)
-pnpm run build
+# Desenvolvimento com hot reload
+pnpm dev
 
-# Gerar apenas formatos (CSS, Tailwind, JSON)
-pnpm run build:formats
-
-# Gerar formatos individuais
-pnpm run build:css          # Gera formats/css-vars.css
-pnpm run build:tailwind     # Gera formats/tailwind.config.ts
-pnpm run build:tokens-json  # Gera formats/tokens.json
-
-# Storybook (visualização dos tokens)
-pnpm run storybook          # Inicia Storybook em http://localhost:6006
-pnpm run build-storybook    # Gera build estático do Storybook
-
-# Run tests
+# Executar testes
 pnpm test
 
-# Type check
-pnpm run type-check
+# Verificar tipos
+pnpm type-check
 
-# Lint
-pnpm run lint
-
-# Clean
-pnpm run clean              # Remove dist/
-pnpm run clean:all          # Remove node_modules, lock, dist, etc.
+# Limpar build
+pnpm clean
 ```
 
-### 🔄 Workflow de Desenvolvimento
+## 📁 Estrutura
 
-1. **Edite os tokens** em `tokens/*.json` (fonte única de verdade)
-2. **Edite utilitários** em `tokens/*.ts` se necessário (accessibility, utilities)
-3. **Execute o build**: `pnpm run build:formats` (gera formatos)
-4. **Os formatos são gerados automaticamente** em `formats/`
-5. **Compile o TypeScript**: `pnpm run build` (já inclui build:formats + tsup)
-6. **Visualize no Storybook**: `pnpm run storybook` para ver todos os tokens de forma interativa
-7. **Execute testes**: `pnpm test` antes de commitar
-8. **⚠️ IMPORTANTE**: Sempre commit `dist/` após build (veja [PUBLICACAO.md](./docs/11-PUBLICACAO.md#-por-que-dist-está-commitado))
-
-### ✏️ Token Editor - Editor Visual de Tokens
-
-Interface web **100% local** para editar tokens visualmente, sem necessidade de servidor.
-
-**Localização**: `token-editor/`
-
-**Características:**
-- 🚀 **100% Local** - Funciona abrindo HTML diretamente no navegador
-- 🎨 **Editor Visual** - Edite propriedades com inputs HTML (evita erros de sintaxe)
-- 📝 **Editor de Código** - Edição tradicional de JSON
-- ✅ **Validação em Tempo Real** - Detecta erros instantaneamente
-- 💾 **Download de Arquivos** - Salve JSON diretamente (sem servidor)
-- 🔄 **Auto-backup** - Salva automaticamente no localStorage
-- 🎯 **Zero Dependencies** - Apenas HTML, CSS e JavaScript puro
-
-**Como usar (Modo Local - Recomendado):**
-```bash
-# Simplesmente abra o arquivo HTML no navegador:
-# Windows: Clique duas vezes em token-editor/index.html
-# Mac/Linux: open token-editor/index.html
+```text
+@rainersoft/design-tokens/
+├── tokens/               # 📝 Fonte única de verdade (JSON)
+│   ├── colors/          # Paletas light/dark
+│   ├── typography.json  # Tipografia
+│   ├── spacing.json     # Espaçamento
+│   ├── radius.json      # Border radius
+│   ├── shadows.json     # Sombras
+│   ├── motion.json      # Animações
+│   └── z-index.json     # Camadas
+├── formats/             # 🔄 Gerados automaticamente
+│   ├── css-vars.css     # CSS Variables (USE ESTE)
+│   ├── tokens.json      # JSON consolidado
+│   └── tailwind.config.ts # Config Tailwind
+├── src/
+│   └── css-vars.css     # ⚠️ DEPRECATED (remover em v3.0.0)
+└── dist/                # 📦 Build para distribuição
 ```
 
-**Funcionalidades:**
-- 📂 Carregar arquivos JSON do computador
-- ✏️ Editar tokens com editor visual ou código
-- ✅ Validação JSON em tempo real
-- 💾 Salvar/Download de arquivos JSON
-- 🔨 Gerar formatos (requer servidor backend - opcional)
-- 👁️ Preview dos arquivos gerados
-- ⌨️ Atalhos de teclado (Ctrl+S, Ctrl+Shift+F, Ctrl+B)
+## 🎨 Tokens Disponíveis
 
-**Documentação completa**: Veja [Token Editor README](./token-editor/README.md)
+### Cores
+- `primary`, `secondary`, `accent`, `destructive`
+- `background`, `foreground`, `muted`, `card`, `popover`
+- Cada cor tem variantes light/dark
 
-### 🧪 Testes
+As cores são expostas principalmente como **CSS Variables**, por exemplo:
 
-Suíte completa de testes com **302 casos de teste** cobrindo toda a funcionalidade, incluindo **100% de cobertura do Token Editor** (168 testes específicos + testes E2E).
+```css
+:root[data-theme="light"] {
+  --color-primary: 14 165 233;          /* rgb */
+  --color-primary-foreground: 15 23 42; /* rgb */
+  /* ...outras cores */
+}
 
-**Executar testes:**
-```bash
-pnpm test              # Executa todos os testes
-pnpm test:watch        # Modo watch (desenvolvimento)
-pnpm test:coverage     # Com relatório de cobertura
+:root[data-theme="dark"] {
+  --color-primary: 56 189 248;
+  --color-primary-foreground: 15 23 42;
+}
 ```
 
-**Cobertura:**
-- ✅ Tokens estrutura e exportações
-- ✅ Tokens utilitários (Tailwind classes)
-- ✅ Utilitários de acessibilidade (WCAG)
-- ✅ Estrutura de temas (light/dark)
-- ✅ **Token Editor (100% de cobertura - 168 testes + E2E)**
-- ✅ TypeScript types
-- ✅ Casos de uso reais
+Uso típico nas camadas de UI:
 
-Veja [Testes README](./tests/README.md) para mais detalhes.
+- CSS direto: `color: rgb(var(--color-primary));`
+- Tailwind (via config): classes como `bg-primary`, `text-primary-foreground`, `border-border`, etc.
+- Temas dinâmicos: alternando `data-theme="light"` / `data-theme="dark"` na tag `html` ou `body`.
 
-### 📚 Storybook - Visualização dos Tokens
+### Espaçamento
+- Sistema 8pt grid: `0`, `1`, `2`, `4`, `8`, `12`, `16`, `20`, `24`, `32`...
 
-O Storybook da lib documenta **apenas design tokens**, não componentes UI.
+### Tipografia
+- Font sizes: `xs`, `sm`, `base`, `lg`, `xl`, `2xl`...
+- Font weights: `light`, `regular`, `medium`, `semibold`, `bold`
 
-**Stories disponíveis:**
-- 🎨 **ColorPalette** - Paletas completas de cores (Light & Dark)
-- 🎭 **ThemePreview** - Preview dos temas mostrando tokens em ação
-- 📝 **Typography** - Sistema completo de tipografia
-- 📏 **Spacing** - Escala de espaçamento (8pt grid)
-- 🔲 **Radius** - Raios de borda
-- 🌑 **Shadows** - Sombras e efeitos glow
-- 🎬 **Animations** - Animações e keyframes (accordion, slide-in, fade-in)
+### Radius
+- `none`, `sm`, `md`, `lg`, `xl`, `full`
 
-**Separação de responsabilidades:**
-- ✅ **Este Storybook**: Apenas tokens (cores, tipografia, espaçamento, etc.)
-- ✅ **Storybook do Frontend**: Componentes UI (Button, Card, etc.)
+### Sombras
+- `xs`, `sm`, `md`, `lg`, `xl`, `2xl`
 
-Para mais detalhes sobre a estrutura, consulte [**Estrutura do Storybook**](./docs/06-ESTRUTURA_STORYBOOK.md).
+### Animações
+- Durações: `fast`, `normal`, `slow`
+- Easing functions predefinidos
 
----
+## ⚙️ Exemplo de Tailwind Config
 
-## 🤝 Contributing
+Um exemplo simples de como consumir as variáveis de cor neste pacote via Tailwind:
 
-Contributions are welcome! Please read our [Contributing Guide](./docs/CONTRIBUINDO.md) first.
+```ts
+// tailwind.config.ts
+import type { Config } from 'tailwindcss';
 
----
+const config: Config = {
+  darkMode: ['class', '[data-theme="dark"]'],
+  theme: {
+    extend: {
+      colors: {
+        background: 'rgb(var(--color-background) / <alpha-value>)',
+        foreground: 'rgb(var(--color-foreground) / <alpha-value>)',
+        primary: {
+          DEFAULT: 'rgb(var(--color-primary) / <alpha-value>)',
+          foreground: 'rgb(var(--color-primary-foreground) / <alpha-value>)',
+        },
+        secondary: {
+          DEFAULT: 'rgb(var(--color-secondary) / <alpha-value>)',
+          foreground: 'rgb(var(--color-secondary-foreground) / <alpha-value>)',
+        },
+        muted: {
+          DEFAULT: 'rgb(var(--color-muted) / <alpha-value>)',
+          foreground: 'rgb(var(--color-muted-foreground) / <alpha-value>)',
+        },
+        card: {
+          DEFAULT: 'rgb(var(--color-card) / <alpha-value>)',
+          foreground: 'rgb(var(--color-card-foreground) / <alpha-value>)',
+        },
+      },
+    },
+  },
+};
 
-## 📄 License
+export default config;
+```
 
-MIT © [Rainer Teixeira](https://github.com/RainerTeixeira)
+## 📝 Changelog
 
----
+### v2.2.0 (2024-11-24)
 
-## 🔗 Links
+**🚀 Melhorias de Governança e CI/CD**
 
-- **GitHub**: [RainerTeixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
-- **NPM**: [@rainersoft/design-tokens](https://www.npmjs.com/package/@rainersoft/design-tokens)
-- **Website**: [rainersoft.com.br](https://rainersoft.com.br)
-- **Email**: suporte@rainersoft.com.br
+- ✅ **CI/CD Pipeline**: Workflow GitHub Actions completo para validação automática
+- ✅ **Validação de Tokens**: Checks automáticos para valores hardcoded
+- ✅ **Build Sequencial**: Pipeline garantindo ordem correta de build
+- ✅ **Zero Hardcode Enforcement**: Validação rigorosa contra valores hardcoded
+- ✅ **Documentação Profissional**: CONTRIBUTING.md dentro de docs/
 
-## 🛠️ Tech Stack
+### v2.1.0 (2024-11-24)
 
-- **Language**: TypeScript 5.3+ (strict mode)
-- **Package Manager**: pnpm 9+
-- **Build Tool**: tsup (TypeScript bundler)
-- **Linter**: ESLint + TypeScript ESLint
-- **Formatter**: Prettier
-- **Testing**: Jest
-- **Documentation**: Storybook 10
-- **Publish**: GitHub Actions (GitHub Packages + npm)
+**🎯 Arquitetura Limpa - Zero Redundância**
 
----
+- ✅ **Removida redundância entre CSS vars**: `src/css-vars.css` marcado como DEPRECATED
+- ✅ **Fonte única de verdade**: Apenas `formats/` (gerado) + `tokens/` (fonte)
+- ✅ **Classes utilitárias movidas**: `.glass`, `.neon-*`, `.gradient-*` → `@rainersoft/ui`
+- ✅ **Limpeza de arquivos**: `coverage/` e `.env` adicionados ao `.gitignore`
+- ✅ **Documentação atualizada**: README reflete a nova arquitetura
 
-<div align="center">
+**Migração Recomendada:**
+```diff
+- import '@rainersoft/design-tokens/src/css-vars.css';
++ import '@rainersoft/design-tokens/formats/css-vars.css';
+```
 
-**Made with ❤️ by Rainer Teixeira**
+### v2.0.0
 
-![Built with TypeScript](https://img.shields.io/badge/Built%20with-TypeScript-blue)
-![Enterprise Ready](https://img.shields.io/badge/Enterprise-Ready-success)
+- Sistema profissional W3C Design Tokens (DTCG)
+- Token Editor 100% local (browser-based)
+- Novos tokens: motion, breakpoints, z-index
+- Novos formatos: Figma, Android XML, iOS Swift
+- 320+ testes com 100% cobertura do Token Editor
+- Estrutura primitivos/semânticos
+- Breaking changes com guia de migração
 
-</div>
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Consulte o [Guia de Contribuição](./docs/CONTRIBUINDO.md) para saber como contribuir com este projeto.
+
+## 📚 Documentação Completa
+
+- [Índice da Documentação](./docs/00-INDICE.md)
+- [Guia de Contribuição](./docs/CONTRIBUINDO.md)
+- [Estrutura do Projeto](./docs/03-ESTRUTURA.md)
+- [Sistema de Build](./docs/04-SISTEMA_BUILD.md)
+- [Guia de Publicação](./docs/11-PUBLICACAO.md)
+
+## 📝 Licença
+
+MIT © Rainer Teixeira

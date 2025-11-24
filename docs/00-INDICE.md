@@ -26,13 +26,13 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 📚 Storybook
 
-4. **[STORYBOOK.md](./05-STORYBOOK.md)** - Documentação do Storybook de tokens
+1. **[STORYBOOK.md](./05-STORYBOOK.md)** - Documentação do Storybook de tokens
    - Como iniciar o Storybook
    - Stories disponíveis
    - Criar novas stories
    - Deploy do Storybook
 
-5. **[ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md)** - Separação de responsabilidades
+2. **[ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md)** - Separação de responsabilidades
    - Storybook da lib (tokens)
    - Storybook do frontend (componentes)
    - Integração entre os dois
@@ -40,7 +40,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 📁 Estrutura
 
-6. **[RESUMO_ESTRUTURA.md](./02-RESUMO_ESTRUTURA.md)** - Resumo da estrutura
+1. **[RESUMO_ESTRUTURA.md](./02-RESUMO_ESTRUTURA.md)** - Resumo da estrutura
    - Visão geral da organização
    - Separação de responsabilidades
    - Fluxo de trabalho
@@ -48,13 +48,13 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 
 ### 🗺️ Planejamento
 
-7. **[Roadmap](./14-roadmap.md)** - Roadmap e futuras features
+1. **[Roadmap](./14-roadmap.md)** - Roadmap e futuras features
    - Versão atual (2.0.0)
    - Features em progresso
    - Backlog
    - Timeline estimado
 
-8. **[MELHORIAS_FUTURAS.md](./13-MELHORIAS_FUTURAS.md)** - Lista completa de melhorias
+2. **[MELHORIAS_FUTURAS.md](./13-MELHORIAS_FUTURAS.md)** - Lista completa de melhorias
    - Melhorias no Token Editor
    - Novos formatos de exportação
    - Novos tokens
@@ -80,23 +80,28 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 ## 📋 Índice por Tópico
 
 ### Instalação e Configuração
+
 - [Guidelines - Instalação](./01-guidelines.md#-uso-dos-tokens)
 - [ESTRUTURA.md - Como usar em projetos](./03-ESTRUTURA.md#-como-usar-em-projetos)
 
 ### Desenvolvimento
+
 - [SISTEMA_BUILD.md - Workflow](./04-SISTEMA_BUILD.md#-workflow-de-desenvolvimento)
 - [ESTRUTURA.md - Fluxo de Trabalho](./03-ESTRUTURA.md#-fluxo-de-trabalho)
 
 ### Storybook
+
 - [STORYBOOK.md](./05-STORYBOOK.md) - Guia completo
 - [ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) - Estrutura
 
 ### Arquitetura
+
 - [ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura detalhada
 - [RESUMO_ESTRUTURA.md](./02-RESUMO_ESTRUTURA.md) - Resumo
 - [SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build
 
 ### Guias Adicionais
+
 - [GUIA_TOKENS_EXPANDIDOS.md](./07-GUIA_TOKENS_EXPANDIDOS.md) - Tokens expandidos (cores e tipografia)
 - [GUIA_MIGRACAO.md](./15-GUIA_MIGRACAO.md) - Guia de migração para v2.0.0
 - [PUBLICACAO.md](./11-PUBLICACAO.md) - Guia de publicação no GitHub/npm
@@ -105,6 +110,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
 - [HISTORICO_MUDANCAS.md](./12-HISTORICO_MUDANCAS.md) - Histórico de mudanças
 
 ### 🎨 Ferramentas de Desenvolvimento
+
 - **[Token Editor](../token-editor/README.md)** - Editor visual 100% local para editar tokens
   - 🚀 Funciona abrindo HTML diretamente no navegador (sem servidor)
   - 🎨 Editor visual com inputs HTML (evita erros de sintaxe)
@@ -121,6 +127,7 @@ Bem-vindo à documentação completa da biblioteca de design tokens!
   - 🔍 Testes de integração e casos de borda
 
 ### Planejamento
+
 - [Roadmap](./14-roadmap.md) - Futuras features
 - [MELHORIAS_FUTURAS.md](./13-MELHORIAS_FUTURAS.md) - Lista completa de melhorias e tarefas
 
@@ -166,4 +173,3 @@ Para contribuir com a documentação:
 
 **Autor**: Rainer Teixeira  
 **Licença**: MIT
-

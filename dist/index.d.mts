@@ -7461,4 +7461,46 @@ declare const themes: {
  */
 type Themes = typeof themes;
 
-export { type Animations, BACKGROUND, type Background, type Breakpoints, COLORS, type Colors, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, MOTION, type Motion, NAVIGATION, type Navigation, RESPONSIVE, type Radius, SHADOWS, type Shadows, type Spacing, type Themes, type Tokens, type Typography, type ZIndex, Z_INDEX, animationTokens, breakpointTokens, componentTokens, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, motionTokens, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast, zIndexTokens };
+/**
+ * @fileoverview Ponto de entrada principal da biblioteca @rainersoft/design-tokens
+ *
+ * @description
+ * Biblioteca enterprise-grade de design tokens para sistemas de design modernos.
+ * Tecnologicamente agnóstica, escalável e pronta para produção.
+ *
+ * Esta biblioteca fornece tokens de design estruturados que podem ser utilizados
+ * em qualquer framework ou tecnologia, garantindo consistência visual em toda
+ * a aplicação.
+ *
+ * @module @rainersoft/design-tokens
+ * @version 2.0.0
+ * @author Rainer Teixeira
+ * @license MIT
+ * @since 1.0.0
+ *
+ * @example
+ * ```typescript
+ * import { tokens, themes, lightTheme, darkTheme } from '@rainersoft/design-tokens';
+ *
+ * // Usar tokens diretamente
+ * const primaryColor = tokens.colors.light.brand.primary;
+ *
+ * // Usar temas completos
+ * const theme = lightTheme;
+ * ```
+ */
+
+/**
+ * CSS Variables para temas dinâmicos
+ *
+ * @description
+ * Importa o arquivo CSS com as variáveis de design para uso direto
+ *
+ * @example
+ * ```typescript
+ * import '@rainersoft/design-tokens/css-vars.css';
+ * ```
+ */
+declare const cssVarsPath = "./src/css-vars.css";
+
+export { type Animations, BACKGROUND, type Background, type Breakpoints, COLORS, type Colors, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, MOTION, type Motion, NAVIGATION, type Navigation, RESPONSIVE, type Radius, SHADOWS, type Shadows, type Spacing, type Themes, type Tokens, type Typography, type ZIndex, Z_INDEX, animationTokens, breakpointTokens, componentTokens, cssVarsPath, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, motionTokens, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast, zIndexTokens };

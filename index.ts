@@ -10,7 +10,7 @@
  * a aplicação.
  * 
  * @module @rainersoft/design-tokens
- * @version 2.0.0
+ * @version 2.2.0
  * @author Rainer Teixeira
  * @license MIT
  * @since 1.0.0
@@ -52,4 +52,17 @@ export { default as tokens } from './tokens';
  * @type {import('./themes').default}
  */
 export { default as themes } from './themes';
+
+/**
+ * CSS Variables para temas dinâmicos
+ * 
+ * @description
+ * Importa o arquivo CSS com as variáveis de design para uso direto
+ * 
+ * @example
+ * ```typescript
+ * import '@rainersoft/design-tokens/css-vars.css';
+ * ```
+ */
+export const cssVarsPath = './src/css-vars.css';
 
