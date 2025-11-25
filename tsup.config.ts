@@ -46,7 +46,7 @@ import { defineConfig } from 'tsup';
  */
 export default defineConfig({
   entry: ['index.ts'],          // Arquivo de entrada principal
-  format: ['esm'],              // Apenas ESM (moderno)
+  format: ['esm', 'cjs'],       // ESM + CommonJS para compatibilidade
   dts: true,                    // Gera arquivos de definição TypeScript
   sourcemap: true,              // Gera sourcemaps para debug
   clean: true,                  // Limpa dist antes do build

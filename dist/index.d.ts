@@ -566,7 +566,7 @@ var darkColors = {
 	colors: colors
 };
 
-var typography = {
+var typography$1 = {
 	fontFamily: {
 		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
@@ -826,11 +826,11 @@ var typography = {
 		}
 	}
 };
-var typography$1 = {
-	typography: typography
+var typography = {
+	typography: typography$1
 };
 
-var spacing = {
+var spacing$1 = {
 	"0": "0px",
 	"1": "0.25rem",
 	"2": "0.5rem",
@@ -867,11 +867,11 @@ var spacing = {
 	"2.5": "0.625rem",
 	"3.5": "0.875rem"
 };
-var spacing$1 = {
-	spacing: spacing
+var spacing = {
+	spacing: spacing$1
 };
 
-var radius = {
+var radius$1 = {
 	none: "0px",
 	sm: "0.125rem",
 	base: "0.25rem",
@@ -882,11 +882,11 @@ var radius = {
 	"3xl": "1.5rem",
 	full: "9999px"
 };
-var radius$1 = {
-	radius: radius
+var radius = {
+	radius: radius$1
 };
 
-var shadows = {
+var shadows$1 = {
 	light: {
 		xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
 		sm: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
@@ -914,11 +914,11 @@ var shadows = {
 		}
 	}
 };
-var shadows$1 = {
-	shadows: shadows
+var shadows = {
+	shadows: shadows$1
 };
 
-var animations = {
+var animations$1 = {
 	"accordion-down": {
 		name: "accordion-down",
 		duration: "0.2s",
@@ -1057,11 +1057,11 @@ var animations = {
 		}
 	}
 };
-var animations$1 = {
-	animations: animations
+var animations = {
+	animations: animations$1
 };
 
-var motion = {
+var motion$1 = {
 	duration: {
 		instant: "0ms",
 		fast: "100ms",
@@ -1090,11 +1090,11 @@ var motion = {
 		long: "200ms"
 	}
 };
-var motion$1 = {
-	motion: motion
+var motion = {
+	motion: motion$1
 };
 
-var breakpoints = {
+var breakpoints$1 = {
 	xs: "0px",
 	sm: "640px",
 	md: "768px",
@@ -1103,10 +1103,10 @@ var breakpoints = {
 	"2xl": "1536px",
 	"3xl": "1920px"
 };
-var breakpoints$1 = {
-	breakpoints: breakpoints};
+var breakpoints = {
+	breakpoints: breakpoints$1};
 
-var zIndex = {
+var zIndex$1 = {
 	base: 0,
 	dropdown: 1000,
 	sticky: 1020,
@@ -1119,8 +1119,8 @@ var zIndex = {
 	notification: 1090,
 	max: 9999
 };
-var zIndex$1 = {
-	zIndex: zIndex};
+var zIndex = {
+	zIndex: zIndex$1};
 
 /**
  * @fileoverview Tokens utilitários - Classes Tailwind CSS
@@ -4812,7 +4812,7 @@ type DarkColors = typeof darkColors.colors;
  * @description
  * Tipo que representa todos os tokens de tipografia.
  */
-type Typography = typeof typography$1.typography;
+type Typography = typeof typography.typography;
 /**
  * Tipo TypeScript para tokens de espaçamento
  *
@@ -4820,7 +4820,7 @@ type Typography = typeof typography$1.typography;
  * @description
  * Tipo que representa todos os tokens de espaçamento.
  */
-type Spacing = typeof spacing$1.spacing;
+type Spacing = typeof spacing.spacing;
 /**
  * Tipo TypeScript para tokens de raio de borda
  *
@@ -4828,7 +4828,7 @@ type Spacing = typeof spacing$1.spacing;
  * @description
  * Tipo que representa todos os tokens de raio de borda.
  */
-type Radius = typeof radius$1.radius;
+type Radius = typeof radius.radius;
 /**
  * Tipo TypeScript para tokens de sombras
  *
@@ -4836,7 +4836,7 @@ type Radius = typeof radius$1.radius;
  * @description
  * Tipo que representa todos os tokens de sombras.
  */
-type Shadows = typeof shadows$1.shadows;
+type Shadows = typeof shadows.shadows;
 /**
  * Tipo TypeScript para tokens de animações
  *
@@ -4844,7 +4844,7 @@ type Shadows = typeof shadows$1.shadows;
  * @description
  * Tipo que representa todos os tokens de animações.
  */
-type Animations = typeof animations$1.animations;
+type Animations = typeof animations.animations;
 /**
  * Tipo TypeScript para tokens de motion
  *
@@ -4852,7 +4852,7 @@ type Animations = typeof animations$1.animations;
  * @description
  * Tipo que representa todos os tokens de motion.
  */
-type Motion = typeof motion$1.motion;
+type Motion = typeof motion.motion;
 /**
  * Tipo TypeScript para tokens de breakpoints
  *
@@ -4860,7 +4860,7 @@ type Motion = typeof motion$1.motion;
  * @description
  * Tipo que representa todos os tokens de breakpoints responsivos.
  */
-type Breakpoints = typeof breakpoints$1.breakpoints;
+type Breakpoints = typeof breakpoints.breakpoints;
 /**
  * Tipo TypeScript para tokens de z-index
  *
@@ -4868,7 +4868,7 @@ type Breakpoints = typeof breakpoints$1.breakpoints;
  * @description
  * Tipo que representa todos os tokens de z-index.
  */
-type ZIndex = typeof zIndex$1.zIndex;
+type ZIndex = typeof zIndex.zIndex;
 
 /**
  * @fileoverview Tema Claro - Rainer Design System
