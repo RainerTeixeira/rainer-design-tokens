@@ -141,3 +141,5 @@ function main() {
 main();
 
 export { getCurrentDate, updateDatesInFile };
+
+

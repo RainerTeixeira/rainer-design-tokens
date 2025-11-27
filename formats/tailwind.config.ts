@@ -347,3 +347,5 @@ export const tailwindConfig = {
  * @default tailwindConfig
  */
 export default tailwindConfig;
+
+

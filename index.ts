@@ -33,6 +33,9 @@ export * from './tokens';
 // Re-export themes
 export * from './themes';
 
+// Re-export helpers
+export * from './tokens/helpers';
+
 /**
  * Exportação padrão dos tokens de design
  * 
@@ -65,4 +68,6 @@ export { default as themes } from './themes';
  * ```
  */
 export const cssVarsPath = './src/css-vars.css';
+
+
 

@@ -830,7 +830,7 @@ var typography = {
 	typography: typography$1
 };
 
-var spacing$1 = {
+var spacing$2 = {
 	"0": "0px",
 	"1": "0.25rem",
 	"2": "0.5rem",
@@ -867,11 +867,11 @@ var spacing$1 = {
 	"2.5": "0.625rem",
 	"3.5": "0.875rem"
 };
-var spacing = {
-	spacing: spacing$1
+var spacing$1 = {
+	spacing: spacing$2
 };
 
-var radius$1 = {
+var radius$2 = {
 	none: "0px",
 	sm: "0.125rem",
 	base: "0.25rem",
@@ -882,8 +882,8 @@ var radius$1 = {
 	"3xl": "1.5rem",
 	full: "9999px"
 };
-var radius = {
-	radius: radius$1
+var radius$1 = {
+	radius: radius$2
 };
 
 var shadows$1 = {
@@ -4820,7 +4820,7 @@ type Typography = typeof typography.typography;
  * @description
  * Tipo que representa todos os tokens de espaçamento.
  */
-type Spacing = typeof spacing.spacing;
+type Spacing = typeof spacing$1.spacing;
 /**
  * Tipo TypeScript para tokens de raio de borda
  *
@@ -4828,7 +4828,7 @@ type Spacing = typeof spacing.spacing;
  * @description
  * Tipo que representa todos os tokens de raio de borda.
  */
-type Radius = typeof radius.radius;
+type Radius = typeof radius$1.radius;
 /**
  * Tipo TypeScript para tokens de sombras
  *
@@ -7463,6 +7463,936 @@ declare const themes: {
 type Themes = typeof themes;
 
 /**
+ * Design Tokens Helpers
+ *
+ * Funções utilitárias para facilitar o uso dos design tokens.
+ * Fornece helpers para acessar cores, espaçamentos, tipografia, etc.
+ *
+ * @module @rainersoft/design-tokens/helpers
+ * @author Rainer Teixeira
+ */
+
+/**
+ * Obtém cores do tema claro
+ */
+declare function getLightColors(): {
+    primary: {
+        base: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        focus: string;
+        background: string;
+        backgroundHover: string;
+        backgroundActive: string;
+        border: string;
+        borderHover: string;
+        borderFocus: string;
+        text: string;
+        textHover: string;
+        textDisabled: string;
+    };
+    secondary: {
+        base: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        focus: string;
+        background: string;
+        backgroundHover: string;
+        backgroundActive: string;
+        border: string;
+        borderHover: string;
+        borderFocus: string;
+        text: string;
+        textHover: string;
+        textDisabled: string;
+    };
+    accent: {
+        base: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        focus: string;
+        background: string;
+        backgroundHover: string;
+        backgroundActive: string;
+        border: string;
+        borderHover: string;
+        borderFocus: string;
+        text: string;
+        textHover: string;
+        textDisabled: string;
+    };
+    background: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        inverse: string;
+        overlay: string;
+        muted: string;
+    };
+    surface: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        elevated: string;
+        overlay: string;
+        hover: string;
+        active: string;
+    };
+    text: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        inverse: string;
+        disabled: string;
+        link: string;
+        linkHover: string;
+        linkActive: string;
+        linkVisited: string;
+        onPrimary: string;
+        onSecondary: string;
+        onAccent: string;
+        onBackground: string;
+        onSurface: string;
+    };
+    border: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        focus: string;
+        focusRing: string;
+        inverse: string;
+        hover: string;
+        active: string;
+        disabled: string;
+    };
+    status: {
+        success: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+        warning: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+        error: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+        info: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+    };
+    interactive: {
+        default: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        disabledText: string;
+        focus: string;
+        focusRing: string;
+    };
+    primitive: {
+        cyan: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        purple: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        pink: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        blue: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        green: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        orange: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        red: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        amber: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        emerald: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        neutral: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+            "950": string;
+        };
+    };
+};
+/**
+ * Obtém cores do tema escuro
+ */
+declare function getDarkColors(): {
+    primary: {
+        base: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        focus: string;
+        background: string;
+        backgroundHover: string;
+        backgroundActive: string;
+        border: string;
+        borderHover: string;
+        borderFocus: string;
+        text: string;
+        textHover: string;
+        textDisabled: string;
+    };
+    secondary: {
+        base: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        focus: string;
+        background: string;
+        backgroundHover: string;
+        backgroundActive: string;
+        border: string;
+        borderHover: string;
+        borderFocus: string;
+        text: string;
+        textHover: string;
+        textDisabled: string;
+    };
+    accent: {
+        base: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        focus: string;
+        background: string;
+        backgroundHover: string;
+        backgroundActive: string;
+        border: string;
+        borderHover: string;
+        borderFocus: string;
+        text: string;
+        textHover: string;
+        textDisabled: string;
+    };
+    background: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        inverse: string;
+        overlay: string;
+        muted: string;
+    };
+    surface: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        elevated: string;
+        overlay: string;
+        glass: string;
+        glassHover: string;
+        hover: string;
+        active: string;
+    };
+    text: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        inverse: string;
+        disabled: string;
+        link: string;
+        linkHover: string;
+        linkActive: string;
+        linkVisited: string;
+        onPrimary: string;
+        onSecondary: string;
+        onAccent: string;
+        onBackground: string;
+        onSurface: string;
+        glow: string;
+        neonCyan: string;
+        neonPink: string;
+        neonPurple: string;
+        neonGreen: string;
+    };
+    border: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        focus: string;
+        focusRing: string;
+        inverse: string;
+        neon: string;
+        neonGlow: string;
+        hover: string;
+        active: string;
+        disabled: string;
+    };
+    status: {
+        success: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+        warning: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+        error: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+        info: {
+            base: string;
+            hover: string;
+            active: string;
+            background: string;
+            backgroundHover: string;
+            border: string;
+            text: string;
+            textOnBackground: string;
+        };
+    };
+    interactive: {
+        default: string;
+        hover: string;
+        active: string;
+        disabled: string;
+        disabledText: string;
+        focus: string;
+        focusRing: string;
+    };
+    effects: {
+        glowCyan: string;
+        glowPink: string;
+        glowPurple: string;
+        glowGreen: string;
+        shadowSm: string;
+        shadowMd: string;
+        shadowLg: string;
+    };
+    gradients: {
+        primary: string;
+        secondary: string;
+        accent: string;
+        background: string;
+    };
+    primitive: {
+        cyan: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        purple: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        pink: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        blue: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        green: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        orange: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        red: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        amber: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        emerald: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+        };
+        neutral: {
+            "50": string;
+            "100": string;
+            "200": string;
+            "300": string;
+            "400": string;
+            "500": string;
+            "600": string;
+            "700": string;
+            "800": string;
+            "900": string;
+            "950": string;
+        };
+    };
+};
+/**
+ * Obtém espaçamento do sistema de design
+ */
+declare function getSpacing(): {
+    "0": string;
+    px: string;
+    "0.5": string;
+    "1": string;
+    "1.5": string;
+    "2": string;
+    "2.5": string;
+    "3": string;
+    "3.5": string;
+    "4": string;
+    "5": string;
+    "6": string;
+    "7": string;
+    "8": string;
+    "9": string;
+    "10": string;
+    "11": string;
+    "12": string;
+    "14": string;
+    "16": string;
+    "20": string;
+    "24": string;
+    "28": string;
+    "32": string;
+    "36": string;
+    "40": string;
+    "44": string;
+    "48": string;
+    "52": string;
+    "56": string;
+    "60": string;
+    "64": string;
+    "72": string;
+    "80": string;
+    "96": string;
+};
+/**
+ * Obtém tipografia do sistema de design
+ */
+declare function getTypography(): {
+    fontFamily: {
+        sans: string;
+        serif: string;
+        mono: string;
+        display: string;
+        body: string;
+        code: string;
+    };
+    fontSize: {
+        xs: string;
+        sm: string;
+        base: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+        "3xl": string;
+        "4xl": string;
+        "5xl": string;
+        "6xl": string;
+        "7xl": string;
+        "8xl": string;
+        "9xl": string;
+    };
+    fontWeight: {
+        thin: string;
+        extralight: string;
+        light: string;
+        normal: string;
+        medium: string;
+        semibold: string;
+        bold: string;
+        extrabold: string;
+        black: string;
+    };
+    lineHeight: {
+        none: string;
+        tight: string;
+        snug: string;
+        normal: string;
+        relaxed: string;
+        loose: string;
+    };
+    letterSpacing: {
+        tighter: string;
+        tight: string;
+        normal: string;
+        wide: string;
+        wider: string;
+        widest: string;
+    };
+    headings: {
+        h1: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+        h2: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+        h3: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+        h4: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+        h5: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+        h6: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+    };
+    subtitle: {
+        large: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+        medium: {
+            fontFamily: string;
+            fontSize: string;
+            fontSizeMobile: string;
+            fontSizeTablet: string;
+            fontSizeDesktop: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+        small: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            marginBottom: string;
+        };
+    };
+    body: {
+        large: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        medium: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        small: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+    };
+    caption: {
+        large: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        medium: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        small: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+    };
+    button: {
+        large: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        medium: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        small: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+    };
+    label: {
+        large: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        medium: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        small: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+    };
+    code: {
+        inline: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+        block: {
+            fontFamily: string;
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+        };
+    };
+};
+/**
+ * Obtém raios de borda do sistema de design
+ */
+declare function getRadius(): {
+    none: string;
+    sm: string;
+    base: string;
+    md: string;
+    lg: string;
+    xl: string;
+    "2xl": string;
+    "3xl": string;
+    full: string;
+};
+/**
+ * Obtém sombras do sistema de design
+ */
+declare function getShadows(theme?: 'light' | 'dark'): {
+    xs: string;
+    sm: string;
+    base: string;
+    md: string;
+    lg: string;
+    xl: string;
+    "2xl": string;
+    inner: string;
+} | {
+    xs: string;
+    sm: string;
+    base: string;
+    md: string;
+    lg: string;
+    xl: string;
+    "2xl": string;
+    inner: string;
+    glow: {
+        cyan: string;
+        pink: string;
+        purple: string;
+        green: string;
+    };
+};
+/**
+ * Helper para obter valor de espaçamento
+ */
+declare function spacing(size: keyof Tokens['spacing']): string;
+/**
+ * Helper para obter valor de raio de borda
+ */
+declare function radius(size: keyof Tokens['radius']): string;
+
+/**
  * @fileoverview Ponto de entrada principal da biblioteca @rainersoft/design-tokens
  *
  * @description
@@ -7504,4 +8434,6 @@ type Themes = typeof themes;
  */
 declare const cssVarsPath = "./src/css-vars.css";
 
-export { type Animations, BACKGROUND, type Background, type Breakpoints, COLORS, type Colors, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, MOTION, type Motion, NAVIGATION, type Navigation, RESPONSIVE, type Radius, SHADOWS, type Shadows, type Spacing, type Themes, type Tokens, type Typography, type ZIndex, Z_INDEX, animationTokens, breakpointTokens, componentTokens, cssVarsPath, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getLuminance, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, motionTokens, radiusTokens, shadowTokens, spacingTokens, themes, tokens, typographyTokens, validateContrast, zIndexTokens };
+export { type Animations, BACKGROUND, type Background, type Breakpoints, COLORS, type Colors, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, MOTION, type Motion, NAVIGATION, type Navigation, RESPONSIVE, type Radius, SHADOWS, type Shadows, type Spacing, type Themes, type Tokens, type Typography, type ZIndex, Z_INDEX, animationTokens, breakpointTokens, componentTokens, cssVarsPath, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getDarkColors, getLightColors, getLuminance, getRadius, getShadows, getSpacing, getTypography, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, motionTokens, radius, radiusTokens, shadowTokens, spacing, spacingTokens, themes, tokens, typographyTokens, validateContrast, zIndexTokens };
+
+
