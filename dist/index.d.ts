@@ -264,6 +264,14 @@ var colors$1 = {
 			"900": "#171717",
 			"950": "#0a0a0f"
 		}
+	},
+	effects: {
+		matrixRain: {
+			base: "#fbbf24"
+		},
+		stars: {
+			base: "#00e6ff"
+		}
 	}
 };
 var lightColors = {
@@ -2135,6 +2143,14 @@ declare const tokens: {
                     "950": string;
                 };
             };
+            effects: {
+                matrixRain: {
+                    base: string;
+                };
+                stars: {
+                    base: string;
+                };
+            };
         };
         readonly dark: {
             primary: {
@@ -3530,6 +3546,14 @@ declare const lightThemeColors: {
             "800": string;
             "900": string;
             "950": string;
+        };
+    };
+    effects: {
+        matrixRain: {
+            base: string;
+        };
+        stars: {
+            base: string;
         };
     };
 };
@@ -5189,6 +5213,14 @@ declare const lightTheme: {
                 "950": string;
             };
         };
+        effects: {
+            matrixRain: {
+                base: string;
+            };
+            stars: {
+                base: string;
+            };
+        };
     };
     readonly typography: {
         fontFamily: {
@@ -6513,6 +6545,14 @@ declare const themes: {
                     "950": string;
                 };
             };
+            effects: {
+                matrixRain: {
+                    base: string;
+                };
+                stars: {
+                    base: string;
+                };
+            };
         };
         readonly typography: {
             fontFamily: {
@@ -7742,6 +7782,14 @@ declare function getLightColors(): {
             "950": string;
         };
     };
+    effects: {
+        matrixRain: {
+            base: string;
+        };
+        stars: {
+            base: string;
+        };
+    };
 };
 /**
  * Obtém cores do tema escuro
@@ -8435,5 +8483,3 @@ declare function radius(size: keyof Tokens['radius']): string;
 declare const cssVarsPath = "./src/css-vars.css";
 
 export { type Animations, BACKGROUND, type Background, type Breakpoints, COLORS, type Colors, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, MOTION, type Motion, NAVIGATION, type Navigation, RESPONSIVE, type Radius, SHADOWS, type Shadows, type Spacing, type Themes, type Tokens, type Typography, type ZIndex, Z_INDEX, animationTokens, breakpointTokens, componentTokens, cssVarsPath, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getDarkColors, getLightColors, getLuminance, getRadius, getShadows, getSpacing, getTypography, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, motionTokens, radius, radiusTokens, shadowTokens, spacing, spacingTokens, themes, tokens, typographyTokens, validateContrast, zIndexTokens };
-
-

@@ -267,6 +267,14 @@
         "900": "#171717",
         "950": "#0a0a0f"
       }
+    },
+    "effects": {
+      "matrixRain": {
+        "base": "#fbbf24"
+      },
+      "stars": {
+        "base": "#00e6ff"
+      }
     }
   }
 }

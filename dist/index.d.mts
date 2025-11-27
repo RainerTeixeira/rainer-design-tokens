@@ -264,6 +264,14 @@ var colors$1 = {
 			"900": "#171717",
 			"950": "#0a0a0f"
 		}
+	},
+	effects: {
+		matrixRain: {
+			base: "#fbbf24"
+		},
+		stars: {
+			base: "#00e6ff"
+		}
 	}
 };
 var lightColors = {
@@ -2135,6 +2143,14 @@ declare const tokens: {
                     "950": string;
                 };
             };
+            effects: {
+                matrixRain: {
+                    base: string;
+                };
+                stars: {
+                    base: string;
+                };
+            };
         };
         readonly dark: {
             primary: {
@@ -3530,6 +3546,14 @@ declare const lightThemeColors: {
             "800": string;
             "900": string;
             "950": string;
+        };
+    };
+    effects: {
+        matrixRain: {
+            base: string;
+        };
+        stars: {
+            base: string;
         };
     };
 };
@@ -5189,6 +5213,14 @@ declare const lightTheme: {
                 "950": string;
             };
         };
+        effects: {
+            matrixRain: {
+                base: string;
+            };
+            stars: {
+                base: string;
+            };
+        };
     };
     readonly typography: {
         fontFamily: {
@@ -6513,6 +6545,14 @@ declare const themes: {
                     "950": string;
                 };
             };
+            effects: {
+                matrixRain: {
+                    base: string;
+                };
+                stars: {
+                    base: string;
+                };
+            };
         };
         readonly typography: {
             fontFamily: {
@@ -7740,6 +7780,14 @@ declare function getLightColors(): {
             "800": string;
             "900": string;
             "950": string;
+        };
+    };
+    effects: {
+        matrixRain: {
+            base: string;
+        };
+        stars: {
+            base: string;
         };
     };
 };
