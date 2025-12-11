@@ -10,6 +10,39 @@
  */
 
 :root {
+  /* ===== SHADCN-UI COMPATIBLE VARIABLES ===== */
+  /* These are the standard variable names expected by shadcn-ui components */
+  
+  --background: 0 0% 100%;
+  --foreground: 0 0% 9%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 9%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 9%;
+  
+  --primary: 187 94% 37%;
+  --primary-foreground: 0 0% 100%;
+  
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 9%;
+  
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 9%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 187 94% 37%;
+  
+  --radius: 0.5rem;
+  
   /* ===== LIGHT THEME COLORS ===== */
 
   /* Background */
@@ -124,6 +157,35 @@
 
 /* ===== DARK THEME (CYBERPUNK) ===== */
 .dark {
+  /* ===== SHADCN-UI COMPATIBLE VARIABLES ===== */
+  --background: 240 10% 4%;
+  --foreground: 180 100% 85%;
+  
+  --card: 0 0% 9%;
+  --card-foreground: 180 100% 85%;
+  
+  --popover: 0 0% 9%;
+  --popover-foreground: 180 100% 85%;
+  
+  --primary: 180 100% 45%;
+  --primary-foreground: 240 10% 4%;
+  
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 180 100% 85%;
+  
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  
+  --accent: 180 100% 45%;
+  --accent-foreground: 240 10% 4%;
+  
+  --destructive: 0 62% 71%;
+  --destructive-foreground: 0 0% 100%;
+  
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 180 100% 45%;
+  
   /* Background */
   --color-background-primary: #0a0a0f;
   --color-background-secondary: #0f0f1a;
