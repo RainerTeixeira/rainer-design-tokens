@@ -391,28 +391,33 @@ function generateCSS(tokens: Tokens): string {
     '',
   ];
 
-  // Primitive palette colors (simplificado - incluir todas as cores)
-  if (tokens.palette.gray) {
-    lines.push('  /* Gray Scale */');
-    for (const [shade, value] of Object.entries(tokens.palette.gray)) {
-      lines.push(`  --color-gray-${shade}: ${value};`);
+  // Primitive palette colors (gera todas as paletas dinamicamente)
+  for (const [paletteName, paletteValue] of Object.entries(tokens.palette)) {
+    const kebab = toKebabCase(paletteName);
+    if (typeof paletteValue === 'string') {
+      // cores base como white/black/transparent
+      lines.push(`  --color-${kebab}: ${paletteValue};`);
+    } else if (typeof paletteValue === 'object' && paletteValue !== null) {
+      lines.push(`  /* ${paletteName.charAt(0).toUpperCase() + paletteName.slice(1)} Scale */`);
+      for (const [shade, value] of Object.entries(paletteValue as Record<string, string>)) {
+        const shadeKey = toKebabCase(String(shade));
+        lines.push(`  --color-${kebab}-${shadeKey}: ${value};`);
+      }
+      lines.push('');
     }
-    lines.push('');
   }
 
-  if (tokens.palette.blue) {
-    lines.push('  /* Blue Scale */');
-    for (const [shade, value] of Object.entries(tokens.palette.blue)) {
-      lines.push(`  --color-blue-${shade}: ${value};`);
-    }
-    lines.push('');
+  // Garantir cores base caso não estejam como strings individuais
+  if (tokens.palette.white) {
+    lines.push('  /* Base Colors */');
+    lines.push(`  --color-white: ${tokens.palette.white};`);
   }
-
-  // Base colors
-  lines.push('  /* Base Colors */');
-  lines.push(`  --color-white: ${tokens.palette.white};`);
-  lines.push(`  --color-black: ${tokens.palette.black};`);
-  lines.push(`  --color-transparent: ${tokens.palette.transparent};`);
+  if (tokens.palette.black) {
+    lines.push(`  --color-black: ${tokens.palette.black};`);
+  }
+  if (tokens.palette.transparent) {
+    lines.push(`  --color-transparent: ${tokens.palette.transparent};`);
+  }
 
   // Light theme semantic colors
   lines.push('');

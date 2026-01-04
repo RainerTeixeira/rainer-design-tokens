@@ -14,7 +14,7 @@ import { existsSync, readFileSync, writeFileSync, unlinkSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
 
-const rootDir = join(__dirname, '..', '..');
+const rootDir = join(__dirname, '..', '..', '..');
 
 describe('sync-docs.ts', () => {
   const scriptsDir = join(rootDir, 'scripts');

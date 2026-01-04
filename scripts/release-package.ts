@@ -450,7 +450,7 @@ function main(): void {
   
   // Help
   if (args.includes('--help') || args.includes('-h')) {
-    console.log('Uso: npx tsx scripts/publish.ts [opções]');
+    console.log('Uso: npx tsx scripts/release-package.ts [opções]');
     console.log('');
     console.log('Opções:');
     console.log('  --help, -h          Mostra esta ajuda');

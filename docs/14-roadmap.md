@@ -1,226 +1,346 @@
-# Roadmap - @rainersoft/design-tokens
+# 14-ROADMAP.md - Roadmap de Desenvolvimento
 
-## Versão Atual: 2.6.0 (2026-01-04)
+## 🎯 Visão Geral
 
-Refatoração completa para padrão enterprise com estrutura modular e agnóstica de tecnologia.
-**Novos recursos:** Motion tokens, Breakpoints responsivos, Z-index scale.
+Este documento apresenta o roadmap de desenvolvimento da biblioteca `@rainersoft/design-tokens`, com planejamento de releases e features futuras.
 
----
+## 📦 Versão Atual
 
-## Completado (v2.0.0)
-
-### Estrutura de Tokens
-- [x] Separação de tokens em arquivos JSON
-- [x] Paletas light e dark completas
-- [x] Sistema de tipografia profissional
-- [x] Sistema de espaçamento (8pt grid)
-- [x] Border radius consistentes
-- [x] Shadows light e dark (+ glow effects)
-
-### Temas
-- [x] Light theme profissional
-- [x] Dark theme cyberpunk
-- [x] Combinação semântica de tokens
-
-### Formatos de Saída
-- [x] Tailwind config gerado
-- [x] CSS variables
-- [x] JSON universal export
-
-### Documentação
-- [x] Guidelines completo
-- [x] Roadmap
-- [x] Exemplos de uso
-- [x] Estrutura detalhada (03-ESTRUTURA.md)
-- [x] Sistema de build (04-SISTEMA_BUILD.md)
-- [x] Storybook de tokens (05-STORYBOOK.md)
-- [x] Separação de responsabilidades (06-ESTRUTURA_STORYBOOK.md)
-- [x] Índice de documentação (00-INDICE.md)
+### v2.6.0 (Lançada em 04/01/2026)
+- ✅ Reestruturação completa (primitives/semantics/themes)
+- ✅ Scripts otimizados e renomeados
+- ✅ Documentação completa (18 documentos)
+- ✅ CHANGELOG.md movido para docs/
 
 ---
 
-### Novos Tokens Implementados
-- [x] Motion tokens (durations, easings, keyframes)
-- [x] Breakpoints responsivos (mobile-first)
-- [x] Z-index scale (layers, components)
-- [x] Utilidades responsivas em utilities.ts
-- [x] Motion helpers para Tailwind
-- [x] Z-index classes utilitárias
+## 🚧 Roadmap de Desenvolvimento
 
-## 🚧 Em Progresso (v2.1.0)
+### v2.7.0 - Performance & DX (Q1 2026)
 
-### Melhorias Planejadas
+#### Performance
+- [ ] Cache inteligente de build
+- [ ] Build incremental
+- [ ] Paralelização de tarefas
+- [ ] Bundle size reduction (30%)
 
-### Formatos Adicionais
-- [ ] Sketch format
+#### Developer Experience
+- [ ] CLI tool (`rainer-tokens`)
+- [ ] VS Code extension beta
+- [ ] IntelliSense avançado
+- [ ] Debug mode melhorado
 
----
+#### Qualidade
+- [ ] Visual regression tests
+- [ ] Performance tests
+- [ ] Cobertura 100%
+- [ ] Error reporting
 
-## 📋 Backlog (Futuras Versões)
-
-### v2.1.0 - Tokens Avançados
-- [ ] Gradient tokens avançados
-- [ ] Grid layout tokens
-- [ ] Aspect ratio tokens
-- [ ] Filter effect tokens
-- [ ] Backdrop blur tokens
-- [ ] Custom scrollbar tokens
-
-### v2.2.0 - Mais Temas
-- [ ] High contrast theme
-- [ ] Colorblind-friendly themes
-- [ ] Gaming theme (neon + RGB)
-- [ ] Corporate theme (sóbrio)
-- [ ] Custom theme builder
-
-### v2.3.0 - Plataformas
-- [ ] React Native tokens
-- [ ] Flutter/Dart export
-- [ ] Unity C# export
-- [ ] Unreal Engine export
-- [ ] Godot theme export
-
-### v2.4.0 - Ferramentas
-- [ ] CLI para gerar tokens
-- [x] Visual token editor (GUI) ✅ **Concluído em v2.0.0**
-- [ ] Token validator
-- [ ] Migration tools
-- [ ] Design Lint integration
-
-### v3.0.0 - Design System Completo
-- [ ] Component tokens (Button, Input, Card, etc.)
-- [ ] Pattern library
-- [ ] Icon system integration
-- [ ] Illustration guidelines
-- [ ] Brand identity tokens
-- [ ] Marketing assets tokens
+**Data Alvo:** Março 2026
 
 ---
 
-## 🎨 Ideias para o Futuro
+### v2.8.0 - Novos Formatos (Q2 2026)
 
-### Integração com Ferramentas
-- [ ] Figma Plugin para sync bidirecional
-- [x] Storybook addon (implementado)
-- [ ] VS Code extension
-- [ ] Browser DevTools extension
+#### Exportação
+- [ ] Figma Tokens Plugin
+- [ ] iOS Swift UIColors
+- [ ] Android XML Resources
+- [ ] React Native StyleSheet
 
-### Automação
-- [ ] CI/CD pipeline para tokens
-- [ ] Automated releases
-- [ ] Changelog generator
-- [ ] Visual regression testing
+#### Integrações
+- [ ] Vue.js tokens
+- [ ] Svelte stores
+- [ ] Angular services
+- [ ] Flutter themes
 
-### Colaboração
-- [ ] Token comments/discussions
-- [ ] Version history viewer
-- [ ] Multi-brand support
-- [ ] White-label capabilities
-
-### Performance
-- [ ] Tree-shaking optimization
-- [ ] Lazy loading tokens
-- [ ] Runtime theme switching
-- [ ] CSS-in-JS integration
+**Data Alvo:** Maio 2026
 
 ---
 
-## 📅 Timeline Estimado
+### v3.0.0 - Tokens Computados (Q3 2026)
 
-**Q4 2024 - Q1 2025**
-- v2.0.0 - ✅ Sistema W3C, Motion tokens, Breakpoints, Z-index, Token Editor (LANÇADO)
+#### Tokens Avançados
+- [ ] Math tokens (operações aritméticas)
+- [ ] Conditional tokens (media queries)
+- [ ] Transform tokens (funções de cor)
+- [ ] Fluid tokens (clamp functions)
 
-**Q2 2025**
-- v2.1.0 - Tokens avançados
-- v2.2.0 - Mais temas
+#### Architecture
+- [ ] Plugin system
+- [ ] GraphQL API
+- [ ] Microservices architecture
+- [ ] Real-time sync
 
-**Q3 2025**
-- v2.3.0 - Suporte multi-plataforma
-- v2.4.0 - Ferramentas e CLI
-
-**Q4 2025**
-- v3.0.0 - Design System completo
-
----
-
-## 🤝 Contribuindo
-
-Quer sugerir uma feature? Abra uma issue!
-
-### Como Sugerir
-1. Descreva o problema/necessidade
-2. Proponha uma solução
-3. Mostre exemplos de uso
-4. Considere impacto e compatibilidade
-
-### Priorização
-Features são priorizadas por:
-- **Impacto**: Quantos projetos serão beneficiados
-- **Esforço**: Complexidade de implementação
-- **Demanda**: Número de requests similares
-- **Alinhamento**: Com visão do design system
+**Data Alvo:** Julho 2026
 
 ---
 
-## 📊 Métricas de Sucesso
+### v3.1.0 - AI-Powered (Q4 2026)
 
-### v2.0.0 Targets (Atual - ATINGIDO)
-- ✅ 100% type-safe (TypeScript)
-- ✅ 0 dependências runtime
-- ✅ < 10KB bundle size
-- ✅ Suporte light + dark
-- ✅ Compatível Tailwind + shadcn/ui
-- ✅ Motion tokens completos
-- ✅ Breakpoints responsivos
-- ✅ Z-index scale profissional
+#### Inteligência Artificial
+- [ ] AI palette generation
+- [ ] Smart validation
+- [ ] Accessibility suggestions
+- [ ] Design system analytics
 
-### v2.x Targets (2025)
-- [ ] 95% test coverage
-- [ ] 5+ formatos de saída
-- [ ] 3+ temas oficiais
-- [ ] 50+ tokens documentados
-- [ ] 10+ projetos usando
+#### Advanced Features
+- [ ] Component generation
+- [ ] Automated documentation
+- [ ] Multi-user editing
+- [ ] Version control avançado
 
-### v3.0 Targets (2025-2026)
-- [ ] 100+ component tokens
-- [ ] 10+ platform exports
-- [ ] 1000+ downloads/month
-- [ ] Open source community
-- [ ] Enterprise adoption
+**Data Alvo:** Outubro 2026
 
 ---
 
-## 🔄 Versioning
+## 📊 Detalhamento de Features
 
-Seguimos [Semantic Versioning](https://semver.org/):
+### Performance Optimizations
 
-- **Major (x.0.0)**: Breaking changes
-- **Minor (2.x.0)**: New features, backwards compatible
-- **Patch (2.0.x)**: Bug fixes
+#### Cache System
+```typescript
+// Cache inteligente de referências
+const tokenCache = new Map<string, ResolvedToken>();
 
-### Breaking Changes Policy
-- Anunciados com 1 mês de antecedência
-- Migration guide fornecido
-- Deprecation warnings primeiro
-- Suporte LTS para major versions
+// Build incremental
+const changedFiles = await getChangedFiles();
+if (changedFiles.length === 0) {
+  return cachedBuild;
+}
+```
+
+#### Parallel Processing
+```typescript
+// Geração paralela de formatos
+await Promise.all([
+  generateCSS(tokens),
+  generateTailwind(tokens),
+  generateJSON(tokens)
+]);
+```
+
+### CLI Tool
+
+#### Comandos Principais
+```bash
+# Iniciar projeto
+rainer-tokens init my-project
+
+# Gerar formatos
+rainer-tokens generate
+
+# Validar tokens
+rainer-tokens validate
+
+# Publicar
+rainer-tokens publish
+```
+
+### VS Code Extension
+
+#### Features
+- Syntax highlighting para tokens
+- Autocomplete de referências
+- Preview inline de cores
+- Diagnóstico de erros
+
+### Plugin System
+
+#### Arquitetura
+```typescript
+interface TokenPlugin {
+  name: string;
+  version: string;
+  generate(tokens: TokenSet): Promise<Format>;
+  validate?(tokens: TokenSet): ValidationResult;
+}
+```
+
+#### Plugins Planejados
+- Figma plugin
+- Sketch plugin
+- Adobe XD plugin
+- Chrome DevTools extension
 
 ---
 
-## 📞 Contato
+## 🗓️ Timeline Detalhada
 
-- **Email**: suporte@rainersoft.com.br
-- **GitHub**: [rainer-teixeira/rainer-design-tokens](https://github.com/RainerTeixeira/rainer-design-tokens)
-- **Issues**: Para bugs e features
-- **Discussions**: Para perguntas e ideias
+### Janeiro 2026
+- [ ] Planejamento v2.7
+- [ ] Pesquisa de performance
+- [ ] Protótipos CLI
+
+### Fevereiro 2026
+- [ ] Implementação cache
+- [ ] CLI MVP
+- [ ] VS Code extension alpha
+
+### Março 2026
+- [ ] Release v2.7.0
+- [ ] Feedback collection
+- [ ] Planejamento v2.8
+
+### Abril 2026
+- [ ] Novos formatos - Figma
+- [ ] iOS/Android export
+- [ ] Vue.js integration
+
+### Maio 2026
+- [ ] Release v2.8.0
+- [ ] Mobile formats beta
+- [ ] Research v3.0
+
+### Junho 2026
+- [ ] Plugin system design
+- [ ] GraphQL API MVP
+- [ ] Computed tokens PoC
+
+### Julho 2026
+- [ ] Release v3.0.0
+- [ ] Plugin marketplace
+- [ ] Developer onboarding
+
+### Agosto 2026
+- [ ] AI features research
+- [ ] ML model training
+- [ ] Analytics implementation
+
+### Setembro 2026
+- [ ] AI palette generator
+- [ ] Smart validation
+- [ ] Accessibility AI
+
+### Outubro 2026
+- [ ] Release v3.1.0
+- [ ] Enterprise features
+- [ ] v3.2 planning
 
 ---
 
-**Última Atualização:** 04 de Janeiro de 2026
-**Versão do Roadmap:** 2.0.0
+## 🎯 Objetivos de Negócio
+
+### Adoção
+- **2026 Q1**: 100+ projetos usando
+- **2026 Q2**: 500+ downloads/semana
+- **2026 Q3**: 1000+ downloads/semana
+- **2026 Q4**: Enterprise adoption
+
+### Comunidade
+- **Contribuidores**: 10+ ativos
+- **Issues**: <24h response time
+- **PRs**: <48h review time
+- **Documentação**: 95% coverage
+
+### Qualidade
+- **Performance**: <2s build time
+- **Bundle**: <50KB minified
+- **Testes**: 100% coverage
+- **Acessibilidade**: WCAG AAA
 
 ---
 
-**Versão:** 2.6.0
-**Última Atualização:** 04 de Janeiro de 2026
-**Autor:** [object Object]
-**Licença:** MIT
+## 📈 Métricas de Sucesso
+
+### Técnicas
+- Build performance
+- Bundle size
+- Test coverage
+- Bug count
+
+### Adoção
+- Downloads NPM
+- GitHub stars
+- Forks
+- Issues/PRs
+
+### Comunidade
+- Contribuidores
+- Discord members
+- Twitter mentions
+- Blog posts
+
+---
+
+## 🔄 Processo de Desenvolvimento
+
+### Sprint Cycle (2 semanas)
+1. **Sprint Planning** (Segunda)
+   - Review backlog
+   - Definir metas
+   - Atribuir tarefas
+
+2. **Development** (Terça-Quinta)
+   - Implementação
+   - Code review
+   - Testes
+
+3. **Review** (Sexta)
+   - Demo features
+   - Stakeholder feedback
+   - Retrospective
+
+4. **Release** (Segunda seguinte)
+   - Deploy produção
+   - Monitoramento
+   - Comunicado release
+
+### Release Types
+- **Major**: Breaking changes, novas arquiteturas
+- **Minor**: Novas features, melhorias significativas
+- **Patch**: Bug fixes, melhorias pequenas
+
+---
+
+## 🚀 Riscos e Mitigações
+
+### Riscos Técnicos
+- **Complexidade**: Documentação extensa, exemplos claros
+- **Performance**: Benchmarks regulares, otimização contínua
+- **Compatibilidade**: Versionamento semântico, guias de migração
+
+### Riscos de Produto
+- **Adoção**: Marketing técnico, cases de sucesso
+- **Concorrência**: Diferenciação clara, inovação contínua
+- **Manutenção**: Automatização, comunidade ativa
+
+### Riscos de Recursos
+- **Tempo**: MVPs rápidos, feedback loops
+- **Equipe**: Documentação, conhecimento compartilhado
+- **Orçamento**: Open source, patrocínios
+
+---
+
+## 🤝 Como Contribuir
+
+### Para o Roadmap
+1. Abra uma issue discutindo a feature
+2. Detalhe o problema e solução proposta
+3. Inclua exemplos e casos de uso
+4. Aguarde feedback da equipe
+
+### Para Desenvolvimento
+1. Verifique issues abertas
+2. Comece com good first issues
+3. Siga o código de conduta
+4. Submit PRs bem documentados
+
+---
+
+## 🔗 Links Relacionados
+
+- [GitHub Projects](https://github.com/RainerTeixeira/rainer-design-tokens/projects) - Board de desenvolvimento
+- [Issues Abertas](https://github.com/RainerTeixeira/rainer-design-tokens/issues) - Features e bugs
+- [Discussions](https://github.com/RainerTeixeira/rainer-design-tokens/discussions) - Discussões técnicas
+
+## 📅 Última Atualização
+
+**Data**: 04 de Janeiro de 2026  
+**Versão**: 2.6.0  
+**Próximo Release**: v2.7.0 (Março 2026)
+
+---
+
+**Autor**: Rainer Teixeira  
+**Licença**: MIT

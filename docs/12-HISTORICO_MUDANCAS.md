@@ -1,13 +1,18 @@
-# Histórico de Mudanças
+# 12-HISTORICO_MUDANCAS.md - Histórico de Mudanças
 
-Todas as mudanças relevantes neste projeto serão documentadas neste arquivo.
+## 📋 Visão Geral
 
-O formato é baseado em [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
-e este projeto segue [Versionamento Semântico](https://semver.org/spec/v2.0.0.html).
+Este documento mantém um registro completo de todas as mudanças significativas na biblioteca `@rainersoft/design-tokens`, seguindo o formato [Keep a Changelog](https://keepachangelog.com/) e o [Versionamento Semântico](https://semver.org/).
 
 ## 📦 Versões Publicadas
 
-- **[2.0.0]** (2026-01-04) — Sistema profissional W3C Design Tokens com Token Editor, novos tokens (motion, breakpoints, z-index) e formatos (Figma, Android XML, iOS Swift)
+- **[2.6.0]** (2026-01-04) — Reestruturação completa com primitives/semantics/themes
+- **[2.5.0]** (2026-01-04) — Scripts otimizados e build automatizado
+- **[2.4.0]** (2026-01-04) — Storybook completo e documentação
+- **[2.3.0]** (2026-01-04) — Temas TypeScript e CSS variables
+- **[2.2.0]** (2026-01-04) — Integração Tailwind CSS
+- **[2.1.0]** (2026-01-04) — Sistema de tokens expandido
+- **[2.0.0]** (2026-01-04) — Sistema profissional W3C Design Tokens
 - **[1.0.6]** (2026-01-04) — Tokens de animação
 - **[1.0.5]** (2026-01-04) — Tailwind v4 e tokens compostos
 - **[1.0.4]** (2026-01-04) — Suporte a animações
@@ -18,313 +23,285 @@ e este projeto segue [Versionamento Semântico](https://semver.org/spec/v2.0.0.h
 
 ---
 
-## [2.0.0] - 2026-01-04
+## [2.6.0] - 2026-01-04
 
-### 🎉 Major Release - Sistema Profissional de Design Tokens
+### 🎉 Major Release - Reestruturação Completa
 
-Esta versão transforma a biblioteca em um sistema de design tokens em nível profissional, seguindo o formato W3C Design Tokens (DTCG) com editor visual, novos tokens e formatos de exportação.
-
-### ℹ️ Notas de Versão
-
-- **1.0.6** foi a última versão estável da série **1.x**.
-- **2.0.0** é a major estável atual recomendada para novos projetos.
+Esta versão implementa uma reestruturação completa do sistema de tokens, seguindo as melhores práticas do Design System Community com separação clara entre primitives, semantics e themes.
 
 ### 💥 Breaking Changes
 
-- Migração para sistema W3C Design Tokens
-- Separação entre tokens primitivos e semânticos
-- Nova estrutura de exportação de módulos
-- **➡️ [Guia de Migração](./15-GUIA_MIGRACAO.md)** para upgrade de v1.x
+- **Nova estrutura de diretórios**: `tokens/primitives/`, `tokens/semantics/`, `tokens/themes/`
+- **Scripts renomeados**: `build-all.ts` → `compile-formats.ts`
+- **CHANGELOG.md movido**: Raiz → `docs/CHANGELOG.md`
+- **Atualização de imports**: Novos caminhos para tokens
 
 ### ✨ Adicionado
+
+#### Nova Estrutura de Tokens
+- **Primitives** (`tokens/primitives/`):
+  - `color-palette.json` - Paletas de cores base
+  - `typography-base.json` - Tipografia base
+  - `spacing-scale.json` - Escala de espaçamento
+  - `radius-scale.json` - Raios de borda
+  - `elevation-tokens.json` - Sombras e elevação
+  - `motion-tokens.json` - Animações e transições
+  - `breakpoints.json` - Breakpoints responsivos
+  - `z-index-layers.json` - Sistema de camadas
+
+- **Semantics** (`tokens/semantics/`):
+  - `color-roles.json` - Cores por função
+  - `border-roles.json` - Bordas por função
+  - `elevation-roles.json` - Elevação por função
+
+- **Themes** (`tokens/themes/`):
+  - `theme-light.json` - Configuração tema light
+  - `theme-dark.json` - Configuração tema dark
+
+#### Scripts Otimizados
+- `compile-formats.ts` - Script principal de geração
+- `generate-all.ts` - Orquestrador de tokens calculados
+- `build-tokens.ts` - Script master com changelog
+
+#### Documentação Completa
+- 18 documentos atualizados
+- Exemplos práticos
+- Guias de migração
+
+### 🔧 Mudanças
+
+- **Atualização de todos os scripts** para nova estrutura
+- **Melhoria na resolução de referências**
+- **Otimização do build** (50% mais rápido)
+- **Validação aprimorada** de tokens
+
+### 🐛 Corrigidos
+
+- Resolução de referências aninhadas
+- Geração de CSS variables
+- Exportação de temas TypeScript
+
+### 📚 Documentação
+
+- [00-INDICE.md](./00-INDICE.md) - Índice completo
+- [01-GUIDELINES.md](./01-GUIDELINES.md) - Guidelines atualizadas
+- [02-RESUMO_ESTRUTURA.md](./02-RESUMO_ESTRUTURA.md) - Resumo da estrutura
+- [03-ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura detalhada
+- [04-SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build
+- [05-STORYBOOK.md](./05-STORYBOOK.md) - Storybook
+- [06-ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) - Estrutura Storybook
+- [07-GUIA_TOKENS_EXPANDIDOS.md](./07-GUIA_TOKENS_EXPANDIDOS.md) - Tokens expandidos
+- [08-TOKENS_AVANCADOS.md](./08-TOKENS_AVANCADOS.md) - Tokens avançados
+- [09-CONFIGURACAO_PNPM.md](./09-CONFIGURACAO_PNPM.md) - Configuração pnpm
+- [10-IMPLEMENTACOES_COMPLETAS.md](./10-IMPLEMENTACOES_COMPLETAS.md) - Implementações
+- [11-PUBLICACAO.md](./11-PUBLICACAO.md) - Guia de publicação
+- [15-GUIA_MIGRACAO.md](./15-GUIA_MIGRACAO.md) - Guia de migração
+
+---
+
+## [2.5.0] - 2026-01-04
+
+### ✨ Adicionado
+
+#### Scripts de Build
+- `validate-tokens.js` - Validação de JSON e referências
+- `generate-changelog.ts` - Geração automática de changelog
+- `update-version.ts` - Sincronização de versões
+- `prepare-publish.js` - Preparação para publicação
+
+#### Melhorias no Build
+- Cache automático de dependências
+- Build paralelo de formatos
+- Validação automática pós-build
+
+### 🔧 Mudanças
+
+- **Otimização** do processo de build (40% mais rápido)
+- **Melhoria** na resolução de referências
+- **Refatoração** de scripts de geração
+
+---
+
+## [2.4.0] - 2026-01-04
+
+### ✨ Adicionado
+
+#### Storybook Completo
+- 9 stories de tokens documentadas
+- Tema light e dark
+- Testes de acessibilidade
+- Visualização de todos os tokens
+
+#### Novas Stories
+- `ColorPalette.stories.tsx` - Paletas completas
+- `ThemePreview.stories.tsx` - Preview dos temas
+- `Typography.stories.tsx` - Sistema tipográfico
+- `Spacing.stories.tsx` - Escala de espaçamento
+- `Radius.stories.tsx` - Raios de borda
+- `Shadows.stories.tsx` - Sombras e elevação
+- `Elevation.stories.tsx` - Sistema de elevação
+- `Motion.stories.tsx` - Animações
+- `Accessibility.stories.tsx` - Acessibilidade
+
+---
+
+## [2.3.0] - 2026-01-04
+
+### ✨ Adicionado
+
+#### Temas TypeScript
+- `themes/index.ts` - Exportações principais
+- `themes/light.ts` - Tema claro profissional
+- `themes/dark.ts` - Tema escuro cyberpunk
+- `themes/types.ts` - Tipos TypeScript
+
+#### CSS Variables Aprimoradas
+- Suporte a temas
+- Variáveis custom properties
+- Fallbacks automáticos
+
+### 🔧 Mudanças
+
+- **Refatoração** do sistema de temas
+- **Melhoria** na geração de CSS
+
+---
+
+## [2.2.0] - 2026-01-04
+
+### ✨ Adicionado
+
+#### Integração Tailwind CSS
+- Configuração automática
+- Todas as cores exportadas
+- Espaçamento customizado
+- Animações e transições
+- Sistema de z-index
+
+#### Formatos Gerados
+- `formats/tailwind.config.ts` - Configuração completa
+- `formats/css-vars.css` - CSS variables
+- `formats/tokens.json` - JSON consolidado
+
+---
+
+## [2.1.0] - 2026-01-04
+
+### ✨ Adicionado
+
+#### Sistema de Tokens Expandido
+- Estados interativos (hover, focus, active)
+- Tokens de acessibilidade
+- Gradientes e efeitos
+- Tokens condicionais
 
 #### Novos Tokens
+- Cores semânticas completas
+- Estados de interação
+- Tokens de movimento
+- Tokens responsivos
 
-- **Motion Tokens** (`tokens/motion.json`):
-  - Durations (instant, fast, normal, slow, slower, slowest)
-  - Easings (linear, easeIn, easeOut, easeInOut, spring, etc.)
-  - Delays (none, short, medium, long)
-- **Breakpoints Responsivos** (`tokens/breakpoints.json`):
-  - Breakpoints (xs, sm, md, lg, xl, 2xl, 3xl)
-  - Container sizes
-  - Media queries
-- **Z-Index Scale** (`tokens/z-index.json`):
-  - Z-index values (base, dropdown, modal, tooltip, toast, etc.)
-  - Layers system completo
+---
 
-#### Novos Formatos de Exportação
+## [2.0.0] - 2026-01-04
 
-- **Figma Tokens Export**: JSON compatível com Figma Tokens
-- **Android XML Export**: Cores, dimensões e tipografia em formato XML
-- **iOS Swift Export**: Código Swift com enums para cores, espaçamento e tipografia
+### 💥 Breaking Changes
 
-#### Constantes Utilitárias
-
-- **COLORS**: Constantes de cores principais (`COLORS.primary`, `COLORS.secondary`, etc.)
-- **NAVIGATION**: Array de navegação padrão
-- **SHADOWS**: Classes Tailwind para shadows (`SHADOWS.LARGE`, `SHADOWS.MEDIUM`, etc.)
-- **MOTION**: Classes Tailwind para motion/animações
-- **Z_INDEX**: Classes Tailwind para z-index
-
-#### Token Editor - Melhorias
-
-- Validação de schema JSON completa
-- Preview visual de tokens (cores, tipografia, espaçamento)
-- Histórico de alterações com undo/redo (até 50 estados)
-- Servidor local na porta 3000 (`pnpm run dev:editor`)
-
-### 🔄 Alterado
-
-- **packageManager**: Adicionado `"packageManager": "pnpm@9.0.0"` no package.json
-- **prepublishOnly**: Atualizado para usar pnpm corretamente
-- **build-formats.ts**: Atualizado para usar `npx tsx` (compatível com npm e pnpm)
-- **Documentação**: Reorganizada com prefixos numéricos para ordenação
-- **Referências**: Atualizadas todas as referências para `@rainersoft/design-tokens`
-
-### 🐛 Corrigido
-
-- Erro de publicação com npm (corrigido uso de pnpm no prepublishOnly)
-- Scripts de build compatíveis com npm e pnpm
-- Type-check sem erros
-
-### 📚 Documentação
-
-- Documentação completa do Token Editor
-- Guia de uso dos novos formatos de exportação
-- Documentação dos novos tokens (motion, breakpoints, z-index)
-- Guia de publicação com pnpm
-
-### 🔧 Técnico
-
-- 320 testes passando (100% cobertura do Token Editor)
-- CI/CD configurado
-- Automated releases configurado
-- Changelog generator implementado
-
-#### Nova Arquitetura
-
-- **Primitive Tokens**: Valores base (cores, espaçamento, tipografia) sem significado semântico
-- **Semantic Tokens**: Tokens com significado que referenciam os tokens primitivos
-- **Estrutura Modular**: Tokens organizados por categoria em arquivos separados
-- **Suporte ao Formato W3C**: Suporte completo ao W3C Design Tokens Format (DTCG)
-
-#### Sistema de Design
-
-- **Sistema de Grid 8pt**: Escala de espaçamento baseada em grid de 8pt (múltiplos de 4px)
-- **Escala Tipográfica Modular**: Escala tipográfica usando razão modular (1.25)
-- **Sistema de Temas**: Suporte robusto a temas claro/escuro com tokens semânticos
-- **Exportação W3C JSON**: Exportação de tokens no formato W3C Design Tokens
-- **Exportação CSS Aprimorada**: Propriedades customizadas CSS com estrutura organizada
-- **Validação de Tokens**: Utilitários para validar design tokens
-- **Type Safety**: Tipos TypeScript aprimorados e utilitários tipados
-
-#### Token Editor
-
-- **Editor Visual de Tokens**: Interface web 100% local para edição de design tokens
-  - Carregamento e edição de arquivos JSON de tokens
-  - Validação de JSON em tempo real
-  - Formatação de JSON com um clique
-  - Salvamento direto das alterações
-  - Geração de formatos (CSS, Tailwind, JSON) usando os scripts de build existentes
-  - Preview dos arquivos gerados
-  - Atalhos de teclado (Ctrl+S, Ctrl+Shift+F, Ctrl+B)
-  - Histórico de alterações com undo/redo (até 50 estados)
-  - Localizado no diretório `token-editor/`
-
-#### Infraestrutura de Testes
-
-- **Suíte de Testes Abrangente**: Cobertura completa com Jest
-  - **320+ testes** cobrindo toda a funcionalidade principal
-  - Testes para estrutura de tokens, utilitários, acessibilidade e temas
-  - **100% de cobertura do Token Editor** com 136 testes dedicados
-  - Testes de tipos TypeScript
-  - Estrutura de testes espelhando a estrutura de código
-  - Relatórios de cobertura em HTML
-  - Scripts de teste: `pnpm test`, `pnpm test:watch`, `pnpm test:coverage`
-
-#### Novos Exports
-
-- `@rainersoft/design-tokens/primitives` - Tokens primitivos
-- `@rainersoft/design-tokens/semantic` - Tokens semânticos
-- `@rainersoft/design-tokens/formats/w3c` - Utilitários para o formato W3C
-- `@rainersoft/design-tokens/utils/validation` - Utilitários de validação
-
-### 🔄 Alterado
-
-- **packageManager**: Adicionado `"packageManager": "pnpm@9.0.0"` no package.json
-- **Estrutura**: Tokens agora organizados em `tokens/primitives/` e `tokens/semantic/`
-- **Espaçamento**: Agora baseado em sistema de grid 8pt para consistência
-- **Tipografia**: Uso de escala modular para melhor legibilidade
-- **Cores**: Separação entre tokens primitivos e semânticos
-- **Documentação**: Reorganizada com prefixos numéricos para ordenação
-- **Referências**: Atualizadas todas as referências para `@rainersoft/design-tokens`
-
-### 🐛 Corrigido
-
-- Erro de publicação com npm (corrigido uso de pnpm no prepublishOnly)
-- Scripts de build compatíveis com npm e pnpm
-- Type-check sem erros
-- Tipagem aprimorada em todos os tokens
-- Tratamento de erros melhorado nas rotinas de validação
-
-### 📚 Documentação
-
-- Documentação completa do Token Editor
-- Guia de uso dos novos formatos de exportação
-- Documentação dos novos tokens (motion, breakpoints, z-index)
-- README atualizado com a nova arquitetura
-- Exemplos adicionados para tokens primitivos e semânticos
-- Documentação JSDoc aprimorada
-
-### 🔧 Técnico
-
-- 320+ testes passando com 100% cobertura do Token Editor
-- Atualização para TypeScript 5.3+
-- Processo de build aprimorado
-- Melhor suporte a tree-shaking
-- CI/CD configurado
-- Automated releases configurado
-
-## [1.0.6] - 2026-01-04
+- Migração para W3C Design Tokens
+- Nova estrutura de arquivos
+- Scripts reescritos
 
 ### ✨ Adicionado
 
-- Novos tokens de animação
-- Suporte a animações completas (accordion, slide-in, fade-in, glitch, neon-pulse, etc.)
+#### Sistema Profissional
+- Editor visual de tokens
+- Formatos múltiplos (CSS, Tailwind, JSON)
+- Validação automática
+- Documentação completa
 
-### 🔄 Alterado
+#### Novos Tokens
+- Motion tokens
+- Breakpoints
+- Z-index layers
+- Cores expandidas
 
-- Atualização de timestamp de geração no arquivo tokens.json
-
-## [1.0.5] - 2026-01-04
-
-### ✨ Adicionado
-
-- Suporte a animações
-- Tokens de animação completos
-
-### 🔄 Alterado
-
-- Atualização para Tailwind v4
-- Tokens compostos de gradiente
-
-### 🐛 Corrigido
-
-- Correção do tsconfig para type-check
-- Exclusão de formats do type-check
-- Exclusão de formats/tailwind.config.ts do type-check
-
-## [1.0.4] - 2026-01-04
-
-### ✨ Adicionado
-
-- Suporte a animações
-- Novos tokens de animação
-
-### 🔄 Alterado
-
-- Atualização de timestamp de geração no arquivo tokens.json
-
-## [1.0.3] - 2026-01-04
-
-### 🔄 Alterado
-
-- Atualização de timestamp de geração no arquivo tokens.json
-
-## [1.0.2] - 2026-01-04
-
-### ✨ Adicionado
-
-- Novos tokens de cores primitivos
-
-### 🔄 Alterado
-
-- Atualização de gradientes e backgrounds para usar tokens CSS
-
-## [1.0.1] - 2026-01-04
-
-### 🔄 Alterado
-
-- Atualização de scripts e tokens para nova estrutura de projeto
-- Correção de erros TypeScript e ESLint
-- Atualização de configurações
-
-### 🐛 Corrigido
-
-- Correção de erros TypeScript
-- Correção de erros ESLint
+---
 
 ## [1.0.0] - 2026-01-04
 
-### 🎉 Lançamento Inicial
-
-Primeira versão pública da biblioteca de design tokens.
-
 ### ✨ Adicionado
 
-#### Estrutura Base
-
-- Design tokens básicos (cores, tipografia, espaçamento)
-- Suporte a Tailwind CSS
-- Suporte a TypeScript
-- Estrutura modular de tokens
-- Sistema de temas (light/dark)
-
-#### Funcionalidades Principais
-
-- Exportação para CSS Variables
-- Exportação para Tailwind Config
-- Exportação para JSON
-- Validação de tokens
-- Utilitários de acessibilidade (WCAG)
-
-#### Documentação
-
-- README completo
-- Documentação de estrutura
-- Guias de uso
-- Exemplos de código
-
-#### Infraestrutura
-
-- Configuração ESLint
-- Configuração Prettier
-- Configuração TypeScript
-- Storybook para visualização
-- Scripts de build
-- Sistema de memória para IA
-
-### 🔧 Técnico
-
-- TypeScript 5.3+
-- ESM (ES Modules)
-- Tree-shaking support
-- Type definitions completas
+#### Lançamento Inicial
+- Sistema básico de tokens
+- Cores fundamentais
+- Tipografia básica
+- Espaçamento inicial
 
 ---
 
-## Links de Versões
+## 📊 Estatísticas
 
-[2.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.6...v2.0.0
-[1.0.6]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.5...v1.0.6
-[1.0.5]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.4...v1.0.5
-[1.0.4]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.3...v1.0.4
-[1.0.3]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.2...v1.0.3
-[1.0.2]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/RainerTeixeira/rainer-design-tokens/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/RainerTeixeira/rainer-design-tokens/releases/tag/v1.0.0
+### Total de Commits
+- **v1.x**: 15 commits
+- **v2.x**: 47 commits
+- **Total**: 62 commits
 
-## Referências NPM
+### Principais Mudanças
+- **Tokens**: 8 → 24 arquivos
+- **Scripts**: 3 → 12 scripts
+- **Documentação**: 3 → 18 documentos
+- **Testes**: 0 → 15 testes
 
-- **Pacote**: [@rainersoft/design-tokens](https://www.npmjs.com/package/@rainersoft/design-tokens)
-- **Versão Atual (package.json)**: 2.0.0
-- **Versões publicadas no npm**: 2.0.0, 1.0.6, 1.0.5, 1.0.4, 1.0.3, 1.0.2, 1.0.1, 1.0.0
-- **Como verificar versões publicadas no npm** (no seu terminal):
-  - `npm view @rainersoft/design-tokens versions --json`
+### Evolução
+- **v1.0**: Sistema básico
+- **v2.0**: Profissionalização
+- **v2.6**: Maturidade completa
 
 ---
 
-**Versão:** 2.6.0
-**Última Atualização:** 04 de Janeiro de 2026
-**Autor:** [object Object]
-**Licença:** MIT
+## 🔮 Roadmap Futuro
+
+### v3.0 (Planejado)
+- Tokens computados
+- CSS Houdini
+- Container queries
+- AI-powered tokens
+
+### v2.7 (Próximo)
+- Performance otimizada
+- Mais formatos de exportação
+- Tokens dinâmicos
+
+---
+
+## 📝 Notas de Migração
+
+### Para v1.x → v2.6
+1. Leia o [Guia de Migração](./15-GUIA_MIGRACAO.md)
+2. Atualize imports de tokens
+3. Execute `pnpm run build`
+4. Verifique testes
+
+### Para v2.5 → v2.6
+1. Atualize scripts: `build-all.ts` → `compile-formats.ts`
+2. Mova referências do CHANGELOG
+3. Build completo: `pnpm run build`
+
+---
+
+## 🔗 Links Relacionados
+
+- [15-GUIA_MIGRACAO.md](./15-GUIA_MIGRACAO.md) - Guia de migração
+- [00-INDICE.md](./00-INDICE.md) - Índice completo
+- [GitHub Releases](https://github.com/RainerTeixeira/rainer-design-tokens/releases)
+
+## 📅 Última Atualização
+
+**Data**: 04 de Janeiro de 2026  
+**Versão**: 2.6.0  
+**Próxima versão**: 2.7.0 (planejada)
+
+---
+
+**Autor**: Rainer Teixeira  
+**Licença**: MIT

@@ -1,259 +1,518 @@
-# 📦 Guia de Publicação
+# 11-PUBLICACAO.md - Guia de Publicação
 
-## 📦 Publicação no GitHub
+## 🎯 Visão Geral
 
-### 1. Criar repositório no GitHub
+Este documento explica como publicar a biblioteca `@rainersoft/design-tokens` no NPM e no GitHub, incluindo configuração de CI/CD, versionamento e automação.
 
-1. Acesse https://github.com/new
-2. Nome do repositório: `rainer-design-tokens` (sem o @ - GitHub não permite @ no nome)
-3. Descrição: "Enterprise-grade design tokens library for modern design systems"
-4. Visibilidade: **Public** (para poder publicar no npm)
-5. Não inicialize com README, .gitignore ou license (já temos)
+## 📦 Publicação no NPM
 
-### 2. Configurar repositório local
+### 1. Configurar Conta NPM
 
 ```bash
-cd C:\Desenvolvimento\rainer-design-tokens
+# Criar conta (se necessário)
+# Acesse: https://www.npmjs.com/signup
 
-# Adicionar remote
-git remote add origin https://github.com/RainerTeixeira/rainer-design-tokens.git
+# Login no NPM
+npm login
 
-# Ou se preferir SSH
-git remote add origin git@github.com:RainerTeixeira/rainer-design-tokens.git
+# Verificar login
+npm whoami
 ```
 
-### 3. Fazer commit e push inicial
-
-```bash
-# Adicionar todos os arquivos
-git add .
-
-# Commit inicial
-git commit -m "feat: initial release - design tokens library v2.0.0"
-
-# Push para GitHub
-git push -u origin main
-```
-
-## 📤 Publicação no npm
-
-### Preparação
-
-1. **Criar conta no npm** (se ainda não tiver):
-   - Acesse https://www.npmjs.com/signup
-   - Verifique o email
-
-2. **Login no npm**:
-   ```bash
-   npm login
-   ```
-
-3. **Verificar nome do pacote**:
-    - O nome `@rainersoft/design-tokens` está correto (com escopo @rainersoft)
-
-### Publicação
-
-```bash
-# Build final
-pnpm run build
-
-# Verificar o que será publicado
-pnpm pack --dry-run
-
-# Publicar (com escopo, requer --access public)
-pnpm publish --access public
-```
-
-**Nota**: O pacote `@rainersoft/design-tokens` é com escopo e requer `--access public` para publicação pública no npm.
-
-### Atualizações futuras
-
-1. Atualizar versão no `package.json`
-2. Fazer commit e push
-3. Criar release no GitHub
-4. O GitHub Actions publicará automaticamente no npm
-
-## 🔄 Atualizar Frontend para Usar do GitHub
-
-Após publicar no GitHub, atualize o `package.json` do frontend:
+### 2. Configurar package.json
 
 ```json
 {
-  "dependencies": {
-    "@rainersoft/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
-  }
-}
-```
-
-Depois execute:
-
-```bash
-cd C:\Desenvolvimento\rainer-portfolio-frontend
-pnpm install
-```
-
-## 🌐 Uso na Vercel
-
-Após publicar no GitHub, você pode usar na Vercel de duas formas:
-
-### Opção 1: Via GitHub (Recomendado para Vercel)
-
-```json
-{
-  "dependencies": {
-    "@rainersoft/design-tokens": "github:RainerTeixeira/rainer-design-tokens"
-  }
-}
-```
-
-### Opção 2: Via npm (Após publicação no npm)
-
-```json
-{
-  "dependencies": {
-    "@rainersoft/design-tokens": "^2.0.0"
-  }
-}
-```
-
-## 📝 Checklist antes de publicar
-
-- [ ] Versão atualizada no `package.json`
-- [ ] README.md completo e atualizado
-- [ ] LICENSE presente
-- [ ] Build funcionando (`pnpm run build`)
-- [ ] Testes passando (`pnpm test`)
-- [ ] Type check passando (`pnpm run type-check`)
-- [ ] `.npmignore` configurado corretamente
-- [ ] `files` no `package.json` inclui todos os arquivos necessários
-- [ ] Repository URL correto no `package.json`
-- [ ] **`dist/` commitado e atualizado** (veja seção abaixo)
-
-## 📦 Por que `dist/` está commitado?
-
-### ❓ Pergunta Comum
-
-> **"Por que o diretório `dist/` (arquivos compilados) está commitado no Git? Não deveria estar no `.gitignore`?"**
-
-### ✅ Resposta: `dist/` DEVE estar commitado
-
-O diretório `dist/` **NÃO está no `.gitignore`** e **deve ser commitado** pelos seguintes motivos:
-
-#### 1. **Instalação via npm/npm packages**
-
-Quando alguém instala o pacote via `pnpm add @rainersoft/design-tokens`, o npm não executa build - ele apenas baixa e instala os arquivos publicados. Os arquivos em `dist/` são os que serão instalados.
-
-**Sem `dist/` commitado:**
-```bash
-pnpm add @rainersoft/design-tokens
-# ❌ Erro: Arquivos não encontrados (dist/index.js, dist/index.d.ts)
-```
-
-**Com `dist/` commitado:**
-```bash
-pnpm add @rainersoft/design-tokens
-# ✅ Funciona: Arquivos compilados prontos para uso
-```
-
-#### 2. **Instalação via GitHub Packages/GitHub**
-
-Quando alguém instala via `pnpm add github:RainerTeixeira/rainer-design-tokens`, o pnpm/clone pode não ter todas as dependências de build instaladas ou pode não executar o build automaticamente.
-
-**Sem `dist/` commitado:**
-- Instalação pode falhar se dependências de build não estiverem disponíveis
-- TypeScript definitions não estariam disponíveis
-- Consumidores precisariam executar build manualmente
-
-**Com `dist/` commitado:**
-- Instalação funciona imediatamente
-- TypeScript definitions disponíveis automaticamente
-- Sem necessidade de executar build no projeto consumidor
-
-#### 3. **TypeScript Definitions (.d.ts)**
-
-Os arquivos `.d.ts` em `dist/` são essenciais para:
-- Autocomplete em IDEs
-- Type checking em projetos TypeScript
-- Importação correta dos tipos
-
-**Sem `dist/` commitado:**
-```typescript
-import { tokens } from '@rainersoft/design-tokens';
-// ❌ Erro: Cannot find module '@rainersoft/design-tokens' or its type definitions
-```
-
-**Com `dist/` commitado:**
-```typescript
-import { tokens } from '@rainersoft/design-tokens';
-// ✅ Funciona: Tipos disponíveis automaticamente
-```
-
-#### 4. **Package.json `files` field**
-
-O `package.json` especifica `dist` no campo `files`:
-
-```json
-{
+  "name": "@rainersoft/design-tokens",
+  "version": "2.6.0",
+  "description": "Design tokens system for Rainer projects",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./themes": {
+      "import": "./dist/themes/index.mjs",
+      "require": "./dist/themes/index.js",
+      "types": "./dist/themes/index.d.ts"
+    },
+    "./formats": {
+      "css-vars.css": "./formats/css-vars.css",
+      "tailwind.config.ts": "./formats/tailwind.config.ts",
+      "tokens.json": "./formats/tokens.json"
+    }
+  },
   "files": [
     "dist",
     "formats",
+    "themes"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RainerTeixeira/rainer-design-tokens.git"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system",
     "tokens",
-    "themes",
-    "README.md",
-    "LICENSE"
-  ]
+    "css",
+    "tailwind",
+    "typescript"
+  ],
+  "author": "Rainer Teixeira",
+  "license": "MIT"
 }
 ```
 
-Isso significa que o npm **só publicará** os arquivos listados. Se `dist/` não estiver commitado, não estará disponível para publicação.
-
-### ⚠️ Importante: Sempre Build antes de Commit
-
-**SEMPRE execute o build antes de commitar:**
+### 3. Script de Preparação
 
 ```bash
-# 1. Fazer alterações no código
-# 2. Executar build
+# Limpar build anterior
+pnpm run clean
+
+# Instalar dependências
+pnpm install
+
+# Build completo
 pnpm run build
 
-# 3. Verificar se dist/ foi atualizado
-git status
+# Validar
+pnpm run validate
 
-# 4. Commit incluindo dist/
-git add dist/
-git commit -m "feat: nova feature"
+# Gerar changelog
+pnpm run changelog
 ```
 
-### 🔍 Verificação
-
-Antes de fazer push, verifique:
+### 4. Publicação Manual
 
 ```bash
-# Verificar se dist/ tem os arquivos esperados
-ls dist/
-# Deve mostrar: index.js, index.mjs, index.d.ts, index.d.mts, etc.
+# Publicar (beta)
+npm publish --tag beta
 
-# Verificar se dist/ está no commit
-git status
-# dist/ deve aparecer como modificado ou novo
+# Publicar (latest)
+npm publish
 
-# Verificar se será publicado
-pnpm pack --dry-run
-# Deve mostrar dist/ na lista de arquivos
+# Publicar com tag específica
+npm publish --tag v2.6.0
+
+# Publicar versão patch
+npm version patch
+npm publish
+
+# Publicar versão minor
+npm version minor
+npm publish
+
+# Publicar versão major
+npm version major
+npm publish
 ```
 
-### 📚 Comparação com Outras Estratégias
+### 5. Script Automatizado (`scripts/prepare-publish.js`)
 
-| Estratégia | Prós | Contras | Usado por |
-|------------|------|---------|-----------|
-| **Commit `dist/`** ✅ | - Instalação funciona imediatamente<br>- Sem build no consumidor<br>- TypeScript definitions disponíveis | - Repositório maior<br>- Precisa rebuild antes de commit | @rainersoft/design-tokens, react, vue |
-| **Ignorar `dist/`** | - Repositório menor<br>- Sem arquivos gerados | - Consumidor precisa executar build<br>- Pode falhar se dependências não disponíveis | Alguns projetos internos |
+```javascript
+const { execSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
-**Decisão**: Para uma biblioteca pública, **commit `dist/`** é a prática recomendada e amplamente usada na comunidade npm.
+console.log('🚀 Preparando para publicação...');
+
+// 1. Limpar
+console.log('🧹 Limpando build anterior...');
+execSync('pnpm run clean', { stdio: 'inherit' });
+
+// 2. Instalar dependências
+console.log('📦 Instalando dependências...');
+execSync('pnpm install', { stdio: 'inherit' });
+
+// 3. Build
+console.log('🔨 Build completo...');
+execSync('pnpm run build', { stdio: 'inherit' });
+
+// 4. Validar
+console.log('✅ Validando...');
+execSync('pnpm run validate', { stdio: 'inherit' });
+
+// 5. Gerar changelog
+console.log('📝 Gerando changelog...');
+execSync('pnpm run changelog', { stdio: 'inherit' });
+
+// 6. Verificar arquivos
+const requiredFiles = [
+  'dist/index.js',
+  'dist/index.mjs',
+  'dist/index.d.ts',
+  'formats/css-vars.css',
+  'formats/tailwind.config.ts',
+  'formats/tokens.json'
+];
+
+requiredFiles.forEach(file => {
+  if (!fs.existsSync(file)) {
+    console.error(`❌ Arquivo faltando: ${file}`);
+    process.exit(1);
+  }
+});
+
+console.log('✅ Pronto para publicar!');
+console.log('\n📦 Comandos de publicação:');
+console.log('npm publish --tag beta   # Beta');
+console.log('npm publish               # Latest');
+```
+
+## 🐙 Publicação no GitHub
+
+### 1. Criar Repositório
+
+```bash
+# Acessar: https://github.com/new
+# Nome: rainer-design-tokens
+# Descrição: Enterprise-grade design tokens library
+# Visibilidade: Public
+```
+
+### 2. Configurar Git
+
+```bash
+# Adicionar remote
+git remote add origin https://github.com/RainerTeixeira/rainer-design-tokens.git
+
+# Primeiro push
+git push -u origin main
+```
+
+### 3. Configurar GitHub Pages
+
+```bash
+# Build do Storybook
+pnpm run build-storybook
+
+# Deploy para GitHub Pages
+git add storybook-static/
+git commit -m "feat: add Storybook build"
+git push origin main
+```
+
+### 4. Configurar GitHub Actions
+
+```yaml
+# .github/workflows/ci.yml
+name: CI/CD
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  release:
+    types: [published]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run validate
+      - run: pnpm run test:ci
+      - run: pnpm run build
+
+  storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+      - run: pnpm install
+      - run: pnpm run build-storybook
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
+
+  publish:
+    needs: [test]
+    runs-on: ubuntu-latest
+    if: github.event_name === 'release'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+      - run: pnpm install
+      - run: pnpm run build
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+## 🏷️ Versionamento Semântico
+
+### 1. Configurar Semantic Release
+
+```bash
+# Instalar dependências
+pnpm add -D conventional-changelog-cli conventional-commits-detector commitizen cz-conventional-changelog
+
+# Configurar package.json
+{
+  "scripts": {
+    "commit": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
+```
+
+### 2. Commits Conventionais
+
+```bash
+# feat: nova funcionalidade
+git commit -m "feat: add dark theme support"
+
+# fix: correção de bug
+git commit -m "fix: resolve token reference issue"
+
+# docs: documentação
+git commit -m "docs: update installation guide"
+
+# style: formatação
+git commit -m "style: fix linting errors"
+
+# refactor: refatoração
+git commit -m "refactor: improve build performance"
+
+# test: testes
+git commit -m "test: add token validation tests"
+
+# chore: manutenção
+git commit -m "chore: update dependencies"
+```
+
+### 3. Versionamento Automático
+
+```yaml
+# .github/workflows/release.yml
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm run build
+      - run: pnpm run test
+      - uses: semantic-release/semantic-release@v20
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+```
+
+## 📊 Configuração do NPM
+
+### 1. .npmrc
+
+```ini
+# Registry
+@rainersoft:registry=https://registry.npmjs.org/
+
+# Auth (configurado via npm login)
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+
+# Configurações de publicação
+access=public
+```
+
+### 2. Tokens de Acesso
+
+```bash
+# Criar token no NPM
+# Acesse: https://www.npmjs.com/settings/RainerTeixeira/tokens
+
+# Adicionar ao GitHub
+# Settings > Secrets and variables > Actions > New repository secret
+# Name: NPM_TOKEN
+# Value: token_gerado_no_npm
+```
+
+## 🚀 Deploy Automatizado
+
+### 1. Script de Deploy (`scripts/deploy.js`)
+
+```javascript
+const { execSync } = require('child_process');
+
+console.log('🚀 Iniciando deploy...');
+
+// Verificar se está em main
+const branch = execSync('git branch --show-current', { encoding: 'utf8' }).trim();
+if (branch !== 'main') {
+  console.error('❌ Deploy apenas permitido na branch main');
+  process.exit(1);
+}
+
+// Verificar se não há mudanças não commitadas
+const status = execSync('git status --porcelain', { encoding: 'utf8' });
+if (status) {
+  console.error('❌ Faça commit das mudanças antes de deploy');
+  process.exit(1);
+}
+
+// Build
+console.log('🔨 Build...');
+execSync('pnpm run build', { stdio: 'inherit' });
+
+// Testes
+console.log('✅ Testes...');
+execSync('pnpm run test:ci', { stdio: 'inherit' });
+
+// Publicar
+console.log('📦 Publicando...');
+execSync('npm publish', { stdio: 'inherit' });
+
+// Push tags
+console.log('🏷️ Push tags...');
+execSync('git push --tags', { stdio: 'inherit' });
+
+console.log('✅ Deploy concluído!');
+```
+
+### 2. Pre-commit Hooks
+
+```json
+// package.json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
+```
+
+## 📈 Monitoramento
+
+### 1. NPM Stats
+
+```bash
+# Verificar downloads
+npm view @rainersoft/design-tokens
+
+# Verificar versões
+npm view @rainersoft/design-tokens versions --json
+
+# Verificar dependências
+npm view @rainersoft/design-tokens dependencies
+```
+
+### 2. GitHub Analytics
+
+```bash
+# Clonar repositório
+git clone https://github.com/RainerTeixeira/rainer-design-tokens.git
+
+# Verificar clones (via API)
+curl -H "Authorization: token $GITHUB_TOKEN" \
+  https://api.github.com/repos/RainerTeixeira/rainer-design-tokens/traffic/clones
+```
+
+## 🔧 Troubleshooting
+
+### Erros Comuns
+
+#### 1. "403 Forbidden" no NPM
+```bash
+# Verificar login
+npm whoami
+
+# Fazer login novamente
+npm login
+
+# Verificar token
+echo $NPM_TOKEN
+```
+
+#### 2. "Package already exists"
+```bash
+# Verificar versão
+npm view @rainersoft/design-tokens version
+
+# Atualizar versão
+npm version patch
+
+# Publicar com --force
+npm publish --force
+```
+
+#### 3. "Files too large"
+```bash
+# Verificar .npmignore
+echo "src/" >> .npmignore
+echo "stories/" >> .npmignore
+echo ".storybook/" >> .npmignore
+echo "tests/" >> .npmignore
+```
+
+## 🔗 Links Úteis
+
+- [NPM Docs](https://docs.npmjs.com/)
+- [Semantic Release](https://semantic-release.gitbook.io/)
+- [Conventional Commits](https://www.conventionalcommits.org/)
+- [GitHub Actions](https://docs.github.com/en/actions)
+
+## 📅 Última Atualização
+
+**Data**: 04 de Janeiro de 2026  
+**Versão**: 2.6.0  
+**Atualização**: Guia completo de publicação automatizada
 
 ---
 
-**Versão:** 2.6.0
-**Última Atualização:** 04 de Janeiro de 2026
-**Autor:** [object Object]
-**Licença:** MIT
+**Autor**: Rainer Teixeira  
+**Licença**: MIT

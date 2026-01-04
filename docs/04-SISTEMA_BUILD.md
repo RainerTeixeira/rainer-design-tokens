@@ -434,3 +434,10 @@ pnpm run build:formats --verbose
 **Última Atualização:** 04 de Janeiro de 2026
 **Autor:** [object Object]
 **Licença:** MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

@@ -114,7 +114,20 @@
     "surface": {
       "elevated": "{palette.white}",
       "raised": "{palette.gray.50}",
-      "sunken": "{palette.gray.100}"
+      "sunken": "{palette.gray.100}",
+      "surface-0": "{palette.white}",
+      "surface-1": "{palette.gray.50}",
+      "surface-2": "{palette.gray.100}",
+      "on-surface": "{palette.gray.900}"
+    },
+    "focus": {
+      "ring": "{palette.blue.500}",
+      "outline": "{palette.blue.200}"
+    },
+    "disabled": {
+      "opacity": "{opacity.50}",
+      "background": "{palette.gray.100}",
+      "text": "{palette.gray.400}"
     },
     "chart": {
       "primary": "{palette.blue.500}",

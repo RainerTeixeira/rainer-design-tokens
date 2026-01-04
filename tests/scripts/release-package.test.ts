@@ -14,7 +14,7 @@ import { existsSync, writeFileSync, unlinkSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
 
-const rootDir = join(__dirname, '..', '..');
+const rootDir = join(__dirname, '..', '..', '..');
 
 describe('release-package.ts', () => {
   const scriptsDir = join(rootDir, 'scripts');
@@ -255,12 +255,13 @@ describe('release-package.ts', () => {
     });
 
     it('deve tratar argumentos inválidos', () => {
+      // O script deve ignorar argumentos inválidos e continuar
       expect(() => {
         execSync(
-          `npx tsx "${join(scriptsDir, 'release-package.ts')}" --opcao-inexistente`,
+          `npx tsx "${join(scriptsDir, 'release-package.ts')}" --opcao-inexistente --validate-only`,
           { stdio: 'pipe' }
         );
-      }).not.toThrow(); // Deve ignorar argumentos inválidos
+      }).not.toThrow(); // Deve ignorar argumentos inválidos e executar validação
     });
 
     it('deve mostrar help', () => {

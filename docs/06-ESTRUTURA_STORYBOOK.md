@@ -1,187 +1,367 @@
-# 📚 Estrutura do Storybook - Design Tokens
-
-Este documento explica a estrutura e organização do Storybook da biblioteca de design tokens.
+# 06-ESTRUTURA_STORYBOOK.md - Estrutura do Storybook
 
 ## 🎯 Visão Geral
 
-O Storybook da biblioteca `@rainersoft/design-tokens` é focado **apenas em design tokens**, documentando e visualizando todos os tokens disponíveis na biblioteca.
+Este documento explica a estrutura e organização do Storybook da biblioteca `@rainersoft/design-tokens`. O Storybook é focado **apenas em design tokens**, documentando e visualizando todos os tokens disponíveis.
 
 ## 📁 Estrutura de Diretórios
 
 ```
-@rainersoft/design-tokens/
+rainer-design-tokens/
+├── 📁 .storybook/                 # Configuração do Storybook
+│   ├── 📄 main.ts                # Configuração principal
+│   ├── 📄 preview.tsx            # Preview global e tema
+│   ├── 📄 manager.ts             # Configuração do painel
+│   └── 📄 addons.ts              # Addons configurados
 │
-├─ tokens/                      # Fonte única de verdade (JSON)
-├─ formats/                      # Formatos gerados (CSS, Tailwind, JSON)
-├─ .storybook/                  # ⚙️ Configuração do Storybook
-│   ├─ main.ts                  # Configuração principal
-│   └─ preview.tsx              # Preview e tema
-└─ stories/                      # 📚 Stories de tokens
-    ├─ ColorPalette.stories.tsx # Paleta de cores completa
-    ├─ ColorStates.stories.tsx  # Estados de cores
-    ├─ TypographyHierarchy.stories.tsx # Hierarquia tipográfica
-    ├─ Accessibility.stories.tsx # Acessibilidade WCAG
-    ├─ ThemePreview.stories.tsx # Preview dos temas
-    ├─ Typography.stories.tsx   # Tipografia
-    ├─ Spacing.stories.tsx      # Espaçamento
-    ├─ Radius.stories.tsx       # Raios de borda
-    └─ Shadows.stories.tsx      # Sombras
+├── 📁 stories/                    # Stories dos Tokens
+│   ├── 📄 ColorPalette.stories.tsx      # Paletas de cores
+│   ├── 📄 ThemePreview.stories.tsx      # Preview dos temas
+│   ├── 📄 Typography.stories.tsx        # Tipografia
+│   ├── 📄 Spacing.stories.tsx           # Espaçamento
+│   ├── 📄 Radius.stories.tsx            # Raios de borda
+│   ├── 📄 Shadows.stories.tsx           # Sombras
+│   ├── 📄 Elevation.stories.tsx         # Elevação
+│   ├── 📄 Motion.stories.tsx            # Animações
+│   └── 📄 Accessibility.stories.tsx     # Acessibilidade
+│
+├── 📁 tokens/                     # Fonte dos dados
+│   ├── 📁 primitives/            # Tokens base
+│   ├── 📁 semantics/             # Tokens semânticos
+│   └── 📁 themes/                # Configurações
+│
+└── 📁 formats/                    # Formatos gerados
+    ├── 📄 css-vars.css          # CSS Variables
+    ├── 📄 tailwind.config.ts    # Config Tailwind
+    └── 📄 tokens.json           # JSON
 ```
 
-## 🎨 Propósito
+## 🎨 Propósito e Foco
 
-O Storybook documenta e visualiza **apenas os design tokens** da biblioteca, não componentes UI.
+### O QUE DOCUMENTAMOS:
+- ✅ **Design Tokens puros** (cores, spacing, tipografia)
+- ✅ **Variações de temas** (light/dark)
+- ✅ **Estados dos tokens** (hover, focus, active)
+- ✅ **Demonstrações práticas** (como usar juntos)
+- ✅ **Validação de acessibilidade** (WCAG)
 
-### Stories Disponíveis
+### O QUE NÃO DOCUMENTAMOS:
+- ❌ **Componentes UI** (Button, Card, Input)
+- ❌ **Lógica de negócio**
+- ❌ **Interações complexas**
+- ❌ **Integração com frameworks**
 
-1. **ColorPalette** - Paleta completa de cores (Light & Dark)
-2. **ColorStates** - Estados completos de cores (base, hover, active, disabled, focus)
-3. **TypographyHierarchy** - Hierarquia tipográfica completa (H1-H6, subtítulos, corpo, legendas)
-4. **Accessibility** - Validação de contraste WCAG AA/AAA
-5. **ThemePreview** - Preview dos temas mostrando tokens trabalhando juntos
-6. **Typography** - Sistema de tipografia básico
-7. **Spacing** - Escala de espaçamento (8pt grid)
-8. **Radius** - Raios de borda
-9. **Shadows** - Sombras e efeitos
+## 📚 Stories Detalhadas
 
-### O que NÃO deve ter
-
-- ❌ Componentes UI (Button, Card, Input, etc.)
-- ❌ Stories de componentes reutilizáveis
-- ❌ Lógica de negócio ou interações complexas
-
-## 🚀 Como Usar
-
-### Iniciar o Storybook
-
-```bash
-cd @rainer-design-tokens
-pnpm run storybook
-```
-
-O Storybook estará disponível em `http://localhost:6006`
-
-### Build do Storybook
-
-Para gerar uma versão estática:
-
-```bash
-pnpm run build-storybook
-```
-
-A saída será gerada em `storybook-static/`
-
-## ⚙️ Configuração
-
-### Arquivos de Configuração
-
-- `.storybook/main.ts` - Configuração principal do Storybook
-- `.storybook/preview.tsx` - Configuração de preview e tema
-
-### Customização do Tema
-
-O tema do Storybook é customizado usando os próprios design tokens:
+### 1. ColorPalette.stories.tsx
+**Objetivo**: Mostrar todas as paletas de cores
 
 ```typescript
-// .storybook/preview.tsx
-import { tokens } from '../tokens';
-
-docs: {
-  theme: {
-    colorPrimary: tokens.colors.light.primary.base,
-    colorSecondary: tokens.colors.light.secondary.base,
-    // ... mais customizações
-  },
-}
+// Estrutura da Story
+- Light Theme
+  - Background Colors
+  - Surface Colors
+  - Text Colors
+  - Border Colors
+  - Brand Colors
+  - Status Colors
+  - Interactive States
+- Dark Theme (Cyberpunk)
+  - Todas as cores do light
+  - Neon Effects
+  - Glow Colors
+  - Gradient Colors
 ```
 
-## 📝 Criar Novas Stories
-
-Para criar uma nova story de tokens:
-
-1. Crie um arquivo `Nome.stories.tsx` em `stories/`
-2. Use o template básico:
+### 2. ThemePreview.stories.tsx
+**Objetivo**: Demonstrar uso prático dos temas
 
 ```typescript
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { tokens } from '../tokens';
+// Componentes demonstrados
+- Cards com sombras
+- Botões com estados
+- Formulários estilizados
+- Navegação
+- Tipografia aplicada
+- Layouts completos
+```
 
-const meta = {
-  title: 'Design Tokens/Nome',
-  tags: ['autodocs'],
-  parameters: {
-    layout: 'fullscreen',
-    docs: {
-      description: {
-        component: 'Descrição do que esta story documenta.',
-      },
-    },
-  },
-} satisfies Meta;
+### 3. Typography.stories.tsx
+**Objetivo**: Documentar sistema tipográfico
 
-export default meta; // ⚠️ OBRIGATÓRIO: Sempre exporte o meta
-type Story = StoryObj<typeof meta>;
+```typescript
+- Font Families
+  - Sans (Inter)
+  - Mono (JetBrains)
+  - Serif (Georgia)
+  - Display (Orbitron)
+- Font Sizes (xs a 9xl)
+- Font Weights (100 a 900)
+- Line Heights
+- Exemplos de uso
+```
 
-export const MinhaStory: Story = {
-  render: () => {
-    // Seu código aqui usando tokens
-    return <div>Conteúdo</div>;
+### 4. Spacing.stories.tsx
+**Objetivo**: Visualizar escala de espaçamento
+
+```typescript
+- Grid System (8pt base)
+- Escala completa (0 a 24)
+- Visualização em blocos
+- Exemplos de composição
+- Margens e padding
+```
+
+### 5. Radius.stories.tsx
+**Objetivo**: Sistema de bordas arredondadas
+
+```typescript
+- Escala (sm a full)
+- Proporções baseadas em spacing
+- Aplicação em componentes
+- Exemplos visuais
+```
+
+### 6. Shadows/Elevation.stories.tsx
+**Objetivo**: Sistema de elevação
+
+```typescript
+- Light Theme
+  - Sombras sutis
+  - Profundidade sutil
+- Dark Theme
+  - Sombras + glow
+  - Efeitos neon
+- Escala (sm a 2xl)
+```
+
+### 7. Motion.stories.tsx
+**Objetivo**: Animações e transições
+
+```typescript
+- Durações (fast, normal, slow)
+- Curvas de easing
+- Exemplos práticos
+- Prefers-reduced-motion
+```
+
+### 8. Accessibility.stories.tsx
+**Objetivo**: Validação de acessibilidade
+
+```typescript
+- Contraste WCAG AA/AAA
+- Focus rings visíveis
+- Modo alto contraste
+- Redução de movimento
+```
+
+## ⚙️ Configuração Técnica
+
+### main.ts
+```typescript
+export default {
+  stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs',
+    '@storybook/addon-controls',
+  ],
+  framework: '@storybook/react-vite',
+  docs: {
+    autodocs: 'tag',
   },
 };
 ```
 
-### ⚠️ Importante
-
-- **SEMPRE** exporte `export default meta` - sem isso o Storybook não consegue indexar a story
-- **Foque apenas em tokens** - não crie stories de componentes UI aqui
-- **Use `tokens`** importados de `../tokens` para acessar os valores
-
-## 🎨 Integração com Tokens
-
-Todas as stories importam os tokens diretamente:
-
+### preview.tsx
 ```typescript
-import { tokens } from '../tokens';
-
-// Usar tokens
-const primaryColor = tokens.colors.light.primary.base;
-const spacing = tokens.spacing['4'];
-const fontSize = tokens.typography.headings.h1.fontSize;
-const radius = tokens.radius.md;
-const shadow = tokens.shadows.light.md;
+const preview = {
+  parameters: {
+    backgrounds: {
+      default: 'light',
+      values: [
+        { name: 'light', value: '#ffffff' },
+        { name: 'dark', value: '#0a0a0f' },
+      ],
+    },
+    docs: {
+      toc: true, // Table of contents
+    },
+  },
+  globalTypes: {
+    theme: {
+      description: 'Tema global',
+      defaultValue: 'light',
+      toolbar: {
+        title: 'Theme',
+        items: ['light', 'dark'],
+      },
+    },
+  },
+};
 ```
 
-## 📋 Checklist
+## 🎯 Organização das Stories
 
-- [x] Focado apenas em design tokens
-- [x] ColorPalette.stories.tsx - Paleta de cores completa
-- [x] ColorStates.stories.tsx - Estados de cores
-- [x] TypographyHierarchy.stories.tsx - Hierarquia tipográfica
-- [x] Accessibility.stories.tsx - Acessibilidade WCAG
-- [x] ThemePreview.stories.tsx - Preview dos temas
-- [x] Typography.stories.tsx - Sistema de tipografia
-- [x] Spacing.stories.tsx - Escala de espaçamento
-- [x] Radius.stories.tsx - Raios de borda
-- [x] Shadows.stories.tsx - Sombras e efeitos
-- [x] Sem componentes UI
+### Convenções de Nomenclatura
+- **PascalCase** para arquivos: `ColorPalette.stories.tsx`
+- **Títulos claros**: `Design Tokens/Color Palette`
+- **Subcategorias**: Agrupar por tipo
 
-## 🎯 Benefícios
+### Estrutura de uma Story
+```typescript
+const meta: Meta = {
+  title: 'Design Tokens/Color Palette',
+  component: ColorPalette,
+  parameters: {
+    docs: {
+      description: {
+        component: 'Documentação completa das paletas de cores.',
+      },
+    },
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+};
 
-1. **Foco claro** - Documenta apenas design tokens
-2. **Manutenção fácil** - Estrutura simples e organizada
-3. **Performance** - Storybook leve e rápido
-4. **Documentação visual** - Visualização interativa de todos os tokens
-5. **Reutilização** - Tokens podem ser usados em múltiplos projetos
+export default meta;
+type Story = StoryObj;
 
-## Referências
+export const LightTheme: Story = {
+  name: 'Light Theme',
+  parameters: {
+    backgrounds: { default: 'light' },
+  },
+};
 
-- [05-STORYBOOK.md](./05-STORYBOOK.md) - Documentação completa do Storybook
-- [03-ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura geral da biblioteca
-- [04-SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build dos tokens
+export const DarkTheme: Story = {
+  name: 'Dark Theme (Cyberpunk)',
+  parameters: {
+    backgrounds: { default: 'dark' },
+  },
+};
+```
+
+## 🔄 Separação de Responsabilidades
+
+### Storybook da Lib (Tokens)
+- **Localização**: `rainer-design-tokens`
+- **Porta**: `http://localhost:6006`
+- **Foco**: Apenas tokens
+- **Deploy**: Chromatic/Docs
+
+### Storybook do Frontend (Componentes)
+- **Localização**: `rainer-portfolio-frontend`
+- **Porta**: `http://localhost:6007`
+- **Foco**: Componentes UI
+- **Deploy**: Vercel/Netlify
+
+### Comunicação entre eles
+```typescript
+// Frontend usa tokens da lib
+import { tokens } from '@rainersoft/design-tokens';
+
+// Componente no frontend
+export const Button = () => (
+  <button style={{ 
+    padding: tokens.primitives.spacing['4'],
+    background: tokens.semantics.colors.brand.primary 
+  }}>
+    Click me
+  </button>
+);
+```
+
+## 🚀 Deploy e Publicação
+
+### Chromatic (Recomendado)
+```bash
+# Publicar automaticamente
+pnpm chromatic
+
+# Apenas mudanças
+pnpm chromatic --only-changed
+
+# Com build
+pnpm build-storybook && pnpm chromatic
+```
+
+### GitHub Pages
+```yaml
+# .github/workflows/storybook.yml
+- name: Build Storybook
+  run: pnpm build-storybook
+
+- name: Deploy to GitHub Pages
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./storybook-static
+```
+
+## 📊 Métricas e Analytics
+
+### Lighthouse CI
+```yaml
+- name: Lighthouse CI
+  run: |
+    npm install -g @lhci/cli
+    lhci autorun
+```
+
+### Visual Regression Tests
+```bash
+# Com Chromatic
+pnpm chromatic --review-changes
+
+# Com Loki
+pnpm loki test
+```
+
+## 🔧 Debug e Troubleshooting
+
+### Problemas Comuns
+
+#### Stories não aparecem
+```bash
+# Verificar estrutura
+ls -la stories/
+
+# Reiniciar Storybook
+pnpm storybook --no-manager-cache
+```
+
+#### Tokens não carregam
+```bash
+# Verificar se formats foi gerado
+pnpm run build:formats
+
+# Rebuild completo
+pnpm run build && pnpm storybook
+```
+
+#### Temas não mudam
+```typescript
+// Verificar configuração no preview.tsx
+globalTypes: {
+  theme: { /* configuração correta */ }
+}
+```
+
+## 🔗 Links Relacionados
+
+- [05-STORYBOOK.md](./05-STORYBOOK.md) - Como usar
+- [01-GUIDELINES.md](./01-GUIDELINES.md) - Guidelines
+- [Storybook Docs](https://storybook.js.org/) - Documentação oficial
+
+## 📅 Última Atualização
+
+**Data**: 04 de Janeiro de 2026  
+**Versão**: 2.6.0  
+**Atualização**: Estrutura atualizada com novas stories
 
 ---
 
-**Versão:** 2.6.0
-**Última Atualização:** 04 de Janeiro de 2026
-**Autor:** [object Object]
-**Licença:** MIT
+**Autor**: Rainer Teixeira  
+**Licença**: MIT

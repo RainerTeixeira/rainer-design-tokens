@@ -1,439 +1,517 @@
-# Guia de Contribuição
+# 99-CONTRIBUINDO.md - Guia de Contribuição
+
+## 🎯 Visão Geral
 
 Obrigado por considerar contribuir para `@rainersoft/design-tokens`! Este documento fornece diretrizes e informações sobre como contribuir para o projeto.
 
-## Índice
+## 📋 Índice
 
-- [Código de Conduta](#código-de-conduta)
-- [Como Contribuir](#como-contribuir)
-- [Configuração do Ambiente](#configuração-do-ambiente)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Adicionando Novos Tokens](#adicionando-novos-tokens)
-- [Convenções de Código](#convenções-de-código)
-- [Pull Requests](#pull-requests)
-- [Testes](#testes)
-- [Documentação](#documentação)
+1. [Código de Conduta](#código-de-conduta)
+2. [Como Contribuir](#como-contribuir)
+3. [Configuração do Ambiente](#configuração-do-ambiente)
+4. [Estrutura do Projeto](#estrutura-do-projeto)
+5. [Adicionando Novos Tokens](#adicionando-novos-tokens)
+6. [Convenções de Código](#convenções-de-código)
+7. [Pull Requests](#pull-requests)
+8. [Testes](#testes)
+9. [Documentação](#documentação)
+10. [Lançamentos](#lançamentos)
 
-## Código de Conduta
+---
 
-Este projeto segue um código de conduta. Ao participar, você concorda em manter este código. Por favor, seja respeitoso e profissional em todas as interações.
+## 🤝 Código de Conduta
 
-## Como Contribuir
+Este projeto segue um código de conduta. Ao participar, você concorda em manter um ambiente:
+- Respeitoso e inclusivo
+- Colaborativo e construtivo
+- Livre de assédio ou discriminação
+- Focado no bem comum
+
+Reporte problemas para: conduct@rainersoft.com
+
+---
+
+## 🚀 Como Contribuir
 
 ### Reportar Bugs
 
-Se você encontrou um bug:
-
-1. Verifique se o bug já não foi reportado nas [Issues](https://github.com/RainerTeixeira/rainer-design-tokens/issues)
-2. Se não foi reportado, crie uma nova issue com:
+1. **Verificar issues existentes** em [GitHub Issues](https://github.com/RainerTeixeira/rainer-design-tokens/issues)
+2. **Criar nova issue** com:
+   - Título descritivo
    - Descrição clara do problema
    - Passos para reproduzir
-   - Comportamento esperado vs. comportamento atual
+   - Comportamento esperado vs atual
    - Versão da biblioteca
-   - Ambiente (Node.js, npm, etc.)
+   - Ambiente (Node.js, OS, etc.)
 
 ### Sugerir Funcionalidades
 
-Para sugerir novas funcionalidades:
-
-1. Verifique se a funcionalidade já não foi sugerida
-2. Crie uma issue descrevendo:
-   - O problema que a funcionalidade resolveria
-   - Como você imagina que funcionaria
-   - Exemplos de uso
+1. **Verificar sugestões existentes**
+2. **Criar issue** com:
+   - Problema a resolver
+   - Solução proposta
+   - Casos de uso
+   - Exemplos
 
 ### Contribuir com Código
 
 1. **Fork o repositório**
-2. **Crie uma branch** para sua feature ou correção:
+2. **Criar branch**:
    ```bash
    git checkout -b feature/nome-da-feature
    # ou
-   git checkout -b fix/nome-da-correcao
+   git checkout -b fix/correcao-do-bug
    ```
-3. **Faça suas alterações**
-4. **Teste suas alterações**:
-   ```bash
-   pnpm test
-   pnpm run type-check
-   pnpm run lint
-   pnpm run build
-   ```
-5. **Commit suas mudanças** seguindo as [Convenções de Commit](#convenções-de-commit)
-6. **Push para sua branch**:
-   ```bash
-   git push origin feature/nome-da-feature
-   ```
-7. **Abra um Pull Request** com descrição clara das mudanças
+3. **Fazer as mudanças**
+4. **Commit** seguindo convenções
+5. **Push** para seu fork
+6. **Criar Pull Request**
 
-## Configuração do Ambiente
+---
+
+## ⚙️ Configuração do Ambiente
 
 ### Pré-requisitos
-
-- Node.js >= 18.0.0
-- pnpm >= 9.0.0 (ou npm/yarn)
+- Node.js 18+
+- pnpm 8+
 - Git
 
 ### Setup Inicial
-
 ```bash
-# Clone o repositório
-git clone https://github.com/RainerTeixeira/rainer-design-tokens.git
+# Clonar seu fork
+git clone https://github.com/SEU-USERNAME/rainer-design-tokens.git
 cd rainer-design-tokens
 
-# Instale as dependências
+# Adicionar upstream
+git remote add upstream https://github.com/RainerTeixeira/rainer-design-tokens.git
+
+# Instalar dependências
 pnpm install
 
-# Verifique se tudo está funcionando
+# Build inicial
 pnpm run build
-pnpm test
+
+# Iniciar desenvolvimento
+pnpm run dev
 ```
 
-### Scripts Disponíveis
-
+### Ambiente de Desenvolvimento
 ```bash
-# Build de produção
-pnpm run build
+# Gerar formatos
+pnpm run build:formats
 
-# Build em modo watch (desenvolvimento)
-pnpm run dev
-
-# Verificação de tipos TypeScript
-pnpm run type-check
-
-# Linting
-pnpm run lint
+# Storybook local
+pnpm run storybook
 
 # Testes
-pnpm test
+pnpm run test
 
-# Testes em watch mode
-pnpm run test:watch
+# Validação completa
+pnpm run validate
+```
 
-# Testes com cobertura
-pnpm run test:coverage
+---
 
-# Gerar tokens em diferentes formatos
-pnpm run generate:tokens
+## 📁 Estrutura do Projeto
 
-# Validar tokens
+```
+rainer-design-tokens/
+├── 📁 tokens/              # Tokens JSON (NÃO EDITE formats/)
+│   ├── 📁 primitives/     # Tokens base
+│   ├── 📁 semantics/      # Tokens semânticos
+│   └── 📁 themes/         # Configurações de temas
+├── 📁 scripts/            # Scripts de build
+│   ├── compile-formats.ts # Geração de formatos
+│   └── generate-all.ts    # Orquestrador
+├── 📁 formats/            # GERADOS (NÃO EDITE)
+├── 📁 themes/             # Temas TypeScript
+├── 📁 stories/            # Stories do Storybook
+├── 📁 tests/              # Testes
+├── 📁 docs/               # Documentação
+└── 📁 dist/               # Build para publicação
+```
+
+---
+
+## 🎨 Adicionando Novos Tokens
+
+### 1. Primitives
+
+#### Nova Cor
+```json
+// tokens/primitives/color-palette.json
+{
+  "corNova": {
+    "50": "#f0f9ff",
+    "100": "#e0f2fe",
+    "500": "#0ea5e9",
+    "900": "#0c4a6e"
+  }
+}
+```
+
+#### Novo Espaçamento
+```json
+// tokens/primitives/spacing-scale.json
+{
+  "72": "18rem",
+  "80": "20rem"
+}
+```
+
+### 2. Semantics
+
+#### Nova Cor Semântica
+```json
+// tokens/semantics/color-roles.json
+{
+  "novaFuncao": {
+    "primary": "{primitives.corNova.500}",
+    "light": "{primitives.corNova.100}",
+    "dark": "{primitives.corNova.900}"
+  }
+}
+```
+
+### 3. Referências
+
+Use referências `{path.to.token}`:
+```json
+{
+  "background": "{primitives.gray.50}",
+  "text": "{semantics.text.primary}"
+}
+```
+
+### 4. Validação
+
+```bash
+# Validar JSON
 pnpm run validate:tokens
+
+# Gerar formatos
+pnpm run build:formats
+
+# Verificar no Storybook
+pnpm run storybook
 ```
 
-## Estrutura do Projeto
+---
 
+## 📝 Convenções de Código
+
+### Commits
+
+Use [Conventional Commits](https://www.conventionalcommits.org/):
+
+```bash
+feat: add new color palette
+fix: resolve token reference issue
+docs: update installation guide
+style: fix linting errors
+refactor: improve build performance
+test: add token validation tests
+chore: update dependencies
 ```
-@rainersoft/design-tokens/
-├── src/
-│   ├── index.ts                    # Exports principais (tokens legacy)
-│   ├── css.ts                      # Utilitários CSS (re-export)
-│   ├── tailwind.ts                 # Integração Tailwind CSS
-│   ├── formats/                    # Formatos de exportação
-│   │   ├── css.ts                  # Exportação CSS custom properties
-│   │   └── w3c.ts                  # Exportação formato W3C
-│   ├── tokens/                     # Tokens organizados
-│   │   ├── primitives/             # Tokens primitivos
-│   │   │   ├── colors.ts           # Cores primitivas
-│   │   │   ├── spacing.ts          # Espaçamentos primitivos
-│   │   │   ├── typography.ts       # Tipografia primitiva
-│   │   │   └── index.ts            # Exports primitivos
-│   │   └── semantic/               # Tokens semânticos
-│   │       ├── colors.ts           # Cores semânticas
-│   │       ├── spacing.ts          # Espaçamentos semânticos
-│   │       ├── typography.ts       # Tipografia semântica
-│   │       └── index.ts            # Exports semânticos
-│   ├── types/                      # Definições de tipos
-│   │   └── index.ts                # Tipos principais
-│   └── utils/                      # Utilitários
-│       └── validation.ts           # Validação de tokens
-├── dist/                           # Build output (gerado)
-├── docs/                           # Documentação
-│   ├── ARCHITECTURE.md             # Arquitetura
-│   ├── GUIDE.md                    # Guia de uso
-│   ├── SETUP.md                    # Guia de setup
-│   ├── PRIMITIVES.md               # Tokens primitivos
-│   ├── SEMANTIC.md                 # Tokens semânticos
-│   └── TOOLS.md                    # Ferramentas
-├── tests/                          # Testes
-│   ├── formats/                    # Testes de formatos
-│   ├── tokens/                     # Testes de tokens
-│   └── utils/                      # Testes de utilitários
-├── scripts/                        # Scripts de build
-└── package.json                    # Configuração do pacote
-```
-
-## Adicionando Novos Tokens
-
-### Tokens Primitivos
-
-Para adicionar novos tokens primitivos:
-
-1. **Escolha o arquivo apropriado** em `src/tokens/primitives/`:
-   - `colors.ts` - Para novas paletas de cores
-   - `spacing.ts` - Para novos valores de espaçamento
-   - `typography.ts` - Para novos valores tipográficos
-
-2. **Siga o padrão existente**:
-   ```typescript
-   /**
-    * Paleta de cores base - Cores [nome].
-    * 
-    * @description Descrição da paleta de cores
-    */
-   export const COLOR_NOME = {
-     50: '#valor',
-     100: '#valor',
-     // ... seguindo a escala padrão
-     950: '#valor',
-   } as const;
-   ```
-
-3. **Exporte no index**:
-   ```typescript
-   // src/tokens/primitives/index.ts
-   export * from './colors';
-   export * from './spacing';
-   export * from './typography';
-   ```
-
-### Tokens Semânticos
-
-Para adicionar novos tokens semânticos:
-
-1. **Escolha o arquivo apropriado** em `src/tokens/semantic/`:
-   - `colors.ts` - Para cores semânticas
-   - `spacing.ts` - Para espaçamentos semânticos
-   - `typography.ts` - Para tipografia semântica
-
-2. **Referencie tokens primitivos**:
-   ```typescript
-   import { COLOR_CYAN } from '../primitives/colors';
-   
-   export const SEMANTIC_COLORS = {
-     light: {
-       brand: {
-         primary: COLOR_CYAN[600],
-         // ...
-       },
-     },
-     dark: {
-       brand: {
-         primary: COLOR_CYAN[400],
-         // ...
-       },
-     },
-   } as const;
-   ```
-
-### Tokens Legacy
-
-Para manter compatibilidade retroativa, tokens legacy podem ser adicionados em `src/index.ts`:
-
-```typescript
-/**
- * Tokens de [Categoria] - [Descrição]
- * 
- * @description Descrição detalhada dos tokens
- */
-export const TOKEN_NAME = {
-  VALUE_1: 'valor1',
-  VALUE_2: 'valor2',
-} as const;
-```
-
-## Convenções de Código
-
-### Nomenclatura
-
-- **Constantes**: `UPPER_SNAKE_CASE` para valores de enum
-- **Objetos de Tokens**: `PascalCase` para nomes de objetos
-- **Funções**: `camelCase` para funções
-- **Tipos**: `PascalCase` para tipos TypeScript
 
 ### TypeScript
 
-- Use `as const` para todos os tokens
-- Exporte tipos para todos os tokens quando apropriado
-- Use tipos explícitos quando necessário
-- Evite `any` - use `unknown` se necessário
-
-### Documentação
-
-- **JSDoc obrigatório** para todos os tokens exportados
-- **Descrições claras** em português profissional
-- **Exemplos de uso** quando apropriado
-- **Tags apropriadas** (`@description`, `@example`, etc.)
-
-Exemplo:
-
 ```typescript
+// Use tipos explícitos
+const spacing: SpacingToken = tokens.primitives.spacing;
+
+// Interfaces bem documentadas
+interface TokenSet {
+  colors: ColorSet;
+  spacing: SpacingSet;
+}
+
+// Comentários JSDoc
 /**
- * Tokens de Animação - Durações em Milissegundos
- * 
- * @description Fornece valores de duração de animação em milissegundos
- * para uso em bibliotecas de animação como Framer Motion.
- * 
- * @example
- * ```tsx
- * import { ANIMATION_DURATION_MS } from '@rainersoft/design-tokens';
- * 
- * <motion.div
- *   transition={{ duration: ANIMATION_DURATION_MS.NORMAL }}
- * >
- *   Conteúdo animado
- * </motion.div>
- * ```
+ * Resolve token references
+ * @param path - Token path (e.g., 'primitives.colors.cyan.500')
+ * @returns Resolved value
  */
-export const ANIMATION_DURATION_MS = {
-  FAST: 150,
-  NORMAL: 300,
-  SLOW: 500,
-} as const;
+function resolveToken(path: string): string {
+  // implementation
+}
 ```
 
-### Formatação
+### JSON
 
-- Use 2 espaços para indentação
-- Use ponto e vírgula
-- Use aspas simples para strings
-- Mantenha linhas com máximo de 100 caracteres quando possível
-
-## Convenções de Commit
-
-Seguimos o padrão [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-<tipo>(<escopo>): <descrição>
-
-[corpo opcional]
-
-[rodapé opcional]
+```json
+{
+  "$description": "Primary brand colors",
+  "$type": "color",
+  "cyan": {
+    "$description": "Cyan color palette",
+    "50": {
+      "$value": "#ecfeff",
+      "$description": "Lightest cyan"
+    }
+  }
+}
 ```
 
-### Tipos
+---
 
-- `feat`: Nova funcionalidade
-- `fix`: Correção de bug
-- `docs`: Mudanças na documentação
-- `style`: Formatação, ponto e vírgula faltando, etc.
-- `refactor`: Refatoração de código
-- `test`: Adição ou correção de testes
-- `chore`: Mudanças em build, dependências, etc.
+## 🔍 Pull Requests
 
-### Exemplos
+### Antes de Abrir PR
 
-```bash
-feat(tokens): adiciona novos tokens de gradiente
-fix(validation): corrige validação de cores hex
-docs(guide): atualiza guia de uso com novos exemplos
-refactor(css): refatora geração de CSS custom properties
-test(colors): adiciona testes para paleta de cores ciano
-```
+1. **Testes passando**:
+   ```bash
+   pnpm run test
+   pnpm run validate
+   ```
 
-## Pull Requests
+2. **Build funcionando**:
+   ```bash
+   pnpm run build
+   ```
 
-### Checklist Antes de Submeter
+3. **Documentação atualizada** (se necessário)
 
-- [ ] Código segue as convenções do projeto
-- [ ] Testes passam (`pnpm test`)
-- [ ] Type check passa (`pnpm run type-check`)
-- [ ] Lint passa (`pnpm run lint`)
-- [ ] Build passa (`pnpm run build`)
-- [ ] **`dist/` atualizado e commitado** (veja [11-PUBLICACAO.md](./11-PUBLICACAO.md#-por-que-dist-está-commitado))
-- [ ] Documentação atualizada
-- [ ] JSDoc adicionado/atualizado
-- [ ] Commits seguem o padrão Conventional Commits
+4. **Commits seguindo convenções**
 
-### Template de Pull Request
+### Template de PR
 
 ```markdown
 ## Descrição
-Breve descrição das mudanças
+Breve descrição das mudanças.
 
 ## Tipo de Mudança
 - [ ] Bug fix
-- [ ] Nova funcionalidade
+- [ ] New feature
 - [ ] Breaking change
-- [ ] Documentação
+- [ ] Documentation update
+
+## Motivação
+Por que esta mudança é necessária?
 
 ## Como Testar
-Passos para testar as mudanças:
-1. ...
-2. ...
+Passos para testar as mudanças.
+
+## Screenshots
+Se aplicável, adicione screenshots.
 
 ## Checklist
-- [ ] Código testado
+- [ ] Código segue style guide
+- [ ] Auto-formatação aplicada
+- [ ] Testes adicionados/atualizados
 - [ ] Documentação atualizada
-- [ ] Sem breaking changes (ou documentados)
+- [ ] Build passa
 ```
 
-## Testes
+### Processo de Review
 
-### Adicionando Testes
+1. **Auto-review**: Verifique seu próprio PR
+2. **CI checks**: Aguarde validações automáticas
+3. **Peer review**: Mantenha-se disponível para feedback
+4. **Aprovação**: Mínimo 1 aprovação necessária
+5. **Merge**: Após aprovação, mantenha seu fork atualizado
 
-1. **Crie arquivo de teste** em `tests/` seguindo a estrutura de `src/`
-2. **Use Jest** como framework de testes
-3. **Cubra casos importantes**:
-   - Valores corretos
-   - Casos extremos
-   - Validações
+---
 
-Exemplo:
+## 🧪 Testes
 
+### Tipos de Testes
+
+#### Unitários
 ```typescript
-import { COLOR_CYAN } from '../../src/tokens/primitives/colors';
-
-describe('COLOR_CYAN', () => {
-  it('deve ter todos os valores de escala', () => {
-    expect(COLOR_CYAN[50]).toBe('#ecfeff');
-    expect(COLOR_CYAN[500]).toBe('#06b6d4');
-    expect(COLOR_CYAN[950]).toBe('#164e63');
-  });
-
-  it('deve ter valores hex válidos', () => {
-    Object.values(COLOR_CYAN).forEach(color => {
-      expect(color).toMatch(/^#[0-9a-f]{6}$/i);
+// tests/tokens/color.test.ts
+describe('Color Tokens', () => {
+  test('should have valid hex colors', () => {
+    const colors = tokens.primitives.colors;
+    Object.values(colors).forEach(palette => {
+      Object.values(palette).forEach(color => {
+        expect(color).toMatch(/^#[0-9a-fA-F]{6}$/);
+      });
     });
   });
 });
 ```
 
-## Documentação
+#### Integração
+```typescript
+// tests/build/format-generation.test.ts
+describe('Format Generation', () => {
+  test('should generate valid CSS', () => {
+    const css = generateCSS(tokens);
+    expect(css).toContain('--color-cyan-500');
+  });
+});
+```
 
-### Atualizando Documentação
+#### Visuais
+- Storybook stories
+- Chromatic visual tests
+- Screenshot comparisons
 
-Ao adicionar novos tokens ou funcionalidades:
+### Executando Testes
 
-1. **Atualize o README.md** se necessário
-2. **Atualize os arquivos em `docs/`**:
-   - `PRIMITIVES.md` - Para tokens primitivos
-   - `SEMANTIC.md` - Para tokens semânticos
-   - `GUIDE.md` - Para novos exemplos de uso
-3. **Adicione exemplos** quando apropriado
-4. **Mantenha consistência** com o estilo existente
+```bash
+# Todos os testes
+pnpm run test
 
-### Estilo de Documentação
+# Watch mode
+pnpm run test:watch
 
-- Use português profissional
-- Seja claro e conciso
-- Inclua exemplos práticos
-- Mantenha formatação consistente
+# Cobertura
+pnpm run test:coverage
 
-## Dúvidas?
-
-Se você tiver dúvidas sobre como contribuir:
-
-1. Verifique a [documentação](./00-INDICE.md)
-2. Abra uma [issue](https://github.com/RainerTeixeira/rainer-design-tokens/issues) com a tag `question`
-3. Entre em contato com os mantenedores
-
-## Agradecimentos
-
-Obrigado por contribuir para `@rainersoft/design-tokens`! Sua contribuição ajuda a tornar esta biblioteca melhor para todos.
+# CI mode
+pnpm run test:ci
+```
 
 ---
 
-**Versão:** 2.6.0
-**Última Atualização:** 04 de Janeiro de 2026
-**Autor:** [object Object]
-**Licença:** MIT
+## 📚 Documentação
+
+### Tipos de Documentação
+
+#### API Docs
+```typescript
+/**
+ * Theme interface for design tokens
+ * @interface Theme
+ * @property {Object} colors - Color definitions
+ * @property {Object} spacing - Spacing definitions
+ */
+export interface Theme {
+  colors: ColorSet;
+  spacing: SpacingSet;
+}
+```
+
+#### Guides
+- Como usar tokens
+- Guia de migração
+- Best practices
+
+#### Stories do Storybook
+```typescript
+const meta: Meta = {
+  title: 'Design Tokens/Color Palette',
+  component: ColorPalette,
+  parameters: {
+    docs: {
+      description: 'Complete color palette documentation'
+    }
+  }
+};
+```
+
+### Atualizando Documentação
+
+1. **Docs em `docs/`**:
+   - Markdown files
+   - Exemplos de código
+   - Diagramas
+
+2. **Code comments**:
+   - JSDoc para APIs públicas
+   - Comentários inline para lógica complexa
+
+3. **README**:
+   - Mantenha atualizado
+   - Exemplos de instalação/use
+
+---
+
+## 🚀 Lançamentos
+
+### Versionamento
+
+- **Major**: Breaking changes
+- **Minor**: Novas features
+- **Patch**: Bug fixes
+
+### Processo de Release
+
+1. **Preparação**:
+   ```bash
+   pnpm run build:tokens  # Gera changelog
+   pnpm run validate
+   ```
+
+2. **Version bump**:
+   ```bash
+   npm version patch|minor|major
+   ```
+
+3. **Release**:
+   ```bash
+   npm publish
+   git push --tags
+   ```
+
+### Release Notes
+
+- Use formato Keep a Changelog
+- Inclua breaking changes
+- Mencione novas features
+- Agradeça contribuidores
+
+---
+
+## 🏆 Reconhecimento
+
+### Contribuidores
+
+Todos os contribuidores são listados:
+- No README
+- Em releases
+- No site (se aplicável)
+
+### Tipos de Contribuição
+
+- 💻 Código
+- 📖 Documentação
+- 🐛 Bug reports
+- 💡 Ideias
+- 🎨 Design
+- 📣 Divulgação
+
+---
+
+## 🆘 Ajuda
+
+### Onde Pedir Ajuda
+
+1. **GitHub Discussions** - Perguntas gerais
+2. **GitHub Issues** - Bugs e features
+3. **Discord** - Chat em tempo real
+4. **Email** - support@rainersoft.com
+
+### Recursos
+
+- [Documentação completa](./00-INDICE.md)
+- [Guia de migração](./15-GUIA_MIGRACAO.md)
+- [Roadmap](./14-ROADMAP.md)
+
+---
+
+## 📄 Licença
+
+Ao contribuir, você concorda que suas contribuições serão licenciadas sob a [MIT License](LICENSE).
+
+---
+
+## 🔗 Links Úteis
+
+- [GitHub Repository](https://github.com/RainerTeixeira/rainer-design-tokens)
+- [NPM Package](https://www.npmjs.com/package/@rainersoft/design-tokens)
+- [Storybook](https://rainer-design-tokens.storybook.io)
+
+## 📅 Última Atualização
+
+**Data**: 04 de Janeiro de 2026  
+**Versão**: 2.6.0
+
+---
+
+**Obrigado por contribuir! 🎉**
+
+**Autor**: Rainer Teixeira  
+**Licença**: MIT

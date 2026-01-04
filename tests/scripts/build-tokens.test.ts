@@ -14,7 +14,7 @@ import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
 
-const rootDir = join(__dirname, '..', '..');
+const rootDir = join(__dirname, '..', '..', '..');
 
 describe('build-tokens.ts', () => {
   const scriptsDir = join(rootDir, 'scripts');
@@ -30,8 +30,11 @@ describe('build-tokens.ts', () => {
     it('deve gerar radius-scale.json', () => {
       const radiusPath = join(tokensDir, 'primitives', 'radius-scale.json');
       
-      // Executar script
-      execSync(`npx tsx "${join(scriptsDir, 'build-tokens.ts')}"`, { stdio: 'pipe' });
+      // Usar caminho relativo ao invés de absoluto
+      execSync('npx tsx scripts/build-tokens.ts', { 
+        stdio: 'pipe',
+        cwd: rootDir 
+      });
       
       expect(existsSync(radiusPath)).toBe(true);
       
@@ -119,8 +122,8 @@ describe('build-tokens.ts', () => {
   });
 
   describe('📝 Geração de Changelog', () => {
-    it('deve gerar docs/98- CHANGELOG.md', () => {
-      const changelogPath = join(rootDir, 'docs', '98- CHANGELOG.md');
+    it('deve gerar CHANGELOG.md', () => {
+      const changelogPath = join(rootDir, 'CHANGELOG.md');
       
       execSync(`npx tsx "${join(scriptsDir, 'build-tokens.ts')}"`, { stdio: 'pipe' });
       
