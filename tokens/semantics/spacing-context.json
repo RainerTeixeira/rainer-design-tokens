@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens semânticos de espaçamento - Espaçamentos organizados por contexto e função",
+  "_comments": {
+    "spacing": "Espaçamentos organizados por contexto de uso no sistema",
+    "component": "Espaçamentos internos de componentes",
+    "layout": "Espaçamentos para estrutura de layout",
+    "section": "Espaçamentos entre seções e grupos",
+    "stack": "Espaçamentos para elementos empilhados",
+    "inline": "Espaçamentos para elementos inline",
+    "inset": "Espaçamentos internos (padding-like)",
+    "gap": "Espaçamentos entre elementos relacionados"
+  },
+  "spacing": {
+    "component": {
+      "tight": "{spacing.1}",
+      "compact": "{spacing.2}",
+      "comfortable": "{spacing.3}",
+      "relaxed": "{spacing.4}",
+      "loose": "{spacing.6}"
+    },
+    "layout": {
+      "xs": "{spacing.4}",
+      "sm": "{spacing.6}",
+      "md": "{spacing.8}",
+      "lg": "{spacing.12}",
+      "xl": "{spacing.16}",
+      "2xl": "{spacing.24}"
+    },
+    "section": {
+      "xs": "{spacing.8}",
+      "sm": "{spacing.12}",
+      "md": "{spacing.16}",
+      "lg": "{spacing.24}",
+      "xl": "{spacing.32}",
+      "2xl": "{spacing.48}"
+    },
+    "stack": {
+      "xs": "{spacing.1}",
+      "sm": "{spacing.2}",
+      "md": "{spacing.4}",
+      "lg": "{spacing.6}",
+      "xl": "{spacing.8}"
+    },
+    "inline": {
+      "xs": "{spacing.1}",
+      "sm": "{spacing.2}",
+      "md": "{spacing.3}",
+      "lg": "{spacing.4}"
+    },
+    "inset": {
+      "none": "{spacing.0}",
+      "xs": "{spacing.2}",
+      "sm": "{spacing.3}",
+      "md": "{spacing.4}",
+      "lg": "{spacing.6}",
+      "xl": "{spacing.8}",
+      "2xl": "{spacing.12}"
+    },
+    "gap": {
+      "none": "{spacing.0}",
+      "xs": "{spacing.1}",
+      "sm": "{spacing.2}",
+      "md": "{spacing.4}",
+      "lg": "{spacing.6}",
+      "xl": "{spacing.8}"
+    },
+    "container": {
+      "padding": {
+        "xs": "{spacing.4}",
+        "sm": "{spacing.6}",
+        "md": "{spacing.8}",
+        "lg": "{spacing.12}",
+        "xl": "{spacing.16}"
+      },
+      "margin": {
+        "xs": "{spacing.4}",
+        "sm": "{spacing.8}",
+        "md": "{spacing.12}",
+        "lg": "{spacing.16}",
+        "xl": "{spacing.24}"
+      }
+    }
+  },
+  "_notes": {
+    "component": {
+      "tight": "Espaçamento mínimo dentro de componentes pequenos (badges, tags) - referencia: spacing.1",
+      "compact": "Espaçamento compacto para elementos densos (tabelas, listas) - referencia: spacing.2",
+      "comfortable": "Espaçamento confortável padrão para maioria dos componentes - referencia: spacing.3",
+      "relaxed": "Espaçamento relaxado para elementos importantes (cards, modais) - referencia: spacing.4",
+      "loose": "Espaçamento generoso para elementos de destaque - referencia: spacing.6"
+    },
+    "layout": {
+      "xs": "Espaçamento mínimo entre elementos de layout - referencia: spacing.4",
+      "sm": "Espaçamento pequeno para layouts compactos - referencia: spacing.6",
+      "md": "Espaçamento médio padrão para layouts - referencia: spacing.8",
+      "lg": "Espaçamento grande para layouts espaçosos - referencia: spacing.12",
+      "xl": "Espaçamento extra grande para layouts amplos - referencia: spacing.16",
+      "2xl": "Espaçamento máximo para layouts hero - referencia: spacing.24"
+    },
+    "section": {
+      "xs": "Espaçamento mínimo entre seções - referencia: spacing.8",
+      "sm": "Espaçamento pequeno para seções relacionadas - referencia: spacing.12",
+      "md": "Espaçamento médio padrão entre seções - referencia: spacing.16",
+      "lg": "Espaçamento grande para separação clara de seções - referencia: spacing.24",
+      "xl": "Espaçamento extra grande para seções principais - referencia: spacing.32",
+      "2xl": "Espaçamento máximo para seções hero - referencia: spacing.48"
+    },
+    "stack": {
+      "xs": "Espaçamento mínimo entre elementos empilhados - referencia: spacing.1",
+      "sm": "Espaçamento pequeno para stacks compactos - referencia: spacing.2",
+      "md": "Espaçamento médio padrão para stacks - referencia: spacing.4",
+      "lg": "Espaçamento grande para stacks espaçosos - referencia: spacing.6",
+      "xl": "Espaçamento extra grande para stacks destacados - referencia: spacing.8"
+    },
+    "inline": {
+      "xs": "Espaçamento mínimo entre elementos inline - referencia: spacing.1",
+      "sm": "Espaçamento pequeno para elementos inline - referencia: spacing.2",
+      "md": "Espaçamento médio padrão para elementos inline - referencia: spacing.3",
+      "lg": "Espaçamento grande para elementos inline destacados - referencia: spacing.4"
+    },
+    "inset": {
+      "none": "Sem espaçamento interno - referencia: spacing.0",
+      "xs": "Padding muito pequeno - referencia: spacing.2",
+      "sm": "Padding pequeno - referencia: spacing.3",
+      "md": "Padding médio padrão - referencia: spacing.4",
+      "lg": "Padding grande - referencia: spacing.6",
+      "xl": "Padding extra grande - referencia: spacing.8",
+      "2xl": "Padding máximo - referencia: spacing.12"
+    },
+    "gap": {
+      "none": "Sem gap entre elementos - referencia: spacing.0",
+      "xs": "Gap muito pequeno (grids densos) - referencia: spacing.1",
+      "sm": "Gap pequeno (listas compactas) - referencia: spacing.2",
+      "md": "Gap médio padrão (grids padrão) - referencia: spacing.4",
+      "lg": "Gap grande (grids espaçosos) - referencia: spacing.6",
+      "xl": "Gap extra grande (grids destacados) - referencia: spacing.8"
+    },
+    "container": {
+      "padding": "Padding interno de containers - referencia: spacing.*",
+      "margin": "Margem externa de containers - referencia: spacing.*"
+    }
+  }
+}

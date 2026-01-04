@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/theme.json",
+  "$description": "Z-index layer system - Organized stacking context",
+  "$generated": "This file is auto-generated. Do not edit manually.",
+  "$source": "design system layer standards",
+  "zIndex": {
+    "base": 0,
+    "content": 100,
+    "overlay": 200,
+    "dropdown": 300,
+    "modal": 400,
+    "tooltip": 500,
+    "notification": 600,
+    "max": 9999
+  },
+  "layers": {
+    "description": "Sistema de camadas para stacking context",
+    "base": "Elementos base do layout",
+    "content": "Conteúdo normal da página",
+    "overlay": "Overlays simples e backgrounds",
+    "dropdown": "Menus dropdowns e popups",
+    "modal": "Modais e dialogs",
+    "tooltip": "Tooltips e hints",
+    "notification": "Notificações e alerts",
+    "max": "Valor máximo para override emergencial"
+  },
+  "usage": {
+    "recommendation": "Use sempre valores do sistema, evite números mágicos",
+    "example": {
+      "modal": "z-index: var(--z-index-modal)",
+      "tooltip": "z-index: var(--z-index-tooltip)"
+    }
+  }
+}

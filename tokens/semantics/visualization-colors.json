@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens semânticos de cores para visualizações - Cores para gráficos, charts e dashboards",
+  "_comments": {
+    "chart": "Cores otimizadas para gráficos e visualizações de dados",
+    "categorical": "Cores distintas para séries de dados categóricos",
+    "sequential": "Cores para escalas sequenciais (gradientes)",
+    "divergent": "Cores para escalas divergentes (positivo/negativo)"
+  },
+  "visualization": {
+    "chart": {
+      "primary": "{palette.blue.500}",
+      "secondary": "{palette.green.500}",
+      "tertiary": "{palette.purple.500}",
+      "quaternary": "{palette.red.400}",
+      "quinary": "{palette.blue.300}",
+      "senary": "{palette.green.400}"
+    },
+    "categorical": {
+      "1": "{palette.blue.500}",
+      "2": "{palette.green.500}",
+      "3": "{palette.purple.500}",
+      "4": "{palette.red.400}",
+      "5": "{palette.blue.300}",
+      "6": "{palette.green.400}"
+    },
+    "area": {
+      "fill": "{palette.purple.500}",
+      "stroke": "{palette.purple.500}",
+      "fillOpacity": "0.3"
+    },
+    "bar": {
+      "primary": "{palette.blue.500}",
+      "secondary": "{palette.green.500}",
+      "hover": "{palette.blue.600}"
+    },
+    "pie": {
+      "1": "{palette.blue.500}",
+      "2": "{palette.green.500}",
+      "3": "{palette.purple.500}",
+      "4": "{palette.red.400}",
+      "5": "{palette.blue.300}",
+      "6": "{palette.green.400}"
+    },
+    "line": {
+      "primary": "{palette.blue.500}",
+      "secondary": "{palette.purple.500}",
+      "tertiary": "{palette.green.500}"
+    }
+  },
+  "_notes": {
+    "chart": {
+      "primary": "Cor principal para gráficos - referencia: palette.blue.500",
+      "secondary": "Cor secundária para gráficos - referencia: palette.green.500",
+      "tertiary": "Cor terciária para gráficos - referencia: palette.purple.500",
+      "quaternary": "Quarta cor para gráficos - referencia: palette.red.400",
+      "quinary": "Quinta cor para gráficos - referencia: palette.blue.300",
+      "senary": "Sexta cor para gráficos - referencia: palette.green.400"
+    },
+    "categorical": "Cores para dados categóricos em séries, garantindo distinção visual clara",
+    "area": "Cores para gráficos de área com preenchimento semi-transparente",
+    "bar": "Cores para gráficos de barras com estados hover",
+    "pie": "Cores para gráficos de pizza/torta com boa distinção",
+    "line": "Cores para gráficos de linha"
+  }
+}

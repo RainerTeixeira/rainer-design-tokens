@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Semantic border tokens - UI border styles referencing primitives",
+  "border": {
+    "divider": {
+      "width": "{primitives.border.width.thin}",
+      "style": "{primitives.border.style.solid}",
+      "color": "{semantics.color.border.default}"
+    },
+    "input": {
+      "width": "{primitives.border.width.thin}",
+      "style": "{primitives.border.style.solid}",
+      "color": "{semantics.color.border.default}",
+      "colorFocus": "{semantics.color.button.primary}",
+      "colorError": "{semantics.color.status.error}",
+      "radius": "{primitives.border.radius.base}"
+    },
+    "card": {
+      "width": "{primitives.border.width.thin}",
+      "style": "{primitives.border.style.solid}",
+      "color": "{semantics.color.border.default}",
+      "radius": "{primitives.border.radius.md}"
+    },
+    "button": {
+      "width": "{primitives.border.width.base}",
+      "style": "{primitives.border.style.solid}",
+      "color": "{semantics.color.button.primary}",
+      "radius": "{primitives.border.radius.sm}"
+    }
+  },
+  "": "Tokens semânticos de borda - Estilos de borda UI referenciando primitivas",
+  "_comments": {
+    "border": "Bordas semânticas para diferentes elementos de UI",
+    "divider": "Bordas para divisores e separadores",
+    "input": "Bordas para campos de input",
+    "button": "Bordas para botões",
+    "card": "Bordas para cards e containers"
+  },
+  "_notes": {
+    "border": {
+      "divider": "Borda sutil para separar seções e conteúdo",
+      "input": {
+        "width": "Borda fina para inputs",
+        "style": "Estilo sólido padrão",
+        "color": "Cor padrão de borda",
+        "colorFocus": "Cor quando input está focado",
+        "colorError": "Cor quando input tem erro"
+      },
+      "button": {
+        "width": "Borda fina para botões",
+        "style": "Estilo sólido padrão",
+        "color": "Cor padrão de borda",
+        "colorHover": "Cor quando mouse está sobre",
+        "colorDisabled": "Cor quando botão está desabilitado"
+      },
+      "card": {
+        "width": "Borda fina para cards",
+        "style": "Estilo sólido padrão",
+        "color": "Cor suave para cards",
+        "colorHover": "Cor quando mouse está sobre card"
+      }
+    }
+  }
+}

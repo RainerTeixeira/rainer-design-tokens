@@ -1,56 +1,86 @@
-# Design Tokens Guidelines
+# 01-GUIDELINES.md - Guidelines de Uso
 
-## 📚 Visão Geral
+## Visão Geral
 
 @rainersoft/design-tokens é uma biblioteca enterprise de tokens de design que define a linguagem visual do RainerSoft Design System. Os tokens são agnósticos de tecnologia e podem ser usados em qualquer projeto (web, mobile, desktop, jogos).
 
-## 🎯 Objetivos
+## Objetivos
 
 - **Consistência**: Uma única fonte de verdade para cores, tipografia, espaçamento
 - **Escalabilidade**: Fácil de manter e expandir
 - **Flexibilidade**: Suporta múltiplos temas (light/dark) e plataformas
 - **Interoperabilidade**: Funciona com Tailwind, CSS, React, etc.
 
-## 📁 Estrutura
+## Estrutura Atual
 
 ```
 @rainersoft/design-tokens/
-├── tokens/          # 🎯 FONTE ÚNICA DE VERDADE (JSON)
-│   ├── colors/      # Paletas light/dark
-│   ├── typography.json
-│   ├── spacing.json
-│   ├── radius.json
-│   └── shadows.json
-├── themes/          # Temas compostos
+├── tokens/                    # FONTE ÚNICA DE VERDADE (JSON)
+│   ├── primitives/           # Tokens primitivos
+│   │   ├── color-palette.json
+│   │   ├── typography-base.json
+│   │   ├── spacing-scale.json
+│   │   ├── radius-scale.json
+│   │   ├── elevation-tokens.json
+│   │   ├── motion-tokens.json
+│   │   ├── breakpoints.json
+│   │   └── z-index-layers.json
+│   ├── semantics/            # Tokens semânticos
+│   │   ├── color-roles.json
+│   │   ├── border-roles.json
+│   │   └── elevation-roles.json
+│   ├── themes/               # Temas
+│   │   ├── theme-light.json
+│   │   └── theme-dark.json
+│   └── index.json           # Export principal
+├── themes/                   # Temas compostos (TypeScript)
 │   ├── light.ts
 │   └── dark.ts
-├── formats/         # 📤 FORMATOS GERADOS (NÃO EDITAR)
+├── formats/                  # FORMATOS GERADOS (NÃO EDITAR)
 │   ├── tailwind.config.ts
 │   ├── css-vars.css
 │   └── tokens.json
-├── scripts/         # 🔧 Scripts de build
-│   └── build-*.ts
-├── .storybook/      # ⚙️ Storybook da lib (tokens)
-└── stories/         # 📚 Stories de tokens
+├── scripts/                  # Scripts de build
+│   ├── compile-formats.ts    # Script principal
+│   ├── generate-all.ts       # Orquestrador
+│   └── generate-*.ts         # Scripts específicos
+├── .storybook/               # Storybook da lib (tokens)
+└── stories/                  # Stories de tokens
 ```
 
-> **Importante**: Edite apenas `tokens/*.json`. Os formatos são gerados automaticamente. Veja [STRUCTURE.md](./STRUCTURE.md) para mais detalhes.
+> **Importante**: Edite apenas `tokens/*.json`. Os formatos são gerados automaticamente. Veja [03-ESTRUTURA.md](./03-ESTRUTURA.md) para mais detalhes.
 
-## 🎨 Uso dos Tokens
+## Instalação
+
+```bash
+# npm
+npm install @rainersoft/design-tokens
+
+# yarn
+yarn add @rainersoft/design-tokens
+
+# pnpm
+pnpm add @rainersoft/design-tokens
+```
+
+## Uso dos Tokens
 
 ### 1. Importação Direta (TypeScript)
 
 ```typescript
 import { tokens } from '@rainersoft/design-tokens';
 
-// Acessar cores
-const primaryColor = tokens.colors.light.brand.primary; // #0891b2
+// Acessar cores primitivas
+const primaryColor = tokens.primitives.colors.brand.primary; // #0891b2
+
+// Acessar cores semânticas
+const backgroundColor = tokens.semantics.colors.background.primary; // #ffffff
 
 // Acessar tipografia
-const baseFontSize = tokens.typography.fontSize.base; // 1rem
+const baseFontSize = tokens.primitives.typography.fontSize.base; // 1rem
 
 // Acessar espaçamento
-const spacing4 = tokens.spacing['4']; // 1rem
+const spacing4 = tokens.primitives.spacing['4']; // 1rem
 ```
 
 ### 2. Usar Temas
@@ -275,8 +305,21 @@ Para adicionar novos tokens:
 
 ---
 
-**Versão:** 2.0.0  
-**Última Atualização:** 15 de Novembro de 2025
+**Versão:** 2.6.0  
+**Última Atualização:** 04 de Janeiro de 2026
 **Autor:** Rainer Teixeira  
 **Licença:** MIT
 
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

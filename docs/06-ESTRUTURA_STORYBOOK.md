@@ -178,3 +178,10 @@ const shadow = tokens.shadows.light.md;
 - [05-STORYBOOK.md](./05-STORYBOOK.md) - Documentação completa do Storybook
 - [03-ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura geral da biblioteca
 - [04-SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build dos tokens
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

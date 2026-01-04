@@ -113,4 +113,11 @@ import { Z_INDEX } from '@rainersoft/design-tokens';
 
 ---
 
-**Última atualização:** 21/11/2024 | **Versão:** 2.0.0
+**Última atualização:** 21/11/2024 | **Versão:** 2.6.0
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Motion tokens - Durations, easings, and transitions for animations",
+  "_comments": {
+    "duration": "Animation durations in milliseconds",
+    "easing": "Easing curves for different types of movement",
+    "delay": "Delays before starting animations"
+  },
+  "motion": {
+    "duration": {
+      "instant": "0ms",
+      "fast": "100ms",
+      "normal": "200ms",
+      "slow": "300ms",
+      "slower": "500ms",
+      "slowest": "800ms"
+    },
+    "easing": {
+      "linear": "linear",
+      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "easeInQuad": "cubic-bezier(0.55, 0.085, 0.68, 0.53)",
+      "easeOutQuad": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      "easeInOutQuad": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+      "easeInCubic": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "easeOutCubic": "cubic-bezier(0.215, 0.61, 0.355, 1)",
+      "easeInOutCubic": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "spring": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+    },
+    "delay": {
+      "none": "0ms",
+      "short": "50ms",
+      "medium": "100ms",
+      "long": "200ms"
+    }
+  },
+  "_notes": {
+    "duration": {
+      "instant": "Instant transition without animation",
+      "fast": "Fast animation for immediate feedback",
+      "normal": "Standard duration for common animations",
+      "slow": "Slow animation for smooth transitions",
+      "slower": "Very slow animation for heavy elements",
+      "slowest": "Slowest animation for maximum emphasis"
+    },
+    "easing": {
+      "linear": "Constant movement without acceleration",
+      "easeIn": "Slow start, accelerates at the end",
+      "easeOut": "Fast start, decelerates at the end",
+      "easeInOut": "Smooth start and end with acceleration in the middle",
+      "spring": "Spring effect with natural bounce"
+    },
+    "delay": {
+      "none": "No delay, immediate animation",
+      "short": "Short delay for quick feedback",
+      "medium": "Medium delay for sequences",
+      "long": "Long delay for emphasis"
+    }
+  }
+}

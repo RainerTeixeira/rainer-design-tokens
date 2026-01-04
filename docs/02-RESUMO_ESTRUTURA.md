@@ -1,141 +1,248 @@
-# 📁 Resumo da Estrutura - Design Tokens
+# 02-RESUMO_ESTRUTURA.md - Resumo da Estrutura
 
-## 🎯 Estrutura Final
+## 🎯 Visão Geral
+
+@rainersoft/design-tokens segue uma arquitetura modular com **JSON como fonte única de verdade**. Todos os formatos (CSS, Tailwind, TypeScript) são gerados automaticamente a partir dos tokens JSON.
+
+## 🏗️ Estrutura Atual
 
 ```
-C:\Desenvolvimento\
+rainer-design-tokens/
+├── tokens/                    # 🎯 FONTE ÚNICA DE VERDADE
+│   ├── primitives/           # Tokens primitivos (base)
+│   │   ├── color-palette.json    # Paleta de cores base
+│   │   ├── typography-base.json  # Tipografia base
+│   │   ├── spacing-scale.json    # Escala de espaçamento
+│   │   ├── radius-scale.json     # Escala de bordas
+│   │   ├── elevation-tokens.json # Sombras e elevação
+│   │   ├── motion-tokens.json    # Animações e transições
+│   │   ├── breakpoints.json      # Breakpoints responsivos
+│   │   └── z-index-layers.json   # Sistema de camadas
+│   │
+│   ├── semantics/            # Tokens semânticos (função)
+│   │   ├── color-roles.json       # Cores por função
+│   │   ├── border-roles.json      # Bordas por função
+│   │   └── elevation-roles.json   # Elevação por função
+│   │
+│   ├── themes/               # Temas específicos
+│   │   ├── theme-light.json       # Configuração tema light
+│   │   └── theme-dark.json        # Configuração tema dark
+│   │
+│   └── index.json           # Export principal
 │
-├─ @rainersoft/design-tokens/      # 📦 Biblioteca de Design Tokens
-│   ├─ tokens/                      # 🎯 FONTE ÚNICA DE VERDADE (JSON)
-│   │   ├─ colors/
-│   │   │   ├─ light.json
-│   │   │   └─ dark.json
-│   │   ├─ typography.json
-│   │   ├─ spacing.json
-│   │   ├─ radius.json
-│   │   └─ shadows.json
-│   │
-│   ├─ formats/                     # 📤 FORMATOS GERADOS (NÃO EDITAR)
-│   │   ├─ css-vars.css             # ← Gerado por build-css.ts
-│   │   ├─ tailwind.config.ts       # ← Gerado por build-tailwind.ts
-│   │   └─ tokens.json              # ← Gerado por build-tokens-json.ts
-│   │
-│   ├─ scripts/                     # 🔧 Scripts de Build
-│   │   ├─ build-formats.ts         # Orquestrador principal
-│   │   ├─ build-css.ts             # Gera CSS variables
-│   │   ├─ build-tailwind.ts        # Gera Tailwind config
-│   │   └─ build-tokens-json.ts     # Gera tokens.json
-│   │
-│   ├─ themes/                      # 🎨 Temas Compostos
-│   │   ├─ light.ts
-│   │   ├─ dark.ts
-│   │   └─ index.ts
-│   │
-│   ├─ .storybook/                  # ⚙️ Storybook da Lib (TOKENS)
-│   │   ├─ main.ts                  # Configuração principal
-│   │   └─ preview.tsx              # Preview e tema (suporta JSX)
-│   │
-│   ├─ stories/                     # 📚 Stories do Storybook (APENAS TOKENS)
-│   │   ├─ ColorPalette.stories.tsx # Paleta de cores completa
-│   │   ├─ ThemePreview.stories.tsx # Preview dos temas
-│   │   ├─ Typography.stories.tsx   # Tipografia
-│   │   ├─ Spacing.stories.tsx      # Espaçamento
-│   │   ├─ Radius.stories.tsx       # Raios de borda
-│   │   └─ Shadows.stories.tsx      # Sombras
-│   │
-│   ├─ dist/                        # 📦 Saída Compilada
-│   │   ├─ index.js
-│   │   ├─ index.mjs
-│   │   └─ index.d.ts
-│   │
-│   ├─ docs/                        # 📚 Documentação
-│   │   ├─ 03-ESTRUTURA.md
-│   │   ├─ 04-SISTEMA_BUILD.md
-│   │   ├─ 05-STORYBOOK.md
-│   │   ├─ 06-ESTRUTURA_STORYBOOK.md
-│   │   └─ ...
-│   │
-│   ├─ index.ts                     # Ponto de entrada
-│   ├─ package.json
-│   ├─ tsup.config.ts
-│   └─ README.md
+├── scripts/                  # 🔧 Scripts de Build
+│   ├── compile-formats.ts    # Script principal (CSS, Tailwind, JSON)
+│   ├── generate-all.ts       # Orquestrador de tokens calculados
+│   ├── generate-radius.ts    # Gera radius baseado em spacing
+│   ├── generate-breakpoints.ts # Gera breakpoints padrão
+│   ├── generate-z-index.ts   # Gera sistema de camadas
+│   ├── build-tokens.ts       # Script master (inclui changelog)
+│   └── [manutenção]          # validate, publish, sync, etc.
 │
-└─ rainer-portfolio-frontend/       # 🌐 Frontend Application
-    ├─ src/
-    │   └─ components/
-    │       └─ ui/                   # Componentes UI
-    │
-    ├─ .storybook/                  # ⚙️ Storybook do Frontend (COMPONENTES)
-    │   ├─ main.ts                  # Configuração principal
-    │   └─ preview.tsx              # Preview e tema (suporta JSX)
-    │
-    └─ stories/                      # 📚 Stories de Componentes UI
-        ├─ Button.stories.tsx        # Botões
-        ├─ Card.stories.tsx          # Cards
-        ├─ Input.stories.tsx         # Inputs
-        └─ ...                       # Outros componentes
+├── formats/                  # 📤 FORMATOS GERADOS (NÃO EDITAR)
+│   ├── css-vars.css         # Variáveis CSS
+│   ├── tailwind.config.ts   # Configuração Tailwind
+│   └── tokens.json          # JSON consolidado
+│
+├── themes/                   # 🎨 Temas TypeScript
+│   ├── index.ts             # Exportações dos temas
+│   ├── light.ts             # Tema claro profissional
+│   └── dark.ts              # Tema escuro cyberpunk
+│
+├── dist/                     # 📦 Saída Compilada
+│   ├── index.js             # CommonJS
+│   ├── index.mjs            # ESM
+│   └── index.d.ts           # TypeScript definitions
+│
+├── .storybook/               # ⚙️ Storybook da Lib
+│   ├── main.ts              # Configuração principal
+│   └── preview.tsx          # Preview e tema
+│
+├── stories/                  # 📚 Stories (APENAS TOKENS)
+│   ├── ColorPalette.stories.tsx
+│   ├── ThemePreview.stories.tsx
+│   ├── Typography.stories.tsx
+│   ├── Spacing.stories.tsx
+│   ├── Radius.stories.tsx
+│   ├── Shadows.stories.tsx
+│   ├── Elevation.stories.tsx
+│   ├── Motion.stories.tsx
+│   └── Accessibility.stories.tsx
+│
+├── docs/                     # 📚 Documentação
+│   ├── 00-INDICE.md         # Índice completo
+│   ├── 01-GUIDELINES.md     # Como usar
+│   ├── 02-RESUMO_ESTRUTURA.md # Este documento
+│   ├── 03-ESTRUTURA.md      # Estrutura detalhada
+│   ├── 04-SISTEMA_BUILD.md  # Sistema de build
+│   ├── 98- CHANGELOG.md      # Histórico de versões
+│   └── 99-CONTRIBUINDO.md   # Como contribuir
+│
+├── tests/                    # 🧪 Testes
+│   ├── tokens/              # Testes de tokens
+│   ├── themes/              # Testes de temas
+│   └── [outros]             # Testes de integração
+│
+└── [config]                  # 🔧 Arquivos de configuração
+    ├── package.json
+    ├── tsconfig.json
+    ├── tsup.config.ts
+    ├── jest.config.js
+    └── [outros]
 ```
 
-## 🎯 Separação de Responsabilidades
+## 🎯 Princípios Fundamentais
 
-### Storybook da Lib (@rainersoft/design-tokens)
+### 1. Fonte Única de Verdade
+- ✅ **Edite apenas**: `tokens/*.json`
+- ✅ **Formats são gerados**: Execute `pnpm run build`
+- ❌ **NÃO edite manualmente**: `formats/*` (serão sobrescritos)
 
-**Foco**: Apenas design tokens
+### 2. Separação de Responsabilidades
+- **primitives/**: Valores base (cores, spacing, etc.)
+- **semantics/**: Valores por função (background, text, border)
+- **themes/**: Aplicações específicas (light, dark)
 
-**Stories**:
-- ✅ ColorPalette - Paletas de cores
-- ✅ ThemePreview - Preview dos temas
-- ✅ Typography - Tipografia
-- ✅ Spacing - Espaçamento
-- ✅ Radius - Raios de borda
-- ✅ Shadows - Sombras
-
-**NÃO inclui**:
-- ❌ Componentes UI (Button, Card, etc.)
-- ❌ Lógica de negócio
-- ❌ Interações complexas
-
-### Storybook do Frontend (rainer-portfolio-frontend)
-
-**Foco**: Componentes UI que usam os tokens
-
-**Stories**:
-- ✅ Button - Botões usando tokens
-- ✅ Card - Cards usando tokens
-- ✅ Input - Inputs usando tokens
-- ✅ Modal - Modais usando tokens
-- ✅ ... Outros componentes
-
-**Usa**:
-- ✅ Tokens da lib `@rainersoft/design-tokens`
-- ✅ CSS variables da lib
-- ✅ Tailwind config da lib
+### 3. Geração Automática
+- **CSS Variables**: Para uso direto em CSS
+- **Tailwind Config**: Para integração com Tailwind
+- **TypeScript Themes**: Para uso em React/TypeScript
+- **JSON Consolidado**: Para outras plataformas
 
 ## 🔄 Fluxo de Trabalho
 
-### 1. Editar Tokens (Lib)
-
+### Desenvolvimento
 ```bash
-cd @rainersoft/design-tokens
-# Editar tokens/*.json
-pnpm run build:formats
+# 1. Editar tokens
+vim tokens/primitives/color-palette.json
+
+# 2. Gerar formatos
 pnpm run build
-pnpm run storybook  # Ver tokens
+
+# 3. Visualizar no Storybook
+pnpm run storybook
+
+# 4. Testar
+pnpm run test
 ```
 
-### 2. Usar Tokens (Frontend)
-
+### Publicação
 ```bash
-cd rainer-portfolio-frontend
-# Importar tokens
-import { tokens } from '@rainersoft/design-tokens';
-# Criar componentes usando tokens
-pnpm run storybook  # Ver componentes
+# 1. Validar
+pnpm run validate
+
+# 2. Gerar changelog
+pnpm run build:tokens
+
+# 3. Publicar
+pnpm run publish
 ```
 
-## 📚 Documentação
+## 📊 Scripts Principais
+
+| Script | Descrição | Comando |
+|--------|----------|---------|
+| `build` | Build completo | `pnpm run build` |
+| `build:tokens` | Gera tokens + changelog | `pnpm run build:tokens` |
+| `generate-tokens` | Gera tokens calculados | `pnpm run generate-tokens` |
+| `dev` | Desenvolvimento com watch | `pnpm run dev` |
+| `validate` | Validação completa | `pnpm run validate` |
+| `storybook` | Storybook local | `pnpm run storybook` |
+
+## 🎨 Sistema de Tokens
+
+### Hierarquia
+```
+primitives (base)
+    ↓
+semantics (função)
+    ↓
+themes (aplicação)
+```
+
+### Exemplo de Fluxo
+```json
+// primitives/color-palette.json
+{
+  "cyan": { "500": "#0891b2" }
+}
+
+// semantics/color-roles.json
+{
+  "brand": { "primary": "{primitives.cyan.500}" }
+}
+
+// themes/theme-light.json
+{
+  "colors": {
+    "brand": { "primary": "{semantics.brand.primary}" }
+  }
+}
+```
+
+## 📦 Exportações
+
+### TypeScript
+```typescript
+// Tokens brutos
+import { tokens } from '@rainersoft/design-tokens';
+
+// Temas
+import { lightTheme, darkTheme } from '@rainersoft/design-tokens/themes';
+
+// Tipos
+import type { TokenSet, Theme } from '@rainersoft/design-tokens';
+```
+
+### Formatos
+```typescript
+// Tailwind
+import tailwindConfig from '@rainersoft/design-tokens/formats/tailwind.config';
+
+// CSS
+import '@rainersoft/design-tokens/formats/css-vars.css';
+
+// JSON
+import tokensJson from '@rainersoft/design-tokens/formats/tokens.json';
+```
+
+## 🎯 Melhores Práticas
+
+### ✅ Faça
+- Edite apenas `tokens/*.json`
+- Use referências `{path.to.token}`
+- Siga a hierarquia primitives → semantics → themes
+- Teste no Storybook após alterações
+- Documente novos tokens
+
+### ❌ Não Faça
+- Não edite `formats/*` manualmente
+- Não cifique valores (use referências)
+- Não quebre a hierarquia
+- Não pule os testes
+- Não esqueça de atualizar docs
+
+## 🔗 Links Relacionados
 
 - [03-ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura detalhada
 - [04-SISTEMA_BUILD.md](./04-SISTEMA_BUILD.md) - Sistema de build
-- [05-STORYBOOK.md](./05-STORYBOOK.md) - Storybook de tokens
-- [06-ESTRUTURA_STORYBOOK.md](./06-ESTRUTURA_STORYBOOK.md) - Separação de responsabilidades
+- [01-GUIDELINES.md](./01-GUIDELINES.md) - Como usar
+- [99-CONTRIBUINDO.md](./99-CONTRIBUINDO.md) - Como contribuir
+
+## 📅 Última Atualização
+
+**Data**: Janeiro de 2026
+**Versão**: 2.6.0  
+**Atualização**: Reestruturação completa com primitives/semantics/themes
+
+---
+
+**Autor**: Rainer Teixeira  
+**Licença**: MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

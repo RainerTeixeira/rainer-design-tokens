@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens de opacidade - Níveis de transparência",
+  "_comments": {
+    "opacity": "Escala de valores de opacidade de 0 a 1"
+  },
+  "opacity": {
+    "0": 0,
+    "10": 0.1,
+    "20": 0.2,
+    "30": 0.3,
+    "40": 0.4,
+    "50": 0.5,
+    "60": 0.6,
+    "70": 0.7,
+    "80": 0.8,
+    "90": 0.9,
+    "100": 1
+  },
+  "_notes": {
+    "0": "Completamente transparente",
+    "10": "Transparência muito leve (10%)",
+    "20": "Transparência leve (20%)",
+    "30": "Transparência baixa (30%)",
+    "40": "Transparência moderada (40%)",
+    "50": "Transparência média (50%) - equilíbrio",
+    "60": "Transparência acima da média (60%)",
+    "70": "Transparência alta (70%)",
+    "80": "Transparência muito alta (80%)",
+    "90": "Transparência quase total (90%)",
+    "100": "Completamente opaco"
+  }
+}

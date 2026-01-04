@@ -53,11 +53,11 @@ import { tokens } from '../tokens';
  * ```
  */
 export const lightTheme = {
-  colors: tokens.colors.light,
-  typography: tokens.typography,
-  spacing: tokens.spacing,
-  radius: tokens.radius,
-  shadows: tokens.shadows.light,
+  colors: tokens.themes.light,
+  typography: tokens.primitives.typography,
+  spacing: tokens.primitives.spacing,
+  radius: tokens.primitives.radius,
+  shadows: tokens.primitives.shadows,
 } as const;
 
 /**

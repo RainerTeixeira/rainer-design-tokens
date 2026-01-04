@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import { tokens } from '../tokens';
 
 const meta = {
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const AllAnimations: Story = {
   render: () => {
-    const animations = tokens.animations;
+    const motion = tokens.primitives.motion as any;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -28,317 +28,297 @@ export const AllAnimations: Story = {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '2rem',
           }}
         >
-          {Object.entries(animations).map(([key, animation]) => {
-            const animationStyle: React.CSSProperties = {
-              animationName: animation.name,
-              animationDuration: animation.duration,
-              animationTimingFunction: animation.timingFunction,
-              animationIterationCount: 'infinite',
-              animationDirection: 'alternate',
-            };
-
-            return (
-              <div
-                key={key}
-                style={{
-                  padding: '2rem',
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e5e5e5',
-                  borderRadius: '8px',
-                }}
-              >
+          {/* Durations */}
+          <div
+            style={{
+              padding: '1.5rem',
+              border: '1px solid #e5e5e5',
+              borderRadius: '8px',
+            }}
+          >
+            <h2
+              style={{
+                fontSize: '1.25rem',
+                fontWeight: 600,
+                marginBottom: '1rem',
+              }}
+            >
+              Durations
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {Object.entries(motion.duration).map(([key, value]) => (
                 <div
+                  key={key}
                   style={{
-                    fontSize: '1.25rem',
-                    fontWeight: 600,
-                    marginBottom: '1rem',
-                    textTransform: 'capitalize',
-                  }}
-                >
-                  {key.replace(/-/g, ' ')}
-                </div>
-
-                <div
-                  style={{
-                    padding: '2rem',
-                    backgroundColor: '#fafafa',
-                    borderRadius: '4px',
-                    marginBottom: '1rem',
-                    minHeight: '100px',
                     display: 'flex',
+                    justifyContent: 'space-between',
                     alignItems: 'center',
-                    justifyContent: 'center',
+                    padding: '0.75rem',
+                    backgroundColor: '#f8f9fa',
+                    borderRadius: '4px',
                   }}
                 >
-                  <div
+                  <span style={{ fontWeight: 500, textTransform: 'capitalize' }}>
+                    {key}
+                  </span>
+                  <span
                     style={{
-                      width: '60px',
-                      height: '60px',
-                      backgroundColor: '#0891b2',
-                      borderRadius: '8px',
-                      ...animationStyle,
+                      fontFamily: 'monospace',
+                      fontSize: '0.875rem',
+                      color: '#666',
                     }}
-                  />
+                  >
+                    {value as string}
+                  </span>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                <div style={{ fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                  <strong>Duration:</strong> {animation.duration}
-                </div>
-                <div style={{ fontSize: '0.875rem', marginBottom: '0.5rem' }}>
-                  <strong>Timing:</strong> {animation.timingFunction}
-                </div>
-                <div style={{ fontSize: '0.75rem', color: '#737373', fontFamily: 'monospace', marginTop: '1rem' }}>
-                  <div style={{ marginBottom: '0.5rem' }}>
-                    <strong>Animation:</strong>
-                  </div>
-                  <div style={{ wordBreak: 'break-all' }}>
-                    {animation.name} {animation.duration} {animation.timingFunction}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
-  },
-};
-
-/**
- * Accordion animations
- */
-export const AccordionAnimations: Story = {
-  render: () => {
-    const accordionDown = tokens.animations['accordion-down'];
-    const accordionUp = tokens.animations['accordion-up'];
-
-    return (
-      <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-        <h1
-          style={{
-            fontSize: '2rem',
-            fontWeight: 700,
-            marginBottom: '2rem',
-          }}
-        >
-          Accordion Animations
-        </h1>
-
-        <div style={{ display: 'flex', gap: '2rem', flexDirection: 'column' }}>
+          {/* Easings */}
           <div
             style={{
-              padding: '2rem',
-              backgroundColor: '#ffffff',
+              padding: '1.5rem',
               border: '1px solid #e5e5e5',
               borderRadius: '8px',
             }}
           >
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem' }}>
-              Accordion Down
-            </h2>
-            <div
+            <h2
               style={{
-                padding: '1rem',
-                backgroundColor: '#fafafa',
-                borderRadius: '4px',
-                overflow: 'hidden',
-                height: '200px',
+                fontSize: '1.25rem',
+                fontWeight: 600,
+                marginBottom: '1rem',
               }}
             >
+              Easings
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {Object.entries(motion.easing).map(([key, value]) => (
+                <div
+                  key={key}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '0.75rem',
+                    backgroundColor: '#f8f9fa',
+                    borderRadius: '4px',
+                  }}
+                >
+                  <span style={{ fontWeight: 500, textTransform: 'capitalize' }}>
+                    {key}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'monospace',
+                      fontSize: '0.75rem',
+                      color: '#666',
+                      maxWidth: '150px',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                    }}
+                  >
+                    {value as string}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Delays */}
+          <div
+            style={{
+              padding: '1.5rem',
+              border: '1px solid #e5e5e5',
+              borderRadius: '8px',
+            }}
+          >
+            <h2
+              style={{
+                fontSize: '1.25rem',
+                fontWeight: 600,
+                marginBottom: '1rem',
+              }}
+            >
+              Delays
+            </h2>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              {Object.entries(motion.delay).map(([key, value]) => (
+                <div
+                  key={key}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '0.75rem',
+                    backgroundColor: '#f8f9fa',
+                    borderRadius: '4px',
+                  }}
+                >
+                  <span style={{ fontWeight: 500, textTransform: 'capitalize' }}>
+                    {key}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'monospace',
+                      fontSize: '0.875rem',
+                      color: '#666',
+                    }}
+                  >
+                    {value as string}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Animation Examples */}
+        <div style={{ marginTop: '3rem' }}>
+          <h2
+            style={{
+              fontSize: '1.5rem',
+              fontWeight: 600,
+              marginBottom: '1.5rem',
+            }}
+          >
+            Animation Examples
+          </h2>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            {/* Fade In Example */}
+            <div
+              style={{
+                padding: '1.5rem',
+                border: '1px solid #e5e5e5',
+                borderRadius: '8px',
+                textAlign: 'center',
+              }}
+            >
+              <h3 style={{ fontSize: '1rem', fontWeight: 500, marginBottom: '1rem' }}>
+                Fade In
+              </h3>
               <div
                 style={{
+                  width: '60px',
+                  height: '60px',
                   backgroundColor: '#0891b2',
+                  borderRadius: '8px',
+                  margin: '0 auto 1rem',
+                  animation: `fadeIn ${motion.duration.normal} ${motion.easing.easeInOut}`,
+                }}
+              />
+              <code
+                style={{
+                  fontSize: '0.75rem',
+                  color: '#666',
+                  backgroundColor: '#f8f9fa',
+                  padding: '0.25rem 0.5rem',
                   borderRadius: '4px',
-                  padding: '1rem',
-                  color: 'white',
-                  animation: `accordion-down ${accordionDown.duration} ${accordionDown.timingFunction} infinite alternate`,
-                  height: 'var(--radix-accordion-content-height, 100px)',
+                  display: 'block',
                 }}
               >
-                Content expanding...
-              </div>
+                {motion.duration.normal} {motion.easing.easeInOut}
+              </code>
             </div>
-            <div style={{ fontSize: '0.75rem', color: '#737373', fontFamily: 'monospace', marginTop: '1rem' }}>
-              {accordionDown.name} {accordionDown.duration} {accordionDown.timingFunction}
-            </div>
-          </div>
 
-          <div
-            style={{
-              padding: '2rem',
-              backgroundColor: '#ffffff',
-              border: '1px solid #e5e5e5',
-              borderRadius: '8px',
-            }}
-          >
-            <h2 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '1rem' }}>
-              Accordion Up
-            </h2>
+            {/* Slide In Example */}
             <div
               style={{
-                padding: '1rem',
-                backgroundColor: '#fafafa',
-                borderRadius: '4px',
-                overflow: 'hidden',
-                height: '200px',
+                padding: '1.5rem',
+                border: '1px solid #e5e5e5',
+                borderRadius: '8px',
+                textAlign: 'center',
               }}
             >
+              <h3 style={{ fontSize: '1rem', fontWeight: 500, marginBottom: '1rem' }}>
+                Slide In
+              </h3>
               <div
                 style={{
+                  width: '60px',
+                  height: '60px',
                   backgroundColor: '#9333ea',
+                  borderRadius: '8px',
+                  margin: '0 auto 1rem',
+                  animation: `slideIn ${motion.duration.slow} ${motion.easing.easeOut}`,
+                }}
+              />
+              <code
+                style={{
+                  fontSize: '0.75rem',
+                  color: '#666',
+                  backgroundColor: '#f8f9fa',
+                  padding: '0.25rem 0.5rem',
                   borderRadius: '4px',
-                  padding: '1rem',
-                  color: 'white',
-                  animation: `accordion-up ${accordionUp.duration} ${accordionUp.timingFunction} infinite alternate`,
-                  height: 'var(--radix-accordion-content-height, 100px)',
+                  display: 'block',
                 }}
               >
-                Content collapsing...
-              </div>
+                {motion.duration.slow} {motion.easing.easeOut}
+              </code>
             </div>
-            <div style={{ fontSize: '0.75rem', color: '#737373', fontFamily: 'monospace', marginTop: '1rem' }}>
-              {accordionUp.name} {accordionUp.duration} {accordionUp.timingFunction}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  },
-};
 
-/**
- * Slide-in animation
- */
-export const SlideInAnimation: Story = {
-  render: () => {
-    const slideIn = tokens.animations['slide-in'];
-
-    return (
-      <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-        <h1
-          style={{
-            fontSize: '2rem',
-            fontWeight: 700,
-            marginBottom: '2rem',
-          }}
-        >
-          Slide In Animation
-        </h1>
-
-        <div
-          style={{
-            padding: '2rem',
-            backgroundColor: '#ffffff',
-            border: '1px solid #e5e5e5',
-            borderRadius: '8px',
-          }}
-        >
-          <div
-            style={{
-              padding: '3rem',
-              backgroundColor: '#fafafa',
-              borderRadius: '4px',
-              minHeight: '300px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
+            {/* Bounce Example */}
             <div
               style={{
-                width: '150px',
-                height: '150px',
-                backgroundColor: '#0891b2',
+                padding: '1.5rem',
+                border: '1px solid #e5e5e5',
                 borderRadius: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontWeight: 600,
-                animation: `slide-in ${slideIn.duration} ${slideIn.timingFunction} infinite alternate`,
+                textAlign: 'center',
               }}
             >
-              Slide In
+              <h3 style={{ fontSize: '1rem', fontWeight: 500, marginBottom: '1rem' }}>
+                Bounce
+              </h3>
+              <div
+                style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: '#dc2626',
+                  borderRadius: '8px',
+                  margin: '0 auto 1rem',
+                  animation: `bounce ${motion.duration.normal} ${motion.easing.spring}`,
+                }}
+              />
+              <code
+                style={{
+                  fontSize: '0.75rem',
+                  color: '#666',
+                  backgroundColor: '#f8f9fa',
+                  padding: '0.25rem 0.5rem',
+                  borderRadius: '4px',
+                  display: 'block',
+                }}
+              >
+                {motion.duration.normal} {motion.easing.spring}
+              </code>
             </div>
           </div>
-
-          <div style={{ fontSize: '0.75rem', color: '#737373', fontFamily: 'monospace', marginTop: '1rem' }}>
-            {slideIn.name} {slideIn.duration} {slideIn.timingFunction}
-          </div>
         </div>
+
+        {/* CSS Animations */}
+        <style>{`
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          
+          @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+          }
+          
+          @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+          }
+        `}</style>
       </div>
     );
   },
 };
-
-/**
- * Fade-in animation
- */
-export const FadeInAnimation: Story = {
-  render: () => {
-    const fadeIn = tokens.animations['fade-in'];
-
-    return (
-      <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-        <h1
-          style={{
-            fontSize: '2rem',
-            fontWeight: 700,
-            marginBottom: '2rem',
-          }}
-        >
-          Fade In Animation
-        </h1>
-
-        <div
-          style={{
-            padding: '2rem',
-            backgroundColor: '#ffffff',
-            border: '1px solid #e5e5e5',
-            borderRadius: '8px',
-          }}
-        >
-          <div
-            style={{
-              padding: '3rem',
-              backgroundColor: '#fafafa',
-              borderRadius: '4px',
-              minHeight: '300px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <div
-              style={{
-                width: '150px',
-                height: '150px',
-                backgroundColor: '#9333ea',
-                borderRadius: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontWeight: 600,
-                animation: `fade-in ${fadeIn.duration} ${fadeIn.timingFunction} infinite alternate`,
-              }}
-            >
-              Fade In
-            </div>
-          </div>
-
-          <div style={{ fontSize: '0.75rem', color: '#737373', fontFamily: 'monospace', marginTop: '1rem' }}>
-            {fadeIn.name} {fadeIn.duration} {fadeIn.timingFunction}
-          </div>
-        </div>
-      </div>
-    );
-  },
-};
-
-
-

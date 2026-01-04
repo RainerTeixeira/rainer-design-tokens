@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/theme.json",
+  "$description": "Responsive breakpoints - Mobile-first approach",
+  "$generated": "This file is auto-generated. Do not edit manually.",
+  "$source": "industry standards + spacing.json reference",
+  "$spacingReference": {
+    "baseUnit": "0.25rem",
+    "note": "Breakpoints follow industry standards, spacing used for reference"
+  },
+  "breakpoints": {
+    "xs": "0px",
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px",
+    "3xl": "1920px"
+  },
+  "container": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px",
+    "3xl": "1920px"
+  },
+  "mediaQueries": {
+    "xs": "@media (min-width: 0px)",
+    "sm": "@media (min-width: 640px)",
+    "md": "@media (min-width: 768px)",
+    "lg": "@media (min-width: 1024px)",
+    "xl": "@media (min-width: 1280px)",
+    "2xl": "@media (min-width: 1536px)",
+    "3xl": "@media (min-width: 1920px)"
+  }
+}

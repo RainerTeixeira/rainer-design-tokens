@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tamanhos de ícones padronizados - Dimensões padronizadas para várias densidades e contextos",
+  "_comments": {
+    "iconSize": "Escala completa de tamanhos de ícone em unidades relativas (rem)"
+  },
+  "iconSize": {
+    "2xs": "0.75rem",
+    "xs": "1rem",
+    "sm": "1.25rem",
+    "base": "1.5rem",
+    "md": "1.75rem",
+    "lg": "2rem",
+    "xl": "2.5rem",
+    "2xl": "3rem",
+    "3xl": "4rem",
+    "4xl": "5rem",
+    "5xl": "6rem",
+    "full": "100%"
+  },
+  "_notes": {
+    "2xs": "12px - Para interfaces super densas (tabelas complexas, grids)",
+    "xs": "16px - Para elementos compactos (tags, breadcrumbs)",
+    "sm": "20px - Para navegação secundária e listas",
+    "base": "24px - Tamanho padrão para maioria dos ícones UI",
+    "md": "28px - Para elementos com destaque moderado",
+    "lg": "32px - Para ícones principais e CTAs",
+    "xl": "40px - Para seções de cabeçalho e destaques",
+    "2xl": "48px - Para elementos de marketing e hero sections",
+    "3xl": "64px - Para destaques visuais em landing pages",
+    "4xl": "80px - Para elementos decorativos grandes",
+    "5xl": "96px - Para banners e páginas de destaque máximo",
+    "full": "100% - Para ícones responsivos que preenchem containers"
+  }
+}

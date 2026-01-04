@@ -1,446 +1,87 @@
-/**
- * @fileoverview Ponto de entrada dos tokens de design
- * 
- * @description
- * Tokens de design tecnologicamente agnósticos que definem a linguagem visual
- * do Rainer Design System. Estes tokens podem ser utilizados em qualquer
- * framework ou tecnologia, garantindo consistência visual.
- * 
- * @module @rainersoft/design-tokens/tokens
- * @version 2.2.0
- * @license MIT
- * @author Rainer Teixeira
- * @since 1.0.0
- */
+// Primitivos (tokens fundamentais - valores absolutos)
+import colorPrimitive from './primitives/color-palette.json';
+import spacingPrimitive from './primitives/spacing-scale.json';
+import typographyPrimitive from './primitives/typography-base.json';
+import shadowsPrimitive from './primitives/elevation-tokens.json';
+import motionPrimitive from './primitives/motion-tokens.json';
+import radiusPrimitive from './primitives/radius-scale.json';
+import breakpointsPrimitive from './primitives/breakpoints.json';
+import zIndexPrimitive from './primitives/z-index-layers.json';
+import borderPrimitive from './primitives/border-tokens.json';
+import opacityPrimitive from './primitives/opacity-scale.json';
+import layoutPrimitive from './primitives/layout-units.json';
+import iconSizesPrimitive from './primitives/icon-scale.json';
+import gradientPrimitive from './primitives/gradient-tokens.json';
+// Sem�nticos (tokens com significado)
+import colorSemantic from './semantics/color-roles.json';
+import spacingSemantic from './semantics/spacing-context.json';
+import typographySemantic from './semantics/typography-roles.json';
+import borderSemantic from './semantics/border-roles.json';
+import layoutSemantic from './semantics/layout-structure.json';
+import elevationSemantic from './semantics/elevation-roles.json';
+import motionSemantic from './semantics/motion-roles.json';
 
-import lightColors from './colors/light.json';
-import darkColors from './colors/dark.json';
-import typography from './typography.json';
-import spacing from './spacing.json';
-import radius from './radius.json';
-import shadows from './shadows.json';
-import animations from './animations.json';
-import hero from './hero.json';
-import effects from './effects.json';
-import celestialBackground from './components/celestial-background.json';
-import motion from './motion.json';
-import breakpoints from './breakpoints.json';
-import zIndex from './z-index.json';
-
-// Utility tokens (Tailwind CSS classes)
-export * from './utilities';
-
-// Accessibility utilities (WCAG contrast checking)
-export * from './accessibility';
-
-/**
- * Todos os tokens de design organizados por categoria
- * 
- * @description
- * Objeto principal contendo todos os tokens de design do sistema,
- * organizados em categorias lógicas para fácil acesso e manutenção.
- * 
- * @type {Object}
- * @property {Object} colors - Tokens de cores para temas claro e escuro
- * @property {Object} colors.light - Cores do tema claro
- * @property {Object} colors.dark - Cores do tema escuro
- * @property {Object} typography - Tokens de tipografia (fontes, tamanhos, pesos, etc.)
- * @property {Object} spacing - Tokens de espaçamento (margens, paddings)
- * @property {Object} radius - Tokens de raio de borda
- * @property {Object} shadows - Tokens de sombras para ambos os temas
- * @property {Object} animations - Tokens de animações (keyframes e durações)
- * 
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { tokens } from '@rainersoft/design-tokens';
- * 
- * // Acessar cor primária do tema claro
- * const primaryColor = tokens.colors.light.brand.primary;
- * 
- * // Acessar espaçamento padrão
- * const spacing = tokens.spacing.md;
- * ```
- */
+// Temas (completos)
+import lightTheme from './themes/theme-light.json';
+import darkTheme from './themes/theme-dark.json';
 export const tokens = {
-  colors: {
-    light: lightColors.colors,
-    dark: darkColors.colors,
+  // Primitivos (fundamentais)
+  primitives: {
+    color: colorPrimitive.palette || colorPrimitive,
+    spacing: spacingPrimitive.spacing || spacingPrimitive,
+    typography: typographyPrimitive.typography || typographyPrimitive,
+    shadows: shadowsPrimitive.shadows || shadowsPrimitive,
+    motion: motionPrimitive.motion || motionPrimitive,
+    radius: radiusPrimitive.radius || radiusPrimitive,
+    breakpoints: breakpointsPrimitive.breakpoints || breakpointsPrimitive,
+    zIndex: zIndexPrimitive.zIndex || zIndexPrimitive,
+    border: borderPrimitive.border || borderPrimitive,
+    opacity: opacityPrimitive.opacity || opacityPrimitive,
+    layout: layoutPrimitive.layout || layoutPrimitive,
+    iconSize: iconSizesPrimitive.iconSize || iconSizesPrimitive,
+    gradients: gradientPrimitive.gradients || gradientPrimitive,
   },
-  typography: typography.typography,
-  spacing: spacing.spacing,
-  radius: radius.radius,
-  shadows: shadows.shadows,
-  animations: animations.animations,
-  motion: motion.motion,
-  breakpoints: breakpoints.breakpoints,
-  zIndex: zIndex.zIndex,
-  hero: hero.hero,
-  effects: effects.effects,
-  components: {
-    celestialBackground: celestialBackground.celestialBackground,
+  // Sem�nticos (com significado)
+  semantics: {
+    color: colorSemantic.color || colorSemantic,
+    spacing: spacingSemantic.spacing || spacingSemantic,
+    typography: typographySemantic.typography || typographySemantic,
+    border: borderSemantic.border || borderSemantic,
+    layout: layoutSemantic.layout || layoutSemantic,
+    elevation: elevationSemantic.elevation || elevationSemantic,
+    motion: motionSemantic.motion || motionSemantic,
   },
-} as const;
-
-/**
- * Cores do tema claro
- * 
- * @description
- * Exporta apenas as cores do tema claro para uso direto.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { lightThemeColors } from '@rainersoft/design-tokens';
- * 
- * const primaryColor = lightThemeColors.brand.primary;
- * ```
- */
-export const lightThemeColors = lightColors.colors;
-
-/**
- * Cores do tema escuro
- * 
- * @description
- * Exporta apenas as cores do tema escuro (estilo cyberpunk) para uso direto.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { darkThemeColors } from '@rainersoft/design-tokens';
- * 
- * const neonColor = darkThemeColors.accent.cyan;
- * ```
- */
-export const darkThemeColors = darkColors.colors;
-
-/**
- * Tokens de tipografia
- * 
- * @description
- * Exporta todos os tokens relacionados à tipografia, incluindo
- * famílias de fontes, tamanhos, pesos, alturas de linha e espaçamento entre letras.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { typographyTokens } from '@rainersoft/design-tokens';
- * 
- * const fontSize = typographyTokens.fontSize.lg;
- * const fontFamily = typographyTokens.fontFamily.sans;
- * ```
- */
-export const typographyTokens = typography.typography;
-
-/**
- * Tokens de espaçamento
- * 
- * @description
- * Exporta todos os tokens de espaçamento padronizados do sistema.
- * Utilizados para margens, paddings e gaps consistentes.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { spacingTokens } from '@rainersoft/design-tokens';
- * 
- * const margin = spacingTokens.md;
- * const padding = spacingTokens.lg;
- * ```
- */
-export const spacingTokens = spacing.spacing;
-
-/**
- * Tokens de raio de borda
- * 
- * @description
- * Exporta todos os tokens de raio de borda (border-radius) padronizados.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { radiusTokens } from '@rainersoft/design-tokens';
- * 
- * const borderRadius = radiusTokens.md;
- * ```
- */
-export const radiusTokens = radius.radius;
-
-/**
- * Tokens de sombras
- * 
- * @description
- * Exporta todos os tokens de sombras, incluindo sombras para tema claro
- * e efeitos de brilho (glow) para tema escuro.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { shadowTokens } from '@rainersoft/design-tokens';
- * 
- * const shadow = shadowTokens.light.md;
- * const glow = shadowTokens.dark.glow.cyan;
- * ```
- */
-export const shadowTokens = shadows.shadows;
-
-/**
- * Tokens de animações
- * 
- * @description
- * Exporta todos os tokens de animações, incluindo keyframes, durações
- * e funções de timing para transições e animações do sistema.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { animationTokens } from '@rainersoft/design-tokens';
- * 
- * const slideIn = animationTokens['slide-in'];
- * const fadeIn = animationTokens['fade-in'];
- * ```
- */
-export const animationTokens = animations.animations;
-
-/**
- * Tokens de efeitos visuais
- * 
- * @description
- * Exporta todos os tokens de efeitos visuais, incluindo filters, blur,
- * glow, backdrop effects e outros efeitos para criar elementos visuais sofisticados.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { effectTokens } from '@rainersoft/design-tokens';
- * 
- * const blur = effectTokens.blur.md;
- * const glow = effectTokens.glow.neon.cyan.moderate;
- * ```
- */
-export const effectTokens = effects.effects;
-
-/**
- * Tokens de componentes
- * 
- * @description
- * Exporta todos os tokens específicos de componentes, incluindo configurações
- * para celestial background, carousels e outros componentes visuais.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { componentTokens } from '@rainersoft/design-tokens';
- * 
- * const starConfig = componentTokens.celestialBackground.stars.default;
- * ```
- */
-export const componentTokens = {
-  celestialBackground: celestialBackground.celestialBackground,
+  // Temas (completos)
+  themes: {
+    light: lightTheme.color || lightTheme,
+    dark: darkTheme.color || darkTheme,
+  },
 };
-
-/**
- * Tokens de motion
- * 
- * @description
- * Exporta todos os tokens relacionados a motion e animações, incluindo
- * durações, easings, keyframes e transições seguindo Material Design e Fluent Design.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { motionTokens } from '@rainersoft/design-tokens';
- * 
- * const duration = motionTokens.duration.normal;
- * const easing = motionTokens.easing.standard.productive;
- * ```
- */
-export const motionTokens = motion.motion;
-
-/**
- * Tokens de breakpoints
- * 
- * @description
- * Exporta todos os tokens de breakpoints responsivos para criar layouts
- * mobile-first consistentes em todas as plataformas.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { breakpointTokens } from '@rainersoft/design-tokens';
- * 
- * const tabletSize = breakpointTokens.md;
- * const mediaQuery = breakpointTokens.mediaQueries.lg;
- * ```
- */
-export const breakpointTokens = breakpoints.breakpoints;
-
-/**
- * Tokens de z-index
- * 
- * @description
- * Exporta todos os tokens de z-index para gerenciar camadas e sobreposições
- * de forma consistente e escalável.
- * 
- * @type {Object}
- * @constant
- * @readonly
- * 
- * @example
- * ```typescript
- * import { zIndexTokens } from '@rainersoft/design-tokens';
- * 
- * const modalLayer = zIndexTokens.modal;
- * const tooltipLayer = zIndexTokens.tooltip;
- * ```
- */
-export const zIndexTokens = zIndex.zIndex;
-
-/**
- * Tipo TypeScript para todos os tokens
- * 
- * @typedef {Object} Tokens
- * @description
- * Tipo que representa a estrutura completa de todos os tokens de design.
- * Útil para type-checking e autocomplete em IDEs.
- */
-export type Tokens = typeof tokens;
-
-/**
- * Tipo TypeScript para cores do tema claro
- * 
- * @typedef {Object} LightColors
- * @description
- * Tipo que representa todas as cores disponíveis no tema claro.
- */
-export type LightColors = typeof lightColors.colors;
-
-/**
- * Tipo TypeScript para cores do tema escuro
- * 
- * @typedef {Object} DarkColors
- * @description
- * Tipo que representa todas as cores disponíveis no tema escuro (cyberpunk).
- */
-export type DarkColors = typeof darkColors.colors;
-
-/**
- * Tipo TypeScript para tokens de tipografia
- * 
- * @typedef {Object} Typography
- * @description
- * Tipo que representa todos os tokens de tipografia.
- */
-export type Typography = typeof typography.typography;
-
-/**
- * Tipo TypeScript para tokens de espaçamento
- * 
- * @typedef {Object} Spacing
- * @description
- * Tipo que representa todos os tokens de espaçamento.
- */
-export type Spacing = typeof spacing.spacing;
-
-/**
- * Tipo TypeScript para tokens de raio de borda
- * 
- * @typedef {Object} Radius
- * @description
- * Tipo que representa todos os tokens de raio de borda.
- */
-export type Radius = typeof radius.radius;
-
-/**
- * Tipo TypeScript para tokens de sombras
- * 
- * @typedef {Object} Shadows
- * @description
- * Tipo que representa todos os tokens de sombras.
- */
-export type Shadows = typeof shadows.shadows;
-
-/**
- * Tipo TypeScript para tokens de animações
- * 
- * @typedef {Object} Animations
- * @description
- * Tipo que representa todos os tokens de animações.
- */
-export type Animations = typeof animations.animations;
-
-/**
- * Tipo TypeScript para tokens de motion
- * 
- * @typedef {Object} Motion
- * @description
- * Tipo que representa todos os tokens de motion.
- */
-export type Motion = typeof motion.motion;
-
-/**
- * Tipo TypeScript para tokens de breakpoints
- * 
- * @typedef {Object} Breakpoints
- * @description
- * Tipo que representa todos os tokens de breakpoints responsivos.
- */
-export type Breakpoints = typeof breakpoints.breakpoints;
-
-/**
- * Tipo TypeScript para tokens de z-index
- * 
- * @typedef {Object} ZIndex
- * @description
- * Tipo que representa todos os tokens de z-index.
- */
-export type ZIndex = typeof zIndex.zIndex;
-
-/**
- * Exportação padrão dos tokens
- * 
- * @description
- * Exporta o objeto principal contendo todos os tokens de design.
- * 
- * @type {Tokens}
- * @default tokens
- */
 export default tokens;
 
-
-
+export { 
+  colorPrimitive,
+  spacingPrimitive,
+  typographyPrimitive,
+  shadowsPrimitive,
+  motionPrimitive,
+  radiusPrimitive,
+  breakpointsPrimitive,
+  zIndexPrimitive,
+  borderPrimitive,
+  opacityPrimitive,
+  layoutPrimitive,
+  iconSizesPrimitive,
+  gradientPrimitive,
+};
+export { 
+  colorSemantic,
+  spacingSemantic,
+  typographySemantic,
+  borderSemantic,
+  layoutSemantic,
+  elevationSemantic,
+  motionSemantic,
+  lightTheme,
+  darkTheme,
+};

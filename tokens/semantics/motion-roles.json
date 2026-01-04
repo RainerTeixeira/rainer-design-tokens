@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Semantic motion tokens - Animations organized by function and context",
+  "_comments": {
+    "motion": "Animations organized by semantic role in the design system",
+    "transition": "Transitions for state changes",
+    "interaction": "Animations for user interactions",
+    "feedback": "Animations for user feedback",
+    "navigation": "Animations for navigation and routing"
+  },
+  "motion": {
+    "transition": {
+      "default": {
+        "duration": "{motion.duration.normal}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "fast": {
+        "duration": "{motion.duration.fast}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "slow": {
+        "duration": "{motion.duration.slow}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "instant": {
+        "duration": "{motion.duration.instant}",
+        "easing": "{motion.easing.linear}",
+        "delay": "{motion.delay.none}"
+      }
+    },
+    "interaction": {
+      "hover": {
+        "duration": "{motion.duration.fast}",
+        "easing": "{motion.easing.easeOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "focus": {
+        "duration": "{motion.duration.normal}",
+        "easing": "{motion.easing.easeOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "active": {
+        "duration": "{motion.duration.fast}",
+        "easing": "{motion.easing.easeIn}",
+        "delay": "{motion.delay.none}"
+      },
+      "tap": {
+        "duration": "{motion.duration.fast}",
+        "easing": "{motion.easing.easeIn}",
+        "delay": "{motion.delay.none}"
+      }
+    },
+    "feedback": {
+      "success": {
+        "duration": "{motion.duration.slow}",
+        "easing": "{motion.easing.spring}",
+        "delay": "{motion.delay.none}"
+      },
+      "error": {
+        "duration": "{motion.duration.normal}",
+        "easing": "{motion.easing.easeIn}",
+        "delay": "{motion.delay.none}"
+      },
+      "loading": {
+        "duration": "1000ms",
+        "easing": "{motion.easing.linear}",
+        "delay": "{motion.delay.none}"
+      },
+      "notification": {
+        "duration": "{motion.duration.slow}",
+        "easing": "{motion.easing.easeOut}",
+        "delay": "{motion.delay.short}"
+      }
+    },
+    "navigation": {
+      "page": {
+        "duration": "{motion.duration.slow}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "drawer": {
+        "duration": "{motion.duration.slow}",
+        "easing": "{motion.easing.easeOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "modal": {
+        "duration": "{motion.duration.normal}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "collapse": {
+        "duration": "{motion.duration.normal}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      }
+    },
+    "component": {
+      "fade": {
+        "duration": "{motion.duration.normal}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "slide": {
+        "duration": "{motion.duration.slow}",
+        "easing": "{motion.easing.easeInOut}",
+        "delay": "{motion.delay.none}"
+      },
+      "scale": {
+        "duration": "{motion.duration.normal}",
+        "easing": "{motion.easing.spring}",
+        "delay": "{motion.delay.none}"
+      },
+      "rotate": {
+        "duration": "{motion.duration.slower}",
+        "easing": "{motion.easing.linear}",
+        "delay": "{motion.delay.none}"
+      }
+    }
+  },
+  "_notes": {
+    "transition": {
+      "default": "Standard transition for most state changes - reference: motion.duration.normal, motion.easing.easeInOut",
+      "fast": "Fast transition for quick feedback - reference: motion.duration.fast, motion.easing.easeInOut",
+      "slow": "Slow transition for smooth animations - reference: motion.duration.slow, motion.easing.easeInOut",
+      "instant": "Instant transition without animation - reference: motion.duration.instant, motion.easing.linear"
+    },
+    "interaction": {
+      "hover": "Hover state animation - reference: motion.duration.fast, motion.easing.easeOut",
+      "focus": "Focus state animation - reference: motion.duration.normal, motion.easing.easeOut",
+      "active": "Active/pressed state animation - reference: motion.duration.fast, motion.easing.easeIn",
+      "tap": "Tap/click animation - reference: motion.duration.fast, motion.easing.easeIn"
+    },
+    "feedback": {
+      "success": "Success feedback animation - reference: motion.duration.slow, motion.easing.spring",
+      "error": "Error feedback animation - reference: motion.duration.normal, motion.easing.easeIn",
+      "loading": "Loading spinner animation - reference: custom duration, motion.easing.linear",
+      "notification": "Notification appearance - reference: motion.duration.slow, motion.easing.easeOut, motion.delay.short"
+    },
+    "navigation": {
+      "page": "Page transition animation - reference: motion.duration.slow, motion.easing.easeInOut",
+      "drawer": "Drawer/sidebar animation - reference: motion.duration.slow, motion.easing.easeOut",
+      "modal": "Modal open/close animation - reference: motion.duration.normal, motion.easing.easeInOut",
+      "collapse": "Collapse/expand animation - reference: motion.duration.normal, motion.easing.easeInOut"
+    },
+    "component": {
+      "fade": "Fade in/out animation - reference: motion.duration.normal, motion.easing.easeInOut",
+      "slide": "Slide animation - reference: motion.duration.slow, motion.easing.easeInOut",
+      "scale": "Scale animation - reference: motion.duration.normal, motion.easing.spring",
+      "rotate": "Rotate animation - reference: motion.duration.slower, motion.easing.linear"
+    }
+  }
+}

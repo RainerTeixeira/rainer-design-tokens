@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Semantic color tokens - UI functions referencing primitives",
+  "color": {
+    "background": {
+      "primary": "{palette.white}",
+      "secondary": "{palette.gray.50}",
+      "tertiary": "{palette.gray.100}",
+      "overlay": "rgba(0, 0, 0, 0.5)"
+    },
+    "text": {
+      "primary": "{palette.gray.900}",
+      "secondary": "{palette.gray.600}",
+      "tertiary": "{palette.gray.400}",
+      "disabled": "{palette.gray.300}",
+      "inverse": "{palette.white}"
+    },
+    "button": {
+      "primary": "{palette.blue.500}",
+      "primaryHover": "{palette.blue.600}",
+      "primaryActive": "{palette.blue.700}",
+      "secondary": "{palette.gray.200}",
+      "secondaryHover": "{palette.gray.300}",
+      "secondaryActive": "{palette.gray.400}",
+      "text": "{palette.white}"
+    },
+    "border": {
+      "default": "{palette.gray.200}",
+      "light": "{palette.gray.100}",
+      "dark": "{palette.gray.400}"
+    },
+    "status": {
+      "success": "{palette.green.500}",
+      "successHover": "{palette.green.600}",
+      "error": "{palette.red.500}",
+      "errorHover": "{palette.red.600}",
+      "warning": "{palette.red.500}",
+      "warningHover": "{palette.red.600}"
+    }
+  },
+  "": "Tokens semânticos de cor - Funções UI referenciando primitivas",
+  "_comments": {
+    "color": "Cores semânticas para diferentes estados e elementos",
+    "background": "Cores de fundo para diferentes contextos",
+    "text": "Cores de texto para hierarquia visual",
+    "border": "Cores de borda para elementos",
+    "button": "Cores para botões em diferentes estados",
+    "status": "Cores para feedback de status"
+  },
+  "_notes": {
+    "color": {
+      "background": {
+        "primary": "Fundo principal branco",
+        "secondary": "Fundo secundário cinza claro",
+        "tertiary": "Fundo terciário cinza médio",
+        "overlay": "Sobreposição escura para modais"
+      },
+      "text": {
+        "primary": "Texto principal escuro",
+        "secondary": "Texto secundário cinza médio",
+        "tertiary": "Texto terciário cinza claro",
+        "disabled": "Texto desabilitado cinza muito claro",
+        "inverse": "Texto inverso para fundos escuros"
+      },
+      "border": {
+        "default": "Borda padrão cinza média",
+        "focus": "Borda de foco azul",
+        "error": "Borda de erro vermelha",
+        "success": "Borda de sucesso verde"
+      },
+      "button": {
+        "primary": "Botão primário azul",
+        "primaryHover": "Botão primário hover azul escuro",
+        "secondary": "Botão secundário cinza",
+        "secondaryHover": "Botão secundário hover cinza escuro"
+      },
+      "status": {
+        "error": "Cor de erro vermelha",
+        "warning": "Cor de aviso amarela",
+        "success": "Cor de sucesso verde",
+        "info": "Cor informativa azul"
+      }
+    }
+  }
+}

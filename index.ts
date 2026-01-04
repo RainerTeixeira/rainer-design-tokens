@@ -10,7 +10,7 @@
  * a aplicação.
  * 
  * @module @rainersoft/design-tokens
- * @version 2.2.0
+ * @version 2.6.0
  * @author Rainer Teixeira
  * @license MIT
  * @since 1.0.0
@@ -30,11 +30,36 @@
 // Re-export everything from tokens
 export * from './tokens';
 
-// Re-export themes
-export * from './themes';
+// Re-export primitive tokens with clean names
+export { 
+  colorPrimitive as colorPrimitive,
+  spacingPrimitive as spacingPrimitive,
+  typographyPrimitive as typographyPrimitive,
+  shadowsPrimitive as shadowsPrimitive,
+  motionPrimitive as motionPrimitive,
+  radiusPrimitive as radiusPrimitive,
+  breakpointsPrimitive as breakpointsPrimitive,
+  zIndexPrimitive as zIndexPrimitive,
+  borderPrimitive as borderPrimitive,
+  opacityPrimitive as opacityPrimitive,
+  layoutPrimitive as layoutPrimitive,
+  iconSizesPrimitive as iconSizesPrimitive,
+  gradientPrimitive as gradientsPrimitive
+} from './tokens';
 
-// Re-export helpers
-export * from './tokens/helpers';
+// Re-export semantic tokens with clean names
+export { 
+  colorSemantic as colorSemantic,
+  spacingSemantic as spacingSemantic,
+  typographySemantic as typographySemantic,
+  borderSemantic as borderSemantic,
+  layoutSemantic as layoutSemantic,
+  elevationSemantic as elevationSemantic,
+  motionSemantic as motionSemantic
+} from './tokens';
+
+// Re-export themes (avoid conflicts)
+export { lightTheme as lightTheme, darkTheme as darkTheme } from './tokens';
 
 /**
  * Exportação padrão dos tokens de design

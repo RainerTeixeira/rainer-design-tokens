@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens de layout - Sistema de grid, container e espaçamento",
+  "_comments": {
+    "container": "Larguras máximas de containers em diferentes tamanhos",
+    "gutter": "Escala de espaçamento entre elementos do grid",
+    "column": "Configuração básica do sistema de colunas",
+    "safeArea": "Margens mínimas para diferentes contextos"
+  },
+  "layout": {
+    "container": {
+      "xs": "20rem",
+      "sm": "40rem",
+      "md": "48rem",
+      "lg": "64rem", 
+      "xl": "80rem", 
+      "2xl": "96rem" 
+    },
+    "gutter": {
+      "xs": "0.5rem",
+      "sm": "1rem",
+      "md": "1.5rem",
+      "lg": "2rem",
+      "xl": "3rem"
+    },
+    "column": {
+      "count": 12,
+      "gap": "1rem"
+    },
+    "safeArea": {
+      "xs": "1rem",
+      "sm": "1.5rem",
+      "md": "2rem",
+      "lg": "2.5rem",
+      "xl": "3rem"
+    }
+  },
+  "_notes": {
+    "container": {
+      "xs": "320px - Container mínimo para mobile muito pequeno",
+      "sm": "640px - Container para mobile landscape",
+      "md": "768px - Container para tablets em portrait",
+      "lg": "1024px - Container para tablets landscape",
+      "xl": "1280px - Container padrão para desktop",
+      "2xl": "1536px - Container amplo para telas grandes"
+    },
+    "gutter": {
+      "xs": "0.5rem - Espaçamento compacto para layouts densos",
+      "sm": "1rem - Espaçamento básico para maioria dos layouts",
+      "md": "1.5rem - Espaçamento confortável para desktop",
+      "lg": "2rem - Espaçamento generoso para hero sections",
+      "xl": "3rem - Espaçamento máximo para destaques"
+    },
+    "column": {
+      "count": "12 - Número padrão de colunas para flexibilidade",
+      "gap": "1rem - Espaço padrão entre colunas do grid"
+    },
+    "safeArea": {
+      "xs": "1rem - Margem segura para mobile",
+      "sm": "1.5rem - Margem confortável para tablets pequenos",
+      "md": "2rem - Margem padrão para tablets",
+      "lg": "2.5rem - Margem para laptops",
+      "xl": "3rem - Margem generosa para desktop"
+    }
+  }
+}

@@ -251,3 +251,9 @@ pnpm pack --dry-run
 
 **Decisão**: Para uma biblioteca pública, **commit `dist/`** é a prática recomendada e amplamente usada na comunidade npm.
 
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

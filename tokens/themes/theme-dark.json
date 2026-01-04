@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Dark theme - Override de tokens semânticos com valores escuros",
+  "_comments": {
+    "color": "Tema dark com valores específicos que sobrescrevem os semânticos"
+  },
+  "color": {
+    "background": {
+      "primary": "{palette.gray.900}",
+      "secondary": "{palette.gray.800}",
+      "tertiary": "{palette.gray.700}",
+      "disabled": "{palette.gray.700}",
+      "overlay": "rgba(0, 0, 0, 0.8)",
+      "inverse": "{palette.white}"
+    },
+    "text": {
+      "primary": "{palette.gray.50}",
+      "secondary": "{palette.gray.300}",
+      "tertiary": "{palette.gray.400}",
+      "disabled": "{palette.gray.500}",
+      "inverse": "{palette.gray.900}",
+      "onPrimary": "{palette.white}",
+      "onSecondary": "{palette.gray.900}",
+      "link": "{palette.blue.400}",
+      "linkHover": "{palette.blue.300}"
+    },
+    "button": {
+      "primary": {
+        "default": "{palette.blue.500}",
+        "hover": "{palette.blue.400}",
+        "active": "{palette.blue.300}",
+        "text": "{palette.white}"
+      },
+      "secondary": {
+        "default": "{palette.gray.700}",
+        "hover": "{palette.gray.600}",
+        "active": "{palette.gray.500}",
+        "text": "{palette.gray.50}"
+      },
+      "tertiary": {
+        "default": "{palette.transparent}",
+        "hover": "{palette.gray.700}",
+        "active": "{palette.gray.600}",
+        "text": "{palette.gray.50}"
+      },
+      "danger": {
+        "default": "{palette.red.500}",
+        "hover": "{palette.red.400}",
+        "active": "{palette.red.300}",
+        "text": "{palette.white}"
+      },
+      "success": {
+        "default": "{palette.green.500}",
+        "hover": "{palette.green.400}",
+        "active": "{palette.green.300}",
+        "text": "{palette.white}"
+      }
+    },
+    "border": {
+      "default": "{palette.gray.700}",
+      "light": "{palette.gray.600}",
+      "medium": "{palette.gray.500}",
+      "dark": "{palette.gray.400}",
+      "focus": "{palette.blue.400}",
+      "error": "{palette.red.400}",
+      "success": "{palette.green.400}",
+      "warning": "{palette.red.400}"
+    },
+    "status": {
+      "success": {
+        "default": "{palette.green.500}",
+        "light": "{palette.green.900}",
+        "dark": "{palette.green.300}",
+        "text": "{palette.green.300}"
+      },
+      "error": {
+        "default": "{palette.red.500}",
+        "light": "{palette.red.900}",
+        "dark": "{palette.red.300}",
+        "text": "{palette.red.300}"
+      },
+      "warning": {
+        "default": "{palette.red.400}",
+        "light": "{palette.red.900}",
+        "dark": "{palette.red.300}",
+        "text": "{palette.red.200}"
+      },
+      "info": {
+        "default": "{palette.blue.400}",
+        "light": "{palette.blue.900}",
+        "dark": "{palette.blue.300}",
+        "text": "{palette.blue.300}"
+      }
+    },
+    "interactive": {
+      "link": {
+        "default": "{palette.blue.400}",
+        "hover": "{palette.blue.300}",
+        "visited": "{palette.purple.400}",
+        "active": "{palette.blue.200}"
+      },
+      "focus": {
+        "ring": "{palette.blue.400}",
+        "ringOffset": "{palette.gray.900}"
+      }
+    },
+    "surface": {
+      "elevated": "{palette.gray.800}",
+      "raised": "{palette.gray.700}",
+      "sunken": "{palette.gray.600}"
+    }
+  },
+  "_notes": {
+    "background": {
+      "primary": "Fundo principal escuro - referencia: palette.gray.900",
+      "secondary": "Fundo secundário - referencia: palette.gray.800",
+      "tertiary": "Fundo terciário - referencia: palette.gray.700",
+      "disabled": "Fundo desabilitado - referencia: palette.gray.700",
+      "overlay": "Overlay com opacidade alta - referencia: palette.black com opacity 0.8",
+      "inverse": "Fundo invertido claro - referencia: palette.white"
+    },
+    "text": {
+      "primary": "Texto principal claro - referencia: palette.gray.50",
+      "secondary": "Texto secundário - referencia: palette.gray.300",
+      "tertiary": "Texto terciário - referencia: palette.gray.400",
+      "disabled": "Texto desabilitado - referencia: palette.gray.500",
+      "inverse": "Texto invertido escuro - referencia: palette.gray.900",
+      "onPrimary": "Texto sobre primária - referencia: palette.white",
+      "onSecondary": "Texto sobre secundária - referencia: palette.gray.900",
+      "link": "Link padrão claro - referencia: palette.blue.400",
+      "linkHover": "Link hover - referencia: palette.blue.300"
+    },
+    "button": {
+      "primary": "Botão primário - referencia: palette.blue.500 com hover/active mais claros",
+      "secondary": "Botão secundário escuro - referencia: palette.gray.700/600/500",
+      "tertiary": "Botão terciário transparente - referencia: palette.gray.*",
+      "danger": "Botão perigo - referencia: palette.red.500/400/300",
+      "success": "Botão sucesso - referencia: palette.green.500/400/300"
+    },
+    "border": {
+      "default": "Borda padrão escura - referencia: palette.gray.700",
+      "light": "Borda clara - referencia: palette.gray.600",
+      "medium": "Borda média - referencia: palette.gray.500",
+      "dark": "Borda mais escura - referencia: palette.gray.400",
+      "focus": "Borda foco claro - referencia: palette.blue.400",
+      "error": "Borda erro - referencia: palette.red.400",
+      "success": "Borda sucesso - referencia: palette.green.400",
+      "warning": "Borda aviso - referencia: palette.red.400"
+    },
+    "status": {
+      "success": "Status sucesso - referencia: palette.green.500/900/300",
+      "error": "Status erro - referencia: palette.red.500/900/300",
+      "warning": "Status aviso - referencia: palette.red.400/900/300",
+      "info": "Status informação - referencia: palette.blue.400/900/300"
+    },
+    "interactive": {
+      "link": "Links interativos claros - referencia: palette.blue.400/300/200, palette.purple.400",
+      "focus": "Foco claro - referencia: palette.blue.400, palette.gray.900"
+    },
+    "surface": {
+      "elevated": "Superfície elevada escura - referencia: palette.gray.800",
+      "raised": "Superfície levantada - referencia: palette.gray.700",
+      "sunken": "Superfície rebaixada - referencia: palette.gray.600"
+    }
+  }
+}

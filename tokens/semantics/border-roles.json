@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens semânticos de borda - Bordas organizadas por função e contexto",
+  "_comments": {
+    "border": "Bordas organizadas por papel semântico no sistema",
+    "default": "Bordas padrão para componentes normais",
+    "interactive": "Bordas para elementos interativos e estados",
+    "emphasis": "Bordas para destaque e ênfase",
+    "divider": "Bordas para divisores e separadores",
+    "outline": "Bordas para outlines e contornos",
+    "radius": "Arredondamentos organizados por contexto"
+  },
+  "border": {
+    "default": {
+      "width": "{border.width.base}",
+      "style": "{border.style.solid}",
+      "color": "inherit"
+    },
+    "interactive": {
+      "default": {
+        "width": "{border.width.base}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      },
+      "hover": {
+        "width": "{border.width.base}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      },
+      "focus": {
+        "width": "{border.width.thick}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      },
+      "active": {
+        "width": "{border.width.thick}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      }
+    },
+    "emphasis": {
+      "strong": {
+        "width": "{border.width.thick}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      },
+      "subtle": {
+        "width": "{border.width.thin}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      }
+    },
+    "divider": {
+      "horizontal": {
+        "width": "{border.width.thin}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      },
+      "vertical": {
+        "width": "{border.width.thin}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      },
+      "subtle": {
+        "width": "{border.width.thin}",
+        "style": "{border.style.dashed}",
+        "color": "inherit"
+      }
+    },
+    "outline": {
+      "focus": {
+        "width": "{border.width.base}",
+        "style": "{border.style.solid}",
+        "color": "inherit",
+        "offset": "{spacing.2}"
+      },
+      "error": {
+        "width": "{border.width.base}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      },
+      "success": {
+        "width": "{border.width.base}",
+        "style": "{border.style.solid}",
+        "color": "inherit"
+      }
+    },
+    "radius": {
+      "none": "{radius.none}",
+      "sm": "{radius.sm}",
+      "base": "{radius.base}",
+      "md": "{radius.md}",
+      "lg": "{radius.lg}",
+      "xl": "{radius.xl}",
+      "2xl": "{radius.2xl}",
+      "full": "{radius.full}"
+    },
+    "component": {
+      "input": {
+        "width": "{border.width.base}",
+        "style": "{border.style.solid}",
+        "radius": "{radius.base}",
+        "color": "inherit"
+      },
+      "button": {
+        "width": "{border.width.none}",
+        "style": "{border.style.solid}",
+        "radius": "{radius.md}",
+        "color": "inherit"
+      },
+      "card": {
+        "width": "{border.width.thin}",
+        "style": "{border.style.solid}",
+        "radius": "{radius.lg}",
+        "color": "inherit"
+      },
+      "badge": {
+        "width": "{border.width.none}",
+        "style": "{border.style.solid}",
+        "radius": "{radius.full}",
+        "color": "inherit"
+      },
+      "modal": {
+        "width": "{border.width.none}",
+        "style": "{border.style.solid}",
+        "radius": "{radius.xl}",
+        "color": "inherit"
+      }
+    }
+  },
+  "_notes": {
+    "default": "Borda padrão usada na maioria dos componentes - referencia: border.width.base, border.style.solid",
+    "interactive": {
+      "default": "Borda padrão para elementos interativos - referencia: border.width.base",
+      "hover": "Borda para estado hover - referencia: border.width.base",
+      "focus": "Borda mais espessa para estado de foco - referencia: border.width.thick",
+      "active": "Borda mais espessa para estado ativo - referencia: border.width.thick"
+    },
+    "emphasis": {
+      "strong": "Borda espessa para forte destaque - referencia: border.width.thick",
+      "subtle": "Borda fina para destaque sutil - referencia: border.width.thin"
+    },
+    "divider": {
+      "horizontal": "Divisor horizontal (linhas separadoras) - referencia: border.width.thin, border.style.solid",
+      "vertical": "Divisor vertical (colunas separadoras) - referencia: border.width.thin, border.style.solid",
+      "subtle": "Divisor sutil com estilo tracejado - referencia: border.width.thin, border.style.dashed"
+    },
+    "outline": {
+      "focus": "Outline para elementos com foco (acessibilidade) - referencia: border.width.base, spacing.2",
+      "error": "Outline para estados de erro - referencia: border.width.base",
+      "success": "Outline para estados de sucesso - referencia: border.width.base"
+    },
+    "radius": {
+      "none": "Sem arredondamento - cantos retos - referencia: border.radius.none",
+      "sm": "Arredondamento pequeno para elementos pequenos - referencia: border.radius.sm",
+      "base": "Arredondamento padrão para maioria dos componentes - referencia: border.radius.base",
+      "md": "Arredondamento médio para cards - referencia: border.radius.md",
+      "lg": "Arredondamento grande para elementos maiores - referencia: border.radius.lg",
+      "xl": "Arredondamento extra grande para destaques - referencia: border.radius.xl",
+      "2xl": "Arredondamento máximo para grande impacto - referencia: border.radius.2xl",
+      "full": "Arredondamento completo (círculos/pílulas) - referencia: border.radius.full"
+    },
+    "component": {
+      "input": "Bordas para campos de entrada - referencia: border.width.base, border.radius.base",
+      "button": "Bordas para botões (geralmente nenhuma) - referencia: border.width.none, border.radius.md",
+      "card": "Bordas para cards e containers - referencia: border.width.thin, border.radius.lg",
+      "badge": "Bordas para badges e tags - referencia: border.width.none, border.radius.full",
+      "modal": "Bordas para modais e dialogs - referencia: border.width.none, border.radius.xl"
+    }
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens semânticos de cor - Cores organizadas por função e contexto de uso",
+  "_comments": {
+    "color": "Cores organizadas por papel semântico no sistema de design",
+    "background": "Cores de fundo para diferentes níveis hierárquicos",
+    "text": "Cores de texto para diferentes níveis de importância",
+    "button": "Cores para estados de botões e ações",
+    "border": "Cores para bordas e divisores",
+    "status": "Cores para feedback de status e estados",
+    "interactive": "Cores para elementos interativos e links",
+    "surface": "Cores para superfícies e elevamentos"
+  },
+  "color": {
+    "background": {
+      "primary": "{palette.white}",
+      "secondary": "{palette.gray.50}",
+      "tertiary": "{palette.gray.100}",
+      "disabled": "{palette.gray.100}",
+      "overlay": "rgba(0, 0, 0, 0.5)",
+      "inverse": "{palette.black}"
+    },
+    "text": {
+      "primary": "{palette.gray.900}",
+      "secondary": "{palette.gray.600}",
+      "tertiary": "{palette.gray.400}",
+      "disabled": "{palette.gray.300}",
+      "inverse": "{palette.white}",
+      "onPrimary": "{palette.white}",
+      "onSecondary": "{palette.gray.900}",
+      "link": "{palette.blue.600}",
+      "linkHover": "{palette.blue.700}"
+    },
+    "button": {
+      "primary": {
+        "default": "{palette.blue.500}",
+        "hover": "{palette.blue.600}",
+        "active": "{palette.blue.700}",
+        "text": "{palette.white}"
+      },
+      "secondary": {
+        "default": "{palette.gray.200}",
+        "hover": "{palette.gray.300}",
+        "active": "{palette.gray.400}",
+        "text": "{palette.gray.900}"
+      },
+      "tertiary": {
+        "default": "{palette.transparent}",
+        "hover": "{palette.gray.100}",
+        "active": "{palette.gray.200}",
+        "text": "{palette.gray.900}"
+      },
+      "danger": {
+        "default": "{palette.red.500}",
+        "hover": "{palette.red.600}",
+        "active": "{palette.red.700}",
+        "text": "{palette.white}"
+      },
+      "success": {
+        "default": "{palette.green.500}",
+        "hover": "{palette.green.600}",
+        "active": "{palette.green.700}",
+        "text": "{palette.white}"
+      }
+    },
+    "border": {
+      "default": "{palette.gray.200}",
+      "light": "{palette.gray.100}",
+      "medium": "{palette.gray.300}",
+      "dark": "{palette.gray.400}",
+      "focus": "{palette.blue.500}",
+      "error": "{palette.red.500}",
+      "success": "{palette.green.500}",
+      "warning": "{palette.red.400}"
+    },
+    "status": {
+      "success": {
+        "default": "{palette.green.500}",
+        "light": "{palette.green.50}",
+        "dark": "{palette.green.700}",
+        "text": "{palette.green.700}"
+      },
+      "error": {
+        "default": "{palette.red.500}",
+        "light": "{palette.red.50}",
+        "dark": "{palette.red.700}",
+        "text": "{palette.red.700}"
+      },
+      "warning": {
+        "default": "{palette.red.400}",
+        "light": "{palette.red.50}",
+        "dark": "{palette.red.600}",
+        "text": "{palette.red.800}"
+      },
+      "info": {
+        "default": "{palette.blue.500}",
+        "light": "{palette.blue.50}",
+        "dark": "{palette.blue.700}",
+        "text": "{palette.blue.700}"
+      }
+    },
+    "interactive": {
+      "link": {
+        "default": "{palette.blue.600}",
+        "hover": "{palette.blue.700}",
+        "visited": "{palette.purple.600}",
+        "active": "{palette.blue.800}"
+      },
+      "focus": {
+        "ring": "{palette.blue.500}",
+        "ringOffset": "{palette.white}"
+      }
+    },
+    "surface": {
+      "elevated": "{palette.white}",
+      "raised": "{palette.gray.50}",
+      "sunken": "{palette.gray.100}"
+    },
+    "chart": {
+      "primary": "{palette.blue.500}",
+      "secondary": "{palette.green.500}",
+      "tertiary": "{palette.purple.500}",
+      "quaternary": "{palette.red.400}",
+      "quinary": "{palette.blue.300}",
+      "senary": "{palette.green.400}"
+    }
+  },
+  "_notes": {
+    "background": {
+      "primary": "Fundo principal da aplicação (geralmente branco em light mode) - referencia: palette.white",
+      "secondary": "Fundo secundário para seções alternadas - referencia: palette.gray.50",
+      "tertiary": "Fundo terciário para elementos aninhados - referencia: palette.gray.100",
+      "disabled": "Fundo para elementos desabilitados - referencia: palette.gray.100",
+      "overlay": "Fundo para overlays e modais - referencia: palette.black",
+      "inverse": "Fundo invertido para contrastes - referencia: palette.black"
+    },
+    "text": {
+      "primary": "Texto principal com maior contraste - referencia: palette.gray.900",
+      "secondary": "Texto secundário com contraste médio - referencia: palette.gray.600",
+      "tertiary": "Texto terciário com contraste baixo - referencia: palette.gray.400",
+      "disabled": "Texto desabilitado com contraste mínimo - referencia: palette.gray.300",
+      "inverse": "Texto para fundos escuros - referencia: palette.white",
+      "onPrimary": "Texto sobre cor primária - referencia: palette.white",
+      "onSecondary": "Texto sobre cor secundária - referencia: palette.gray.900",
+      "link": "Cor padrão para links - referencia: palette.blue.600",
+      "linkHover": "Cor para links em hover - referencia: palette.blue.700"
+    },
+    "button": {
+      "primary": "Botão principal de ação primária - referencia: palette.blue.*",
+      "secondary": "Botão secundário de ação alternativa - referencia: palette.gray.*",
+      "tertiary": "Botão terciário para ações menos importantes - referencia: palette.gray.*",
+      "danger": "Botão para ações destrutivas - referencia: palette.red.*",
+      "success": "Botão para ações de sucesso - referencia: palette.green.*"
+    },
+    "border": {
+      "default": "Borda padrão para componentes - referencia: palette.gray.200",
+      "light": "Borda sutil para divisores - referencia: palette.gray.100",
+      "medium": "Borda média para ênfase - referencia: palette.gray.300",
+      "dark": "Borda escura para forte contraste - referencia: palette.gray.400",
+      "focus": "Borda para estados de foco - referencia: palette.blue.500",
+      "error": "Borda para estados de erro - referencia: palette.red.500",
+      "success": "Borda para estados de sucesso - referencia: palette.green.500",
+      "warning": "Borda para estados de aviso - referencia: palette.red.400"
+    },
+    "status": {
+      "success": "Cores para feedback de sucesso - referencia: palette.green.*",
+      "error": "Cores para feedback de erro - referencia: palette.red.*",
+      "warning": "Cores para avisos - referencia: palette.red.*",
+      "info": "Cores para informações - referencia: palette.blue.*"
+    },
+    "interactive": {
+      "link": "Cores para links e navegação - referencia: palette.blue.*, palette.purple.*",
+      "focus": "Cores para indicadores de foco - referencia: palette.blue.*, palette.white"
+    },
+    "surface": {
+      "elevated": "Superfície elevada (cards, modais) - referencia: palette.white",
+      "raised": "Superfície levemente elevada - referencia: palette.gray.50",
+      "sunken": "Superfície rebaixada (inputs focados) - referencia: palette.gray.100"
+    },
+    "chart": {
+      "primary": "Cor principal para gráficos e visualizações - referencia: palette.blue.500",
+      "secondary": "Cor secundária para séries de dados - referencia: palette.green.500",
+      "tertiary": "Cor terciária para terceira série - referencia: palette.purple.500",
+      "quaternary": "Quarta cor para séries adicionais - referencia: palette.red.400",
+      "quinary": "Quinta cor para séries adicionais - referencia: palette.blue.300",
+      "senary": "Sexta cor para séries adicionais - referencia: palette.green.400"
+    }
+  }
+}

@@ -7,18 +7,18 @@ e este projeto segue [Versionamento Semântico](https://semver.org/spec/v2.0.0.h
 
 ## 📦 Versões Publicadas
 
-- **[2.0.0]** (2025-11-21) — Sistema profissional W3C Design Tokens com Token Editor, novos tokens (motion, breakpoints, z-index) e formatos (Figma, Android XML, iOS Swift)
-- **[1.0.6]** (2025-11-19) — Tokens de animação
-- **[1.0.5]** (2025-11-18) — Tailwind v4 e tokens compostos
-- **[1.0.4]** (2025-11-18) — Suporte a animações
-- **[1.0.3]** (2025-11-18) — Atualizações de timestamp
-- **[1.0.2]** (2025-11-18) — Cores primitivas
-- **[1.0.1]** (2025-11-17) — Refatoração inicial
-- **[1.0.0]** (2025-11-17) — Lançamento inicial
+- **[2.0.0]** (2026-01-04) — Sistema profissional W3C Design Tokens com Token Editor, novos tokens (motion, breakpoints, z-index) e formatos (Figma, Android XML, iOS Swift)
+- **[1.0.6]** (2026-01-04) — Tokens de animação
+- **[1.0.5]** (2026-01-04) — Tailwind v4 e tokens compostos
+- **[1.0.4]** (2026-01-04) — Suporte a animações
+- **[1.0.3]** (2026-01-04) — Atualizações de timestamp
+- **[1.0.2]** (2026-01-04) — Cores primitivas
+- **[1.0.1]** (2026-01-04) — Refatoração inicial
+- **[1.0.0]** (2026-01-04) — Lançamento inicial
 
 ---
 
-## [2.0.0] - 2025-11-21
+## [2.0.0] - 2026-01-04
 
 ### 🎉 Major Release - Sistema Profissional de Design Tokens
 
@@ -185,7 +185,7 @@ Esta versão transforma a biblioteca em um sistema de design tokens em nível pr
 - CI/CD configurado
 - Automated releases configurado
 
-## [1.0.6] - 2025-11-19
+## [1.0.6] - 2026-01-04
 
 ### ✨ Adicionado
 
@@ -196,7 +196,7 @@ Esta versão transforma a biblioteca em um sistema de design tokens em nível pr
 
 - Atualização de timestamp de geração no arquivo tokens.json
 
-## [1.0.5] - 2025-11-18
+## [1.0.5] - 2026-01-04
 
 ### ✨ Adicionado
 
@@ -214,7 +214,7 @@ Esta versão transforma a biblioteca em um sistema de design tokens em nível pr
 - Exclusão de formats do type-check
 - Exclusão de formats/tailwind.config.ts do type-check
 
-## [1.0.4] - 2025-11-18
+## [1.0.4] - 2026-01-04
 
 ### ✨ Adicionado
 
@@ -225,13 +225,13 @@ Esta versão transforma a biblioteca em um sistema de design tokens em nível pr
 
 - Atualização de timestamp de geração no arquivo tokens.json
 
-## [1.0.3] - 2025-11-18
+## [1.0.3] - 2026-01-04
 
 ### 🔄 Alterado
 
 - Atualização de timestamp de geração no arquivo tokens.json
 
-## [1.0.2] - 2025-11-18
+## [1.0.2] - 2026-01-04
 
 ### ✨ Adicionado
 
@@ -241,7 +241,7 @@ Esta versão transforma a biblioteca em um sistema de design tokens em nível pr
 
 - Atualização de gradientes e backgrounds para usar tokens CSS
 
-## [1.0.1] - 2025-11-17
+## [1.0.1] - 2026-01-04
 
 ### 🔄 Alterado
 
@@ -254,7 +254,7 @@ Esta versão transforma a biblioteca em um sistema de design tokens em nível pr
 - Correção de erros TypeScript
 - Correção de erros ESLint
 
-## [1.0.0] - 2025-11-17
+## [1.0.0] - 2026-01-04
 
 ### 🎉 Lançamento Inicial
 
@@ -321,3 +321,10 @@ Primeira versão pública da biblioteca de design tokens.
 - **Versões publicadas no npm**: 2.0.0, 1.0.6, 1.0.5, 1.0.4, 1.0.3, 1.0.2, 1.0.1, 1.0.0
 - **Como verificar versões publicadas no npm** (no seu terminal):
   - `npm view @rainersoft/design-tokens versions --json`
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/theme.json",
+  "$description": "Z-index layer system - Organized stacking context",
+  "$generated": "2026-01-04T16:23:38.040Z",
+  "$source": "design system layer standards",
+  "zIndex": {
+    "base": 0,
+    "content": 100,
+    "overlay": 200,
+    "dropdown": 300,
+    "modal": 400,
+    "tooltip": 500,
+    "notification": 600,
+    "max": 9999
+  }
+}

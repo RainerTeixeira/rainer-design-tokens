@@ -1,260 +1,363 @@
-# 📚 Storybook - Design Tokens
+# 05-STORYBOOK.md - Storybook de Design Tokens
 
-Este documento explica como usar o Storybook para visualizar e documentar os design tokens.
+## 🎯 Visão Geral
+
+Este documento explica como usar o Storybook para visualizar, testar e documentar os design tokens da biblioteca `@rainersoft/design-tokens`.
 
 ## 🚀 Iniciar o Storybook
 
+### Desenvolvimento
 ```bash
-# Instalar dependências (se ainda não instalou)
+# Instalar dependências
 pnpm install
 
-# Iniciar o Storybook em modo desenvolvimento
+# Iniciar Storybook em modo dev
 pnpm run storybook
 ```
 
 O Storybook será aberto em `http://localhost:6006`
 
-## 📦 Build do Storybook
-
-Para gerar uma versão estática do Storybook:
-
+### Build para Produção
 ```bash
+# Gerar versão estática
 pnpm run build-storybook
+
+# Output em: storybook-static/
 ```
 
-A saída será gerada em `storybook-static/`
+## 📚 Stories Disponíveis
 
-## 🎨 Stories Disponíveis
+### 🎨 Design Tokens/Color Palette
 
-### Design Tokens/Color Palette
+Visualização completa de todas as paletas de cores:
 
-- **LightTheme** - Paleta completa do tema claro profissional
-- **DarkTheme** - Paleta completa do tema escuro (Cyberpunk)
+#### Light Theme
+- **Background**: Brancos e cinzas claros
+- **Surface**: Fundos de componentes
+- **Text**: Textos primários e secundários
+- **Border**: Bordas e divisores
+- **Brand**: Cores da marca (cyan, purple, pink)
+- **Status**: Success, warning, error, info
+- **Interactive**: Estados de hover, focus, active
 
-Visualiza todas as cores organizadas por categoria:
-- Background
-- Surface
-- Text
-- Border
-- Brand
-- Status
-- Interactive
-- Effects (apenas dark theme)
-- Gradients (apenas dark theme)
+#### Dark Theme (Cyberpunk)
+- Todas as cores do light theme
+- **Effects**: Cores neon com glow
+- **Gradients**: Gradientes cyberpunk
+- **Neon**: Cyan, purple, pink, green
 
-### Design Tokens/Theme Preview
+### 🌓 Design Tokens/Theme Preview
 
-- **LightThemePreview** - Preview completo do tema claro mostrando tokens trabalhando juntos
-- **DarkThemePreview** - Preview completo do tema escuro (Cyberpunk) com efeitos neon
+Demonstração prática dos temas em uso:
 
-Demonstra como os tokens (cores, espaçamento, tipografia, raios, sombras) trabalham juntos em exemplos práticos.
+#### Light Theme Preview
+- Cards com sombras sutis
+- Botões com estados interativos
+- Formulários com validação visual
+- Tipografia hierárquica
 
-### Design Tokens/Typography
+#### Dark Theme Preview
+- Efeitos neon e glow
+- Glassmorphism
+- Gradientes cyberpunk
+- Animações suaves
 
-- **FontFamilies** - Todas as famílias de fontes disponíveis
-- **FontSizes** - Escala completa de tamanhos de fonte
-- **FontWeights** - Pesos de fonte disponíveis
-- **LineHeights** - Alturas de linha
-- **LetterSpacing** - Espaçamento entre letras
+### 📝 Design Tokens/Typography
 
-### Design Tokens/Spacing
+Sistema tipográfico completo:
+- **Font Families**: Sans, Mono, Serif, Display
+- **Font Sizes**: De xs (12px) a 9xl (128px)
+- **Font Weights**: De thin (100) a black (900)
+- **Line Heights**: Proporções adequadas
+- **Exemplos**: Títulos, parágrafos, código
 
-- **SpacingScale** - Escala completa de espaçamento (8pt grid)
-- **SpacingExamples** - Exemplos práticos de uso (padding, margin, gap)
+### 📏 Design Tokens/Spacing
 
-### Design Tokens/Border Radius
+Visualização da escala de espaçamento:
+- **Grid System**: Baseado em 8pt
+- **Scale**: 0, px, 0.5, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24
+- **Visual**: Blocos coloridos mostrando proporções
+- **Uso**: Margens, padding, gaps
 
-- **RadiusScale** - Escala completa de raios de borda
-- **RadiusExamples** - Exemplos práticos (cards, buttons, pills)
+### ⭕ Design Tokens/Radius
 
-### Design Tokens/Shadows
+Sistema de bordas arredondadas:
+- **Scale**: sm, base, md, lg, xl, 2xl, full
+- **Visual**: Cards com diferentes raios
+- **Proporção**: Baseado em espaçamento
+- **Aplicação**: Botões, cards, inputs
 
-- **LightShadows** - Sombras do tema claro
-- **DarkShadows** - Sombras do tema escuro
-- **GlowEffects** - Efeitos de brilho (glow) do tema cyberpunk
+### 🌑 Design Tokens/Shadows & Elevation
 
-## 🎯 Funcionalidades
+Sistema de sombras e elevação:
+- **Light Theme**: Sombras sutis com rgba
+- **Dark Theme**: Sombras + efeitos glow
+- **Escala**: sm, md, lg, xl, 2xl
+- **Visual**: Cards flutuando
+- **Efeitos**: Neon, glow, soft
 
-### Tema Global
+### 🎭 Design Tokens/Motion
 
-O Storybook possui um seletor de tema na toolbar que permite alternar entre:
-- **Light** - Tema claro profissional
-- **Dark** - Tema escuro cyberpunk
+Animações e transições:
+- **Durações**: fast, normal, slow
+- **Curvas**: ease-in, ease-out, ease-in-out
+- **Exemplos**: Fade, slide, scale
+- **Demonstrações**: Botões, cards, modais
 
-### Background Switcher
+### ♿ Design Tokens/Accessibility
 
-Use o seletor de background para visualizar os tokens em diferentes contextos:
-- Light background
-- Dark background
+Tokens de acessibilidade:
+- **Contraste**: Verificação WCAG
+- **Focus Rings**: Visíveis e acessíveis
+- **Redução de Movimento**: Prefers-reduced-motion
+- **High Contrast**: Modo alto contraste
 
-### Documentação Automática
+## 🛠️ Configuração do Storybook
 
-Todas as stories possuem documentação automática gerada pelo Storybook, incluindo:
-- Descrições
-- Código fonte
-- Controles interativos
-
-## 🔧 Configuração
-
-### Arquivos de Configuração
-
-- `.storybook/main.ts` - Configuração principal do Storybook
-- `.storybook/preview.tsx` - Configuração de preview e tema (suporta JSX)
-
-### Customização do Tema
-
-O tema do Storybook é customizado usando os próprios design tokens:
-
+### .storybook/main.ts
 ```typescript
-// .storybook/preview.tsx
-import { tokens } from '../tokens';
+import type { StorybookConfig } from '@storybook/react-vite';
 
-docs: {
-  theme: {
-    colorPrimary: tokens.colors.light.brand.primary,
-    colorSecondary: tokens.colors.light.brand.secondary,
-    // ... mais customizações
+const config: StorybookConfig = {
+  stories: ['../stories/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs',
+  ],
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
   },
-}
+  docs: {
+    autodocs: 'tag',
+  },
+};
+
+export default config;
+```
+
+### .storybook/preview.tsx
+```typescript
+import type { Preview } from '@storybook/react';
+import { lightTheme, darkTheme } from '../themes';
+
+const preview: Preview = {
+  parameters: {
+    docs: {
+      theme: lightTheme,
+    },
+    backgrounds: {
+      default: 'light',
+      values: [
+        {
+          name: 'light',
+          value: '#ffffff',
+        },
+        {
+          name: 'dark',
+          value: '#0a0a0f',
+        },
+      ],
+    },
+  },
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      defaultValue: 'light',
+      toolbar: {
+        title: 'Theme',
+        icon: 'paintbrush',
+        items: [
+          { value: 'light', title: 'Light', icon: 'sun' },
+          { value: 'dark', title: 'Dark', icon: 'moon' },
+        ],
+        dynamicTitle: true,
+      },
+    },
+  },
+};
+
+export default preview;
 ```
 
 ## 📝 Criar Novas Stories
 
-Para criar uma nova story de tokens:
-
-1. Crie um arquivo `Nome.stories.tsx` em `stories/`
-2. Use o template básico:
-
+### Estrutura Básica
 ```typescript
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { tokens } from '../tokens';
+// stories/ExampleToken.stories.tsx
+import type { Meta, StoryObj } from '@storybook/react';
+import { ExampleToken } from '../components/ExampleToken';
 
-const meta = {
-  title: 'Design Tokens/Nome',
-  tags: ['autodocs'],
+const meta: Meta<typeof ExampleToken> = {
+  title: 'Design Tokens/ExampleToken',
+  component: ExampleToken,
   parameters: {
-    layout: 'fullscreen',
     docs: {
       description: {
-        component: 'Descrição do que esta story documenta.',
+        component: 'Descrição do token e seu uso.',
       },
     },
   },
-} satisfies Meta;
+  tags: ['autodocs'],
+};
 
-export default meta; // ⚠️ OBRIGATÓRIO: Sempre exporte o meta
+export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const MinhaStory: Story = {
-  render: () => {
-    // Seu código aqui usando tokens
-    return <div>Conteúdo</div>;
+export const Default: Story = {
+  args: {
+    // props
+  },
+};
+
+export const Dark: Story = {
+  parameters: {
+    backgrounds: { default: 'dark' },
   },
 };
 ```
 
-### ⚠️ Importante
+### Best Practices
+- ✅ Use descrições detalhadas
+- ✅ Mostre variações (light/dark)
+- ✅ Adicione exemplos práticos
+- ✅ Documente props e uso
+- ✅ Teste acessibilidade
 
-- **SEMPRE** exporte `export default meta` - sem isso o Storybook não consegue indexar a story
-- **Foque apenas em tokens** - não crie stories de componentes UI aqui
-- **Use `tokens`** importados de `../tokens` para acessar os valores
+## 🎨 Personalização
 
-## 🎨 Integração com Tokens
-
-Todas as stories importam os tokens diretamente:
-
+### Temas no Storybook
 ```typescript
-import { tokens } from '../tokens';
+// Aplicar tema customizado
+import { tokens } from '@rainersoft/design-tokens';
 
-// Usar tokens
-const primaryColor = tokens.colors.light.brand.primary;
-const spacing = tokens.spacing['4'];
-const fontSize = tokens.typography.fontSize.base;
-const radius = tokens.radius.md;
-const shadow = tokens.shadows.light.md;
+const customTheme = {
+  ...tokens.primitives,
+  custom: {
+    primary: tokens.semantics.colors.brand.primary,
+  },
+};
 ```
 
-### Stories Atuais
+### Addons Recomendados
+- **@storybook/addon-a11y**: Testes de acessibilidade
+- **@storybook/addon-docs**: Documentação automática
+- **@storybook/addon-controls**: Controles interativos
+- **@storybook/design-token**: Visualização de tokens
 
-1. **ColorPalette.stories.tsx** - Visualiza todas as cores organizadas por categoria
-2. **ThemePreview.stories.tsx** - Mostra como os tokens trabalham juntos em exemplos práticos
-3. **Typography.stories.tsx** - Documenta fontes, tamanhos, pesos, espaçamentos
-4. **Spacing.stories.tsx** - Escala de espaçamento com exemplos de uso
-5. **Radius.stories.tsx** - Raios de borda com exemplos visuais
-6. **Shadows.stories.tsx** - Sombras e efeitos glow (cyberpunk)
+## 🚀 Deploy do Storybook
 
-## 📚 Recursos Adicionais
-
-- [Documentação do Storybook](https://storybook.js.org/docs)
-- [Guia de Writing Stories](https://storybook.js.org/docs/writing-stories)
-- [Addons Disponíveis](https://storybook.js.org/addons)
-
-## 🐛 Troubleshooting
-
-### Erro: "Cannot find module '../tokens'"
-
-**Solução**: Certifique-se de que os tokens foram compilados:
+### Chromatic (Recomendado)
 ```bash
-pnpm run build
+# Instalar Chromatic CLI
+pnpm add -D chromatic
+
+# Publicar
+pnpm chromatic --project-token=SEU_TOKEN
 ```
 
-### Erro: "React is not defined"
+### GitHub Pages
+```yaml
+# .github/workflows/storybook.yml
+name: Storybook
 
-**Solução**: O Storybook já inclui React. Se o erro persistir:
-```bash
-pnpm add -D react react-dom
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run build-storybook
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./storybook-static
 ```
 
-### Storybook não inicia
+### Vercel/Netlify
+1. Conecte repositório
+2. Configure build command: `pnpm run build-storybook`
+3. Set publish directory: `storybook-static`
+4. Deploy automático em cada push
 
-**Solução**: Limpe o cache e reinstale:
-```bash
-rm -rf node_modules/.cache
-pnpm install
-pnpm run storybook
-```
+## 📊 Integração com Tokens
 
-### Erro: "CSF: missing default export"
-
-**Problema**: Story não tem `export default meta`.
-
-**Solução**: Sempre exporte o meta:
+### Tokens Dinâmicos
 ```typescript
-const meta = { ... } satisfies Meta;
-export default meta; // ⚠️ OBRIGATÓRIO
+import { tokens } from '@rainersoft/design-tokens';
+
+export const TokenStory = () => {
+  return (
+    <div style={{ padding: tokens.primitives.spacing['4'] }}>
+      <h2 style={{ color: tokens.semantics.colors.text.primary }}>
+        Usando tokens dinamicamente
+      </h2>
+    </div>
+  );
+};
 ```
 
-### Erro: "Cannot find module '../tokens'"
+### Tokens com CSS Variables
+```css
+.component {
+  padding: var(--spacing-4);
+  color: var(--color-text-primary);
+  background: var(--color-background-primary);
+}
+```
 
-**Solução**: Certifique-se de que os tokens foram compilados:
+## 🔍 Debug e Testes
+
+### Visual Regression Tests
 ```bash
-pnpm run build
+# Com Chromatic
+pnpm chromatic --only-changed
+
+# Com Loki
+pnpm loki test
 ```
 
-## 🚀 Deploy
-
-Para fazer deploy do Storybook:
-
-1. Gere o build estático:
+### Testes de Acessibilidade
 ```bash
-pnpm run build-storybook
+# Automático no Storybook
+# Ver aba "A11y" em cada story
 ```
 
-2. A pasta `storybook-static/` contém todos os arquivos estáticos
-
-3. Faça deploy em qualquer serviço de hospedagem estática:
-   - Netlify
-   - Vercel
-   - GitHub Pages
-   - AWS S3 + CloudFront
-
-### Exemplo: Deploy no Netlify
-
+### Performance
 ```bash
-# Build command
-pnpm run build-storybook
-
-# Publish directory
-storybook-static
+# Lighthouse CI
+pnpm lighthouse-ci
 ```
 
+## 🔗 Links Úteis
+
+- [Storybook Documentation](https://storybook.js.org/)
+- [Design Tokens Addon](https://github.com/storybookjs/design-token)
+- [Chromatic](https://www.chromatic.com/)
+- [A11y Addon](https://github.com/storybookjs/addon-a11y)
+
+## 📅 Última Atualização
+
+**Data**: Janeiro de 2026
+**Versão**: 2.6.0  
+**Atualização**: Stories atualizadas, novos tokens de motion e accessibility
+
+---
+
+**Autor**: Rainer Teixeira  
+**Licença**: MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

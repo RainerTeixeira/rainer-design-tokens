@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Design tokens index - Organized structure with primitives, semantics, and themes",
+  "$version": "2.7.0",
+  "primitives": {
+    "color": "./primitives/color-palette.json",
+    "spacing": "./primitives/spacing-scale.json",
+    "typography": "./primitives/typography-base.json",
+    "shadows": "./primitives/elevation-tokens.json",
+    "motion": "./primitives/motion-tokens.json",
+    "radius": "./primitives/radius-scale.json",
+    "breakpoints": "./primitives/breakpoints.json",
+    "z-index": "./primitives/z-index-layers.json",
+    "border": "./primitives/border-tokens.json",
+    "opacity": "./primitives/opacity-scale.json",
+    "layout": "./primitives/layout-units.json",
+    "icon-sizes": "./primitives/icon-scale.json"
+  },
+  "semantics": {
+    "color": "./semantics/color-roles.json",
+    "spacing": "./semantics/spacing-context.json",
+    "typography": "./semantics/typography-roles.json",
+    "border": "./semantics/border-roles.json",
+    "layout": "./semantics/layout-structure.json",
+    "elevation": "./semantics/elevation-roles.json",
+    "motion": "./semantics/motion-roles.json"
+  },
+  "themes": {
+    "light": "./themes/theme-light.json",
+    "dark": "./themes/theme-dark.json"
+  },
+  "metadata": {
+    "created": "2026-01-03",
+    "updated": "2026-01-03",
+    "structure": "primitives + semantics + themes",
+    "format": "json-only",
+    "version": "2.7.0"
+  }
+}

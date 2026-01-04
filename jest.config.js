@@ -14,6 +14,7 @@ export default {
         tsconfig: {
           module: 'ESNext',
           moduleResolution: 'node',
+          types: ['jest'],
         },
       },
     ],
@@ -32,5 +33,6 @@ export default {
   coverageReporters: ['text', 'lcov', 'html'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   verbose: true,
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
 };
 

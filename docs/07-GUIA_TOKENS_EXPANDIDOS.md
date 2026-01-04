@@ -363,3 +363,9 @@ Veja exemplos completos em:
 - [Exemplos Práticos](../app/exemplos-tokens/page.tsx)
 - [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

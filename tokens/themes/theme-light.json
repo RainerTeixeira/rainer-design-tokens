@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Light theme - Tema claro (valores padrão dos semânticos)",
+  "_comments": {
+    "color": "Tema light usa os mesmos valores dos tokens semânticos (padrão)"
+  },
+  "color": {
+    "background": {
+      "primary": "{palette.white}",
+      "secondary": "{palette.gray.50}",
+      "tertiary": "{palette.gray.100}",
+      "disabled": "{palette.gray.100}",
+      "overlay": "rgba(0, 0, 0, 0.5)",
+      "inverse": "{palette.black}"
+    },
+    "text": {
+      "primary": "{palette.gray.900}",
+      "secondary": "{palette.gray.600}",
+      "tertiary": "{palette.gray.400}",
+      "disabled": "{palette.gray.300}",
+      "inverse": "{palette.white}",
+      "onPrimary": "{palette.white}",
+      "onSecondary": "{palette.gray.900}",
+      "link": "{palette.blue.600}",
+      "linkHover": "{palette.blue.700}"
+    },
+    "button": {
+      "primary": {
+        "default": "{palette.blue.500}",
+        "hover": "{palette.blue.600}",
+        "active": "{palette.blue.700}",
+        "text": "{palette.white}"
+      },
+      "secondary": {
+        "default": "{palette.gray.200}",
+        "hover": "{palette.gray.300}",
+        "active": "{palette.gray.400}",
+        "text": "{palette.gray.900}"
+      },
+      "tertiary": {
+        "default": "{palette.transparent}",
+        "hover": "{palette.gray.100}",
+        "active": "{palette.gray.200}",
+        "text": "{palette.gray.900}"
+      },
+      "danger": {
+        "default": "{palette.red.500}",
+        "hover": "{palette.red.600}",
+        "active": "{palette.red.700}",
+        "text": "{palette.white}"
+      },
+      "success": {
+        "default": "{palette.green.500}",
+        "hover": "{palette.green.600}",
+        "active": "{palette.green.700}",
+        "text": "{palette.white}"
+      }
+    },
+    "border": {
+      "default": "{palette.gray.200}",
+      "light": "{palette.gray.100}",
+      "medium": "{palette.gray.300}",
+      "dark": "{palette.gray.400}",
+      "focus": "{palette.blue.500}",
+      "error": "{palette.red.500}",
+      "success": "{palette.green.500}",
+      "warning": "{palette.red.400}"
+    },
+    "status": {
+      "success": {
+        "default": "{palette.green.500}",
+        "light": "{palette.green.50}",
+        "dark": "{palette.green.700}",
+        "text": "{palette.green.700}"
+      },
+      "error": {
+        "default": "{palette.red.500}",
+        "light": "{palette.red.50}",
+        "dark": "{palette.red.700}",
+        "text": "{palette.red.700}"
+      },
+      "warning": {
+        "default": "{palette.red.400}",
+        "light": "{palette.red.50}",
+        "dark": "{palette.red.600}",
+        "text": "{palette.red.800}"
+      },
+      "info": {
+        "default": "{palette.blue.500}",
+        "light": "{palette.blue.50}",
+        "dark": "{palette.blue.700}",
+        "text": "{palette.blue.700}"
+      }
+    },
+    "interactive": {
+      "link": {
+        "default": "{palette.blue.600}",
+        "hover": "{palette.blue.700}",
+        "visited": "{palette.purple.600}",
+        "active": "{palette.blue.800}"
+      },
+      "focus": {
+        "ring": "{palette.blue.500}",
+        "ringOffset": "{palette.white}"
+      }
+    },
+    "surface": {
+      "elevated": "{palette.white}",
+      "raised": "{palette.gray.50}",
+      "sunken": "{palette.gray.100}"
+    }
+  },
+  "_notes": {
+    "background": {
+      "primary": "Fundo principal - referencia: palette.white",
+      "secondary": "Fundo secundário - referencia: palette.gray.50",
+      "tertiary": "Fundo terciário - referencia: palette.gray.100",
+      "disabled": "Fundo desabilitado - referencia: palette.gray.100",
+      "overlay": "Overlay com opacidade - referencia: palette.black com opacity",
+      "inverse": "Fundo invertido - referencia: palette.black"
+    },
+    "text": {
+      "primary": "Texto principal - referencia: palette.gray.900",
+      "secondary": "Texto secundário - referencia: palette.gray.600",
+      "tertiary": "Texto terciário - referencia: palette.gray.400",
+      "disabled": "Texto desabilitado - referencia: palette.gray.300",
+      "inverse": "Texto invertido - referencia: palette.white",
+      "onPrimary": "Texto sobre primária - referencia: palette.white",
+      "onSecondary": "Texto sobre secundária - referencia: palette.gray.900",
+      "link": "Link padrão - referencia: palette.blue.600",
+      "linkHover": "Link hover - referencia: palette.blue.700"
+    },
+    "button": {
+      "primary": "Botão primário - referencia: palette.blue.*",
+      "secondary": "Botão secundário - referencia: palette.gray.*",
+      "tertiary": "Botão terciário - referencia: palette.gray.*",
+      "danger": "Botão perigo - referencia: palette.red.*",
+      "success": "Botão sucesso - referencia: palette.green.*"
+    },
+    "border": {
+      "default": "Borda padrão - referencia: palette.gray.200",
+      "light": "Borda clara - referencia: palette.gray.100",
+      "medium": "Borda média - referencia: palette.gray.300",
+      "dark": "Borda escura - referencia: palette.gray.400",
+      "focus": "Borda foco - referencia: palette.blue.500",
+      "error": "Borda erro - referencia: palette.red.500",
+      "success": "Borda sucesso - referencia: palette.green.500",
+      "warning": "Borda aviso - referencia: palette.red.400"
+    },
+    "status": {
+      "success": "Status sucesso - referencia: palette.green.*",
+      "error": "Status erro - referencia: palette.red.*",
+      "warning": "Status aviso - referencia: palette.red.*",
+      "info": "Status informação - referencia: palette.blue.*"
+    },
+    "interactive": {
+      "link": "Links interativos - referencia: palette.blue.*, palette.purple.*",
+      "focus": "Foco - referencia: palette.blue.*, palette.white"
+    },
+    "surface": {
+      "elevated": "Superfície elevada - referencia: palette.white",
+      "raised": "Superfície levantada - referencia: palette.gray.50",
+      "sunken": "Superfície rebaixada - referencia: palette.gray.100"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens de elevação semântica - Sombras organizadas por função e contexto",
+  "_comments": {
+    "elevation": "Sombras organizadas por função semântica no design",
+    "surface": "Sombras para níveis de elevação da superfície",
+    "component": "Sombras para tipos específicos de componentes",
+    "interactive": "Sombras para elementos interativos e estados",
+    "overlay": "Sombras para sobreposições e elementos flutuantes"
+  },
+  "elevation": {
+    "surface": {
+      "none": "none",
+      "xs": "{shadows.xs}",
+      "sm": "{shadows.sm}",
+      "base": "{shadows.base}",
+      "md": "{shadows.md}",
+      "lg": "{shadows.lg}",
+      "xl": "{shadows.xl}",
+      "2xl": "{shadows.2xl}"
+    },
+    "component": {
+      "button": {
+        "default": "{shadows.sm}",
+        "hover": "{shadows.base}",
+        "active": "{shadows.inner}",
+        "disabled": "none"
+      },
+      "input": {
+        "default": "none",
+        "focus": "{elevation.interactive.focus}",
+        "error": "0 0 0 3px rgba(239, 68, 68, 0.1)"
+      },
+      "card": {
+        "default": "{shadows.base}",
+        "hover": "{shadows.md}",
+        "elevated": "{shadows.lg}"
+      },
+      "dropdown": {
+        "default": "{shadows.md}",
+        "menu": "{shadows.md}"
+      },
+      "modal": {
+        "overlay": "{shadows.xl}",
+        "dialog": "{shadows.2xl}"
+      },
+      "tooltip": {
+        "default": "{shadows.base}"
+      }
+    },
+    "interactive": {
+      "hover": "{shadows.base}",
+      "focus": "0 0 0 3px rgba(14, 165, 233, 0.1)",
+      "active": "{shadows.inner}",
+      "drag": "{shadows.md}"
+    },
+    "overlay": {
+      "backdrop": "{shadows.xl}",
+      "sheet": "{shadows.lg}",
+      "popover": "{shadows.md}"
+    }
+  },
+  "_notes": {
+    "surface": {
+      "none": "Sem elevação - superfície plana",
+      "xs": "Elevação mínima para separação sutil - referência: {shadows.xs}",
+      "sm": "Elevação pequena para botões e inputs - referência: {shadows.sm}",
+      "base": "Elevação padrão para cards - referência: {shadows.base}",
+      "md": "Elevação média para dropdowns e popovers - referência: {shadows.md}",
+      "lg": "Elevação grande para modais e sidebars - referência: {shadows.lg}",
+      "xl": "Elevação extra grande para elementos flutuantes - referência: {shadows.xl}",
+      "2xl": "Elevação máxima para seções de herói - referência: {shadows.2xl}"
+    },
+    "component": {
+      "button": {
+        "default": "Sombra padrão para botões - referência: {shadows.sm}",
+        "hover": "Sombra para estado hover de botões - referência: {shadows.base}",
+        "active": "Sombra interna para botões pressionados - referência: {shadows.inner}",
+        "disabled": "Sem sombra para botões desabilitados"
+      },
+      "input": {
+        "default": "Sem sombra para inputs padrão",
+        "focus": "Sombra para foco em inputs - referência: {elevation.interactive.focus}",
+        "error": "Sombra vermelha para inputs com erro"
+      },
+      "card": {
+        "default": "Sombra padrão para cards - referência: {shadows.base}",
+        "hover": "Sombra para cards em hover - referência: {shadows.md}",
+        "elevated": "Sombra para cards destacados - referência: {shadows.lg}"
+      },
+      "dropdown": {
+        "default": "Sombra para dropdowns - referência: {shadows.md}",
+        "menu": "Sombra para menus dropdown - referência: {shadows.md}"
+      },
+      "modal": {
+        "overlay": "Sombra para overlay de modal - referência: {shadows.xl}",
+        "dialog": "Sombra para diálogo de modal - referência: {shadows.2xl}"
+      },
+      "tooltip": {
+        "default": "Sombra para tooltips - referência: {shadows.base}"
+      }
+    },
+    "interactive": {
+      "hover": "Sombra para estados hover - referência: {shadows.base}",
+      "focus": "Sombra para anéis de foco em elementos interativos",
+      "active": "Sombra interna para elementos ativos - referência: {shadows.inner}",
+      "drag": "Sombra para elementos sendo arrastados - referência: {shadows.md}"
+    },
+    "overlay": {
+      "backdrop": "Sombra para backdrops - referência: {shadows.xl}",
+      "sheet": "Sombra para bottom sheets - referência: {shadows.lg}",
+      "popover": "Sombra para popovers - referência: {shadows.md}"
+    }
+  }
+}

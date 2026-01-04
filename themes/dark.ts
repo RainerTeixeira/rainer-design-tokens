@@ -54,11 +54,11 @@ import { tokens } from '../tokens';
  * ```
  */
 export const darkTheme = {
-  colors: tokens.colors.dark,
-  typography: tokens.typography,
-  spacing: tokens.spacing,
-  radius: tokens.radius,
-  shadows: tokens.shadows.dark,
+  colors: tokens.themes.dark,
+  typography: tokens.primitives.typography,
+  spacing: tokens.primitives.spacing,
+  radius: tokens.primitives.radius,
+  shadows: tokens.primitives.shadows,
 } as const;
 
 /**

@@ -1,6 +1,6 @@
 # Roadmap - @rainersoft/design-tokens
 
-## Versão Atual: 2.0.0 (2025-11-21)
+## Versão Atual: 2.6.0 (2026-01-04)
 
 Refatoração completa para padrão enterprise com estrutura modular e agnóstica de tecnologia.
 **Novos recursos:** Motion tokens, Breakpoints responsivos, Z-index scale.
@@ -215,6 +215,12 @@ Seguimos [Semantic Versioning](https://semver.org/):
 
 ---
 
-**Última Atualização:** 21 de Novembro de 2024
+**Última Atualização:** 04 de Janeiro de 2026
 **Versão do Roadmap:** 2.0.0
 
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

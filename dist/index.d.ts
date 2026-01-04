@@ -1,844 +1,173 @@
-var colors$1 = {
-	primary: {
-		base: "#0891b2",
-		hover: "#0e7490",
-		active: "#155e75",
-		disabled: "#d4d4d4",
-		focus: "#0891b2",
-		background: "#ecfeff",
-		backgroundHover: "#cffafe",
-		backgroundActive: "#a5f3fc",
-		border: "#0891b2",
-		borderHover: "#0e7490",
-		borderFocus: "#06b6d4",
-		text: "#ffffff",
-		textHover: "#ffffff",
-		textDisabled: "#a3a3a3"
+var $schema$l = "http://json-schema.org/draft-07/schema#";
+var $description$l = "Paleta de cores primitiva - Cores base, nunca mudam com tema";
+var _comments$i = {
+	palette: "Cores fundamentais do sistema de design",
+	white: "Branco puro",
+	black: "Preto puro",
+	transparent: "Transparente",
+	gray: "Escala de cinzas neutros",
+	blue: "Azul para elementos interativos e informativos",
+	cyan: "Ciano para elementos tecnológicos e destaque",
+	purple: "Roxo para destaque e elementos premium",
+	pink: "Rosa para elementos vibrantes e chamativos",
+	red: "Vermelho para alertas e erros",
+	orange: "Laranja para avisos e atenção",
+	yellow: "Amarelo para destaque e alertas leves",
+	green: "Verde para sucesso e confirmações",
+	emerald: "Verde esmeralda para elementos naturais"
+};
+var palette = {
+	white: "#ffffff",
+	black: "#000000",
+	transparent: "transparent",
+	gray: {
+		"50": "#f9fafb",
+		"100": "#f3f4f6",
+		"200": "#e5e7eb",
+		"300": "#d1d5db",
+		"400": "#9ca3af",
+		"500": "#6b7280",
+		"600": "#4b5563",
+		"700": "#374151",
+		"800": "#1f2937",
+		"900": "#111827"
 	},
-	secondary: {
-		base: "#9333ea",
-		hover: "#7e22ce",
-		active: "#6b21a8",
-		disabled: "#d4d4d4",
-		focus: "#9333ea",
-		background: "#faf5ff",
-		backgroundHover: "#f3e8ff",
-		backgroundActive: "#e9d5ff",
-		border: "#9333ea",
-		borderHover: "#7e22ce",
-		borderFocus: "#a855f7",
-		text: "#ffffff",
-		textHover: "#ffffff",
-		textDisabled: "#a3a3a3"
+	blue: {
+		"50": "#f0f9ff",
+		"100": "#e0f2fe",
+		"200": "#bae6fd",
+		"300": "#7dd3fc",
+		"400": "#38bdf8",
+		"500": "#0ea5e9",
+		"600": "#0284c7",
+		"700": "#0369a1",
+		"800": "#075985",
+		"900": "#0c4a6e"
 	},
-	accent: {
-		base: "#db2777",
-		hover: "#be185d",
-		active: "#9f1239",
-		disabled: "#d4d4d4",
-		focus: "#db2777",
-		background: "#fdf2f8",
-		backgroundHover: "#fce7f3",
-		backgroundActive: "#fbcfe8",
-		border: "#db2777",
-		borderHover: "#be185d",
-		borderFocus: "#ec4899",
-		text: "#ffffff",
-		textHover: "#ffffff",
-		textDisabled: "#a3a3a3"
+	cyan: {
+		"50": "#ecfeff",
+		"100": "#cffafe",
+		"200": "#a5f3fc",
+		"300": "#67e8f9",
+		"400": "#22d3ee",
+		"500": "#06b6d4",
+		"600": "#0891b2",
+		"700": "#0e7490",
+		"800": "#155e75",
+		"900": "#164e63"
 	},
-	background: {
-		primary: "#ffffff",
-		secondary: "#fafafa",
-		tertiary: "#f5f5f5",
-		inverse: "#0a0a0f",
-		overlay: "rgba(0, 0, 0, 0.5)",
-		muted: "#f9fafb"
+	purple: {
+		"50": "#faf5ff",
+		"100": "#f3e8ff",
+		"200": "#e9d5ff",
+		"300": "#d8b4fe",
+		"400": "#c084fc",
+		"500": "#a855f7",
+		"600": "#9333ea",
+		"700": "#7c3aed",
+		"800": "#6b21a8",
+		"900": "#581c87"
 	},
-	surface: {
-		primary: "#ffffff",
-		secondary: "#fafafa",
-		tertiary: "#f5f5f5",
-		elevated: "#ffffff",
-		overlay: "rgba(0, 0, 0, 0.5)",
-		hover: "#f9fafb",
-		active: "#f3f4f6"
+	pink: {
+		"50": "#fdf2f8",
+		"100": "#fce7f3",
+		"200": "#fbcfe8",
+		"300": "#f9a8d4",
+		"400": "#f472b6",
+		"500": "#ec4899",
+		"600": "#db2777",
+		"700": "#be185d",
+		"800": "#9d174d",
+		"900": "#831843"
 	},
-	text: {
-		primary: "#171717",
-		secondary: "#404040",
-		tertiary: "#737373",
-		inverse: "#ffffff",
-		disabled: "#a3a3a3",
-		link: "#0891b2",
-		linkHover: "#0e7490",
-		linkActive: "#155e75",
-		linkVisited: "#7e22ce",
-		onPrimary: "#ffffff",
-		onSecondary: "#ffffff",
-		onAccent: "#ffffff",
-		onBackground: "#171717",
-		onSurface: "#171717"
+	red: {
+		"50": "#fef2f2",
+		"100": "#fee2e2",
+		"200": "#fecaca",
+		"300": "#fca5a5",
+		"400": "#f87171",
+		"500": "#ef4444",
+		"600": "#dc2626",
+		"700": "#b91c1c",
+		"800": "#991b1b",
+		"900": "#7f1d1d"
 	},
-	border: {
-		primary: "#e5e5e5",
-		secondary: "#d4d4d4",
-		tertiary: "#a3a3a3",
-		focus: "#0891b2",
-		focusRing: "#06b6d4",
-		inverse: "#404040",
-		hover: "#d4d4d4",
-		active: "#a3a3a3",
-		disabled: "#e5e5e5"
+	orange: {
+		"50": "#fff7ed",
+		"100": "#ffedd5",
+		"200": "#fed7aa",
+		"300": "#fdba74",
+		"400": "#fb923c",
+		"500": "#f97316",
+		"600": "#ea580c",
+		"700": "#c2410c",
+		"800": "#9a3412",
+		"900": "#7c2d12"
 	},
-	status: {
-		success: {
-			base: "#22c55e",
-			hover: "#16a34a",
-			active: "#15803d",
-			background: "#f0fdf4",
-			backgroundHover: "#dcfce7",
-			border: "#86efac",
-			text: "#ffffff",
-			textOnBackground: "#166534"
-		},
-		warning: {
-			base: "#f59e0b",
-			hover: "#d97706",
-			active: "#b45309",
-			background: "#fffbeb",
-			backgroundHover: "#fef3c7",
-			border: "#fcd34d",
-			text: "#ffffff",
-			textOnBackground: "#92400e"
-		},
-		error: {
-			base: "#ef4444",
-			hover: "#dc2626",
-			active: "#b91c1c",
-			background: "#fef2f2",
-			backgroundHover: "#fee2e2",
-			border: "#fca5a5",
-			text: "#ffffff",
-			textOnBackground: "#991b1b"
-		},
-		info: {
-			base: "#3b82f6",
-			hover: "#2563eb",
-			active: "#1d4ed8",
-			background: "#eff6ff",
-			backgroundHover: "#dbeafe",
-			border: "#93c5fd",
-			text: "#ffffff",
-			textOnBackground: "#1e40af"
-		}
+	yellow: {
+		"50": "#fefce8",
+		"100": "#fef9c3",
+		"200": "#fef08a",
+		"300": "#fde047",
+		"400": "#facc15",
+		"500": "#eab308",
+		"600": "#ca8a04",
+		"700": "#a16207",
+		"800": "#854d0e",
+		"900": "#713f12"
 	},
-	interactive: {
-		"default": "#0891b2",
-		hover: "#0e7490",
-		active: "#155e75",
-		disabled: "#d4d4d4",
-		disabledText: "#a3a3a3",
-		focus: "#0891b2",
-		focusRing: "#06b6d4"
+	green: {
+		"50": "#f0fdf4",
+		"100": "#dcfce7",
+		"200": "#bbf7d0",
+		"300": "#86efac",
+		"400": "#4ade80",
+		"500": "#22c55e",
+		"600": "#16a34a",
+		"700": "#15803d",
+		"800": "#166534",
+		"900": "#14532d"
 	},
-	primitive: {
-		cyan: {
-			"50": "#ecfeff",
-			"100": "#cffafe",
-			"200": "#a5f3fc",
-			"300": "#67e8f9",
-			"400": "#22d3ee",
-			"500": "#06b6d4",
-			"600": "#0891b2",
-			"700": "#0e7490",
-			"800": "#155e75",
-			"900": "#164e63"
-		},
-		purple: {
-			"50": "#faf5ff",
-			"100": "#f3e8ff",
-			"200": "#e9d5ff",
-			"300": "#d8b4fe",
-			"400": "#c084fc",
-			"500": "#a855f7",
-			"600": "#9333ea",
-			"700": "#7e22ce",
-			"800": "#6b21a8",
-			"900": "#581c87"
-		},
-		pink: {
-			"50": "#fdf2f8",
-			"100": "#fce7f3",
-			"200": "#fbcfe8",
-			"300": "#f9a8d4",
-			"400": "#f472b6",
-			"500": "#ec4899",
-			"600": "#db2777",
-			"700": "#be185d",
-			"800": "#9f1239",
-			"900": "#831843"
-		},
-		blue: {
-			"50": "#eff6ff",
-			"100": "#dbeafe",
-			"200": "#bfdbfe",
-			"300": "#93c5fd",
-			"400": "#60a5fa",
-			"500": "#3b82f6",
-			"600": "#2563eb",
-			"700": "#1d4ed8",
-			"800": "#1e40af",
-			"900": "#1e3a8a"
-		},
-		green: {
-			"50": "#f0fdf4",
-			"100": "#dcfce7",
-			"200": "#bbf7d0",
-			"300": "#86efac",
-			"400": "#4ade80",
-			"500": "#22c55e",
-			"600": "#16a34a",
-			"700": "#15803d",
-			"800": "#166534",
-			"900": "#14532d"
-		},
-		orange: {
-			"50": "#fff7ed",
-			"100": "#ffedd5",
-			"200": "#fed7aa",
-			"300": "#fdba74",
-			"400": "#fb923c",
-			"500": "#f97316",
-			"600": "#ea580c",
-			"700": "#c2410c",
-			"800": "#9a3412",
-			"900": "#7c2d12"
-		},
-		red: {
-			"50": "#fef2f2",
-			"100": "#fee2e2",
-			"200": "#fecaca",
-			"300": "#fca5a5",
-			"400": "#f87171",
-			"500": "#ef4444",
-			"600": "#dc2626",
-			"700": "#b91c1c",
-			"800": "#991b1b",
-			"900": "#7f1d1d"
-		},
-		amber: {
-			"50": "#fffbeb",
-			"100": "#fef3c7",
-			"200": "#fde68a",
-			"300": "#fcd34d",
-			"400": "#fbbf24",
-			"500": "#f59e0b",
-			"600": "#d97706",
-			"700": "#b45309",
-			"800": "#92400e",
-			"900": "#78350f"
-		},
-		emerald: {
-			"50": "#ecfdf5",
-			"100": "#d1fae5",
-			"200": "#a7f3d0",
-			"300": "#6ee7b7",
-			"400": "#34d399",
-			"500": "#10b981",
-			"600": "#059669",
-			"700": "#047857",
-			"800": "#065f46",
-			"900": "#064e3b"
-		},
-		neutral: {
-			"50": "#fafafa",
-			"100": "#f5f5f5",
-			"200": "#e5e5e5",
-			"300": "#d4d4d4",
-			"400": "#a3a3a3",
-			"500": "#737373",
-			"600": "#525252",
-			"700": "#404040",
-			"800": "#262626",
-			"900": "#171717",
-			"950": "#0a0a0f"
-		}
-	},
-	effects: {
-		matrixRain: {
-			base: "#fbbf24"
-		},
-		stars: {
-			base: "#00e6ff"
-		}
+	emerald: {
+		"50": "#ecfdf5",
+		"100": "#d1fae5",
+		"200": "#a7f3d0",
+		"300": "#6ee7b7",
+		"400": "#34d399",
+		"500": "#10b981",
+		"600": "#059669",
+		"700": "#047857",
+		"800": "#065f46",
+		"900": "#064e3b"
 	}
 };
-var lightColors = {
-	colors: colors$1
+var _notes$i = {
+	palette: "Todas as cores seguem padrão de escala 50-900 onde 50 é mais claro e 900 é mais escuro",
+	gray: "Cinza neutro balanceado para textos e backgrounds",
+	blue: "Azul céu usado para links, botões primários e elementos interativos",
+	cyan: "Ciano vibrante para elementos tecnológicos, futuristas e destaque",
+	purple: "Roxo vibrante para elementos premium e destaque visual",
+	pink: "Rosa para elementos vibrantes, chamativos e femininos",
+	red: "Vermelho para estados de erro, alertas críticos e ações destrutivas",
+	orange: "Laranja para avisos, atenção e elementos de destaque secundário",
+	yellow: "Amarelo para destaque leve, alertas informativos e atenção",
+	green: "Verde para feedback positivo, sucesso e confirmações",
+	emerald: "Verde esmeralda para elementos naturais, orgânicos e sucesso alternativo"
+};
+var colorPalette = {
+	$schema: $schema$l,
+	$description: $description$l,
+	_comments: _comments$i,
+	palette: palette,
+	_notes: _notes$i
 };
 
-var colors = {
-	primary: {
-		base: "#00e6ff",
-		hover: "#1affff",
-		active: "#4dffff",
-		disabled: "#404040",
-		focus: "#00e6ff",
-		background: "rgba(0, 230, 255, 0.1)",
-		backgroundHover: "rgba(0, 230, 255, 0.15)",
-		backgroundActive: "rgba(0, 230, 255, 0.2)",
-		border: "#00e6ff",
-		borderHover: "#1affff",
-		borderFocus: "#4dffff",
-		text: "#0a0a0f",
-		textHover: "#0a0a0f",
-		textDisabled: "#525252"
-	},
-	secondary: {
-		base: "#7d00ff",
-		hover: "#941aff",
-		active: "#ab4dff",
-		disabled: "#404040",
-		focus: "#7d00ff",
-		background: "rgba(125, 0, 255, 0.1)",
-		backgroundHover: "rgba(125, 0, 255, 0.15)",
-		backgroundActive: "rgba(125, 0, 255, 0.2)",
-		border: "#7d00ff",
-		borderHover: "#941aff",
-		borderFocus: "#ab4dff",
-		text: "#ffffff",
-		textHover: "#ffffff",
-		textDisabled: "#525252"
-	},
-	accent: {
-		base: "#ff00ff",
-		hover: "#ff1aff",
-		active: "#ff4dff",
-		disabled: "#404040",
-		focus: "#ff00ff",
-		background: "rgba(255, 0, 255, 0.1)",
-		backgroundHover: "rgba(255, 0, 255, 0.15)",
-		backgroundActive: "rgba(255, 0, 255, 0.2)",
-		border: "#ff00ff",
-		borderHover: "#ff1aff",
-		borderFocus: "#ff4dff",
-		text: "#0a0a0f",
-		textHover: "#0a0a0f",
-		textDisabled: "#525252"
-	},
-	background: {
-		primary: "#0a0a0f",
-		secondary: "#0f0f1a",
-		tertiary: "#171717",
-		inverse: "#ffffff",
-		overlay: "rgba(0, 0, 0, 0.8)",
-		muted: "#0f0f1a"
-	},
-	surface: {
-		primary: "#171717",
-		secondary: "#262626",
-		tertiary: "#404040",
-		elevated: "#262626",
-		overlay: "rgba(0, 0, 0, 0.8)",
-		glass: "rgba(15, 15, 26, 0.7)",
-		glassHover: "rgba(15, 15, 26, 0.85)",
-		hover: "#262626",
-		active: "#404040"
-	},
-	text: {
-		primary: "#b3ffff",
-		secondary: "#4dffff",
-		tertiary: "#00e6ff",
-		inverse: "#0a0a0f",
-		disabled: "#525252",
-		link: "#1affff",
-		linkHover: "#4dffff",
-		linkActive: "#80ffff",
-		linkVisited: "#941aff",
-		onPrimary: "#0a0a0f",
-		onSecondary: "#ffffff",
-		onAccent: "#0a0a0f",
-		onBackground: "#b3ffff",
-		onSurface: "#b3ffff",
-		glow: "#00e6ff",
-		neonCyan: "#00e6ff",
-		neonPink: "#ff00ff",
-		neonPurple: "#7d00ff",
-		neonGreen: "#00ff00"
-	},
-	border: {
-		primary: "#262626",
-		secondary: "#404040",
-		tertiary: "#525252",
-		focus: "#00e6ff",
-		focusRing: "#1affff",
-		inverse: "#e5e5e5",
-		neon: "#00e6ff",
-		neonGlow: "rgba(0, 230, 255, 0.3)",
-		hover: "#404040",
-		active: "#525252",
-		disabled: "#262626"
-	},
-	status: {
-		success: {
-			base: "#00ff00",
-			hover: "#4dff4d",
-			active: "#80ff80",
-			background: "rgba(0, 255, 0, 0.1)",
-			backgroundHover: "rgba(0, 255, 0, 0.15)",
-			border: "#4dff4d",
-			text: "#0a0a0f",
-			textOnBackground: "#4dff4d"
-		},
-		warning: {
-			base: "#ff7d00",
-			hover: "#ffab4d",
-			active: "#ffc880",
-			background: "rgba(255, 125, 0, 0.1)",
-			backgroundHover: "rgba(255, 125, 0, 0.15)",
-			border: "#ffab4d",
-			text: "#0a0a0f",
-			textOnBackground: "#ffab4d"
-		},
-		error: {
-			base: "#f87171",
-			hover: "#fca5a5",
-			active: "#fecaca",
-			background: "rgba(239, 68, 68, 0.1)",
-			backgroundHover: "rgba(239, 68, 68, 0.15)",
-			border: "#fca5a5",
-			text: "#ffffff",
-			textOnBackground: "#fca5a5"
-		},
-		info: {
-			base: "#007dff",
-			hover: "#4dabff",
-			active: "#80c7ff",
-			background: "rgba(0, 125, 255, 0.1)",
-			backgroundHover: "rgba(0, 125, 255, 0.15)",
-			border: "#4dabff",
-			text: "#ffffff",
-			textOnBackground: "#4dabff"
-		}
-	},
-	interactive: {
-		"default": "#00e6ff",
-		hover: "#1affff",
-		active: "#4dffff",
-		disabled: "#404040",
-		disabledText: "#525252",
-		focus: "#00e6ff",
-		focusRing: "#1affff"
-	},
-	effects: {
-		glowCyan: "0 0 20px rgba(0, 230, 255, 0.5), 0 0 40px rgba(0, 230, 255, 0.3)",
-		glowPink: "0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3)",
-		glowPurple: "0 0 20px rgba(125, 0, 255, 0.5), 0 0 40px rgba(125, 0, 255, 0.3)",
-		glowGreen: "0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3)",
-		shadowSm: "0 1px 2px 0 rgba(0, 0, 0, 0.5)",
-		shadowMd: "0 4px 6px -1px rgba(0, 0, 0, 0.5)",
-		shadowLg: "0 10px 15px -3px rgba(0, 0, 0, 0.5)"
-	},
-	gradients: {
-		primary: "linear-gradient(135deg, #00e6ff 0%, #7d00ff 100%)",
-		secondary: "linear-gradient(135deg, #ff00ff 0%, #00e6ff 100%)",
-		accent: "linear-gradient(135deg, #ff7d00 0%, #ff00ff 100%)",
-		background: "linear-gradient(180deg, #0a0a0f 0%, #0f0f1a 100%)"
-	},
-	primitive: {
-		cyan: {
-			"50": "rgba(0, 230, 255, 0.1)",
-			"100": "rgba(0, 230, 255, 0.15)",
-			"200": "rgba(0, 230, 255, 0.2)",
-			"300": "#4dffff",
-			"400": "#1affff",
-			"500": "#00e6ff",
-			"600": "#00b8cc",
-			"700": "#008a99",
-			"800": "#005c66",
-			"900": "#003d44"
-		},
-		purple: {
-			"50": "rgba(125, 0, 255, 0.1)",
-			"100": "rgba(125, 0, 255, 0.15)",
-			"200": "rgba(125, 0, 255, 0.2)",
-			"300": "#ab4dff",
-			"400": "#941aff",
-			"500": "#7d00ff",
-			"600": "#6400cc",
-			"700": "#4b0099",
-			"800": "#320066",
-			"900": "#190033"
-		},
-		pink: {
-			"50": "rgba(255, 0, 255, 0.1)",
-			"100": "rgba(255, 0, 255, 0.15)",
-			"200": "rgba(255, 0, 255, 0.2)",
-			"300": "#ff4dff",
-			"400": "#ff1aff",
-			"500": "#ff00ff",
-			"600": "#cc00cc",
-			"700": "#990099",
-			"800": "#660066",
-			"900": "#330033"
-		},
-		blue: {
-			"50": "rgba(0, 125, 255, 0.1)",
-			"100": "rgba(0, 125, 255, 0.15)",
-			"200": "rgba(0, 125, 255, 0.2)",
-			"300": "#80c7ff",
-			"400": "#4dabff",
-			"500": "#007dff",
-			"600": "#0064cc",
-			"700": "#004b99",
-			"800": "#003266",
-			"900": "#001933"
-		},
-		green: {
-			"50": "rgba(0, 255, 0, 0.1)",
-			"100": "rgba(0, 255, 0, 0.15)",
-			"200": "rgba(0, 255, 0, 0.2)",
-			"300": "#80ff80",
-			"400": "#4dff4d",
-			"500": "#00ff00",
-			"600": "#00cc00",
-			"700": "#009900",
-			"800": "#006600",
-			"900": "#003300"
-		},
-		orange: {
-			"50": "rgba(255, 125, 0, 0.1)",
-			"100": "rgba(255, 125, 0, 0.15)",
-			"200": "rgba(255, 125, 0, 0.2)",
-			"300": "#ffc880",
-			"400": "#ffab4d",
-			"500": "#ff7d00",
-			"600": "#cc6400",
-			"700": "#994b00",
-			"800": "#663200",
-			"900": "#331900"
-		},
-		red: {
-			"50": "rgba(239, 68, 68, 0.1)",
-			"100": "rgba(239, 68, 68, 0.15)",
-			"200": "rgba(239, 68, 68, 0.2)",
-			"300": "#fecaca",
-			"400": "#fca5a5",
-			"500": "#f87171",
-			"600": "#c55a5a",
-			"700": "#924343",
-			"800": "#5f2c2c",
-			"900": "#2c1515"
-		},
-		amber: {
-			"50": "rgba(255, 125, 0, 0.1)",
-			"100": "rgba(255, 125, 0, 0.15)",
-			"200": "rgba(255, 125, 0, 0.2)",
-			"300": "#ffc880",
-			"400": "#ffab4d",
-			"500": "#ff7d00",
-			"600": "#cc6400",
-			"700": "#994b00",
-			"800": "#663200",
-			"900": "#331900"
-		},
-		emerald: {
-			"50": "rgba(0, 255, 0, 0.1)",
-			"100": "rgba(0, 255, 0, 0.15)",
-			"200": "rgba(0, 255, 0, 0.2)",
-			"300": "#80ff80",
-			"400": "#4dff4d",
-			"500": "#00ff00",
-			"600": "#00cc00",
-			"700": "#009900",
-			"800": "#006600",
-			"900": "#003300"
-		},
-		neutral: {
-			"50": "#0f0f1a",
-			"100": "#171717",
-			"200": "#262626",
-			"300": "#404040",
-			"400": "#525252",
-			"500": "#737373",
-			"600": "#a3a3a3",
-			"700": "#d4d4d4",
-			"800": "#e5e5e5",
-			"900": "#f5f5f5",
-			"950": "#ffffff"
-		}
-	}
+var $schema$k = "http://json-schema.org/draft-07/schema#";
+var $description$k = "Tokens de espaçamento - Escala consistente baseada em grid de 8pt";
+var _comments$h = {
+	spacing: "Escala de espaçamento consistente para todo o sistema"
 };
-var darkColors = {
-	colors: colors
-};
-
-var typography$1 = {
-	fontFamily: {
-		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
-		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
-		mono: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
-		display: "var(--font-orbitron, ui-sans-serif)",
-		body: "var(--font-inter, ui-sans-serif)",
-		code: "var(--font-rajdhani, ui-monospace)"
-	},
-	fontSize: {
-		xs: "0.75rem",
-		sm: "0.875rem",
-		base: "1rem",
-		lg: "1.125rem",
-		xl: "1.25rem",
-		"2xl": "1.5rem",
-		"3xl": "1.875rem",
-		"4xl": "2.25rem",
-		"5xl": "3rem",
-		"6xl": "3.75rem",
-		"7xl": "4.5rem",
-		"8xl": "6rem",
-		"9xl": "8rem"
-	},
-	fontWeight: {
-		thin: "100",
-		extralight: "200",
-		light: "300",
-		normal: "400",
-		medium: "500",
-		semibold: "600",
-		bold: "700",
-		extrabold: "800",
-		black: "900"
-	},
-	lineHeight: {
-		none: "1",
-		tight: "1.25",
-		snug: "1.375",
-		normal: "1.5",
-		relaxed: "1.625",
-		loose: "2"
-	},
-	letterSpacing: {
-		tighter: "-0.05em",
-		tight: "-0.025em",
-		normal: "0em",
-		wide: "0.025em",
-		wider: "0.05em",
-		widest: "0.1em"
-	},
-	headings: {
-		h1: {
-			fontFamily: "var(--font-display, ui-sans-serif)",
-			fontSize: "clamp(2.25rem, 5vw + 1rem, 4.5rem)",
-			fontSizeMobile: "2.25rem",
-			fontSizeTablet: "3rem",
-			fontSizeDesktop: "4.5rem",
-			fontWeight: "900",
-			lineHeight: "1.1",
-			letterSpacing: "-0.02em",
-			marginBottom: "1rem"
-		},
-		h2: {
-			fontFamily: "var(--font-display, ui-sans-serif)",
-			fontSize: "clamp(1.875rem, 4vw + 0.75rem, 3.75rem)",
-			fontSizeMobile: "1.875rem",
-			fontSizeTablet: "2.5rem",
-			fontSizeDesktop: "3.75rem",
-			fontWeight: "800",
-			lineHeight: "1.15",
-			letterSpacing: "-0.015em",
-			marginBottom: "0.875rem"
-		},
-		h3: {
-			fontFamily: "var(--font-display, ui-sans-serif)",
-			fontSize: "clamp(1.5rem, 3vw + 0.5rem, 3rem)",
-			fontSizeMobile: "1.5rem",
-			fontSizeTablet: "2rem",
-			fontSizeDesktop: "3rem",
-			fontWeight: "700",
-			lineHeight: "1.2",
-			letterSpacing: "-0.01em",
-			marginBottom: "0.75rem"
-		},
-		h4: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "clamp(1.25rem, 2.5vw + 0.5rem, 2.25rem)",
-			fontSizeMobile: "1.25rem",
-			fontSizeTablet: "1.75rem",
-			fontSizeDesktop: "2.25rem",
-			fontWeight: "700",
-			lineHeight: "1.25",
-			letterSpacing: "0em",
-			marginBottom: "0.625rem"
-		},
-		h5: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "clamp(1.125rem, 2vw + 0.25rem, 1.875rem)",
-			fontSizeMobile: "1.125rem",
-			fontSizeTablet: "1.5rem",
-			fontSizeDesktop: "1.875rem",
-			fontWeight: "600",
-			lineHeight: "1.3",
-			letterSpacing: "0em",
-			marginBottom: "0.5rem"
-		},
-		h6: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "clamp(1rem, 1.5vw + 0.25rem, 1.5rem)",
-			fontSizeMobile: "1rem",
-			fontSizeTablet: "1.25rem",
-			fontSizeDesktop: "1.5rem",
-			fontWeight: "600",
-			lineHeight: "1.35",
-			letterSpacing: "0.01em",
-			marginBottom: "0.5rem"
-		}
-	},
-	subtitle: {
-		large: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "clamp(1.25rem, 2vw + 0.5rem, 2rem)",
-			fontSizeMobile: "1.25rem",
-			fontSizeTablet: "1.5rem",
-			fontSizeDesktop: "2rem",
-			fontWeight: "500",
-			lineHeight: "1.4",
-			letterSpacing: "0em",
-			marginBottom: "0.5rem"
-		},
-		medium: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "clamp(1.125rem, 1.5vw + 0.25rem, 1.5rem)",
-			fontSizeMobile: "1.125rem",
-			fontSizeTablet: "1.25rem",
-			fontSizeDesktop: "1.5rem",
-			fontWeight: "500",
-			lineHeight: "1.4",
-			letterSpacing: "0em",
-			marginBottom: "0.5rem"
-		},
-		small: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "1rem",
-			fontWeight: "500",
-			lineHeight: "1.4",
-			letterSpacing: "0em",
-			marginBottom: "0.375rem"
-		}
-	},
-	body: {
-		large: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "1.125rem",
-			fontWeight: "400",
-			lineHeight: "1.625",
-			letterSpacing: "0em"
-		},
-		medium: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "1rem",
-			fontWeight: "400",
-			lineHeight: "1.5",
-			letterSpacing: "0em"
-		},
-		small: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.875rem",
-			fontWeight: "400",
-			lineHeight: "1.5",
-			letterSpacing: "0em"
-		}
-	},
-	caption: {
-		large: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.875rem",
-			fontWeight: "400",
-			lineHeight: "1.4",
-			letterSpacing: "0.01em"
-		},
-		medium: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.75rem",
-			fontWeight: "400",
-			lineHeight: "1.4",
-			letterSpacing: "0.01em"
-		},
-		small: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.625rem",
-			fontWeight: "400",
-			lineHeight: "1.3",
-			letterSpacing: "0.02em"
-		}
-	},
-	button: {
-		large: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "1.125rem",
-			fontWeight: "600",
-			lineHeight: "1.5",
-			letterSpacing: "0.01em"
-		},
-		medium: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "1rem",
-			fontWeight: "600",
-			lineHeight: "1.5",
-			letterSpacing: "0.01em"
-		},
-		small: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.875rem",
-			fontWeight: "600",
-			lineHeight: "1.4",
-			letterSpacing: "0.01em"
-		}
-	},
-	label: {
-		large: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.875rem",
-			fontWeight: "600",
-			lineHeight: "1.4",
-			letterSpacing: "0.01em"
-		},
-		medium: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.75rem",
-			fontWeight: "600",
-			lineHeight: "1.4",
-			letterSpacing: "0.01em"
-		},
-		small: {
-			fontFamily: "var(--font-body, ui-sans-serif)",
-			fontSize: "0.625rem",
-			fontWeight: "600",
-			lineHeight: "1.3",
-			letterSpacing: "0.02em"
-		}
-	},
-	code: {
-		inline: {
-			fontFamily: "var(--font-code, ui-monospace)",
-			fontSize: "0.875em",
-			fontWeight: "400",
-			lineHeight: "1.5",
-			letterSpacing: "0em"
-		},
-		block: {
-			fontFamily: "var(--font-code, ui-monospace)",
-			fontSize: "0.875rem",
-			fontWeight: "400",
-			lineHeight: "1.6",
-			letterSpacing: "0em"
-		}
-	}
-};
-var typography = {
-	typography: typography$1
-};
-
-var spacing$2 = {
+var spacing$1 = {
 	"0": "0px",
 	"1": "0.25rem",
 	"2": "0.5rem",
@@ -875,200 +204,218 @@ var spacing$2 = {
 	"2.5": "0.625rem",
 	"3.5": "0.875rem"
 };
-var spacing$1 = {
-	spacing: spacing$2
+var _notes$h = {
+	"0": "Zero espaçamento",
+	"1": "4px - Espaçamento muito pequeno",
+	"2": "8px - Espaçamento base (1 unidade do grid)",
+	"3": "12px - Espaçamento médio pequeno",
+	"4": "16px - Espaçamento médio padrão",
+	"5": "20px - Espaçamento médio grande",
+	"6": "24px - Espaçamento grande pequeno",
+	"7": "28px - Espaçamento grande",
+	"8": "32px - Espaçamento grande padrão",
+	"9": "36px - Espaçamento grande médio",
+	"10": "40px - Espaçamento grande",
+	"11": "44px - Espaçamento muito grande pequeno",
+	"12": "48px - Espaçamento muito grande",
+	"14": "56px - Espaçamento extra grande pequeno",
+	"16": "64px - Espaçamento extra grande",
+	"20": "80px - Espaçamento enorme pequeno",
+	"24": "96px - Espaçamento enorme",
+	"28": "112px - Espaçamento gigante pequeno",
+	"32": "128px - Espaçamento gigante",
+	"36": "144px - Espaçamento gigante médio",
+	"40": "160px - Espaçamento gigante grande",
+	"44": "176px - Espaçamento massivo pequeno",
+	"48": "192px - Espaçamento massivo",
+	"52": "208px - Espaçamento colossal pequeno",
+	"56": "224px - Espaçamento colossal",
+	"60": "240px - Espaçamento colossal médio",
+	"64": "256px - Espaçamento colossal grande",
+	"72": "288px - Espaçamento máximo pequeno",
+	"80": "320px - Espaçamento máximo",
+	"96": "384px - Espaçamento máximo absoluto",
+	px: "1 pixel para bordas finas",
+	"0.5": "2px - Espaçamento mínimo",
+	"1.5": "6px - Espaçamento pequeno",
+	"2.5": "10px - Espaçamento pequeno médio",
+	"3.5": "14px - Espaçamento médio"
+};
+var spacingScale = {
+	$schema: $schema$k,
+	$description: $description$k,
+	_comments: _comments$h,
+	spacing: spacing$1,
+	_notes: _notes$h
 };
 
-var radius$2 = {
-	none: "0px",
-	sm: "0.125rem",
-	base: "0.25rem",
-	md: "0.375rem",
-	lg: "0.5rem",
-	xl: "0.75rem",
-	"2xl": "1rem",
-	"3xl": "1.5rem",
-	full: "9999px"
+var $schema$j = "http://json-schema.org/draft-07/schema#";
+var $description$j = "Primitivas de tipografia - Font families, tamanhos, pesos e espaçamento";
+var _comments$g = {
+	fontFamily: "Famílias de fontes como valores crus",
+	fontSize: "Tamanhos de fonte seguindo escala modular",
+	fontWeight: "Pesos numéricos de fonte",
+	lineHeight: "Valores de altura de linha",
+	letterSpacing: "Valores de espaçamento entre letras"
 };
-var radius$1 = {
-	radius: radius$2
-};
-
-var shadows$1 = {
-	light: {
-		xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-		sm: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
-		base: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
-		md: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
-		lg: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
-		xl: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-		"2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-		inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)"
+var typography$1 = {
+	fontFamily: {
+		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
+		mono: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace"
 	},
-	dark: {
-		xs: "0 1px 2px 0 rgba(0, 0, 0, 0.5)",
-		sm: "0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px -1px rgba(0, 0, 0, 0.5)",
-		base: "0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.5)",
-		md: "0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5)",
-		lg: "0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5)",
-		xl: "0 25px 50px -12px rgba(0, 0, 0, 0.75)",
-		"2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.75)",
-		inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.5)",
-		glow: {
-			cyan: "0 0 20px rgba(0, 230, 255, 0.5), 0 0 40px rgba(0, 230, 255, 0.3)",
-			pink: "0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3)",
-			purple: "0 0 20px rgba(125, 0, 255, 0.5), 0 0 40px rgba(125, 0, 255, 0.3)",
-			green: "0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3)"
-		}
+	fontSize: {
+		xs: "0.75rem",
+		sm: "0.875rem",
+		base: "1rem",
+		lg: "1.125rem",
+		xl: "1.25rem",
+		"2xl": "1.5rem",
+		"3xl": "1.875rem",
+		"4xl": "2.25rem",
+		"5xl": "3rem",
+		"6xl": "3.75rem",
+		"7xl": "4.5rem",
+		"8xl": "6rem",
+		"9xl": "8rem"
+	},
+	fontWeight: {
+		"100": "100",
+		"200": "200",
+		"300": "300",
+		"400": "400",
+		"500": "500",
+		"600": "600",
+		"700": "700",
+		"800": "800",
+		"900": "900"
+	},
+	lineHeight: {
+		"1": "1",
+		"2": "2",
+		"1.25": "1.25",
+		"1.375": "1.375",
+		"1.5": "1.5",
+		"1.625": "1.625"
+	},
+	letterSpacing: {
+		"0": "0em",
+		"-0.05": "-0.05em",
+		"-0.025": "-0.025em",
+		"0.025": "0.025em",
+		"0.05": "0.05em",
+		"0.1": "0.1em"
 	}
+};
+var _notes$g = {
+	fontFamily: {
+		sans: "Stack sem serifa para máxima compatibilidade",
+		serif: "Fonte serif tradicional",
+		mono: "Fonte monoespaçada para código"
+	},
+	fontSize: {
+		xs: "0.75rem - 12px",
+		sm: "0.875rem - 14px",
+		base: "1rem - 16px",
+		lg: "1.125rem - 18px",
+		xl: "1.25rem - 20px",
+		"2xl": "1.5rem - 24px",
+		"3xl": "1.875rem - 30px",
+		"4xl": "2.25rem - 36px",
+		"5xl": "3rem - 48px",
+		"6xl": "3.75rem - 60px",
+		"7xl": "4.5rem - 72px",
+		"8xl": "6rem - 96px",
+		"9xl": "8rem - 128px"
+	},
+	fontWeight: {
+		"100": "Peso 100 - mais leve",
+		"200": "Peso 200 - muito leve",
+		"300": "Peso 300 - leve",
+		"400": "Peso 400 - normal/regular",
+		"500": "Peso 500 - médio",
+		"600": "Peso 600 - semi-negrito",
+		"700": "Peso 700 - negrito",
+		"800": "Peso 800 - extra-negrito",
+		"900": "Peso 900 - preto"
+	},
+	lineHeight: {
+		"1": "1 - Sem espaçamento extra",
+		"2": "2 - Muito espaçado",
+		"1.25": "1.25 - Texto compacto",
+		"1.375": "1.375 - Ligeiramente apertado",
+		"1.5": "1.5 - Legibilidade padrão",
+		"1.625": "1.625 - Leitura confortável"
+	},
+	letterSpacing: {
+		"0": "0em - Espaçamento normal",
+		"-0.05": "-0.05em - Texto condensado",
+		"-0.025": "-0.025em - Ligeiramente condensado",
+		"0.025": "0.025em - Ligeiramente expandido",
+		"0.05": "0.05em - Texto expandido",
+		"0.1": "0.1em - Muito expandido"
+	}
+};
+var typographyBase = {
+	$schema: $schema$j,
+	$description: $description$j,
+	_comments: _comments$g,
+	typography: typography$1,
+	_notes: _notes$g
+};
+
+var $schema$i = "http://json-schema.org/draft-07/schema#";
+var $description$i = "Escala de sombras - Valores de elevação e profundidade visual";
+var _comments$f = {
+	shadows: "Escala completa de sombras em diferentes níveis de intensidade"
 };
 var shadows = {
-	shadows: shadows$1
-};
-
-var animations$1 = {
-	"accordion-down": {
-		name: "accordion-down",
-		duration: "0.2s",
-		timingFunction: "ease-out",
-		keyframes: {
-			from: {
-				height: "0"
-			},
-			to: {
-				height: "var(--radix-accordion-content-height)"
-			}
-		}
-	},
-	"accordion-up": {
-		name: "accordion-up",
-		duration: "0.2s",
-		timingFunction: "ease-out",
-		keyframes: {
-			from: {
-				height: "var(--radix-accordion-content-height)"
-			},
-			to: {
-				height: "0"
-			}
-		}
-	},
-	"slide-in": {
-		name: "slide-in",
-		duration: "0.3s",
-		timingFunction: "ease-out",
-		keyframes: {
-			"0%": {
-				transform: "translateY(-10px)",
-				opacity: "0"
-			},
-			"100%": {
-				transform: "translateY(0)",
-				opacity: "1"
-			}
-		}
-	},
-	"fade-in": {
-		name: "fade-in",
-		duration: "0.5s",
-		timingFunction: "ease-in",
-		keyframes: {
-			"0%": {
-				opacity: "0"
-			},
-			"100%": {
-				opacity: "1"
-			}
-		}
-	},
-	glitch: {
-		name: "glitch",
-		duration: "4s",
-		timingFunction: "linear",
-		iterationCount: "infinite",
-		keyframes: {
-			"0%, 100%": {
-				transform: "translate(0)"
-			},
-			"10%": {
-				transform: "translate(-2px, 2px)"
-			},
-			"20%": {
-				transform: "translate(2px, -2px)"
-			},
-			"30%, 50%, 70%, 90%": {
-				transform: "translate(0)"
-			}
-		}
-	},
-	"neon-pulse": {
-		name: "neon-pulse",
-		duration: "2s",
-		timingFunction: "ease-in-out",
-		iterationCount: "infinite",
-		direction: "alternate",
-		keyframes: {
-			"0%, 100%": {
-				filter: "brightness(1) saturate(1)"
-			},
-			"50%": {
-				filter: "brightness(1.3) saturate(1.2)"
-			}
-		}
-	},
-	flicker: {
-		name: "flicker",
-		duration: "2s",
-		timingFunction: "linear",
-		iterationCount: "infinite",
-		keyframes: {
-			"0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {
-				opacity: "1",
-				filter: "brightness(1.2)"
-			},
-			"20%, 21.999%, 63%, 63.999%, 65%, 69.999%": {
-				opacity: "0.85",
-				filter: "brightness(0.9)"
-			}
-		}
-	},
-	"scan-line": {
-		name: "scan-line",
-		duration: "4s",
-		timingFunction: "linear",
-		iterationCount: "infinite",
-		keyframes: {
-			"0%": {
-				top: "0"
-			},
-			"100%": {
-				top: "100%"
-			}
-		}
-	},
-	"glitch-after": {
-		name: "glitch-after",
-		duration: "3s",
-		timingFunction: "linear",
-		iterationCount: "infinite",
-		keyframes: {
-			"0%, 100%": {
-				opacity: "0"
-			},
-			"5%, 10%": {
-				opacity: "0.8",
-				transform: "translate(-3px, 3px)"
-			},
-			"15%, 95%": {
-				opacity: "0"
-			}
-		}
+	xs: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+	sm: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
+	base: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
+	md: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
+	lg: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+	xl: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+	"2xl": "0 50px 100px -20px rgba(0, 0, 0, 0.3)",
+	inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)",
+	glow: {
+		cyan: "0 0 20px rgba(0, 230, 255, 0.5), 0 0 40px rgba(0, 230, 255, 0.3)",
+		pink: "0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3)",
+		purple: "0 0 20px rgba(125, 0, 255, 0.5), 0 0 40px rgba(125, 0, 255, 0.3)",
+		green: "0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3)"
 	}
 };
-var animations = {
-	animations: animations$1
+var _notes$f = {
+	xs: "Sombra sutil para elementos pequenos (badges, tags)",
+	sm: "Sombra leve para botões, inputs e elementos interativos",
+	base: "Sombra padrão para cards, dropdowns básicos",
+	md: "Sombra média para modais, popovers, elementos destacados",
+	lg: "Sombra grande para modais grandes, sidebars, menus",
+	xl: "Sombra extra grande para elementos flutuantes importantes",
+	"2xl": "Sombra máxima para destaque visual (overlays, hero sections)",
+	inner: "Sombra interna para inputs focados, botões pressionados",
+	glow: {
+		cyan: "Brilho ciano para elementos tecnológicos, futuristas",
+		pink: "Brilho rosa para elementos vibrantes, chamativos",
+		purple: "Brilho roxo para elementos mágicos/premium",
+		green: "Brilho verde para elementos de sucesso, status ativo"
+	}
+};
+var elevationTokens = {
+	$schema: $schema$i,
+	$description: $description$i,
+	_comments: _comments$f,
+	shadows: shadows,
+	_notes: _notes$f
 };
 
+var $schema$h = "http://json-schema.org/draft-07/schema#";
+var $description$h = "Motion tokens - Durations, easings, and transitions for animations";
+var _comments$e = {
+	duration: "Animation durations in milliseconds",
+	easing: "Easing curves for different types of movement",
+	delay: "Delays before starting animations"
+};
 var motion$1 = {
 	duration: {
 		instant: "0ms",
@@ -1098,11 +445,69 @@ var motion$1 = {
 		long: "200ms"
 	}
 };
-var motion = {
-	motion: motion$1
+var _notes$e = {
+	duration: {
+		instant: "Instant transition without animation",
+		fast: "Fast animation for immediate feedback",
+		normal: "Standard duration for common animations",
+		slow: "Slow animation for smooth transitions",
+		slower: "Very slow animation for heavy elements",
+		slowest: "Slowest animation for maximum emphasis"
+	},
+	easing: {
+		linear: "Constant movement without acceleration",
+		easeIn: "Slow start, accelerates at the end",
+		easeOut: "Fast start, decelerates at the end",
+		easeInOut: "Smooth start and end with acceleration in the middle",
+		spring: "Spring effect with natural bounce"
+	},
+	delay: {
+		none: "No delay, immediate animation",
+		short: "Short delay for quick feedback",
+		medium: "Medium delay for sequences",
+		long: "Long delay for emphasis"
+	}
+};
+var motionTokens = {
+	$schema: $schema$h,
+	$description: $description$h,
+	_comments: _comments$e,
+	motion: motion$1,
+	_notes: _notes$e
 };
 
-var breakpoints$1 = {
+var $schema$g = "https://json.schemastore.org/theme.json";
+var $description$g = "Border radius tokens - Generated from spacing scale";
+var $generated$2 = "2026-01-04T16:23:29.864Z";
+var $source$2 = "primitives/spacing-scale.json";
+var radius = {
+	none: "0px",
+	sm: "0.125rem",
+	base: "0.25rem",
+	md: "0.375rem",
+	lg: "0.5rem",
+	xl: "0.75rem",
+	"2xl": "1rem",
+	"3xl": "1.5rem",
+	full: "9999px"
+};
+var radiusScale = {
+	$schema: $schema$g,
+	$description: $description$g,
+	$generated: $generated$2,
+	$source: $source$2,
+	radius: radius
+};
+
+var $schema$f = "https://json.schemastore.org/theme.json";
+var $description$f = "Responsive breakpoints - Mobile-first approach";
+var $generated$1 = "2026-01-04T16:23:29.868Z";
+var $source$1 = "industry standards + spacing.json reference";
+var $spacingReference = {
+	baseUnit: "0.25rem",
+	note: "Breakpoints follow industry standards, spacing used for reference"
+};
+var breakpoints = {
 	xs: "0px",
 	sm: "640px",
 	md: "768px",
@@ -1111,1660 +516,2011 @@ var breakpoints$1 = {
 	"2xl": "1536px",
 	"3xl": "1920px"
 };
-var breakpoints = {
-	breakpoints: breakpoints$1};
+var breakpoints_default = {
+	$schema: $schema$f,
+	$description: $description$f,
+	$generated: $generated$1,
+	$source: $source$1,
+	$spacingReference: $spacingReference,
+	breakpoints: breakpoints
+};
 
-var zIndex$1 = {
+var $schema$e = "https://json.schemastore.org/theme.json";
+var $description$e = "Z-index layer system - Organized stacking context";
+var $generated = "2026-01-04T16:23:29.871Z";
+var $source = "design system layer standards";
+var zIndex = {
 	base: 0,
-	dropdown: 1000,
-	sticky: 1020,
-	fixed: 1030,
-	modalBackdrop: 1040,
-	modal: 1050,
-	popover: 1060,
-	tooltip: 1070,
-	toast: 1080,
-	notification: 1090,
+	content: 100,
+	overlay: 200,
+	dropdown: 300,
+	modal: 400,
+	tooltip: 500,
+	notification: 600,
 	max: 9999
 };
-var zIndex = {
-	zIndex: zIndex$1};
-
-/**
- * @fileoverview Tokens utilitários - Classes Tailwind CSS
- *
- * @description
- * Tokens utilitários que exportam classes Tailwind CSS prontas para uso.
- * Esses tokens são classes CSS que podem ser aplicadas diretamente nos componentes,
- * facilitando o desenvolvimento e garantindo consistência visual.
- *
- * @module tokens/utilities
- * @version 2.0.0
- * @author Rainer Teixeira
- * @since 1.0.0
- */
-/**
- * Direções de gradiente como classes Tailwind CSS
- *
- * @description
- * Conjunto de constantes que representam as diferentes direções
- * de gradiente disponíveis no Tailwind CSS.
- *
- * @type {Object}
- * @property {string} TO_TOP - Gradiente de baixo para cima
- * @property {string} TO_BOTTOM - Gradiente de cima para baixo
- * @property {string} TO_LEFT - Gradiente da direita para esquerda
- * @property {string} TO_RIGHT - Gradiente da esquerda para direita
- * @property {string} TO_TL - Gradiente para cima-esquerda (top-left)
- * @property {string} TO_TR - Gradiente para cima-direita (top-right)
- * @property {string} TO_BL - Gradiente para baixo-esquerda (bottom-left)
- * @property {string} TO_BR - Gradiente para baixo-direita (bottom-right)
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { GRADIENT_DIRECTIONS } from '@rainersoft/design-tokens';
- *
- * // Aplicar gradiente de cima para baixo
- * <div className={GRADIENT_DIRECTIONS.TO_BOTTOM}>
- * ```
- */
-declare const GRADIENT_DIRECTIONS: {
-    readonly TO_TOP: "bg-linear-to-t";
-    readonly TO_BOTTOM: "bg-linear-to-b";
-    readonly TO_LEFT: "bg-linear-to-l";
-    readonly TO_RIGHT: "bg-linear-to-r";
-    readonly TO_TL: "bg-linear-to-tl";
-    readonly TO_TR: "bg-linear-to-tr";
-    readonly TO_BL: "bg-linear-to-bl";
-    readonly TO_BR: "bg-linear-to-br";
-};
-/**
- * Gradientes decorativos e utilitários como classes Tailwind CSS
- *
- * @description
- * Conjunto de gradientes pré-configurados para uso em diferentes
- * contextos da aplicação, incluindo texto, elementos decorativos e botões.
- *
- * @type {Object}
- * @property {string} TEXT_PRIMARY - Gradiente para texto com efeito de clip
- * @property {string} DECORATIVE_PRIMARY - Gradiente decorativo principal (cyan-purple-pink)
- * @property {string} DECORATIVE_CYAN_PURPLE - Gradiente decorativo cyan para purple
- * @property {string} DECORATIVE_GREEN_EMERALD - Gradiente decorativo green para emerald
- * @property {string} BUTTON_CYAN_BLUE - Gradiente para botões (cyan para blue)
- * @property {string} BUTTON_PURPLE_PINK - Gradiente para botões (purple para pink)
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { GRADIENTS } from '@rainersoft/design-tokens';
- *
- * // Aplicar gradiente em texto
- * <h1 className={GRADIENTS.TEXT_PRIMARY}>Título com Gradiente</h1>
- *
- * // Aplicar gradiente em botão
- * <button className={GRADIENTS.BUTTON_CYAN_BLUE}>Clique aqui</button>
- * ```
- */
-declare const GRADIENTS: {
-    readonly TEXT_PRIMARY: "bg-linear-to-r from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)] bg-clip-text text-transparent";
-    readonly DECORATIVE_PRIMARY: "bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
-    readonly DECORATIVE_CYAN_PURPLE: "bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-secondary-base)]";
-    readonly DECORATIVE_GREEN_EMERALD: "bg-linear-to-br from-[var(--color-status-success)] to-[var(--color-accent-base)]";
-    readonly BUTTON_CYAN_BLUE: "bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]";
-    readonly BUTTON_PURPLE_PINK: "bg-linear-to-r from-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
-};
-/**
- * Backgrounds utilitários como classes Tailwind CSS
- *
- * @description
- * Conjunto de classes para backgrounds pré-configurados, incluindo
- * overlays, divisores e backgrounds de seção com efeitos de gradiente sutis.
- *
- * @type {Object}
- * @property {string} FULL - Background completo padrão
- * @property {string} GRADIENT_OVERLAY - Overlay de gradiente sutil
- * @property {string} PREMIUM_DIVIDER_CONTAINER - Container para divisor premium
- * @property {string} PREMIUM_DIVIDER_LINE - Linha do divisor premium
- * @property {string} SECTION_CYAN - Background de seção com gradiente cyan
- * @property {string} SECTION_CYAN_VIA - Background de seção cyan via (meio)
- * @property {string} SECTION_PURPLE_VIA - Background de seção purple via (meio)
- * @property {string} SECTION_PINK_VIA - Background de seção pink via (meio)
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { BACKGROUND } from '@rainersoft/design-tokens';
- *
- * // Aplicar background de seção
- * <section className={BACKGROUND.SECTION_CYAN}>
- *   Conteúdo da seção
- * </section>
- *
- * // Aplicar overlay de gradiente
- * <div className={BACKGROUND.GRADIENT_OVERLAY}>
- *   Conteúdo com overlay
- * </div>
- * ```
- */
-/**
- * Gradientes compostos - Direção + Cores (Padrão Enterprise)
- *
- * @description
- * Combina direção e cores em um único token para uso direto.
- * Elimina necessidade de concatenar strings manualmente.
- * Padrão usado por grandes empresas (Google Material, Microsoft Fluent, Shopify Polaris).
- *
- * @type {Object}
- * @property {string} HORIZONTAL_PRIMARY - Gradiente horizontal com cores primárias
- * @property {string} HORIZONTAL_SECONDARY - Gradiente horizontal com cores secundárias
- * @property {string} HORIZONTAL_DECORATIVE - Gradiente horizontal decorativo
- * @property {string} VERTICAL_PRIMARY - Gradiente vertical com cores primárias
- * @property {string} VERTICAL_SECONDARY - Gradiente vertical com cores secundárias
- * @property {string} DIAGONAL_PRIMARY - Gradiente diagonal com cores primárias
- * @property {string} DIAGONAL_SECONDARY - Gradiente diagonal com cores secundárias
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { GRADIENT_COMPOSITES } from '@rainersoft/design-tokens';
- *
- * // Usar diretamente sem concatenar
- * <div className={GRADIENT_COMPOSITES.HORIZONTAL_PRIMARY}>
- *   Conteúdo
- * </div>
- * ```
- */
-declare const GRADIENT_COMPOSITES: {
-    readonly HORIZONTAL_PRIMARY: "bg-linear-to-r bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]";
-    readonly HORIZONTAL_SECONDARY: "bg-linear-to-r bg-linear-to-r from-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
-    readonly HORIZONTAL_DECORATIVE: "bg-linear-to-r bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
-    readonly HORIZONTAL_CYAN_PURPLE: "bg-linear-to-r bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-secondary-base)]";
-    readonly VERTICAL_PRIMARY: "bg-linear-to-b bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]";
-    readonly VERTICAL_SECONDARY: "bg-linear-to-b bg-linear-to-r from-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
-    readonly VERTICAL_DECORATIVE: "bg-linear-to-b bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
-    readonly DIAGONAL_PRIMARY: "bg-linear-to-br bg-linear-to-br from-[var(--color-primary-base)] via-[var(--color-secondary-base)] to-[var(--color-accent-base)]";
-    readonly DIAGONAL_SECONDARY: "bg-linear-to-br bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-secondary-base)]";
-    readonly DIAGONAL_GREEN_EMERALD: "bg-linear-to-br bg-linear-to-br from-[var(--color-status-success)] to-[var(--color-accent-base)]";
-};
-/**
- * Gradientes de cores específicas usando tokens de cor
- *
- * @description
- * Elimina valores hardcoded como "from-gray-500". Todos os gradientes
- * usam tokens de cor do sistema para garantir consistência.
- *
- * @type {Object}
- * @property {string} GRAY_SCALE - Gradiente em escala de cinza usando tokens
- * @property {string} BLUE_SCALE - Gradiente em escala de azul usando tokens primários
- * @property {string} SUCCESS_SCALE - Gradiente em escala de verde (sucesso) usando tokens
- * @property {string} TEXT_MUTED - Gradiente para texto muted usando tokens
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { GRADIENT_COLORS } from '@rainersoft/design-tokens';
- *
- * // Usar gradiente de cinza sem valores hardcoded
- * <div className={GRADIENT_COLORS.GRAY_SCALE}>
- *   Conteúdo
- * </div>
- * ```
- */
-declare const GRADIENT_COLORS: {
-    readonly GRAY_SCALE: "bg-linear-to-r from-[var(--color-text-tertiary)] to-[var(--color-text-secondary)]";
-    readonly BLUE_SCALE: "bg-linear-to-r from-[var(--color-primary-base)] to-[var(--color-primary-hover)]";
-    readonly SUCCESS_SCALE: "bg-linear-to-r from-[var(--color-status-success)] to-[var(--color-status-success-hover)]";
-    readonly TEXT_MUTED: "bg-linear-to-r from-[var(--color-text-tertiary)] to-[var(--color-text-secondary)]";
-};
-declare const BACKGROUND: {
-    readonly FULL: "bg-[var(--color-background-primary)]";
-    readonly GRADIENT_OVERLAY: "bg-linear-to-br from-[var(--color-primary-base)]/10 via-[var(--color-secondary-base)]/10 to-[var(--color-accent-base)]/10";
-    readonly PREMIUM_DIVIDER_CONTAINER: "bg-linear-to-b from-transparent via-[var(--color-primary-base)]/5 to-transparent";
-    readonly PREMIUM_DIVIDER_LINE: "bg-linear-to-r from-transparent via-[var(--color-primary-base)]/50 to-transparent";
-    readonly SECTION_CYAN: "bg-linear-to-br from-[var(--color-primary-base)]/5 via-[var(--color-primary-base)]/3 to-transparent";
-    readonly SECTION_CYAN_VIA: "bg-linear-to-br from-transparent via-[var(--color-primary-base)]/5 to-transparent";
-    readonly SECTION_PURPLE_VIA: "bg-linear-to-br from-transparent via-[var(--color-secondary-base)]/5 to-transparent";
-    readonly SECTION_PINK_VIA: "bg-linear-to-br from-transparent via-[var(--color-accent-base)]/5 to-transparent";
-};
-/**
- * Tipo TypeScript para direções de gradiente
- *
- * @typedef {Object} GradientDirections
- * @description
- * Tipo que representa todas as direções de gradiente disponíveis.
- * Útil para type-checking e autocomplete em IDEs.
- */
-type GradientDirections = typeof GRADIENT_DIRECTIONS;
-/**
- * Utilidades responsivas para breakpoints
- *
- * @description
- * Classes e helpers para trabalhar com breakpoints responsivos,
- * facilitando a criação de layouts mobile-first.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { RESPONSIVE } from '@rainersoft/design-tokens';
- *
- * // Usar classes responsivas
- * <div className={RESPONSIVE.HIDE_ON_MOBILE}>
- *   Visível apenas em desktop
- * </div>
- *
- * // Usar container responsivo
- * <div className={RESPONSIVE.CONTAINER.DEFAULT}>
- *   Container com largura máxima responsiva
- * </div>
- * ```
- */
-declare const RESPONSIVE: {
-    readonly HIDE_ON_MOBILE: "hidden sm:block";
-    readonly HIDE_ON_TABLET: "hidden lg:block";
-    readonly HIDE_ON_DESKTOP: "block lg:hidden";
-    readonly SHOW_ON_MOBILE: "block sm:hidden";
-    readonly SHOW_ON_TABLET: "block lg:hidden";
-    readonly SHOW_ON_DESKTOP: "hidden lg:block";
-    readonly CONTAINER: {
-        readonly DEFAULT: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl";
-        readonly FLUID: "w-full px-4 sm:px-6 lg:px-8";
-        readonly TIGHT: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl";
-        readonly WIDE: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-2xl";
-        readonly PROSE: "w-full mx-auto px-4 sm:px-6 lg:px-8 max-w-prose";
-    };
-    readonly GRID: {
-        readonly COLS_1_2: "grid grid-cols-1 md:grid-cols-2 gap-4";
-        readonly COLS_1_3: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4";
-        readonly COLS_1_4: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4";
-        readonly COLS_2_3: "grid grid-cols-2 lg:grid-cols-3 gap-4";
-        readonly COLS_2_4: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4";
-    };
-    readonly FLEX: {
-        readonly MOBILE_COLUMN: "flex flex-col sm:flex-row";
-        readonly TABLET_COLUMN: "flex flex-col lg:flex-row";
-        readonly MOBILE_REVERSE: "flex flex-col-reverse sm:flex-row";
-        readonly TABLET_REVERSE: "flex flex-col-reverse lg:flex-row";
-    };
-    readonly TEXT: {
-        readonly MOBILE_CENTER: "text-center sm:text-left";
-        readonly TABLET_CENTER: "text-center lg:text-left";
-        readonly RESPONSIVE_SIZE: "text-sm sm:text-base lg:text-lg";
-        readonly HEADING_SIZE: "text-2xl sm:text-3xl lg:text-4xl xl:text-5xl";
-    };
-    readonly SPACING: {
-        readonly MOBILE_TIGHT: "p-2 sm:p-4 lg:p-6";
-        readonly TABLET_TIGHT: "p-4 lg:p-8";
-        readonly RESPONSIVE_Y: "py-4 sm:py-6 lg:py-8 xl:py-12";
-        readonly RESPONSIVE_X: "px-4 sm:px-6 lg:px-8";
-    };
-};
-/**
- * Helpers de motion para animações
- *
- * @description
- * Classes utilitárias para aplicar motion tokens diretamente
- * em elementos usando Tailwind CSS.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { MOTION } from '@rainersoft/design-tokens';
- *
- * // Aplicar transição suave
- * <button className={MOTION.TRANSITION.DEFAULT}>
- *   Clique aqui
- * </button>
- *
- * // Aplicar animação de entrada
- * <div className={MOTION.ANIMATE.FADE_IN}>
- *   Conteúdo animado
- * </div>
- * ```
- */
-declare const MOTION: {
-    readonly TRANSITION: {
-        readonly DEFAULT: "transition-all duration-200 ease-in-out";
-        readonly FAST: "transition-all duration-100 ease-out";
-        readonly SLOW: "transition-all duration-300 ease-in-out";
-        readonly COLOR: "transition-colors duration-200 ease-in-out";
-        readonly TRANSFORM: "transition-transform duration-200 ease-in-out";
-        readonly OPACITY: "transition-opacity duration-150 ease-in-out";
-        readonly SHADOW: "transition-shadow duration-200 ease-in-out";
-    };
-    readonly ANIMATE: {
-        readonly FADE_IN: "animate-fadeIn";
-        readonly FADE_OUT: "animate-fadeOut";
-        readonly SLIDE_IN_UP: "animate-slideInUp";
-        readonly SLIDE_IN_DOWN: "animate-slideInDown";
-        readonly SLIDE_IN_LEFT: "animate-slideInLeft";
-        readonly SLIDE_IN_RIGHT: "animate-slideInRight";
-        readonly SCALE_IN: "animate-scaleIn";
-        readonly SCALE_OUT: "animate-scaleOut";
-        readonly ROTATE: "animate-rotate";
-        readonly PULSE: "animate-pulse";
-        readonly BOUNCE: "animate-bounce";
-        readonly SHAKE: "animate-shake";
-        readonly FLASH: "animate-flash";
-    };
-    readonly DURATION: {
-        readonly INSTANT: "duration-0";
-        readonly FAST: "duration-100";
-        readonly NORMAL: "duration-200";
-        readonly SLOW: "duration-300";
-        readonly SLOWER: "duration-500";
-        readonly SLOWEST: "duration-700";
-    };
-    readonly DELAY: {
-        readonly NONE: "delay-0";
-        readonly SHORT: "delay-75";
-        readonly MEDIUM: "delay-150";
-        readonly LONG: "delay-300";
-        readonly LONGER: "delay-500";
-    };
-};
-/**
- * Constantes de cores principais para uso direto
- *
- * @description
- * Cores principais do tema light para uso direto em componentes.
- * Retorna valores hexadecimais das cores base.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { COLORS } from '@rainersoft/design-tokens';
- *
- * // Usar cor primária
- * const primaryColor = COLORS.primary; // "#0891b2"
- *
- * // Usar em estilo inline
- * <div style={{ color: COLORS.primary }}>
- *   Texto com cor primária
- * </div>
- * ```
- */
-declare const COLORS: {
-    readonly primary: "#0891b2";
-    readonly secondary: "#9333ea";
-    readonly accent: "#db2777";
-    readonly success: "#22c55e";
-    readonly warning: "#f59e0b";
-    readonly error: "#ef4444";
-    readonly info: "#0891b2";
-};
-/**
- * Estrutura de navegação padrão
- *
- * @description
- * Array de itens de navegação para uso em componentes de layout.
- * Pode ser sobrescrito ou estendido conforme necessário.
- *
- * @type {Array<{href: string, label: string}>}
- * @constant
- *
- * @example
- * ```typescript
- * import { NAVIGATION } from '@rainersoft/design-tokens';
- *
- * // Usar em componente
- * {NAVIGATION.map(item => (
- *   <Link key={item.href} href={item.href}>
- *     {item.label}
- *   </Link>
- * ))}
- * ```
- */
-declare const NAVIGATION: Array<{
-    href: string;
-    label: string;
-}>;
-/**
- * Helpers de shadows (sombras) como classes Tailwind CSS
- *
- * @description
- * Classes utilitárias para aplicar shadows tokens consistentes
- * usando valores pré-definidos do tema light.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { SHADOWS } from '@rainersoft/design-tokens';
- *
- * // Aplicar shadow large
- * <div className={SHADOWS.LARGE}>
- *   Content with large shadow
- * </div>
- * ```
- */
-declare const SHADOWS: {
-    readonly XS: "shadow-xs";
-    readonly SMALL: "shadow-sm";
-    readonly BASE: "shadow";
-    readonly MEDIUM: "shadow-md";
-    readonly LARGE: "shadow-lg";
-    readonly XL: "shadow-xl";
-    readonly '2XL': "shadow-2xl";
-    readonly INNER: "shadow-inner";
-};
-/**
- * Helpers de z-index para camadas
- *
- * @description
- * Classes utilitárias para aplicar z-index tokens consistentes
- * usando valores pré-definidos.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { Z_INDEX } from '@rainersoft/design-tokens';
- *
- * // Aplicar z-index para modal
- * <div className={Z_INDEX.MODAL}>
- *   Modal content
- * </div>
- * ```
- */
-declare const Z_INDEX: {
-    readonly BASE: "z-0";
-    readonly DROPDOWN: "z-[1000]";
-    readonly STICKY: "z-[1020]";
-    readonly FIXED: "z-[1030]";
-    readonly BACKDROP: "z-[1040]";
-    readonly MODAL: "z-[1050]";
-    readonly POPOVER: "z-[1060]";
-    readonly TOOLTIP: "z-[1070]";
-    readonly TOAST: "z-[1080]";
-    readonly SPOTLIGHT: "z-[1090]";
-    readonly PRIORITY: "z-[1100]";
-    readonly MAX: "z-[2147483647]";
-};
-/**
- * Tipo TypeScript para cores
- *
- * @typedef {Object} Colors
- * @description
- * Tipo que representa todas as cores principais disponíveis.
- */
-type Colors = typeof COLORS;
-/**
- * Tipo TypeScript para navegação
- *
- * @typedef {Array<{href: string, label: string}>} Navigation
- * @description
- * Tipo que representa a estrutura de navegação.
- */
-type Navigation = typeof NAVIGATION;
-/**
- * Tipo TypeScript para gradientes
- *
- * @typedef {Object} Gradients
- * @description
- * Tipo que representa todos os gradientes pré-configurados disponíveis.
- */
-type Gradients = typeof GRADIENTS;
-/**
- * Tipo TypeScript para gradientes compostos
- *
- * @typedef {Object} GradientComposites
- * @description
- * Tipo que representa todos os gradientes compostos (direção + cores).
- */
-type GradientComposites = typeof GRADIENT_COMPOSITES;
-/**
- * Tipo TypeScript para gradientes de cores
- *
- * @typedef {Object} GradientColors
- * @description
- * Tipo que representa todos os gradientes de cores específicas.
- */
-type GradientColors = typeof GRADIENT_COLORS;
-/**
- * Tipo TypeScript para backgrounds
- *
- * @typedef {Object} Background
- * @description
- * Tipo que representa todos os backgrounds utilitários disponíveis.
- */
-type Background = typeof BACKGROUND;
-
-/**
- * @fileoverview Utilitários de Acessibilidade - Verificação de Contraste WCAG
- *
- * @description
- * Utilitários para verificar e garantir conformidade com padrões WCAG AA/AAA
- * de contraste de cores. Essas funções são agnósticas e podem ser usadas em
- * qualquer ambiente (web, mobile, desktop).
- *
- * @module tokens/accessibility
- * @version 2.0.0
- * @author Rainer Teixeira
- * @since 1.0.0
- */
-/**
- * Converte cor hexadecimal para RGB
- *
- * @param {string} hex - Cor em formato hexadecimal (#RRGGBB ou RRGGBB)
- * @returns {Object} Objeto com valores RGB { r, g, b }
- *
- * @example
- * ```typescript
- * const rgb = hexToRgb('#0891b2');
- * // { r: 8, g: 145, b: 178 }
- * ```
- */
-declare function hexToRgb(hex: string): {
-    r: number;
-    g: number;
-    b: number;
-};
-/**
- * Calcula a luminância relativa de uma cor RGB
- *
- * @param {number} r - Componente vermelho (0-255)
- * @param {number} g - Componente verde (0-255)
- * @param {number} b - Componente azul (0-255)
- * @returns {number} Luminância relativa (0-1)
- *
- * @description
- * Fórmula baseada na recomendação WCAG 2.1 para cálculo de luminância.
- *
- * @example
- * ```typescript
- * const luminance = getLuminance(8, 145, 178);
- * // 0.234
- * ```
- */
-declare function getLuminance(r: number, g: number, b: number): number;
-/**
- * Calcula o contraste entre duas cores
- *
- * @param {string} color1 - Primeira cor em hexadecimal
- * @param {string} color2 - Segunda cor em hexadecimal
- * @returns {number} Razão de contraste (1-21)
- *
- * @description
- * Retorna a razão de contraste entre duas cores conforme WCAG 2.1.
- * Valores mínimos recomendados:
- * - WCAG AA (normal): 4.5:1 para texto normal, 3:1 para texto grande
- * - WCAG AAA (melhor): 7:1 para texto normal, 4.5:1 para texto grande
- *
- * @example
- * ```typescript
- * const contrast = getContrast('#ffffff', '#000000');
- * // 21 (máximo contraste)
- *
- * const contrast2 = getContrast('#0891b2', '#ffffff');
- * // 3.2 (atende WCAG AA para texto grande)
- * ```
- */
-declare function getContrast(color1: string, color2: string): number;
-/**
- * Verifica se o contraste atende ao padrão WCAG AA
- *
- * @param {string} foreground - Cor do texto (hexadecimal)
- * @param {string} background - Cor de fundo (hexadecimal)
- * @param {boolean} [largeText=false] - Se o texto é grande (>=18pt ou >=14pt bold)
- * @returns {boolean} true se atende WCAG AA, false caso contrário
- *
- * @description
- * WCAG AA requer:
- * - Texto normal: contraste mínimo de 4.5:1
- * - Texto grande: contraste mínimo de 3:1
- *
- * @example
- * ```typescript
- * const meetsAA = meetsWCAGAA('#0891b2', '#ffffff', false);
- * // true (contraste 3.2:1, mas texto normal precisa 4.5:1)
- *
- * const meetsAALarge = meetsWCAGAA('#0891b2', '#ffffff', true);
- * // true (contraste 3.2:1, texto grande precisa 3:1)
- * ```
- */
-declare function meetsWCAGAA(foreground: string, background: string, largeText?: boolean): boolean;
-/**
- * Verifica se o contraste atende ao padrão WCAG AAA
- *
- * @param {string} foreground - Cor do texto (hexadecimal)
- * @param {string} background - Cor de fundo (hexadecimal)
- * @param {boolean} [largeText=false] - Se o texto é grande (>=18pt ou >=14pt bold)
- * @returns {boolean} true se atende WCAG AAA, false caso contrário
- *
- * @description
- * WCAG AAA requer:
- * - Texto normal: contraste mínimo de 7:1
- * - Texto grande: contraste mínimo de 4.5:1
- *
- * @example
- * ```typescript
- * const meetsAAA = meetsWCAGAAA('#000000', '#ffffff', false);
- * // true (contraste 21:1)
- * ```
- */
-declare function meetsWCAGAAA(foreground: string, background: string, largeText?: boolean): boolean;
-/**
- * Retorna informações completas de contraste entre duas cores
- *
- * @param {string} foreground - Cor do texto (hexadecimal)
- * @param {string} background - Cor de fundo (hexadecimal)
- * @returns {Object} Objeto com informações de contraste
- *
- * @example
- * ```typescript
- * const info = getContrastInfo('#0891b2', '#ffffff');
- * // {
- * //   contrast: 3.2,
- * //   meetsAA: false,
- * //   meetsAALarge: true,
- * //   meetsAAA: false,
- * //   meetsAAALarge: false,
- * //   level: 'AA Large'
- * // }
- * ```
- */
-declare function getContrastInfo(foreground: string, background: string): {
-    contrast: number;
-    meetsAA: boolean;
-    meetsAALarge: boolean;
-    meetsAAA: boolean;
-    meetsAAALarge: boolean;
-    level: 'Fail' | 'AA Large' | 'AA' | 'AAA Large' | 'AAA';
-};
-/**
- * Valida se uma combinação de cores atende aos padrões de acessibilidade
- *
- * @param {string} foreground - Cor do texto (hexadecimal)
- * @param {string} background - Cor de fundo (hexadecimal)
- * @param {Object} options - Opções de validação
- * @param {boolean} [options.requireAAA=false] - Se deve requerer WCAG AAA
- * @param {boolean} [options.largeText=false] - Se o texto é grande
- * @returns {Object} Resultado da validação
- *
- * @example
- * ```typescript
- * const validation = validateContrast('#0891b2', '#ffffff', {
- *   largeText: true
- * });
- * // {
- * //   valid: true,
- * //   level: 'AA Large',
- * //   contrast: 3.2,
- * //   message: 'Contraste válido para texto grande (WCAG AA)'
- * // }
- * ```
- */
-declare function validateContrast(foreground: string, background: string, options?: {
-    requireAAA?: boolean;
-    largeText?: boolean;
-}): {
-    valid: boolean;
-    level: string;
-    contrast: number;
-    message: string;
+var zIndexLayers = {
+	$schema: $schema$e,
+	$description: $description$e,
+	$generated: $generated,
+	$source: $source,
+	zIndex: zIndex
 };
 
-/**
- * @fileoverview Ponto de entrada dos tokens de design
- *
- * @description
- * Tokens de design tecnologicamente agnósticos que definem a linguagem visual
- * do Rainer Design System. Estes tokens podem ser utilizados em qualquer
- * framework ou tecnologia, garantindo consistência visual.
- *
- * @module @rainersoft/design-tokens/tokens
- * @version 2.2.0
- * @license MIT
- * @author Rainer Teixeira
- * @since 1.0.0
- */
+var $schema$d = "http://json-schema.org/draft-07/schema#";
+var $description$d = "Border tokens - Width and style definitions";
+var _comments$d = {
+	width: "Border thickness for different visual emphasis levels",
+	style: "Line styles for different design purposes"
+};
+var border$1 = {
+	width: {
+		none: "0px",
+		thin: "1px",
+		base: "2px",
+		thick: "4px"
+	},
+	style: {
+		solid: "solid",
+		dashed: "dashed",
+		dotted: "dotted",
+		double: "double"
+	}
+};
+var _notes$d = {
+	width: {
+		none: "Completely removes the border",
+		thin: "For subtle dividers and discrete outlines (e.g., separators)",
+		base: "Standard outline for most components (e.g., cards, inputs)",
+		thick: "For maximum emphasis (e.g., primary buttons, critical alerts)"
+	},
+	style: {
+		solid: "Standard style for most use cases",
+		dashed: "For interactive elements or drop areas (e.g., upload)",
+		dotted: "To indicate focused states or decorative elements",
+		double: "For special visual effects or emphasis"
+	}
+};
+var borderTokens = {
+	$schema: $schema$d,
+	$description: $description$d,
+	_comments: _comments$d,
+	border: border$1,
+	_notes: _notes$d
+};
 
-/**
- * Todos os tokens de design organizados por categoria
- *
- * @description
- * Objeto principal contendo todos os tokens de design do sistema,
- * organizados em categorias lógicas para fácil acesso e manutenção.
- *
- * @type {Object}
- * @property {Object} colors - Tokens de cores para temas claro e escuro
- * @property {Object} colors.light - Cores do tema claro
- * @property {Object} colors.dark - Cores do tema escuro
- * @property {Object} typography - Tokens de tipografia (fontes, tamanhos, pesos, etc.)
- * @property {Object} spacing - Tokens de espaçamento (margens, paddings)
- * @property {Object} radius - Tokens de raio de borda
- * @property {Object} shadows - Tokens de sombras para ambos os temas
- * @property {Object} animations - Tokens de animações (keyframes e durações)
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { tokens } from '@rainersoft/design-tokens';
- *
- * // Acessar cor primária do tema claro
- * const primaryColor = tokens.colors.light.brand.primary;
- *
- * // Acessar espaçamento padrão
- * const spacing = tokens.spacing.md;
- * ```
- */
+var $schema$c = "http://json-schema.org/draft-07/schema#";
+var $description$c = "Tokens de opacidade - Níveis de transparência";
+var _comments$c = {
+	opacity: "Escala de valores de opacidade de 0 a 1"
+};
+var opacity = {
+	"0": 0,
+	"10": 0.1,
+	"20": 0.2,
+	"30": 0.3,
+	"40": 0.4,
+	"50": 0.5,
+	"60": 0.6,
+	"70": 0.7,
+	"80": 0.8,
+	"90": 0.9,
+	"100": 1
+};
+var _notes$c = {
+	"0": "Completamente transparente",
+	"10": "Transparência muito leve (10%)",
+	"20": "Transparência leve (20%)",
+	"30": "Transparência baixa (30%)",
+	"40": "Transparência moderada (40%)",
+	"50": "Transparência média (50%) - equilíbrio",
+	"60": "Transparência acima da média (60%)",
+	"70": "Transparência alta (70%)",
+	"80": "Transparência muito alta (80%)",
+	"90": "Transparência quase total (90%)",
+	"100": "Completamente opaco"
+};
+var opacityScale = {
+	$schema: $schema$c,
+	$description: $description$c,
+	_comments: _comments$c,
+	opacity: opacity,
+	_notes: _notes$c
+};
+
+var $schema$b = "http://json-schema.org/draft-07/schema#";
+var $description$b = "Tokens de layout - Sistema de grid, container e espaçamento";
+var _comments$b = {
+	container: "Larguras máximas de containers em diferentes tamanhos",
+	gutter: "Escala de espaçamento entre elementos do grid",
+	column: "Configuração básica do sistema de colunas",
+	safeArea: "Margens mínimas para diferentes contextos"
+};
+var layout$1 = {
+	container: {
+		xs: "20rem",
+		sm: "40rem",
+		md: "48rem",
+		lg: "64rem",
+		xl: "80rem",
+		"2xl": "96rem"
+	},
+	gutter: {
+		xs: "0.5rem",
+		sm: "1rem",
+		md: "1.5rem",
+		lg: "2rem",
+		xl: "3rem"
+	},
+	column: {
+		count: 12,
+		gap: "1rem"
+	},
+	safeArea: {
+		xs: "1rem",
+		sm: "1.5rem",
+		md: "2rem",
+		lg: "2.5rem",
+		xl: "3rem"
+	}
+};
+var _notes$b = {
+	container: {
+		xs: "320px - Container mínimo para mobile muito pequeno",
+		sm: "640px - Container para mobile landscape",
+		md: "768px - Container para tablets em portrait",
+		lg: "1024px - Container para tablets landscape",
+		xl: "1280px - Container padrão para desktop",
+		"2xl": "1536px - Container amplo para telas grandes"
+	},
+	gutter: {
+		xs: "0.5rem - Espaçamento compacto para layouts densos",
+		sm: "1rem - Espaçamento básico para maioria dos layouts",
+		md: "1.5rem - Espaçamento confortável para desktop",
+		lg: "2rem - Espaçamento generoso para hero sections",
+		xl: "3rem - Espaçamento máximo para destaques"
+	},
+	column: {
+		count: "12 - Número padrão de colunas para flexibilidade",
+		gap: "1rem - Espaço padrão entre colunas do grid"
+	},
+	safeArea: {
+		xs: "1rem - Margem segura para mobile",
+		sm: "1.5rem - Margem confortável para tablets pequenos",
+		md: "2rem - Margem padrão para tablets",
+		lg: "2.5rem - Margem para laptops",
+		xl: "3rem - Margem generosa para desktop"
+	}
+};
+var layoutUnits = {
+	$schema: $schema$b,
+	$description: $description$b,
+	_comments: _comments$b,
+	layout: layout$1,
+	_notes: _notes$b
+};
+
+var $schema$a = "http://json-schema.org/draft-07/schema#";
+var $description$a = "Tamanhos de ícones padronizados - Dimensões padronizadas para várias densidades e contextos";
+var _comments$a = {
+	iconSize: "Escala completa de tamanhos de ícone em unidades relativas (rem)"
+};
+var iconSize = {
+	"2xs": "0.75rem",
+	xs: "1rem",
+	sm: "1.25rem",
+	base: "1.5rem",
+	md: "1.75rem",
+	lg: "2rem",
+	xl: "2.5rem",
+	"2xl": "3rem",
+	"3xl": "4rem",
+	"4xl": "5rem",
+	"5xl": "6rem",
+	full: "100%"
+};
+var _notes$a = {
+	"2xs": "12px - Para interfaces super densas (tabelas complexas, grids)",
+	xs: "16px - Para elementos compactos (tags, breadcrumbs)",
+	sm: "20px - Para navegação secundária e listas",
+	base: "24px - Tamanho padrão para maioria dos ícones UI",
+	md: "28px - Para elementos com destaque moderado",
+	lg: "32px - Para ícones principais e CTAs",
+	xl: "40px - Para seções de cabeçalho e destaques",
+	"2xl": "48px - Para elementos de marketing e hero sections",
+	"3xl": "64px - Para destaques visuais em landing pages",
+	"4xl": "80px - Para elementos decorativos grandes",
+	"5xl": "96px - Para banners e páginas de destaque máximo",
+	full: "100% - Para ícones responsivos que preenchem containers"
+};
+var iconScale = {
+	$schema: $schema$a,
+	$description: $description$a,
+	_comments: _comments$a,
+	iconSize: iconSize,
+	_notes: _notes$a
+};
+
+var $schema$9 = "http://json-schema.org/draft-07/schema#";
+var $description$9 = "Gradientes - Tokens de gradiente para elementos visuais";
+var _comments$9 = {
+	gradients: "Gradientes pré-definidos para uso consistente na aplicação",
+	text: "Gradientes para efeitos em textos e tipografia",
+	background: "Gradientes para backgrounds e superfícies"
+};
+var gradients = {
+	text: {
+		primary: "linear-gradient(135deg, #00e6ff 0%, #7d00ff 100%)",
+		secondary: "linear-gradient(135deg, #ff00ff 0%, #00e6ff 100%)",
+		accent: "linear-gradient(135deg, #ff7d00 0%, #ff00ff 100%)"
+	},
+	background: {
+		hero: "linear-gradient(135deg, #00e6ff 0%, #7d00ff 100%)",
+		subtle: "linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)"
+	}
+};
+var _notes$9 = {
+	text: {
+		primary: "Gradiente ciano-roxo para textos principais com destaque",
+		secondary: "Gradiente rosa-ciano para textos secundários",
+		accent: "Gradiente laranja-rosa para acentos e ênfases"
+	},
+	background: {
+		hero: "Gradiente ciano-roxo para seções herói e banners principais",
+		subtle: "Gradiente sutil em tons de cinza para backgrounds discretos"
+	}
+};
+var gradientTokens = {
+	$schema: $schema$9,
+	$description: $description$9,
+	_comments: _comments$9,
+	gradients: gradients,
+	_notes: _notes$9
+};
+
+var $schema$8 = "http://json-schema.org/draft-07/schema#";
+var $description$8 = "Tokens semânticos de cor - Cores organizadas por função e contexto de uso";
+var _comments$8 = {
+	color: "Cores organizadas por papel semântico no sistema de design",
+	background: "Cores de fundo para diferentes níveis hierárquicos",
+	text: "Cores de texto para diferentes níveis de importância",
+	button: "Cores para estados de botões e ações",
+	border: "Cores para bordas e divisores",
+	status: "Cores para feedback de status e estados",
+	interactive: "Cores para elementos interativos e links",
+	surface: "Cores para superfícies e elevamentos"
+};
+var color$2 = {
+	background: {
+		primary: "{palette.white}",
+		secondary: "{palette.gray.50}",
+		tertiary: "{palette.gray.100}",
+		disabled: "{palette.gray.100}",
+		overlay: "rgba(0, 0, 0, 0.5)",
+		inverse: "{palette.black}"
+	},
+	text: {
+		primary: "{palette.gray.900}",
+		secondary: "{palette.gray.600}",
+		tertiary: "{palette.gray.400}",
+		disabled: "{palette.gray.300}",
+		inverse: "{palette.white}",
+		onPrimary: "{palette.white}",
+		onSecondary: "{palette.gray.900}",
+		link: "{palette.blue.600}",
+		linkHover: "{palette.blue.700}"
+	},
+	button: {
+		primary: {
+			"default": "{palette.blue.500}",
+			hover: "{palette.blue.600}",
+			active: "{palette.blue.700}",
+			text: "{palette.white}"
+		},
+		secondary: {
+			"default": "{palette.gray.200}",
+			hover: "{palette.gray.300}",
+			active: "{palette.gray.400}",
+			text: "{palette.gray.900}"
+		},
+		tertiary: {
+			"default": "{palette.transparent}",
+			hover: "{palette.gray.100}",
+			active: "{palette.gray.200}",
+			text: "{palette.gray.900}"
+		},
+		danger: {
+			"default": "{palette.red.500}",
+			hover: "{palette.red.600}",
+			active: "{palette.red.700}",
+			text: "{palette.white}"
+		},
+		success: {
+			"default": "{palette.green.500}",
+			hover: "{palette.green.600}",
+			active: "{palette.green.700}",
+			text: "{palette.white}"
+		}
+	},
+	border: {
+		"default": "{palette.gray.200}",
+		light: "{palette.gray.100}",
+		medium: "{palette.gray.300}",
+		dark: "{palette.gray.400}",
+		focus: "{palette.blue.500}",
+		error: "{palette.red.500}",
+		success: "{palette.green.500}",
+		warning: "{palette.red.400}"
+	},
+	status: {
+		success: {
+			"default": "{palette.green.500}",
+			light: "{palette.green.50}",
+			dark: "{palette.green.700}",
+			text: "{palette.green.700}"
+		},
+		error: {
+			"default": "{palette.red.500}",
+			light: "{palette.red.50}",
+			dark: "{palette.red.700}",
+			text: "{palette.red.700}"
+		},
+		warning: {
+			"default": "{palette.red.400}",
+			light: "{palette.red.50}",
+			dark: "{palette.red.600}",
+			text: "{palette.red.800}"
+		},
+		info: {
+			"default": "{palette.blue.500}",
+			light: "{palette.blue.50}",
+			dark: "{palette.blue.700}",
+			text: "{palette.blue.700}"
+		}
+	},
+	interactive: {
+		link: {
+			"default": "{palette.blue.600}",
+			hover: "{palette.blue.700}",
+			visited: "{palette.purple.600}",
+			active: "{palette.blue.800}"
+		},
+		focus: {
+			ring: "{palette.blue.500}",
+			ringOffset: "{palette.white}"
+		}
+	},
+	surface: {
+		elevated: "{palette.white}",
+		raised: "{palette.gray.50}",
+		sunken: "{palette.gray.100}"
+	},
+	chart: {
+		primary: "{palette.blue.500}",
+		secondary: "{palette.green.500}",
+		tertiary: "{palette.purple.500}",
+		quaternary: "{palette.red.400}",
+		quinary: "{palette.blue.300}",
+		senary: "{palette.green.400}"
+	}
+};
+var _notes$8 = {
+	background: {
+		primary: "Fundo principal da aplicação (geralmente branco em light mode) - referencia: palette.white",
+		secondary: "Fundo secundário para seções alternadas - referencia: palette.gray.50",
+		tertiary: "Fundo terciário para elementos aninhados - referencia: palette.gray.100",
+		disabled: "Fundo para elementos desabilitados - referencia: palette.gray.100",
+		overlay: "Fundo para overlays e modais - referencia: palette.black",
+		inverse: "Fundo invertido para contrastes - referencia: palette.black"
+	},
+	text: {
+		primary: "Texto principal com maior contraste - referencia: palette.gray.900",
+		secondary: "Texto secundário com contraste médio - referencia: palette.gray.600",
+		tertiary: "Texto terciário com contraste baixo - referencia: palette.gray.400",
+		disabled: "Texto desabilitado com contraste mínimo - referencia: palette.gray.300",
+		inverse: "Texto para fundos escuros - referencia: palette.white",
+		onPrimary: "Texto sobre cor primária - referencia: palette.white",
+		onSecondary: "Texto sobre cor secundária - referencia: palette.gray.900",
+		link: "Cor padrão para links - referencia: palette.blue.600",
+		linkHover: "Cor para links em hover - referencia: palette.blue.700"
+	},
+	button: {
+		primary: "Botão principal de ação primária - referencia: palette.blue.*",
+		secondary: "Botão secundário de ação alternativa - referencia: palette.gray.*",
+		tertiary: "Botão terciário para ações menos importantes - referencia: palette.gray.*",
+		danger: "Botão para ações destrutivas - referencia: palette.red.*",
+		success: "Botão para ações de sucesso - referencia: palette.green.*"
+	},
+	border: {
+		"default": "Borda padrão para componentes - referencia: palette.gray.200",
+		light: "Borda sutil para divisores - referencia: palette.gray.100",
+		medium: "Borda média para ênfase - referencia: palette.gray.300",
+		dark: "Borda escura para forte contraste - referencia: palette.gray.400",
+		focus: "Borda para estados de foco - referencia: palette.blue.500",
+		error: "Borda para estados de erro - referencia: palette.red.500",
+		success: "Borda para estados de sucesso - referencia: palette.green.500",
+		warning: "Borda para estados de aviso - referencia: palette.red.400"
+	},
+	status: {
+		success: "Cores para feedback de sucesso - referencia: palette.green.*",
+		error: "Cores para feedback de erro - referencia: palette.red.*",
+		warning: "Cores para avisos - referencia: palette.red.*",
+		info: "Cores para informações - referencia: palette.blue.*"
+	},
+	interactive: {
+		link: "Cores para links e navegação - referencia: palette.blue.*, palette.purple.*",
+		focus: "Cores para indicadores de foco - referencia: palette.blue.*, palette.white"
+	},
+	surface: {
+		elevated: "Superfície elevada (cards, modais) - referencia: palette.white",
+		raised: "Superfície levemente elevada - referencia: palette.gray.50",
+		sunken: "Superfície rebaixada (inputs focados) - referencia: palette.gray.100"
+	},
+	chart: {
+		primary: "Cor principal para gráficos e visualizações - referencia: palette.blue.500",
+		secondary: "Cor secundária para séries de dados - referencia: palette.green.500",
+		tertiary: "Cor terciária para terceira série - referencia: palette.purple.500",
+		quaternary: "Quarta cor para séries adicionais - referencia: palette.red.400",
+		quinary: "Quinta cor para séries adicionais - referencia: palette.blue.300",
+		senary: "Sexta cor para séries adicionais - referencia: palette.green.400"
+	}
+};
+var colorRoles = {
+	$schema: $schema$8,
+	$description: $description$8,
+	_comments: _comments$8,
+	color: color$2,
+	_notes: _notes$8
+};
+
+var $schema$7 = "http://json-schema.org/draft-07/schema#";
+var $description$7 = "Tokens semânticos de espaçamento - Espaçamentos organizados por contexto e função";
+var _comments$7 = {
+	spacing: "Espaçamentos organizados por contexto de uso no sistema",
+	component: "Espaçamentos internos de componentes",
+	layout: "Espaçamentos para estrutura de layout",
+	section: "Espaçamentos entre seções e grupos",
+	stack: "Espaçamentos para elementos empilhados",
+	inline: "Espaçamentos para elementos inline",
+	inset: "Espaçamentos internos (padding-like)",
+	gap: "Espaçamentos entre elementos relacionados"
+};
+var spacing = {
+	component: {
+		tight: "{spacing.1}",
+		compact: "{spacing.2}",
+		comfortable: "{spacing.3}",
+		relaxed: "{spacing.4}",
+		loose: "{spacing.6}"
+	},
+	layout: {
+		xs: "{spacing.4}",
+		sm: "{spacing.6}",
+		md: "{spacing.8}",
+		lg: "{spacing.12}",
+		xl: "{spacing.16}",
+		"2xl": "{spacing.24}"
+	},
+	section: {
+		xs: "{spacing.8}",
+		sm: "{spacing.12}",
+		md: "{spacing.16}",
+		lg: "{spacing.24}",
+		xl: "{spacing.32}",
+		"2xl": "{spacing.48}"
+	},
+	stack: {
+		xs: "{spacing.1}",
+		sm: "{spacing.2}",
+		md: "{spacing.4}",
+		lg: "{spacing.6}",
+		xl: "{spacing.8}"
+	},
+	inline: {
+		xs: "{spacing.1}",
+		sm: "{spacing.2}",
+		md: "{spacing.3}",
+		lg: "{spacing.4}"
+	},
+	inset: {
+		none: "{spacing.0}",
+		xs: "{spacing.2}",
+		sm: "{spacing.3}",
+		md: "{spacing.4}",
+		lg: "{spacing.6}",
+		xl: "{spacing.8}",
+		"2xl": "{spacing.12}"
+	},
+	gap: {
+		none: "{spacing.0}",
+		xs: "{spacing.1}",
+		sm: "{spacing.2}",
+		md: "{spacing.4}",
+		lg: "{spacing.6}",
+		xl: "{spacing.8}"
+	},
+	container: {
+		padding: {
+			xs: "{spacing.4}",
+			sm: "{spacing.6}",
+			md: "{spacing.8}",
+			lg: "{spacing.12}",
+			xl: "{spacing.16}"
+		},
+		margin: {
+			xs: "{spacing.4}",
+			sm: "{spacing.8}",
+			md: "{spacing.12}",
+			lg: "{spacing.16}",
+			xl: "{spacing.24}"
+		}
+	}
+};
+var _notes$7 = {
+	component: {
+		tight: "Espaçamento mínimo dentro de componentes pequenos (badges, tags) - referencia: spacing.1",
+		compact: "Espaçamento compacto para elementos densos (tabelas, listas) - referencia: spacing.2",
+		comfortable: "Espaçamento confortável padrão para maioria dos componentes - referencia: spacing.3",
+		relaxed: "Espaçamento relaxado para elementos importantes (cards, modais) - referencia: spacing.4",
+		loose: "Espaçamento generoso para elementos de destaque - referencia: spacing.6"
+	},
+	layout: {
+		xs: "Espaçamento mínimo entre elementos de layout - referencia: spacing.4",
+		sm: "Espaçamento pequeno para layouts compactos - referencia: spacing.6",
+		md: "Espaçamento médio padrão para layouts - referencia: spacing.8",
+		lg: "Espaçamento grande para layouts espaçosos - referencia: spacing.12",
+		xl: "Espaçamento extra grande para layouts amplos - referencia: spacing.16",
+		"2xl": "Espaçamento máximo para layouts hero - referencia: spacing.24"
+	},
+	section: {
+		xs: "Espaçamento mínimo entre seções - referencia: spacing.8",
+		sm: "Espaçamento pequeno para seções relacionadas - referencia: spacing.12",
+		md: "Espaçamento médio padrão entre seções - referencia: spacing.16",
+		lg: "Espaçamento grande para separação clara de seções - referencia: spacing.24",
+		xl: "Espaçamento extra grande para seções principais - referencia: spacing.32",
+		"2xl": "Espaçamento máximo para seções hero - referencia: spacing.48"
+	},
+	stack: {
+		xs: "Espaçamento mínimo entre elementos empilhados - referencia: spacing.1",
+		sm: "Espaçamento pequeno para stacks compactos - referencia: spacing.2",
+		md: "Espaçamento médio padrão para stacks - referencia: spacing.4",
+		lg: "Espaçamento grande para stacks espaçosos - referencia: spacing.6",
+		xl: "Espaçamento extra grande para stacks destacados - referencia: spacing.8"
+	},
+	inline: {
+		xs: "Espaçamento mínimo entre elementos inline - referencia: spacing.1",
+		sm: "Espaçamento pequeno para elementos inline - referencia: spacing.2",
+		md: "Espaçamento médio padrão para elementos inline - referencia: spacing.3",
+		lg: "Espaçamento grande para elementos inline destacados - referencia: spacing.4"
+	},
+	inset: {
+		none: "Sem espaçamento interno - referencia: spacing.0",
+		xs: "Padding muito pequeno - referencia: spacing.2",
+		sm: "Padding pequeno - referencia: spacing.3",
+		md: "Padding médio padrão - referencia: spacing.4",
+		lg: "Padding grande - referencia: spacing.6",
+		xl: "Padding extra grande - referencia: spacing.8",
+		"2xl": "Padding máximo - referencia: spacing.12"
+	},
+	gap: {
+		none: "Sem gap entre elementos - referencia: spacing.0",
+		xs: "Gap muito pequeno (grids densos) - referencia: spacing.1",
+		sm: "Gap pequeno (listas compactas) - referencia: spacing.2",
+		md: "Gap médio padrão (grids padrão) - referencia: spacing.4",
+		lg: "Gap grande (grids espaçosos) - referencia: spacing.6",
+		xl: "Gap extra grande (grids destacados) - referencia: spacing.8"
+	},
+	container: {
+		padding: "Padding interno de containers - referencia: spacing.*",
+		margin: "Margem externa de containers - referencia: spacing.*"
+	}
+};
+var spacingContext = {
+	$schema: $schema$7,
+	$description: $description$7,
+	_comments: _comments$7,
+	spacing: spacing,
+	_notes: _notes$7
+};
+
+var $schema$6 = "http://json-schema.org/draft-07/schema#";
+var $description$6 = "Tokens semânticos de tipografia - Tipografia organizada por função e hierarquia";
+var _comments$6 = {
+	typography: "Tipografia organizada por papel semântico e hierarquia",
+	heading: "Estilos para títulos e cabeçalhos",
+	body: "Estilos para texto corrido e conteúdo",
+	caption: "Estilos para legendas e textos secundários",
+	label: "Estilos para rótulos e labels",
+	code: "Estilos para código e texto monoespaçado",
+	button: "Estilos para textos de botões",
+	link: "Estilos para links e textos interativos"
+};
+var typography = {
+	heading: {
+		h1: {
+			fontSize: "{typography.fontSize.5xl}",
+			fontWeight: "{typography.fontWeight.700}",
+			lineHeight: "{typography.lineHeight.1.25}",
+			letterSpacing: "{typography.letterSpacing.-0.025}",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		h2: {
+			fontSize: "{typography.fontSize.4xl}",
+			fontWeight: "{typography.fontWeight.700}",
+			lineHeight: "{typography.lineHeight.1.25}",
+			letterSpacing: "{typography.letterSpacing.-0.025}",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		h3: {
+			fontSize: "{typography.fontSize.3xl}",
+			fontWeight: "{typography.fontWeight.600}",
+			lineHeight: "{typography.lineHeight.1.375}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		h4: {
+			fontSize: "{typography.fontSize.2xl}",
+			fontWeight: "{typography.fontWeight.600}",
+			lineHeight: "{typography.lineHeight.1.375}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		h5: {
+			fontSize: "{typography.fontSize.xl}",
+			fontWeight: "{typography.fontWeight.600}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		h6: {
+			fontSize: "{typography.fontSize.lg}",
+			fontWeight: "{typography.fontWeight.600}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}"
+		}
+	},
+	body: {
+		large: {
+			fontSize: "{typography.fontSize.lg}",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "{typography.lineHeight.1.625}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		base: {
+			fontSize: "{typography.fontSize.base}",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		small: {
+			fontSize: "{typography.fontSize.sm}",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}"
+		}
+	},
+	caption: {
+		large: {
+			fontSize: "{typography.fontSize.sm}",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "0.025em",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		base: {
+			fontSize: "{typography.fontSize.xs}",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "0.025em",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		small: {
+			fontSize: "{typography.fontSize.xs}",
+			fontWeight: "300",
+			lineHeight: "{typography.lineHeight.1.375}",
+			letterSpacing: "0.05em",
+			fontFamily: "{typography.fontFamily.sans}"
+		}
+	},
+	label: {
+		large: {
+			fontSize: "{typography.fontSize.base}",
+			fontWeight: "{typography.fontWeight.500}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "0.025em",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		base: {
+			fontSize: "{typography.fontSize.sm}",
+			fontWeight: "{typography.fontWeight.500}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "0.025em",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		small: {
+			fontSize: "{typography.fontSize.xs}",
+			fontWeight: "{typography.fontWeight.500}",
+			lineHeight: "{typography.lineHeight.1.375}",
+			letterSpacing: "0.05em",
+			fontFamily: "{typography.fontFamily.sans}"
+		}
+	},
+	code: {
+		inline: {
+			fontSize: "{typography.fontSize.sm}",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.mono}"
+		},
+		block: {
+			fontSize: "{typography.fontSize.sm}",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "{typography.lineHeight.1.625}",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.mono}"
+		}
+	},
+	button: {
+		large: {
+			fontSize: "{typography.fontSize.base}",
+			fontWeight: "{typography.fontWeight.500}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "0.025em",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		base: {
+			fontSize: "{typography.fontSize.sm}",
+			fontWeight: "{typography.fontWeight.500}",
+			lineHeight: "{typography.lineHeight.1.5}",
+			letterSpacing: "0.025em",
+			fontFamily: "{typography.fontFamily.sans}"
+		},
+		small: {
+			fontSize: "{typography.fontSize.xs}",
+			fontWeight: "{typography.fontWeight.500}",
+			lineHeight: "{typography.lineHeight.1.375}",
+			letterSpacing: "0.05em",
+			fontFamily: "{typography.fontFamily.sans}"
+		}
+	},
+	link: {
+		base: {
+			fontSize: "inherit",
+			fontWeight: "{typography.fontWeight.400}",
+			lineHeight: "inherit",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}",
+			textDecoration: "underline"
+		},
+		bold: {
+			fontSize: "inherit",
+			fontWeight: "{typography.fontWeight.600}",
+			lineHeight: "inherit",
+			letterSpacing: "{typography.letterSpacing.0}",
+			fontFamily: "{typography.fontFamily.sans}",
+			textDecoration: "underline"
+		}
+	}
+};
+var _notes$6 = {
+	heading: {
+		h1: "Título principal - maior hierarquia - referencia: typography.fontSize.5xl, fontWeight.700, lineHeight.1.25, letterSpacing.-0.025",
+		h2: "Subtítulo principal - segunda hierarquia - referencia: typography.fontSize.4xl, fontWeight.700, lineHeight.1.25, letterSpacing.-0.025",
+		h3: "Subtítulo de seção - terceira hierarquia - referencia: typography.fontSize.3xl, fontWeight.600, lineHeight.1.375",
+		h4: "Subtítulo de subseção - quarta hierarquia - referencia: typography.fontSize.2xl, fontWeight.600, lineHeight.1.375",
+		h5: "Subtítulo menor - quinta hierarquia - referencia: typography.fontSize.xl, fontWeight.600, lineHeight.1.5",
+		h6: "Subtítulo mínimo - sexta hierarquia - referencia: typography.fontSize.lg, fontWeight.600, lineHeight.1.5"
+	},
+	body: {
+		large: "Texto corpo grande para conteúdo importante - referencia: typography.fontSize.lg, fontWeight.400, lineHeight.1.625",
+		base: "Texto corpo padrão para conteúdo principal - referencia: typography.fontSize.base, fontWeight.400, lineHeight.1.5",
+		small: "Texto corpo pequeno para conteúdo compacto - referencia: typography.fontSize.sm, fontWeight.400, lineHeight.1.5"
+	},
+	caption: {
+		large: "Legenda grande para contexto adicional - referencia: typography.fontSize.sm, fontWeight.400, letterSpacing.0.025",
+		base: "Legenda padrão para informações secundárias - referencia: typography.fontSize.xs, fontWeight.400, letterSpacing.0.025",
+		small: "Legenda pequena para metadados - referencia: typography.fontSize.xs, fontWeight.300, letterSpacing.0.05"
+	},
+	label: {
+		large: "Label grande para campos importantes - referencia: typography.fontSize.base, fontWeight.500, letterSpacing.0.025",
+		base: "Label padrão para campos comuns - referencia: typography.fontSize.sm, fontWeight.500, letterSpacing.0.025",
+		small: "Label pequeno para campos compactos - referencia: typography.fontSize.xs, fontWeight.500, letterSpacing.0.05"
+	},
+	code: {
+		inline: "Código inline dentro de parágrafos - referencia: typography.fontSize.sm, fontFamily.mono",
+		block: "Blocos de código para exemplos - referencia: typography.fontSize.sm, fontFamily.mono, lineHeight.1.625"
+	},
+	button: {
+		large: "Texto de botão grande - referencia: typography.fontSize.base, fontWeight.500, letterSpacing.0.025",
+		base: "Texto de botão padrão - referencia: typography.fontSize.sm, fontWeight.500, letterSpacing.0.025",
+		small: "Texto de botão pequeno - referencia: typography.fontSize.xs, fontWeight.500, letterSpacing.0.05"
+	},
+	link: {
+		base: "Link padrão com decoração - referencia: typography.fontWeight.400",
+		bold: "Link em negrito para destaque - referencia: typography.fontWeight.600"
+	}
+};
+var typographyRoles = {
+	$schema: $schema$6,
+	$description: $description$6,
+	_comments: _comments$6,
+	typography: typography,
+	_notes: _notes$6
+};
+
+var $schema$5 = "http://json-schema.org/draft-07/schema#";
+var $description$5 = "Tokens semânticos de borda - Bordas organizadas por função e contexto";
+var _comments$5 = {
+	border: "Bordas organizadas por papel semântico no sistema",
+	"default": "Bordas padrão para componentes normais",
+	interactive: "Bordas para elementos interativos e estados",
+	emphasis: "Bordas para destaque e ênfase",
+	divider: "Bordas para divisores e separadores",
+	outline: "Bordas para outlines e contornos",
+	radius: "Arredondamentos organizados por contexto"
+};
+var border = {
+	"default": {
+		width: "{border.width.base}",
+		style: "{border.style.solid}",
+		color: "inherit"
+	},
+	interactive: {
+		"default": {
+			width: "{border.width.base}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		},
+		hover: {
+			width: "{border.width.base}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		},
+		focus: {
+			width: "{border.width.thick}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		},
+		active: {
+			width: "{border.width.thick}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		}
+	},
+	emphasis: {
+		strong: {
+			width: "{border.width.thick}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		},
+		subtle: {
+			width: "{border.width.thin}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		}
+	},
+	divider: {
+		horizontal: {
+			width: "{border.width.thin}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		},
+		vertical: {
+			width: "{border.width.thin}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		},
+		subtle: {
+			width: "{border.width.thin}",
+			style: "{border.style.dashed}",
+			color: "inherit"
+		}
+	},
+	outline: {
+		focus: {
+			width: "{border.width.base}",
+			style: "{border.style.solid}",
+			color: "inherit",
+			offset: "{spacing.2}"
+		},
+		error: {
+			width: "{border.width.base}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		},
+		success: {
+			width: "{border.width.base}",
+			style: "{border.style.solid}",
+			color: "inherit"
+		}
+	},
+	radius: {
+		none: "{radius.none}",
+		sm: "{radius.sm}",
+		base: "{radius.base}",
+		md: "{radius.md}",
+		lg: "{radius.lg}",
+		xl: "{radius.xl}",
+		"2xl": "{radius.2xl}",
+		full: "{radius.full}"
+	},
+	component: {
+		input: {
+			width: "{border.width.base}",
+			style: "{border.style.solid}",
+			radius: "{radius.base}",
+			color: "inherit"
+		},
+		button: {
+			width: "{border.width.none}",
+			style: "{border.style.solid}",
+			radius: "{radius.md}",
+			color: "inherit"
+		},
+		card: {
+			width: "{border.width.thin}",
+			style: "{border.style.solid}",
+			radius: "{radius.lg}",
+			color: "inherit"
+		},
+		badge: {
+			width: "{border.width.none}",
+			style: "{border.style.solid}",
+			radius: "{radius.full}",
+			color: "inherit"
+		},
+		modal: {
+			width: "{border.width.none}",
+			style: "{border.style.solid}",
+			radius: "{radius.xl}",
+			color: "inherit"
+		}
+	}
+};
+var _notes$5 = {
+	"default": "Borda padrão usada na maioria dos componentes - referencia: border.width.base, border.style.solid",
+	interactive: {
+		"default": "Borda padrão para elementos interativos - referencia: border.width.base",
+		hover: "Borda para estado hover - referencia: border.width.base",
+		focus: "Borda mais espessa para estado de foco - referencia: border.width.thick",
+		active: "Borda mais espessa para estado ativo - referencia: border.width.thick"
+	},
+	emphasis: {
+		strong: "Borda espessa para forte destaque - referencia: border.width.thick",
+		subtle: "Borda fina para destaque sutil - referencia: border.width.thin"
+	},
+	divider: {
+		horizontal: "Divisor horizontal (linhas separadoras) - referencia: border.width.thin, border.style.solid",
+		vertical: "Divisor vertical (colunas separadoras) - referencia: border.width.thin, border.style.solid",
+		subtle: "Divisor sutil com estilo tracejado - referencia: border.width.thin, border.style.dashed"
+	},
+	outline: {
+		focus: "Outline para elementos com foco (acessibilidade) - referencia: border.width.base, spacing.2",
+		error: "Outline para estados de erro - referencia: border.width.base",
+		success: "Outline para estados de sucesso - referencia: border.width.base"
+	},
+	radius: {
+		none: "Sem arredondamento - cantos retos - referencia: border.radius.none",
+		sm: "Arredondamento pequeno para elementos pequenos - referencia: border.radius.sm",
+		base: "Arredondamento padrão para maioria dos componentes - referencia: border.radius.base",
+		md: "Arredondamento médio para cards - referencia: border.radius.md",
+		lg: "Arredondamento grande para elementos maiores - referencia: border.radius.lg",
+		xl: "Arredondamento extra grande para destaques - referencia: border.radius.xl",
+		"2xl": "Arredondamento máximo para grande impacto - referencia: border.radius.2xl",
+		full: "Arredondamento completo (círculos/pílulas) - referencia: border.radius.full"
+	},
+	component: {
+		input: "Bordas para campos de entrada - referencia: border.width.base, border.radius.base",
+		button: "Bordas para botões (geralmente nenhuma) - referencia: border.width.none, border.radius.md",
+		card: "Bordas para cards e containers - referencia: border.width.thin, border.radius.lg",
+		badge: "Bordas para badges e tags - referencia: border.width.none, border.radius.full",
+		modal: "Bordas para modais e dialogs - referencia: border.width.none, border.radius.xl"
+	}
+};
+var borderRoles = {
+	$schema: $schema$5,
+	$description: $description$5,
+	_comments: _comments$5,
+	border: border,
+	_notes: _notes$5
+};
+
+var $schema$4 = "http://json-schema.org/draft-07/schema#";
+var $description$4 = "Tokens semânticos de layout - Estrutura organizada por função e contexto";
+var _comments$4 = {
+	layout: "Estrutura de layout organizada semanticamente",
+	container: "Containers organizados por tamanho e propósito",
+	grid: "Sistema de grid organizado por contexto",
+	spacing: "Espaçamentos de layout organizados semanticamente",
+	safeArea: "Áreas seguras organizadas por contexto",
+	zIndex: "Camadas Z-index organizadas por função"
+};
+var layout = {
+	container: {
+		xs: "{layout.container.xs}",
+		sm: "{layout.container.sm}",
+		md: "{layout.container.md}",
+		lg: "{layout.container.lg}",
+		xl: "{layout.container.xl}",
+		"2xl": "{layout.container.2xl}",
+		full: "100%"
+	},
+	grid: {
+		columns: {
+			count: 12,
+			gap: {
+				xs: "{layout.gutter.xs}",
+				sm: "{layout.gutter.sm}",
+				md: "{layout.gutter.md}",
+				lg: "{layout.gutter.lg}",
+				xl: "{layout.gutter.xl}"
+			}
+		},
+		gutter: {
+			xs: "{layout.gutter.xs}",
+			sm: "{layout.gutter.sm}",
+			md: "{layout.gutter.md}",
+			lg: "{layout.gutter.lg}",
+			xl: "{layout.gutter.xl}"
+		}
+	},
+	spacing: {
+		section: {
+			xs: "{spacing.8}",
+			sm: "{spacing.12}",
+			md: "{spacing.16}",
+			lg: "{spacing.24}",
+			xl: "{spacing.32}"
+		},
+		container: {
+			padding: {
+				xs: "{spacing.4}",
+				sm: "{spacing.6}",
+				md: "{spacing.8}",
+				lg: "{spacing.12}",
+				xl: "{spacing.16}"
+			},
+			margin: {
+				xs: "{spacing.4}",
+				sm: "{spacing.8}",
+				md: "{spacing.12}",
+				lg: "{spacing.16}",
+				xl: "{spacing.24}"
+			}
+		}
+	},
+	safeArea: {
+		mobile: "{layout.safeArea.xs}",
+		tablet: "{layout.safeArea.md}",
+		desktop: "{layout.safeArea.lg}",
+		wide: "{layout.safeArea.xl}",
+		xs: "{layout.safeArea.xs}",
+		sm: "{layout.safeArea.sm}",
+		md: "{layout.safeArea.md}",
+		lg: "{layout.safeArea.lg}",
+		xl: "{layout.safeArea.xl}"
+	},
+	zIndex: {
+		base: "{zIndex.0}",
+		dropdown: "{zIndex.100}",
+		sticky: "{zIndex.200}",
+		fixed: "{zIndex.300}",
+		overlay: "{zIndex.400}",
+		modal: "{zIndex.500}",
+		popover: "{zIndex.600}",
+		tooltip: "{zIndex.700}",
+		toast: "{zIndex.800}",
+		max: "{zIndex.9999}"
+	},
+	breakpoint: {
+		xs: "{breakpoints.xs}",
+		sm: "{breakpoints.sm}",
+		md: "{breakpoints.md}",
+		lg: "{breakpoints.lg}",
+		xl: "{breakpoints.xl}",
+		"2xl": "{breakpoints.2xl}",
+		"3xl": "{breakpoints.3xl}"
+	}
+};
+var _notes$4 = {
+	container: {
+		xs: "Container mínimo para mobile muito pequeno (320px) - referencia: layout.container.xs",
+		sm: "Container para mobile landscape (640px) - referencia: layout.container.sm",
+		md: "Container para tablets (768px) - referencia: layout.container.md",
+		lg: "Container para laptops (1024px) - referencia: layout.container.lg",
+		xl: "Container padrão para desktop (1280px) - referencia: layout.container.xl",
+		"2xl": "Container amplo para telas grandes (1536px) - referencia: layout.container.2xl",
+		full: "Container que ocupa 100% da largura"
+	},
+	grid: {
+		columns: "Configuração do sistema de colunas do grid - referencia: layout.column.count, layout.gutter.*",
+		gutter: "Espaçamento entre elementos do grid - referencia: layout.gutter.*"
+	},
+	spacing: {
+		section: "Espaçamento entre seções principais - referencia: spacing.8, spacing.12, spacing.16, spacing.24, spacing.32",
+		container: "Espaçamento interno e externo de containers - referencia: spacing.*"
+	},
+	safeArea: {
+		mobile: "Área segura para dispositivos móveis - referencia: layout.safeArea.xs",
+		tablet: "Área segura para tablets - referencia: layout.safeArea.md",
+		desktop: "Área segura para desktop - referencia: layout.safeArea.lg",
+		wide: "Área segura para telas wide - referencia: layout.safeArea.xl"
+	},
+	zIndex: {
+		base: "Nível base - elementos normais - referencia: zIndex.0",
+		dropdown: "Nível para dropdowns e menus - referencia: zIndex.100",
+		sticky: "Nível para elementos sticky - referencia: zIndex.200",
+		fixed: "Nível para elementos fixed - referencia: zIndex.300",
+		overlay: "Nível para overlays e backdrops - referencia: zIndex.400",
+		modal: "Nível para modais e dialogs - referencia: zIndex.500",
+		popover: "Nível para popovers - referencia: zIndex.600",
+		tooltip: "Nível para tooltips - referencia: zIndex.700",
+		toast: "Nível para toasts e notificações - referencia: zIndex.800",
+		max: "Nível máximo absoluto - referencia: zIndex.9999"
+	},
+	breakpoint: {
+		xs: "Breakpoint extra small (0px) - mobile - referencia: breakpoints.breakpoints.xs",
+		sm: "Breakpoint small (640px) - mobile landscape - referencia: breakpoints.breakpoints.sm",
+		md: "Breakpoint medium (768px) - tablet - referencia: breakpoints.breakpoints.md",
+		lg: "Breakpoint large (1024px) - laptop - referencia: breakpoints.breakpoints.lg",
+		xl: "Breakpoint extra large (1280px) - desktop - referencia: breakpoints.breakpoints.xl",
+		"2xl": "Breakpoint 2x large (1536px) - desktop grande - referencia: breakpoints.breakpoints.2xl",
+		"3xl": "Breakpoint 3x large (1920px) - wide screen - referencia: breakpoints.breakpoints.3xl"
+	}
+};
+var layoutStructure = {
+	$schema: $schema$4,
+	$description: $description$4,
+	_comments: _comments$4,
+	layout: layout,
+	_notes: _notes$4
+};
+
+var $schema$3 = "http://json-schema.org/draft-07/schema#";
+var $description$3 = "Tokens de elevação semântica - Sombras organizadas por função e contexto";
+var _comments$3 = {
+	elevation: "Sombras organizadas por função semântica no design",
+	surface: "Sombras para níveis de elevação da superfície",
+	component: "Sombras para tipos específicos de componentes",
+	interactive: "Sombras para elementos interativos e estados",
+	overlay: "Sombras para sobreposições e elementos flutuantes"
+};
+var elevation = {
+	surface: {
+		none: "none",
+		xs: "{shadows.xs}",
+		sm: "{shadows.sm}",
+		base: "{shadows.base}",
+		md: "{shadows.md}",
+		lg: "{shadows.lg}",
+		xl: "{shadows.xl}",
+		"2xl": "{shadows.2xl}"
+	},
+	component: {
+		button: {
+			"default": "{shadows.sm}",
+			hover: "{shadows.base}",
+			active: "{shadows.inner}",
+			disabled: "none"
+		},
+		input: {
+			"default": "none",
+			focus: "{elevation.interactive.focus}",
+			error: "0 0 0 3px rgba(239, 68, 68, 0.1)"
+		},
+		card: {
+			"default": "{shadows.base}",
+			hover: "{shadows.md}",
+			elevated: "{shadows.lg}"
+		},
+		dropdown: {
+			"default": "{shadows.md}",
+			menu: "{shadows.md}"
+		},
+		modal: {
+			overlay: "{shadows.xl}",
+			dialog: "{shadows.2xl}"
+		},
+		tooltip: {
+			"default": "{shadows.base}"
+		}
+	},
+	interactive: {
+		hover: "{shadows.base}",
+		focus: "0 0 0 3px rgba(14, 165, 233, 0.1)",
+		active: "{shadows.inner}",
+		drag: "{shadows.md}"
+	},
+	overlay: {
+		backdrop: "{shadows.xl}",
+		sheet: "{shadows.lg}",
+		popover: "{shadows.md}"
+	}
+};
+var _notes$3 = {
+	surface: {
+		none: "Sem elevação - superfície plana",
+		xs: "Elevação mínima para separação sutil - referência: {shadows.xs}",
+		sm: "Elevação pequena para botões e inputs - referência: {shadows.sm}",
+		base: "Elevação padrão para cards - referência: {shadows.base}",
+		md: "Elevação média para dropdowns e popovers - referência: {shadows.md}",
+		lg: "Elevação grande para modais e sidebars - referência: {shadows.lg}",
+		xl: "Elevação extra grande para elementos flutuantes - referência: {shadows.xl}",
+		"2xl": "Elevação máxima para seções de herói - referência: {shadows.2xl}"
+	},
+	component: {
+		button: {
+			"default": "Sombra padrão para botões - referência: {shadows.sm}",
+			hover: "Sombra para estado hover de botões - referência: {shadows.base}",
+			active: "Sombra interna para botões pressionados - referência: {shadows.inner}",
+			disabled: "Sem sombra para botões desabilitados"
+		},
+		input: {
+			"default": "Sem sombra para inputs padrão",
+			focus: "Sombra para foco em inputs - referência: {elevation.interactive.focus}",
+			error: "Sombra vermelha para inputs com erro"
+		},
+		card: {
+			"default": "Sombra padrão para cards - referência: {shadows.base}",
+			hover: "Sombra para cards em hover - referência: {shadows.md}",
+			elevated: "Sombra para cards destacados - referência: {shadows.lg}"
+		},
+		dropdown: {
+			"default": "Sombra para dropdowns - referência: {shadows.md}",
+			menu: "Sombra para menus dropdown - referência: {shadows.md}"
+		},
+		modal: {
+			overlay: "Sombra para overlay de modal - referência: {shadows.xl}",
+			dialog: "Sombra para diálogo de modal - referência: {shadows.2xl}"
+		},
+		tooltip: {
+			"default": "Sombra para tooltips - referência: {shadows.base}"
+		}
+	},
+	interactive: {
+		hover: "Sombra para estados hover - referência: {shadows.base}",
+		focus: "Sombra para anéis de foco em elementos interativos",
+		active: "Sombra interna para elementos ativos - referência: {shadows.inner}",
+		drag: "Sombra para elementos sendo arrastados - referência: {shadows.md}"
+	},
+	overlay: {
+		backdrop: "Sombra para backdrops - referência: {shadows.xl}",
+		sheet: "Sombra para bottom sheets - referência: {shadows.lg}",
+		popover: "Sombra para popovers - referência: {shadows.md}"
+	}
+};
+var elevationRoles = {
+	$schema: $schema$3,
+	$description: $description$3,
+	_comments: _comments$3,
+	elevation: elevation,
+	_notes: _notes$3
+};
+
+var $schema$2 = "http://json-schema.org/draft-07/schema#";
+var $description$2 = "Semantic motion tokens - Animations organized by function and context";
+var _comments$2 = {
+	motion: "Animations organized by semantic role in the design system",
+	transition: "Transitions for state changes",
+	interaction: "Animations for user interactions",
+	feedback: "Animations for user feedback",
+	navigation: "Animations for navigation and routing"
+};
+var motion = {
+	transition: {
+		"default": {
+			duration: "{motion.duration.normal}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		},
+		fast: {
+			duration: "{motion.duration.fast}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		},
+		slow: {
+			duration: "{motion.duration.slow}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		},
+		instant: {
+			duration: "{motion.duration.instant}",
+			easing: "{motion.easing.linear}",
+			delay: "{motion.delay.none}"
+		}
+	},
+	interaction: {
+		hover: {
+			duration: "{motion.duration.fast}",
+			easing: "{motion.easing.easeOut}",
+			delay: "{motion.delay.none}"
+		},
+		focus: {
+			duration: "{motion.duration.normal}",
+			easing: "{motion.easing.easeOut}",
+			delay: "{motion.delay.none}"
+		},
+		active: {
+			duration: "{motion.duration.fast}",
+			easing: "{motion.easing.easeIn}",
+			delay: "{motion.delay.none}"
+		},
+		tap: {
+			duration: "{motion.duration.fast}",
+			easing: "{motion.easing.easeIn}",
+			delay: "{motion.delay.none}"
+		}
+	},
+	feedback: {
+		success: {
+			duration: "{motion.duration.slow}",
+			easing: "{motion.easing.spring}",
+			delay: "{motion.delay.none}"
+		},
+		error: {
+			duration: "{motion.duration.normal}",
+			easing: "{motion.easing.easeIn}",
+			delay: "{motion.delay.none}"
+		},
+		loading: {
+			duration: "1000ms",
+			easing: "{motion.easing.linear}",
+			delay: "{motion.delay.none}"
+		},
+		notification: {
+			duration: "{motion.duration.slow}",
+			easing: "{motion.easing.easeOut}",
+			delay: "{motion.delay.short}"
+		}
+	},
+	navigation: {
+		page: {
+			duration: "{motion.duration.slow}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		},
+		drawer: {
+			duration: "{motion.duration.slow}",
+			easing: "{motion.easing.easeOut}",
+			delay: "{motion.delay.none}"
+		},
+		modal: {
+			duration: "{motion.duration.normal}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		},
+		collapse: {
+			duration: "{motion.duration.normal}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		}
+	},
+	component: {
+		fade: {
+			duration: "{motion.duration.normal}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		},
+		slide: {
+			duration: "{motion.duration.slow}",
+			easing: "{motion.easing.easeInOut}",
+			delay: "{motion.delay.none}"
+		},
+		scale: {
+			duration: "{motion.duration.normal}",
+			easing: "{motion.easing.spring}",
+			delay: "{motion.delay.none}"
+		},
+		rotate: {
+			duration: "{motion.duration.slower}",
+			easing: "{motion.easing.linear}",
+			delay: "{motion.delay.none}"
+		}
+	}
+};
+var _notes$2 = {
+	transition: {
+		"default": "Standard transition for most state changes - reference: motion.duration.normal, motion.easing.easeInOut",
+		fast: "Fast transition for quick feedback - reference: motion.duration.fast, motion.easing.easeInOut",
+		slow: "Slow transition for smooth animations - reference: motion.duration.slow, motion.easing.easeInOut",
+		instant: "Instant transition without animation - reference: motion.duration.instant, motion.easing.linear"
+	},
+	interaction: {
+		hover: "Hover state animation - reference: motion.duration.fast, motion.easing.easeOut",
+		focus: "Focus state animation - reference: motion.duration.normal, motion.easing.easeOut",
+		active: "Active/pressed state animation - reference: motion.duration.fast, motion.easing.easeIn",
+		tap: "Tap/click animation - reference: motion.duration.fast, motion.easing.easeIn"
+	},
+	feedback: {
+		success: "Success feedback animation - reference: motion.duration.slow, motion.easing.spring",
+		error: "Error feedback animation - reference: motion.duration.normal, motion.easing.easeIn",
+		loading: "Loading spinner animation - reference: custom duration, motion.easing.linear",
+		notification: "Notification appearance - reference: motion.duration.slow, motion.easing.easeOut, motion.delay.short"
+	},
+	navigation: {
+		page: "Page transition animation - reference: motion.duration.slow, motion.easing.easeInOut",
+		drawer: "Drawer/sidebar animation - reference: motion.duration.slow, motion.easing.easeOut",
+		modal: "Modal open/close animation - reference: motion.duration.normal, motion.easing.easeInOut",
+		collapse: "Collapse/expand animation - reference: motion.duration.normal, motion.easing.easeInOut"
+	},
+	component: {
+		fade: "Fade in/out animation - reference: motion.duration.normal, motion.easing.easeInOut",
+		slide: "Slide animation - reference: motion.duration.slow, motion.easing.easeInOut",
+		scale: "Scale animation - reference: motion.duration.normal, motion.easing.spring",
+		rotate: "Rotate animation - reference: motion.duration.slower, motion.easing.linear"
+	}
+};
+var motionRoles = {
+	$schema: $schema$2,
+	$description: $description$2,
+	_comments: _comments$2,
+	motion: motion,
+	_notes: _notes$2
+};
+
+var $schema$1 = "http://json-schema.org/draft-07/schema#";
+var $description$1 = "Light theme - Tema claro (valores padrão dos semânticos)";
+var _comments$1 = {
+	color: "Tema light usa os mesmos valores dos tokens semânticos (padrão)"
+};
+var color$1 = {
+	background: {
+		primary: "{palette.white}",
+		secondary: "{palette.gray.50}",
+		tertiary: "{palette.gray.100}",
+		disabled: "{palette.gray.100}",
+		overlay: "rgba(0, 0, 0, 0.5)",
+		inverse: "{palette.black}"
+	},
+	text: {
+		primary: "{palette.gray.900}",
+		secondary: "{palette.gray.600}",
+		tertiary: "{palette.gray.400}",
+		disabled: "{palette.gray.300}",
+		inverse: "{palette.white}",
+		onPrimary: "{palette.white}",
+		onSecondary: "{palette.gray.900}",
+		link: "{palette.blue.600}",
+		linkHover: "{palette.blue.700}"
+	},
+	button: {
+		primary: {
+			"default": "{palette.blue.500}",
+			hover: "{palette.blue.600}",
+			active: "{palette.blue.700}",
+			text: "{palette.white}"
+		},
+		secondary: {
+			"default": "{palette.gray.200}",
+			hover: "{palette.gray.300}",
+			active: "{palette.gray.400}",
+			text: "{palette.gray.900}"
+		},
+		tertiary: {
+			"default": "{palette.transparent}",
+			hover: "{palette.gray.100}",
+			active: "{palette.gray.200}",
+			text: "{palette.gray.900}"
+		},
+		danger: {
+			"default": "{palette.red.500}",
+			hover: "{palette.red.600}",
+			active: "{palette.red.700}",
+			text: "{palette.white}"
+		},
+		success: {
+			"default": "{palette.green.500}",
+			hover: "{palette.green.600}",
+			active: "{palette.green.700}",
+			text: "{palette.white}"
+		}
+	},
+	border: {
+		"default": "{palette.gray.200}",
+		light: "{palette.gray.100}",
+		medium: "{palette.gray.300}",
+		dark: "{palette.gray.400}",
+		focus: "{palette.blue.500}",
+		error: "{palette.red.500}",
+		success: "{palette.green.500}",
+		warning: "{palette.red.400}"
+	},
+	status: {
+		success: {
+			"default": "{palette.green.500}",
+			light: "{palette.green.50}",
+			dark: "{palette.green.700}",
+			text: "{palette.green.700}"
+		},
+		error: {
+			"default": "{palette.red.500}",
+			light: "{palette.red.50}",
+			dark: "{palette.red.700}",
+			text: "{palette.red.700}"
+		},
+		warning: {
+			"default": "{palette.red.400}",
+			light: "{palette.red.50}",
+			dark: "{palette.red.600}",
+			text: "{palette.red.800}"
+		},
+		info: {
+			"default": "{palette.blue.500}",
+			light: "{palette.blue.50}",
+			dark: "{palette.blue.700}",
+			text: "{palette.blue.700}"
+		}
+	},
+	interactive: {
+		link: {
+			"default": "{palette.blue.600}",
+			hover: "{palette.blue.700}",
+			visited: "{palette.purple.600}",
+			active: "{palette.blue.800}"
+		},
+		focus: {
+			ring: "{palette.blue.500}",
+			ringOffset: "{palette.white}"
+		}
+	},
+	surface: {
+		elevated: "{palette.white}",
+		raised: "{palette.gray.50}",
+		sunken: "{palette.gray.100}"
+	}
+};
+var _notes$1 = {
+	background: {
+		primary: "Fundo principal - referencia: palette.white",
+		secondary: "Fundo secundário - referencia: palette.gray.50",
+		tertiary: "Fundo terciário - referencia: palette.gray.100",
+		disabled: "Fundo desabilitado - referencia: palette.gray.100",
+		overlay: "Overlay com opacidade - referencia: palette.black com opacity",
+		inverse: "Fundo invertido - referencia: palette.black"
+	},
+	text: {
+		primary: "Texto principal - referencia: palette.gray.900",
+		secondary: "Texto secundário - referencia: palette.gray.600",
+		tertiary: "Texto terciário - referencia: palette.gray.400",
+		disabled: "Texto desabilitado - referencia: palette.gray.300",
+		inverse: "Texto invertido - referencia: palette.white",
+		onPrimary: "Texto sobre primária - referencia: palette.white",
+		onSecondary: "Texto sobre secundária - referencia: palette.gray.900",
+		link: "Link padrão - referencia: palette.blue.600",
+		linkHover: "Link hover - referencia: palette.blue.700"
+	},
+	button: {
+		primary: "Botão primário - referencia: palette.blue.*",
+		secondary: "Botão secundário - referencia: palette.gray.*",
+		tertiary: "Botão terciário - referencia: palette.gray.*",
+		danger: "Botão perigo - referencia: palette.red.*",
+		success: "Botão sucesso - referencia: palette.green.*"
+	},
+	border: {
+		"default": "Borda padrão - referencia: palette.gray.200",
+		light: "Borda clara - referencia: palette.gray.100",
+		medium: "Borda média - referencia: palette.gray.300",
+		dark: "Borda escura - referencia: palette.gray.400",
+		focus: "Borda foco - referencia: palette.blue.500",
+		error: "Borda erro - referencia: palette.red.500",
+		success: "Borda sucesso - referencia: palette.green.500",
+		warning: "Borda aviso - referencia: palette.red.400"
+	},
+	status: {
+		success: "Status sucesso - referencia: palette.green.*",
+		error: "Status erro - referencia: palette.red.*",
+		warning: "Status aviso - referencia: palette.red.*",
+		info: "Status informação - referencia: palette.blue.*"
+	},
+	interactive: {
+		link: "Links interativos - referencia: palette.blue.*, palette.purple.*",
+		focus: "Foco - referencia: palette.blue.*, palette.white"
+	},
+	surface: {
+		elevated: "Superfície elevada - referencia: palette.white",
+		raised: "Superfície levantada - referencia: palette.gray.50",
+		sunken: "Superfície rebaixada - referencia: palette.gray.100"
+	}
+};
+var themeLight = {
+	$schema: $schema$1,
+	$description: $description$1,
+	_comments: _comments$1,
+	color: color$1,
+	_notes: _notes$1
+};
+
+var $schema = "http://json-schema.org/draft-07/schema#";
+var $description = "Dark theme - Override de tokens semânticos com valores escuros";
+var _comments = {
+	color: "Tema dark com valores específicos que sobrescrevem os semânticos"
+};
+var color = {
+	background: {
+		primary: "{palette.gray.900}",
+		secondary: "{palette.gray.800}",
+		tertiary: "{palette.gray.700}",
+		disabled: "{palette.gray.700}",
+		overlay: "rgba(0, 0, 0, 0.8)",
+		inverse: "{palette.white}"
+	},
+	text: {
+		primary: "{palette.gray.50}",
+		secondary: "{palette.gray.300}",
+		tertiary: "{palette.gray.400}",
+		disabled: "{palette.gray.500}",
+		inverse: "{palette.gray.900}",
+		onPrimary: "{palette.white}",
+		onSecondary: "{palette.gray.900}",
+		link: "{palette.blue.400}",
+		linkHover: "{palette.blue.300}"
+	},
+	button: {
+		primary: {
+			"default": "{palette.blue.500}",
+			hover: "{palette.blue.400}",
+			active: "{palette.blue.300}",
+			text: "{palette.white}"
+		},
+		secondary: {
+			"default": "{palette.gray.700}",
+			hover: "{palette.gray.600}",
+			active: "{palette.gray.500}",
+			text: "{palette.gray.50}"
+		},
+		tertiary: {
+			"default": "{palette.transparent}",
+			hover: "{palette.gray.700}",
+			active: "{palette.gray.600}",
+			text: "{palette.gray.50}"
+		},
+		danger: {
+			"default": "{palette.red.500}",
+			hover: "{palette.red.400}",
+			active: "{palette.red.300}",
+			text: "{palette.white}"
+		},
+		success: {
+			"default": "{palette.green.500}",
+			hover: "{palette.green.400}",
+			active: "{palette.green.300}",
+			text: "{palette.white}"
+		}
+	},
+	border: {
+		"default": "{palette.gray.700}",
+		light: "{palette.gray.600}",
+		medium: "{palette.gray.500}",
+		dark: "{palette.gray.400}",
+		focus: "{palette.blue.400}",
+		error: "{palette.red.400}",
+		success: "{palette.green.400}",
+		warning: "{palette.red.400}"
+	},
+	status: {
+		success: {
+			"default": "{palette.green.500}",
+			light: "{palette.green.900}",
+			dark: "{palette.green.300}",
+			text: "{palette.green.300}"
+		},
+		error: {
+			"default": "{palette.red.500}",
+			light: "{palette.red.900}",
+			dark: "{palette.red.300}",
+			text: "{palette.red.300}"
+		},
+		warning: {
+			"default": "{palette.red.400}",
+			light: "{palette.red.900}",
+			dark: "{palette.red.300}",
+			text: "{palette.red.200}"
+		},
+		info: {
+			"default": "{palette.blue.400}",
+			light: "{palette.blue.900}",
+			dark: "{palette.blue.300}",
+			text: "{palette.blue.300}"
+		}
+	},
+	interactive: {
+		link: {
+			"default": "{palette.blue.400}",
+			hover: "{palette.blue.300}",
+			visited: "{palette.purple.400}",
+			active: "{palette.blue.200}"
+		},
+		focus: {
+			ring: "{palette.blue.400}",
+			ringOffset: "{palette.gray.900}"
+		}
+	},
+	surface: {
+		elevated: "{palette.gray.800}",
+		raised: "{palette.gray.700}",
+		sunken: "{palette.gray.600}"
+	}
+};
+var _notes = {
+	background: {
+		primary: "Fundo principal escuro - referencia: palette.gray.900",
+		secondary: "Fundo secundário - referencia: palette.gray.800",
+		tertiary: "Fundo terciário - referencia: palette.gray.700",
+		disabled: "Fundo desabilitado - referencia: palette.gray.700",
+		overlay: "Overlay com opacidade alta - referencia: palette.black com opacity 0.8",
+		inverse: "Fundo invertido claro - referencia: palette.white"
+	},
+	text: {
+		primary: "Texto principal claro - referencia: palette.gray.50",
+		secondary: "Texto secundário - referencia: palette.gray.300",
+		tertiary: "Texto terciário - referencia: palette.gray.400",
+		disabled: "Texto desabilitado - referencia: palette.gray.500",
+		inverse: "Texto invertido escuro - referencia: palette.gray.900",
+		onPrimary: "Texto sobre primária - referencia: palette.white",
+		onSecondary: "Texto sobre secundária - referencia: palette.gray.900",
+		link: "Link padrão claro - referencia: palette.blue.400",
+		linkHover: "Link hover - referencia: palette.blue.300"
+	},
+	button: {
+		primary: "Botão primário - referencia: palette.blue.500 com hover/active mais claros",
+		secondary: "Botão secundário escuro - referencia: palette.gray.700/600/500",
+		tertiary: "Botão terciário transparente - referencia: palette.gray.*",
+		danger: "Botão perigo - referencia: palette.red.500/400/300",
+		success: "Botão sucesso - referencia: palette.green.500/400/300"
+	},
+	border: {
+		"default": "Borda padrão escura - referencia: palette.gray.700",
+		light: "Borda clara - referencia: palette.gray.600",
+		medium: "Borda média - referencia: palette.gray.500",
+		dark: "Borda mais escura - referencia: palette.gray.400",
+		focus: "Borda foco claro - referencia: palette.blue.400",
+		error: "Borda erro - referencia: palette.red.400",
+		success: "Borda sucesso - referencia: palette.green.400",
+		warning: "Borda aviso - referencia: palette.red.400"
+	},
+	status: {
+		success: "Status sucesso - referencia: palette.green.500/900/300",
+		error: "Status erro - referencia: palette.red.500/900/300",
+		warning: "Status aviso - referencia: palette.red.400/900/300",
+		info: "Status informação - referencia: palette.blue.400/900/300"
+	},
+	interactive: {
+		link: "Links interativos claros - referencia: palette.blue.400/300/200, palette.purple.400",
+		focus: "Foco claro - referencia: palette.blue.400, palette.gray.900"
+	},
+	surface: {
+		elevated: "Superfície elevada escura - referencia: palette.gray.800",
+		raised: "Superfície levantada - referencia: palette.gray.700",
+		sunken: "Superfície rebaixada - referencia: palette.gray.600"
+	}
+};
+var themeDark = {
+	$schema: $schema,
+	$description: $description,
+	_comments: _comments,
+	color: color,
+	_notes: _notes
+};
+
 declare const tokens: {
-    readonly colors: {
-        readonly light: {
-            primary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            secondary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            accent: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            background: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                inverse: string;
-                overlay: string;
-                muted: string;
-            };
-            surface: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                elevated: string;
-                overlay: string;
-                hover: string;
-                active: string;
-            };
-            text: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                inverse: string;
-                disabled: string;
-                link: string;
-                linkHover: string;
-                linkActive: string;
-                linkVisited: string;
-                onPrimary: string;
-                onSecondary: string;
-                onAccent: string;
-                onBackground: string;
-                onSurface: string;
-            };
-            border: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                focus: string;
-                focusRing: string;
-                inverse: string;
-                hover: string;
-                active: string;
-                disabled: string;
-            };
-            status: {
-                success: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-                warning: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-                error: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-                info: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-            };
-            interactive: {
-                default: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                disabledText: string;
-                focus: string;
-                focusRing: string;
-            };
-            primitive: {
-                cyan: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                purple: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                pink: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                blue: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                green: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                orange: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                red: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                amber: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                emerald: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                neutral: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                    "950": string;
-                };
-            };
-            effects: {
-                matrixRain: {
-                    base: string;
-                };
-                stars: {
-                    base: string;
-                };
-            };
-        };
-        readonly dark: {
-            primary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            secondary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            accent: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            background: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                inverse: string;
-                overlay: string;
-                muted: string;
-            };
-            surface: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                elevated: string;
-                overlay: string;
-                glass: string;
-                glassHover: string;
-                hover: string;
-                active: string;
-            };
-            text: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                inverse: string;
-                disabled: string;
-                link: string;
-                linkHover: string;
-                linkActive: string;
-                linkVisited: string;
-                onPrimary: string;
-                onSecondary: string;
-                onAccent: string;
-                onBackground: string;
-                onSurface: string;
-                glow: string;
-                neonCyan: string;
-                neonPink: string;
-                neonPurple: string;
-                neonGreen: string;
-            };
-            border: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                focus: string;
-                focusRing: string;
-                inverse: string;
-                neon: string;
-                neonGlow: string;
-                hover: string;
-                active: string;
-                disabled: string;
-            };
-            status: {
-                success: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-                warning: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-                error: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-                info: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
-                };
-            };
-            interactive: {
-                default: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                disabledText: string;
-                focus: string;
-                focusRing: string;
-            };
-            effects: {
-                glowCyan: string;
-                glowPink: string;
-                glowPurple: string;
-                glowGreen: string;
-                shadowSm: string;
-                shadowMd: string;
-                shadowLg: string;
-            };
-            gradients: {
-                primary: string;
-                secondary: string;
-                accent: string;
-                background: string;
-            };
-            primitive: {
-                cyan: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                purple: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                pink: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                blue: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                green: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                orange: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                red: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                amber: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                emerald: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                neutral: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                    "950": string;
-                };
-            };
-        };
-    };
-    readonly typography: {
-        fontFamily: {
-            sans: string;
-            serif: string;
-            mono: string;
-            display: string;
-            body: string;
-            code: string;
-        };
-        fontSize: {
-            xs: string;
-            sm: string;
-            base: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-            "4xl": string;
-            "5xl": string;
-            "6xl": string;
-            "7xl": string;
-            "8xl": string;
-            "9xl": string;
-        };
-        fontWeight: {
-            thin: string;
-            extralight: string;
-            light: string;
-            normal: string;
-            medium: string;
-            semibold: string;
-            bold: string;
-            extrabold: string;
+    primitives: {
+        color: {
+            white: string;
             black: string;
-        };
-        lineHeight: {
-            none: string;
-            tight: string;
-            snug: string;
-            normal: string;
-            relaxed: string;
-            loose: string;
-        };
-        letterSpacing: {
-            tighter: string;
-            tight: string;
-            normal: string;
-            wide: string;
-            wider: string;
-            widest: string;
-        };
-        headings: {
-            h1: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            transparent: string;
+            gray: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-            h2: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            blue: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-            h3: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            cyan: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-            h4: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            purple: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-            h5: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            pink: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-            h6: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            red: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-        };
-        subtitle: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            orange: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            yellow: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
+            green: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
-        };
-        body: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
+            emerald: {
+                "50": string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
         };
-        caption: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
+        spacing: {
+            "0": string;
+            "1": string;
+            "2": string;
+            "3": string;
+            "4": string;
+            "5": string;
+            "6": string;
+            "7": string;
+            "8": string;
+            "9": string;
+            "10": string;
+            "11": string;
+            "12": string;
+            "14": string;
+            "16": string;
+            "20": string;
+            "24": string;
+            "28": string;
+            "32": string;
+            "36": string;
+            "40": string;
+            "44": string;
+            "48": string;
+            "52": string;
+            "56": string;
+            "60": string;
+            "64": string;
+            "72": string;
+            "80": string;
+            "96": string;
+            px: string;
+            "0.5": string;
+            "1.5": string;
+            "2.5": string;
+            "3.5": string;
+        };
+        typography: {
+            fontFamily: {
+                sans: string;
+                serif: string;
+                mono: string;
             };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
+            fontSize: {
+                xs: string;
+                sm: string;
+                base: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+                "3xl": string;
+                "4xl": string;
+                "5xl": string;
+                "6xl": string;
+                "7xl": string;
+                "8xl": string;
+                "9xl": string;
             };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
+            fontWeight: {
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
+            };
+            lineHeight: {
+                "1": string;
+                "1.25": string;
+                "1.375": string;
+                "1.5": string;
+                "1.625": string;
+                "2": string;
+            };
+            letterSpacing: {
+                "-0.05": string;
+                "-0.025": string;
+                "0": string;
+                "0.025": string;
+                "0.05": string;
+                "0.1": string;
             };
         };
-        button: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        label: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        code: {
-            inline: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            block: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-    };
-    readonly spacing: {
-        "0": string;
-        px: string;
-        "0.5": string;
-        "1": string;
-        "1.5": string;
-        "2": string;
-        "2.5": string;
-        "3": string;
-        "3.5": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-        "12": string;
-        "14": string;
-        "16": string;
-        "20": string;
-        "24": string;
-        "28": string;
-        "32": string;
-        "36": string;
-        "40": string;
-        "44": string;
-        "48": string;
-        "52": string;
-        "56": string;
-        "60": string;
-        "64": string;
-        "72": string;
-        "80": string;
-        "96": string;
-    };
-    readonly radius: {
-        none: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        "3xl": string;
-        full: string;
-    };
-    readonly shadows: {
-        light: {
-            xs: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            inner: string;
-        };
-        dark: {
+        shadows: {
             xs: string;
             sm: string;
             base: string;
@@ -2780,296 +2536,122 @@ declare const tokens: {
                 green: string;
             };
         };
-    };
-    readonly animations: {
-        "accordion-down": {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            keyframes: {
-                from: {
-                    height: string;
-                };
-                to: {
-                    height: string;
-                };
+        motion: {
+            duration: {
+                instant: string;
+                fast: string;
+                normal: string;
+                slow: string;
+                slower: string;
+                slowest: string;
+            };
+            easing: {
+                linear: string;
+                easeIn: string;
+                easeOut: string;
+                easeInOut: string;
+                easeInQuad: string;
+                easeOutQuad: string;
+                easeInOutQuad: string;
+                easeInCubic: string;
+                easeOutCubic: string;
+                easeInOutCubic: string;
+                spring: string;
+            };
+            delay: {
+                none: string;
+                short: string;
+                medium: string;
+                long: string;
             };
         };
-        "accordion-up": {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            keyframes: {
-                from: {
-                    height: string;
-                };
-                to: {
-                    height: string;
-                };
-            };
-        };
-        "slide-in": {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            keyframes: {
-                "0%": {
-                    transform: string;
-                    opacity: string;
-                };
-                "100%": {
-                    transform: string;
-                    opacity: string;
-                };
-            };
-        };
-        "fade-in": {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            keyframes: {
-                "0%": {
-                    opacity: string;
-                };
-                "100%": {
-                    opacity: string;
-                };
-            };
-        };
-        glitch: {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            iterationCount: string;
-            keyframes: {
-                "0%, 100%": {
-                    transform: string;
-                };
-                "10%": {
-                    transform: string;
-                };
-                "20%": {
-                    transform: string;
-                };
-                "30%, 50%, 70%, 90%": {
-                    transform: string;
-                };
-            };
-        };
-        "neon-pulse": {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            iterationCount: string;
-            direction: string;
-            keyframes: {
-                "0%, 100%": {
-                    filter: string;
-                };
-                "50%": {
-                    filter: string;
-                };
-            };
-        };
-        flicker: {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            iterationCount: string;
-            keyframes: {
-                "0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {
-                    opacity: string;
-                    filter: string;
-                };
-                "20%, 21.999%, 63%, 63.999%, 65%, 69.999%": {
-                    opacity: string;
-                    filter: string;
-                };
-            };
-        };
-        "scan-line": {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            iterationCount: string;
-            keyframes: {
-                "0%": {
-                    top: string;
-                };
-                "100%": {
-                    top: string;
-                };
-            };
-        };
-        "glitch-after": {
-            name: string;
-            duration: string;
-            timingFunction: string;
-            iterationCount: string;
-            keyframes: {
-                "0%, 100%": {
-                    opacity: string;
-                };
-                "5%, 10%": {
-                    opacity: string;
-                    transform: string;
-                };
-                "15%, 95%": {
-                    opacity: string;
-                };
-            };
-        };
-    };
-    readonly motion: {
-        duration: {
-            instant: string;
-            fast: string;
-            normal: string;
-            slow: string;
-            slower: string;
-            slowest: string;
-        };
-        easing: {
-            linear: string;
-            easeIn: string;
-            easeOut: string;
-            easeInOut: string;
-            easeInQuad: string;
-            easeOutQuad: string;
-            easeInOutQuad: string;
-            easeInCubic: string;
-            easeOutCubic: string;
-            easeInOutCubic: string;
-            spring: string;
-        };
-        delay: {
+        radius: {
             none: string;
-            short: string;
-            medium: string;
-            long: string;
+            sm: string;
+            base: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            "3xl": string;
+            full: string;
         };
-    };
-    readonly breakpoints: {
-        xs: string;
-        sm: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        "3xl": string;
-    };
-    readonly zIndex: {
-        base: number;
-        dropdown: number;
-        sticky: number;
-        fixed: number;
-        modalBackdrop: number;
-        modal: number;
-        popover: number;
-        tooltip: number;
-        toast: number;
-        notification: number;
-        max: number;
-    };
-    readonly hero: {
-        title: {
-            fontSize: {
-                mobile: string;
-                responsive: string;
-                desktop: string;
-                clamp: string;
+        breakpoints: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+            "2xl": string;
+            "3xl": string;
+        };
+        zIndex: {
+            base: number;
+            content: number;
+            overlay: number;
+            dropdown: number;
+            modal: number;
+            tooltip: number;
+            notification: number;
+            max: number;
+        };
+        border: {
+            width: {
+                none: string;
+                thin: string;
+                base: string;
+                thick: string;
             };
-            lineHeight: string;
-            letterSpacing: string;
-            wordSpacing: string;
-            fontWeight: string;
-            filter: string;
-            textShadow: {
-                dark: string;
-                light: string;
+            style: {
+                solid: string;
+                dashed: string;
+                dotted: string;
+                double: string;
             };
         };
-        subtitle: {
-            fontSize: {
-                mobile: string;
-                responsive: string;
-                desktop: string;
-                clamp: string;
-            };
-            lineHeight: string;
-            letterSpacing: string;
-            fontWeight: string;
-            maxWidth: string;
-            textShadow: {
-                dark: string;
-                light: string;
-            };
+        opacity: {
+            "0": number;
+            "10": number;
+            "20": number;
+            "30": number;
+            "40": number;
+            "50": number;
+            "60": number;
+            "70": number;
+            "80": number;
+            "90": number;
+            "100": number;
         };
-        container: {
-            maxWidth: {
-                mobile: string;
+        layout: {
+            container: {
+                xs: string;
                 sm: string;
                 md: string;
                 lg: string;
+                xl: string;
+                "2xl": string;
             };
-            padding: {
-                top: string;
-                bottom: string;
-                x: {
-                    mobile: string;
-                    sm: string;
-                    md: string;
-                };
+            gutter: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
             };
-            gap: string;
-        };
-        effects: {
-            cyberpunk: {
-                glitch: {
-                    animation: string;
-                    animationDelay: string;
-                };
-                neon: {
-                    animation: string;
-                };
-                flicker: {
-                    animation: string;
-                };
+            column: {
+                count: number;
+                gap: string;
+            };
+            safeArea: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
             };
         };
-    };
-    readonly effects: {
-        filter: {
-            brightness: {
-                subtle: string;
-                moderate: string;
-                intense: string;
-                strong: string;
-                extreme: string;
-            };
-            contrast: {
-                subtle: string;
-                moderate: string;
-                strong: string;
-                intense: string;
-            };
-            saturate: {
-                subtle: string;
-                moderate: string;
-                strong: string;
-                intense: string;
-            };
-            combined: {
-                "neon-subtle": string;
-                "neon-moderate": string;
-                "neon-intense": string;
-                "neon-extreme": string;
-                glass: string;
-                frosted: string;
-            };
-        };
-        blur: {
-            none: string;
+        iconSize: {
+            "2xs": string;
             xs: string;
             sm: string;
             base: string;
@@ -3078,9 +2660,456 @@ declare const tokens: {
             xl: string;
             "2xl": string;
             "3xl": string;
+            "4xl": string;
+            "5xl": string;
+            full: string;
         };
-        backdrop: {
-            blur: {
+        gradients: {
+            text: {
+                primary: string;
+                secondary: string;
+                accent: string;
+            };
+            background: {
+                hero: string;
+                subtle: string;
+            };
+        };
+    };
+    semantics: {
+        color: {
+            background: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                disabled: string;
+                overlay: string;
+                inverse: string;
+            };
+            text: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                disabled: string;
+                inverse: string;
+                onPrimary: string;
+                onSecondary: string;
+                link: string;
+                linkHover: string;
+            };
+            button: {
+                primary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                secondary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                tertiary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                danger: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                success: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+            };
+            border: {
+                default: string;
+                light: string;
+                medium: string;
+                dark: string;
+                focus: string;
+                error: string;
+                success: string;
+                warning: string;
+            };
+            status: {
+                success: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                error: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                warning: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                info: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+            };
+            interactive: {
+                link: {
+                    default: string;
+                    hover: string;
+                    visited: string;
+                    active: string;
+                };
+                focus: {
+                    ring: string;
+                    ringOffset: string;
+                };
+            };
+            surface: {
+                elevated: string;
+                raised: string;
+                sunken: string;
+            };
+            chart: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                quaternary: string;
+                quinary: string;
+                senary: string;
+            };
+        };
+        spacing: {
+            component: {
+                tight: string;
+                compact: string;
+                comfortable: string;
+                relaxed: string;
+                loose: string;
+            };
+            layout: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+            };
+            section: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+            };
+            stack: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+            };
+            inline: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+            };
+            inset: {
+                none: string;
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+            };
+            gap: {
+                none: string;
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+            };
+            container: {
+                padding: {
+                    xs: string;
+                    sm: string;
+                    md: string;
+                    lg: string;
+                    xl: string;
+                };
+                margin: {
+                    xs: string;
+                    sm: string;
+                    md: string;
+                    lg: string;
+                    xl: string;
+                };
+            };
+        };
+        typography: {
+            heading: {
+                h1: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                h2: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                h3: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                h4: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                h5: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                h6: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+            };
+            body: {
+                large: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                base: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                small: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+            };
+            caption: {
+                large: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                base: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                small: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+            };
+            label: {
+                large: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                base: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                small: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+            };
+            code: {
+                inline: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                block: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+            };
+            button: {
+                large: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                base: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+                small: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                };
+            };
+            link: {
+                base: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                    textDecoration: string;
+                };
+                bold: {
+                    fontSize: string;
+                    fontWeight: string;
+                    lineHeight: string;
+                    letterSpacing: string;
+                    fontFamily: string;
+                    textDecoration: string;
+                };
+            };
+        };
+        border: {
+            default: {
+                width: string;
+                style: string;
+                color: string;
+            };
+            interactive: {
+                default: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+                hover: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+                focus: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+                active: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+            };
+            emphasis: {
+                strong: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+                subtle: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+            };
+            divider: {
+                horizontal: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+                vertical: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+                subtle: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+            };
+            outline: {
+                focus: {
+                    width: string;
+                    style: string;
+                    color: string;
+                    offset: string;
+                };
+                error: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+                success: {
+                    width: string;
+                    style: string;
+                    color: string;
+                };
+            };
+            radius: {
                 none: string;
                 sm: string;
                 base: string;
@@ -3088,3160 +3117,508 @@ declare const tokens: {
                 lg: string;
                 xl: string;
                 "2xl": string;
+                full: string;
+            };
+            component: {
+                input: {
+                    width: string;
+                    style: string;
+                    radius: string;
+                    color: string;
+                };
+                button: {
+                    width: string;
+                    style: string;
+                    radius: string;
+                    color: string;
+                };
+                card: {
+                    width: string;
+                    style: string;
+                    radius: string;
+                    color: string;
+                };
+                badge: {
+                    width: string;
+                    style: string;
+                    radius: string;
+                    color: string;
+                };
+                modal: {
+                    width: string;
+                    style: string;
+                    radius: string;
+                    color: string;
+                };
+            };
+        };
+        layout: {
+            container: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+                full: string;
+            };
+            grid: {
+                columns: {
+                    count: number;
+                    gap: {
+                        xs: string;
+                        sm: string;
+                        md: string;
+                        lg: string;
+                        xl: string;
+                    };
+                };
+                gutter: {
+                    xs: string;
+                    sm: string;
+                    md: string;
+                    lg: string;
+                    xl: string;
+                };
+            };
+            spacing: {
+                section: {
+                    xs: string;
+                    sm: string;
+                    md: string;
+                    lg: string;
+                    xl: string;
+                };
+                container: {
+                    padding: {
+                        xs: string;
+                        sm: string;
+                        md: string;
+                        lg: string;
+                        xl: string;
+                    };
+                    margin: {
+                        xs: string;
+                        sm: string;
+                        md: string;
+                        lg: string;
+                        xl: string;
+                    };
+                };
+            };
+            safeArea: {
+                mobile: string;
+                tablet: string;
+                desktop: string;
+                wide: string;
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+            };
+            zIndex: {
+                base: string;
+                dropdown: string;
+                sticky: string;
+                fixed: string;
+                overlay: string;
+                modal: string;
+                popover: string;
+                tooltip: string;
+                toast: string;
+                max: string;
+            };
+            breakpoint: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
                 "3xl": string;
             };
-            saturate: {
-                default: string;
-                enhanced: string;
-                strong: string;
+        };
+        elevation: {
+            surface: {
+                none: string;
+                xs: string;
+                sm: string;
+                base: string;
+                md: string;
+                lg: string;
+                xl: string;
+                "2xl": string;
+            };
+            component: {
+                button: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    disabled: string;
+                };
+                input: {
+                    default: string;
+                    focus: string;
+                    error: string;
+                };
+                card: {
+                    default: string;
+                    hover: string;
+                    elevated: string;
+                };
+                dropdown: {
+                    default: string;
+                    menu: string;
+                };
+                modal: {
+                    overlay: string;
+                    dialog: string;
+                };
+                tooltip: {
+                    default: string;
+                };
+            };
+            interactive: {
+                hover: string;
+                focus: string;
+                active: string;
+                drag: string;
+            };
+            overlay: {
+                backdrop: string;
+                sheet: string;
+                popover: string;
             };
         };
-        glow: {
-            star: {
-                small: {
-                    radius: string;
-                    color: string;
-                };
-                medium: {
-                    radius: string;
-                    color: string;
-                };
-                large: {
-                    radius: string;
-                    color: string;
-                };
-            };
-            neon: {
-                cyan: {
-                    subtle: string;
-                    moderate: string;
-                    intense: string;
-                };
-                purple: {
-                    subtle: string;
-                    moderate: string;
-                    intense: string;
-                };
-                pink: {
-                    subtle: string;
-                    moderate: string;
-                    intense: string;
-                };
-                green: {
-                    subtle: string;
-                    moderate: string;
-                    intense: string;
-                };
-            };
-        };
-        textShadow: {
-            glow: {
-                "cyan-subtle": string;
-                "cyan-moderate": string;
-                "cyan-intense": string;
-            };
-            depth: {
-                subtle: string;
-                moderate: string;
-                strong: string;
-            };
-        };
-        boxShadow: {
-            cyberpunk: {
-                card: string;
-                cardHover: string;
-                elevated: string;
-            };
-            glass: {
-                subtle: string;
-                moderate: string;
-                strong: string;
-            };
-        };
-    };
-    readonly components: {
-        readonly celestialBackground: {
-            stars: {
+        motion: {
+            transition: {
                 default: {
-                    count: number;
-                    sizes: number[];
-                    opacity: number[];
-                    glow: {
-                        color: string;
-                        radius: number;
-                    };
+                    duration: string;
+                    easing: string;
+                    delay: string;
                 };
-                dense: {
-                    count: number;
-                    sizes: number[];
-                    opacity: number[];
-                    glow: {
-                        color: string;
-                        radius: number;
-                    };
+                fast: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
                 };
-                sparse: {
-                    count: number;
-                    sizes: number[];
-                    opacity: number[];
-                    glow: {
-                        color: string;
-                        radius: number;
-                    };
+                slow: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                instant: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
                 };
             };
-            nebula: {
-                cyan: {
-                    position: {
-                        top: string;
-                        left: string;
-                    };
-                    size: {
-                        width: string;
-                        height: string;
-                    };
-                    gradient: {
-                        type: string;
-                        center: string;
-                        colorStops: {
-                            color: string;
-                            alpha: number;
-                            position: string;
-                        }[];
-                    };
-                    blur: string;
+            interaction: {
+                hover: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
                 };
-                purple: {
-                    position: {
-                        top: string;
-                        right: string;
-                    };
-                    size: {
-                        width: string;
-                        height: string;
-                    };
-                    gradient: {
-                        type: string;
-                        center: string;
-                        colorStops: {
-                            color: string;
-                            alpha: number;
-                            position: string;
-                        }[];
-                    };
-                    blur: string;
+                focus: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
                 };
-                pink: {
-                    position: {
-                        bottom: string;
-                        left: string;
-                    };
-                    size: {
-                        width: string;
-                        height: string;
-                    };
-                    gradient: {
-                        type: string;
-                        center: string;
-                        colorStops: {
-                            color: string;
-                            alpha: number;
-                            position: string;
-                        }[];
-                    };
-                    blur: string;
+                active: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                tap: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
                 };
             };
-            baseGradient: {
-                direction: string;
-                from: string;
-                via: {
-                    color: string;
-                    alpha: number;
+            feedback: {
+                success: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
                 };
-                to: string;
+                error: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                loading: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                notification: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+            };
+            navigation: {
+                page: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                drawer: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                modal: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                collapse: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+            };
+            component: {
+                fade: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                slide: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                scale: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+                rotate: {
+                    duration: string;
+                    easing: string;
+                    delay: string;
+                };
+            };
+        };
+    };
+    themes: {
+        light: {
+            background: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                disabled: string;
+                overlay: string;
+                inverse: string;
+            };
+            text: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                disabled: string;
+                inverse: string;
+                onPrimary: string;
+                onSecondary: string;
+                link: string;
+                linkHover: string;
+            };
+            button: {
+                primary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                secondary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                tertiary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                danger: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                success: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+            };
+            border: {
+                default: string;
+                light: string;
+                medium: string;
+                dark: string;
+                focus: string;
+                error: string;
+                success: string;
+                warning: string;
+            };
+            status: {
+                success: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                error: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                warning: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                info: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+            };
+            interactive: {
+                link: {
+                    default: string;
+                    hover: string;
+                    visited: string;
+                    active: string;
+                };
+                focus: {
+                    ring: string;
+                    ringOffset: string;
+                };
+            };
+            surface: {
+                elevated: string;
+                raised: string;
+                sunken: string;
+            };
+        };
+        dark: {
+            background: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                disabled: string;
+                overlay: string;
+                inverse: string;
+            };
+            text: {
+                primary: string;
+                secondary: string;
+                tertiary: string;
+                disabled: string;
+                inverse: string;
+                onPrimary: string;
+                onSecondary: string;
+                link: string;
+                linkHover: string;
+            };
+            button: {
+                primary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                secondary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                tertiary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                danger: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                success: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+            };
+            border: {
+                default: string;
+                light: string;
+                medium: string;
+                dark: string;
+                focus: string;
+                error: string;
+                success: string;
+                warning: string;
+            };
+            status: {
+                success: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                error: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                warning: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+                info: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
+                };
+            };
+            interactive: {
+                link: {
+                    default: string;
+                    hover: string;
+                    visited: string;
+                    active: string;
+                };
+                focus: {
+                    ring: string;
+                    ringOffset: string;
+                };
+            };
+            surface: {
+                elevated: string;
+                raised: string;
+                sunken: string;
             };
         };
     };
 };
-/**
- * Cores do tema claro
- *
- * @description
- * Exporta apenas as cores do tema claro para uso direto.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { lightThemeColors } from '@rainersoft/design-tokens';
- *
- * const primaryColor = lightThemeColors.brand.primary;
- * ```
- */
-declare const lightThemeColors: {
-    primary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    secondary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    accent: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    background: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        overlay: string;
-        muted: string;
-    };
-    surface: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        elevated: string;
-        overlay: string;
-        hover: string;
-        active: string;
-    };
-    text: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        disabled: string;
-        link: string;
-        linkHover: string;
-        linkActive: string;
-        linkVisited: string;
-        onPrimary: string;
-        onSecondary: string;
-        onAccent: string;
-        onBackground: string;
-        onSurface: string;
-    };
-    border: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        focus: string;
-        focusRing: string;
-        inverse: string;
-        hover: string;
-        active: string;
-        disabled: string;
-    };
-    status: {
-        success: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        warning: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        error: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        info: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-    };
-    interactive: {
-        default: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        disabledText: string;
-        focus: string;
-        focusRing: string;
-    };
-    primitive: {
-        cyan: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        purple: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        pink: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        blue: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        green: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        orange: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        red: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        amber: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        emerald: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        neutral: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-            "950": string;
-        };
-    };
-    effects: {
-        matrixRain: {
-            base: string;
-        };
-        stars: {
-            base: string;
-        };
-    };
-};
-/**
- * Cores do tema escuro
- *
- * @description
- * Exporta apenas as cores do tema escuro (estilo cyberpunk) para uso direto.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { darkThemeColors } from '@rainersoft/design-tokens';
- *
- * const neonColor = darkThemeColors.accent.cyan;
- * ```
- */
-declare const darkThemeColors: {
-    primary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    secondary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    accent: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    background: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        overlay: string;
-        muted: string;
-    };
-    surface: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        elevated: string;
-        overlay: string;
-        glass: string;
-        glassHover: string;
-        hover: string;
-        active: string;
-    };
-    text: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        disabled: string;
-        link: string;
-        linkHover: string;
-        linkActive: string;
-        linkVisited: string;
-        onPrimary: string;
-        onSecondary: string;
-        onAccent: string;
-        onBackground: string;
-        onSurface: string;
-        glow: string;
-        neonCyan: string;
-        neonPink: string;
-        neonPurple: string;
-        neonGreen: string;
-    };
-    border: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        focus: string;
-        focusRing: string;
-        inverse: string;
-        neon: string;
-        neonGlow: string;
-        hover: string;
-        active: string;
-        disabled: string;
-    };
-    status: {
-        success: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        warning: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        error: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        info: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-    };
-    interactive: {
-        default: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        disabledText: string;
-        focus: string;
-        focusRing: string;
-    };
-    effects: {
-        glowCyan: string;
-        glowPink: string;
-        glowPurple: string;
-        glowGreen: string;
-        shadowSm: string;
-        shadowMd: string;
-        shadowLg: string;
-    };
-    gradients: {
-        primary: string;
-        secondary: string;
-        accent: string;
-        background: string;
-    };
-    primitive: {
-        cyan: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        purple: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        pink: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        blue: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        green: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        orange: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        red: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        amber: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        emerald: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        neutral: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-            "950": string;
-        };
-    };
-};
-/**
- * Tokens de tipografia
- *
- * @description
- * Exporta todos os tokens relacionados à tipografia, incluindo
- * famílias de fontes, tamanhos, pesos, alturas de linha e espaçamento entre letras.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { typographyTokens } from '@rainersoft/design-tokens';
- *
- * const fontSize = typographyTokens.fontSize.lg;
- * const fontFamily = typographyTokens.fontFamily.sans;
- * ```
- */
-declare const typographyTokens: {
-    fontFamily: {
-        sans: string;
-        serif: string;
-        mono: string;
-        display: string;
-        body: string;
-        code: string;
-    };
-    fontSize: {
-        xs: string;
-        sm: string;
-        base: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        "3xl": string;
-        "4xl": string;
-        "5xl": string;
-        "6xl": string;
-        "7xl": string;
-        "8xl": string;
-        "9xl": string;
-    };
-    fontWeight: {
-        thin: string;
-        extralight: string;
-        light: string;
-        normal: string;
-        medium: string;
-        semibold: string;
-        bold: string;
-        extrabold: string;
-        black: string;
-    };
-    lineHeight: {
-        none: string;
-        tight: string;
-        snug: string;
-        normal: string;
-        relaxed: string;
-        loose: string;
-    };
-    letterSpacing: {
-        tighter: string;
-        tight: string;
-        normal: string;
-        wide: string;
-        wider: string;
-        widest: string;
-    };
-    headings: {
-        h1: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h2: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h3: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h4: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h5: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h6: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-    };
-    subtitle: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-    };
-    body: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    caption: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    button: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    label: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    code: {
-        inline: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        block: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-};
-/**
- * Tokens de espaçamento
- *
- * @description
- * Exporta todos os tokens de espaçamento padronizados do sistema.
- * Utilizados para margens, paddings e gaps consistentes.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { spacingTokens } from '@rainersoft/design-tokens';
- *
- * const margin = spacingTokens.md;
- * const padding = spacingTokens.lg;
- * ```
- */
-declare const spacingTokens: {
-    "0": string;
-    px: string;
-    "0.5": string;
-    "1": string;
-    "1.5": string;
-    "2": string;
-    "2.5": string;
-    "3": string;
-    "3.5": string;
-    "4": string;
-    "5": string;
-    "6": string;
-    "7": string;
-    "8": string;
-    "9": string;
-    "10": string;
-    "11": string;
-    "12": string;
-    "14": string;
-    "16": string;
-    "20": string;
-    "24": string;
-    "28": string;
-    "32": string;
-    "36": string;
-    "40": string;
-    "44": string;
-    "48": string;
-    "52": string;
-    "56": string;
-    "60": string;
-    "64": string;
-    "72": string;
-    "80": string;
-    "96": string;
-};
-/**
- * Tokens de raio de borda
- *
- * @description
- * Exporta todos os tokens de raio de borda (border-radius) padronizados.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { radiusTokens } from '@rainersoft/design-tokens';
- *
- * const borderRadius = radiusTokens.md;
- * ```
- */
-declare const radiusTokens: {
-    none: string;
-    sm: string;
-    base: string;
-    md: string;
-    lg: string;
-    xl: string;
-    "2xl": string;
-    "3xl": string;
-    full: string;
-};
-/**
- * Tokens de sombras
- *
- * @description
- * Exporta todos os tokens de sombras, incluindo sombras para tema claro
- * e efeitos de brilho (glow) para tema escuro.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { shadowTokens } from '@rainersoft/design-tokens';
- *
- * const shadow = shadowTokens.light.md;
- * const glow = shadowTokens.dark.glow.cyan;
- * ```
- */
-declare const shadowTokens: {
-    light: {
-        xs: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        inner: string;
-    };
-    dark: {
-        xs: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        inner: string;
-        glow: {
-            cyan: string;
-            pink: string;
-            purple: string;
-            green: string;
-        };
-    };
-};
-/**
- * Tokens de animações
- *
- * @description
- * Exporta todos os tokens de animações, incluindo keyframes, durações
- * e funções de timing para transições e animações do sistema.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { animationTokens } from '@rainersoft/design-tokens';
- *
- * const slideIn = animationTokens['slide-in'];
- * const fadeIn = animationTokens['fade-in'];
- * ```
- */
-declare const animationTokens: {
-    "accordion-down": {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        keyframes: {
-            from: {
-                height: string;
-            };
-            to: {
-                height: string;
-            };
-        };
-    };
-    "accordion-up": {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        keyframes: {
-            from: {
-                height: string;
-            };
-            to: {
-                height: string;
-            };
-        };
-    };
-    "slide-in": {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        keyframes: {
-            "0%": {
-                transform: string;
-                opacity: string;
-            };
-            "100%": {
-                transform: string;
-                opacity: string;
-            };
-        };
-    };
-    "fade-in": {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        keyframes: {
-            "0%": {
-                opacity: string;
-            };
-            "100%": {
-                opacity: string;
-            };
-        };
-    };
-    glitch: {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        iterationCount: string;
-        keyframes: {
-            "0%, 100%": {
-                transform: string;
-            };
-            "10%": {
-                transform: string;
-            };
-            "20%": {
-                transform: string;
-            };
-            "30%, 50%, 70%, 90%": {
-                transform: string;
-            };
-        };
-    };
-    "neon-pulse": {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        iterationCount: string;
-        direction: string;
-        keyframes: {
-            "0%, 100%": {
-                filter: string;
-            };
-            "50%": {
-                filter: string;
-            };
-        };
-    };
-    flicker: {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        iterationCount: string;
-        keyframes: {
-            "0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100%": {
-                opacity: string;
-                filter: string;
-            };
-            "20%, 21.999%, 63%, 63.999%, 65%, 69.999%": {
-                opacity: string;
-                filter: string;
-            };
-        };
-    };
-    "scan-line": {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        iterationCount: string;
-        keyframes: {
-            "0%": {
-                top: string;
-            };
-            "100%": {
-                top: string;
-            };
-        };
-    };
-    "glitch-after": {
-        name: string;
-        duration: string;
-        timingFunction: string;
-        iterationCount: string;
-        keyframes: {
-            "0%, 100%": {
-                opacity: string;
-            };
-            "5%, 10%": {
-                opacity: string;
-                transform: string;
-            };
-            "15%, 95%": {
-                opacity: string;
-            };
-        };
-    };
-};
-/**
- * Tokens de efeitos visuais
- *
- * @description
- * Exporta todos os tokens de efeitos visuais, incluindo filters, blur,
- * glow, backdrop effects e outros efeitos para criar elementos visuais sofisticados.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { effectTokens } from '@rainersoft/design-tokens';
- *
- * const blur = effectTokens.blur.md;
- * const glow = effectTokens.glow.neon.cyan.moderate;
- * ```
- */
-declare const effectTokens: {
-    filter: {
-        brightness: {
-            subtle: string;
-            moderate: string;
-            intense: string;
-            strong: string;
-            extreme: string;
-        };
-        contrast: {
-            subtle: string;
-            moderate: string;
-            strong: string;
-            intense: string;
-        };
-        saturate: {
-            subtle: string;
-            moderate: string;
-            strong: string;
-            intense: string;
-        };
-        combined: {
-            "neon-subtle": string;
-            "neon-moderate": string;
-            "neon-intense": string;
-            "neon-extreme": string;
-            glass: string;
-            frosted: string;
-        };
-    };
-    blur: {
-        none: string;
-        xs: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        "3xl": string;
-    };
-    backdrop: {
-        blur: {
-            none: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-        };
-        saturate: {
-            default: string;
-            enhanced: string;
-            strong: string;
-        };
-    };
-    glow: {
-        star: {
-            small: {
-                radius: string;
-                color: string;
-            };
-            medium: {
-                radius: string;
-                color: string;
-            };
-            large: {
-                radius: string;
-                color: string;
-            };
-        };
-        neon: {
-            cyan: {
-                subtle: string;
-                moderate: string;
-                intense: string;
-            };
-            purple: {
-                subtle: string;
-                moderate: string;
-                intense: string;
-            };
-            pink: {
-                subtle: string;
-                moderate: string;
-                intense: string;
-            };
-            green: {
-                subtle: string;
-                moderate: string;
-                intense: string;
-            };
-        };
-    };
-    textShadow: {
-        glow: {
-            "cyan-subtle": string;
-            "cyan-moderate": string;
-            "cyan-intense": string;
-        };
-        depth: {
-            subtle: string;
-            moderate: string;
-            strong: string;
-        };
-    };
-    boxShadow: {
-        cyberpunk: {
-            card: string;
-            cardHover: string;
-            elevated: string;
-        };
-        glass: {
-            subtle: string;
-            moderate: string;
-            strong: string;
-        };
-    };
-};
-/**
- * Tokens de componentes
- *
- * @description
- * Exporta todos os tokens específicos de componentes, incluindo configurações
- * para celestial background, carousels e outros componentes visuais.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { componentTokens } from '@rainersoft/design-tokens';
- *
- * const starConfig = componentTokens.celestialBackground.stars.default;
- * ```
- */
-declare const componentTokens: {
-    celestialBackground: {
-        stars: {
-            default: {
-                count: number;
-                sizes: number[];
-                opacity: number[];
-                glow: {
-                    color: string;
-                    radius: number;
-                };
-            };
-            dense: {
-                count: number;
-                sizes: number[];
-                opacity: number[];
-                glow: {
-                    color: string;
-                    radius: number;
-                };
-            };
-            sparse: {
-                count: number;
-                sizes: number[];
-                opacity: number[];
-                glow: {
-                    color: string;
-                    radius: number;
-                };
-            };
-        };
-        nebula: {
-            cyan: {
-                position: {
-                    top: string;
-                    left: string;
-                };
-                size: {
-                    width: string;
-                    height: string;
-                };
-                gradient: {
-                    type: string;
-                    center: string;
-                    colorStops: {
-                        color: string;
-                        alpha: number;
-                        position: string;
-                    }[];
-                };
-                blur: string;
-            };
-            purple: {
-                position: {
-                    top: string;
-                    right: string;
-                };
-                size: {
-                    width: string;
-                    height: string;
-                };
-                gradient: {
-                    type: string;
-                    center: string;
-                    colorStops: {
-                        color: string;
-                        alpha: number;
-                        position: string;
-                    }[];
-                };
-                blur: string;
-            };
-            pink: {
-                position: {
-                    bottom: string;
-                    left: string;
-                };
-                size: {
-                    width: string;
-                    height: string;
-                };
-                gradient: {
-                    type: string;
-                    center: string;
-                    colorStops: {
-                        color: string;
-                        alpha: number;
-                        position: string;
-                    }[];
-                };
-                blur: string;
-            };
-        };
-        baseGradient: {
-            direction: string;
-            from: string;
-            via: {
-                color: string;
-                alpha: number;
-            };
-            to: string;
-        };
-    };
-};
-/**
- * Tokens de motion
- *
- * @description
- * Exporta todos os tokens relacionados a motion e animações, incluindo
- * durações, easings, keyframes e transições seguindo Material Design e Fluent Design.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { motionTokens } from '@rainersoft/design-tokens';
- *
- * const duration = motionTokens.duration.normal;
- * const easing = motionTokens.easing.standard.productive;
- * ```
- */
-declare const motionTokens: {
-    duration: {
-        instant: string;
-        fast: string;
-        normal: string;
-        slow: string;
-        slower: string;
-        slowest: string;
-    };
-    easing: {
-        linear: string;
-        easeIn: string;
-        easeOut: string;
-        easeInOut: string;
-        easeInQuad: string;
-        easeOutQuad: string;
-        easeInOutQuad: string;
-        easeInCubic: string;
-        easeOutCubic: string;
-        easeInOutCubic: string;
-        spring: string;
-    };
-    delay: {
-        none: string;
-        short: string;
-        medium: string;
-        long: string;
-    };
-};
-/**
- * Tokens de breakpoints
- *
- * @description
- * Exporta todos os tokens de breakpoints responsivos para criar layouts
- * mobile-first consistentes em todas as plataformas.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { breakpointTokens } from '@rainersoft/design-tokens';
- *
- * const tabletSize = breakpointTokens.md;
- * const mediaQuery = breakpointTokens.mediaQueries.lg;
- * ```
- */
-declare const breakpointTokens: {
-    xs: string;
-    sm: string;
-    md: string;
-    lg: string;
-    xl: string;
-    "2xl": string;
-    "3xl": string;
-};
-/**
- * Tokens de z-index
- *
- * @description
- * Exporta todos os tokens de z-index para gerenciar camadas e sobreposições
- * de forma consistente e escalável.
- *
- * @type {Object}
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { zIndexTokens } from '@rainersoft/design-tokens';
- *
- * const modalLayer = zIndexTokens.modal;
- * const tooltipLayer = zIndexTokens.tooltip;
- * ```
- */
-declare const zIndexTokens: {
-    base: number;
-    dropdown: number;
-    sticky: number;
-    fixed: number;
-    modalBackdrop: number;
-    modal: number;
-    popover: number;
-    tooltip: number;
-    toast: number;
-    notification: number;
-    max: number;
-};
-/**
- * Tipo TypeScript para todos os tokens
- *
- * @typedef {Object} Tokens
- * @description
- * Tipo que representa a estrutura completa de todos os tokens de design.
- * Útil para type-checking e autocomplete em IDEs.
- */
-type Tokens = typeof tokens;
-/**
- * Tipo TypeScript para cores do tema claro
- *
- * @typedef {Object} LightColors
- * @description
- * Tipo que representa todas as cores disponíveis no tema claro.
- */
-type LightColors = typeof lightColors.colors;
-/**
- * Tipo TypeScript para cores do tema escuro
- *
- * @typedef {Object} DarkColors
- * @description
- * Tipo que representa todas as cores disponíveis no tema escuro (cyberpunk).
- */
-type DarkColors = typeof darkColors.colors;
-/**
- * Tipo TypeScript para tokens de tipografia
- *
- * @typedef {Object} Typography
- * @description
- * Tipo que representa todos os tokens de tipografia.
- */
-type Typography = typeof typography.typography;
-/**
- * Tipo TypeScript para tokens de espaçamento
- *
- * @typedef {Object} Spacing
- * @description
- * Tipo que representa todos os tokens de espaçamento.
- */
-type Spacing = typeof spacing$1.spacing;
-/**
- * Tipo TypeScript para tokens de raio de borda
- *
- * @typedef {Object} Radius
- * @description
- * Tipo que representa todos os tokens de raio de borda.
- */
-type Radius = typeof radius$1.radius;
-/**
- * Tipo TypeScript para tokens de sombras
- *
- * @typedef {Object} Shadows
- * @description
- * Tipo que representa todos os tokens de sombras.
- */
-type Shadows = typeof shadows.shadows;
-/**
- * Tipo TypeScript para tokens de animações
- *
- * @typedef {Object} Animations
- * @description
- * Tipo que representa todos os tokens de animações.
- */
-type Animations = typeof animations.animations;
-/**
- * Tipo TypeScript para tokens de motion
- *
- * @typedef {Object} Motion
- * @description
- * Tipo que representa todos os tokens de motion.
- */
-type Motion = typeof motion.motion;
-/**
- * Tipo TypeScript para tokens de breakpoints
- *
- * @typedef {Object} Breakpoints
- * @description
- * Tipo que representa todos os tokens de breakpoints responsivos.
- */
-type Breakpoints = typeof breakpoints.breakpoints;
-/**
- * Tipo TypeScript para tokens de z-index
- *
- * @typedef {Object} ZIndex
- * @description
- * Tipo que representa todos os tokens de z-index.
- */
-type ZIndex = typeof zIndex.zIndex;
-
-/**
- * @fileoverview Tema Claro - Rainer Design System
- *
- * @description
- * Agrupa os design tokens em um tema claro profissional e limpo,
- * adequado para uso diurno. Este tema oferece uma experiência visual
- * clara e moderna, ideal para aplicações que requerem legibilidade
- * e profissionalismo.
- *
- * @module themes/light
- * @version 2.0.0
- * @author Rainer Teixeira
- * @since 1.0.0
- */
-/**
- * Objeto contendo os tokens para o tema claro
- *
- * @description
- * Tema completo que agrupa todos os tokens de design necessários
- * para uma aplicação com tema claro. Inclui cores, tipografia,
- * espaçamento, raios de borda e sombras.
- *
- * @type {Object}
- * @property {Object} colors - Tokens de cores para o tema claro
- * @property {Object} typography - Tokens de tipografia (fontes, tamanhos, pesos, etc.)
- * @property {Object} spacing - Tokens de espaçamento (margens, paddings)
- * @property {Object} radius - Tokens de raio de borda
- * @property {Object} shadows - Tokens de sombras para o tema claro
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { lightTheme } from '@rainersoft/design-tokens';
- *
- * // Acessar cores do tema claro
- * const primaryColor = lightTheme.colors.brand.primary;
- *
- * // Acessar tipografia
- * const fontSize = lightTheme.typography.fontSize.lg;
- *
- * // Aplicar em componente
- * <div style={{
- *   backgroundColor: lightTheme.colors.background.primary,
- *   padding: lightTheme.spacing.md
- * }}>
- *   Conteúdo
- * </div>
- * ```
- */
-declare const lightTheme: {
-    readonly colors: {
-        primary: {
-            base: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            focus: string;
-            background: string;
-            backgroundHover: string;
-            backgroundActive: string;
-            border: string;
-            borderHover: string;
-            borderFocus: string;
-            text: string;
-            textHover: string;
-            textDisabled: string;
-        };
-        secondary: {
-            base: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            focus: string;
-            background: string;
-            backgroundHover: string;
-            backgroundActive: string;
-            border: string;
-            borderHover: string;
-            borderFocus: string;
-            text: string;
-            textHover: string;
-            textDisabled: string;
-        };
-        accent: {
-            base: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            focus: string;
-            background: string;
-            backgroundHover: string;
-            backgroundActive: string;
-            border: string;
-            borderHover: string;
-            borderFocus: string;
-            text: string;
-            textHover: string;
-            textDisabled: string;
-        };
-        background: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            inverse: string;
-            overlay: string;
-            muted: string;
-        };
-        surface: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            elevated: string;
-            overlay: string;
-            hover: string;
-            active: string;
-        };
-        text: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            inverse: string;
-            disabled: string;
-            link: string;
-            linkHover: string;
-            linkActive: string;
-            linkVisited: string;
-            onPrimary: string;
-            onSecondary: string;
-            onAccent: string;
-            onBackground: string;
-            onSurface: string;
-        };
-        border: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            focus: string;
-            focusRing: string;
-            inverse: string;
-            hover: string;
-            active: string;
-            disabled: string;
-        };
-        status: {
-            success: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-            warning: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-            error: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-            info: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-        };
-        interactive: {
-            default: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            disabledText: string;
-            focus: string;
-            focusRing: string;
-        };
-        primitive: {
-            cyan: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            purple: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            pink: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            blue: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            green: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            orange: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            red: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            amber: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            emerald: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            neutral: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-                "950": string;
-            };
-        };
-        effects: {
-            matrixRain: {
-                base: string;
-            };
-            stars: {
-                base: string;
-            };
-        };
-    };
-    readonly typography: {
-        fontFamily: {
-            sans: string;
-            serif: string;
-            mono: string;
-            display: string;
-            body: string;
-            code: string;
-        };
-        fontSize: {
-            xs: string;
-            sm: string;
-            base: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-            "4xl": string;
-            "5xl": string;
-            "6xl": string;
-            "7xl": string;
-            "8xl": string;
-            "9xl": string;
-        };
-        fontWeight: {
-            thin: string;
-            extralight: string;
-            light: string;
-            normal: string;
-            medium: string;
-            semibold: string;
-            bold: string;
-            extrabold: string;
-            black: string;
-        };
-        lineHeight: {
-            none: string;
-            tight: string;
-            snug: string;
-            normal: string;
-            relaxed: string;
-            loose: string;
-        };
-        letterSpacing: {
-            tighter: string;
-            tight: string;
-            normal: string;
-            wide: string;
-            wider: string;
-            widest: string;
-        };
-        headings: {
-            h1: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h2: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h3: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h4: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h5: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h6: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-        };
-        subtitle: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-        };
-        body: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        caption: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        button: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        label: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        code: {
-            inline: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            block: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-    };
-    readonly spacing: {
-        "0": string;
-        px: string;
-        "0.5": string;
-        "1": string;
-        "1.5": string;
-        "2": string;
-        "2.5": string;
-        "3": string;
-        "3.5": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-        "12": string;
-        "14": string;
-        "16": string;
-        "20": string;
-        "24": string;
-        "28": string;
-        "32": string;
-        "36": string;
-        "40": string;
-        "44": string;
-        "48": string;
-        "52": string;
-        "56": string;
-        "60": string;
-        "64": string;
-        "72": string;
-        "80": string;
-        "96": string;
-    };
-    readonly radius: {
-        none: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        "3xl": string;
-        full: string;
-    };
-    readonly shadows: {
-        xs: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        inner: string;
-    };
-};
-/**
- * Tipo TypeScript do tema claro
- *
- * @typedef {Object} LightTheme
- * @description
- * Tipo que representa a estrutura completa do tema claro.
- * Útil para type-checking e autocomplete em IDEs.
- *
- * @property {Object} colors - Cores do tema claro
- * @property {Object} typography - Tokens de tipografia
- * @property {Object} spacing - Tokens de espaçamento
- * @property {Object} radius - Tokens de raio de borda
- * @property {Object} shadows - Sombras do tema claro
- */
-type LightTheme = typeof lightTheme;
-
-/**
- * @fileoverview Tema Escuro - Edição Cyberpunk
- *
- * @description
- * Combina tokens de design em um tema escuro inspirado no estilo cyberpunk.
- * Possui cores neon vibrantes e efeitos de brilho (glow) para uso noturno.
- * Este tema oferece uma experiência visual única e moderna, ideal para
- * aplicações que buscam um visual futurista e impactante.
- *
- * @module themes/dark
- * @version 2.0.0
- * @author Rainer Teixeira
- * @since 1.0.0
- */
-/**
- * Objeto contendo os tokens para o tema escuro
- *
- * @description
- * Tema completo que agrupa todos os tokens de design necessários
- * para uma aplicação com tema escuro cyberpunk. Inclui cores neon,
- * tipografia, espaçamento, raios de borda e sombras com efeitos de brilho.
- *
- * @type {Object}
- * @property {Object} colors - Tokens de cores para o tema escuro (cyberpunk)
- * @property {Object} typography - Tokens de tipografia (fontes, tamanhos, pesos, etc.)
- * @property {Object} spacing - Tokens de espaçamento (margens, paddings)
- * @property {Object} radius - Tokens de raio de borda
- * @property {Object} shadows - Tokens de sombras com efeitos de brilho para o tema escuro
- *
- * @constant
- * @readonly
- *
- * @example
- * ```typescript
- * import { darkTheme } from '@rainersoft/design-tokens';
- *
- * // Acessar cores neon do tema escuro
- * const neonCyan = darkTheme.colors.accent.cyan;
- *
- * // Acessar efeitos de brilho
- * const glowShadow = darkTheme.shadows.glow.cyan;
- *
- * // Aplicar em componente
- * <div style={{
- *   backgroundColor: darkTheme.colors.background.primary,
- *   boxShadow: darkTheme.shadows.glow.purple,
- *   padding: darkTheme.spacing.md
- * }}>
- *   Conteúdo Cyberpunk
- * </div>
- * ```
- */
-declare const darkTheme: {
-    readonly colors: {
-        primary: {
-            base: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            focus: string;
-            background: string;
-            backgroundHover: string;
-            backgroundActive: string;
-            border: string;
-            borderHover: string;
-            borderFocus: string;
-            text: string;
-            textHover: string;
-            textDisabled: string;
-        };
-        secondary: {
-            base: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            focus: string;
-            background: string;
-            backgroundHover: string;
-            backgroundActive: string;
-            border: string;
-            borderHover: string;
-            borderFocus: string;
-            text: string;
-            textHover: string;
-            textDisabled: string;
-        };
-        accent: {
-            base: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            focus: string;
-            background: string;
-            backgroundHover: string;
-            backgroundActive: string;
-            border: string;
-            borderHover: string;
-            borderFocus: string;
-            text: string;
-            textHover: string;
-            textDisabled: string;
-        };
-        background: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            inverse: string;
-            overlay: string;
-            muted: string;
-        };
-        surface: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            elevated: string;
-            overlay: string;
-            glass: string;
-            glassHover: string;
-            hover: string;
-            active: string;
-        };
-        text: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            inverse: string;
-            disabled: string;
-            link: string;
-            linkHover: string;
-            linkActive: string;
-            linkVisited: string;
-            onPrimary: string;
-            onSecondary: string;
-            onAccent: string;
-            onBackground: string;
-            onSurface: string;
-            glow: string;
-            neonCyan: string;
-            neonPink: string;
-            neonPurple: string;
-            neonGreen: string;
-        };
-        border: {
-            primary: string;
-            secondary: string;
-            tertiary: string;
-            focus: string;
-            focusRing: string;
-            inverse: string;
-            neon: string;
-            neonGlow: string;
-            hover: string;
-            active: string;
-            disabled: string;
-        };
-        status: {
-            success: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-            warning: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-            error: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-            info: {
-                base: string;
-                hover: string;
-                active: string;
-                background: string;
-                backgroundHover: string;
-                border: string;
-                text: string;
-                textOnBackground: string;
-            };
-        };
-        interactive: {
-            default: string;
-            hover: string;
-            active: string;
-            disabled: string;
-            disabledText: string;
-            focus: string;
-            focusRing: string;
-        };
-        effects: {
-            glowCyan: string;
-            glowPink: string;
-            glowPurple: string;
-            glowGreen: string;
-            shadowSm: string;
-            shadowMd: string;
-            shadowLg: string;
-        };
-        gradients: {
-            primary: string;
-            secondary: string;
-            accent: string;
-            background: string;
-        };
-        primitive: {
-            cyan: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            purple: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            pink: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            blue: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            green: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            orange: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            red: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            amber: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            emerald: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            neutral: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-                "950": string;
-            };
-        };
-    };
-    readonly typography: {
-        fontFamily: {
-            sans: string;
-            serif: string;
-            mono: string;
-            display: string;
-            body: string;
-            code: string;
-        };
-        fontSize: {
-            xs: string;
-            sm: string;
-            base: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-            "4xl": string;
-            "5xl": string;
-            "6xl": string;
-            "7xl": string;
-            "8xl": string;
-            "9xl": string;
-        };
-        fontWeight: {
-            thin: string;
-            extralight: string;
-            light: string;
-            normal: string;
-            medium: string;
-            semibold: string;
-            bold: string;
-            extrabold: string;
-            black: string;
-        };
-        lineHeight: {
-            none: string;
-            tight: string;
-            snug: string;
-            normal: string;
-            relaxed: string;
-            loose: string;
-        };
-        letterSpacing: {
-            tighter: string;
-            tight: string;
-            normal: string;
-            wide: string;
-            wider: string;
-            widest: string;
-        };
-        headings: {
-            h1: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h2: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h3: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h4: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h5: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            h6: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-        };
-        subtitle: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontSizeMobile: string;
-                fontSizeTablet: string;
-                fontSizeDesktop: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-                marginBottom: string;
-            };
-        };
-        body: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        caption: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        button: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        label: {
-            large: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            medium: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            small: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-        code: {
-            inline: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-            block: {
-                fontFamily: string;
-                fontSize: string;
-                fontWeight: string;
-                lineHeight: string;
-                letterSpacing: string;
-            };
-        };
-    };
-    readonly spacing: {
-        "0": string;
-        px: string;
-        "0.5": string;
-        "1": string;
-        "1.5": string;
-        "2": string;
-        "2.5": string;
-        "3": string;
-        "3.5": string;
-        "4": string;
-        "5": string;
-        "6": string;
-        "7": string;
-        "8": string;
-        "9": string;
-        "10": string;
-        "11": string;
-        "12": string;
-        "14": string;
-        "16": string;
-        "20": string;
-        "24": string;
-        "28": string;
-        "32": string;
-        "36": string;
-        "40": string;
-        "44": string;
-        "48": string;
-        "52": string;
-        "56": string;
-        "60": string;
-        "64": string;
-        "72": string;
-        "80": string;
-        "96": string;
-    };
-    readonly radius: {
-        none: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        "3xl": string;
-        full: string;
-    };
-    readonly shadows: {
-        xs: string;
-        sm: string;
-        base: string;
-        md: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        inner: string;
-        glow: {
-            cyan: string;
-            pink: string;
-            purple: string;
-            green: string;
-        };
-    };
-};
-/**
- * Tipo TypeScript do tema escuro
- *
- * @typedef {Object} DarkTheme
- * @description
- * Tipo que representa a estrutura completa do tema escuro.
- * Útil para type-checking e autocomplete em IDEs.
- *
- * @property {Object} colors - Cores do tema escuro (cyberpunk)
- * @property {Object} typography - Tokens de tipografia
- * @property {Object} spacing - Tokens de espaçamento
- * @property {Object} radius - Tokens de raio de borda
- * @property {Object} shadows - Sombras com efeitos de brilho do tema escuro
- */
-type DarkTheme = typeof darkTheme;
 
 /**
  * @fileoverview Ponto de entrada dos temas
@@ -6279,279 +3656,109 @@ type DarkTheme = typeof darkTheme;
 declare const themes: {
     readonly light: {
         readonly colors: {
-            primary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            secondary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            accent: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
             background: {
                 primary: string;
                 secondary: string;
                 tertiary: string;
+                disabled: string;
+                overlay: string;
                 inverse: string;
-                overlay: string;
-                muted: string;
-            };
-            surface: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                elevated: string;
-                overlay: string;
-                hover: string;
-                active: string;
             };
             text: {
                 primary: string;
                 secondary: string;
                 tertiary: string;
-                inverse: string;
                 disabled: string;
-                link: string;
-                linkHover: string;
-                linkActive: string;
-                linkVisited: string;
+                inverse: string;
                 onPrimary: string;
                 onSecondary: string;
-                onAccent: string;
-                onBackground: string;
-                onSurface: string;
+                link: string;
+                linkHover: string;
+            };
+            button: {
+                primary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                secondary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                tertiary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                danger: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                success: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
             };
             border: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
+                default: string;
+                light: string;
+                medium: string;
+                dark: string;
                 focus: string;
-                focusRing: string;
-                inverse: string;
-                hover: string;
-                active: string;
-                disabled: string;
+                error: string;
+                success: string;
+                warning: string;
             };
             status: {
                 success: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
+                    default: string;
+                    light: string;
+                    dark: string;
                     text: string;
-                    textOnBackground: string;
-                };
-                warning: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
                 };
                 error: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
+                    default: string;
+                    light: string;
+                    dark: string;
                     text: string;
-                    textOnBackground: string;
+                };
+                warning: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
                 };
                 info: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
+                    default: string;
+                    light: string;
+                    dark: string;
                     text: string;
-                    textOnBackground: string;
                 };
             };
             interactive: {
-                default: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                disabledText: string;
-                focus: string;
-                focusRing: string;
-            };
-            primitive: {
-                cyan: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
+                link: {
+                    default: string;
+                    hover: string;
+                    visited: string;
+                    active: string;
                 };
-                purple: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                pink: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                blue: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                green: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                orange: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                red: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                amber: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                emerald: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                neutral: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                    "950": string;
+                focus: {
+                    ring: string;
+                    ringOffset: string;
                 };
             };
-            effects: {
-                matrixRain: {
-                    base: string;
-                };
-                stars: {
-                    base: string;
-                };
+            surface: {
+                elevated: string;
+                raised: string;
+                sunken: string;
             };
         };
         readonly typography: {
@@ -6559,9 +3766,6 @@ declare const themes: {
                 sans: string;
                 serif: string;
                 mono: string;
-                display: string;
-                body: string;
-                code: string;
             };
             fontSize: {
                 xs: string;
@@ -6579,251 +3783,38 @@ declare const themes: {
                 "9xl": string;
             };
             fontWeight: {
-                thin: string;
-                extralight: string;
-                light: string;
-                normal: string;
-                medium: string;
-                semibold: string;
-                bold: string;
-                extrabold: string;
-                black: string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
             lineHeight: {
-                none: string;
-                tight: string;
-                snug: string;
-                normal: string;
-                relaxed: string;
-                loose: string;
+                "1": string;
+                "1.25": string;
+                "1.375": string;
+                "1.5": string;
+                "1.625": string;
+                "2": string;
             };
             letterSpacing: {
-                tighter: string;
-                tight: string;
-                normal: string;
-                wide: string;
-                wider: string;
-                widest: string;
-            };
-            headings: {
-                h1: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h2: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h3: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h4: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h5: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h6: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-            };
-            subtitle: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-            };
-            body: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            caption: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            button: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            label: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            code: {
-                inline: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                block: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
+                "-0.05": string;
+                "-0.025": string;
+                "0": string;
+                "0.025": string;
+                "0.05": string;
+                "0.1": string;
             };
         };
         readonly spacing: {
             "0": string;
-            px: string;
-            "0.5": string;
             "1": string;
-            "1.5": string;
             "2": string;
-            "2.5": string;
             "3": string;
-            "3.5": string;
             "4": string;
             "5": string;
             "6": string;
@@ -6850,6 +3841,11 @@ declare const themes: {
             "72": string;
             "80": string;
             "96": string;
+            px: string;
+            "0.5": string;
+            "1.5": string;
+            "2.5": string;
+            "3.5": string;
         };
         readonly radius: {
             none: string;
@@ -6871,299 +3867,119 @@ declare const themes: {
             xl: string;
             "2xl": string;
             inner: string;
+            glow: {
+                cyan: string;
+                pink: string;
+                purple: string;
+                green: string;
+            };
         };
     };
     readonly dark: {
         readonly colors: {
-            primary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            secondary: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
-            accent: {
-                base: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                focus: string;
-                background: string;
-                backgroundHover: string;
-                backgroundActive: string;
-                border: string;
-                borderHover: string;
-                borderFocus: string;
-                text: string;
-                textHover: string;
-                textDisabled: string;
-            };
             background: {
                 primary: string;
                 secondary: string;
                 tertiary: string;
+                disabled: string;
+                overlay: string;
                 inverse: string;
-                overlay: string;
-                muted: string;
-            };
-            surface: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                elevated: string;
-                overlay: string;
-                glass: string;
-                glassHover: string;
-                hover: string;
-                active: string;
             };
             text: {
                 primary: string;
                 secondary: string;
                 tertiary: string;
-                inverse: string;
                 disabled: string;
-                link: string;
-                linkHover: string;
-                linkActive: string;
-                linkVisited: string;
+                inverse: string;
                 onPrimary: string;
                 onSecondary: string;
-                onAccent: string;
-                onBackground: string;
-                onSurface: string;
-                glow: string;
-                neonCyan: string;
-                neonPink: string;
-                neonPurple: string;
-                neonGreen: string;
+                link: string;
+                linkHover: string;
+            };
+            button: {
+                primary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                secondary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                tertiary: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                danger: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
+                success: {
+                    default: string;
+                    hover: string;
+                    active: string;
+                    text: string;
+                };
             };
             border: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
+                default: string;
+                light: string;
+                medium: string;
+                dark: string;
                 focus: string;
-                focusRing: string;
-                inverse: string;
-                neon: string;
-                neonGlow: string;
-                hover: string;
-                active: string;
-                disabled: string;
+                error: string;
+                success: string;
+                warning: string;
             };
             status: {
                 success: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
+                    default: string;
+                    light: string;
+                    dark: string;
                     text: string;
-                    textOnBackground: string;
-                };
-                warning: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
-                    text: string;
-                    textOnBackground: string;
                 };
                 error: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
+                    default: string;
+                    light: string;
+                    dark: string;
                     text: string;
-                    textOnBackground: string;
+                };
+                warning: {
+                    default: string;
+                    light: string;
+                    dark: string;
+                    text: string;
                 };
                 info: {
-                    base: string;
-                    hover: string;
-                    active: string;
-                    background: string;
-                    backgroundHover: string;
-                    border: string;
+                    default: string;
+                    light: string;
+                    dark: string;
                     text: string;
-                    textOnBackground: string;
                 };
             };
             interactive: {
-                default: string;
-                hover: string;
-                active: string;
-                disabled: string;
-                disabledText: string;
-                focus: string;
-                focusRing: string;
+                link: {
+                    default: string;
+                    hover: string;
+                    visited: string;
+                    active: string;
+                };
+                focus: {
+                    ring: string;
+                    ringOffset: string;
+                };
             };
-            effects: {
-                glowCyan: string;
-                glowPink: string;
-                glowPurple: string;
-                glowGreen: string;
-                shadowSm: string;
-                shadowMd: string;
-                shadowLg: string;
-            };
-            gradients: {
-                primary: string;
-                secondary: string;
-                accent: string;
-                background: string;
-            };
-            primitive: {
-                cyan: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                purple: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                pink: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                blue: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                green: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                orange: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                red: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                amber: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                emerald: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                };
-                neutral: {
-                    "50": string;
-                    "100": string;
-                    "200": string;
-                    "300": string;
-                    "400": string;
-                    "500": string;
-                    "600": string;
-                    "700": string;
-                    "800": string;
-                    "900": string;
-                    "950": string;
-                };
+            surface: {
+                elevated: string;
+                raised: string;
+                sunken: string;
             };
         };
         readonly typography: {
@@ -7171,9 +3987,6 @@ declare const themes: {
                 sans: string;
                 serif: string;
                 mono: string;
-                display: string;
-                body: string;
-                code: string;
             };
             fontSize: {
                 xs: string;
@@ -7191,251 +4004,38 @@ declare const themes: {
                 "9xl": string;
             };
             fontWeight: {
-                thin: string;
-                extralight: string;
-                light: string;
-                normal: string;
-                medium: string;
-                semibold: string;
-                bold: string;
-                extrabold: string;
-                black: string;
+                "100": string;
+                "200": string;
+                "300": string;
+                "400": string;
+                "500": string;
+                "600": string;
+                "700": string;
+                "800": string;
+                "900": string;
             };
             lineHeight: {
-                none: string;
-                tight: string;
-                snug: string;
-                normal: string;
-                relaxed: string;
-                loose: string;
+                "1": string;
+                "1.25": string;
+                "1.375": string;
+                "1.5": string;
+                "1.625": string;
+                "2": string;
             };
             letterSpacing: {
-                tighter: string;
-                tight: string;
-                normal: string;
-                wide: string;
-                wider: string;
-                widest: string;
-            };
-            headings: {
-                h1: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h2: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h3: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h4: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h5: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                h6: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-            };
-            subtitle: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontSizeMobile: string;
-                    fontSizeTablet: string;
-                    fontSizeDesktop: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                    marginBottom: string;
-                };
-            };
-            body: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            caption: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            button: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            label: {
-                large: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                medium: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                small: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-            };
-            code: {
-                inline: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
-                block: {
-                    fontFamily: string;
-                    fontSize: string;
-                    fontWeight: string;
-                    lineHeight: string;
-                    letterSpacing: string;
-                };
+                "-0.05": string;
+                "-0.025": string;
+                "0": string;
+                "0.025": string;
+                "0.05": string;
+                "0.1": string;
             };
         };
         readonly spacing: {
             "0": string;
-            px: string;
-            "0.5": string;
             "1": string;
-            "1.5": string;
             "2": string;
-            "2.5": string;
             "3": string;
-            "3.5": string;
             "4": string;
             "5": string;
             "6": string;
@@ -7462,6 +4062,11 @@ declare const themes: {
             "72": string;
             "80": string;
             "96": string;
+            px: string;
+            "0.5": string;
+            "1.5": string;
+            "2.5": string;
+            "3.5": string;
         };
         readonly radius: {
             none: string;
@@ -7492,953 +4097,6 @@ declare const themes: {
         };
     };
 };
-/**
- * Tipo TypeScript para todos os temas
- *
- * @typedef {Object} Themes
- * @description
- * Tipo que representa a estrutura completa de todos os temas disponíveis.
- * Útil para type-checking e autocomplete em IDEs.
- */
-type Themes = typeof themes;
-
-/**
- * Design Tokens Helpers
- *
- * Funções utilitárias para facilitar o uso dos design tokens.
- * Fornece helpers para acessar cores, espaçamentos, tipografia, etc.
- *
- * @module @rainersoft/design-tokens/helpers
- * @author Rainer Teixeira
- */
-
-/**
- * Obtém cores do tema claro
- */
-declare function getLightColors(): {
-    primary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    secondary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    accent: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    background: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        overlay: string;
-        muted: string;
-    };
-    surface: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        elevated: string;
-        overlay: string;
-        hover: string;
-        active: string;
-    };
-    text: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        disabled: string;
-        link: string;
-        linkHover: string;
-        linkActive: string;
-        linkVisited: string;
-        onPrimary: string;
-        onSecondary: string;
-        onAccent: string;
-        onBackground: string;
-        onSurface: string;
-    };
-    border: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        focus: string;
-        focusRing: string;
-        inverse: string;
-        hover: string;
-        active: string;
-        disabled: string;
-    };
-    status: {
-        success: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        warning: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        error: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        info: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-    };
-    interactive: {
-        default: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        disabledText: string;
-        focus: string;
-        focusRing: string;
-    };
-    primitive: {
-        cyan: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        purple: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        pink: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        blue: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        green: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        orange: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        red: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        amber: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        emerald: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        neutral: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-            "950": string;
-        };
-    };
-    effects: {
-        matrixRain: {
-            base: string;
-        };
-        stars: {
-            base: string;
-        };
-    };
-};
-/**
- * Obtém cores do tema escuro
- */
-declare function getDarkColors(): {
-    primary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    secondary: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    accent: {
-        base: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        focus: string;
-        background: string;
-        backgroundHover: string;
-        backgroundActive: string;
-        border: string;
-        borderHover: string;
-        borderFocus: string;
-        text: string;
-        textHover: string;
-        textDisabled: string;
-    };
-    background: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        overlay: string;
-        muted: string;
-    };
-    surface: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        elevated: string;
-        overlay: string;
-        glass: string;
-        glassHover: string;
-        hover: string;
-        active: string;
-    };
-    text: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        inverse: string;
-        disabled: string;
-        link: string;
-        linkHover: string;
-        linkActive: string;
-        linkVisited: string;
-        onPrimary: string;
-        onSecondary: string;
-        onAccent: string;
-        onBackground: string;
-        onSurface: string;
-        glow: string;
-        neonCyan: string;
-        neonPink: string;
-        neonPurple: string;
-        neonGreen: string;
-    };
-    border: {
-        primary: string;
-        secondary: string;
-        tertiary: string;
-        focus: string;
-        focusRing: string;
-        inverse: string;
-        neon: string;
-        neonGlow: string;
-        hover: string;
-        active: string;
-        disabled: string;
-    };
-    status: {
-        success: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        warning: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        error: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-        info: {
-            base: string;
-            hover: string;
-            active: string;
-            background: string;
-            backgroundHover: string;
-            border: string;
-            text: string;
-            textOnBackground: string;
-        };
-    };
-    interactive: {
-        default: string;
-        hover: string;
-        active: string;
-        disabled: string;
-        disabledText: string;
-        focus: string;
-        focusRing: string;
-    };
-    effects: {
-        glowCyan: string;
-        glowPink: string;
-        glowPurple: string;
-        glowGreen: string;
-        shadowSm: string;
-        shadowMd: string;
-        shadowLg: string;
-    };
-    gradients: {
-        primary: string;
-        secondary: string;
-        accent: string;
-        background: string;
-    };
-    primitive: {
-        cyan: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        purple: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        pink: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        blue: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        green: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        orange: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        red: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        amber: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        emerald: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-        };
-        neutral: {
-            "50": string;
-            "100": string;
-            "200": string;
-            "300": string;
-            "400": string;
-            "500": string;
-            "600": string;
-            "700": string;
-            "800": string;
-            "900": string;
-            "950": string;
-        };
-    };
-};
-/**
- * Obtém espaçamento do sistema de design
- */
-declare function getSpacing(): {
-    "0": string;
-    px: string;
-    "0.5": string;
-    "1": string;
-    "1.5": string;
-    "2": string;
-    "2.5": string;
-    "3": string;
-    "3.5": string;
-    "4": string;
-    "5": string;
-    "6": string;
-    "7": string;
-    "8": string;
-    "9": string;
-    "10": string;
-    "11": string;
-    "12": string;
-    "14": string;
-    "16": string;
-    "20": string;
-    "24": string;
-    "28": string;
-    "32": string;
-    "36": string;
-    "40": string;
-    "44": string;
-    "48": string;
-    "52": string;
-    "56": string;
-    "60": string;
-    "64": string;
-    "72": string;
-    "80": string;
-    "96": string;
-};
-/**
- * Obtém tipografia do sistema de design
- */
-declare function getTypography(): {
-    fontFamily: {
-        sans: string;
-        serif: string;
-        mono: string;
-        display: string;
-        body: string;
-        code: string;
-    };
-    fontSize: {
-        xs: string;
-        sm: string;
-        base: string;
-        lg: string;
-        xl: string;
-        "2xl": string;
-        "3xl": string;
-        "4xl": string;
-        "5xl": string;
-        "6xl": string;
-        "7xl": string;
-        "8xl": string;
-        "9xl": string;
-    };
-    fontWeight: {
-        thin: string;
-        extralight: string;
-        light: string;
-        normal: string;
-        medium: string;
-        semibold: string;
-        bold: string;
-        extrabold: string;
-        black: string;
-    };
-    lineHeight: {
-        none: string;
-        tight: string;
-        snug: string;
-        normal: string;
-        relaxed: string;
-        loose: string;
-    };
-    letterSpacing: {
-        tighter: string;
-        tight: string;
-        normal: string;
-        wide: string;
-        wider: string;
-        widest: string;
-    };
-    headings: {
-        h1: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h2: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h3: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h4: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h5: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        h6: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-    };
-    subtitle: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontSizeMobile: string;
-            fontSizeTablet: string;
-            fontSizeDesktop: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-            marginBottom: string;
-        };
-    };
-    body: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    caption: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    button: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    label: {
-        large: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        medium: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        small: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-    code: {
-        inline: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-        block: {
-            fontFamily: string;
-            fontSize: string;
-            fontWeight: string;
-            lineHeight: string;
-            letterSpacing: string;
-        };
-    };
-};
-/**
- * Obtém raios de borda do sistema de design
- */
-declare function getRadius(): {
-    none: string;
-    sm: string;
-    base: string;
-    md: string;
-    lg: string;
-    xl: string;
-    "2xl": string;
-    "3xl": string;
-    full: string;
-};
-/**
- * Obtém sombras do sistema de design
- */
-declare function getShadows(theme?: 'light' | 'dark'): {
-    xs: string;
-    sm: string;
-    base: string;
-    md: string;
-    lg: string;
-    xl: string;
-    "2xl": string;
-    inner: string;
-} | {
-    xs: string;
-    sm: string;
-    base: string;
-    md: string;
-    lg: string;
-    xl: string;
-    "2xl": string;
-    inner: string;
-    glow: {
-        cyan: string;
-        pink: string;
-        purple: string;
-        green: string;
-    };
-};
-/**
- * Helper para obter valor de espaçamento
- */
-declare function spacing(size: keyof Tokens['spacing']): string;
-/**
- * Helper para obter valor de raio de borda
- */
-declare function radius(size: keyof Tokens['radius']): string;
 
 /**
  * @fileoverview Ponto de entrada principal da biblioteca @rainersoft/design-tokens
@@ -8452,7 +4110,7 @@ declare function radius(size: keyof Tokens['radius']): string;
  * a aplicação.
  *
  * @module @rainersoft/design-tokens
- * @version 2.2.0
+ * @version 2.6.0
  * @author Rainer Teixeira
  * @license MIT
  * @since 1.0.0
@@ -8482,4 +4140,4 @@ declare function radius(size: keyof Tokens['radius']): string;
  */
 declare const cssVarsPath = "./src/css-vars.css";
 
-export { type Animations, BACKGROUND, type Background, type Breakpoints, COLORS, type Colors, type DarkColors, type DarkTheme, GRADIENTS, GRADIENT_COLORS, GRADIENT_COMPOSITES, GRADIENT_DIRECTIONS, type GradientColors, type GradientComposites, type GradientDirections, type Gradients, type LightColors, type LightTheme, MOTION, type Motion, NAVIGATION, type Navigation, RESPONSIVE, type Radius, SHADOWS, type Shadows, type Spacing, type Themes, type Tokens, type Typography, type ZIndex, Z_INDEX, animationTokens, breakpointTokens, componentTokens, cssVarsPath, darkTheme, darkThemeColors, effectTokens, getContrast, getContrastInfo, getDarkColors, getLightColors, getLuminance, getRadius, getShadows, getSpacing, getTypography, hexToRgb, lightTheme, lightThemeColors, meetsWCAGAA, meetsWCAGAAA, motionTokens, radius, radiusTokens, shadowTokens, spacing, spacingTokens, themes, tokens, typographyTokens, validateContrast, zIndexTokens };
+export { borderTokens as borderPrimitive, borderRoles as borderSemantic, breakpoints_default as breakpointsPrimitive, colorPalette as colorPrimitive, colorRoles as colorSemantic, cssVarsPath, themeDark as darkTheme, elevationRoles as elevationSemantic, gradientTokens as gradientPrimitive, gradientTokens as gradientsPrimitive, iconScale as iconSizesPrimitive, layoutUnits as layoutPrimitive, layoutStructure as layoutSemantic, themeLight as lightTheme, motionTokens as motionPrimitive, motionRoles as motionSemantic, opacityScale as opacityPrimitive, radiusScale as radiusPrimitive, elevationTokens as shadowsPrimitive, spacingScale as spacingPrimitive, spacingContext as spacingSemantic, themes, tokens, typographyBase as typographyPrimitive, typographyRoles as typographySemantic, zIndexLayers as zIndexPrimitive };

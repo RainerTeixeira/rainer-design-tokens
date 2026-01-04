@@ -1,289 +1,436 @@
-# 🔧 Sistema de Build - Design Tokens
+# 04-SISTEMA_BUILD.md - Sistema de Build
 
-Este documento explica como funciona o sistema de build automatizado da biblioteca.
+## 🎯 Visão Geral
 
-## 🎯 Princípio Fundamental
+Este documento explica como funciona o sistema de build automatizado da biblioteca `@rainersoft/design-tokens`. O sistema segue o princípio de **JSON como fonte única de verdade**, onde todos os formatos são gerados automaticamente.
+
+## 🔧 Princípio Fundamental
 
 **JSON como Fonte Única de Verdade**
 
 - ✅ **Edite apenas**: `tokens/*.json`
-- ✅ **Formats são gerados automaticamente**: Execute `pnpm run build:formats`
+- ✅ **Formats são gerados**: Execute `pnpm run build`
 - ❌ **NÃO edite manualmente**: `formats/*` (serão sobrescritos)
 
-## 📦 Scripts Disponíveis
+## 📦 Scripts Principais
 
-### Scripts Principais
+### Scripts de Build
 
 ```bash
-# Gera todos os formatos (CSS, Tailwind, JSON)
-pnpm run build:formats
-
-# Gera formatos individuais
-pnpm run build:css          # Gera formats/css-vars.css
-pnpm run build:tailwind     # Gera formats/tailwind.config.ts
-pnpm run build:tokens-json  # Gera formats/tokens.json
-
 # Build completo (formats + TypeScript)
 pnpm run build
+
+# Apenas formatos (CSS, Tailwind, JSON)
+pnpm run build:formats
+
+# Gerar tokens calculados
+pnpm run generate-tokens
+
+# Build com changelog
+pnpm run build:tokens
+```
+
+### Scripts de Desenvolvimento
+
+```bash
+# Desenvolvimento com watch
+pnpm run dev
+
+# Iniciar Storybook
+pnpm run storybook
+
+# Validar tokens
+pnpm run validate
+
+# Type checking
+pnpm run type-check
 ```
 
 ## 🔄 Fluxo de Build
 
 ```
-tokens/*.json (FONTE ÚNICA)
+tokens/primitives/*.json     Tokens base
+tokens/semantics/*.json      Tokens semânticos
+tokens/themes/*.json         Configurações
     ↓
-scripts/build-*.ts (GERADORES)
+scripts/compile-formats.ts   Gera formatos
     ↓
-formats/* (FORMATOS GERADOS)
+formats/css-vars.css         CSS Variables
+formats/tailwind.config.ts   Config Tailwind
+formats/tokens.json          JSON consolidado
     ↓
-dist/* (SAÍDA COMPILADA)
+dist/index.*                Biblioteca compilada
 ```
 
-## 📝 Scripts de Build
+## 📝 Scripts Detalhados
 
-### `scripts/build-formats.ts`
+### compile-formats.ts
+**Script principal de geração de formatos**
 
-**Orquestrador principal** que executa todos os geradores em sequência.
-
-**O que faz**:
-1. Executa `build-css.ts`
-2. Executa `build-tailwind.ts`
-3. Executa `build-tokens-json.ts`
-
-**Uso**:
-```bash
-pnpm run build:formats
+```typescript
+// Funções principais
+- generateCSS()      // Gera CSS variables
+- generateTailwind() // Gera config Tailwind
+- generateJSON()     // Gera JSON consolidado
 ```
 
-### `scripts/build-css.ts`
+**O que gera**:
+- `formats/css-vars.css`
+- `formats/tailwind.config.ts`
+- `formats/tokens.json`
 
-**Gera `formats/css-vars.css`** a partir dos tokens JSON.
+### generate-all.ts
+**Orquestrador de tokens calculados**
 
-**O que faz**:
-- Lê `tokens/colors/light.json` e `tokens/colors/dark.json`
-- Lê `tokens/typography.json`, `tokens/spacing.json`, `tokens/radius.json`, `tokens/shadows.json`
-- Gera variáveis CSS para tema claro (`:root`)
-- Gera variáveis CSS para tema escuro (`.dark`)
-- Converte camelCase para kebab-case automaticamente
-
-**Saída**: `formats/css-vars.css`
-
-**Uso**:
-```bash
-pnpm run build:css
+```typescript
+// Scripts executados
+- generate-radius.ts     // Calcula radius baseado em spacing
+- generate-breakpoints.ts // Gera breakpoints padrão
+- generate-z-index.ts   // Gera sistema de camadas
 ```
 
-### `scripts/build-tailwind.ts`
+### build-tokens.ts
+**Script master (inclui changelog)**
 
-**Gera `formats/tailwind.config.ts`** a partir dos tokens JSON.
-
-**O que faz**:
-- Lê todos os tokens JSON
-- Gera configuração do Tailwind CSS com:
-  - Cores (brand, background, surface, text, border, status)
-  - Tipografia (fontFamily, fontSize, fontWeight, lineHeight, letterSpacing)
-  - Espaçamento (spacing)
-  - Raios de borda (borderRadius)
-  - Sombras (boxShadow, incluindo efeitos glow)
-- Converte kebab-case para camelCase automaticamente
-
-**Saída**: `formats/tailwind.config.ts`
-
-**Uso**:
-```bash
-pnpm run build:tailwind
+```typescript
+// Fluxo completo
+1. Executa generate-all.ts
+2. Executa compile-formats.ts
+3. Gera docs/98-CHANGELOG.md
+4. Valida estrutura
 ```
 
-### `scripts/build-tokens-json.ts`
+## 🎯 Formatos Gerados
 
-**Gera `formats/tokens.json`** consolidado com referências.
-
-**O que faz**:
-- Lê todos os tokens JSON
-- Lê `package.json` para pegar versão e metadados
-- Gera JSON consolidado com:
-  - Referências para cada arquivo de token
-  - Metadados do pacote
-  - Timestamp de geração
-
-**Saída**: `formats/tokens.json`
-
-**Uso**:
-```bash
-pnpm run build:tokens-json
+### CSS Variables (`formats/css-vars.css`)
+```css
+:root {
+  /* Primitives */
+  --color-cyan-50: #ecfeff;
+  --color-cyan-500: #0891b2;
+  --spacing-0: 0;
+  --spacing-4: 1rem;
+  --radius-sm: 0.125rem;
+  
+  /* Semantics */
+  --color-background-primary: #ffffff;
+  --color-text-primary: #171717;
+  --color-brand-primary: #0891b2;
+  
+  /* Theme */
+  --elevation-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --elevation-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 ```
 
-## 🚀 Workflow de Desenvolvimento
+### Tailwind Config (`formats/tailwind.config.ts`)
+```typescript
+import type { Config } from 'tailwindcss';
+
+export default {
+  content: [],
+  theme: {
+    extend: {
+      colors: {
+        cyan: {
+          50: '#ecfeff',
+          500: '#0891b2',
+        },
+        'brand-primary': '#0891b2',
+        'text-primary': '#171717',
+        'background-primary': '#ffffff',
+      },
+      spacing: {
+        17: '4.25rem',
+        18: '4.5rem',
+        88: '22rem',
+        93: '23.25rem',
+        98: '24.5rem',
+        104: '26rem',
+        108: '27rem',
+        112: '28rem',
+        120: '30rem',
+        128: '32rem',
+        144: '36rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      },
+      boxShadow: {
+        'elevation-sm': '0 1px 2px rgba(0, 0, 0, 0.05)',
+        'elevation-md': '0 4px 6px rgba(0, 0, 0, 0.1)',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        '2xs': ['0.625rem', '0.75rem'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.3s ease-out',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { transform: 'translateY(10px)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+      },
+      zIndex: {
+        'dropdown': '1000',
+        'sticky': '1020',
+        'fixed': '1030',
+        'modal-backdrop': '1040',
+        'modal': '1050',
+        'popover': '1060',
+        'tooltip': '1070',
+        'toast': '1080',
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config;
+```
+
+### JSON Consolidado (`formats/tokens.json`)
+```json
+{
+  "primitives": {
+    "colors": {
+      "cyan": {
+        "50": "#ecfeff",
+        "500": "#0891b2",
+        "900": "#164e63"
+      },
+      "gray": {
+        "50": "#fafafa",
+        "500": "#737373",
+        "900": "#171717"
+      }
+    },
+    "spacing": {
+      "0": "0",
+      "4": "1rem",
+      "8": "2rem",
+      "16": "4rem"
+    },
+    "typography": {
+      "fontFamily": {
+        "sans": ["Inter", "system-ui", "sans-serif"]
+      },
+      "fontSize": {
+        "base": ["1rem", "1.5rem"]
+      }
+    }
+  },
+  "semantics": {
+    "colors": {
+      "background": {
+        "primary": "#ffffff",
+        "secondary": "#fafafa"
+      },
+      "text": {
+        "primary": "#171717",
+        "secondary": "#737373"
+      },
+      "brand": {
+        "primary": "#0891b2"
+      }
+    }
+  },
+  "themes": {
+    "light": {
+      "colors": {
+        "background": {
+          "primary": "#ffffff"
+        }
+      }
+    },
+    "dark": {
+      "colors": {
+        "background": {
+          "primary": "#0a0a0f"
+        },
+        "text": {
+          "primary": "#b3ffff"
+        }
+      }
+    }
+  }
+}
+```
+
+## 🛠️ Workflow de Desenvolvimento
 
 ### 1. Editar Tokens
+```bash
+# Editar arquivo de tokens
+vim tokens/primitives/color-palette.json
 
-Edite os arquivos JSON em `tokens/`:
-
-```json
-// tokens/colors/light.json
+# Adicionar nova cor
 {
-  "colors": {
-    "brand": {
-      "primary": "#0891b2",
-      "primaryHover": "#0e7490"
-    }
+  "violet": {
+    "50": "#f5f3ff",
+    "500": "#8b5cf6",
+    "900": "#4c1d95"
   }
 }
 ```
 
 ### 2. Gerar Formatos
-
-Execute o build de formatos:
-
 ```bash
+# Gerar todos os formatos
 pnpm run build:formats
-```
 
-Isso irá:
-- ✅ Gerar `formats/css-vars.css` com `--color-brand-primary: #0891b2;`
-- ✅ Gerar `formats/tailwind.config.ts` com `brand: { primary: '#0891b2' }`
-- ✅ Gerar `formats/tokens.json` com referências atualizadas
-
-### 3. Compilar TypeScript
-
-Execute o build completo:
-
-```bash
+# Ou build completo
 pnpm run build
 ```
 
-Isso irá:
-- ✅ Executar `build:formats` automaticamente
-- ✅ Compilar TypeScript para `dist/`
+### 3. Visualizar Mudanças
+```bash
+# Storybook para visualizar
+pnpm run storybook
 
-## 📋 Estrutura de Arquivos
-
-```
-@rainer-design-tokens/
-│
-├── tokens/                    # 🎯 FONTE ÚNICA DE VERDADE
-│   ├── colors/
-│   │   ├── light.json
-│   │   └── dark.json
-│   ├── typography.json
-│   ├── spacing.json
-│   ├── radius.json
-│   └── shadows.json
-│
-├── scripts/                    # 🔧 GERADORES
-│   ├── build-formats.ts      # Orquestrador
-│   ├── build-css.ts          # Gera CSS
-│   ├── build-tailwind.ts     # Gera Tailwind
-│   └── build-tokens-json.ts  # Gera JSON
-│
-├── formats/                   # 📤 FORMATOS GERADOS (NÃO EDITAR)
-│   ├── css-vars.css          # ← Gerado por build-css.ts
-│   ├── tailwind.config.ts    # ← Gerado por build-tailwind.ts
-│   └── tokens.json           # ← Gerado por build-tokens-json.ts
-│
-└── dist/                      # 📦 SAÍDA COMPILADA
-    ├── index.js
-    ├── index.mjs
-    └── index.d.ts
+# Testar mudanças
+pnpm run test
 ```
 
-## 🔍 Como Funciona
+### 4. Validar
+```bash
+# Validação completa
+pnpm run validate
 
-### Conversão de Nomes
-
-Os scripts fazem conversão automática de nomes:
-
-**camelCase → kebab-case** (para CSS):
-```typescript
-primaryHover → primary-hover
+# Type checking
+pnpm run type-check
 ```
 
-**kebab-case → camelCase** (para Tailwind):
-```typescript
-primary-hover → primaryHover
+## 📋 Scripts Úteis
+
+### Validação
+```bash
+# Validar JSON dos tokens
+pnpm run validate
+
+# Verificar referências
+pnpm run check-references
+
+# Testes completos
+pnpm run test:ci
 ```
 
-### Estrutura Aninhada
+### Manutenção
+```bash
+# Limpar formats gerados
+pnpm run clean
 
-Os scripts preservam a estrutura aninhada dos tokens:
+# Gerar changelog
+pnpm run changelog
 
+# Sincronizar versões
+pnpm run sync-version
+```
+
+## 🚀 CI/CD Integration
+
+### GitHub Actions
+```yaml
+# .github/workflows/ci.yml
+- name: Build formats
+  run: pnpm run build:formats
+
+- name: Run tests
+  run: pnpm run test:ci
+
+- name: Validate tokens
+  run: pnpm run validate
+```
+
+### Pre-publish Hooks
 ```json
-// tokens/colors/light.json
+// package.json
 {
-  "colors": {
-    "brand": {
-      "primary": "#0891b2",
-      "primaryHover": "#0e7490"
-    }
+  "scripts": {
+    "prepublishOnly": "pnpm run build && pnpm run validate",
+    "postpublish": "pnpm run sync-version"
   }
 }
 ```
 
-Gera:
+## 🔧 Troubleshooting
 
-```css
-/* formats/css-vars.css */
-:root {
-  --color-brand-primary: #0891b2;
-  --color-brand-primary-hover: #0e7490;
-}
-```
+### Erros Comuns
 
-```typescript
-// formats/tailwind.config.ts
-colors: {
-  brand: {
-    primary: '#0891b2',
-    primaryHover: '#0e7490'
-  }
-}
-```
-
-## ⚠️ Avisos Importantes
-
-1. **NÃO edite manualmente** os arquivos em `formats/`
-   - Eles são gerados automaticamente
-   - Suas alterações serão perdidas no próximo build
-
-2. **Sempre edite** os arquivos em `tokens/*.json`
-   - Estes são a fonte única de verdade
-   - Todos os formatos são gerados a partir deles
-
-3. **Execute `build:formats`** após qualquer mudança em `tokens/`
-   - Isso garante que todos os formatos estejam sincronizados
-
-## 🐛 Troubleshooting
-
-### Erro: "Cannot find module"
-
-**Problema**: Scripts não encontram os arquivos JSON.
-
-**Solução**: Verifique se os arquivos existem em `tokens/`:
+#### 1. "Token não encontrado"
 ```bash
-ls tokens/colors/light.json
-ls tokens/typography.json
+# Verificar referências
+pnpm run check-references
+
+# Validar JSON
+pnpm run validate:json
 ```
 
-### Erro: "Permission denied"
-
-**Problema**: Sem permissão para escrever em `formats/`.
-
-**Solução**: Verifique permissões:
+#### 2. "Format não gerado"
 ```bash
-chmod -R 755 formats/
-```
-
-### Formatos não atualizados
-
-**Problema**: Formatos não refletem mudanças nos tokens.
-
-**Solução**: Execute o build novamente:
-```bash
+# Limpar e regenerar
+pnpm run clean
 pnpm run build:formats
 ```
 
-## 📚 Referências
+#### 3. "TypeScript errors"
+```bash
+# Type checking
+pnpm run type-check
 
-- [README.md](../README.md) - Documentação principal
-- [STRUCTURE.md](./03-ESTRUTURA.md) - Estrutura da biblioteca
-- [Guidelines](./01-guidelines.md) - Como usar os tokens
+# Regenerar tipos
+pnpm run build:types
+```
+
+### Debug Mode
+```bash
+# Build com debug
+DEBUG=* pnpm run build:formats
+
+# Verbose mode
+pnpm run build:formats --verbose
+```
+
+## 📊 Performance
+
+### Tempos de Build
+- `build:formats`: ~2s
+- `build` completo: ~5s
+- `validate`: ~1s
+
+### Cache
+- Build cache automático
+- Incremental builds disponíveis
+- Parallel generation de formatos
+
+## 🔗 Links Relacionados
+
+- [01-GUIDELINES.md](./01-GUIDELINES.md) - Como usar
+- [02-RESUMO_ESTRUTURA.md](./02-RESUMO_ESTRUTURA.md) - Resumo
+- [03-ESTRUTURA.md](./03-ESTRUTURA.md) - Estrutura detalhada
+- [99-CONTRIBUINDO.md](./99-CONTRIBUINDO.md) - Contribuir
+
+## 📅 Última Atualização
+
+**Data**: Janeiro de 2026
+**Versão**: 2.6.0  
+**Atualização**: Scripts atualizados, compile-formats.ts como principal
+
+---
+
+**Autor**: Rainer Teixeira  
+**Licença**: MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

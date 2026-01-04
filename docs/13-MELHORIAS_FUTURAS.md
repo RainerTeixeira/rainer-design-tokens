@@ -336,6 +336,12 @@ Melhorias são priorizadas por:
 
 ---
 
-**Última Atualização:** Dezembro 2024
+**Última Atualização:** 04 de Janeiro de 2026
 **Versão do Documento:** 1.0.0
 
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

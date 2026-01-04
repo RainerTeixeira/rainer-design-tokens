@@ -244,3 +244,9 @@ Todas as melhorias solicitadas foram implementadas! O projeto está completo e f
 **Última Atualização**: Dezembro 2024
 **Versão**: 2.0.0
 
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 04 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

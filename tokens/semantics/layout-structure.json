@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tokens semânticos de layout - Estrutura organizada por função e contexto",
+  "_comments": {
+    "layout": "Estrutura de layout organizada semanticamente",
+    "container": "Containers organizados por tamanho e propósito",
+    "grid": "Sistema de grid organizado por contexto",
+    "spacing": "Espaçamentos de layout organizados semanticamente",
+    "safeArea": "Áreas seguras organizadas por contexto",
+    "zIndex": "Camadas Z-index organizadas por função"
+  },
+  "layout": {
+    "container": {
+      "xs": "{layout.container.xs}",
+      "sm": "{layout.container.sm}",
+      "md": "{layout.container.md}",
+      "lg": "{layout.container.lg}",
+      "xl": "{layout.container.xl}",
+      "2xl": "{layout.container.2xl}",
+      "full": "100%"
+    },
+    "grid": {
+      "columns": {
+        "count": 12,
+        "gap": {
+          "xs": "{layout.gutter.xs}",
+          "sm": "{layout.gutter.sm}",
+          "md": "{layout.gutter.md}",
+          "lg": "{layout.gutter.lg}",
+          "xl": "{layout.gutter.xl}"
+        }
+      },
+      "gutter": {
+        "xs": "{layout.gutter.xs}",
+        "sm": "{layout.gutter.sm}",
+        "md": "{layout.gutter.md}",
+        "lg": "{layout.gutter.lg}",
+        "xl": "{layout.gutter.xl}"
+      }
+    },
+    "spacing": {
+      "section": {
+        "xs": "{spacing.8}",
+        "sm": "{spacing.12}",
+        "md": "{spacing.16}",
+        "lg": "{spacing.24}",
+        "xl": "{spacing.32}"
+      },
+      "container": {
+        "padding": {
+          "xs": "{spacing.4}",
+          "sm": "{spacing.6}",
+          "md": "{spacing.8}",
+          "lg": "{spacing.12}",
+          "xl": "{spacing.16}"
+        },
+        "margin": {
+          "xs": "{spacing.4}",
+          "sm": "{spacing.8}",
+          "md": "{spacing.12}",
+          "lg": "{spacing.16}",
+          "xl": "{spacing.24}"
+        }
+      }
+    },
+    "safeArea": {
+      "mobile": "{layout.safeArea.xs}",
+      "tablet": "{layout.safeArea.md}",
+      "desktop": "{layout.safeArea.lg}",
+      "wide": "{layout.safeArea.xl}",
+      "xs": "{layout.safeArea.xs}",
+      "sm": "{layout.safeArea.sm}",
+      "md": "{layout.safeArea.md}",
+      "lg": "{layout.safeArea.lg}",
+      "xl": "{layout.safeArea.xl}"
+    },
+    "zIndex": {
+      "base": "{zIndex.0}",
+      "dropdown": "{zIndex.100}",
+      "sticky": "{zIndex.200}",
+      "fixed": "{zIndex.300}",
+      "overlay": "{zIndex.400}",
+      "modal": "{zIndex.500}",
+      "popover": "{zIndex.600}",
+      "tooltip": "{zIndex.700}",
+      "toast": "{zIndex.800}",
+      "max": "{zIndex.9999}"
+    },
+    "breakpoint": {
+      "xs": "{breakpoints.xs}",
+      "sm": "{breakpoints.sm}",
+      "md": "{breakpoints.md}",
+      "lg": "{breakpoints.lg}",
+      "xl": "{breakpoints.xl}",
+      "2xl": "{breakpoints.2xl}",
+      "3xl": "{breakpoints.3xl}"
+    }
+  },
+  "_notes": {
+    "container": {
+      "xs": "Container mínimo para mobile muito pequeno (320px) - referencia: layout.container.xs",
+      "sm": "Container para mobile landscape (640px) - referencia: layout.container.sm",
+      "md": "Container para tablets (768px) - referencia: layout.container.md",
+      "lg": "Container para laptops (1024px) - referencia: layout.container.lg",
+      "xl": "Container padrão para desktop (1280px) - referencia: layout.container.xl",
+      "2xl": "Container amplo para telas grandes (1536px) - referencia: layout.container.2xl",
+      "full": "Container que ocupa 100% da largura"
+    },
+    "grid": {
+      "columns": "Configuração do sistema de colunas do grid - referencia: layout.column.count, layout.gutter.*",
+      "gutter": "Espaçamento entre elementos do grid - referencia: layout.gutter.*"
+    },
+    "spacing": {
+      "section": "Espaçamento entre seções principais - referencia: spacing.8, spacing.12, spacing.16, spacing.24, spacing.32",
+      "container": "Espaçamento interno e externo de containers - referencia: spacing.*"
+    },
+    "safeArea": {
+      "mobile": "Área segura para dispositivos móveis - referencia: layout.safeArea.xs",
+      "tablet": "Área segura para tablets - referencia: layout.safeArea.md",
+      "desktop": "Área segura para desktop - referencia: layout.safeArea.lg",
+      "wide": "Área segura para telas wide - referencia: layout.safeArea.xl"
+    },
+    "zIndex": {
+      "base": "Nível base - elementos normais - referencia: zIndex.0",
+      "dropdown": "Nível para dropdowns e menus - referencia: zIndex.100",
+      "sticky": "Nível para elementos sticky - referencia: zIndex.200",
+      "fixed": "Nível para elementos fixed - referencia: zIndex.300",
+      "overlay": "Nível para overlays e backdrops - referencia: zIndex.400",
+      "modal": "Nível para modais e dialogs - referencia: zIndex.500",
+      "popover": "Nível para popovers - referencia: zIndex.600",
+      "tooltip": "Nível para tooltips - referencia: zIndex.700",
+      "toast": "Nível para toasts e notificações - referencia: zIndex.800",
+      "max": "Nível máximo absoluto - referencia: zIndex.9999"
+    },
+    "breakpoint": {
+      "xs": "Breakpoint extra small (0px) - mobile - referencia: breakpoints.breakpoints.xs",
+      "sm": "Breakpoint small (640px) - mobile landscape - referencia: breakpoints.breakpoints.sm",
+      "md": "Breakpoint medium (768px) - tablet - referencia: breakpoints.breakpoints.md",
+      "lg": "Breakpoint large (1024px) - laptop - referencia: breakpoints.breakpoints.lg",
+      "xl": "Breakpoint extra large (1280px) - desktop - referencia: breakpoints.breakpoints.xl",
+      "2xl": "Breakpoint 2x large (1536px) - desktop grande - referencia: breakpoints.breakpoints.2xl",
+      "3xl": "Breakpoint 3x large (1920px) - wide screen - referencia: breakpoints.breakpoints.3xl"
+    }
+  }
+}

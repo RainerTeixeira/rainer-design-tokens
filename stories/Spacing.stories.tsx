@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import { tokens } from '../tokens';
 
 const meta = {
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const SpacingScale: Story = {
   render: () => {
-    const spacing = tokens.spacing;
+    const spacing = tokens.primitives.spacing as any;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -32,8 +32,8 @@ export const SpacingScale: Story = {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {Object.entries(spacing)
             .sort((a, b) => {
-              const aValue = parseFloat(a[1]) || 0;
-              const bValue = parseFloat(b[1]) || 0;
+              const aValue = parseFloat(a[1] as string) || 0;
+              const bValue = parseFloat(b[1] as string) || 0;
               return aValue - bValue;
             })
             .map(([key, value]) => (
@@ -68,11 +68,11 @@ export const SpacingScale: Story = {
                     textAlign: 'right',
                   }}
                 >
-                  {value}
+                  {value as string}
                 </div>
                 <div
                   style={{
-                    width: value,
+                    width: value as string,
                     height: '40px',
                     backgroundColor: '#0891b2',
                     borderRadius: '4px',
@@ -100,7 +100,7 @@ export const SpacingScale: Story = {
  */
 export const SpacingExamples: Story = {
   render: () => {
-    const spacing = tokens.spacing;
+    const spacing = tokens.primitives.spacing as any;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
