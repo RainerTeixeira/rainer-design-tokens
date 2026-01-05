@@ -1,10 +1,10 @@
 /**
  * @fileoverview Testes para sync-docs.ts
- * 
+ *
  * @description
  * Testes automatizados para o script de sincronização de documentação
  * Verifica atualização de versão, datas e rodapé em documentos
- * 
+ *
  * @module tests/scripts/sync-docs.test.ts
  * @version 1.0.0
  * @author Rainer Teixeira
@@ -14,10 +14,9 @@ import { existsSync, readFileSync, writeFileSync, unlinkSync } from 'fs';
 import { join } from 'path';
 import { execSync } from 'child_process';
 
-const rootDir = join(__dirname, '..', '..', '..');
+const rootDir = join(__dirname, '..', '..');
 
 describe('sync-docs.ts', () => {
-  const scriptsDir = join(rootDir, 'scripts');
   const docsDir = join(rootDir, 'docs');
   const readmePath = join(rootDir, 'README.md');
 
@@ -27,22 +26,24 @@ describe('sync-docs.ts', () => {
 
   describe('📦 Informações do Pacote', () => {
     it('deve ler informações do package.json', () => {
-      const result = execSync(
-        `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dry-run`,
-        { encoding: 'utf-8', stdio: 'pipe' }
-      );
-      
+      const result = execSync('npx tsx scripts/sync-docs.ts --dry-run', {
+        encoding: 'utf-8',
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       expect(result).toContain('@rainersoft/design-tokens');
       expect(result).toMatch(/\d+\.\d+\.\d+/); // versão
       expect(result).toMatch(/\d{1,2} de [A-Za-zçÇ]+ de \d{4}/); // data
     });
 
     it('deve obter data atual em múltiplos formatos', () => {
-      const result = execSync(
-        `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dry-run`,
-        { encoding: 'utf-8', stdio: 'pipe' }
-      );
-      
+      const result = execSync('npx tsx scripts/sync-docs.ts --dry-run', {
+        encoding: 'utf-8',
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       expect(result).toMatch(/\d{4}-\d{2}-\d{2}/); // ISO
       expect(result).toMatch(/\d{1,2} de [A-Za-zçÇ]+ de \d{4}/); // PT-BR
       expect(result).toMatch(/[A-Za-zçÇ]+ de \d{4}/); // Mês/Ano
@@ -55,13 +56,16 @@ describe('sync-docs.ts', () => {
       if (!existsSync(readmePath)) {
         writeFileSync(readmePath, '# Test README\n\nVersion: 1.0.0\n');
       }
-      
-      const result = execSync(
-        `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --version-only`,
-        { encoding: 'utf-8', stdio: 'pipe' }
+
+      const result = execSync('npx tsx scripts/sync-docs.ts --version-only', {
+        encoding: 'utf-8',
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
+      expect(result).toMatch(
+        /(Versão atualizada no README\.md|README\.md já está atualizado)/
       );
-      
-      expect(result).toMatch(/(Versão atualizada no README\.md|README\.md já está atualizado)/);
     });
 
     it('deve atualizar badges de versão', () => {
@@ -74,9 +78,12 @@ describe('sync-docs.ts', () => {
 ## Installation
 `;
       writeFileSync(readmePath, testContent);
-      
-      execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --version-only`, { stdio: 'pipe' });
-      
+
+      execSync('npx tsx scripts/sync-docs.ts --version-only', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       const updatedContent = readFileSync(readmePath, 'utf-8');
       expect(updatedContent).toMatch(/version-\d+\.\d+\.\d+/);
     });
@@ -88,9 +95,12 @@ describe('sync-docs.ts', () => {
 See [version-1.0.0](link) for details.
 `;
       writeFileSync(readmePath, testContent);
-      
-      execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --version-only`, { stdio: 'pipe' });
-      
+
+      execSync('npx tsx scripts/sync-docs.ts --version-only', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       const updatedContent = readFileSync(readmePath, 'utf-8');
       expect(updatedContent).toMatch(/version-\d+\.\d+\.\d+/);
     });
@@ -106,14 +116,17 @@ See [version-1.0.0](link) for details.
 ## Content
 `;
       writeFileSync(readmePath, testContent);
-      
-      const result = execSync(
-        `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dates-only`,
-        { encoding: 'utf-8', stdio: 'pipe' }
-      );
-      
+
+      execSync('npx tsx scripts/sync-docs.ts --dates-only', {
+        encoding: 'utf-8',
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       const updatedContent = readFileSync(readmePath, 'utf-8');
-      expect(updatedContent).toMatch(/\*\*Última Atualização:\*\* \d{1,2} de [A-Za-zçÇ]+ de \d{4}/);
+      expect(updatedContent).toMatch(
+        /\*\*Última Atualização:\*\* \d{1,2} de [A-Za-zçÇ]+ de \d{4}/
+      );
     });
 
     it('deve atualizar múltiplos formatos de data', () => {
@@ -127,9 +140,12 @@ Month: Janeiro 2020
 ## Content
 `;
       writeFileSync(readmePath, testContent);
-      
-      execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dates-only`, { stdio: 'pipe' });
-      
+
+      execSync('npx tsx scripts/sync-docs.ts --dates-only', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       const updatedContent = readFileSync(readmePath, 'utf-8');
       expect(updatedContent).toMatch(/\d{4}-\d{2}-\d{2}/); // ISO
       expect(updatedContent).toMatch(/\d{1,2} de [A-Za-zçÇ]+ de \d{4}/); // PT-BR
@@ -145,12 +161,17 @@ Month: Janeiro 2020
 ## Content
 `;
       writeFileSync(readmePath, testContent);
-      
-      execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dates-only`, { stdio: 'pipe' });
-      
+
+      execSync('npx tsx scripts/sync-docs.ts --dates-only', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       const updatedContent = readFileSync(readmePath, 'utf-8');
       // Não deve atualizar se tiver "Versão" na mesma linha
-      expect(updatedContent).toMatch(/\*\*Data:\*\* Versão \d+\.\d+\.\d+ \(\d{4}-\d{2}-\d{2}\)/);
+      expect(updatedContent).toMatch(
+        /\*\*Data:\*\* Versão \d+\.\d+\.\d+ \(\d{4}-\d{2}-\d{2}\)/
+      );
     });
   });
 
@@ -164,9 +185,9 @@ Month: Janeiro 2020
 Some content here.
 `;
       writeFileSync(readmePath, testContent);
-      
-      execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}"`, { stdio: 'pipe' });
-      
+
+      execSync('npx tsx scripts/sync-docs.ts', { stdio: 'pipe', cwd: rootDir });
+
       const updatedContent = readFileSync(readmePath, 'utf-8');
       expect(updatedContent).toContain('---');
       expect(updatedContent).toContain('**Versão:**');
@@ -191,9 +212,9 @@ Content here.
 **Licença:** OLD
 `;
       writeFileSync(readmePath, testContent);
-      
-      execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}"`, { stdio: 'pipe' });
-      
+
+      execSync('npx tsx scripts/sync-docs.ts', { stdio: 'pipe', cwd: rootDir });
+
       const updatedContent = readFileSync(readmePath, 'utf-8');
       expect(updatedContent).toMatch(/\*\*Versão:\*\* \d+\.\d+\.\d+/);
       expect(updatedContent).toMatch(/\*\*Autor:\*\* Rainer Teixeira/);
@@ -203,11 +224,12 @@ Content here.
 
   describe('📁 Processamento de Documentos', () => {
     it('deve encontrar arquivos Markdown em docs/', () => {
-      execSync(
-        `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --docs-only`,
-        { encoding: 'utf-8', stdio: 'pipe' }
-      );
-      
+      execSync('npx tsx scripts/sync-docs.ts --docs-only', {
+        encoding: 'utf-8',
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       // Se não lançou erro, está funcionando
       expect(true).toBe(true);
     });
@@ -223,22 +245,26 @@ Content here.
 
 ## Content
 `;
-      
+
       // Garantir que docs/ existe
       if (!existsSync(docsDir)) {
-        execSync(`mkdir "${docsDir}"`, { stdio: 'pipe' });
+        const { mkdirSync } = require('fs');
+        mkdirSync(docsDir, { recursive: true });
       }
-      
+
       writeFileSync(testDocPath, testContent);
-      
+
       try {
-        const result = execSync(
-          `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --docs-only`,
-          { encoding: 'utf-8', stdio: 'pipe' }
+        const result = execSync('npx tsx scripts/sync-docs.ts --docs-only', {
+          encoding: 'utf-8',
+          stdio: 'pipe',
+          cwd: rootDir,
+        });
+
+        expect(result).toMatch(
+          /(Atualizado: test-sync\.md|Nenhum arquivo precisou de atualização)/
         );
-        
-        expect(result).toMatch(/(Atualizado: test-sync\.md|Nenhum arquivo precisou de atualização)/);
-        
+
         const updatedContent = readFileSync(testDocPath, 'utf-8');
         expect(updatedContent).toMatch(/\*\*Versão:\*\* \d+\.\d+\.\d+/);
       } finally {
@@ -253,18 +279,20 @@ Content here.
       // Criar diretório oculto com arquivo
       const hiddenDir = join(docsDir, '.hidden');
       const hiddenFile = join(hiddenDir, 'hidden.md');
-      
+
       if (!existsSync(hiddenDir)) {
-        execSync(`mkdir "${hiddenDir}"`, { stdio: 'pipe' });
+        const { mkdirSync } = require('fs');
+        mkdirSync(hiddenDir, { recursive: true });
       }
       writeFileSync(hiddenFile, '# Hidden file');
-      
+
       try {
-        const result = execSync(
-          `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --docs-only`,
-          { encoding: 'utf-8', stdio: 'pipe' }
-        );
-        
+        const result = execSync('npx tsx scripts/sync-docs.ts --docs-only', {
+          encoding: 'utf-8',
+          stdio: 'pipe',
+          cwd: rootDir,
+        });
+
         // Não deve mencionar arquivos ocultos
         expect(result).not.toContain('hidden.md');
       } finally {
@@ -273,7 +301,8 @@ Content here.
           unlinkSync(hiddenFile);
         }
         if (existsSync(hiddenDir)) {
-          execSync(`rmdir "${hiddenDir}"`, { stdio: 'pipe' });
+          const { rmSync } = require('fs');
+          rmSync(hiddenDir, { recursive: true, force: true });
         }
       }
     });
@@ -281,29 +310,34 @@ Content here.
 
   describe('⚡ Performance e Opções', () => {
     it('deve suportar modo dry-run', () => {
-      const result = execSync(
-        `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dry-run`,
-        { encoding: 'utf-8', stdio: 'pipe' }
-      );
-      
+      const result = execSync('npx tsx scripts/sync-docs.ts --dry-run', {
+        encoding: 'utf-8',
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       expect(result).toContain('MODO DRY RUN');
       expect(result).toContain('Nenhuma alteração será salva');
     });
 
     it('deve executar rapidamente (< 3 segundos)', () => {
       const start = Date.now();
-      execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dry-run`, { stdio: 'pipe' });
+      execSync('npx tsx scripts/sync-docs.ts --dry-run', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
       const duration = Date.now() - start;
-      
+
       expect(duration).toBeLessThan(3000);
     });
 
     it('deve mostrar help', () => {
-      const result = execSync(
-        `npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --help`,
-        { encoding: 'utf-8', stdio: 'pipe' }
-      );
-      
+      const result = execSync('npx tsx scripts/sync-docs.ts --help', {
+        encoding: 'utf-8',
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       expect(result).toContain('Uso: npx tsx scripts/sync-docs.ts [opções]');
       expect(result).toContain('--version-only');
       expect(result).toContain('--dates-only');
@@ -314,21 +348,33 @@ Content here.
   describe('🔍 Integração com Outros Scripts', () => {
     it('deve ser compatível com build-tokens.ts', () => {
       // Executar build primeiro
-      execSync(`npx tsx "${join(scriptsDir, 'build-tokens.ts')}"`, { stdio: 'pipe' });
-      
+      execSync('npx tsx scripts/build-tokens.ts', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       // Depois sync (não deve quebrar nada)
       expect(() => {
-        execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dry-run`, { stdio: 'pipe' });
+        execSync('npx tsx scripts/sync-docs.ts --dry-run', {
+          stdio: 'pipe',
+          cwd: rootDir,
+        });
       }).not.toThrow();
     });
 
     it('deve ser compatível com release-package.ts', () => {
       // Executar validação primeiro
-      execSync(`npx tsx "${join(scriptsDir, 'release-package.ts')}" --validate-only`, { stdio: 'pipe' });
-      
+      execSync('npx tsx scripts/release-package.ts --validate-only', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+
       // Depois sync (não deve quebrar nada)
       expect(() => {
-        execSync(`npx tsx "${join(scriptsDir, 'sync-docs.ts')}" --dry-run`, { stdio: 'pipe' });
+        execSync('npx tsx scripts/sync-docs.ts --dry-run', {
+          stdio: 'pipe',
+          cwd: rootDir,
+        });
       }).not.toThrow();
     });
   });

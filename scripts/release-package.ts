@@ -2,16 +2,16 @@
 
 /**
  * @fileoverview Script de RELEASE e Publicação
- * 
+ *
  * @description
  * Script unificado que gerencia todo o processo de release e publicação:
  * - Validação de tokens
  * - Build e compilação
  * - Configuração de autenticação
  * - Publicação no GitHub e NPM
- * 
+ *
  * Uso: npx tsx scripts/release-package.ts [opções]
- * 
+ *
  * @module scripts/release-package
  * @version 1.0.0
  * @author Rainer Teixeira
@@ -62,7 +62,7 @@ const colors: Colors = {
   yellow: '\x1b[33m',
   blue: '\x1b[34m',
   cyan: '\x1b[36m',
-  magenta: '\x1b[35m'
+  magenta: '\x1b[35m',
 };
 
 function log(message: string, color: keyof Colors = 'reset'): void {
@@ -98,7 +98,11 @@ function logHeader(title: string): void {
 /**
  * Executa comando e trata erros
  */
-function runCommand(command: string, description: string, options: { stdio?: 'inherit' | 'pipe' } = {}): boolean {
+function runCommand(
+  command: string,
+  description: string,
+  options: { stdio?: 'inherit' | 'pipe' } = {}
+): boolean {
   try {
     logStep('🔧', description);
     execSync(command, { stdio: 'inherit', ...options });
@@ -118,7 +122,7 @@ function runCommand(command: string, description: string, options: { stdio?: 'in
 function loadEnv(): EnvVars {
   const envPath = join(__dirname, '..', '.env');
   if (!existsSync(envPath)) return {};
-  
+
   try {
     const envContent = readFileSync(envPath, 'utf8');
     const env: EnvVars = {};
@@ -140,24 +144,51 @@ function loadEnv(): EnvVars {
  */
 function validateTokens(): boolean {
   logHeader('VALIDANDO DESIGN TOKENS');
-  
+
   const tokensDir = join(__dirname, '..', 'tokens');
   const results: boolean[] = [];
-  
+
   // Arquivos de tokens para validar
   const tokenFiles: TokenFile[] = [
-    { path: join(tokensDir, 'primitives', 'color-palette.json'), name: 'Color Palette' },
-    { path: join(tokensDir, 'themes', 'theme-light.json'), name: 'Light Theme' },
+    {
+      path: join(tokensDir, 'primitives', 'color-palette.json'),
+      name: 'Color Palette',
+    },
+    {
+      path: join(tokensDir, 'themes', 'theme-light.json'),
+      name: 'Light Theme',
+    },
     { path: join(tokensDir, 'themes', 'theme-dark.json'), name: 'Dark Theme' },
-    { path: join(tokensDir, 'primitives', 'typography-base.json'), name: 'Typography' },
-    { path: join(tokensDir, 'primitives', 'spacing-scale.json'), name: 'Spacing' },
-    { path: join(tokensDir, 'primitives', 'motion-tokens.json'), name: 'Motion' },
-    { path: join(tokensDir, 'primitives', 'breakpoints.json'), name: 'Breakpoints' },
-    { path: join(tokensDir, 'primitives', 'z-index-layers.json'), name: 'Z-Index' },
-    { path: join(tokensDir, 'primitives', 'radius-scale.json'), name: 'Radius' },
-    { path: join(tokensDir, 'primitives', 'elevation-tokens.json'), name: 'Shadows' }
+    {
+      path: join(tokensDir, 'primitives', 'typography-base.json'),
+      name: 'Typography',
+    },
+    {
+      path: join(tokensDir, 'primitives', 'spacing-scale.json'),
+      name: 'Spacing',
+    },
+    {
+      path: join(tokensDir, 'primitives', 'motion-tokens.json'),
+      name: 'Motion',
+    },
+    {
+      path: join(tokensDir, 'primitives', 'breakpoints.json'),
+      name: 'Breakpoints',
+    },
+    {
+      path: join(tokensDir, 'primitives', 'z-index-layers.json'),
+      name: 'Z-Index',
+    },
+    {
+      path: join(tokensDir, 'primitives', 'radius-scale.json'),
+      name: 'Radius',
+    },
+    {
+      path: join(tokensDir, 'primitives', 'elevation-tokens.json'),
+      name: 'Shadows',
+    },
   ];
-  
+
   for (const { path: filePath, name } of tokenFiles) {
     if (!existsSync(filePath)) {
       logError(`${name} não encontrado: ${filePath}`);
@@ -173,13 +204,13 @@ function validateTokens(): boolean {
       }
     }
   }
-  
+
   // Verificar formatos gerados
   const formatsDir = join(__dirname, '..', 'formats');
   const hasCssVars = existsSync(join(formatsDir, 'css-vars.css'));
   const hasTokensJson = existsSync(join(formatsDir, 'tokens.json'));
   const hasTailwindConfig = existsSync(join(formatsDir, 'tailwind.config.ts'));
-  
+
   if (hasCssVars && hasTokensJson && hasTailwindConfig) {
     logSuccess('Todos os formatos gerados corretamente');
     results.push(true);
@@ -188,9 +219,9 @@ function validateTokens(): boolean {
     logInfo('Execute: npm run build');
     results.push(false);
   }
-  
+
   const allValid = results.every(r => r);
-  
+
   if (allValid) {
     logSuccess('🎉 Todos os tokens estão válidos!');
     return true;
@@ -205,11 +236,11 @@ function validateTokens(): boolean {
  */
 function setupNpmAuth(): boolean {
   logHeader('CONFIGURANDO AUTENTICAÇÃO NPM');
-  
+
   const env = loadEnv();
   const npmrcPath = join(__dirname, '..', '.npmrc');
   const envToken = env.NPM_TOKEN || process.env.NPM_TOKEN;
-  
+
   if (envToken) {
     logInfo('Configurando autenticação npm a partir de .env...');
     const npmrcContent = `//registry.npmjs.org/:_authToken=${envToken}\n`;
@@ -231,12 +262,12 @@ function setupNpmAuth(): boolean {
  */
 function buildProject(): boolean {
   logHeader('BUILD E COMPILAÇÃO');
-  
+
   // 1. Gerar tokens e formatos
   if (!runCommand('npm run build', 'Gerando tokens e formatos')) {
     return false;
   }
-  
+
   // 2. Verificar se dist/ existe
   const distPath = join(__dirname, '..', 'dist');
   if (!existsSync(distPath)) {
@@ -244,7 +275,7 @@ function buildProject(): boolean {
     return false;
   }
   logSuccess('Diretório dist/ encontrado');
-  
+
   // 3. Verificar se formats/ existe
   const formatsPath = join(__dirname, '..', 'formats');
   if (!existsSync(formatsPath)) {
@@ -252,16 +283,17 @@ function buildProject(): boolean {
     return false;
   }
   logSuccess('Diretório formats/ encontrado');
-  
+
   // 4. Type check (opcional, não falha se der erro)
   logInfo('Verificando tipos TypeScript...');
   try {
     execSync('npm run type-check', { stdio: 'pipe' });
     logSuccess('Type check passou');
+    logSuccess('TypeScript compilado com sucesso');
   } catch (error: any) {
     logWarning('Type check falhou (mas continuando...)');
   }
-  
+
   return true;
 }
 
@@ -270,7 +302,7 @@ function buildProject(): boolean {
  */
 function setupGitHub(): boolean {
   logHeader('CONFIGURANDO GITHUB');
-  
+
   // Verificar se Git está inicializado
   if (!existsSync('.git')) {
     logWarning('Git não inicializado. Inicializando...');
@@ -280,29 +312,32 @@ function setupGitHub(): boolean {
   } else {
     logSuccess('Git já está inicializado');
   }
-  
+
   // Verificar remote origin
   try {
     const remotes = execSync('git remote', { encoding: 'utf-8' }).trim();
-    
+
     if (!remotes.includes('origin')) {
       logWarning("Remote 'origin' não configurado.");
       logInfo('Configure o remote origin:');
-      console.log('  git remote add origin https://github.com/RainerTeixeira/rainer-design-tokens.git');
+      console.log(
+        '  git remote add origin https://github.com/RainerTeixeira/rainer-design-tokens.git'
+      );
       return false;
     }
-    
+
     logSuccess("Remote 'origin' configurado");
-    
+
     // Mostrar URL do remote
-    const originUrl = execSync('git remote get-url origin', { encoding: 'utf-8' }).trim();
+    const originUrl = execSync('git remote get-url origin', {
+      encoding: 'utf-8',
+    }).trim();
     logInfo(`Remote URL: ${originUrl}`);
-    
   } catch (error: any) {
     logError('Erro ao verificar remotes Git');
     return false;
   }
-  
+
   return true;
 }
 
@@ -311,45 +346,51 @@ function setupGitHub(): boolean {
  */
 function commitAndPush(): boolean {
   logHeader('COMMIT E PUSH PARA GITHUB');
-  
+
   // Verificar se há mudanças
   try {
-    const status = execSync('git status --porcelain', { encoding: 'utf-8' }).trim();
-    
+    const status = execSync('git status --porcelain', {
+      encoding: 'utf-8',
+    }).trim();
+
     if (status) {
       logInfo('Mudanças encontradas:');
       console.log(status);
       console.log('');
-      
+
       // Adicionar arquivos
       if (!runCommand('git add .', 'Adicionando arquivos')) {
         return false;
       }
-      
+
       // Ler package.json para mensagem de commit
       let commitMessage = 'chore: update design tokens';
       try {
-        const packageJson: PackageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
+        const packageJson: PackageJson = JSON.parse(
+          readFileSync('package.json', 'utf-8')
+        );
         commitMessage = `chore: release ${packageJson.name}@${packageJson.version}`;
       } catch {}
-      
+
       // Commit
       if (!runCommand(`git commit -m "${commitMessage}"`, 'Fazendo commit')) {
         return false;
       }
-      
     } else {
       logInfo('Nenhuma mudança para commitar');
     }
-    
+
     // Push
-    const branch = execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' }).trim();
-    if (!runCommand(`git push origin ${branch}`, `Push para GitHub (${branch})`)) {
+    const branch = execSync('git rev-parse --abbrev-ref HEAD', {
+      encoding: 'utf-8',
+    }).trim();
+    if (
+      !runCommand(`git push origin ${branch}`, `Push para GitHub (${branch})`)
+    ) {
       return false;
     }
-    
+
     return true;
-    
   } catch (error: any) {
     logError('Erro ao verificar status do Git');
     return false;
@@ -361,14 +402,18 @@ function commitAndPush(): boolean {
  */
 function publishToNPM(dryRun = false): boolean {
   logHeader(dryRun ? 'TESTANDO PUBLICAÇÃO NPM (DRY RUN)' : 'PUBLICANDO NO NPM');
-  
+
   const command = dryRun ? 'npm publish --dry-run' : 'npm publish';
-  
-  if (!runCommand(command, dryRun ? 'Testando publicação' : 'Publicando no NPM')) {
+
+  if (
+    !runCommand(command, dryRun ? 'Testando publicação' : 'Publicando no NPM')
+  ) {
     return false;
   }
-  
-  logSuccess(`Pacote ${dryRun ? 'testado com sucesso' : 'publicado com sucesso'}!`);
+
+  logSuccess(
+    `Pacote ${dryRun ? 'testado com sucesso' : 'publicado com sucesso'}!`
+  );
   return true;
 }
 
@@ -377,20 +422,22 @@ function publishToNPM(dryRun = false): boolean {
  */
 function createGitHubRelease(): boolean {
   logHeader('CRIANDO RELEASE NO GITHUB');
-  
+
   try {
-    const packageJson: PackageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
+    const packageJson: PackageJson = JSON.parse(
+      readFileSync('package.json', 'utf-8')
+    );
     const version = packageJson.version;
     const name = packageJson.name;
-    
+
     logInfo(`Criando release ${name}@${version}`);
-    
+
     // Gerar changelog
     const changelogCommand = 'npx tsx scripts/master.ts';
     if (existsSync(join(__dirname, 'master.ts'))) {
       runCommand(changelogCommand, 'Gerando changelog');
     }
-    
+
     // Criar release via GitHub CLI (se disponível)
     try {
       execSync('gh --version', { stdio: 'pipe' });
@@ -401,14 +448,15 @@ function createGitHubRelease(): boolean {
       }
     } catch {
       logWarning('GitHub CLI não encontrado. Crie o release manualmente:');
-      console.log(`  1. Vá para: https://github.com/RainerTeixeira/rainer-design-tokens/releases`);
+      console.log(
+        `  1. Vá para: https://github.com/RainerTeixeira/rainer-design-tokens/releases`
+      );
       console.log(`  2. Clique em "Create a new release"`);
       console.log(`  3. Use a tag: v${version}`);
       console.log(`  4. Title: Release v${version}`);
     }
-    
+
     return true;
-    
   } catch (error: any) {
     logError('Erro ao criar release');
     return false;
@@ -422,18 +470,24 @@ function showSummary(): void {
   console.log('');
   log('🎉 === PROCESSO DE PUBLICAÇÃO CONCLUÍDO ===', 'green');
   console.log('');
-  
+
   try {
-    const packageJson: PackageJson = JSON.parse(readFileSync('package.json', 'utf-8'));
+    const packageJson: PackageJson = JSON.parse(
+      readFileSync('package.json', 'utf-8')
+    );
     logInfo(`Pacote: ${packageJson.name}@${packageJson.version}`);
     logInfo('Links úteis:');
     console.log(`  📦 NPM: https://www.npmjs.com/package/${packageJson.name}`);
-    console.log(`  🌐 GitHub: https://github.com/RainerTeixeira/rainer-design-tokens`);
-    console.log(`  📋 Releases: https://github.com/RainerTeixeira/rainer-design-tokens/releases`);
+    console.log(
+      `  🌐 GitHub: https://github.com/RainerTeixeira/rainer-design-tokens`
+    );
+    console.log(
+      `  📋 Releases: https://github.com/RainerTeixeira/rainer-design-tokens/releases`
+    );
   } catch (error: any) {
     logWarning('Não foi possível ler informações do pacote');
   }
-  
+
   console.log('');
   logInfo('Comandos úteis para o futuro:');
   console.log('  npm run publish          - Publicar nova versão');
@@ -447,7 +501,7 @@ function showSummary(): void {
  */
 function main(): void {
   const args = process.argv.slice(2);
-  
+
   // Help
   if (args.includes('--help') || args.includes('-h')) {
     console.log('Uso: npx tsx scripts/release-package.ts [opções]');
@@ -465,10 +519,10 @@ function main(): void {
     console.log('');
     return;
   }
-  
+
   log('🚀 Iniciando processo de publicação...', 'cyan');
   console.log('');
-  
+
   // Flags de controle
   const validateOnly = args.includes('--validate-only');
   const buildOnly = args.includes('--build-only');
@@ -478,32 +532,32 @@ function main(): void {
   const skipGit = args.includes('--skip-git');
   const skipNpm = args.includes('--skip-npm');
   const skipGithub = args.includes('--skip-github');
-  
+
   // Fluxo baseado nos argumentos
   if (validateOnly) {
     const isValid = validateTokens();
     process.exit(isValid ? 0 : 1);
     return;
   }
-  
+
   if (buildOnly) {
     const success = buildProject();
     process.exit(success ? 0 : 1);
     return;
   }
-  
+
   if (setupAuthOnly) {
     const success = setupNpmAuth();
     process.exit(success ? 0 : 1);
     return;
   }
-  
+
   if (githubOnly) {
     const success = setupGitHub();
     process.exit(success ? 0 : 1);
     return;
   }
-  
+
   // Fluxo completo de publicação
   // 1. Validação
   if (!validateTokens()) {
@@ -511,33 +565,33 @@ function main(): void {
     process.exit(1);
     return;
   }
-  
+
   // 2. Configuração de autenticação
   if (!setupNpmAuth()) {
     logWarning('Autenticação NPM não configurada. Continuando...');
   }
-  
+
   // 3. Build
   if (!buildProject()) {
     logError('Falha no build. Abortando...');
     process.exit(1);
     return;
   }
-  
+
   // 4. Configuração GitHub
   if (!skipGit && !setupGitHub()) {
     logError('Falha na configuração GitHub. Abortando...');
     process.exit(1);
     return;
   }
-  
+
   // 5. Commit e Push
   if (!skipGit && !commitAndPush()) {
     logError('Falha no commit/push. Abortando...');
     process.exit(1);
     return;
   }
-  
+
   // 6. Publicação NPM
   if (!skipNpm) {
     if (!publishToNPM(dryRun)) {
@@ -548,12 +602,12 @@ function main(): void {
       }
     }
   }
-  
+
   // 7. Release GitHub
   if (!skipGithub && !skipGit) {
     createGitHubRelease();
   }
-  
+
   // 8. Resumo
   showSummary();
 }
@@ -581,5 +635,5 @@ export {
   setupGitHub,
   commitAndPush,
   publishToNPM,
-  createGitHubRelease
+  createGitHubRelease,
 };

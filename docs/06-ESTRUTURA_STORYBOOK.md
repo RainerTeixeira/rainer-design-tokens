@@ -357,7 +357,7 @@ globalTypes: {
 
 ## 📅 Última Atualização
 
-**Data**: 04 de Janeiro de 2026  
+**Data**: Janeiro de 2026
 **Versão**: 2.6.0  
 **Atualização**: Estrutura atualizada com novas stories
 
@@ -365,3 +365,10 @@ globalTypes: {
 
 **Autor**: Rainer Teixeira  
 **Licença**: MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 05 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

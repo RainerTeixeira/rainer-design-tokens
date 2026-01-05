@@ -1,4 +1,11 @@
-import { colorPrimitive, colorSemantic, lightTheme, darkTheme } from '../../index';
+import {
+  colorPrimitive,
+  colorSemantic,
+  lightTheme,
+  darkTheme,
+} from '../../index';
+import { execSync } from 'child_process';
+import { join } from 'path';
 
 // Helpers: resolve references like {palette.gray.900} or {opacity.50}
 function resolveTokenReferences(value: any, palette: any, opacity: any): any {
@@ -6,7 +13,12 @@ function resolveTokenReferences(value: any, palette: any, opacity: any): any {
     const referenceRegex = /\{([^}]+)\}/g;
     return value.replace(referenceRegex, (match, path) => {
       const keys = path.split('.');
-      let resolved: any = keys[0] === 'palette' ? palette : keys[0] === 'opacity' ? opacity : undefined;
+      let resolved: any =
+        keys[0] === 'palette'
+          ? palette
+          : keys[0] === 'opacity'
+            ? opacity
+            : undefined;
       const start = keys[0] === 'palette' || keys[0] === 'opacity' ? 1 : 0;
 
       for (let i = start; i < keys.length; i++) {
@@ -18,7 +30,9 @@ function resolveTokenReferences(value: any, palette: any, opacity: any): any {
         }
       }
 
-      return typeof resolved === 'string' || typeof resolved === 'number' ? String(resolved) : match;
+      return typeof resolved === 'string' || typeof resolved === 'number'
+        ? String(resolved)
+        : match;
     });
   }
   if (Array.isArray(value)) {
@@ -37,7 +51,15 @@ function resolveTokenReferences(value: any, palette: any, opacity: any): any {
 // Contrast utils (WCAG)
 function hexToRgb(hex: string) {
   const h = hex.replace('#', '');
-  const bigint = parseInt(h.length === 3 ? h.split('').map(c => c + c).join('') : h, 16);
+  const bigint = parseInt(
+    h.length === 3
+      ? h
+          .split('')
+          .map(c => c + c)
+          .join('')
+      : h,
+    16
+  );
   return {
     r: (bigint >> 16) & 255,
     g: (bigint >> 8) & 255,
@@ -69,14 +91,18 @@ function contrastRatio(hexA: string, hexB: string) {
 describe('Design Tokens - Acessibilidade e Resolução', () => {
   it('deve resolver referências e não deixar placeholders em temas', () => {
     const palette = colorPrimitive.palette || colorPrimitive;
-    const opacity = (require('../../tokens/primitives/opacity-scale.json') as any).opacity;
+    const opacity = (
+      require('../../tokens/primitives/opacity-scale.json') as any
+    ).opacity;
 
     const resolvedLight = resolveTokenReferences(lightTheme, palette, opacity);
     const resolvedDark = resolveTokenReferences(darkTheme, palette, opacity);
 
     const containsPlaceholder = (obj: any) => {
-      if (typeof obj === 'string') return obj.includes('{palette') || obj.includes('{opacity');
-      if (typeof obj === 'object' && obj !== null) return Object.values(obj).some(containsPlaceholder);
+      if (typeof obj === 'string')
+        return obj.includes('{palette') || obj.includes('{opacity');
+      if (typeof obj === 'object' && obj !== null)
+        return Object.values(obj).some(containsPlaceholder);
       return false;
     };
 
@@ -86,7 +112,9 @@ describe('Design Tokens - Acessibilidade e Resolução', () => {
 
   it('deve garantir contraste mínimo (>= 4.5) entre text.primary e background.primary', () => {
     const palette = colorPrimitive.palette || colorPrimitive;
-    const opacity = (require('../../tokens/primitives/opacity-scale.json') as any).opacity;
+    const opacity = (
+      require('../../tokens/primitives/opacity-scale.json') as any
+    ).opacity;
 
     const resolvedLight = resolveTokenReferences(lightTheme, palette, opacity);
     const resolvedDark = resolveTokenReferences(darkTheme, palette, opacity);
@@ -102,12 +130,16 @@ describe('Design Tokens - Acessibilidade e Resolução', () => {
       if (typeof s !== 'string') return null;
       const hexMatch = s.match(/^#([A-Fa-f0-9]{3}){1,2}$/);
       if (hexMatch) return s;
-      const rgbaMatch = s.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[0-9.]+)?\)/);
+      const rgbaMatch = s.match(
+        /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[0-9.]+)?\)/
+      );
       if (rgbaMatch) {
         const r = parseInt(rgbaMatch[1], 10);
         const g = parseInt(rgbaMatch[2], 10);
         const b = parseInt(rgbaMatch[3], 10);
-        return '#' + [r, g, b].map(n => n.toString(16).padStart(2, '0')).join('');
+        return (
+          '#' + [r, g, b].map(n => n.toString(16).padStart(2, '0')).join('')
+        );
       }
       return null;
     };
@@ -132,7 +164,19 @@ describe('Design Tokens - Acessibilidade e Resolução', () => {
   it('deve gerar `formats/tokens.json` com estrutura mínima', () => {
     const fs = require('fs');
     const path = require('path');
-    const filePath = path.join(__dirname, '..', '..', 'formats', 'tokens.json');
+    const rootDir = join(__dirname, '..', '..');
+
+    // Garantir que o build já foi executado antes da verificação
+    try {
+      execSync('npx tsx scripts/build-tokens.ts', {
+        stdio: 'pipe',
+        cwd: rootDir,
+      });
+    } catch (err) {
+      // Se falhar, o teste vai falhar na asserção abaixo
+    }
+
+    const filePath = path.join(rootDir, 'formats', 'tokens.json');
     expect(fs.existsSync(filePath)).toBe(true);
     const parsed = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
     expect(parsed).toHaveProperty('primitives');
@@ -145,7 +189,8 @@ describe('Design Tokens - Acessibilidade e Resolução', () => {
   it('semantics devem referenciar primitivos (placeholders esperados)', () => {
     const containsPaletteRef = (obj: any): boolean => {
       if (typeof obj === 'string') return obj.includes('{palette');
-      if (typeof obj === 'object' && obj !== null) return Object.values(obj).some(containsPaletteRef);
+      if (typeof obj === 'object' && obj !== null)
+        return Object.values(obj).some(containsPaletteRef);
       return false;
     };
 

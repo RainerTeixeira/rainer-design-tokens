@@ -1,6 +1,6 @@
-var $schema$l = "http://json-schema.org/draft-07/schema#";
-var $description$l = "Paleta de cores primitiva - Cores base, nunca mudam com tema";
-var _comments$i = {
+var $schema$c = "http://json-schema.org/draft-07/schema#";
+var $description$c = "Paleta de cores primitiva - Cores base, nunca mudam com tema";
+var _comments$9 = {
 	palette: "Cores fundamentais do sistema de design",
 	white: "Branco puro",
 	black: "Preto puro",
@@ -141,7 +141,7 @@ var palette = {
 		"900": "#064e3b"
 	}
 };
-var _notes$i = {
+var _notes$9 = {
 	palette: "Todas as cores seguem padrão de escala 50-900 onde 50 é mais claro e 900 é mais escuro",
 	gray: "Cinza neutro balanceado para textos e backgrounds",
 	blue: "Azul céu usado para links, botões primários e elementos interativos",
@@ -155,19 +155,19 @@ var _notes$i = {
 	emerald: "Verde esmeralda para elementos naturais, orgânicos e sucesso alternativo"
 };
 var colorPalette = {
-	$schema: $schema$l,
-	$description: $description$l,
-	_comments: _comments$i,
+	$schema: $schema$c,
+	$description: $description$c,
+	_comments: _comments$9,
 	palette: palette,
-	_notes: _notes$i
+	_notes: _notes$9
 };
 
-var $schema$k = "http://json-schema.org/draft-07/schema#";
-var $description$k = "Tokens de espaçamento - Escala consistente baseada em grid de 8pt";
-var _comments$h = {
+var $schema$b = "http://json-schema.org/draft-07/schema#";
+var $description$b = "Tokens de espaçamento - Escala consistente baseada em grid de 8pt";
+var _comments$8 = {
 	spacing: "Escala de espaçamento consistente para todo o sistema"
 };
-var spacing$1 = {
+var spacing = {
 	"0": "0px",
 	"1": "0.25rem",
 	"2": "0.5rem",
@@ -204,7 +204,7 @@ var spacing$1 = {
 	"2.5": "0.625rem",
 	"3.5": "0.875rem"
 };
-var _notes$h = {
+var _notes$8 = {
 	"0": "Zero espaçamento",
 	"1": "4px - Espaçamento muito pequeno",
 	"2": "8px - Espaçamento base (1 unidade do grid)",
@@ -242,23 +242,23 @@ var _notes$h = {
 	"3.5": "14px - Espaçamento médio"
 };
 var spacingScale = {
-	$schema: $schema$k,
-	$description: $description$k,
-	_comments: _comments$h,
-	spacing: spacing$1,
-	_notes: _notes$h
+	$schema: $schema$b,
+	$description: $description$b,
+	_comments: _comments$8,
+	spacing: spacing,
+	_notes: _notes$8
 };
 
-var $schema$j = "http://json-schema.org/draft-07/schema#";
-var $description$j = "Primitivas de tipografia - Font families, tamanhos, pesos e espaçamento";
-var _comments$g = {
+var $schema$a = "http://json-schema.org/draft-07/schema#";
+var $description$a = "Primitivas de tipografia - Font families, tamanhos, pesos e espaçamento";
+var _comments$7 = {
 	fontFamily: "Famílias de fontes como valores crus",
 	fontSize: "Tamanhos de fonte seguindo escala modular",
 	fontWeight: "Pesos numéricos de fonte",
 	lineHeight: "Valores de altura de linha",
 	letterSpacing: "Valores de espaçamento entre letras"
 };
-var typography$1 = {
+var typography = {
 	fontFamily: {
 		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
@@ -307,7 +307,7 @@ var typography$1 = {
 		"0.1": "0.1em"
 	}
 };
-var _notes$g = {
+var _notes$7 = {
 	fontFamily: {
 		sans: "Stack sem serifa para máxima compatibilidade",
 		serif: "Fonte serif tradicional",
@@ -357,16 +357,16 @@ var _notes$g = {
 	}
 };
 var typographyBase = {
-	$schema: $schema$j,
-	$description: $description$j,
-	_comments: _comments$g,
-	typography: typography$1,
-	_notes: _notes$g
+	$schema: $schema$a,
+	$description: $description$a,
+	_comments: _comments$7,
+	typography: typography,
+	_notes: _notes$7
 };
 
-var $schema$i = "http://json-schema.org/draft-07/schema#";
-var $description$i = "Escala de sombras - Valores de elevação e profundidade visual";
-var _comments$f = {
+var $schema$9 = "http://json-schema.org/draft-07/schema#";
+var $description$9 = "Escala de sombras - Valores de elevação e profundidade visual";
+var _comments$6 = {
 	shadows: "Escala completa de sombras em diferentes níveis de intensidade"
 };
 var shadows = {
@@ -385,7 +385,7 @@ var shadows = {
 		green: "0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3)"
 	}
 };
-var _notes$f = {
+var _notes$6 = {
 	xs: "Sombra sutil para elementos pequenos (badges, tags)",
 	sm: "Sombra leve para botões, inputs e elementos interativos",
 	base: "Sombra padrão para cards, dropdowns básicos",
@@ -402,21 +402,21 @@ var _notes$f = {
 	}
 };
 var elevationTokens = {
-	$schema: $schema$i,
-	$description: $description$i,
-	_comments: _comments$f,
+	$schema: $schema$9,
+	$description: $description$9,
+	_comments: _comments$6,
 	shadows: shadows,
-	_notes: _notes$f
+	_notes: _notes$6
 };
 
-var $schema$h = "http://json-schema.org/draft-07/schema#";
-var $description$h = "Motion tokens - Durations, easings, and transitions for animations";
-var _comments$e = {
+var $schema$8 = "http://json-schema.org/draft-07/schema#";
+var $description$8 = "Motion tokens - Durations, easings, and transitions for animations";
+var _comments$5 = {
 	duration: "Animation durations in milliseconds",
 	easing: "Easing curves for different types of movement",
 	delay: "Delays before starting animations"
 };
-var motion$1 = {
+var motion = {
 	duration: {
 		instant: "0ms",
 		fast: "100ms",
@@ -445,7 +445,7 @@ var motion$1 = {
 		long: "200ms"
 	}
 };
-var _notes$e = {
+var _notes$5 = {
 	duration: {
 		instant: "Instant transition without animation",
 		fast: "Fast animation for immediate feedback",
@@ -469,16 +469,16 @@ var _notes$e = {
 	}
 };
 var motionTokens = {
-	$schema: $schema$h,
-	$description: $description$h,
-	_comments: _comments$e,
-	motion: motion$1,
-	_notes: _notes$e
+	$schema: $schema$8,
+	$description: $description$8,
+	_comments: _comments$5,
+	motion: motion,
+	_notes: _notes$5
 };
 
-var $schema$g = "https://json.schemastore.org/theme.json";
-var $description$g = "Border radius tokens - Generated from spacing scale";
-var $generated$2 = "2026-01-04T16:45:19.808Z";
+var $schema$7 = "https://json.schemastore.org/theme.json";
+var $description$7 = "Border radius tokens - Generated from spacing scale";
+var $generated$2 = "2026-01-05T16:06:18.666Z";
 var $source$2 = "primitives/spacing-scale.json";
 var radius = {
 	none: "0px",
@@ -492,16 +492,16 @@ var radius = {
 	full: "9999px"
 };
 var radiusScale = {
-	$schema: $schema$g,
-	$description: $description$g,
+	$schema: $schema$7,
+	$description: $description$7,
 	$generated: $generated$2,
 	$source: $source$2,
 	radius: radius
 };
 
-var $schema$f = "https://json.schemastore.org/theme.json";
-var $description$f = "Responsive breakpoints - Mobile-first approach";
-var $generated$1 = "2026-01-04T16:45:19.812Z";
+var $schema$6 = "https://json.schemastore.org/theme.json";
+var $description$6 = "Responsive breakpoints - Mobile-first approach";
+var $generated$1 = "2026-01-05T16:06:18.669Z";
 var $source$1 = "industry standards + spacing.json reference";
 var $spacingReference = {
 	baseUnit: "0.25rem",
@@ -517,17 +517,17 @@ var breakpoints = {
 	"3xl": "1920px"
 };
 var breakpoints_default = {
-	$schema: $schema$f,
-	$description: $description$f,
+	$schema: $schema$6,
+	$description: $description$6,
 	$generated: $generated$1,
 	$source: $source$1,
 	$spacingReference: $spacingReference,
 	breakpoints: breakpoints
 };
 
-var $schema$e = "https://json.schemastore.org/theme.json";
-var $description$e = "Z-index layer system - Organized stacking context";
-var $generated = "2026-01-04T16:45:19.814Z";
+var $schema$5 = "https://json.schemastore.org/theme.json";
+var $description$5 = "Z-index layer system - Organized stacking context";
+var $generated = "2026-01-05T16:06:18.670Z";
 var $source = "design system layer standards";
 var zIndex = {
 	base: 0,
@@ -540,20 +540,20 @@ var zIndex = {
 	max: 9999
 };
 var zIndexLayers = {
-	$schema: $schema$e,
-	$description: $description$e,
+	$schema: $schema$5,
+	$description: $description$5,
 	$generated: $generated,
 	$source: $source,
 	zIndex: zIndex
 };
 
-var $schema$d = "http://json-schema.org/draft-07/schema#";
-var $description$d = "Border tokens - Width and style definitions";
-var _comments$d = {
+var $schema$4 = "http://json-schema.org/draft-07/schema#";
+var $description$4 = "Border tokens - Width and style definitions";
+var _comments$4 = {
 	width: "Border thickness for different visual emphasis levels",
 	style: "Line styles for different design purposes"
 };
-var border$1 = {
+var border = {
 	width: {
 		none: "0px",
 		thin: "1px",
@@ -567,7 +567,7 @@ var border$1 = {
 		double: "double"
 	}
 };
-var _notes$d = {
+var _notes$4 = {
 	width: {
 		none: "Completely removes the border",
 		thin: "For subtle dividers and discrete outlines (e.g., separators)",
@@ -582,16 +582,16 @@ var _notes$d = {
 	}
 };
 var borderTokens = {
-	$schema: $schema$d,
-	$description: $description$d,
-	_comments: _comments$d,
-	border: border$1,
-	_notes: _notes$d
+	$schema: $schema$4,
+	$description: $description$4,
+	_comments: _comments$4,
+	border: border,
+	_notes: _notes$4
 };
 
-var $schema$c = "http://json-schema.org/draft-07/schema#";
-var $description$c = "Tokens de opacidade - Níveis de transparência";
-var _comments$c = {
+var $schema$3 = "http://json-schema.org/draft-07/schema#";
+var $description$3 = "Tokens de opacidade - Níveis de transparência";
+var _comments$3 = {
 	opacity: "Escala de valores de opacidade de 0 a 1"
 };
 var opacity = {
@@ -607,7 +607,7 @@ var opacity = {
 	"90": 0.9,
 	"100": 1
 };
-var _notes$c = {
+var _notes$3 = {
 	"0": "Completamente transparente",
 	"10": "Transparência muito leve (10%)",
 	"20": "Transparência leve (20%)",
@@ -621,22 +621,22 @@ var _notes$c = {
 	"100": "Completamente opaco"
 };
 var opacityScale = {
-	$schema: $schema$c,
-	$description: $description$c,
-	_comments: _comments$c,
+	$schema: $schema$3,
+	$description: $description$3,
+	_comments: _comments$3,
 	opacity: opacity,
-	_notes: _notes$c
+	_notes: _notes$3
 };
 
-var $schema$b = "http://json-schema.org/draft-07/schema#";
-var $description$b = "Tokens de layout - Sistema de grid, container e espaçamento";
-var _comments$b = {
+var $schema$2 = "http://json-schema.org/draft-07/schema#";
+var $description$2 = "Tokens de layout - Sistema de grid, container e espaçamento";
+var _comments$2 = {
 	container: "Larguras máximas de containers em diferentes tamanhos",
 	gutter: "Escala de espaçamento entre elementos do grid",
 	column: "Configuração básica do sistema de colunas",
 	safeArea: "Margens mínimas para diferentes contextos"
 };
-var layout$1 = {
+var layout = {
 	container: {
 		xs: "20rem",
 		sm: "40rem",
@@ -664,7 +664,7 @@ var layout$1 = {
 		xl: "3rem"
 	}
 };
-var _notes$b = {
+var _notes$2 = {
 	container: {
 		xs: "320px - Container mínimo para mobile muito pequeno",
 		sm: "640px - Container para mobile landscape",
@@ -693,16 +693,16 @@ var _notes$b = {
 	}
 };
 var layoutUnits = {
-	$schema: $schema$b,
-	$description: $description$b,
-	_comments: _comments$b,
-	layout: layout$1,
-	_notes: _notes$b
+	$schema: $schema$2,
+	$description: $description$2,
+	_comments: _comments$2,
+	layout: layout,
+	_notes: _notes$2
 };
 
-var $schema$a = "http://json-schema.org/draft-07/schema#";
-var $description$a = "Tamanhos de ícones padronizados - Dimensões padronizadas para várias densidades e contextos";
-var _comments$a = {
+var $schema$1 = "http://json-schema.org/draft-07/schema#";
+var $description$1 = "Tamanhos de ícones padronizados - Dimensões padronizadas para várias densidades e contextos";
+var _comments$1 = {
 	iconSize: "Escala completa de tamanhos de ícone em unidades relativas (rem)"
 };
 var iconSize = {
@@ -719,7 +719,7 @@ var iconSize = {
 	"5xl": "6rem",
 	full: "100%"
 };
-var _notes$a = {
+var _notes$1 = {
 	"2xs": "12px - Para interfaces super densas (tabelas complexas, grids)",
 	xs: "16px - Para elementos compactos (tags, breadcrumbs)",
 	sm: "20px - Para navegação secundária e listas",
@@ -734,16 +734,16 @@ var _notes$a = {
 	full: "100% - Para ícones responsivos que preenchem containers"
 };
 var iconScale = {
-	$schema: $schema$a,
-	$description: $description$a,
-	_comments: _comments$a,
+	$schema: $schema$1,
+	$description: $description$1,
+	_comments: _comments$1,
 	iconSize: iconSize,
-	_notes: _notes$a
+	_notes: _notes$1
 };
 
-var $schema$9 = "http://json-schema.org/draft-07/schema#";
-var $description$9 = "Gradientes - Tokens de gradiente para elementos visuais";
-var _comments$9 = {
+var $schema = "http://json-schema.org/draft-07/schema#";
+var $description = "Gradientes - Tokens de gradiente para elementos visuais";
+var _comments = {
 	gradients: "Gradientes pré-definidos para uso consistente na aplicação",
 	text: "Gradientes para efeitos em textos e tipografia",
 	background: "Gradientes para backgrounds e superfícies"
@@ -759,7 +759,7 @@ var gradients = {
 		subtle: "linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)"
 	}
 };
-var _notes$9 = {
+var _notes = {
 	text: {
 		primary: "Gradiente ciano-roxo para textos principais com destaque",
 		secondary: "Gradiente rosa-ciano para textos secundários",
@@ -771,1910 +771,43 @@ var _notes$9 = {
 	}
 };
 var gradientTokens = {
-	$schema: $schema$9,
-	$description: $description$9,
-	_comments: _comments$9,
-	gradients: gradients,
-	_notes: _notes$9
-};
-
-var $schema$8 = "http://json-schema.org/draft-07/schema#";
-var $description$8 = "Tokens semânticos de cor - Cores organizadas por função e contexto de uso";
-var _comments$8 = {
-	color: "Cores organizadas por papel semântico no sistema de design",
-	background: "Cores de fundo para diferentes níveis hierárquicos",
-	text: "Cores de texto para diferentes níveis de importância",
-	button: "Cores para estados de botões e ações",
-	border: "Cores para bordas e divisores",
-	status: "Cores para feedback de status e estados",
-	interactive: "Cores para elementos interativos e links",
-	surface: "Cores para superfícies e elevamentos"
-};
-var color$2 = {
-	background: {
-		primary: "{palette.white}",
-		secondary: "{palette.gray.50}",
-		tertiary: "{palette.gray.100}",
-		disabled: "{palette.gray.100}",
-		overlay: "rgba(0, 0, 0, 0.5)",
-		inverse: "{palette.black}"
-	},
-	text: {
-		primary: "{palette.gray.900}",
-		secondary: "{palette.gray.600}",
-		tertiary: "{palette.gray.400}",
-		disabled: "{palette.gray.300}",
-		inverse: "{palette.white}",
-		onPrimary: "{palette.white}",
-		onSecondary: "{palette.gray.900}",
-		link: "{palette.blue.600}",
-		linkHover: "{palette.blue.700}"
-	},
-	button: {
-		primary: {
-			"default": "{palette.blue.500}",
-			hover: "{palette.blue.600}",
-			active: "{palette.blue.700}",
-			text: "{palette.white}"
-		},
-		secondary: {
-			"default": "{palette.gray.200}",
-			hover: "{palette.gray.300}",
-			active: "{palette.gray.400}",
-			text: "{palette.gray.900}"
-		},
-		tertiary: {
-			"default": "{palette.transparent}",
-			hover: "{palette.gray.100}",
-			active: "{palette.gray.200}",
-			text: "{palette.gray.900}"
-		},
-		danger: {
-			"default": "{palette.red.500}",
-			hover: "{palette.red.600}",
-			active: "{palette.red.700}",
-			text: "{palette.white}"
-		},
-		success: {
-			"default": "{palette.green.500}",
-			hover: "{palette.green.600}",
-			active: "{palette.green.700}",
-			text: "{palette.white}"
-		}
-	},
-	border: {
-		"default": "{palette.gray.200}",
-		light: "{palette.gray.100}",
-		medium: "{palette.gray.300}",
-		dark: "{palette.gray.400}",
-		focus: "{palette.blue.500}",
-		error: "{palette.red.500}",
-		success: "{palette.green.500}",
-		warning: "{palette.red.400}"
-	},
-	status: {
-		success: {
-			"default": "{palette.green.500}",
-			light: "{palette.green.50}",
-			dark: "{palette.green.700}",
-			text: "{palette.green.700}"
-		},
-		error: {
-			"default": "{palette.red.500}",
-			light: "{palette.red.50}",
-			dark: "{palette.red.700}",
-			text: "{palette.red.700}"
-		},
-		warning: {
-			"default": "{palette.red.400}",
-			light: "{palette.red.50}",
-			dark: "{palette.red.600}",
-			text: "{palette.red.800}"
-		},
-		info: {
-			"default": "{palette.blue.500}",
-			light: "{palette.blue.50}",
-			dark: "{palette.blue.700}",
-			text: "{palette.blue.700}"
-		}
-	},
-	interactive: {
-		link: {
-			"default": "{palette.blue.600}",
-			hover: "{palette.blue.700}",
-			visited: "{palette.purple.600}",
-			active: "{palette.blue.800}"
-		},
-		focus: {
-			ring: "{palette.blue.500}",
-			ringOffset: "{palette.white}"
-		}
-	},
-	surface: {
-		elevated: "{palette.white}",
-		raised: "{palette.gray.50}",
-		sunken: "{palette.gray.100}"
-	},
-	chart: {
-		primary: "{palette.blue.500}",
-		secondary: "{palette.green.500}",
-		tertiary: "{palette.purple.500}",
-		quaternary: "{palette.red.400}",
-		quinary: "{palette.blue.300}",
-		senary: "{palette.green.400}"
-	}
-};
-var _notes$8 = {
-	background: {
-		primary: "Fundo principal da aplicação (geralmente branco em light mode) - referencia: palette.white",
-		secondary: "Fundo secundário para seções alternadas - referencia: palette.gray.50",
-		tertiary: "Fundo terciário para elementos aninhados - referencia: palette.gray.100",
-		disabled: "Fundo para elementos desabilitados - referencia: palette.gray.100",
-		overlay: "Fundo para overlays e modais - referencia: palette.black",
-		inverse: "Fundo invertido para contrastes - referencia: palette.black"
-	},
-	text: {
-		primary: "Texto principal com maior contraste - referencia: palette.gray.900",
-		secondary: "Texto secundário com contraste médio - referencia: palette.gray.600",
-		tertiary: "Texto terciário com contraste baixo - referencia: palette.gray.400",
-		disabled: "Texto desabilitado com contraste mínimo - referencia: palette.gray.300",
-		inverse: "Texto para fundos escuros - referencia: palette.white",
-		onPrimary: "Texto sobre cor primária - referencia: palette.white",
-		onSecondary: "Texto sobre cor secundária - referencia: palette.gray.900",
-		link: "Cor padrão para links - referencia: palette.blue.600",
-		linkHover: "Cor para links em hover - referencia: palette.blue.700"
-	},
-	button: {
-		primary: "Botão principal de ação primária - referencia: palette.blue.*",
-		secondary: "Botão secundário de ação alternativa - referencia: palette.gray.*",
-		tertiary: "Botão terciário para ações menos importantes - referencia: palette.gray.*",
-		danger: "Botão para ações destrutivas - referencia: palette.red.*",
-		success: "Botão para ações de sucesso - referencia: palette.green.*"
-	},
-	border: {
-		"default": "Borda padrão para componentes - referencia: palette.gray.200",
-		light: "Borda sutil para divisores - referencia: palette.gray.100",
-		medium: "Borda média para ênfase - referencia: palette.gray.300",
-		dark: "Borda escura para forte contraste - referencia: palette.gray.400",
-		focus: "Borda para estados de foco - referencia: palette.blue.500",
-		error: "Borda para estados de erro - referencia: palette.red.500",
-		success: "Borda para estados de sucesso - referencia: palette.green.500",
-		warning: "Borda para estados de aviso - referencia: palette.red.400"
-	},
-	status: {
-		success: "Cores para feedback de sucesso - referencia: palette.green.*",
-		error: "Cores para feedback de erro - referencia: palette.red.*",
-		warning: "Cores para avisos - referencia: palette.red.*",
-		info: "Cores para informações - referencia: palette.blue.*"
-	},
-	interactive: {
-		link: "Cores para links e navegação - referencia: palette.blue.*, palette.purple.*",
-		focus: "Cores para indicadores de foco - referencia: palette.blue.*, palette.white"
-	},
-	surface: {
-		elevated: "Superfície elevada (cards, modais) - referencia: palette.white",
-		raised: "Superfície levemente elevada - referencia: palette.gray.50",
-		sunken: "Superfície rebaixada (inputs focados) - referencia: palette.gray.100"
-	},
-	chart: {
-		primary: "Cor principal para gráficos e visualizações - referencia: palette.blue.500",
-		secondary: "Cor secundária para séries de dados - referencia: palette.green.500",
-		tertiary: "Cor terciária para terceira série - referencia: palette.purple.500",
-		quaternary: "Quarta cor para séries adicionais - referencia: palette.red.400",
-		quinary: "Quinta cor para séries adicionais - referencia: palette.blue.300",
-		senary: "Sexta cor para séries adicionais - referencia: palette.green.400"
-	}
-};
-var colorRoles = {
-	$schema: $schema$8,
-	$description: $description$8,
-	_comments: _comments$8,
-	color: color$2,
-	_notes: _notes$8
-};
-
-var $schema$7 = "http://json-schema.org/draft-07/schema#";
-var $description$7 = "Tokens semânticos de espaçamento - Espaçamentos organizados por contexto e função";
-var _comments$7 = {
-	spacing: "Espaçamentos organizados por contexto de uso no sistema",
-	component: "Espaçamentos internos de componentes",
-	layout: "Espaçamentos para estrutura de layout",
-	section: "Espaçamentos entre seções e grupos",
-	stack: "Espaçamentos para elementos empilhados",
-	inline: "Espaçamentos para elementos inline",
-	inset: "Espaçamentos internos (padding-like)",
-	gap: "Espaçamentos entre elementos relacionados"
-};
-var spacing = {
-	component: {
-		tight: "{spacing.1}",
-		compact: "{spacing.2}",
-		comfortable: "{spacing.3}",
-		relaxed: "{spacing.4}",
-		loose: "{spacing.6}"
-	},
-	layout: {
-		xs: "{spacing.4}",
-		sm: "{spacing.6}",
-		md: "{spacing.8}",
-		lg: "{spacing.12}",
-		xl: "{spacing.16}",
-		"2xl": "{spacing.24}"
-	},
-	section: {
-		xs: "{spacing.8}",
-		sm: "{spacing.12}",
-		md: "{spacing.16}",
-		lg: "{spacing.24}",
-		xl: "{spacing.32}",
-		"2xl": "{spacing.48}"
-	},
-	stack: {
-		xs: "{spacing.1}",
-		sm: "{spacing.2}",
-		md: "{spacing.4}",
-		lg: "{spacing.6}",
-		xl: "{spacing.8}"
-	},
-	inline: {
-		xs: "{spacing.1}",
-		sm: "{spacing.2}",
-		md: "{spacing.3}",
-		lg: "{spacing.4}"
-	},
-	inset: {
-		none: "{spacing.0}",
-		xs: "{spacing.2}",
-		sm: "{spacing.3}",
-		md: "{spacing.4}",
-		lg: "{spacing.6}",
-		xl: "{spacing.8}",
-		"2xl": "{spacing.12}"
-	},
-	gap: {
-		none: "{spacing.0}",
-		xs: "{spacing.1}",
-		sm: "{spacing.2}",
-		md: "{spacing.4}",
-		lg: "{spacing.6}",
-		xl: "{spacing.8}"
-	},
-	container: {
-		padding: {
-			xs: "{spacing.4}",
-			sm: "{spacing.6}",
-			md: "{spacing.8}",
-			lg: "{spacing.12}",
-			xl: "{spacing.16}"
-		},
-		margin: {
-			xs: "{spacing.4}",
-			sm: "{spacing.8}",
-			md: "{spacing.12}",
-			lg: "{spacing.16}",
-			xl: "{spacing.24}"
-		}
-	}
-};
-var _notes$7 = {
-	component: {
-		tight: "Espaçamento mínimo dentro de componentes pequenos (badges, tags) - referencia: spacing.1",
-		compact: "Espaçamento compacto para elementos densos (tabelas, listas) - referencia: spacing.2",
-		comfortable: "Espaçamento confortável padrão para maioria dos componentes - referencia: spacing.3",
-		relaxed: "Espaçamento relaxado para elementos importantes (cards, modais) - referencia: spacing.4",
-		loose: "Espaçamento generoso para elementos de destaque - referencia: spacing.6"
-	},
-	layout: {
-		xs: "Espaçamento mínimo entre elementos de layout - referencia: spacing.4",
-		sm: "Espaçamento pequeno para layouts compactos - referencia: spacing.6",
-		md: "Espaçamento médio padrão para layouts - referencia: spacing.8",
-		lg: "Espaçamento grande para layouts espaçosos - referencia: spacing.12",
-		xl: "Espaçamento extra grande para layouts amplos - referencia: spacing.16",
-		"2xl": "Espaçamento máximo para layouts hero - referencia: spacing.24"
-	},
-	section: {
-		xs: "Espaçamento mínimo entre seções - referencia: spacing.8",
-		sm: "Espaçamento pequeno para seções relacionadas - referencia: spacing.12",
-		md: "Espaçamento médio padrão entre seções - referencia: spacing.16",
-		lg: "Espaçamento grande para separação clara de seções - referencia: spacing.24",
-		xl: "Espaçamento extra grande para seções principais - referencia: spacing.32",
-		"2xl": "Espaçamento máximo para seções hero - referencia: spacing.48"
-	},
-	stack: {
-		xs: "Espaçamento mínimo entre elementos empilhados - referencia: spacing.1",
-		sm: "Espaçamento pequeno para stacks compactos - referencia: spacing.2",
-		md: "Espaçamento médio padrão para stacks - referencia: spacing.4",
-		lg: "Espaçamento grande para stacks espaçosos - referencia: spacing.6",
-		xl: "Espaçamento extra grande para stacks destacados - referencia: spacing.8"
-	},
-	inline: {
-		xs: "Espaçamento mínimo entre elementos inline - referencia: spacing.1",
-		sm: "Espaçamento pequeno para elementos inline - referencia: spacing.2",
-		md: "Espaçamento médio padrão para elementos inline - referencia: spacing.3",
-		lg: "Espaçamento grande para elementos inline destacados - referencia: spacing.4"
-	},
-	inset: {
-		none: "Sem espaçamento interno - referencia: spacing.0",
-		xs: "Padding muito pequeno - referencia: spacing.2",
-		sm: "Padding pequeno - referencia: spacing.3",
-		md: "Padding médio padrão - referencia: spacing.4",
-		lg: "Padding grande - referencia: spacing.6",
-		xl: "Padding extra grande - referencia: spacing.8",
-		"2xl": "Padding máximo - referencia: spacing.12"
-	},
-	gap: {
-		none: "Sem gap entre elementos - referencia: spacing.0",
-		xs: "Gap muito pequeno (grids densos) - referencia: spacing.1",
-		sm: "Gap pequeno (listas compactas) - referencia: spacing.2",
-		md: "Gap médio padrão (grids padrão) - referencia: spacing.4",
-		lg: "Gap grande (grids espaçosos) - referencia: spacing.6",
-		xl: "Gap extra grande (grids destacados) - referencia: spacing.8"
-	},
-	container: {
-		padding: "Padding interno de containers - referencia: spacing.*",
-		margin: "Margem externa de containers - referencia: spacing.*"
-	}
-};
-var spacingContext = {
-	$schema: $schema$7,
-	$description: $description$7,
-	_comments: _comments$7,
-	spacing: spacing,
-	_notes: _notes$7
-};
-
-var $schema$6 = "http://json-schema.org/draft-07/schema#";
-var $description$6 = "Tokens semânticos de tipografia - Tipografia organizada por função e hierarquia";
-var _comments$6 = {
-	typography: "Tipografia organizada por papel semântico e hierarquia",
-	heading: "Estilos para títulos e cabeçalhos",
-	body: "Estilos para texto corrido e conteúdo",
-	caption: "Estilos para legendas e textos secundários",
-	label: "Estilos para rótulos e labels",
-	code: "Estilos para código e texto monoespaçado",
-	button: "Estilos para textos de botões",
-	link: "Estilos para links e textos interativos"
-};
-var typography = {
-	heading: {
-		h1: {
-			fontSize: "{typography.fontSize.5xl}",
-			fontWeight: "{typography.fontWeight.700}",
-			lineHeight: "{typography.lineHeight.1.25}",
-			letterSpacing: "{typography.letterSpacing.-0.025}",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		h2: {
-			fontSize: "{typography.fontSize.4xl}",
-			fontWeight: "{typography.fontWeight.700}",
-			lineHeight: "{typography.lineHeight.1.25}",
-			letterSpacing: "{typography.letterSpacing.-0.025}",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		h3: {
-			fontSize: "{typography.fontSize.3xl}",
-			fontWeight: "{typography.fontWeight.600}",
-			lineHeight: "{typography.lineHeight.1.375}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		h4: {
-			fontSize: "{typography.fontSize.2xl}",
-			fontWeight: "{typography.fontWeight.600}",
-			lineHeight: "{typography.lineHeight.1.375}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		h5: {
-			fontSize: "{typography.fontSize.xl}",
-			fontWeight: "{typography.fontWeight.600}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		h6: {
-			fontSize: "{typography.fontSize.lg}",
-			fontWeight: "{typography.fontWeight.600}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}"
-		}
-	},
-	body: {
-		large: {
-			fontSize: "{typography.fontSize.lg}",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "{typography.lineHeight.1.625}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		base: {
-			fontSize: "{typography.fontSize.base}",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		small: {
-			fontSize: "{typography.fontSize.sm}",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}"
-		}
-	},
-	caption: {
-		large: {
-			fontSize: "{typography.fontSize.sm}",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "0.025em",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		base: {
-			fontSize: "{typography.fontSize.xs}",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "0.025em",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		small: {
-			fontSize: "{typography.fontSize.xs}",
-			fontWeight: "300",
-			lineHeight: "{typography.lineHeight.1.375}",
-			letterSpacing: "0.05em",
-			fontFamily: "{typography.fontFamily.sans}"
-		}
-	},
-	label: {
-		large: {
-			fontSize: "{typography.fontSize.base}",
-			fontWeight: "{typography.fontWeight.500}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "0.025em",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		base: {
-			fontSize: "{typography.fontSize.sm}",
-			fontWeight: "{typography.fontWeight.500}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "0.025em",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		small: {
-			fontSize: "{typography.fontSize.xs}",
-			fontWeight: "{typography.fontWeight.500}",
-			lineHeight: "{typography.lineHeight.1.375}",
-			letterSpacing: "0.05em",
-			fontFamily: "{typography.fontFamily.sans}"
-		}
-	},
-	code: {
-		inline: {
-			fontSize: "{typography.fontSize.sm}",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.mono}"
-		},
-		block: {
-			fontSize: "{typography.fontSize.sm}",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "{typography.lineHeight.1.625}",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.mono}"
-		}
-	},
-	button: {
-		large: {
-			fontSize: "{typography.fontSize.base}",
-			fontWeight: "{typography.fontWeight.500}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "0.025em",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		base: {
-			fontSize: "{typography.fontSize.sm}",
-			fontWeight: "{typography.fontWeight.500}",
-			lineHeight: "{typography.lineHeight.1.5}",
-			letterSpacing: "0.025em",
-			fontFamily: "{typography.fontFamily.sans}"
-		},
-		small: {
-			fontSize: "{typography.fontSize.xs}",
-			fontWeight: "{typography.fontWeight.500}",
-			lineHeight: "{typography.lineHeight.1.375}",
-			letterSpacing: "0.05em",
-			fontFamily: "{typography.fontFamily.sans}"
-		}
-	},
-	link: {
-		base: {
-			fontSize: "inherit",
-			fontWeight: "{typography.fontWeight.400}",
-			lineHeight: "inherit",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}",
-			textDecoration: "underline"
-		},
-		bold: {
-			fontSize: "inherit",
-			fontWeight: "{typography.fontWeight.600}",
-			lineHeight: "inherit",
-			letterSpacing: "{typography.letterSpacing.0}",
-			fontFamily: "{typography.fontFamily.sans}",
-			textDecoration: "underline"
-		}
-	}
-};
-var _notes$6 = {
-	heading: {
-		h1: "Título principal - maior hierarquia - referencia: typography.fontSize.5xl, fontWeight.700, lineHeight.1.25, letterSpacing.-0.025",
-		h2: "Subtítulo principal - segunda hierarquia - referencia: typography.fontSize.4xl, fontWeight.700, lineHeight.1.25, letterSpacing.-0.025",
-		h3: "Subtítulo de seção - terceira hierarquia - referencia: typography.fontSize.3xl, fontWeight.600, lineHeight.1.375",
-		h4: "Subtítulo de subseção - quarta hierarquia - referencia: typography.fontSize.2xl, fontWeight.600, lineHeight.1.375",
-		h5: "Subtítulo menor - quinta hierarquia - referencia: typography.fontSize.xl, fontWeight.600, lineHeight.1.5",
-		h6: "Subtítulo mínimo - sexta hierarquia - referencia: typography.fontSize.lg, fontWeight.600, lineHeight.1.5"
-	},
-	body: {
-		large: "Texto corpo grande para conteúdo importante - referencia: typography.fontSize.lg, fontWeight.400, lineHeight.1.625",
-		base: "Texto corpo padrão para conteúdo principal - referencia: typography.fontSize.base, fontWeight.400, lineHeight.1.5",
-		small: "Texto corpo pequeno para conteúdo compacto - referencia: typography.fontSize.sm, fontWeight.400, lineHeight.1.5"
-	},
-	caption: {
-		large: "Legenda grande para contexto adicional - referencia: typography.fontSize.sm, fontWeight.400, letterSpacing.0.025",
-		base: "Legenda padrão para informações secundárias - referencia: typography.fontSize.xs, fontWeight.400, letterSpacing.0.025",
-		small: "Legenda pequena para metadados - referencia: typography.fontSize.xs, fontWeight.300, letterSpacing.0.05"
-	},
-	label: {
-		large: "Label grande para campos importantes - referencia: typography.fontSize.base, fontWeight.500, letterSpacing.0.025",
-		base: "Label padrão para campos comuns - referencia: typography.fontSize.sm, fontWeight.500, letterSpacing.0.025",
-		small: "Label pequeno para campos compactos - referencia: typography.fontSize.xs, fontWeight.500, letterSpacing.0.05"
-	},
-	code: {
-		inline: "Código inline dentro de parágrafos - referencia: typography.fontSize.sm, fontFamily.mono",
-		block: "Blocos de código para exemplos - referencia: typography.fontSize.sm, fontFamily.mono, lineHeight.1.625"
-	},
-	button: {
-		large: "Texto de botão grande - referencia: typography.fontSize.base, fontWeight.500, letterSpacing.0.025",
-		base: "Texto de botão padrão - referencia: typography.fontSize.sm, fontWeight.500, letterSpacing.0.025",
-		small: "Texto de botão pequeno - referencia: typography.fontSize.xs, fontWeight.500, letterSpacing.0.05"
-	},
-	link: {
-		base: "Link padrão com decoração - referencia: typography.fontWeight.400",
-		bold: "Link em negrito para destaque - referencia: typography.fontWeight.600"
-	}
-};
-var typographyRoles = {
-	$schema: $schema$6,
-	$description: $description$6,
-	_comments: _comments$6,
-	typography: typography,
-	_notes: _notes$6
-};
-
-var $schema$5 = "http://json-schema.org/draft-07/schema#";
-var $description$5 = "Tokens semânticos de borda - Bordas organizadas por função e contexto";
-var _comments$5 = {
-	border: "Bordas organizadas por papel semântico no sistema",
-	"default": "Bordas padrão para componentes normais",
-	interactive: "Bordas para elementos interativos e estados",
-	emphasis: "Bordas para destaque e ênfase",
-	divider: "Bordas para divisores e separadores",
-	outline: "Bordas para outlines e contornos",
-	radius: "Arredondamentos organizados por contexto"
-};
-var border = {
-	"default": {
-		width: "{border.width.base}",
-		style: "{border.style.solid}",
-		color: "inherit"
-	},
-	interactive: {
-		"default": {
-			width: "{border.width.base}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		},
-		hover: {
-			width: "{border.width.base}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		},
-		focus: {
-			width: "{border.width.thick}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		},
-		active: {
-			width: "{border.width.thick}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		}
-	},
-	emphasis: {
-		strong: {
-			width: "{border.width.thick}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		},
-		subtle: {
-			width: "{border.width.thin}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		}
-	},
-	divider: {
-		horizontal: {
-			width: "{border.width.thin}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		},
-		vertical: {
-			width: "{border.width.thin}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		},
-		subtle: {
-			width: "{border.width.thin}",
-			style: "{border.style.dashed}",
-			color: "inherit"
-		}
-	},
-	outline: {
-		focus: {
-			width: "{border.width.base}",
-			style: "{border.style.solid}",
-			color: "inherit",
-			offset: "{spacing.2}"
-		},
-		error: {
-			width: "{border.width.base}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		},
-		success: {
-			width: "{border.width.base}",
-			style: "{border.style.solid}",
-			color: "inherit"
-		}
-	},
-	radius: {
-		none: "{radius.none}",
-		sm: "{radius.sm}",
-		base: "{radius.base}",
-		md: "{radius.md}",
-		lg: "{radius.lg}",
-		xl: "{radius.xl}",
-		"2xl": "{radius.2xl}",
-		full: "{radius.full}"
-	},
-	component: {
-		input: {
-			width: "{border.width.base}",
-			style: "{border.style.solid}",
-			radius: "{radius.base}",
-			color: "inherit"
-		},
-		button: {
-			width: "{border.width.none}",
-			style: "{border.style.solid}",
-			radius: "{radius.md}",
-			color: "inherit"
-		},
-		card: {
-			width: "{border.width.thin}",
-			style: "{border.style.solid}",
-			radius: "{radius.lg}",
-			color: "inherit"
-		},
-		badge: {
-			width: "{border.width.none}",
-			style: "{border.style.solid}",
-			radius: "{radius.full}",
-			color: "inherit"
-		},
-		modal: {
-			width: "{border.width.none}",
-			style: "{border.style.solid}",
-			radius: "{radius.xl}",
-			color: "inherit"
-		}
-	}
-};
-var _notes$5 = {
-	"default": "Borda padrão usada na maioria dos componentes - referencia: border.width.base, border.style.solid",
-	interactive: {
-		"default": "Borda padrão para elementos interativos - referencia: border.width.base",
-		hover: "Borda para estado hover - referencia: border.width.base",
-		focus: "Borda mais espessa para estado de foco - referencia: border.width.thick",
-		active: "Borda mais espessa para estado ativo - referencia: border.width.thick"
-	},
-	emphasis: {
-		strong: "Borda espessa para forte destaque - referencia: border.width.thick",
-		subtle: "Borda fina para destaque sutil - referencia: border.width.thin"
-	},
-	divider: {
-		horizontal: "Divisor horizontal (linhas separadoras) - referencia: border.width.thin, border.style.solid",
-		vertical: "Divisor vertical (colunas separadoras) - referencia: border.width.thin, border.style.solid",
-		subtle: "Divisor sutil com estilo tracejado - referencia: border.width.thin, border.style.dashed"
-	},
-	outline: {
-		focus: "Outline para elementos com foco (acessibilidade) - referencia: border.width.base, spacing.2",
-		error: "Outline para estados de erro - referencia: border.width.base",
-		success: "Outline para estados de sucesso - referencia: border.width.base"
-	},
-	radius: {
-		none: "Sem arredondamento - cantos retos - referencia: border.radius.none",
-		sm: "Arredondamento pequeno para elementos pequenos - referencia: border.radius.sm",
-		base: "Arredondamento padrão para maioria dos componentes - referencia: border.radius.base",
-		md: "Arredondamento médio para cards - referencia: border.radius.md",
-		lg: "Arredondamento grande para elementos maiores - referencia: border.radius.lg",
-		xl: "Arredondamento extra grande para destaques - referencia: border.radius.xl",
-		"2xl": "Arredondamento máximo para grande impacto - referencia: border.radius.2xl",
-		full: "Arredondamento completo (círculos/pílulas) - referencia: border.radius.full"
-	},
-	component: {
-		input: "Bordas para campos de entrada - referencia: border.width.base, border.radius.base",
-		button: "Bordas para botões (geralmente nenhuma) - referencia: border.width.none, border.radius.md",
-		card: "Bordas para cards e containers - referencia: border.width.thin, border.radius.lg",
-		badge: "Bordas para badges e tags - referencia: border.width.none, border.radius.full",
-		modal: "Bordas para modais e dialogs - referencia: border.width.none, border.radius.xl"
-	}
-};
-var borderRoles = {
-	$schema: $schema$5,
-	$description: $description$5,
-	_comments: _comments$5,
-	border: border,
-	_notes: _notes$5
-};
-
-var $schema$4 = "http://json-schema.org/draft-07/schema#";
-var $description$4 = "Tokens semânticos de layout - Estrutura organizada por função e contexto";
-var _comments$4 = {
-	layout: "Estrutura de layout organizada semanticamente",
-	container: "Containers organizados por tamanho e propósito",
-	grid: "Sistema de grid organizado por contexto",
-	spacing: "Espaçamentos de layout organizados semanticamente",
-	safeArea: "Áreas seguras organizadas por contexto",
-	zIndex: "Camadas Z-index organizadas por função"
-};
-var layout = {
-	container: {
-		xs: "{layout.container.xs}",
-		sm: "{layout.container.sm}",
-		md: "{layout.container.md}",
-		lg: "{layout.container.lg}",
-		xl: "{layout.container.xl}",
-		"2xl": "{layout.container.2xl}",
-		full: "100%"
-	},
-	grid: {
-		columns: {
-			count: 12,
-			gap: {
-				xs: "{layout.gutter.xs}",
-				sm: "{layout.gutter.sm}",
-				md: "{layout.gutter.md}",
-				lg: "{layout.gutter.lg}",
-				xl: "{layout.gutter.xl}"
-			}
-		},
-		gutter: {
-			xs: "{layout.gutter.xs}",
-			sm: "{layout.gutter.sm}",
-			md: "{layout.gutter.md}",
-			lg: "{layout.gutter.lg}",
-			xl: "{layout.gutter.xl}"
-		}
-	},
-	spacing: {
-		section: {
-			xs: "{spacing.8}",
-			sm: "{spacing.12}",
-			md: "{spacing.16}",
-			lg: "{spacing.24}",
-			xl: "{spacing.32}"
-		},
-		container: {
-			padding: {
-				xs: "{spacing.4}",
-				sm: "{spacing.6}",
-				md: "{spacing.8}",
-				lg: "{spacing.12}",
-				xl: "{spacing.16}"
-			},
-			margin: {
-				xs: "{spacing.4}",
-				sm: "{spacing.8}",
-				md: "{spacing.12}",
-				lg: "{spacing.16}",
-				xl: "{spacing.24}"
-			}
-		}
-	},
-	safeArea: {
-		mobile: "{layout.safeArea.xs}",
-		tablet: "{layout.safeArea.md}",
-		desktop: "{layout.safeArea.lg}",
-		wide: "{layout.safeArea.xl}",
-		xs: "{layout.safeArea.xs}",
-		sm: "{layout.safeArea.sm}",
-		md: "{layout.safeArea.md}",
-		lg: "{layout.safeArea.lg}",
-		xl: "{layout.safeArea.xl}"
-	},
-	zIndex: {
-		base: "{zIndex.0}",
-		dropdown: "{zIndex.100}",
-		sticky: "{zIndex.200}",
-		fixed: "{zIndex.300}",
-		overlay: "{zIndex.400}",
-		modal: "{zIndex.500}",
-		popover: "{zIndex.600}",
-		tooltip: "{zIndex.700}",
-		toast: "{zIndex.800}",
-		max: "{zIndex.9999}"
-	},
-	breakpoint: {
-		xs: "{breakpoints.xs}",
-		sm: "{breakpoints.sm}",
-		md: "{breakpoints.md}",
-		lg: "{breakpoints.lg}",
-		xl: "{breakpoints.xl}",
-		"2xl": "{breakpoints.2xl}",
-		"3xl": "{breakpoints.3xl}"
-	}
-};
-var _notes$4 = {
-	container: {
-		xs: "Container mínimo para mobile muito pequeno (320px) - referencia: layout.container.xs",
-		sm: "Container para mobile landscape (640px) - referencia: layout.container.sm",
-		md: "Container para tablets (768px) - referencia: layout.container.md",
-		lg: "Container para laptops (1024px) - referencia: layout.container.lg",
-		xl: "Container padrão para desktop (1280px) - referencia: layout.container.xl",
-		"2xl": "Container amplo para telas grandes (1536px) - referencia: layout.container.2xl",
-		full: "Container que ocupa 100% da largura"
-	},
-	grid: {
-		columns: "Configuração do sistema de colunas do grid - referencia: layout.column.count, layout.gutter.*",
-		gutter: "Espaçamento entre elementos do grid - referencia: layout.gutter.*"
-	},
-	spacing: {
-		section: "Espaçamento entre seções principais - referencia: spacing.8, spacing.12, spacing.16, spacing.24, spacing.32",
-		container: "Espaçamento interno e externo de containers - referencia: spacing.*"
-	},
-	safeArea: {
-		mobile: "Área segura para dispositivos móveis - referencia: layout.safeArea.xs",
-		tablet: "Área segura para tablets - referencia: layout.safeArea.md",
-		desktop: "Área segura para desktop - referencia: layout.safeArea.lg",
-		wide: "Área segura para telas wide - referencia: layout.safeArea.xl"
-	},
-	zIndex: {
-		base: "Nível base - elementos normais - referencia: zIndex.0",
-		dropdown: "Nível para dropdowns e menus - referencia: zIndex.100",
-		sticky: "Nível para elementos sticky - referencia: zIndex.200",
-		fixed: "Nível para elementos fixed - referencia: zIndex.300",
-		overlay: "Nível para overlays e backdrops - referencia: zIndex.400",
-		modal: "Nível para modais e dialogs - referencia: zIndex.500",
-		popover: "Nível para popovers - referencia: zIndex.600",
-		tooltip: "Nível para tooltips - referencia: zIndex.700",
-		toast: "Nível para toasts e notificações - referencia: zIndex.800",
-		max: "Nível máximo absoluto - referencia: zIndex.9999"
-	},
-	breakpoint: {
-		xs: "Breakpoint extra small (0px) - mobile - referencia: breakpoints.breakpoints.xs",
-		sm: "Breakpoint small (640px) - mobile landscape - referencia: breakpoints.breakpoints.sm",
-		md: "Breakpoint medium (768px) - tablet - referencia: breakpoints.breakpoints.md",
-		lg: "Breakpoint large (1024px) - laptop - referencia: breakpoints.breakpoints.lg",
-		xl: "Breakpoint extra large (1280px) - desktop - referencia: breakpoints.breakpoints.xl",
-		"2xl": "Breakpoint 2x large (1536px) - desktop grande - referencia: breakpoints.breakpoints.2xl",
-		"3xl": "Breakpoint 3x large (1920px) - wide screen - referencia: breakpoints.breakpoints.3xl"
-	}
-};
-var layoutStructure = {
-	$schema: $schema$4,
-	$description: $description$4,
-	_comments: _comments$4,
-	layout: layout,
-	_notes: _notes$4
-};
-
-var $schema$3 = "http://json-schema.org/draft-07/schema#";
-var $description$3 = "Tokens de elevação semântica - Sombras organizadas por função e contexto";
-var _comments$3 = {
-	elevation: "Sombras organizadas por função semântica no design",
-	surface: "Sombras para níveis de elevação da superfície",
-	component: "Sombras para tipos específicos de componentes",
-	interactive: "Sombras para elementos interativos e estados",
-	overlay: "Sombras para sobreposições e elementos flutuantes"
-};
-var elevation = {
-	surface: {
-		none: "none",
-		xs: "{shadows.xs}",
-		sm: "{shadows.sm}",
-		base: "{shadows.base}",
-		md: "{shadows.md}",
-		lg: "{shadows.lg}",
-		xl: "{shadows.xl}",
-		"2xl": "{shadows.2xl}"
-	},
-	component: {
-		button: {
-			"default": "{shadows.sm}",
-			hover: "{shadows.base}",
-			active: "{shadows.inner}",
-			disabled: "none"
-		},
-		input: {
-			"default": "none",
-			focus: "{elevation.interactive.focus}",
-			error: "0 0 0 3px rgba(239, 68, 68, 0.1)"
-		},
-		card: {
-			"default": "{shadows.base}",
-			hover: "{shadows.md}",
-			elevated: "{shadows.lg}"
-		},
-		dropdown: {
-			"default": "{shadows.md}",
-			menu: "{shadows.md}"
-		},
-		modal: {
-			overlay: "{shadows.xl}",
-			dialog: "{shadows.2xl}"
-		},
-		tooltip: {
-			"default": "{shadows.base}"
-		}
-	},
-	interactive: {
-		hover: "{shadows.base}",
-		focus: "0 0 0 3px rgba(14, 165, 233, 0.1)",
-		active: "{shadows.inner}",
-		drag: "{shadows.md}"
-	},
-	overlay: {
-		backdrop: "{shadows.xl}",
-		sheet: "{shadows.lg}",
-		popover: "{shadows.md}"
-	}
-};
-var _notes$3 = {
-	surface: {
-		none: "Sem elevação - superfície plana",
-		xs: "Elevação mínima para separação sutil - referência: {shadows.xs}",
-		sm: "Elevação pequena para botões e inputs - referência: {shadows.sm}",
-		base: "Elevação padrão para cards - referência: {shadows.base}",
-		md: "Elevação média para dropdowns e popovers - referência: {shadows.md}",
-		lg: "Elevação grande para modais e sidebars - referência: {shadows.lg}",
-		xl: "Elevação extra grande para elementos flutuantes - referência: {shadows.xl}",
-		"2xl": "Elevação máxima para seções de herói - referência: {shadows.2xl}"
-	},
-	component: {
-		button: {
-			"default": "Sombra padrão para botões - referência: {shadows.sm}",
-			hover: "Sombra para estado hover de botões - referência: {shadows.base}",
-			active: "Sombra interna para botões pressionados - referência: {shadows.inner}",
-			disabled: "Sem sombra para botões desabilitados"
-		},
-		input: {
-			"default": "Sem sombra para inputs padrão",
-			focus: "Sombra para foco em inputs - referência: {elevation.interactive.focus}",
-			error: "Sombra vermelha para inputs com erro"
-		},
-		card: {
-			"default": "Sombra padrão para cards - referência: {shadows.base}",
-			hover: "Sombra para cards em hover - referência: {shadows.md}",
-			elevated: "Sombra para cards destacados - referência: {shadows.lg}"
-		},
-		dropdown: {
-			"default": "Sombra para dropdowns - referência: {shadows.md}",
-			menu: "Sombra para menus dropdown - referência: {shadows.md}"
-		},
-		modal: {
-			overlay: "Sombra para overlay de modal - referência: {shadows.xl}",
-			dialog: "Sombra para diálogo de modal - referência: {shadows.2xl}"
-		},
-		tooltip: {
-			"default": "Sombra para tooltips - referência: {shadows.base}"
-		}
-	},
-	interactive: {
-		hover: "Sombra para estados hover - referência: {shadows.base}",
-		focus: "Sombra para anéis de foco em elementos interativos",
-		active: "Sombra interna para elementos ativos - referência: {shadows.inner}",
-		drag: "Sombra para elementos sendo arrastados - referência: {shadows.md}"
-	},
-	overlay: {
-		backdrop: "Sombra para backdrops - referência: {shadows.xl}",
-		sheet: "Sombra para bottom sheets - referência: {shadows.lg}",
-		popover: "Sombra para popovers - referência: {shadows.md}"
-	}
-};
-var elevationRoles = {
-	$schema: $schema$3,
-	$description: $description$3,
-	_comments: _comments$3,
-	elevation: elevation,
-	_notes: _notes$3
-};
-
-var $schema$2 = "http://json-schema.org/draft-07/schema#";
-var $description$2 = "Semantic motion tokens - Animations organized by function and context";
-var _comments$2 = {
-	motion: "Animations organized by semantic role in the design system",
-	transition: "Transitions for state changes",
-	interaction: "Animations for user interactions",
-	feedback: "Animations for user feedback",
-	navigation: "Animations for navigation and routing"
-};
-var motion = {
-	transition: {
-		"default": {
-			duration: "{motion.duration.normal}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		},
-		fast: {
-			duration: "{motion.duration.fast}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		},
-		slow: {
-			duration: "{motion.duration.slow}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		},
-		instant: {
-			duration: "{motion.duration.instant}",
-			easing: "{motion.easing.linear}",
-			delay: "{motion.delay.none}"
-		}
-	},
-	interaction: {
-		hover: {
-			duration: "{motion.duration.fast}",
-			easing: "{motion.easing.easeOut}",
-			delay: "{motion.delay.none}"
-		},
-		focus: {
-			duration: "{motion.duration.normal}",
-			easing: "{motion.easing.easeOut}",
-			delay: "{motion.delay.none}"
-		},
-		active: {
-			duration: "{motion.duration.fast}",
-			easing: "{motion.easing.easeIn}",
-			delay: "{motion.delay.none}"
-		},
-		tap: {
-			duration: "{motion.duration.fast}",
-			easing: "{motion.easing.easeIn}",
-			delay: "{motion.delay.none}"
-		}
-	},
-	feedback: {
-		success: {
-			duration: "{motion.duration.slow}",
-			easing: "{motion.easing.spring}",
-			delay: "{motion.delay.none}"
-		},
-		error: {
-			duration: "{motion.duration.normal}",
-			easing: "{motion.easing.easeIn}",
-			delay: "{motion.delay.none}"
-		},
-		loading: {
-			duration: "1000ms",
-			easing: "{motion.easing.linear}",
-			delay: "{motion.delay.none}"
-		},
-		notification: {
-			duration: "{motion.duration.slow}",
-			easing: "{motion.easing.easeOut}",
-			delay: "{motion.delay.short}"
-		}
-	},
-	navigation: {
-		page: {
-			duration: "{motion.duration.slow}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		},
-		drawer: {
-			duration: "{motion.duration.slow}",
-			easing: "{motion.easing.easeOut}",
-			delay: "{motion.delay.none}"
-		},
-		modal: {
-			duration: "{motion.duration.normal}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		},
-		collapse: {
-			duration: "{motion.duration.normal}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		}
-	},
-	component: {
-		fade: {
-			duration: "{motion.duration.normal}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		},
-		slide: {
-			duration: "{motion.duration.slow}",
-			easing: "{motion.easing.easeInOut}",
-			delay: "{motion.delay.none}"
-		},
-		scale: {
-			duration: "{motion.duration.normal}",
-			easing: "{motion.easing.spring}",
-			delay: "{motion.delay.none}"
-		},
-		rotate: {
-			duration: "{motion.duration.slower}",
-			easing: "{motion.easing.linear}",
-			delay: "{motion.delay.none}"
-		}
-	}
-};
-var _notes$2 = {
-	transition: {
-		"default": "Standard transition for most state changes - reference: motion.duration.normal, motion.easing.easeInOut",
-		fast: "Fast transition for quick feedback - reference: motion.duration.fast, motion.easing.easeInOut",
-		slow: "Slow transition for smooth animations - reference: motion.duration.slow, motion.easing.easeInOut",
-		instant: "Instant transition without animation - reference: motion.duration.instant, motion.easing.linear"
-	},
-	interaction: {
-		hover: "Hover state animation - reference: motion.duration.fast, motion.easing.easeOut",
-		focus: "Focus state animation - reference: motion.duration.normal, motion.easing.easeOut",
-		active: "Active/pressed state animation - reference: motion.duration.fast, motion.easing.easeIn",
-		tap: "Tap/click animation - reference: motion.duration.fast, motion.easing.easeIn"
-	},
-	feedback: {
-		success: "Success feedback animation - reference: motion.duration.slow, motion.easing.spring",
-		error: "Error feedback animation - reference: motion.duration.normal, motion.easing.easeIn",
-		loading: "Loading spinner animation - reference: custom duration, motion.easing.linear",
-		notification: "Notification appearance - reference: motion.duration.slow, motion.easing.easeOut, motion.delay.short"
-	},
-	navigation: {
-		page: "Page transition animation - reference: motion.duration.slow, motion.easing.easeInOut",
-		drawer: "Drawer/sidebar animation - reference: motion.duration.slow, motion.easing.easeOut",
-		modal: "Modal open/close animation - reference: motion.duration.normal, motion.easing.easeInOut",
-		collapse: "Collapse/expand animation - reference: motion.duration.normal, motion.easing.easeInOut"
-	},
-	component: {
-		fade: "Fade in/out animation - reference: motion.duration.normal, motion.easing.easeInOut",
-		slide: "Slide animation - reference: motion.duration.slow, motion.easing.easeInOut",
-		scale: "Scale animation - reference: motion.duration.normal, motion.easing.spring",
-		rotate: "Rotate animation - reference: motion.duration.slower, motion.easing.linear"
-	}
-};
-var motionRoles = {
-	$schema: $schema$2,
-	$description: $description$2,
-	_comments: _comments$2,
-	motion: motion,
-	_notes: _notes$2
-};
-
-var $schema$1 = "http://json-schema.org/draft-07/schema#";
-var $description$1 = "Light theme - Tema claro (valores padrão dos semânticos)";
-var _comments$1 = {
-	color: "Tema light usa os mesmos valores dos tokens semânticos (padrão)"
-};
-var color$1 = {
-	background: {
-		primary: "{palette.white}",
-		secondary: "{palette.gray.50}",
-		tertiary: "{palette.gray.100}",
-		disabled: "{palette.gray.100}",
-		overlay: "rgba(0, 0, 0, 0.5)",
-		inverse: "{palette.black}"
-	},
-	text: {
-		primary: "{palette.gray.900}",
-		secondary: "{palette.gray.600}",
-		tertiary: "{palette.gray.400}",
-		disabled: "{palette.gray.300}",
-		inverse: "{palette.white}",
-		onPrimary: "{palette.white}",
-		onSecondary: "{palette.gray.900}",
-		link: "{palette.blue.600}",
-		linkHover: "{palette.blue.700}"
-	},
-	button: {
-		primary: {
-			"default": "{palette.blue.500}",
-			hover: "{palette.blue.600}",
-			active: "{palette.blue.700}",
-			text: "{palette.white}"
-		},
-		secondary: {
-			"default": "{palette.gray.200}",
-			hover: "{palette.gray.300}",
-			active: "{palette.gray.400}",
-			text: "{palette.gray.900}"
-		},
-		tertiary: {
-			"default": "{palette.transparent}",
-			hover: "{palette.gray.100}",
-			active: "{palette.gray.200}",
-			text: "{palette.gray.900}"
-		},
-		danger: {
-			"default": "{palette.red.500}",
-			hover: "{palette.red.600}",
-			active: "{palette.red.700}",
-			text: "{palette.white}"
-		},
-		success: {
-			"default": "{palette.green.500}",
-			hover: "{palette.green.600}",
-			active: "{palette.green.700}",
-			text: "{palette.white}"
-		}
-	},
-	border: {
-		"default": "{palette.gray.200}",
-		light: "{palette.gray.100}",
-		medium: "{palette.gray.300}",
-		dark: "{palette.gray.400}",
-		focus: "{palette.blue.500}",
-		error: "{palette.red.500}",
-		success: "{palette.green.500}",
-		warning: "{palette.red.400}"
-	},
-	status: {
-		success: {
-			"default": "{palette.green.500}",
-			light: "{palette.green.50}",
-			dark: "{palette.green.700}",
-			text: "{palette.green.700}"
-		},
-		error: {
-			"default": "{palette.red.500}",
-			light: "{palette.red.50}",
-			dark: "{palette.red.700}",
-			text: "{palette.red.700}"
-		},
-		warning: {
-			"default": "{palette.red.400}",
-			light: "{palette.red.50}",
-			dark: "{palette.red.600}",
-			text: "{palette.red.800}"
-		},
-		info: {
-			"default": "{palette.blue.500}",
-			light: "{palette.blue.50}",
-			dark: "{palette.blue.700}",
-			text: "{palette.blue.700}"
-		}
-	},
-	interactive: {
-		link: {
-			"default": "{palette.blue.600}",
-			hover: "{palette.blue.700}",
-			visited: "{palette.purple.600}",
-			active: "{palette.blue.800}"
-		},
-		focus: {
-			ring: "{palette.blue.500}",
-			ringOffset: "{palette.white}"
-		}
-	},
-	surface: {
-		elevated: "{palette.white}",
-		raised: "{palette.gray.50}",
-		sunken: "{palette.gray.100}"
-	}
-};
-var _notes$1 = {
-	background: {
-		primary: "Fundo principal - referencia: palette.white",
-		secondary: "Fundo secundário - referencia: palette.gray.50",
-		tertiary: "Fundo terciário - referencia: palette.gray.100",
-		disabled: "Fundo desabilitado - referencia: palette.gray.100",
-		overlay: "Overlay com opacidade - referencia: palette.black com opacity",
-		inverse: "Fundo invertido - referencia: palette.black"
-	},
-	text: {
-		primary: "Texto principal - referencia: palette.gray.900",
-		secondary: "Texto secundário - referencia: palette.gray.600",
-		tertiary: "Texto terciário - referencia: palette.gray.400",
-		disabled: "Texto desabilitado - referencia: palette.gray.300",
-		inverse: "Texto invertido - referencia: palette.white",
-		onPrimary: "Texto sobre primária - referencia: palette.white",
-		onSecondary: "Texto sobre secundária - referencia: palette.gray.900",
-		link: "Link padrão - referencia: palette.blue.600",
-		linkHover: "Link hover - referencia: palette.blue.700"
-	},
-	button: {
-		primary: "Botão primário - referencia: palette.blue.*",
-		secondary: "Botão secundário - referencia: palette.gray.*",
-		tertiary: "Botão terciário - referencia: palette.gray.*",
-		danger: "Botão perigo - referencia: palette.red.*",
-		success: "Botão sucesso - referencia: palette.green.*"
-	},
-	border: {
-		"default": "Borda padrão - referencia: palette.gray.200",
-		light: "Borda clara - referencia: palette.gray.100",
-		medium: "Borda média - referencia: palette.gray.300",
-		dark: "Borda escura - referencia: palette.gray.400",
-		focus: "Borda foco - referencia: palette.blue.500",
-		error: "Borda erro - referencia: palette.red.500",
-		success: "Borda sucesso - referencia: palette.green.500",
-		warning: "Borda aviso - referencia: palette.red.400"
-	},
-	status: {
-		success: "Status sucesso - referencia: palette.green.*",
-		error: "Status erro - referencia: palette.red.*",
-		warning: "Status aviso - referencia: palette.red.*",
-		info: "Status informação - referencia: palette.blue.*"
-	},
-	interactive: {
-		link: "Links interativos - referencia: palette.blue.*, palette.purple.*",
-		focus: "Foco - referencia: palette.blue.*, palette.white"
-	},
-	surface: {
-		elevated: "Superfície elevada - referencia: palette.white",
-		raised: "Superfície levantada - referencia: palette.gray.50",
-		sunken: "Superfície rebaixada - referencia: palette.gray.100"
-	}
-};
-var themeLight = {
-	$schema: $schema$1,
-	$description: $description$1,
-	_comments: _comments$1,
-	color: color$1,
-	_notes: _notes$1
-};
-
-var $schema = "http://json-schema.org/draft-07/schema#";
-var $description = "Dark theme - Override de tokens semânticos com valores escuros";
-var _comments = {
-	color: "Tema dark com valores específicos que sobrescrevem os semânticos"
-};
-var color = {
-	background: {
-		primary: "{palette.gray.900}",
-		secondary: "{palette.gray.800}",
-		tertiary: "{palette.gray.700}",
-		disabled: "{palette.gray.700}",
-		overlay: "rgba(0, 0, 0, 0.8)",
-		inverse: "{palette.white}"
-	},
-	text: {
-		primary: "{palette.gray.50}",
-		secondary: "{palette.gray.300}",
-		tertiary: "{palette.gray.400}",
-		disabled: "{palette.gray.500}",
-		inverse: "{palette.gray.900}",
-		onPrimary: "{palette.white}",
-		onSecondary: "{palette.gray.900}",
-		link: "{palette.blue.400}",
-		linkHover: "{palette.blue.300}"
-	},
-	button: {
-		primary: {
-			"default": "{palette.blue.500}",
-			hover: "{palette.blue.400}",
-			active: "{palette.blue.300}",
-			text: "{palette.white}"
-		},
-		secondary: {
-			"default": "{palette.gray.700}",
-			hover: "{palette.gray.600}",
-			active: "{palette.gray.500}",
-			text: "{palette.gray.50}"
-		},
-		tertiary: {
-			"default": "{palette.transparent}",
-			hover: "{palette.gray.700}",
-			active: "{palette.gray.600}",
-			text: "{palette.gray.50}"
-		},
-		danger: {
-			"default": "{palette.red.500}",
-			hover: "{palette.red.400}",
-			active: "{palette.red.300}",
-			text: "{palette.white}"
-		},
-		success: {
-			"default": "{palette.green.500}",
-			hover: "{palette.green.400}",
-			active: "{palette.green.300}",
-			text: "{palette.white}"
-		}
-	},
-	border: {
-		"default": "{palette.gray.700}",
-		light: "{palette.gray.600}",
-		medium: "{palette.gray.500}",
-		dark: "{palette.gray.400}",
-		focus: "{palette.blue.400}",
-		error: "{palette.red.400}",
-		success: "{palette.green.400}",
-		warning: "{palette.red.400}"
-	},
-	status: {
-		success: {
-			"default": "{palette.green.500}",
-			light: "{palette.green.900}",
-			dark: "{palette.green.300}",
-			text: "{palette.green.300}"
-		},
-		error: {
-			"default": "{palette.red.500}",
-			light: "{palette.red.900}",
-			dark: "{palette.red.300}",
-			text: "{palette.red.300}"
-		},
-		warning: {
-			"default": "{palette.red.400}",
-			light: "{palette.red.900}",
-			dark: "{palette.red.300}",
-			text: "{palette.red.200}"
-		},
-		info: {
-			"default": "{palette.blue.400}",
-			light: "{palette.blue.900}",
-			dark: "{palette.blue.300}",
-			text: "{palette.blue.300}"
-		}
-	},
-	interactive: {
-		link: {
-			"default": "{palette.blue.400}",
-			hover: "{palette.blue.300}",
-			visited: "{palette.purple.400}",
-			active: "{palette.blue.200}"
-		},
-		focus: {
-			ring: "{palette.blue.400}",
-			ringOffset: "{palette.gray.900}"
-		}
-	},
-	surface: {
-		elevated: "{palette.gray.800}",
-		raised: "{palette.gray.700}",
-		sunken: "{palette.gray.600}"
-	}
-};
-var _notes = {
-	background: {
-		primary: "Fundo principal escuro - referencia: palette.gray.900",
-		secondary: "Fundo secundário - referencia: palette.gray.800",
-		tertiary: "Fundo terciário - referencia: palette.gray.700",
-		disabled: "Fundo desabilitado - referencia: palette.gray.700",
-		overlay: "Overlay com opacidade alta - referencia: palette.black com opacity 0.8",
-		inverse: "Fundo invertido claro - referencia: palette.white"
-	},
-	text: {
-		primary: "Texto principal claro - referencia: palette.gray.50",
-		secondary: "Texto secundário - referencia: palette.gray.300",
-		tertiary: "Texto terciário - referencia: palette.gray.400",
-		disabled: "Texto desabilitado - referencia: palette.gray.500",
-		inverse: "Texto invertido escuro - referencia: palette.gray.900",
-		onPrimary: "Texto sobre primária - referencia: palette.white",
-		onSecondary: "Texto sobre secundária - referencia: palette.gray.900",
-		link: "Link padrão claro - referencia: palette.blue.400",
-		linkHover: "Link hover - referencia: palette.blue.300"
-	},
-	button: {
-		primary: "Botão primário - referencia: palette.blue.500 com hover/active mais claros",
-		secondary: "Botão secundário escuro - referencia: palette.gray.700/600/500",
-		tertiary: "Botão terciário transparente - referencia: palette.gray.*",
-		danger: "Botão perigo - referencia: palette.red.500/400/300",
-		success: "Botão sucesso - referencia: palette.green.500/400/300"
-	},
-	border: {
-		"default": "Borda padrão escura - referencia: palette.gray.700",
-		light: "Borda clara - referencia: palette.gray.600",
-		medium: "Borda média - referencia: palette.gray.500",
-		dark: "Borda mais escura - referencia: palette.gray.400",
-		focus: "Borda foco claro - referencia: palette.blue.400",
-		error: "Borda erro - referencia: palette.red.400",
-		success: "Borda sucesso - referencia: palette.green.400",
-		warning: "Borda aviso - referencia: palette.red.400"
-	},
-	status: {
-		success: "Status sucesso - referencia: palette.green.500/900/300",
-		error: "Status erro - referencia: palette.red.500/900/300",
-		warning: "Status aviso - referencia: palette.red.400/900/300",
-		info: "Status informação - referencia: palette.blue.400/900/300"
-	},
-	interactive: {
-		link: "Links interativos claros - referencia: palette.blue.400/300/200, palette.purple.400",
-		focus: "Foco claro - referencia: palette.blue.400, palette.gray.900"
-	},
-	surface: {
-		elevated: "Superfície elevada escura - referencia: palette.gray.800",
-		raised: "Superfície levantada - referencia: palette.gray.700",
-		sunken: "Superfície rebaixada - referencia: palette.gray.600"
-	}
-};
-var themeDark = {
 	$schema: $schema,
 	$description: $description,
 	_comments: _comments,
-	color: color,
+	gradients: gradients,
 	_notes: _notes
 };
 
+declare const colorPrimitive: any;
+declare const spacingPrimitive: any;
+declare const typographyPrimitive: any;
+declare const shadowsPrimitive: any;
+declare const motionPrimitive: any;
+declare const radiusPrimitive: any;
+declare const breakpointsPrimitive: any;
+declare const zIndexPrimitive: any;
+declare const borderPrimitive: any;
+declare const opacityPrimitive: any;
+declare const layoutPrimitive: any;
+declare const iconSizesPrimitive: any;
+declare const gradientPrimitive: any;
+declare const lightTheme: any;
+declare const darkTheme: any;
 declare const tokens: {
     primitives: {
-        color: {
-            white: string;
-            black: string;
-            transparent: string;
-            gray: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            blue: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            cyan: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            purple: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            pink: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            red: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            orange: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            yellow: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            green: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            emerald: {
-                "50": string;
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-        };
-        spacing: {
-            "0": string;
-            "1": string;
-            "2": string;
-            "3": string;
-            "4": string;
-            "5": string;
-            "6": string;
-            "7": string;
-            "8": string;
-            "9": string;
-            "10": string;
-            "11": string;
-            "12": string;
-            "14": string;
-            "16": string;
-            "20": string;
-            "24": string;
-            "28": string;
-            "32": string;
-            "36": string;
-            "40": string;
-            "44": string;
-            "48": string;
-            "52": string;
-            "56": string;
-            "60": string;
-            "64": string;
-            "72": string;
-            "80": string;
-            "96": string;
-            px: string;
-            "0.5": string;
-            "1.5": string;
-            "2.5": string;
-            "3.5": string;
-        };
-        typography: {
-            fontFamily: {
-                sans: string;
-                serif: string;
-                mono: string;
-            };
-            fontSize: {
-                xs: string;
-                sm: string;
-                base: string;
-                lg: string;
-                xl: string;
-                "2xl": string;
-                "3xl": string;
-                "4xl": string;
-                "5xl": string;
-                "6xl": string;
-                "7xl": string;
-                "8xl": string;
-                "9xl": string;
-            };
-            fontWeight: {
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            lineHeight: {
-                "1": string;
-                "1.25": string;
-                "1.375": string;
-                "1.5": string;
-                "1.625": string;
-                "2": string;
-            };
-            letterSpacing: {
-                "-0.05": string;
-                "-0.025": string;
-                "0": string;
-                "0.025": string;
-                "0.05": string;
-                "0.1": string;
-            };
-        };
-        shadows: {
-            xs: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            inner: string;
-            glow: {
-                cyan: string;
-                pink: string;
-                purple: string;
-                green: string;
-            };
-        };
-        motion: {
-            duration: {
-                instant: string;
-                fast: string;
-                normal: string;
-                slow: string;
-                slower: string;
-                slowest: string;
-            };
-            easing: {
-                linear: string;
-                easeIn: string;
-                easeOut: string;
-                easeInOut: string;
-                easeInQuad: string;
-                easeOutQuad: string;
-                easeInOutQuad: string;
-                easeInCubic: string;
-                easeOutCubic: string;
-                easeInOutCubic: string;
-                spring: string;
-            };
-            delay: {
-                none: string;
-                short: string;
-                medium: string;
-                long: string;
-            };
-        };
-        radius: {
-            none: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-            full: string;
-        };
-        breakpoints: {
-            xs: string;
-            sm: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-        };
-        zIndex: {
-            base: number;
-            content: number;
-            overlay: number;
-            dropdown: number;
-            modal: number;
-            tooltip: number;
-            notification: number;
-            max: number;
-        };
-        border: {
-            width: {
-                none: string;
-                thin: string;
-                base: string;
-                thick: string;
-            };
-            style: {
-                solid: string;
-                dashed: string;
-                dotted: string;
-                double: string;
-            };
-        };
-        opacity: {
-            "0": number;
-            "10": number;
-            "20": number;
-            "30": number;
-            "40": number;
-            "50": number;
-            "60": number;
-            "70": number;
-            "80": number;
-            "90": number;
-            "100": number;
-        };
-        layout: {
-            container: {
-                xs: string;
-                sm: string;
-                md: string;
-                lg: string;
-                xl: string;
-                "2xl": string;
-            };
-            gutter: {
-                xs: string;
-                sm: string;
-                md: string;
-                lg: string;
-                xl: string;
-            };
-            column: {
-                count: number;
-                gap: string;
-            };
-            safeArea: {
-                xs: string;
-                sm: string;
-                md: string;
-                lg: string;
-                xl: string;
-            };
-        };
-        iconSize: {
-            "2xs": string;
-            xs: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-            "4xl": string;
-            "5xl": string;
-            full: string;
-        };
-        gradients: {
-            text: {
-                primary: string;
-                secondary: string;
-                accent: string;
-            };
-            background: {
-                hero: string;
-                subtle: string;
-            };
-        };
+        color: any;
+        spacing: any;
+        typography: any;
+        shadows: any;
+        motion: any;
+        radius: any;
+        breakpoints: any;
+        zIndex: any;
+        border: any;
+        opacity: any;
+        layout: any;
+        iconSize: any;
+        gradients: any;
     };
     semantics: {
         color: {
@@ -2781,6 +914,19 @@ declare const tokens: {
                 elevated: string;
                 raised: string;
                 sunken: string;
+                "surface-0": string;
+                "surface-1": string;
+                "surface-2": string;
+                "on-surface": string;
+            };
+            focus: {
+                ring: string;
+                outline: string;
+            };
+            disabled: {
+                opacity: string;
+                background: string;
+                text: string;
             };
             chart: {
                 primary: string;
@@ -3405,217 +1551,747 @@ declare const tokens: {
         };
     };
     themes: {
-        light: {
-            background: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                overlay: string;
-                inverse: string;
-            };
-            text: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                inverse: string;
-                onPrimary: string;
-                onSecondary: string;
-                link: string;
-                linkHover: string;
-            };
-            button: {
-                primary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                secondary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                tertiary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                danger: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                success: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-            };
-            border: {
-                default: string;
-                light: string;
-                medium: string;
-                dark: string;
-                focus: string;
-                error: string;
-                success: string;
-                warning: string;
-            };
-            status: {
-                success: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                error: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                warning: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                info: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-            };
-            interactive: {
-                link: {
-                    default: string;
-                    hover: string;
-                    visited: string;
-                    active: string;
-                };
-                focus: {
-                    ring: string;
-                    ringOffset: string;
-                };
-            };
-            surface: {
-                elevated: string;
-                raised: string;
-                sunken: string;
+        light: any;
+        dark: any;
+    };
+};
+
+declare const colorSemantic: {
+    background: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        disabled: string;
+        overlay: string;
+        inverse: string;
+    };
+    text: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        disabled: string;
+        inverse: string;
+        onPrimary: string;
+        onSecondary: string;
+        link: string;
+        linkHover: string;
+    };
+    button: {
+        primary: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+        };
+        secondary: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+        };
+        tertiary: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+        };
+        danger: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+        };
+        success: {
+            default: string;
+            hover: string;
+            active: string;
+            text: string;
+        };
+    };
+    border: {
+        default: string;
+        light: string;
+        medium: string;
+        dark: string;
+        focus: string;
+        error: string;
+        success: string;
+        warning: string;
+    };
+    status: {
+        success: {
+            default: string;
+            light: string;
+            dark: string;
+            text: string;
+        };
+        error: {
+            default: string;
+            light: string;
+            dark: string;
+            text: string;
+        };
+        warning: {
+            default: string;
+            light: string;
+            dark: string;
+            text: string;
+        };
+        info: {
+            default: string;
+            light: string;
+            dark: string;
+            text: string;
+        };
+    };
+    interactive: {
+        link: {
+            default: string;
+            hover: string;
+            visited: string;
+            active: string;
+        };
+        focus: {
+            ring: string;
+            ringOffset: string;
+        };
+    };
+    surface: {
+        elevated: string;
+        raised: string;
+        sunken: string;
+        "surface-0": string;
+        "surface-1": string;
+        "surface-2": string;
+        "on-surface": string;
+    };
+    focus: {
+        ring: string;
+        outline: string;
+    };
+    disabled: {
+        opacity: string;
+        background: string;
+        text: string;
+    };
+    chart: {
+        primary: string;
+        secondary: string;
+        tertiary: string;
+        quaternary: string;
+        quinary: string;
+        senary: string;
+    };
+};
+declare const spacingSemantic: {
+    component: {
+        tight: string;
+        compact: string;
+        comfortable: string;
+        relaxed: string;
+        loose: string;
+    };
+    layout: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+    };
+    section: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+    };
+    stack: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+    };
+    inline: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+    };
+    inset: {
+        none: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+    };
+    gap: {
+        none: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+    };
+    container: {
+        padding: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+        };
+        margin: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+        };
+    };
+};
+declare const typographySemantic: {
+    heading: {
+        h1: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        h2: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        h3: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        h4: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        h5: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        h6: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+    };
+    body: {
+        large: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        base: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        small: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+    };
+    caption: {
+        large: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        base: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        small: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+    };
+    label: {
+        large: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        base: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        small: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+    };
+    code: {
+        inline: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        block: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+    };
+    button: {
+        large: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        base: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+        small: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+        };
+    };
+    link: {
+        base: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+            textDecoration: string;
+        };
+        bold: {
+            fontSize: string;
+            fontWeight: string;
+            lineHeight: string;
+            letterSpacing: string;
+            fontFamily: string;
+            textDecoration: string;
+        };
+    };
+};
+declare const borderSemantic: {
+    default: {
+        width: string;
+        style: string;
+        color: string;
+    };
+    interactive: {
+        default: {
+            width: string;
+            style: string;
+            color: string;
+        };
+        hover: {
+            width: string;
+            style: string;
+            color: string;
+        };
+        focus: {
+            width: string;
+            style: string;
+            color: string;
+        };
+        active: {
+            width: string;
+            style: string;
+            color: string;
+        };
+    };
+    emphasis: {
+        strong: {
+            width: string;
+            style: string;
+            color: string;
+        };
+        subtle: {
+            width: string;
+            style: string;
+            color: string;
+        };
+    };
+    divider: {
+        horizontal: {
+            width: string;
+            style: string;
+            color: string;
+        };
+        vertical: {
+            width: string;
+            style: string;
+            color: string;
+        };
+        subtle: {
+            width: string;
+            style: string;
+            color: string;
+        };
+    };
+    outline: {
+        focus: {
+            width: string;
+            style: string;
+            color: string;
+            offset: string;
+        };
+        error: {
+            width: string;
+            style: string;
+            color: string;
+        };
+        success: {
+            width: string;
+            style: string;
+            color: string;
+        };
+    };
+    radius: {
+        none: string;
+        sm: string;
+        base: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+        full: string;
+    };
+    component: {
+        input: {
+            width: string;
+            style: string;
+            radius: string;
+            color: string;
+        };
+        button: {
+            width: string;
+            style: string;
+            radius: string;
+            color: string;
+        };
+        card: {
+            width: string;
+            style: string;
+            radius: string;
+            color: string;
+        };
+        badge: {
+            width: string;
+            style: string;
+            radius: string;
+            color: string;
+        };
+        modal: {
+            width: string;
+            style: string;
+            radius: string;
+            color: string;
+        };
+    };
+};
+declare const layoutSemantic: {
+    container: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+        full: string;
+    };
+    grid: {
+        columns: {
+            count: number;
+            gap: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
             };
         };
-        dark: {
-            background: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                overlay: string;
-                inverse: string;
+        gutter: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+        };
+    };
+    spacing: {
+        section: {
+            xs: string;
+            sm: string;
+            md: string;
+            lg: string;
+            xl: string;
+        };
+        container: {
+            padding: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
             };
-            text: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                inverse: string;
-                onPrimary: string;
-                onSecondary: string;
-                link: string;
-                linkHover: string;
+            margin: {
+                xs: string;
+                sm: string;
+                md: string;
+                lg: string;
+                xl: string;
             };
-            button: {
-                primary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                secondary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                tertiary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                danger: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                success: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-            };
-            border: {
-                default: string;
-                light: string;
-                medium: string;
-                dark: string;
-                focus: string;
-                error: string;
-                success: string;
-                warning: string;
-            };
-            status: {
-                success: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                error: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                warning: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                info: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-            };
-            interactive: {
-                link: {
-                    default: string;
-                    hover: string;
-                    visited: string;
-                    active: string;
-                };
-                focus: {
-                    ring: string;
-                    ringOffset: string;
-                };
-            };
-            surface: {
-                elevated: string;
-                raised: string;
-                sunken: string;
-            };
+        };
+    };
+    safeArea: {
+        mobile: string;
+        tablet: string;
+        desktop: string;
+        wide: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+    };
+    zIndex: {
+        base: string;
+        dropdown: string;
+        sticky: string;
+        fixed: string;
+        overlay: string;
+        modal: string;
+        popover: string;
+        tooltip: string;
+        toast: string;
+        max: string;
+    };
+    breakpoint: {
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+        "3xl": string;
+    };
+};
+declare const elevationSemantic: {
+    surface: {
+        none: string;
+        xs: string;
+        sm: string;
+        base: string;
+        md: string;
+        lg: string;
+        xl: string;
+        "2xl": string;
+    };
+    component: {
+        button: {
+            default: string;
+            hover: string;
+            active: string;
+            disabled: string;
+        };
+        input: {
+            default: string;
+            focus: string;
+            error: string;
+        };
+        card: {
+            default: string;
+            hover: string;
+            elevated: string;
+        };
+        dropdown: {
+            default: string;
+            menu: string;
+        };
+        modal: {
+            overlay: string;
+            dialog: string;
+        };
+        tooltip: {
+            default: string;
+        };
+    };
+    interactive: {
+        hover: string;
+        focus: string;
+        active: string;
+        drag: string;
+    };
+    overlay: {
+        backdrop: string;
+        sheet: string;
+        popover: string;
+    };
+};
+declare const motionSemantic: {
+    transition: {
+        default: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        fast: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        slow: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        instant: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+    };
+    interaction: {
+        hover: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        focus: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        active: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        tap: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+    };
+    feedback: {
+        success: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        error: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        loading: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        notification: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+    };
+    navigation: {
+        page: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        drawer: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        modal: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        collapse: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+    };
+    component: {
+        fade: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        slide: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        scale: {
+            duration: string;
+            easing: string;
+            delay: string;
+        };
+        rotate: {
+            duration: string;
+            easing: string;
+            delay: string;
         };
     };
 };
@@ -3655,446 +2331,18 @@ declare const tokens: {
 
 declare const themes: {
     readonly light: {
-        readonly colors: {
-            background: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                overlay: string;
-                inverse: string;
-            };
-            text: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                inverse: string;
-                onPrimary: string;
-                onSecondary: string;
-                link: string;
-                linkHover: string;
-            };
-            button: {
-                primary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                secondary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                tertiary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                danger: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                success: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-            };
-            border: {
-                default: string;
-                light: string;
-                medium: string;
-                dark: string;
-                focus: string;
-                error: string;
-                success: string;
-                warning: string;
-            };
-            status: {
-                success: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                error: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                warning: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                info: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-            };
-            interactive: {
-                link: {
-                    default: string;
-                    hover: string;
-                    visited: string;
-                    active: string;
-                };
-                focus: {
-                    ring: string;
-                    ringOffset: string;
-                };
-            };
-            surface: {
-                elevated: string;
-                raised: string;
-                sunken: string;
-            };
-        };
-        readonly typography: {
-            fontFamily: {
-                sans: string;
-                serif: string;
-                mono: string;
-            };
-            fontSize: {
-                xs: string;
-                sm: string;
-                base: string;
-                lg: string;
-                xl: string;
-                "2xl": string;
-                "3xl": string;
-                "4xl": string;
-                "5xl": string;
-                "6xl": string;
-                "7xl": string;
-                "8xl": string;
-                "9xl": string;
-            };
-            fontWeight: {
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            lineHeight: {
-                "1": string;
-                "1.25": string;
-                "1.375": string;
-                "1.5": string;
-                "1.625": string;
-                "2": string;
-            };
-            letterSpacing: {
-                "-0.05": string;
-                "-0.025": string;
-                "0": string;
-                "0.025": string;
-                "0.05": string;
-                "0.1": string;
-            };
-        };
-        readonly spacing: {
-            "0": string;
-            "1": string;
-            "2": string;
-            "3": string;
-            "4": string;
-            "5": string;
-            "6": string;
-            "7": string;
-            "8": string;
-            "9": string;
-            "10": string;
-            "11": string;
-            "12": string;
-            "14": string;
-            "16": string;
-            "20": string;
-            "24": string;
-            "28": string;
-            "32": string;
-            "36": string;
-            "40": string;
-            "44": string;
-            "48": string;
-            "52": string;
-            "56": string;
-            "60": string;
-            "64": string;
-            "72": string;
-            "80": string;
-            "96": string;
-            px: string;
-            "0.5": string;
-            "1.5": string;
-            "2.5": string;
-            "3.5": string;
-        };
-        readonly radius: {
-            none: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-            full: string;
-        };
-        readonly shadows: {
-            xs: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            inner: string;
-            glow: {
-                cyan: string;
-                pink: string;
-                purple: string;
-                green: string;
-            };
-        };
+        readonly colors: any;
+        readonly typography: any;
+        readonly spacing: any;
+        readonly radius: any;
+        readonly shadows: any;
     };
     readonly dark: {
-        readonly colors: {
-            background: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                overlay: string;
-                inverse: string;
-            };
-            text: {
-                primary: string;
-                secondary: string;
-                tertiary: string;
-                disabled: string;
-                inverse: string;
-                onPrimary: string;
-                onSecondary: string;
-                link: string;
-                linkHover: string;
-            };
-            button: {
-                primary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                secondary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                tertiary: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                danger: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-                success: {
-                    default: string;
-                    hover: string;
-                    active: string;
-                    text: string;
-                };
-            };
-            border: {
-                default: string;
-                light: string;
-                medium: string;
-                dark: string;
-                focus: string;
-                error: string;
-                success: string;
-                warning: string;
-            };
-            status: {
-                success: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                error: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                warning: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-                info: {
-                    default: string;
-                    light: string;
-                    dark: string;
-                    text: string;
-                };
-            };
-            interactive: {
-                link: {
-                    default: string;
-                    hover: string;
-                    visited: string;
-                    active: string;
-                };
-                focus: {
-                    ring: string;
-                    ringOffset: string;
-                };
-            };
-            surface: {
-                elevated: string;
-                raised: string;
-                sunken: string;
-            };
-        };
-        readonly typography: {
-            fontFamily: {
-                sans: string;
-                serif: string;
-                mono: string;
-            };
-            fontSize: {
-                xs: string;
-                sm: string;
-                base: string;
-                lg: string;
-                xl: string;
-                "2xl": string;
-                "3xl": string;
-                "4xl": string;
-                "5xl": string;
-                "6xl": string;
-                "7xl": string;
-                "8xl": string;
-                "9xl": string;
-            };
-            fontWeight: {
-                "100": string;
-                "200": string;
-                "300": string;
-                "400": string;
-                "500": string;
-                "600": string;
-                "700": string;
-                "800": string;
-                "900": string;
-            };
-            lineHeight: {
-                "1": string;
-                "1.25": string;
-                "1.375": string;
-                "1.5": string;
-                "1.625": string;
-                "2": string;
-            };
-            letterSpacing: {
-                "-0.05": string;
-                "-0.025": string;
-                "0": string;
-                "0.025": string;
-                "0.05": string;
-                "0.1": string;
-            };
-        };
-        readonly spacing: {
-            "0": string;
-            "1": string;
-            "2": string;
-            "3": string;
-            "4": string;
-            "5": string;
-            "6": string;
-            "7": string;
-            "8": string;
-            "9": string;
-            "10": string;
-            "11": string;
-            "12": string;
-            "14": string;
-            "16": string;
-            "20": string;
-            "24": string;
-            "28": string;
-            "32": string;
-            "36": string;
-            "40": string;
-            "44": string;
-            "48": string;
-            "52": string;
-            "56": string;
-            "60": string;
-            "64": string;
-            "72": string;
-            "80": string;
-            "96": string;
-            px: string;
-            "0.5": string;
-            "1.5": string;
-            "2.5": string;
-            "3.5": string;
-        };
-        readonly radius: {
-            none: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            "3xl": string;
-            full: string;
-        };
-        readonly shadows: {
-            xs: string;
-            sm: string;
-            base: string;
-            md: string;
-            lg: string;
-            xl: string;
-            "2xl": string;
-            inner: string;
-            glow: {
-                cyan: string;
-                pink: string;
-                purple: string;
-                green: string;
-            };
-        };
+        readonly colors: any;
+        readonly typography: any;
+        readonly spacing: any;
+        readonly radius: any;
+        readonly shadows: any;
     };
 };
 
@@ -4140,4 +2388,4 @@ declare const themes: {
  */
 declare const cssVarsPath = "./src/css-vars.css";
 
-export { borderTokens as borderPrimitive, borderRoles as borderSemantic, breakpoints_default as breakpointsPrimitive, colorPalette as colorPrimitive, colorRoles as colorSemantic, cssVarsPath, themeDark as darkTheme, elevationRoles as elevationSemantic, gradientTokens as gradientPrimitive, gradientTokens as gradientsPrimitive, iconScale as iconSizesPrimitive, layoutUnits as layoutPrimitive, layoutStructure as layoutSemantic, themeLight as lightTheme, motionTokens as motionPrimitive, motionRoles as motionSemantic, opacityScale as opacityPrimitive, radiusScale as radiusPrimitive, elevationTokens as shadowsPrimitive, spacingScale as spacingPrimitive, spacingContext as spacingSemantic, themes, tokens, typographyBase as typographyPrimitive, typographyRoles as typographySemantic, zIndexLayers as zIndexPrimitive };
+export { borderPrimitive, borderSemantic, breakpointsPrimitive, colorPrimitive, colorSemantic, cssVarsPath, darkTheme, elevationSemantic, gradientPrimitive, gradientPrimitive as gradientsPrimitive, iconSizesPrimitive, layoutPrimitive, layoutSemantic, lightTheme, motionPrimitive, motionSemantic, opacityPrimitive, radiusPrimitive, borderTokens as rawBorderPrimitive, breakpoints_default as rawBreakpointsPrimitive, colorPalette as rawColorPrimitive, gradientTokens as rawGradientPrimitive, iconScale as rawIconSizesPrimitive, layoutUnits as rawLayoutPrimitive, motionTokens as rawMotionPrimitive, opacityScale as rawOpacityPrimitive, radiusScale as rawRadiusPrimitive, elevationTokens as rawShadowsPrimitive, spacingScale as rawSpacingPrimitive, typographyBase as rawTypographyPrimitive, zIndexLayers as rawZIndexPrimitive, shadowsPrimitive, spacingPrimitive, spacingSemantic, themes, tokens, typographyPrimitive, typographySemantic, zIndexPrimitive };

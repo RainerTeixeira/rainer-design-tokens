@@ -390,7 +390,7 @@ function main(): void {
   
   // Help
   if (args.includes('--help') || args.includes('-h')) {
-    console.log('Uso: npx tsx scripts/update.ts [opções]');
+    console.log('Uso: npx tsx scripts/sync-docs.ts [opções]');
     console.log('');
     console.log('Opções:');
     console.log('  --help, -h          Mostra esta ajuda');

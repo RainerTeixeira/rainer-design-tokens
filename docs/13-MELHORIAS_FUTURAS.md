@@ -389,7 +389,7 @@ Este documento lista todas as melhorias planejadas e futuras funcionalidades par
 
 ## 📅 Última Atualização
 
-**Data**: 04 de Janeiro de 2026  
+**Data**: Janeiro de 2026
 **Versão**: 2.6.0  
 **Próxima release**: v2.7.0 (Q1 2026)
 
@@ -397,3 +397,10 @@ Este documento lista todas as melhorias planejadas e futuras funcionalidades par
 
 **Autor**: Rainer Teixeira  
 **Licença**: MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 05 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT

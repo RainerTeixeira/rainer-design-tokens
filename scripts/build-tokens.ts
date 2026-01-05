@@ -1,25 +1,25 @@
 /**
  * @fileoverview Script de BUILD de Design Tokens
- * 
+ *
  * @description
  * Script unificado que gerencia todo o ecossistema de design tokens:
- * 
+ *
  * 🔧 GERAÇÃO DE TOKENS:
  * - radius.json (baseado em spacing.json)
  * - breakpoints.json (padrões da indústria)
  * - z-index.json (sistema de camadas)
- * 
+ *
  * 📦 GERAÇÃO DE FORMATOS:
  * - CSS variables (css-vars.css)
  * - Tailwind config (tailwind.config.ts)
  * - Tokens JSON consolidado (tokens.json)
- * 
+ *
  * 📝 GERAÇÃO DE DOCUMENTAÇÃO:
  * - Changelog automático (CHANGELOG.md)
- * 
+ *
  * Fonte única de verdade: tokens/*.json
  * Saída: formats/* + tokens/generated/* + CHANGELOG.md
- * 
+ *
  * @module scripts/build-tokens
  * @version 1.0.0
  * @author Rainer Teixeira
@@ -124,11 +124,11 @@ function resolveReferences(obj: any, palette: any): any {
 
 function resolveTokenReferences(value: string, palette: any): string {
   const referenceRegex = /\{palette\.([^}]+)\}/g;
-  
+
   return value.replace(referenceRegex, (match, path) => {
     const keys = path.split('.');
     let resolved: any = palette;
-    
+
     for (const key of keys) {
       if (resolved && typeof resolved === 'object' && key in resolved) {
         resolved = resolved[key];
@@ -136,7 +136,7 @@ function resolveTokenReferences(value: string, palette: any): string {
         return match;
       }
     }
-    
+
     return typeof resolved === 'string' ? resolved : match;
   });
 }
@@ -154,7 +154,9 @@ function flattenToCSSVars(
     const varName = prefix ? `${prefix}${separator}${cssKey}` : cssKey;
 
     if (typeof value === 'string') {
-      const resolvedValue = palette ? resolveTokenReferences(value, palette) : value;
+      const resolvedValue = palette
+        ? resolveTokenReferences(value, palette)
+        : value;
       vars.push(`  --${varName}: ${resolvedValue};`);
     } else if (typeof value === 'object' && value !== null) {
       vars.push(...flattenToCSSVars(value, varName, separator, palette));
@@ -164,13 +166,16 @@ function flattenToCSSVars(
   return vars;
 }
 
-function toTailwindObject(obj: ColorToken | Record<string, string>, indent: number = 8): string {
+function toTailwindObject(
+  obj: ColorToken | Record<string, string>,
+  indent: number = 8
+): string {
   const spaces = ' '.repeat(indent);
   const lines: string[] = [];
 
   for (const [key, value] of Object.entries(obj)) {
     const camelKey = toCamelCase(key);
-    
+
     if (typeof value === 'string') {
       lines.push(`${spaces}${camelKey}: '${value}',`);
     } else if (typeof value === 'object' && value !== null) {
@@ -187,97 +192,97 @@ function toTailwindObject(obj: ColorToken | Record<string, string>, indent: numb
 
 function generateRadius() {
   const tokensDir = join(__dirname, '..', 'tokens');
-  
+
   const spacing = JSON.parse(
     readFileSync(join(tokensDir, 'primitives', 'spacing-scale.json'), 'utf-8')
   );
-  
+
   const radius = {
-    "$schema": "https://json.schemastore.org/theme.json",
-    "$description": "Border radius tokens - Generated from spacing scale",
-    "$generated": new Date().toISOString(),
-    "$source": "primitives/spacing-scale.json",
-    "radius": {
-      "none": "0px",
-      "sm": spacing.spacing["0.5"],
-      "base": spacing.spacing["1"],
-      "md": spacing.spacing["1.5"],
-      "lg": spacing.spacing["2"],
-      "xl": spacing.spacing["3"],
-      "2xl": spacing.spacing["4"],
-      "3xl": spacing.spacing["6"],
-      "full": "9999px"
-    }
+    $schema: 'https://json.schemastore.org/theme.json',
+    $description: 'Border radius tokens - Generated from spacing scale',
+    $generated: new Date().toISOString(),
+    $source: 'primitives/spacing-scale.json',
+    radius: {
+      none: '0px',
+      sm: spacing.spacing['0.5'],
+      base: spacing.spacing['1'],
+      md: spacing.spacing['1.5'],
+      lg: spacing.spacing['2'],
+      xl: spacing.spacing['3'],
+      '2xl': spacing.spacing['4'],
+      '3xl': spacing.spacing['6'],
+      full: '9999px',
+    },
   };
-  
+
   writeFileSync(
     join(tokensDir, 'primitives', 'radius-scale.json'),
     JSON.stringify(radius, null, 2)
   );
-  
+
   console.log('✅ radius.json gerado com sucesso!');
 }
 
 function generateBreakpoints() {
   const tokensDir = join(__dirname, '..', 'tokens');
-  
+
   const spacing = JSON.parse(
     readFileSync(join(tokensDir, 'primitives', 'spacing-scale.json'), 'utf-8')
   );
-  
+
   const breakpoints = {
-    "$schema": "https://json.schemastore.org/theme.json",
-    "$description": "Responsive breakpoints - Mobile-first approach",
-    "$generated": new Date().toISOString(),
-    "$source": "industry standards + spacing.json reference",
-    "$spacingReference": {
-      "baseUnit": spacing.spacing["1"],
-      "note": "Breakpoints follow industry standards, spacing used for reference"
+    $schema: 'https://json.schemastore.org/theme.json',
+    $description: 'Responsive breakpoints - Mobile-first approach',
+    $generated: new Date().toISOString(),
+    $source: 'industry standards + spacing.json reference',
+    $spacingReference: {
+      baseUnit: spacing.spacing['1'],
+      note: 'Breakpoints follow industry standards, spacing used for reference',
     },
-    "breakpoints": {
-      "xs": "0px",
-      "sm": "640px",
-      "md": "768px",
-      "lg": "1024px",
-      "xl": "1280px",
-      "2xl": "1536px",
-      "3xl": "1920px"
-    }
+    breakpoints: {
+      xs: '0px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+      '3xl': '1920px',
+    },
   };
-  
+
   writeFileSync(
     join(tokensDir, 'primitives', 'breakpoints.json'),
     JSON.stringify(breakpoints, null, 2)
   );
-  
+
   console.log('✅ breakpoints.json gerado com sucesso!');
 }
 
 function generateZIndex() {
   const tokensDir = join(__dirname, '..', 'tokens');
-  
+
   const zIndex = {
-    "$schema": "https://json.schemastore.org/theme.json",
-    "$description": "Z-index layer system - Organized stacking context",
-    "$generated": new Date().toISOString(),
-    "$source": "design system layer standards",
-    "zIndex": {
-      "base": 0,
-      "content": 100,
-      "overlay": 200,
-      "dropdown": 300,
-      "modal": 400,
-      "tooltip": 500,
-      "notification": 600,
-      "max": 9999
-    }
+    $schema: 'https://json.schemastore.org/theme.json',
+    $description: 'Z-index layer system - Organized stacking context',
+    $generated: new Date().toISOString(),
+    $source: 'design system layer standards',
+    zIndex: {
+      base: 0,
+      content: 100,
+      overlay: 200,
+      dropdown: 300,
+      modal: 400,
+      tooltip: 500,
+      notification: 600,
+      max: 9999,
+    },
   };
-  
+
   writeFileSync(
     join(tokensDir, 'primitives', 'z-index-layers.json'),
     JSON.stringify(zIndex, null, 2)
   );
-  
+
   console.log('✅ z-index.json gerado com sucesso!');
 }
 
@@ -305,7 +310,10 @@ function loadAllTokens(): Tokens {
     readFileSync(join(tokensDir, 'primitives', 'radius-scale.json'), 'utf-8')
   );
   const shadows = JSON.parse(
-    readFileSync(join(tokensDir, 'primitives', 'elevation-tokens.json'), 'utf-8')
+    readFileSync(
+      join(tokensDir, 'primitives', 'elevation-tokens.json'),
+      'utf-8'
+    )
   );
   const motion = JSON.parse(
     readFileSync(join(tokensDir, 'primitives', 'motion-tokens.json'), 'utf-8')
@@ -345,7 +353,7 @@ function generateTokensJSON(tokens: Tokens): string {
     $version: packageJson.version,
     $description: 'Universal design tokens export for Rainer Design System',
     $generated: new Date().toISOString(),
-    
+
     primitives: {
       color: tokens.palette,
       spacing: tokens.spacing,
@@ -356,14 +364,16 @@ function generateTokensJSON(tokens: Tokens): string {
       breakpoints: tokens.breakpoints,
       zIndex: tokens.zIndex,
     },
-    
+
     themes: {
       light: resolveReferences(tokens.colors.light, tokens.palette),
       dark: resolveReferences(tokens.colors.dark, tokens.palette),
     },
-    
+
     $meta: {
-      repository: packageJson.repository?.url || 'https://github.com/RainerTeixeira/rainer-design-tokens',
+      repository:
+        packageJson.repository?.url ||
+        'https://github.com/RainerTeixeira/rainer-design-tokens',
       author: packageJson.author || 'Rainer Teixeira',
       license: packageJson.license || 'MIT',
     },
@@ -398,8 +408,12 @@ function generateCSS(tokens: Tokens): string {
       // cores base como white/black/transparent
       lines.push(`  --color-${kebab}: ${paletteValue};`);
     } else if (typeof paletteValue === 'object' && paletteValue !== null) {
-      lines.push(`  /* ${paletteName.charAt(0).toUpperCase() + paletteName.slice(1)} Scale */`);
-      for (const [shade, value] of Object.entries(paletteValue as Record<string, string>)) {
+      lines.push(
+        `  /* ${paletteName.charAt(0).toUpperCase() + paletteName.slice(1)} Scale */`
+      );
+      for (const [shade, value] of Object.entries(
+        paletteValue as Record<string, string>
+      )) {
         const shadeKey = toKebabCase(String(shade));
         lines.push(`  --color-${kebab}-${shadeKey}: ${value};`);
       }
@@ -422,23 +436,50 @@ function generateCSS(tokens: Tokens): string {
   // Light theme semantic colors
   lines.push('');
   lines.push('  /* ===== LIGHT THEME SEMANTIC COLORS ===== */');
-  
-  if (tokens.colors.light.background && typeof tokens.colors.light.background === 'object') {
+
+  if (
+    tokens.colors.light.background &&
+    typeof tokens.colors.light.background === 'object'
+  ) {
     lines.push('  /* Background */');
-    lines.push(...flattenToCSSVars(tokens.colors.light.background, 'color-background', '-', tokens.palette));
+    lines.push(
+      ...flattenToCSSVars(
+        tokens.colors.light.background,
+        'color-background',
+        '-',
+        tokens.palette
+      )
+    );
     lines.push('');
   }
 
-  if (tokens.colors.light.text && typeof tokens.colors.light.text === 'object') {
+  if (
+    tokens.colors.light.text &&
+    typeof tokens.colors.light.text === 'object'
+  ) {
     lines.push('  /* Text */');
-    lines.push(...flattenToCSSVars(tokens.colors.light.text, 'color-text', '-', tokens.palette));
+    lines.push(
+      ...flattenToCSSVars(
+        tokens.colors.light.text,
+        'color-text',
+        '-',
+        tokens.palette
+      )
+    );
     lines.push('');
   }
 
   // Typography
   if (tokens.typography.fontFamily) {
     lines.push('  /* Typography */');
-    lines.push(...flattenToCSSVars(tokens.typography.fontFamily, 'font', '-', tokens.palette));
+    lines.push(
+      ...flattenToCSSVars(
+        tokens.typography.fontFamily,
+        'font',
+        '-',
+        tokens.palette
+      )
+    );
     lines.push('');
   }
 
@@ -455,7 +496,9 @@ function generateCSS(tokens: Tokens): string {
   if (tokens.radius) {
     lines.push('');
     lines.push('  /* ===== BORDER RADIUS ===== */');
-    lines.push(...flattenToCSSVars(tokens.radius, 'radius', '-', tokens.palette));
+    lines.push(
+      ...flattenToCSSVars(tokens.radius, 'radius', '-', tokens.palette)
+    );
   }
 
   lines.push('}');
@@ -464,15 +507,32 @@ function generateCSS(tokens: Tokens): string {
   lines.push('.dark, [data-theme="dark"] {');
 
   // Dark theme semantic colors
-  if (tokens.colors.dark.background && typeof tokens.colors.dark.background === 'object') {
+  if (
+    tokens.colors.dark.background &&
+    typeof tokens.colors.dark.background === 'object'
+  ) {
     lines.push('  /* Background */');
-    lines.push(...flattenToCSSVars(tokens.colors.dark.background, 'color-background', '-', tokens.palette));
+    lines.push(
+      ...flattenToCSSVars(
+        tokens.colors.dark.background,
+        'color-background',
+        '-',
+        tokens.palette
+      )
+    );
   }
 
   if (tokens.colors.dark.text && typeof tokens.colors.dark.text === 'object') {
     lines.push('');
     lines.push('  /* Text */');
-    lines.push(...flattenToCSSVars(tokens.colors.dark.text, 'color-text', '-', tokens.palette));
+    lines.push(
+      ...flattenToCSSVars(
+        tokens.colors.dark.text,
+        'color-text',
+        '-',
+        tokens.palette
+      )
+    );
   }
 
   lines.push('}');
@@ -508,14 +568,20 @@ function generateTailwindConfig(tokens: Tokens): string {
   ];
 
   // Background colors
-  if (tokens.colors.light.background && typeof tokens.colors.light.background === 'object') {
+  if (
+    tokens.colors.light.background &&
+    typeof tokens.colors.light.background === 'object'
+  ) {
     lines.push(`        background: {`);
     lines.push(toTailwindObject(tokens.colors.light.background, 10));
     lines.push(`        },`);
   }
 
   // Text colors
-  if (tokens.colors.light.text && typeof tokens.colors.light.text === 'object') {
+  if (
+    tokens.colors.light.text &&
+    typeof tokens.colors.light.text === 'object'
+  ) {
     lines.push(`        text: {`);
     lines.push(toTailwindObject(tokens.colors.light.text, 10));
     lines.push(`        },`);
@@ -528,10 +594,14 @@ function generateTailwindConfig(tokens: Tokens): string {
   if (tokens.typography.fontFamily) {
     const fontFamily = tokens.typography.fontFamily;
     if (fontFamily.sans) {
-      lines.push(`        sans: ${JSON.stringify(fontFamily.sans.split(', '))},`);
+      lines.push(
+        `        sans: ${JSON.stringify(fontFamily.sans.split(', '))},`
+      );
     }
     if (fontFamily.mono) {
-      lines.push(`        mono: ${JSON.stringify(fontFamily.mono.split(', '))},`);
+      lines.push(
+        `        mono: ${JSON.stringify(fontFamily.mono.split(', '))},`
+      );
     }
   }
 
@@ -541,7 +611,7 @@ function generateTailwindConfig(tokens: Tokens): string {
   lines.push('      lineHeight: tokens.typography.lineHeight,');
   lines.push('      spacing: tokens.spacing,');
   lines.push('      borderRadius: tokens.radius,');
-  
+
   lines.push('    },');
   lines.push('  },');
   lines.push("  darkMode: 'class',");
@@ -564,22 +634,24 @@ const COMMIT_TYPES = {
   test: '🧪 Tests',
   chore: '🔧 Chores',
   build: '📦 Build',
-  ci: '🔄 CI/CD'
+  ci: '🔄 CI/CD',
 };
 
 function parseCommit(commitLine: string): Commit | null {
-  const match = commitLine.match(/^([a-f0-9]+)\|([a-z]+)(?:\(([^)]+)\))?(!)?:\s*(.+)$/);
-  
+  const match = commitLine.match(
+    /^([a-f0-9]+)\|([a-z]+)(?:\(([^)]+)\))?(!)?:\s*(.+)$/
+  );
+
   if (!match) return null;
-  
+
   const [, hash, type, scope, breaking, message] = match;
-  
+
   return {
     hash: hash.substring(0, 7),
     type,
     scope,
     message,
-    breaking: !!breaking
+    breaking: !!breaking,
   };
 }
 
@@ -590,7 +662,7 @@ function getCommitsSinceTag(tag?: string): Commit[] {
       `git log ${range} --pretty=format:"%h|%s" --no-merges`,
       { encoding: 'utf-8' }
     );
-    
+
     return log
       .split('\n')
       .map(parseCommit)
@@ -603,24 +675,29 @@ function getCommitsSinceTag(tag?: string): Commit[] {
 
 function getLatestTag(): string | null {
   try {
-    return execSync('git describe --tags --abbrev=0', { encoding: 'utf-8' }).trim();
+    return execSync('git describe --tags --abbrev=0', {
+      encoding: 'utf-8',
+    }).trim();
   } catch {
     return null;
   }
 }
 
 function generateChangelog(commits: Commit[]): string {
-  const grouped = commits.reduce((acc, commit) => {
-    const type = commit.type || 'chore';
-    if (!acc[type]) {
-      acc[type] = [];
-    }
-    acc[type].push(commit);
-    return acc;
-  }, {} as Record<string, Commit[]>);
-  
+  const grouped = commits.reduce(
+    (acc, commit) => {
+      const type = commit.type || 'chore';
+      if (!acc[type]) {
+        acc[type] = [];
+      }
+      acc[type].push(commit);
+      return acc;
+    },
+    {} as Record<string, Commit[]>
+  );
+
   const sections: string[] = [];
-  
+
   // Breaking changes primeiro
   const breaking = commits.filter(c => c.breaking);
   if (breaking.length > 0) {
@@ -630,22 +707,23 @@ function generateChangelog(commits: Commit[]): string {
     });
     sections.push('');
   }
-  
+
   // Outros tipos
   for (const [type, typeCommits] of Object.entries(grouped)) {
     if (typeCommits.length === 0 || typeCommits.some(c => c.breaking)) continue;
-    
-    const title = COMMIT_TYPES[type as keyof typeof COMMIT_TYPES] || `📝 ${type}`;
+
+    const title =
+      COMMIT_TYPES[type as keyof typeof COMMIT_TYPES] || `📝 ${type}`;
     sections.push(`## ${title}\n`);
-    
+
     typeCommits.forEach(commit => {
       const scope = commit.scope ? `**${commit.scope}**: ` : '';
       sections.push(`- ${scope}${commit.message}`);
     });
-    
+
     sections.push('');
   }
-  
+
   return sections.join('\n');
 }
 
@@ -654,31 +732,31 @@ function generateChangelogFile() {
     readFileSync(join(__dirname, '..', 'package.json'), 'utf-8')
   );
   const version = packageJson.version;
-  
+
   const latestTag = getLatestTag();
   const commits = getCommitsSinceTag(latestTag || undefined);
-  
+
   if (commits.length === 0) {
     console.log('📝 Nenhum commit novo desde a última tag');
     return;
   }
-  
+
   const changelog = generateChangelog(commits);
   const fullChangelog = `# Changelog - v${version}\n\n${changelog}`;
-  
+
   // Atualizar docs/98- CHANGELOG.md
   const changelogPath = join(__dirname, '..', 'docs', '98- CHANGELOG.md');
   let existingChangelog = '';
-  
+
   try {
     existingChangelog = readFileSync(changelogPath, 'utf-8');
   } catch {
     // Arquivo não existe, criar novo
   }
-  
+
   const updatedChangelog = `${fullChangelog}\n\n---\n\n${existingChangelog}`;
   writeFileSync(changelogPath, updatedChangelog, 'utf-8');
-  
+
   console.log(`✅ Changelog gerado para v${version}`);
   console.log(`📝 ${commits.length} commits processados`);
 }
@@ -687,10 +765,14 @@ function generateChangelogFile() {
 
 function main() {
   const startTime = Date.now();
-  
-  console.log('🚀 Iniciando script MASTER de gerenciamento de design tokens...');
+
+  console.log(
+    '🚀 Iniciando script MASTER de gerenciamento de design tokens...'
+  );
   console.log('📂 Fonte única de verdade: tokens/*.json');
-  console.log('📤 Saída: formats/* + tokens/generated/* + docs/98- CHANGELOG.md\n');
+  console.log(
+    '📤 Saída: formats/* + tokens/generated/* + docs/98- CHANGELOG.md\n'
+  );
 
   try {
     // 🔧 1. Gerar tokens calculados
@@ -733,7 +815,7 @@ function main() {
 
     // 🎉 4. Resumo final
     const duration = ((Date.now() - startTime) / 1000).toFixed(2);
-    
+
     console.log('🎉 === PROCESSO CONCLUÍDO COM SUCESSO! ===');
     console.log(`⏱️  Tempo total: ${duration}s`);
     console.log('');
@@ -753,7 +835,6 @@ function main() {
     console.log('   - npm run build (para compilação TS)');
     console.log('   - npm run test (para validação)');
     console.log('   - npm publish (para publicar)');
-
   } catch (error) {
     console.error('\n❌ Erro no processo MASTER:', error);
     process.exit(1);
@@ -763,13 +844,13 @@ function main() {
 // Executar função principal
 main();
 
-export { 
-  generateRadius, 
-  generateBreakpoints, 
+export {
+  generateRadius,
+  generateBreakpoints,
   generateZIndex,
   generateTokensJSON,
   generateCSS,
   generateTailwindConfig,
   generateChangelogFile,
-  loadAllTokens
+  loadAllTokens,
 };

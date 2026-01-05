@@ -1,6 +1,6 @@
 /**
  * @fileoverview Testes para o ponto de entrada principal da biblioteca
- * 
+ *
  * @description
  * Testa as exportações principais e a estrutura DTCG dos tokens
  */
@@ -235,4 +235,3 @@ describe('Index - Ponto de Entrada Principal (DTCG)', () => {
     });
   });
 });
-

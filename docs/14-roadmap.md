@@ -336,7 +336,7 @@ interface TokenPlugin {
 
 ## 📅 Última Atualização
 
-**Data**: 04 de Janeiro de 2026  
+**Data**: Janeiro de 2026
 **Versão**: 2.6.0  
 **Próximo Release**: v2.7.0 (Março 2026)
 
@@ -344,3 +344,10 @@ interface TokenPlugin {
 
 **Autor**: Rainer Teixeira  
 **Licença**: MIT
+
+---
+
+**Versão:** 2.6.0
+**Última Atualização:** 05 de Janeiro de 2026
+**Autor:** [object Object]
+**Licença:** MIT
