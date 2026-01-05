@@ -612,3 +612,708 @@ FAIL tests/scripts/build-tokens.test.ts (48.106 s)
 
       at Object.<anonymous> (tests/scripts/build-tokens.test.ts:245:23)
 
+FAIL tests/scripts/sync-docs.test.ts (60.334 s)
+  sync-docs.ts
+    ­ƒôª Informa├º├Áes do Pacote
+      ÔêÜ deve ler informa├º├Áes do package.json (4369 ms)
+      ├ù deve obter data atual em m├║ltiplos formatos (3738 ms)
+    ­ƒôØ Atualiza├º├úo de Vers├úo
+      ├ù deve atualizar vers├úo no README.md (2583 ms)
+      ├ù deve atualizar badges de vers├úo (2439 ms)
+      ├ù deve atualizar links de vers├úo (2654 ms)
+    ­ƒôà Atualiza├º├úo de Datas
+      ├ù deve atualizar datas no README.md (2521 ms)
+      ├ù deve atualizar m├║ltiplos formatos de data (2574 ms)
+      ├ù deve preservar datas com contexto de vers├úo (2459 ms)
+    ­ƒôï Atualiza├º├úo de Rodap├®
+      ├ù deve gerar rodap├® padr├úo (2269 ms)
+      ├ù deve substituir rodap├® antigo (2198 ms)
+    ­ƒôü Processamento de Documentos
+      ÔêÜ deve encontrar arquivos Markdown em docs/ (2355 ms)
+      ├ù deve atualizar arquivos em docs/ (2378 ms)
+      ÔêÜ deve ignorar diret├│rios que come├ºam com . (2846 ms)
+    ÔÜí Performance e Op├º├Áes
+      ÔêÜ deve suportar modo dry-run (3105 ms)
+      ÔêÜ deve executar rapidamente (< 3 segundos) (2773 ms)
+      ÔêÜ deve mostrar help (2389 ms)
+    ­ƒöì Integra├º├úo com Outros Scripts
+      ÔêÜ deve ser compat├¡vel com build-tokens.ts (5077 ms)
+      ÔêÜ deve ser compat├¡vel com release-package.ts (4669 ms)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôª Informa├º├Áes do Pacote ÔÇ║ deve obter data atual em m├║ltiplos formatos
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /\d{4}-\d{2}-\d{2}/
+    Received string:  "
+    ­ƒöä INICIANDO ATUALIZA├ç├âO UNIFICADA┬À
+    Ôä╣´©Å  Pacote: @rainersoft/design-tokens@2.6.0
+    Ôä╣´©Å  Data atual: 05 de Janeiro de 2026
+    ÔÜá´©Å  MODO DRY RUN - Nenhuma altera├º├úo ser├í salva┬À
+    ­ƒöä ATUALIZANDO README.md PRINCIPAL┬À
+    Ôä╣´©Å  README.md j├í est├í atualizado┬À
+    ­ƒöä ATUALIZANDO DOCUMENTA├ç├âO EM docs/┬À
+    Ôä╣´©Å  Encontrados 21 arquivos Markdown┬À┬À
+    ­ƒöä RESUMO DA ATUALIZA├ç├âO┬À
+    Ôä╣´©Å  Seriam atualizados 0 arquivo(s)
+    Ôä╣´©Å  Nenhum arquivo precisou de atualiza├º├úo
+    "
+
+      45 |       });
+      46 |
+    > 47 |       expect(result).toMatch(/\d{4}-\d{2}-\d{2}/); // ISO
+         |                      ^
+      48 |       expect(result).toMatch(/\d{1,2} de [A-Za-z├º├ç]+ de \d{4}/); // PT-BR
+      49 |       expect(result).toMatch(/[A-Za-z├º├ç]+ de \d{4}/); // M├¬s/Ano
+      50 |     });
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:47:22)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôØ Atualiza├º├úo de Vers├úo ÔÇ║ deve atualizar vers├úo no README.md
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /(Vers├úo atualizada no README\.md|README\.md j├í est├í atualizado)/
+    Received string:  "
+    ­ƒöä INICIANDO ATUALIZA├ç├âO UNIFICADA┬À
+    Ôä╣´©Å  Pacote: @rainersoft/design-tokens@2.6.0
+    Ôä╣´©Å  Data atual: 05 de Janeiro de 2026┬À┬À
+    ­ƒöä RESUMO DA ATUALIZA├ç├âO┬À
+    Ô£à 0 arquivo(s) atualizado(s) com sucesso!
+    Ôä╣´©Å  Nenhum arquivo precisou de atualiza├º├úo
+    "
+
+      64 |       });
+      65 |
+    > 66 |       expect(result).toMatch(
+         |                      ^
+      67 |         /(Vers├úo atualizada no README\.md|README\.md j├í est├í atualizado)/
+      68 |       );
+      69 |     });
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:66:22)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôØ Atualiza├º├úo de Vers├úo ÔÇ║ deve atualizar badges de vers├úo
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      86 |
+      87 |       const updatedContent = readFileSync(readmePath, 'utf-8');
+    > 88 |       expect(updatedContent).toMatch(/version-\d+\.\d+\.\d+/);
+         |                              ^
+      89 |     });
+      90 |
+      91 |     it('deve atualizar links de vers├úo', () => {
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:88:30)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôØ Atualiza├º├úo de Vers├úo ÔÇ║ deve atualizar links de vers├úo
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      103 |
+      104 |       const updatedContent = readFileSync(readmePath, 'utf-8');
+    > 105 |       expect(updatedContent).toMatch(/version-\d+\.\d+\.\d+/);
+          |                              ^
+      106 |     });
+      107 |   });
+      108 |
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:105:30)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôà Atualiza├º├úo de Datas ÔÇ║ deve atualizar datas no README.md
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      125 |
+      126 |       const updatedContent = readFileSync(readmePath, 'utf-8');
+    > 127 |       expect(updatedContent).toMatch(
+          |                              ^
+      128 |         /\*\*├Ültima Atualiza├º├úo:\*\* \d{1,2} de [A-Za-z├º├ç]+ de \d{4}/
+      129 |       );
+      130 |     });
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:127:30)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôà Atualiza├º├úo de Datas ÔÇ║ deve atualizar m├║ltiplos formatos de data
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      148 |
+      149 |       const updatedContent = readFileSync(readmePath, 'utf-8');
+    > 150 |       expect(updatedContent).toMatch(/\d{4}-\d{2}-\d{2}/); // ISO
+          |                              ^
+      151 |       expect(updatedContent).toMatch(/\d{1,2} de [A-Za-z├º├ç]+ de \d{4}/); // PT-BR
+      152 |       expect(updatedContent).toMatch(/[A-Za-z├º├ç]+ de \d{4}/); // M├¬s/Ano
+      153 |     });
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:150:30)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôà Atualiza├º├úo de Datas ÔÇ║ deve preservar datas com contexto de vers├úo
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      170 |       const updatedContent = readFileSync(readmePath, 'utf-8');
+      171 |       // N├úo deve atualizar se tiver "Vers├úo" na mesma linha
+    > 172 |       expect(updatedContent).toMatch(
+          |                              ^
+      173 |         /\*\*Data:\*\* Vers├úo \d+\.\d+\.\d+ \(\d{4}-\d{2}-\d{2}\)/
+      174 |       );
+      175 |     });
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:172:30)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôï Atualiza├º├úo de Rodap├® ÔÇ║ deve gerar rodap├® padr├úo
+
+    expect(received).toContain(expected) // indexOf
+
+    Matcher error: received value must not be null nor undefined
+
+    Received has value: undefined
+
+      190 |
+      191 |       const updatedContent = readFileSync(readmePath, 'utf-8');
+    > 192 |       expect(updatedContent).toContain('---');
+          |                              ^
+      193 |       expect(updatedContent).toContain('**Vers├úo:**');
+      194 |       expect(updatedContent).toContain('**├Ültima Atualiza├º├úo:**');
+      195 |       expect(updatedContent).toContain('**Autor:**');
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:192:30)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôï Atualiza├º├úo de Rodap├® ÔÇ║ deve substituir rodap├® antigo
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      217 |
+      218 |       const updatedContent = readFileSync(readmePath, 'utf-8');
+    > 219 |       expect(updatedContent).toMatch(/\*\*Vers├úo:\*\* \d+\.\d+\.\d+/);
+          |                              ^
+      220 |       expect(updatedContent).toMatch(/\*\*Autor:\*\* Rainer Teixeira/);
+      221 |       expect(updatedContent).toMatch(/\*\*Licen├ºa:\*\* MIT/);
+      222 |     });
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:219:30)
+
+  ÔùÅ sync-docs.ts ÔÇ║ ­ƒôü Processamento de Documentos ÔÇ║ deve atualizar arquivos em docs/
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      267 |
+      268 |         const updatedContent = readFileSync(testDocPath, 'utf-8');
+    > 269 |         expect(updatedContent).toMatch(/\*\*Vers├úo:\*\* \d+\.\d+\.\d+/);
+          |                                ^
+      270 |       } finally {
+      271 |         // Limpar
+      272 |         if (existsSync(testDocPath)) {
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:269:32)
+
+FAIL tests/scripts/release-package.test.ts (165.261 s)
+  release-package.ts
+    ­ƒöì Valida├º├úo de Tokens
+      ÔêÜ deve validar todos os arquivos de tokens (3329 ms)
+      ÔêÜ deve validar arquivos primitivos (2591 ms)
+      ÔêÜ deve validar temas (2392 ms)
+      ÔêÜ deve validar formatos gerados (5283 ms)
+      ÔêÜ deve falhar valida├º├úo se arquivo essencial estiver faltando
+    ­ƒöÉ Configura├º├úo de Autentica├º├úo
+      ÔêÜ deve verificar configura├º├úo NPM (2499 ms)
+      ÔêÜ deve criar .npmrc se NPM_TOKEN estiver no ambiente (2457 ms)
+    ­ƒîÉ Configura├º├úo GitHub
+      ÔêÜ deve verificar configura├º├úo Git (2329 ms)
+      ÔêÜ deve verificar remote origin (2350 ms)
+    ­ƒôª Build Completo
+      ├ù deve executar build completo (16875 ms)
+      ├ù deve verificar diret├│rios de sa├¡da (14364 ms)
+      ÔêÜ deve verificar type check (14624 ms)
+    ­ƒôØ Commit e Push
+      ├ù deve verificar status do Git (10017 ms)
+    ­ƒÜÇ Publica├º├úo NPM
+      ÔêÜ deve suportar dry-run (19213 ms)
+      ├ù deve verificar pacote antes de publicar (16815 ms)
+    ­ƒôï Cria├º├úo de Release
+      ├ù deve gerar changelog antes do release (12415 ms)
+      ├ù deve verificar GitHub CLI se dispon├¡vel (12092 ms)
+    ÔÜí Performance e Erros
+      ÔêÜ deve executar valida├º├úo rapidamente (< 3 segundos) (1726 ms)
+      ÔêÜ deve tratar argumentos inv├ílidos (1840 ms)
+      ÔêÜ deve mostrar help (1835 ms)
+    ­ƒöì Integra├º├úo com Outros Scripts
+      ÔêÜ deve ser compat├¡vel com build-tokens.ts (4239 ms)
+      ÔêÜ deve ser compat├¡vel com sync-docs.ts (4036 ms)
+
+  ÔùÅ release-package.ts ÔÇ║ ­ƒôª Build Completo ÔÇ║ deve executar build completo
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected substring: "TypeScript compilado com sucesso"
+    Received string:    "­ƒÜÇ Iniciando processo de publica├º├úo...┬À┬À
+    ­ƒÜÇ BUILD E COMPILA├ç├âO┬À
+    ­ƒöº Gerando tokens e formatos┬À
+    > @rainersoft/design-tokens@2.6.0 build
+    > npx tsx scripts/build-tokens.ts && tsup┬À
+    ­ƒÜÇ Iniciando script MASTER de gerenciamento de design tokens...
+    ­ƒôé Fonte ├║nica de verdade: tokens/*.json
+    ­ƒôñ Sa├¡da: formats/* + tokens/generated/* + docs/98- CHANGELOG.md┬À
+    ­ƒöº === GERANDO TOKENS CALCULADOS ===
+    Ô£à radius.json gerado com sucesso!
+    Ô£à breakpoints.json gerado com sucesso!
+    Ô£à z-index.json gerado com sucesso!
+    Ô£à Tokens calculados gerados!┬À
+    ­ƒôª === GERANDO FORMATOS DE SA├ìDA ===
+    ­ƒôä Gerando tokens.json...
+    Ô£à tokens.json gerado!
+    ­ƒÄ¿ Gerando css-vars.css...
+    Ô£à css-vars.css gerado!
+    ­ƒöº Gerando tailwind.config.ts...
+    Ô£à tailwind.config.ts gerado!
+    Ô£à Formatos de sa├¡da gerados!┬À
+    ­ƒôØ === GERANDO CHANGELOG ===
+    Ô£à Changelog gerado para v2.6.0
+    ­ƒôØ 4 commits processados┬À
+    ­ƒÄë === PROCESSO CONCLU├ìDO COM SUCESSO! ===
+    ÔÅ▒´©Å  Tempo total: 0.28s┬À
+    ­ƒôü Arquivos gerados/atualizados:
+       ­ƒöº Tokens calculados:
+         - tokens/primitives/radius-scale.json
+         - tokens/primitives/breakpoints.json
+         - tokens/primitives/z-index-layers.json
+       ­ƒôª Formatos de sa├¡da:
+         - formats/tokens.json
+         - formats/css-vars.css
+         - formats/tailwind.config.ts
+       ­ƒôØ Documenta├º├úo:
+         - docs/98- CHANGELOG.md┬À
+    ­ƒÄ» Pr├│ximos passos:
+       - npm run build (para compila├º├úo TS)
+       - npm run test (para valida├º├úo)
+       - npm publish (para publicar)
+    CLI Building entry: index.ts
+    CLI Using tsconfig: tsconfig.json
+    CLI tsup v8.5.1
+    CLI Using tsup config: C:\\Desenvolvimento\\rainer-design-tokens\\tsup.config.ts
+    CLI Target: es2022
+    CLI Cleaning output folder
+    ESM Build start
+    CJS Build start
+    ESM dist\\index.mjs     64.51 KB
+    ESM dist\\index.mjs.map 130.26 KB
+    ESM ÔÜí´©Å Build success in 114ms
+    CJS dist\\index.js     65.66 KB
+    CJS dist\\index.js.map 131.55 KB
+    CJS ÔÜí´©Å Build success in 133ms
+    DTS Build start
+    DTS ÔÜí´©Å Build success in 2629ms
+    DTS dist\\index.d.mts 62.65 KB
+    DTS dist\\index.d.ts  62.65 KB
+    Ô£à Gerando tokens e formatos
+    Ô£à Diret├│rio dist/ encontrado
+    Ô£à Diret├│rio formats/ encontrado
+    Ôä╣´©Å  Verificando tipos TypeScript...
+    ÔÜá´©Å  Type check falhou (mas continuando...)
+    "
+
+      180 |
+      181 |       expect(result).toContain('Gerando tokens e formatos');
+    > 182 |       expect(result).toContain('TypeScript compilado com sucesso');
+          |                      ^
+      183 |     });
+      184 |
+      185 |     it('deve verificar diret├│rios de sa├¡da', () => {
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:182:22)
+
+  ÔùÅ release-package.ts ÔÇ║ ­ƒôª Build Completo ÔÇ║ deve verificar diret├│rios de sa├¡da
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      189 |       });
+      190 |
+    > 191 |       expect(existsSync(join(rootDir, 'dist'))).toBe(true);
+          |                                                 ^
+      192 |       expect(existsSync(formatsDir)).toBe(true);
+      193 |     });
+      194 |
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:191:49)
+
+  ÔùÅ release-package.ts ÔÇ║ ­ƒôØ Commit e Push ÔÇ║ deve verificar status do Git
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /(timeout|Remote|origin)/
+    Received string:  "spawnSync C:\\Windows\\system32\\cmd.exe ETIMEDOUT"
+
+      217 |       } catch (error: any) {
+      218 |         // Pode falhar por n├úo ter remote configurado, o que ├® esperado
+    > 219 |         expect(error.message).toMatch(/(timeout|Remote|origin)/);
+          |                               ^
+      220 |       }
+      221 |     });
+      222 |   });
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:219:31)
+
+  ÔùÅ release-package.ts ÔÇ║ ­ƒÜÇ Publica├º├úo NPM ÔÇ║ deve verificar pacote antes de publicar
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /(testado com sucesso|falha na publica├º├úo)/
+    Received string:  "­ƒÜÇ Iniciando processo de publica├º├úo...┬À┬À
+    ­ƒÜÇ VALIDANDO DESIGN TOKENS┬À
+    Ô£à Color Palette v├ílido
+    Ô£à Light Theme v├ílido
+    Ô£à Dark Theme v├ílido
+    Ô£à Typography v├ílido
+    Ô£à Spacing v├ílido
+    Ô£à Motion v├ílido
+    Ô£à Breakpoints v├ílido
+    Ô£à Z-Index v├ílido
+    Ô£à Radius v├ílido
+    Ô£à Shadows v├ílido
+    Ô£à Todos os formatos gerados corretamente
+    Ô£à ­ƒÄë Todos os tokens est├úo v├ílidos!┬À
+    ­ƒÜÇ CONFIGURANDO AUTENTICA├ç├âO NPM┬À
+    Ôä╣´©Å  Configurando autentica├º├úo npm a partir de .env...
+    Ô£à .npmrc configurado com sucesso┬À
+    ­ƒÜÇ BUILD E COMPILA├ç├âO┬À
+    ­ƒöº Gerando tokens e formatos┬À
+    > @rainersoft/design-tokens@2.6.0 build
+    > npx tsx scripts/build-tokens.ts && tsup┬À
+    ­ƒÜÇ Iniciando script MASTER de gerenciamento de design tokens...
+    ­ƒôé Fonte ├║nica de verdade: tokens/*.json
+    ­ƒôñ Sa├¡da: formats/* + tokens/generated/* + docs/98- CHANGELOG.md┬À
+    ­ƒöº === GERANDO TOKENS CALCULADOS ===
+    Ô£à radius.json gerado com sucesso!
+    Ô£à breakpoints.json gerado com sucesso!
+    Ô£à z-index.json gerado com sucesso!
+    Ô£à Tokens calculados gerados!┬À
+    ­ƒôª === GERANDO FORMATOS DE SA├ìDA ===
+    ­ƒôä Gerando tokens.json...
+    Ô£à tokens.json gerado!
+    ­ƒÄ¿ Gerando css-vars.css...
+    Ô£à css-vars.css gerado!
+    ­ƒöº Gerando tailwind.config.ts...
+    Ô£à tailwind.config.ts gerado!
+    Ô£à Formatos de sa├¡da gerados!┬À
+    ­ƒôØ === GERANDO CHANGELOG ===
+    Ô£à Changelog gerado para v2.6.0
+    ­ƒôØ 5 commits processados┬À
+    ­ƒÄë === PROCESSO CONCLU├ìDO COM SUCESSO! ===
+    ÔÅ▒´©Å  Tempo total: 0.19s┬À
+    ­ƒôü Arquivos gerados/atualizados:
+       ­ƒöº Tokens calculados:
+         - tokens/primitives/radius-scale.json
+         - tokens/primitives/breakpoints.json
+         - tokens/primitives/z-index-layers.json
+       ­ƒôª Formatos de sa├¡da:
+         - formats/tokens.json
+         - formats/css-vars.css
+         - formats/tailwind.config.ts
+       ­ƒôØ Documenta├º├úo:
+         - docs/98- CHANGELOG.md┬À
+    ­ƒÄ» Pr├│ximos passos:
+       - npm run build (para compila├º├úo TS)
+       - npm run test (para valida├º├úo)
+       - npm publish (para publicar)
+    CLI Building entry: index.ts
+    CLI Using tsconfig: tsconfig.json
+    CLI tsup v8.5.1
+    CLI Using tsup config: C:\\Desenvolvimento\\rainer-design-tokens\\tsup.config.ts
+    CLI Target: es2022
+    CLI Cleaning output folder
+    ESM Build start
+    CJS Build start
+    CJS dist\\index.js     65.66 KB
+    CJS dist\\index.js.map 131.55 KB
+    CJS ÔÜí´©Å Build success in 50ms
+    ESM dist\\index.mjs     64.51 KB
+    ESM dist\\index.mjs.map 130.26 KB
+    ESM ÔÜí´©Å Build success in 55ms
+    DTS Build start
+    DTS ÔÜí´©Å Build success in 1830ms
+    DTS dist\\index.d.mts 62.65 KB
+    DTS dist\\index.d.ts  62.65 KB
+    Ô£à Gerando tokens e formatos
+    Ô£à Diret├│rio dist/ encontrado
+    Ô£à Diret├│rio formats/ encontrado
+    Ôä╣´©Å  Verificando tipos TypeScript...
+    ÔÜá´©Å  Type check falhou (mas continuando...)┬À
+    ­ƒÜÇ TESTANDO PUBLICA├ç├âO NPM (DRY RUN)┬À
+    ­ƒöº Testando publica├º├úo
+    ÔØî Falha ao executar: Testando publica├º├úo
+    ÔØî Comando: npm publish --dry-run
+    ÔØî Erro: Command failed: npm publish --dry-run┬À
+    ­ƒÄë === PROCESSO DE PUBLICA├ç├âO CONCLU├ìDO ===┬À
+    Ôä╣´©Å  Pacote: @rainersoft/design-tokens@2.6.0
+    Ôä╣´©Å  Links ├║teis:
+      ­ƒôª NPM: https://www.npmjs.com/package/@rainersoft/design-tokens
+      ­ƒîÉ GitHub: https://github.com/RainerTeixeira/rainer-design-tokens
+      ­ƒôï Releases: https://github.com/RainerTeixeira/rainer-design-tokens/releases┬À
+    Ôä╣´©Å  Comandos ├║teis para o futuro:
+      npm run publish          - Publicar nova vers├úo
+      npm run publish:dry-run  - Testar publica├º├úo
+      npm run validate         - Validar tokens┬À
+    "
+
+      244 |       );
+      245 |
+    > 246 |       expect(result).toMatch(/(testado com sucesso|falha na publica├º├úo)/);
+          |                      ^
+      247 |     });
+      248 |   });
+      249 |
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:246:22)
+
+  ÔùÅ release-package.ts ÔÇ║ ­ƒôï Cria├º├úo de Release ÔÇ║ deve gerar changelog antes do release
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /(Gerando changelog|Criando release)/
+    Received string:  "­ƒÜÇ Iniciando processo de publica├º├úo...┬À┬À
+    ­ƒÜÇ VALIDANDO DESIGN TOKENS┬À
+    Ô£à Color Palette v├ílido
+    Ô£à Light Theme v├ílido
+    Ô£à Dark Theme v├ílido
+    Ô£à Typography v├ílido
+    Ô£à Spacing v├ílido
+    Ô£à Motion v├ílido
+    Ô£à Breakpoints v├ílido
+    Ô£à Z-Index v├ílido
+    Ô£à Radius v├ílido
+    Ô£à Shadows v├ílido
+    Ô£à Todos os formatos gerados corretamente
+    Ô£à ­ƒÄë Todos os tokens est├úo v├ílidos!┬À
+    ­ƒÜÇ CONFIGURANDO AUTENTICA├ç├âO NPM┬À
+    Ôä╣´©Å  Configurando autentica├º├úo npm a partir de .env...
+    Ô£à .npmrc configurado com sucesso┬À
+    ­ƒÜÇ BUILD E COMPILA├ç├âO┬À
+    ­ƒöº Gerando tokens e formatos┬À
+    > @rainersoft/design-tokens@2.6.0 build
+    > npx tsx scripts/build-tokens.ts && tsup┬À
+    ­ƒÜÇ Iniciando script MASTER de gerenciamento de design tokens...
+    ­ƒôé Fonte ├║nica de verdade: tokens/*.json
+    ­ƒôñ Sa├¡da: formats/* + tokens/generated/* + docs/98- CHANGELOG.md┬À
+    ­ƒöº === GERANDO TOKENS CALCULADOS ===
+    Ô£à radius.json gerado com sucesso!
+    Ô£à breakpoints.json gerado com sucesso!
+    Ô£à z-index.json gerado com sucesso!
+    Ô£à Tokens calculados gerados!┬À
+    ­ƒôª === GERANDO FORMATOS DE SA├ìDA ===
+    ­ƒôä Gerando tokens.json...
+    Ô£à tokens.json gerado!
+    ­ƒÄ¿ Gerando css-vars.css...
+    Ô£à css-vars.css gerado!
+    ­ƒöº Gerando tailwind.config.ts...
+    Ô£à tailwind.config.ts gerado!
+    Ô£à Formatos de sa├¡da gerados!┬À
+    ­ƒôØ === GERANDO CHANGELOG ===
+    Ô£à Changelog gerado para v2.6.0
+    ­ƒôØ 5 commits processados┬À
+    ­ƒÄë === PROCESSO CONCLU├ìDO COM SUCESSO! ===
+    ÔÅ▒´©Å  Tempo total: 0.22s┬À
+    ­ƒôü Arquivos gerados/atualizados:
+       ­ƒöº Tokens calculados:
+         - tokens/primitives/radius-scale.json
+         - tokens/primitives/breakpoints.json
+         - tokens/primitives/z-index-layers.json
+       ­ƒôª Formatos de sa├¡da:
+         - formats/tokens.json
+         - formats/css-vars.css
+         - formats/tailwind.config.ts
+       ­ƒôØ Documenta├º├úo:
+         - docs/98- CHANGELOG.md┬À
+    ­ƒÄ» Pr├│ximos passos:
+       - npm run build (para compila├º├úo TS)
+       - npm run test (para valida├º├úo)
+       - npm publish (para publicar)
+    CLI Building entry: index.ts
+    CLI Using tsconfig: tsconfig.json
+    CLI tsup v8.5.1
+    CLI Using tsup config: C:\\Desenvolvimento\\rainer-design-tokens\\tsup.config.ts
+    CLI Target: es2022
+    CLI Cleaning output folder
+    ESM Build start
+    CJS Build start
+    CJS dist\\index.js     65.66 KB
+    CJS dist\\index.js.map 131.55 KB
+    CJS ÔÜí´©Å Build success in 58ms
+    ESM dist\\index.mjs     64.51 KB
+    ESM dist\\index.mjs.map 130.26 KB
+    ESM ÔÜí´©Å Build success in 64ms
+    DTS Build start
+    DTS ÔÜí´©Å Build success in 2153ms
+    DTS dist\\index.d.mts 62.65 KB
+    DTS dist\\index.d.ts  62.65 KB
+    Ô£à Gerando tokens e formatos
+    Ô£à Diret├│rio dist/ encontrado
+    Ô£à Diret├│rio formats/ encontrado
+    Ôä╣´©Å  Verificando tipos TypeScript...
+    ÔÜá´©Å  Type check falhou (mas continuando...)┬À
+    ­ƒÄë === PROCESSO DE PUBLICA├ç├âO CONCLU├ìDO ===┬À
+    Ôä╣´©Å  Pacote: @rainersoft/design-tokens@2.6.0
+    Ôä╣´©Å  Links ├║teis:
+      ­ƒôª NPM: https://www.npmjs.com/package/@rainersoft/design-tokens
+      ­ƒîÉ GitHub: https://github.com/RainerTeixeira/rainer-design-tokens
+      ­ƒôï Releases: https://github.com/RainerTeixeira/rainer-design-tokens/releases┬À
+    Ôä╣´©Å  Comandos ├║teis para o futuro:
+      npm run publish          - Publicar nova vers├úo
+      npm run publish:dry-run  - Testar publica├º├úo
+      npm run validate         - Validar tokens┬À
+    "
+
+      255 |       );
+      256 |
+    > 257 |       expect(result).toMatch(/(Gerando changelog|Criando release)/);
+          |                      ^
+      258 |     });
+      259 |
+      260 |     it('deve verificar GitHub CLI se dispon├¡vel', () => {
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:257:22)
+
+  ÔùÅ release-package.ts ÔÇ║ ­ƒôï Cria├º├úo de Release ÔÇ║ deve verificar GitHub CLI se dispon├¡vel
+
+    expect(received).toMatch(expected)
+
+    Expected pattern: /(GitHub CLI n├úo encontrado|Criando release no GitHub)/
+    Received string:  "­ƒÜÇ Iniciando processo de publica├º├úo...┬À┬À
+    ­ƒÜÇ VALIDANDO DESIGN TOKENS┬À
+    Ô£à Color Palette v├ílido
+    Ô£à Light Theme v├ílido
+    Ô£à Dark Theme v├ílido
+    Ô£à Typography v├ílido
+    Ô£à Spacing v├ílido
+    Ô£à Motion v├ílido
+    Ô£à Breakpoints v├ílido
+    Ô£à Z-Index v├ílido
+    Ô£à Radius v├ílido
+    Ô£à Shadows v├ílido
+    Ô£à Todos os formatos gerados corretamente
+    Ô£à ­ƒÄë Todos os tokens est├úo v├ílidos!┬À
+    ­ƒÜÇ CONFIGURANDO AUTENTICA├ç├âO NPM┬À
+    Ôä╣´©Å  Configurando autentica├º├úo npm a partir de .env...
+    Ô£à .npmrc configurado com sucesso┬À
+    ­ƒÜÇ BUILD E COMPILA├ç├âO┬À
+    ­ƒöº Gerando tokens e formatos┬À
+    > @rainersoft/design-tokens@2.6.0 build
+    > npx tsx scripts/build-tokens.ts && tsup┬À
+    ­ƒÜÇ Iniciando script MASTER de gerenciamento de design tokens...
+    ­ƒôé Fonte ├║nica de verdade: tokens/*.json
+    ­ƒôñ Sa├¡da: formats/* + tokens/generated/* + docs/98- CHANGELOG.md┬À
+    ­ƒöº === GERANDO TOKENS CALCULADOS ===
+    Ô£à radius.json gerado com sucesso!
+    Ô£à breakpoints.json gerado com sucesso!
+    Ô£à z-index.json gerado com sucesso!
+    Ô£à Tokens calculados gerados!┬À
+    ­ƒôª === GERANDO FORMATOS DE SA├ìDA ===
+    ­ƒôä Gerando tokens.json...
+    Ô£à tokens.json gerado!
+    ­ƒÄ¿ Gerando css-vars.css...
+    Ô£à css-vars.css gerado!
+    ­ƒöº Gerando tailwind.config.ts...
+    Ô£à tailwind.config.ts gerado!
+    Ô£à Formatos de sa├¡da gerados!┬À
+    ­ƒôØ === GERANDO CHANGELOG ===
+    Ô£à Changelog gerado para v2.6.0
+    ­ƒôØ 5 commits processados┬À
+    ­ƒÄë === PROCESSO CONCLU├ìDO COM SUCESSO! ===
+    ÔÅ▒´©Å  Tempo total: 0.24s┬À
+    ­ƒôü Arquivos gerados/atualizados:
+       ­ƒöº Tokens calculados:
+         - tokens/primitives/radius-scale.json
+         - tokens/primitives/breakpoints.json
+         - tokens/primitives/z-index-layers.json
+       ­ƒôª Formatos de sa├¡da:
+         - formats/tokens.json
+         - formats/css-vars.css
+         - formats/tailwind.config.ts
+       ­ƒôØ Documenta├º├úo:
+         - docs/98- CHANGELOG.md┬À
+    ­ƒÄ» Pr├│ximos passos:
+       - npm run build (para compila├º├úo TS)
+       - npm run test (para valida├º├úo)
+       - npm publish (para publicar)
+    CLI Building entry: index.ts
+    CLI Using tsconfig: tsconfig.json
+    CLI tsup v8.5.1
+    CLI Using tsup config: C:\\Desenvolvimento\\rainer-design-tokens\\tsup.config.ts
+    CLI Target: es2022
+    CLI Cleaning output folder
+    ESM Build start
+    CJS Build start
+    ESM dist\\index.mjs     64.51 KB
+    ESM dist\\index.mjs.map 130.26 KB
+    ESM ÔÜí´©Å Build success in 79ms
+    CJS dist\\index.js     65.66 KB
+    CJS dist\\index.js.map 131.55 KB
+    CJS ÔÜí´©Å Build success in 75ms
+    DTS Build start
+    DTS ÔÜí´©Å Build success in 1848ms
+    DTS dist\\index.d.mts 62.65 KB
+    DTS dist\\index.d.ts  62.65 KB
+    Ô£à Gerando tokens e formatos
+    Ô£à Diret├│rio dist/ encontrado
+    Ô£à Diret├│rio formats/ encontrado
+    Ôä╣´©Å  Verificando tipos TypeScript...
+    ÔÜá´©Å  Type check falhou (mas continuando...)┬À
+    ­ƒÄë === PROCESSO DE PUBLICA├ç├âO CONCLU├ìDO ===┬À
+    Ôä╣´©Å  Pacote: @rainersoft/design-tokens@2.6.0
+    Ôä╣´©Å  Links ├║teis:
+      ­ƒôª NPM: https://www.npmjs.com/package/@rainersoft/design-tokens
+      ­ƒîÉ GitHub: https://github.com/RainerTeixeira/rainer-design-tokens
+      ­ƒôï Releases: https://github.com/RainerTeixeira/rainer-design-tokens/releases┬À
+    Ôä╣´©Å  Comandos ├║teis para o futuro:
+      npm run publish          - Publicar nova vers├úo
+      npm run publish:dry-run  - Testar publica├º├úo
+      npm run validate         - Validar tokens┬À
+    "
+
+      264 |       );
+      265 |
+    > 266 |       expect(result).toMatch(
+          |                      ^
+      267 |         /(GitHub CLI n├úo encontrado|Criando release no GitHub)/
+      268 |       );
+      269 |     });
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:266:22)
+
+Test Suites: 4 failed, 5 passed, 9 total
+Tests:       27 failed, 309 passed, 336 total
+Snapshots:   0 total
+Time:        167.115 s
+Ran all test suites.
