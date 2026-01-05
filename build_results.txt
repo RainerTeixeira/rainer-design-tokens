@@ -1,0 +1,222 @@
+  console.log
+    ­ƒº¬ Preparando ambiente para testes de build-tokens.ts
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:25:13)
+
+FAIL tests/scripts/build-tokens.test.ts (30.523 s)
+  build-tokens.ts
+    ­ƒöº Gera├º├úo de Tokens Calculados
+      ├ù deve gerar radius-scale.json (2146 ms)
+      ├ù deve gerar breakpoints.json (2275 ms)
+      ├ù deve gerar z-index-layers.json (2049 ms)
+    ­ƒôª Gera├º├úo de Formatos
+      ├ù deve gerar css-vars.css (2181 ms)
+      ├ù deve gerar tailwind.config.ts (2321 ms)
+      ├ù deve gerar tokens.json (2146 ms)
+    ­ƒôØ Gera├º├úo de Changelog
+      ├ù deve gerar CHANGELOG.md (2207 ms)
+    ­ƒöä Integridade dos Arquivos Gerados
+      ├ù deve manter JSON v├ílido em todos os arquivos (2301 ms)
+      ├ù deve gerar arquivos com conte├║do n├úo vazio (2132 ms)
+    ÔÜí Performance e Erros
+      ÔêÜ deve executar sem erros (2033 ms)
+      ÔêÜ deve concluir em tempo razo├ível (< 5 segundos) (2001 ms)
+    ­ƒöì Valida├º├úo de Conte├║do
+      ├ù deve incluir metadados corretos no tokens.json (1982 ms)
+      ├ù deve gerar CSS com vari├íveis v├ílidas (1958 ms)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöº Gera├º├úo de Tokens Calculados ÔÇ║ deve gerar radius-scale.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      36 |       });
+      37 |
+    > 38 |       expect(existsSync(radiusPath)).toBe(true);
+         |                                      ^
+      39 |
+      40 |       const content = JSON.parse(readFileSync(radiusPath, 'utf-8'));
+      41 |       expect(content).toHaveProperty('radius');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:38:38)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöº Gera├º├úo de Tokens Calculados ÔÇ║ deve gerar breakpoints.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      54 |       });
+      55 |
+    > 56 |       expect(existsSync(breakpointsPath)).toBe(true);
+         |                                           ^
+      57 |
+      58 |       const content = JSON.parse(readFileSync(breakpointsPath, 'utf-8'));
+      59 |       expect(content).toHaveProperty('breakpoints');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:56:43)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöº Gera├º├úo de Tokens Calculados ÔÇ║ deve gerar z-index-layers.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      72 |       });
+      73 |
+    > 74 |       expect(existsSync(zIndexPath)).toBe(true);
+         |                                      ^
+      75 |
+      76 |       const content = JSON.parse(readFileSync(zIndexPath, 'utf-8'));
+      77 |       expect(content).toHaveProperty('zIndex');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:74:38)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôª Gera├º├úo de Formatos ÔÇ║ deve gerar css-vars.css
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      92 |       });
+      93 |
+    > 94 |       expect(existsSync(cssPath)).toBe(true);
+         |                                   ^
+      95 |
+      96 |       const content = readFileSync(cssPath, 'utf-8');
+      97 |       expect(content).toContain(':root {');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:94:35)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôª Gera├º├úo de Formatos ÔÇ║ deve gerar tailwind.config.ts
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      109 |       });
+      110 |
+    > 111 |       expect(existsSync(tailwindPath)).toBe(true);
+          |                                        ^
+      112 |
+      113 |       const content = readFileSync(tailwindPath, 'utf-8');
+      114 |       expect(content).toContain('export const tailwindConfig');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:111:40)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôª Gera├º├úo de Formatos ÔÇ║ deve gerar tokens.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      125 |       });
+      126 |
+    > 127 |       expect(existsSync(tokensPath)).toBe(true);
+          |                                      ^
+      128 |
+      129 |       const content = JSON.parse(readFileSync(tokensPath, 'utf-8'));
+      130 |       expect(content).toHaveProperty('$schema');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:127:38)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôØ Gera├º├úo de Changelog ÔÇ║ deve gerar CHANGELOG.md
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      145 |       });
+      146 |
+    > 147 |       expect(existsSync(changelogPath)).toBe(true);
+          |                                         ^
+      148 |
+      149 |       const content = readFileSync(changelogPath, 'utf-8');
+      150 |       expect(content).toContain('# Changelog');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:147:41)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöä Integridade dos Arquivos Gerados ÔÇ║ deve manter JSON v├ílido em todos os arquivos
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      169 |
+      170 |       jsonFiles.forEach(filePath => {
+    > 171 |         expect(existsSync(filePath)).toBe(true);
+          |                                      ^
+      172 |         expect(() => JSON.parse(readFileSync(filePath, 'utf-8'))).not.toThrow();
+      173 |       });
+      174 |     });
+
+      at tests/scripts/build-tokens.test.ts:171:38
+          at Array.forEach (<anonymous>)
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:170:17)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöä Integridade dos Arquivos Gerados ÔÇ║ deve gerar arquivos com conte├║do n├úo vazio
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      188 |
+      189 |       files.forEach(filePath => {
+    > 190 |         expect(existsSync(filePath)).toBe(true);
+          |                                      ^
+      191 |         const content = readFileSync(filePath, 'utf-8');
+      192 |         expect(content.length).toBeGreaterThan(100);
+      193 |       });
+
+      at tests/scripts/build-tokens.test.ts:190:38
+          at Array.forEach (<anonymous>)
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:189:13)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöì Valida├º├úo de Conte├║do ÔÇ║ deve incluir metadados corretos no tokens.json
+
+    SyntaxError: "undefined" is not valid JSON
+        at JSON.parse (<anonymous>)
+
+      226 |       });
+      227 |
+    > 228 |       const content = JSON.parse(readFileSync(tokensPath, 'utf-8'));
+          |                            ^
+      229 |       expect(content.$name).toBe('@rainersoft/design-tokens');
+      230 |       expect(content.$version).toMatch(/^\d+\.\d+\.\d+$/);
+      231 |       expect(content.$generated).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:228:28)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöì Valida├º├úo de Conte├║do ÔÇ║ deve gerar CSS com vari├íveis v├ílidas
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      243 |
+      244 |       // Verificar padr├Áes de vari├íveis CSS
+    > 245 |       expect(content).toMatch(/--color-[a-z]+-\d+:\s*#[0-9a-fA-F]+/);
+          |                       ^
+      246 |       expect(content).toMatch(/--spacing-\d+:\s*[0-9.]+(rem|px|em)/);
+      247 |       expect(content).toMatch(/--font-[a-z]+:\s*[^;]+/);
+      248 |     });
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:245:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       11 failed, 2 passed, 13 total
+Snapshots:   0 total
+Time:        30.956 s, estimated 49 s
+Ran all test suites matching /tests\\scripts\\build-tokens.test.ts/i.
