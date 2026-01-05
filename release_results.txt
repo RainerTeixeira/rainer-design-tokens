@@ -1,0 +1,5 @@
+  console.log
+    ­ƒº¬ Preparando ambiente para testes de release-package.ts
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:24:13)
+
