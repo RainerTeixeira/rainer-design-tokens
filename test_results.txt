@@ -1,0 +1,614 @@
+PASS tests/token-editor/editor.e2e.test.ts (6.703 s)
+  Token Editor - Testes E2E
+    Fluxo Completo - Abrir, Editar, Salvar
+      ÔêÜ deve abrir um arquivo JSON e carregar no editor (24 ms)
+      ÔêÜ deve editar um valor no editor e atualizar o JSON (1 ms)
+      ÔêÜ deve salvar altera├º├Áes no localStorage (1 ms)
+      ÔêÜ deve validar JSON antes de salvar (40 ms)
+    Gera├º├úo de Formatos
+      ÔêÜ deve gerar CSS quando cores est├úo dispon├¡veis (2 ms)
+      ÔêÜ deve gerar Tailwind config quando cores est├úo dispon├¡veis (6 ms)
+      ÔêÜ deve gerar tokens JSON consolidado sempre (4 ms)
+    Valida├º├úo de Schema
+      ÔêÜ deve validar estrutura de cores (2 ms)
+      ÔêÜ deve detectar cores inv├ílidas
+      ÔêÜ deve validar estrutura de tipografia (2 ms)
+    Hist├│rico de Altera├º├Áes
+      ÔêÜ deve salvar estado no hist├│rico (2 ms)
+      ÔêÜ deve navegar no hist├│rico (undo/redo) (4 ms)
+    Preview Visual
+      ÔêÜ deve criar preview de cores (1 ms)
+      ÔêÜ deve criar preview de tipografia (1 ms)
+    Novos Formatos de Exporta├º├úo
+      ÔêÜ deve gerar Figma Tokens format (1 ms)
+      ÔêÜ deve gerar Android XML format (1 ms)
+      ÔêÜ deve gerar iOS Swift format (1 ms)
+    Integra├º├úo Completa
+      ÔêÜ deve executar fluxo completo: abrir -> editar -> validar -> gerar -> salvar (1 ms)
+
+  console.log
+    ­ƒº¬ Preparando ambiente para testes de sync-docs.ts
+
+      at Object.<anonymous> (tests/scripts/sync-docs.test.ts:24:13)
+
+PASS tests/themes/index.test.ts (10.243 s)
+  Themes - Estrutura DTCG
+    Objeto themes principal
+      ÔêÜ deve ter themes dentro de tokens (22 ms)
+      ÔêÜ deve ter light e dark themes (1 ms)
+    Light Theme
+      ÔêÜ deve exportar lightTheme (1 ms)
+      ÔêÜ deve ter estrutura de cores DTCG (1 ms)
+      ÔêÜ deve ter categorias de cores completas (10 ms)
+      ÔêÜ deve ter background com variantes (1 ms)
+      ÔêÜ deve ter text com variantes (2 ms)
+      ÔêÜ deve ter buttons com estados (2 ms)
+      ÔêÜ deve ter border com variantes (2 ms)
+      ÔêÜ deve ter status com variantes (2 ms)
+      ÔêÜ deve ter interactive com links (2 ms)
+      ÔêÜ deve ter surface com eleva├º├Áes (1 ms)
+    Dark Theme
+      ÔêÜ deve exportar darkTheme (1 ms)
+      ÔêÜ deve ter estrutura de cores DTCG (1 ms)
+      ÔêÜ deve ter mesma estrutura que light theme (2 ms)
+      ÔêÜ deve ter background com valores escuros (1 ms)
+      ÔêÜ deve ter text com valores claros (1 ms)
+      ÔêÜ deve ter buttons com cores adaptadas (1 ms)
+      ÔêÜ deve ter border com cores adaptadas (1 ms)
+    Consist├¬ncia entre Temas
+      ÔêÜ light e dark devem ter mesma estrutura (1 ms)
+      ÔêÜ cores devem ser diferentes entre temas (1 ms)
+      ÔêÜ overlay deve ter opacidades diferentes
+      ÔêÜ links devem ter cores diferentes (2 ms)
+    Refer├¬ncias DTCG
+      ÔêÜ temas devem referenciar primitivos diretamente (1 ms)
+      ÔêÜ todas as cores devem referenciar palette (33 ms)
+      ÔêÜ n├úo deve ter refer├¬ncias circulares (1 ms)
+    Imutabilidade
+      ÔêÜ themes deve manter refer├¬ncia original
+
+PASS tests/index.test.ts (10.224 s)
+  Index - Ponto de Entrada Principal (DTCG)
+    Objeto tokens principal
+      ÔêÜ deve exportar tokens como objeto principal (26 ms)
+      ÔêÜ deve ter estrutura DTCG correta (2 ms)
+      ÔêÜ primitives deve ter todas as categorias (3 ms)
+      ÔêÜ semantics deve ter categorias sem├ónticas (2 ms)
+      ÔêÜ themes deve ter light e dark (2 ms)
+    Exporta├º├Áes de Primitivos
+      ÔêÜ deve exportar colorPrimitive (1 ms)
+      ÔêÜ deve exportar spacingPrimitive (1 ms)
+      ÔêÜ deve exportar typographyPrimitive (1 ms)
+      ÔêÜ deve exportar shadowsPrimitive (1 ms)
+      ÔêÜ deve exportar motionPrimitive (1 ms)
+      ÔêÜ deve exportar radiusPrimitive (1 ms)
+      ÔêÜ deve exportar breakpointsPrimitive (1 ms)
+      ÔêÜ deve exportar zIndexPrimitive
+      ÔêÜ deve exportar borderPrimitive (1 ms)
+      ÔêÜ deve exportar opacityPrimitive (1 ms)
+      ÔêÜ deve exportar layoutPrimitive (1 ms)
+      ÔêÜ deve exportar iconSizesPrimitive (1 ms)
+    Exporta├º├Áes de Sem├ónticos
+      ÔêÜ deve exportar colorSemantic (1 ms)
+      ÔêÜ deve exportar spacingSemantic (8 ms)
+      ÔêÜ deve exportar typographySemantic (1 ms)
+      ÔêÜ deve exportar borderSemantic
+      ÔêÜ deve exportar layoutSemantic (1 ms)
+      ÔêÜ semantics deve ter apenas categorias existentes (2 ms)
+    Exporta├º├Áes de Temas
+      ÔêÜ deve exportar lightTheme (1 ms)
+      ÔêÜ deve exportar darkTheme
+      ÔêÜ temas devem ter estrutura de cores
+      ÔêÜ temas devem ter cores diferentes
+    Valida├º├úo de Valores
+      ÔêÜ primitivos devem ter paleta de cores (1 ms)
+      ÔêÜ paleta deve ter escala de cinza completa (1 ms)
+      ÔêÜ sem├ónticos devem referenciar primitivos (1 ms)
+      ÔêÜ temas devem ter valores resolvidos (1 ms)
+    Imutabilidade
+      ÔêÜ tokens devem manter refer├¬ncia original
+
+  console.log
+    ­ƒº¬ Preparando ambiente para testes de build-tokens.ts
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:25:13)
+
+  console.log
+    ­ƒº¬ Preparando ambiente para testes de release-package.ts
+
+      at Object.<anonymous> (tests/scripts/release-package.test.ts:24:13)
+
+PASS tests/token-editor/editor.test.ts (11.957 s)
+  Token Editor - Fun├º├Áes Utilit├írias
+    toKebabCase
+      ÔêÜ deve converter camelCase para kebab-case (32 ms)
+      ÔêÜ deve converter PascalCase para kebab-case (1 ms)
+      ÔêÜ deve manter strings j├í em kebab-case
+      ÔêÜ deve converter strings com n├║meros (1 ms)
+    toCamelCase
+      ÔêÜ deve converter kebab-case para camelCase (1 ms)
+      ÔêÜ deve manter strings j├í em camelCase (2 ms)
+      ÔêÜ deve converter strings com m├║ltiplos h├¡fens (1 ms)
+    flattenToCSSVars
+      ÔêÜ deve converter objeto simples para CSS vars (4 ms)
+      ÔêÜ deve converter objeto aninhado para CSS vars (1 ms)
+      ÔêÜ deve usar prefixo correto
+      ÔêÜ deve converter camelCase para kebab-case nas chaves
+    toTailwindObject
+      ÔêÜ deve converter objeto simples para formato Tailwind (5 ms)
+      ÔêÜ deve converter objeto aninhado para formato Tailwind (10 ms)
+      ÔêÜ deve converter kebab-case para camelCase (7 ms)
+      ÔêÜ deve usar indenta├º├úo correta
+  Token Editor - Gera├º├úo de Formatos
+    generateCSS
+      ÔêÜ deve gerar CSS com vari├íveis para light theme (1 ms)
+      ÔêÜ deve gerar CSS com vari├íveis para dark theme (1 ms)
+      ÔêÜ deve incluir shadows quando dispon├¡veis (1 ms)
+      ÔêÜ deve incluir glow effects do dark theme (1 ms)
+      ÔêÜ deve incluir typography quando dispon├¡vel (1 ms)
+      ÔêÜ deve incluir radius quando dispon├¡vel (1 ms)
+      ÔêÜ deve lan├ºar erro se cores light n├úo estiverem dispon├¡veis (84 ms)
+      ÔêÜ deve lan├ºar erro se cores dark n├úo estiverem dispon├¡veis (2 ms)
+      ÔêÜ deve gerar CSS v├ílido e bem formatado (17 ms)
+    generateTailwindConfig
+      ÔêÜ deve gerar configura├º├úo Tailwind v├ílida (2 ms)
+      ÔêÜ deve incluir cores no formato Tailwind (1 ms)
+      ÔêÜ deve incluir fontFamily quando dispon├¡vel
+      ÔêÜ deve incluir typography tokens (1 ms)
+      ÔêÜ deve incluir spacing e radius
+      ÔêÜ deve incluir boxShadow com glow effects
+      ÔêÜ deve incluir animations quando dispon├¡vel (1 ms)
+      ÔêÜ deve lan├ºar erro se cores light n├úo estiverem dispon├¡veis (1 ms)
+      ÔêÜ deve gerar TypeScript v├ílido (2 ms)
+    generateTokensJSON
+      ÔêÜ deve gerar JSON consolidado v├ílido (6 ms)
+      ÔêÜ deve incluir refer├¬ncias para cores quando dispon├¡veis (3 ms)
+      ÔêÜ deve incluir refer├¬ncias para typography quando dispon├¡vel (1 ms)
+      ÔêÜ deve incluir refer├¬ncias para spacing quando dispon├¡vel (1 ms)
+      ÔêÜ deve incluir refer├¬ncias para radius quando dispon├¡vel (1 ms)
+      ÔêÜ deve incluir refer├¬ncias para shadows quando dispon├¡vel (1 ms)
+      ÔêÜ deve incluir refer├¬ncias para animations quando dispon├¡vel (1 ms)
+      ÔêÜ deve incluir meta informa├º├Áes (1 ms)
+      ÔêÜ deve remover propriedades null do JSON final (1 ms)
+      ÔêÜ deve gerar JSON v├ílido e bem formatado (1 ms)
+    Integra├º├úo - Gera├º├úo Completa
+      ÔêÜ deve gerar todos os formatos com tokens completos (7 ms)
+      ÔêÜ deve gerar formatos consistentes entre si (2 ms)
+  Token Editor - Fun├º├Áes Auxiliares
+    getDefaultContent
+      ÔêÜ deve gerar template para light.json (1 ms)
+      ÔêÜ deve gerar template para dark.json (1 ms)
+      ÔêÜ deve gerar template para typography.json (1 ms)
+      ÔêÜ deve gerar template para spacing.json (1 ms)
+      ÔêÜ deve gerar template para radius.json (1 ms)
+      ÔêÜ deve gerar template para shadows.json
+      ÔêÜ deve gerar template para animations.json
+      ÔêÜ deve gerar template gen├®rico para arquivos desconhecidos (1 ms)
+    storeLoadedToken
+      ÔêÜ deve armazenar cores light corretamente (1 ms)
+      ÔêÜ deve armazenar cores dark corretamente
+      ÔêÜ deve armazenar typography corretamente (1 ms)
+      ÔêÜ deve armazenar spacing corretamente (1 ms)
+      ÔêÜ deve ignorar erros de parsing (1 ms)
+    escapeHtml
+      ÔêÜ deve escapar caracteres HTML especiais (1 ms)
+      ÔêÜ deve manter texto normal sem escape
+    getValueType
+      ÔêÜ deve detectar cores hex (1 ms)
+      ÔêÜ deve detectar cores rgba/rgb (1 ms)
+      ÔêÜ deve detectar strings normais (1 ms)
+      ÔêÜ deve detectar n├║meros
+      ÔêÜ deve detectar booleanos
+      ÔêÜ deve detectar arrays (1 ms)
+      ÔêÜ deve detectar objetos
+      ÔêÜ deve retornar unknown para null (1 ms)
+  Token Editor - Manipula├º├úo de JSON
+    updateValueFromVisual
+      ÔêÜ deve atualizar valor simples em objeto
+      ÔêÜ deve atualizar valor em objeto aninhado
+      ÔêÜ deve atualizar valor em array (1 ms)
+    addNewProperty
+      ÔêÜ deve adicionar nova propriedade ao objeto
+      ÔêÜ deve adicionar propriedade em objeto aninhado (1 ms)
+    removeProperty
+      ÔêÜ deve remover propriedade do objeto
+    addArrayItem
+      ÔêÜ deve adicionar item string ao array
+      ÔêÜ deve adicionar item number ao array (1 ms)
+      ÔêÜ deve adicionar item boolean ao array
+      ÔêÜ deve adicionar item object ao array (1 ms)
+      ÔêÜ deve adicionar item array ao array
+    removeArrayItem
+      ÔêÜ deve remover item do array (2 ms)
+    moveProperty
+      ÔêÜ deve reordenar propriedades em objeto (1 ms)
+      ÔêÜ deve reordenar itens em array (1 ms)
+      ÔêÜ deve validar que itens s├úo do mesmo n├¡vel (5 ms)
+  Token Editor - Casos de Borda e Erros
+    generateCSS - Casos de borda
+      ÔêÜ deve lidar com tokens sem typography (1 ms)
+      ÔêÜ deve lidar com tokens sem shadows
+      ÔêÜ deve lidar com shadows dark sem glow (1 ms)
+    generateTailwindConfig - Casos de borda
+      ÔêÜ deve lidar com tokens sem typography (1 ms)
+      ÔêÜ deve lidar com tokens sem spacing (1 ms)
+      ÔêÜ deve lidar com tokens sem radius (3 ms)
+      ÔêÜ deve lidar com tokens sem animations (1 ms)
+      ÔêÜ deve lidar com status colors parcial
+    generateTokensJSON - Casos de borda
+      ÔêÜ deve lidar com tokens completamente vazios
+      ÔêÜ deve lidar com apenas cores light (1 ms)
+    flattenToCSSVars - Casos de borda
+      ÔêÜ deve lidar com objeto vazio (1 ms)
+      ÔêÜ deve lidar com valores null (2 ms)
+      ÔêÜ deve lidar com arrays (ignorar) (1 ms)
+      ÔêÜ deve lidar com objetos profundamente aninhados (1 ms)
+    toTailwindObject - Casos de borda
+      ÔêÜ deve lidar com objeto vazio
+      ÔêÜ deve lidar com valores null (1 ms)
+      ÔêÜ deve lidar com arrays (ignorar)
+      ÔêÜ deve escapar aspas simples em strings (1 ms)
+  Token Editor - Casos Adicionais e Edge Cases
+    generateCSS - Casos espec├¡ficos
+      ÔêÜ deve lidar com cores sem todas as propriedades (5 ms)
+      ÔêÜ deve incluir gradients quando dispon├¡vel no dark theme (1 ms)
+      ÔêÜ deve gerar CSS mesmo sem radius (4 ms)
+    generateTailwindConfig - Casos espec├¡ficos
+      ÔêÜ deve incluir todas as cores quando dispon├¡veis (2 ms)
+      ÔêÜ deve incluir fontFamily completo quando dispon├¡vel (1 ms)
+    generateTokensJSON - Casos espec├¡ficos
+      ÔêÜ deve incluir todos os tokens quando dispon├¡veis (2 ms)
+      ÔêÜ deve ter generatedAt como ISO string v├ílida (1 ms)
+    flattenToCSSVars - Casos espec├¡ficos
+      ÔêÜ deve usar separador customizado
+      ÔêÜ deve lidar com prefixo vazio (1 ms)
+      ÔêÜ deve converter m├║ltiplos n├¡veis de aninhamento
+    toTailwindObject - Casos espec├¡ficos
+      ÔêÜ deve converter objeto com m├║ltiplos n├¡veis (1 ms)
+      ÔêÜ deve usar indenta├º├úo customizada
+    getValueType - Casos espec├¡ficos
+      ÔêÜ deve detectar cores hex de 3 d├¡gitos (1 ms)
+      ÔêÜ deve detectar valores com unidades CSS
+      ÔêÜ deve detectar valores com unidades de tempo (1 ms)
+    storeLoadedToken - Casos espec├¡ficos
+      ÔêÜ deve usar json diretamente se n├úo houver propriedade wrapper (1 ms)
+      ÔêÜ deve armazenar radius corretamente (2 ms)
+      ÔêÜ deve armazenar shadows corretamente (1 ms)
+      ÔêÜ deve armazenar animations corretamente (1 ms)
+    getDefaultContent - Casos espec├¡ficos
+      ÔêÜ deve extrair nome do arquivo corretamente
+      ÔêÜ deve gerar template mesmo com caminho completo
+    escapeHtml - Casos espec├¡ficos
+      ÔêÜ deve escapar todos os caracteres especiais (1 ms)
+      ÔêÜ deve manter caracteres normais (5 ms)
+      ÔêÜ deve escapar m├║ltiplas ocorr├¬ncias
+  Token Editor - Valida├º├Áes e Integra├º├Áes
+    Valida├º├úo de caminhos
+      ÔêÜ deve validar caminhos de propriedades (1 ms)
+      ÔêÜ deve validar caminhos de arrays (1 ms)
+      ÔêÜ deve validar caminhos aninhados com arrays (2 ms)
+    Integra├º├úo entre fun├º├Áes
+      ÔêÜ deve gerar formatos consistentes com tokens reais (2 ms)
+      ÔêÜ deve manter consist├¬ncia entre toKebabCase e toCamelCase
+      ÔêÜ deve manter consist├¬ncia entre flattenToCSSVars e toTailwindObject (1 ms)
+    Casos de erro e recupera├º├úo
+      ÔêÜ deve lidar com JSON malformado em storeLoadedToken (1 ms)
+      ÔêÜ deve validar que cores s├úo obrigat├│rias para CSS (3 ms)
+      ÔêÜ deve validar que cores s├úo obrigat├│rias para Tailwind (1 ms)
+    Performance e otimiza├º├úo
+      ÔêÜ deve processar objetos grandes eficientemente (2 ms)
+      ÔêÜ deve processar objetos profundamente aninhados (1 ms)
+  Token Editor - Tratamento de Erros e Valida├º├Áes Avan├ºadas
+    generateCSS - Valida├º├úo de estrutura completa
+      ÔêÜ deve detectar quando cores light est├úo faltando (1 ms)
+      ÔêÜ deve detectar quando cores dark est├úo faltando (2 ms)
+      ÔêÜ deve validar que tokens.colors existe (1 ms)
+      ÔêÜ deve validar que tokens.colors.light ├® um objeto (2 ms)
+      ÔêÜ deve validar que tokens.colors.dark ├® um objeto (2 ms)
+    generateTailwindConfig - Valida├º├úo de estrutura completa
+      ÔêÜ deve detectar quando cores light est├úo faltando para Tailwind (1 ms)
+      ÔêÜ deve validar que tokens.colors existe (2 ms)
+      ÔêÜ deve validar que tokens.colors.light existe (1 ms)
+    generateTokensJSON - Valida├º├úo de estrutura completa
+      ÔêÜ deve gerar tokens JSON mesmo sem cores (1 ms)
+      ÔêÜ deve lidar com tokens completamente vazios (1 ms)
+      ÔêÜ deve lidar com tokens null (1 ms)
+    storeLoadedToken - Tratamento de erros avan├ºado
+      ÔêÜ deve ignorar JSON inv├ílido silenciosamente (1 ms)
+      ÔêÜ deve ignorar conte├║do vazio (1 ms)
+      ÔêÜ deve ignorar conte├║do null (1 ms)
+    flattenToCSSVars - Tratamento de casos extremos
+      ÔêÜ deve lidar com objeto com propriedades undefined (9 ms)
+      ÔêÜ deve lidar com objeto com propriedades vazias (6 ms)
+      ÔêÜ deve lidar com objeto com n├║meros como valores (1 ms)
+    toTailwindObject - Tratamento de casos extremos
+      ÔêÜ deve lidar com objeto com propriedades undefined (1 ms)
+      ÔêÜ deve lidar com objeto com propriedades vazias (1 ms)
+      ÔêÜ deve lidar com objeto com n├║meros como valores
+    getValueType - Casos extremos
+      ÔêÜ deve lidar com undefined (1 ms)
+      ÔêÜ deve lidar com valores especiais (1 ms)
+      ÔêÜ deve detectar cores hex com diferentes formatos
+      ÔêÜ deve detectar cores rgba/rgb com espa├ºos (1 ms)
+    Integra├º├úo - Cen├írios de erro reais
+      ÔêÜ deve gerar apenas tokens JSON quando cores est├úo faltando (4 ms)
+      ÔêÜ deve gerar CSS e Tailwind quando apenas cores est├úo dispon├¡veis (1 ms)
+      ÔêÜ deve gerar todos os formatos quando todos os tokens est├úo dispon├¡veis (2 ms)
+    Valida├º├úo de caminhos e estruturas
+      ÔêÜ deve validar caminhos de propriedades aninhadas
+      ÔêÜ deve validar caminhos de arrays aninhados (1 ms)
+      ÔêÜ deve validar estrutura de objetos aninhados
+    Performance e limites
+      ÔêÜ deve processar objetos grandes sem travar (4 ms)
+      ÔêÜ deve processar objetos muito profundamente aninhados (1 ms)
+
+FAIL tests/tokens/contrast.test.ts
+  ÔùÅ Test suite failed to run
+
+    tests/tokens/contrast.test.ts:197:45 - error TS2339: Property 'color' does not exist on type '{ background: { primary: string; secondary: string; tertiary: string; disabled: string; overlay: string; inverse: string; }; text: { primary: string; secondary: string; tertiary: string; disabled: string; ... 4 more ...; linkHover: string; }; ... 7 more ...; chart: { ...; }; }'.
+
+    197     expect(containsPaletteRef(colorSemantic.color)).toBe(true);
+                                                    ~~~~~
+
+PASS tests/tokens/index.test.ts (14.484 s)
+  Tokens - Estrutura DTCG
+    Objeto tokens principal
+      ÔêÜ deve ter estrutura DTCG correta (21 ms)
+      ÔêÜ primitives deve ter todas as categorias fundamentais (6 ms)
+      ÔêÜ semantics deve ter categorias com significado (2 ms)
+      ÔêÜ themes deve ter implementa├º├Áes completas (1 ms)
+    Primitivos - Cores
+      ÔêÜ deve exportar colorPrimitive (3 ms)
+      ÔêÜ deve ter paleta de cores completa (7 ms)
+      ÔêÜ paleta deve ter escala de cinza completa (3 ms)
+      ÔêÜ cores devem ser strings hex v├ílidas (1 ms)
+    Primitivos - Espa├ºamento
+      ÔêÜ deve exportar spacingPrimitive
+      ÔêÜ deve ter escala de espa├ºamento (1 ms)
+      ÔêÜ espa├ºamento deve usar valores rem (1 ms)
+    Primitivos - Tipografia
+      ÔêÜ deve exportar typographyPrimitive (1 ms)
+      ÔêÜ deve ter estrutura de tipografia completa (1 ms)
+      ÔêÜ deve ter font families padr├úo (1 ms)
+    Primitivos - Motion
+      ÔêÜ deve exportar motionPrimitive (1 ms)
+      ÔêÜ deve ter dura├º├Áes e easings (1 ms)
+      ÔêÜ dura├º├Áes devem ser strings ms (1 ms)
+    Primitivos - Outros
+      ÔêÜ deve exportar radiusPrimitive (1 ms)
+      ÔêÜ deve exportar shadowsPrimitive
+      ÔêÜ deve exportar breakpointsPrimitive (1 ms)
+      ÔêÜ deve exportar zIndexPrimitive (1 ms)
+      ÔêÜ deve exportar borderPrimitive
+      ÔêÜ deve exportar opacityPrimitive (1 ms)
+      ÔêÜ deve exportar layoutPrimitive
+      ÔêÜ deve exportar iconSizesPrimitive
+    Sem├ónticos
+      ÔêÜ deve exportar colorSemantic (1 ms)
+      ÔêÜ cores sem├ónticas devem referenciar primitivos (1 ms)
+      ÔêÜ deve ter estrutura sem├óntica completa (1 ms)
+      ÔêÜ deve exportar outros sem├ónticos (1 ms)
+    Temas
+      ÔêÜ deve exportar lightTheme (1 ms)
+      ÔêÜ deve exportar darkTheme (1 ms)
+      ÔêÜ temas devem ter estrutura de cores
+      ÔêÜ temas devem ter valores espec├¡ficos (1 ms)
+      ÔêÜ temas devem ter cores diferentes
+    Consist├¬ncia DTCG
+      ÔêÜ primitivos devem ser a base de tudo
+      ÔêÜ sem├ónticos devem referenciar primitivos (1 ms)
+      ÔêÜ temas devem referenciar primitivos diretamente (1 ms)
+      ÔêÜ hierarquia deve ser mantida (2 ms)
+
+FAIL tests/scripts/build-tokens.test.ts (48.106 s)
+  build-tokens.ts
+    ­ƒöº Gera├º├úo de Tokens Calculados
+      ├ù deve gerar radius-scale.json (3574 ms)
+      ├ù deve gerar breakpoints.json (2756 ms)
+      ├ù deve gerar z-index-layers.json (2555 ms)
+    ­ƒôª Gera├º├úo de Formatos
+      ├ù deve gerar css-vars.css (2815 ms)
+      ├ù deve gerar tailwind.config.ts (2597 ms)
+      ├ù deve gerar tokens.json (2705 ms)
+    ­ƒôØ Gera├º├úo de Changelog
+      ├ù deve gerar CHANGELOG.md (2602 ms)
+    ­ƒöä Integridade dos Arquivos Gerados
+      ├ù deve manter JSON v├ílido em todos os arquivos (2348 ms)
+      ├ù deve gerar arquivos com conte├║do n├úo vazio (2456 ms)
+    ÔÜí Performance e Erros
+      ÔêÜ deve executar sem erros (2576 ms)
+      ÔêÜ deve concluir em tempo razo├ível (< 5 segundos) (3140 ms)
+    ­ƒöì Valida├º├úo de Conte├║do
+      ├ù deve incluir metadados corretos no tokens.json (3293 ms)
+      ├ù deve gerar CSS com vari├íveis v├ílidas (3013 ms)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöº Gera├º├úo de Tokens Calculados ÔÇ║ deve gerar radius-scale.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      36 |       });
+      37 |
+    > 38 |       expect(existsSync(radiusPath)).toBe(true);
+         |                                      ^
+      39 |
+      40 |       const content = JSON.parse(readFileSync(radiusPath, 'utf-8'));
+      41 |       expect(content).toHaveProperty('radius');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:38:38)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöº Gera├º├úo de Tokens Calculados ÔÇ║ deve gerar breakpoints.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      54 |       });
+      55 |
+    > 56 |       expect(existsSync(breakpointsPath)).toBe(true);
+         |                                           ^
+      57 |
+      58 |       const content = JSON.parse(readFileSync(breakpointsPath, 'utf-8'));
+      59 |       expect(content).toHaveProperty('breakpoints');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:56:43)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöº Gera├º├úo de Tokens Calculados ÔÇ║ deve gerar z-index-layers.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      72 |       });
+      73 |
+    > 74 |       expect(existsSync(zIndexPath)).toBe(true);
+         |                                      ^
+      75 |
+      76 |       const content = JSON.parse(readFileSync(zIndexPath, 'utf-8'));
+      77 |       expect(content).toHaveProperty('zIndex');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:74:38)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôª Gera├º├úo de Formatos ÔÇ║ deve gerar css-vars.css
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      92 |       });
+      93 |
+    > 94 |       expect(existsSync(cssPath)).toBe(true);
+         |                                   ^
+      95 |
+      96 |       const content = readFileSync(cssPath, 'utf-8');
+      97 |       expect(content).toContain(':root {');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:94:35)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôª Gera├º├úo de Formatos ÔÇ║ deve gerar tailwind.config.ts
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      109 |       });
+      110 |
+    > 111 |       expect(existsSync(tailwindPath)).toBe(true);
+          |                                        ^
+      112 |
+      113 |       const content = readFileSync(tailwindPath, 'utf-8');
+      114 |       expect(content).toContain('export const tailwindConfig');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:111:40)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôª Gera├º├úo de Formatos ÔÇ║ deve gerar tokens.json
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      125 |       });
+      126 |
+    > 127 |       expect(existsSync(tokensPath)).toBe(true);
+          |                                      ^
+      128 |
+      129 |       const content = JSON.parse(readFileSync(tokensPath, 'utf-8'));
+      130 |       expect(content).toHaveProperty('$schema');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:127:38)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒôØ Gera├º├úo de Changelog ÔÇ║ deve gerar CHANGELOG.md
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      145 |       });
+      146 |
+    > 147 |       expect(existsSync(changelogPath)).toBe(true);
+          |                                         ^
+      148 |
+      149 |       const content = readFileSync(changelogPath, 'utf-8');
+      150 |       expect(content).toContain('# Changelog');
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:147:41)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöä Integridade dos Arquivos Gerados ÔÇ║ deve manter JSON v├ílido em todos os arquivos
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      169 |
+      170 |       jsonFiles.forEach(filePath => {
+    > 171 |         expect(existsSync(filePath)).toBe(true);
+          |                                      ^
+      172 |         expect(() => JSON.parse(readFileSync(filePath, 'utf-8'))).not.toThrow();
+      173 |       });
+      174 |     });
+
+      at tests/scripts/build-tokens.test.ts:171:38
+          at Array.forEach (<anonymous>)
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:170:17)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöä Integridade dos Arquivos Gerados ÔÇ║ deve gerar arquivos com conte├║do n├úo vazio
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: undefined
+
+      188 |
+      189 |       files.forEach(filePath => {
+    > 190 |         expect(existsSync(filePath)).toBe(true);
+          |                                      ^
+      191 |         const content = readFileSync(filePath, 'utf-8');
+      192 |         expect(content.length).toBeGreaterThan(100);
+      193 |       });
+
+      at tests/scripts/build-tokens.test.ts:190:38
+          at Array.forEach (<anonymous>)
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:189:13)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöì Valida├º├úo de Conte├║do ÔÇ║ deve incluir metadados corretos no tokens.json
+
+    SyntaxError: "undefined" is not valid JSON
+        at JSON.parse (<anonymous>)
+
+      226 |       });
+      227 |
+    > 228 |       const content = JSON.parse(readFileSync(tokensPath, 'utf-8'));
+          |                            ^
+      229 |       expect(content.$name).toBe('@rainersoft/design-tokens');
+      230 |       expect(content.$version).toMatch(/^\d+\.\d+\.\d+$/);
+      231 |       expect(content.$generated).toMatch(/^\d{4}-\d{2}-\d{2}T/);
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:228:28)
+
+  ÔùÅ build-tokens.ts ÔÇ║ ­ƒöì Valida├º├úo de Conte├║do ÔÇ║ deve gerar CSS com vari├íveis v├ílidas
+
+    expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      243 |
+      244 |       // Verificar padr├Áes de vari├íveis CSS
+    > 245 |       expect(content).toMatch(/--color-[a-z]+-\d+:\s*#[0-9a-fA-F]+/);
+          |                       ^
+      246 |       expect(content).toMatch(/--spacing-\d+:\s*[0-9.]+(rem|px|em)/);
+      247 |       expect(content).toMatch(/--font-[a-z]+:\s*[^;]+/);
+      248 |     });
+
+      at Object.<anonymous> (tests/scripts/build-tokens.test.ts:245:23)
+

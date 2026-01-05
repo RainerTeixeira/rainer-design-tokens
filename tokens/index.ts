@@ -130,8 +130,10 @@ export {
 // Exportar semânticos normalizados (apenas a parte de dados, sem $schema etc)
 export const colorSemantic = rawColorSemantic.color || rawColorSemantic;
 export const spacingSemantic = rawSpacingSemantic.spacing || rawSpacingSemantic;
-export const typographySemantic = rawTypographySemantic.typography || rawTypographySemantic;
+export const typographySemantic =
+  rawTypographySemantic.typography || rawTypographySemantic;
 export const borderSemantic = rawBorderSemantic.border || rawBorderSemantic;
 export const layoutSemantic = rawLayoutSemantic.layout || rawLayoutSemantic;
-export const elevationSemantic = rawElevationSemantic.elevation || rawElevationSemantic;
+export const elevationSemantic =
+  rawElevationSemantic.elevation || rawElevationSemantic;
 export const motionSemantic = rawMotionSemantic.motion || rawMotionSemantic;
