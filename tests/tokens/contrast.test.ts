@@ -4,22 +4,26 @@ import {
   lightTheme,
   darkTheme,
 } from '../../index';
-import { execSync } from 'child_process';
-import { join } from 'path';
-const { readFileSync } = require('fs');
+import { execSync } from 'node:child_process';
+import { join } from 'node:path';
+const { readFileSync } = require('node:fs');
 
 // Helpers: resolve references like {palette.gray.900} or {opacity.50}
 function resolveTokenReferences(value: any, palette: any, opacity: any): any {
   if (typeof value === 'string') {
     const referenceRegex = /\{([^}]+)\}/g;
-    return value.replace(referenceRegex, (match, path) => {
+    return value.replaceAll(referenceRegex, (match: string, path: string) => {
       const keys = path.split('.');
-      let resolved: any =
-        keys[0] === 'palette'
-          ? palette
-          : keys[0] === 'opacity'
-            ? opacity
-            : undefined;
+      let resolved: any;
+
+      if (keys[0] === 'palette') {
+        resolved = palette;
+      } else if (keys[0] === 'opacity') {
+        resolved = opacity;
+      } else {
+        resolved = undefined;
+      }
+
       const start = keys[0] === 'palette' || keys[0] === 'opacity' ? 1 : 0;
 
       for (let i = start; i < keys.length; i++) {
@@ -52,7 +56,7 @@ function resolveTokenReferences(value: any, palette: any, opacity: any): any {
 // Contrast utils (WCAG)
 function hexToRgb(hex: string) {
   const h = hex.replace('#', '');
-  const bigint = parseInt(
+  const bigint = Number.parseInt(
     h.length === 3
       ? h
           .split('')
@@ -135,9 +139,9 @@ describe('Design Tokens - Acessibilidade e Resolução', () => {
         /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*[0-9.]+)?\)/
       );
       if (rgbaMatch) {
-        const r = parseInt(rgbaMatch[1], 10);
-        const g = parseInt(rgbaMatch[2], 10);
-        const b = parseInt(rgbaMatch[3], 10);
+        const r = Number.parseInt(rgbaMatch[1], 10);
+        const g = Number.parseInt(rgbaMatch[2], 10);
+        const b = Number.parseInt(rgbaMatch[3], 10);
         return (
           '#' + [r, g, b].map(n => n.toString(16).padStart(2, '0')).join('')
         );
@@ -178,13 +182,8 @@ describe('Design Tokens - Acessibilidade e Resolução', () => {
 
     const filePath = join(rootDir, 'formats', 'tokens.json');
     // Tentar ler o arquivo para verificar se existe
-    let parsed: any;
-    try {
-      parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
-      expect(parsed).toBeDefined();
-    } catch (e) {
-      throw new Error(`Arquivo não encontrado: ${filePath}`);
-    }
+    const parsed = JSON.parse(readFileSync(filePath, 'utf-8'));
+    expect(parsed).toBeDefined();
     expect(parsed).toHaveProperty('primitives');
     expect(parsed.primitives).toHaveProperty('color');
     expect(parsed).toHaveProperty('themes');

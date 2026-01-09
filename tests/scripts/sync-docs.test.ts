@@ -10,9 +10,9 @@
  * @author Rainer Teixeira
  */
 
-import { existsSync, readFileSync, writeFileSync, unlinkSync } from 'fs';
-import { join } from 'path';
-import { execSync } from 'child_process';
+import { existsSync, readFileSync, writeFileSync, unlinkSync } from 'node:fs';
+import { join } from 'node:path';
+import { execSync } from 'node:child_process';
 
 const rootDir = join(__dirname, '..', '..');
 
@@ -248,7 +248,7 @@ Content here.
 
       // Garantir que docs/ existe
       if (!existsSync(docsDir)) {
-        const { mkdirSync } = require('fs');
+        const { mkdirSync } = require('node:fs');
         mkdirSync(docsDir, { recursive: true });
       }
 
@@ -281,7 +281,7 @@ Content here.
       const hiddenFile = join(hiddenDir, 'hidden.md');
 
       if (!existsSync(hiddenDir)) {
-        const { mkdirSync } = require('fs');
+        const { mkdirSync } = require('node:fs');
         mkdirSync(hiddenDir, { recursive: true });
       }
       writeFileSync(hiddenFile, '# Hidden file');
@@ -301,7 +301,7 @@ Content here.
           unlinkSync(hiddenFile);
         }
         if (existsSync(hiddenDir)) {
-          const { rmSync } = require('fs');
+          const { rmSync } = require('node:fs');
           rmSync(hiddenDir, { recursive: true, force: true });
         }
       }

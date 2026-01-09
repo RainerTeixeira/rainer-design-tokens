@@ -25,7 +25,7 @@
  * @author Rainer Teixeira
  */
 
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { execSync } from 'child_process';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -36,6 +36,52 @@ const __dirname = dirname(__filename);
 // Interfaces
 interface ColorToken {
   [key: string]: string | ColorToken;
+}
+
+interface ChangelogEntry {
+  version: string;
+  content: string;
+  timestamp?: string;
+}
+
+interface CommitInfo {
+  hash: string;
+  message: string;
+  author: string;
+  date: string;
+  scope?: string;
+  type?: string;
+}
+
+// Utilitários
+const colors = {
+  reset: '\x1b[0m',
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  blue: '\x1b[34m',
+  cyan: '\x1b[36m',
+  magenta: '\x1b[35m'
+};
+
+function log(message: string, color: keyof typeof colors = 'reset'): void {
+  console.log(`${colors[color]}${message}${colors.reset}`);
+}
+
+function logSuccess(message: string): void {
+  log(`✅ ${message}`, 'green');
+}
+
+function logWarning(message: string): void {
+  log(`⚠️  ${message}`, 'yellow');
+}
+
+function logError(message: string): void {
+  log(`❌ ${message}`, 'red');
+}
+
+function logInfo(message: string): void {
+  log(`ℹ️  ${message}`, 'cyan');
 }
 
 interface AnimationKeyframes {
@@ -727,38 +773,206 @@ function generateChangelog(commits: Commit[]): string {
   return sections.join('\n');
 }
 
-function generateChangelogFile() {
+/**
+ * 🔧 FUNÇÕES PROFISSIONAIS DE CHANGELOG
+ * Implementação robusta que previne duplicação e gerencia entradas corretamente
+ */
+
+/**
+ * Extrai entradas de changelog existentes de forma segura
+ * @param content - Conteúdo bruto do arquivo changelog
+ * @returns Array de entradas estruturadas
+ */
+function parseChangelogEntries(content: string): ChangelogEntry[] {
+  const entries: ChangelogEntry[] = [];
+  
+  // Regex melhorada para encontrar entradas de changelog (formato: # Changelog - v{version})
+  // Usando lookahead negativo para não incluir o próximo cabeçalho
+  const entryRegex = /# Changelog - v([\d.]+)\s*\n([\s\S]*?)(?=\n---\n\n# Changelog|$)/g;
+  let match;
+  
+  while ((match = entryRegex.exec(content)) !== null) {
+    entries.push({
+      version: match[1],
+      content: match[2].trim(),
+      timestamp: undefined // Poderia ser extraído do conteúdo se necessário
+    });
+  }
+  
+  return entries;
+}
+
+/**
+ * Verifica se uma versão já existe no changelog
+ * @param content - Conteúdo do changelog
+ * @param version - Versão a verificar
+ * @returns true se a versão já existe
+ */
+function versionExists(content: string, version: string): boolean {
+  // Usar regex simples para verificar se a versão já existe
+  const versionRegex = new RegExp(`# Changelog - v${version.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'm');
+  return versionRegex.test(content);
+}
+
+/**
+ * Limpa duplicatas no changelog mantendo apenas a primeira ocorrência de cada versão
+ * @param content - Conteúdo bruto do changelog
+ * @returns Conteúdo limpo sem duplicatas
+ */
+// TODO: Implementar uso desta função para limpar duplicatas no changelog
+function cleanDuplicateEntries(content: string): string {
+  // Dividir o conteúdo por "---" que separa as entradas
+  const sections = content.split(/\n---\n\n/);
+  const seenVersions = new Set<string>();
+  const cleanSections: string[] = [];
+  
+  for (const section of sections) {
+    // Extrair versão usando regex
+    const versionMatch = section.match(/# Changelog - v([\d.]+)/);
+    if (versionMatch) {
+      const version = versionMatch[1];
+      if (!seenVersions.has(version)) {
+        seenVersions.add(version);
+        cleanSections.push(section);
+      }
+    } else {
+      // Manter seções que não têm versão (cabeçalho, etc.)
+      cleanSections.push(section);
+    }
+  }
+  
+  // Reconstruir o changelog limpo
+  return cleanSections.join('\n\n---\n\n');
+}
+
+/**
+ * Função agressiva para limpar completamente o changelog duplicado
+ * Mantém apenas entradas únicas por versão
+ */
+function aggressiveCleanChangelog(content: string): string {
+  const lines = content.split('\n');
+  const uniqueEntries = new Map<string, string[]>();
+  let currentVersion = '';
+  let currentLines: string[] = [];
+  
+  for (const line of lines) {
+    const versionMatch = line.match(/^# Changelog - v([\d.]+)$/);
+    
+    if (versionMatch) {
+      // Salvar entrada anterior se existir
+      if (currentVersion && currentLines.length > 0) {
+        if (!uniqueEntries.has(currentVersion)) {
+          uniqueEntries.set(currentVersion, currentLines);
+        }
+      }
+      
+      // Começar nova entrada
+      currentVersion = versionMatch[1];
+      currentLines = [line];
+    } else if (currentVersion) {
+      currentLines.push(line);
+    }
+  }
+  
+  // Salvar última entrada
+  if (currentVersion && currentLines.length > 0) {
+    if (!uniqueEntries.has(currentVersion)) {
+      uniqueEntries.set(currentVersion, currentLines);
+    }
+  }
+  
+  // Reconstruir changelog limpo com separadores corretos
+  const allEntries = Array.from(uniqueEntries.values());
+  const result: string[] = [];
+  
+  allEntries.forEach((entry, index) => {
+    result.push(...entry);
+    if (index < allEntries.length - 1) {
+      result.push('', '---', '');
+    }
+  });
+  
+  return result.join('\n');
+}
+
+/**
+ * Gera e atualiza o changelog de forma profissional
+ * Previne duplicação e gerencia o arquivo corretamente
+ */
+function generateChangelogFile(): void {
   const packageJson = JSON.parse(
     readFileSync(join(__dirname, '..', 'package.json'), 'utf-8')
   );
   const version = packageJson.version;
-
+  
+  logInfo(`Processando changelog para versão ${version}`);
+  
   const latestTag = getLatestTag();
   const commits = getCommitsSinceTag(latestTag || undefined);
-
+  
   if (commits.length === 0) {
-    console.log('📝 Nenhum commit novo desde a última tag');
+    logWarning('Nenhum commit novo desde a última tag');
     return;
   }
-
+  
   const changelog = generateChangelog(commits);
   const fullChangelog = `# Changelog - v${version}\n\n${changelog}`;
-
-  // Atualizar docs/98- CHANGELOG.md
+  
+  // Caminho do arquivo changelog
   const changelogPath = join(__dirname, '..', 'docs', '98- CHANGELOG.md');
-  let existingChangelog = '';
-
+  
   try {
-    existingChangelog = readFileSync(changelogPath, 'utf-8');
-  } catch {
-    // Arquivo não existe, criar novo
+    // Verificar se o arquivo existe
+    if (!existsSync(changelogPath)) {
+      // Criar novo arquivo
+      writeFileSync(changelogPath, fullChangelog, 'utf-8');
+      logSuccess(`Changelog criado para v${version}`);
+      return;
+    }
+    
+    // Ler conteúdo existente
+    const existingContent = readFileSync(changelogPath, 'utf-8');
+    
+    // Verificar se há duplicatas e limpar se necessário
+    let cleanContent = existingContent;
+    
+    // Detectar duplicatas de forma simples
+    const sections = existingContent.split(/\n---\n\n/);
+    const versionCounts = new Map<string, number>();
+    
+    sections.forEach(section => {
+      const versionMatch = section.match(/# Changelog - v([\d.]+)/);
+      if (versionMatch) {
+        const version = versionMatch[1];
+        versionCounts.set(version, (versionCounts.get(version) || 0) + 1);
+      }
+    });
+    
+    const hasDuplicates = Array.from(versionCounts.values()).some(count => count > 1);
+    
+    if (hasDuplicates) {
+      logWarning('Detectadas duplicatas no changelog. Limpando...');
+      cleanContent = aggressiveCleanChangelog(existingContent);
+      logSuccess('Duplicatas removidas');
+    }
+    
+    // Verificar se a versão atual já existe
+    if (versionExists(cleanContent, version)) {
+      logWarning(`Changelog para v${version} já existe. Pulando atualização.`);
+      return;
+    }
+    
+    // Adicionar nova entrada no topo
+    const updatedContent = `${fullChangelog}\n\n---\n\n${cleanContent}`;
+    writeFileSync(changelogPath, updatedContent, 'utf-8');
+    
+    logSuccess(`Changelog atualizado para v${version}`);
+    logInfo(`${commits.length} commits processados`);
+    
+  } catch (error: any) {
+    logError(`Erro ao processar changelog: ${error.message}`);
+    throw error;
   }
-
-  const updatedChangelog = `${fullChangelog}\n\n---\n\n${existingChangelog}`;
-  writeFileSync(changelogPath, updatedChangelog, 'utf-8');
-
-  console.log(`✅ Changelog gerado para v${version}`);
-  console.log(`📝 ${commits.length} commits processados`);
 }
 
 // 🚀 FUNÇÃO PRINCIPAL MASTER
