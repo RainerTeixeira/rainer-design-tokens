@@ -18,6 +18,7 @@ node_modules/
 # que dist/ está atualizado com a versão mais recente do código.
 build/
 *.tsbuildinfo
+*.map
 
 # Logs
 logs
@@ -51,6 +52,24 @@ Thumbs.db
 # NPM config (contém tokens - não commitar)
 .npmrc
 
+
+# Storybook build outputs
+storybook-static/
+*.storybook.log
+
+# Token editor temporary files
+.token-editor-cache/
+design-token-exports/
+
+# Figma tokens export (se usado)
+figma-tokens.json
+
+# Stylelint cache
+.stylelintcache
+
+# Temporary token files
+tokens-temp/
+*.tokens.tmp
 
 *storybook.log
 storybook-static
