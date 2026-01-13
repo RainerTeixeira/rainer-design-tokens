@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const PrimaryStates: Story = {
   render: () => {
-    const primary = tokens.colors.light.primary;
+    const primary = tokens.themes.light.primary;
     
     const states = [
       { name: 'Base', value: primary.base, text: primary.text },
@@ -95,7 +95,7 @@ export const PrimaryStates: Story = {
                   borderRadius: '8px',
                   textAlign: 'center',
                   border: '1px solid rgba(0,0,0,0.1)',
-                  color: tokens.colors.light.text.primary,
+                  color: tokens.themes.light.text.primary,
                 }}
               >
                 <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>{bg.name}</div>
@@ -118,8 +118,8 @@ export const PrimaryStates: Story = {
                   padding: '1.5rem',
                   borderRadius: '8px',
                   textAlign: 'center',
-                  backgroundColor: tokens.colors.light.background.primary,
-                  color: tokens.colors.light.text.primary,
+                  backgroundColor: tokens.themes.light.background.primary,
+                  color: tokens.themes.light.text.primary,
                 }}
               >
                 <div style={{ fontWeight: 600, marginBottom: '0.5rem' }}>{border.name}</div>
@@ -138,7 +138,7 @@ export const PrimaryStates: Story = {
  */
 export const SecondaryStates: Story = {
   render: () => {
-    const secondary = tokens.colors.light.secondary;
+    const secondary = tokens.themes.light.secondary;
     
     const states = [
       { name: 'Base', value: secondary.base, text: secondary.text },
@@ -181,7 +181,7 @@ export const SecondaryStates: Story = {
  */
 export const AccentStates: Story = {
   render: () => {
-    const accent = tokens.colors.light.accent;
+    const accent = tokens.themes.light.accent;
     
     const states = [
       { name: 'Base', value: accent.base, text: accent.text },
@@ -224,8 +224,8 @@ export const AccentStates: Story = {
  */
 export const ThemeComparison: Story = {
   render: () => {
-    const lightPrimary = tokens.colors.light.primary;
-    const darkPrimary = tokens.colors.dark.primary;
+    const lightPrimary = tokens.themes.light.primary;
+    const darkPrimary = tokens.themes.dark.primary;
 
     return (
       <div style={{ padding: '2rem' }}>

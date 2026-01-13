@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const LightThemePreview: Story = {
   render: () => {
-    const theme = tokens.colors.light;
+    const theme = tokens.themes.light;
 
     return (
       <div
@@ -39,15 +39,15 @@ export const LightThemePreview: Story = {
           style={{
             backgroundColor: theme.surface.primary,
             border: `1px solid ${theme.border.primary}`,
-            borderRadius: tokens.radius.lg,
+            borderRadius: tokens.primitives.radius.lg,
             padding: tokens.spacing['8'],
-            boxShadow: tokens.shadows.light.md,
+            boxShadow: tokens.primitives.shadows.light.md,
           }}
         >
           <h1
             style={{
-              fontSize: tokens.typography.fontSize['4xl'],
-              fontWeight: parseInt(tokens.typography.fontWeight.bold),
+              fontSize: tokens.primitives.typography.fontSize['4xl'],
+              fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
               color: theme.text.primary,
               marginBottom: tokens.spacing['4'],
             }}
@@ -56,7 +56,7 @@ export const LightThemePreview: Story = {
           </h1>
           <p
             style={{
-              fontSize: tokens.typography.fontSize.base,
+              fontSize: tokens.primitives.typography.fontSize.base,
               color: theme.text.secondary,
               marginBottom: tokens.spacing['6'],
             }}
@@ -71,9 +71,9 @@ export const LightThemePreview: Story = {
                 backgroundColor: theme.primary.base,
                 color: theme.text.inverse,
                 border: 'none',
-                borderRadius: tokens.radius.md,
-                fontSize: tokens.typography.fontSize.base,
-                fontWeight: parseInt(tokens.typography.fontWeight.semibold),
+                borderRadius: tokens.primitives.radius.md,
+                fontSize: tokens.primitives.typography.fontSize.base,
+                fontWeight: parseInt(tokens.primitives.typography.fontWeight.semibold),
                 cursor: 'pointer',
               }}
             >
@@ -85,9 +85,9 @@ export const LightThemePreview: Story = {
                 backgroundColor: theme.secondary.base,
                 color: theme.text.inverse,
                 border: 'none',
-                borderRadius: tokens.radius.md,
-                fontSize: tokens.typography.fontSize.base,
-                fontWeight: parseInt(tokens.typography.fontWeight.semibold),
+                borderRadius: tokens.primitives.radius.md,
+                fontSize: tokens.primitives.typography.fontSize.base,
+                fontWeight: parseInt(tokens.primitives.typography.fontWeight.semibold),
                 cursor: 'pointer',
               }}
             >
@@ -100,14 +100,14 @@ export const LightThemePreview: Story = {
               marginTop: tokens.spacing['8'],
               padding: tokens.spacing['6'],
               backgroundColor: theme.surface.secondary,
-              borderRadius: tokens.radius.md,
+              borderRadius: tokens.primitives.radius.md,
               border: `1px solid ${theme.border.secondary}`,
             }}
           >
             <h2
               style={{
-                fontSize: tokens.typography.fontSize['2xl'],
-                fontWeight: parseInt(tokens.typography.fontWeight.bold),
+                fontSize: tokens.primitives.typography.fontSize['2xl'],
+                fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
                 marginBottom: tokens.spacing['4'],
               }}
             >
@@ -128,7 +128,7 @@ export const LightThemePreview: Story = {
  */
 export const DarkThemePreview: Story = {
   render: () => {
-    const theme = tokens.colors.dark;
+    const theme = tokens.themes.dark;
 
     return (
       <div
@@ -145,15 +145,15 @@ export const DarkThemePreview: Story = {
           style={{
             backgroundColor: theme.surface.primary,
             border: `1px solid ${theme.border.primary}`,
-            borderRadius: tokens.radius.lg,
+            borderRadius: tokens.primitives.radius.lg,
             padding: tokens.spacing['8'],
-            boxShadow: tokens.shadows.dark.md,
+            boxShadow: tokens.primitives.shadows.dark.md,
           }}
         >
           <h1
             style={{
-              fontSize: tokens.typography.fontSize['4xl'],
-              fontWeight: parseInt(tokens.typography.fontWeight.bold),
+              fontSize: tokens.primitives.typography.fontSize['4xl'],
+              fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
               color: theme.text.primary,
               marginBottom: tokens.spacing['4'],
               textShadow: theme.effects?.glowCyan || 'none',
@@ -163,7 +163,7 @@ export const DarkThemePreview: Story = {
           </h1>
           <p
             style={{
-              fontSize: tokens.typography.fontSize.base,
+              fontSize: tokens.primitives.typography.fontSize.base,
               color: theme.text.secondary,
               marginBottom: tokens.spacing['6'],
             }}
@@ -178,9 +178,9 @@ export const DarkThemePreview: Story = {
                 backgroundColor: theme.primary.base,
                 color: theme.text.inverse,
                 border: `1px solid ${theme.border.neon}`,
-                borderRadius: tokens.radius.md,
-                fontSize: tokens.typography.fontSize.base,
-                fontWeight: parseInt(tokens.typography.fontWeight.semibold),
+                borderRadius: tokens.primitives.radius.md,
+                fontSize: tokens.primitives.typography.fontSize.base,
+                fontWeight: parseInt(tokens.primitives.typography.fontWeight.semibold),
                 cursor: 'pointer',
                 boxShadow: theme.effects?.glowCyan || 'none',
               }}
@@ -193,9 +193,9 @@ export const DarkThemePreview: Story = {
                 backgroundColor: theme.secondary.base,
                 color: theme.text.inverse,
                 border: `1px solid ${theme.border.neon}`,
-                borderRadius: tokens.radius.md,
-                fontSize: tokens.typography.fontSize.base,
-                fontWeight: parseInt(tokens.typography.fontWeight.semibold),
+                borderRadius: tokens.primitives.radius.md,
+                fontSize: tokens.primitives.typography.fontSize.base,
+                fontWeight: parseInt(tokens.primitives.typography.fontWeight.semibold),
                 cursor: 'pointer',
                 boxShadow: theme.effects?.glowPurple || 'none',
               }}
@@ -209,14 +209,14 @@ export const DarkThemePreview: Story = {
               marginTop: tokens.spacing['8'],
               padding: tokens.spacing['6'],
               backgroundColor: theme.surface.secondary,
-              borderRadius: tokens.radius.md,
+              borderRadius: tokens.primitives.radius.md,
               border: `1px solid ${theme.border.secondary}`,
             }}
           >
             <h2
               style={{
-                fontSize: tokens.typography.fontSize['2xl'],
-                fontWeight: parseInt(tokens.typography.fontWeight.bold),
+                fontSize: tokens.primitives.typography.fontSize['2xl'],
+                fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
                 marginBottom: tokens.spacing['4'],
                 color: theme.text.neonCyan,
               }}
@@ -234,14 +234,14 @@ export const DarkThemePreview: Story = {
                 marginTop: tokens.spacing['8'],
                 padding: tokens.spacing['8'],
                 background: theme.gradients.primary,
-                borderRadius: tokens.radius.lg,
+                borderRadius: tokens.primitives.radius.lg,
                 textAlign: 'center',
               }}
             >
               <h3
                 style={{
-                  fontSize: tokens.typography.fontSize['2xl'],
-                  fontWeight: parseInt(tokens.typography.fontWeight.bold),
+                  fontSize: tokens.primitives.typography.fontSize['2xl'],
+                  fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
                   color: theme.text.inverse,
                 }}
               >

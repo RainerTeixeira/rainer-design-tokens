@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const FontFamilies: Story = {
   render: () => {
-    const { fontFamily } = tokens.typography;
+    const { fontFamily } = tokens.primitives.typography;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -77,7 +77,7 @@ export const FontFamilies: Story = {
  */
 export const FontSizes: Story = {
   render: () => {
-    const { fontSize } = tokens.typography;
+    const { fontSize } = tokens.primitives.typography;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -147,7 +147,7 @@ export const FontSizes: Story = {
  */
 export const FontWeights: Story = {
   render: () => {
-    const { fontWeight } = tokens.typography;
+    const { fontWeight } = tokens.primitives.typography;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -212,7 +212,7 @@ export const FontWeights: Story = {
  */
 export const LineHeights: Story = {
   render: () => {
-    const { lineHeight } = tokens.typography;
+    const { lineHeight } = tokens.primitives.typography;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -268,7 +268,7 @@ export const LineHeights: Story = {
  */
 export const LetterSpacing: Story = {
   render: () => {
-    const { letterSpacing } = tokens.typography;
+    const { letterSpacing } = tokens.primitives.typography;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>

@@ -32,8 +32,8 @@ type Story = StoryObj<typeof meta>;
  */
 export const Headings: Story = {
   render: () => {
-    const typography = tokens.typography;
-    const colors = tokens.colors.light;
+    const typography = tokens.primitives.typography;
+    const colors = tokens.themes.light;
 
     const headings = [
       { level: 'H1', token: typography.headings.h1 },
@@ -85,8 +85,8 @@ export const Headings: Story = {
  */
 export const Subtitles: Story = {
   render: () => {
-    const typography = tokens.typography;
-    const colors = tokens.colors.light;
+    const typography = tokens.primitives.typography;
+    const colors = tokens.themes.light;
 
     const subtitles = [
       { name: 'Large', token: typography.subtitle.large },
@@ -131,8 +131,8 @@ export const Subtitles: Story = {
  */
 export const BodyText: Story = {
   render: () => {
-    const typography = tokens.typography;
-    const colors = tokens.colors.light;
+    const typography = tokens.primitives.typography;
+    const colors = tokens.themes.light;
 
     const bodySizes = [
       { name: 'Large', token: typography.body.large },
@@ -179,8 +179,8 @@ export const BodyText: Story = {
  */
 export const Captions: Story = {
   render: () => {
-    const typography = tokens.typography;
-    const colors = tokens.colors.light;
+    const typography = tokens.primitives.typography;
+    const colors = tokens.themes.light;
 
     const captions = [
       { name: 'Large', token: typography.caption.large },
@@ -224,8 +224,8 @@ export const Captions: Story = {
  */
 export const Buttons: Story = {
   render: () => {
-    const typography = tokens.typography;
-    const colors = tokens.colors.light;
+    const typography = tokens.primitives.typography;
+    const colors = tokens.themes.light;
 
     const buttonSizes = [
       { name: 'Large', token: typography.button.large },
@@ -274,8 +274,8 @@ export const Buttons: Story = {
  */
 export const Labels: Story = {
   render: () => {
-    const typography = tokens.typography;
-    const colors = tokens.colors.light;
+    const typography = tokens.primitives.typography;
+    const colors = tokens.themes.light;
 
     const labelSizes = [
       { name: 'Large', token: typography.label.large },
@@ -320,8 +320,8 @@ export const Labels: Story = {
  */
 export const Code: Story = {
   render: () => {
-    const typography = tokens.typography;
-    const colors = tokens.colors.light;
+    const typography = tokens.primitives.typography;
+    const colors = tokens.themes.light;
 
     return (
       <div style={{ padding: '2rem' }}>

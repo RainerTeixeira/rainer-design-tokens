@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const LightShadows: Story = {
   render: () => {
-    const shadows = tokens.shadows.light;
+    const shadows = tokens.primitives.shadows.light;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -77,7 +77,7 @@ export const LightShadows: Story = {
  */
 export const DarkShadows: Story = {
   render: () => {
-    const shadows = tokens.shadows.dark;
+    const shadows = tokens.primitives.shadows.dark;
 
     return (
       <div
@@ -158,7 +158,7 @@ export const DarkShadows: Story = {
  */
 export const GlowEffects: Story = {
   render: () => {
-    const shadows = tokens.shadows.dark;
+    const shadows = tokens.primitives.shadows.dark;
     const glow = shadows.glow as Record<string, string> | undefined;
 
     if (!glow) {

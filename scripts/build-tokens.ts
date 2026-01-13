@@ -97,7 +97,7 @@ interface AnimationToken {
 
 interface Tokens {
   palette: any;
-  colors: {
+  themes: {
     light: ColorToken;
     dark: ColorToken;
   };
@@ -373,7 +373,7 @@ function loadAllTokens(): Tokens {
 
   return {
     palette: palette.palette,
-    colors: {
+    themes: {
       light: lightColors.color,
       dark: darkColors.color,
     },
@@ -412,8 +412,8 @@ function generateTokensJSON(tokens: Tokens): string {
     },
 
     themes: {
-      light: resolveReferences(tokens.colors.light, tokens.palette),
-      dark: resolveReferences(tokens.colors.dark, tokens.palette),
+      light: resolveReferences(tokens.themes.light, tokens.palette),
+      dark: resolveReferences(tokens.themes.dark, tokens.palette),
     },
 
     $meta: {
@@ -484,13 +484,13 @@ function generateCSS(tokens: Tokens): string {
   lines.push('  /* ===== LIGHT THEME SEMANTIC COLORS ===== */');
 
   if (
-    tokens.colors.light.background &&
-    typeof tokens.colors.light.background === 'object'
+    tokens.themes.light.background &&
+    typeof tokens.themes.light.background === 'object'
   ) {
     lines.push('  /* Background */');
     lines.push(
       ...flattenToCSSVars(
-        tokens.colors.light.background,
+        tokens.themes.light.background,
         'color-background',
         '-',
         tokens.palette
@@ -500,13 +500,13 @@ function generateCSS(tokens: Tokens): string {
   }
 
   if (
-    tokens.colors.light.text &&
-    typeof tokens.colors.light.text === 'object'
+    tokens.themes.light.text &&
+    typeof tokens.themes.light.text === 'object'
   ) {
     lines.push('  /* Text */');
     lines.push(
       ...flattenToCSSVars(
-        tokens.colors.light.text,
+        tokens.themes.light.text,
         'color-text',
         '-',
         tokens.palette
@@ -554,13 +554,13 @@ function generateCSS(tokens: Tokens): string {
 
   // Dark theme semantic colors
   if (
-    tokens.colors.dark.background &&
-    typeof tokens.colors.dark.background === 'object'
+    tokens.themes.dark.background &&
+    typeof tokens.themes.dark.background === 'object'
   ) {
     lines.push('  /* Background */');
     lines.push(
       ...flattenToCSSVars(
-        tokens.colors.dark.background,
+        tokens.themes.dark.background,
         'color-background',
         '-',
         tokens.palette
@@ -568,12 +568,12 @@ function generateCSS(tokens: Tokens): string {
     );
   }
 
-  if (tokens.colors.dark.text && typeof tokens.colors.dark.text === 'object') {
+  if (tokens.themes.dark.text && typeof tokens.themes.dark.text === 'object') {
     lines.push('');
     lines.push('  /* Text */');
     lines.push(
       ...flattenToCSSVars(
-        tokens.colors.dark.text,
+        tokens.themes.dark.text,
         'color-text',
         '-',
         tokens.palette
@@ -615,21 +615,21 @@ function generateTailwindConfig(tokens: Tokens): string {
 
   // Background colors
   if (
-    tokens.colors.light.background &&
-    typeof tokens.colors.light.background === 'object'
+    tokens.themes.light.background &&
+    typeof tokens.themes.light.background === 'object'
   ) {
     lines.push(`        background: {`);
-    lines.push(toTailwindObject(tokens.colors.light.background, 10));
+    lines.push(toTailwindObject(tokens.themes.light.background, 10));
     lines.push(`        },`);
   }
 
   // Text colors
   if (
-    tokens.colors.light.text &&
-    typeof tokens.colors.light.text === 'object'
+    tokens.themes.light.text &&
+    typeof tokens.themes.light.text === 'object'
   ) {
     lines.push(`        text: {`);
-    lines.push(toTailwindObject(tokens.colors.light.text, 10));
+    lines.push(toTailwindObject(tokens.themes.light.text, 10));
     lines.push(`        },`);
   }
 

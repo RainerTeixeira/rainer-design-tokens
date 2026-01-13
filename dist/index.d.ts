@@ -258,7 +258,7 @@ var _comments$7 = {
 	lineHeight: "Valores de altura de linha",
 	letterSpacing: "Valores de espaçamento entre letras"
 };
-var typography = {
+var typography$1 = {
 	fontFamily: {
 		sans: "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
 		serif: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
@@ -360,7 +360,7 @@ var typographyBase = {
 	$schema: $schema$a,
 	$description: $description$a,
 	_comments: _comments$7,
-	typography: typography,
+	typography: typography$1,
 	_notes: _notes$7
 };
 
@@ -478,7 +478,7 @@ var motionTokens = {
 
 var $schema$7 = "https://json.schemastore.org/theme.json";
 var $description$7 = "Border radius tokens - Generated from spacing scale";
-var $generated$2 = "2026-01-10T23:50:32.816Z";
+var $generated$2 = "2026-01-11T23:36:56.438Z";
 var $source$2 = "primitives/spacing-scale.json";
 var radius = {
 	none: "0px",
@@ -501,7 +501,7 @@ var radiusScale = {
 
 var $schema$6 = "https://json.schemastore.org/theme.json";
 var $description$6 = "Responsive breakpoints - Mobile-first approach";
-var $generated$1 = "2026-01-10T23:50:32.818Z";
+var $generated$1 = "2026-01-11T23:36:56.444Z";
 var $source$1 = "industry standards + spacing.json reference";
 var $spacingReference = {
 	baseUnit: "0.25rem",
@@ -527,7 +527,7 @@ var breakpoints_default = {
 
 var $schema$5 = "https://json.schemastore.org/theme.json";
 var $description$5 = "Z-index layer system - Organized stacking context";
-var $generated = "2026-01-10T23:50:32.820Z";
+var $generated = "2026-01-11T23:36:56.447Z";
 var $source = "design system layer standards";
 var zIndex = {
 	base: 0,
@@ -2346,46 +2346,37 @@ declare const themes: {
     };
 };
 
-/**
- * @fileoverview Ponto de entrada principal da biblioteca @rainersoft/design-tokens
- *
- * @description
- * Biblioteca enterprise-grade de design tokens para sistemas de design modernos.
- * Tecnologicamente agnóstica, escalável e pronta para produção.
- *
- * Esta biblioteca fornece tokens de design estruturados que podem ser utilizados
- * em qualquer framework ou tecnologia, garantindo consistência visual em toda
- * a aplicação.
- *
- * @module @rainersoft/design-tokens
- * @version 2.6.0
- * @author Rainer Teixeira
- * @license MIT
- * @since 1.0.0
- *
- * @example
- * ```typescript
- * import { tokens, themes, lightTheme, darkTheme } from '@rainersoft/design-tokens';
- *
- * // Usar tokens diretamente
- * const primaryColor = tokens.colors.light.brand.primary;
- *
- * // Usar temas completos
- * const theme = lightTheme;
- * ```
- */
-
-/**
- * CSS Variables para temas dinâmicos
- *
- * @description
- * Importa o arquivo CSS com as variáveis de design para uso direto
- *
- * @example
- * ```typescript
- * import '@rainersoft/design-tokens/css-vars.css';
- * ```
- */
+declare const GRADIENT_DIRECTIONS: {
+    readonly TO_BOTTOM: "to-bottom";
+    readonly TO_TOP: "to-top";
+    readonly TO_RIGHT: "to-right";
+    readonly TO_LEFT: "to-left";
+    readonly TO_BR: "to-br";
+    readonly TO_BL: "to-bl";
+    readonly TO_TR: "to-tr";
+    readonly TO_TL: "to-tl";
+};
+declare const BACKGROUND: {
+    readonly PRIMARY: "bg-gradient-to-br from-cyan-500 via-blue-500 to-purple-500";
+    readonly SECONDARY: "bg-gradient-to-br from-purple-500 via-pink-500 to-red-500";
+    readonly DARK: "bg-gradient-to-br from-slate-900 to-slate-800";
+    readonly LIGHT: "bg-gradient-to-br from-white to-gray-100";
+    readonly GRADIENT_OVERLAY: "bg-gradient-to-b from-cyan-900/20 via-purple-900/10 to-transparent";
+    readonly PREMIUM_DIVIDER_LINE: "bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500";
+};
+declare const MOTION: {
+    readonly TRANSITION: {
+        readonly DEFAULT: "transition-all duration-200 ease-in-out";
+        readonly COLOR: "transition-colors duration-200 ease-in-out";
+    };
+};
+declare const validateContrast: (_foreground: string, _background: string) => {
+    valid: boolean;
+    contrast: number;
+    message: string;
+};
+declare const colors: any;
+declare const typography: any;
 declare const cssVarsPath = "./src/css-vars.css";
 
-export { borderPrimitive, borderSemantic, breakpointsPrimitive, colorPrimitive, colorSemantic, cssVarsPath, darkTheme, elevationSemantic, gradientPrimitive, gradientPrimitive as gradientsPrimitive, iconSizesPrimitive, layoutPrimitive, layoutSemantic, lightTheme, motionPrimitive, motionSemantic, opacityPrimitive, radiusPrimitive, borderTokens as rawBorderPrimitive, breakpoints_default as rawBreakpointsPrimitive, colorPalette as rawColorPrimitive, gradientTokens as rawGradientPrimitive, iconScale as rawIconSizesPrimitive, layoutUnits as rawLayoutPrimitive, motionTokens as rawMotionPrimitive, opacityScale as rawOpacityPrimitive, radiusScale as rawRadiusPrimitive, elevationTokens as rawShadowsPrimitive, spacingScale as rawSpacingPrimitive, typographyBase as rawTypographyPrimitive, zIndexLayers as rawZIndexPrimitive, shadowsPrimitive, spacingPrimitive, spacingSemantic, themes, tokens, typographyPrimitive, typographySemantic, zIndexPrimitive };
+export { BACKGROUND, gradientPrimitive as GRADIENTS, GRADIENT_DIRECTIONS, MOTION, shadowsPrimitive as SHADOWS, borderPrimitive, borderSemantic, breakpointsPrimitive, colorPrimitive, colorSemantic, colors, cssVarsPath, darkTheme, elevationSemantic, gradientPrimitive, iconSizesPrimitive, layoutPrimitive, layoutSemantic, lightTheme, motionPrimitive, motionSemantic, motionPrimitive as motionTokens, opacityPrimitive, radiusPrimitive, borderTokens as rawBorderPrimitive, breakpoints_default as rawBreakpointsPrimitive, colorPalette as rawColorPrimitive, gradientTokens as rawGradientPrimitive, iconScale as rawIconSizesPrimitive, layoutUnits as rawLayoutPrimitive, motionTokens as rawMotionPrimitive, opacityScale as rawOpacityPrimitive, radiusScale as rawRadiusPrimitive, elevationTokens as rawShadowsPrimitive, spacingScale as rawSpacingPrimitive, typographyBase as rawTypographyPrimitive, zIndexLayers as rawZIndexPrimitive, shadowsPrimitive, spacingPrimitive, spacingSemantic, themes, tokens, typography, typographyPrimitive, typographySemantic, validateContrast, zIndexPrimitive };
