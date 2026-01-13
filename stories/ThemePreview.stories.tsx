@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import { tokens } from '../tokens';
 
 const meta = {
@@ -40,7 +40,7 @@ export const LightThemePreview: Story = {
             backgroundColor: theme.surface.primary,
             border: `1px solid ${theme.border.primary}`,
             borderRadius: tokens.primitives.radius.lg,
-            padding: tokens.spacing['8'],
+            padding: tokens.primitives.spacing['8'],
             boxShadow: tokens.primitives.shadows.light.md,
           }}
         >
@@ -49,7 +49,7 @@ export const LightThemePreview: Story = {
               fontSize: tokens.primitives.typography.fontSize['4xl'],
               fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
               color: theme.text.primary,
-              marginBottom: tokens.spacing['4'],
+              marginBottom: tokens.primitives.spacing['4'],
             }}
           >
             Light Theme Preview
@@ -58,16 +58,16 @@ export const LightThemePreview: Story = {
             style={{
               fontSize: tokens.primitives.typography.fontSize.base,
               color: theme.text.secondary,
-              marginBottom: tokens.spacing['6'],
+              marginBottom: tokens.primitives.spacing['6'],
             }}
           >
             Este é um preview do tema claro mostrando como os tokens trabalham juntos.
           </p>
 
-          <div style={{ display: 'flex', gap: tokens.spacing['4'], flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: tokens.primitives.spacing['4'], flexWrap: 'wrap' }}>
             <button
               style={{
-                padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
+                padding: `${tokens.primitives.spacing['3']} ${tokens.primitives.spacing['6']}`,
                 backgroundColor: theme.primary.base,
                 color: theme.text.inverse,
                 border: 'none',
@@ -81,7 +81,7 @@ export const LightThemePreview: Story = {
             </button>
             <button
               style={{
-                padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
+                padding: `${tokens.primitives.spacing['3']} ${tokens.primitives.spacing['6']}`,
                 backgroundColor: theme.secondary.base,
                 color: theme.text.inverse,
                 border: 'none',
@@ -97,8 +97,8 @@ export const LightThemePreview: Story = {
 
           <div
             style={{
-              marginTop: tokens.spacing['8'],
-              padding: tokens.spacing['6'],
+              marginTop: tokens.primitives.spacing['8'],
+              padding: tokens.primitives.spacing['6'],
               backgroundColor: theme.surface.secondary,
               borderRadius: tokens.primitives.radius.md,
               border: `1px solid ${theme.border.secondary}`,
@@ -108,7 +108,7 @@ export const LightThemePreview: Story = {
               style={{
                 fontSize: tokens.primitives.typography.fontSize['2xl'],
                 fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
-                marginBottom: tokens.spacing['4'],
+                marginBottom: tokens.primitives.spacing['4'],
               }}
             >
               Card Example
@@ -146,7 +146,7 @@ export const DarkThemePreview: Story = {
             backgroundColor: theme.surface.primary,
             border: `1px solid ${theme.border.primary}`,
             borderRadius: tokens.primitives.radius.lg,
-            padding: tokens.spacing['8'],
+            padding: tokens.primitives.spacing['8'],
             boxShadow: tokens.primitives.shadows.dark.md,
           }}
         >
@@ -155,7 +155,7 @@ export const DarkThemePreview: Story = {
               fontSize: tokens.primitives.typography.fontSize['4xl'],
               fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
               color: theme.text.primary,
-              marginBottom: tokens.spacing['4'],
+              marginBottom: tokens.primitives.spacing['4'],
               textShadow: theme.effects?.glowCyan || 'none',
             }}
           >
@@ -165,16 +165,16 @@ export const DarkThemePreview: Story = {
             style={{
               fontSize: tokens.primitives.typography.fontSize.base,
               color: theme.text.secondary,
-              marginBottom: tokens.spacing['6'],
+              marginBottom: tokens.primitives.spacing['6'],
             }}
           >
             Este é um preview do tema escuro cyberpunk com efeitos neon e brilho.
           </p>
 
-          <div style={{ display: 'flex', gap: tokens.spacing['4'], flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: tokens.primitives.spacing['4'], flexWrap: 'wrap' }}>
             <button
               style={{
-                padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
+                padding: `${tokens.primitives.spacing['3']} ${tokens.primitives.spacing['6']}`,
                 backgroundColor: theme.primary.base,
                 color: theme.text.inverse,
                 border: `1px solid ${theme.border.neon}`,
@@ -189,7 +189,7 @@ export const DarkThemePreview: Story = {
             </button>
             <button
               style={{
-                padding: `${tokens.spacing['3']} ${tokens.spacing['6']}`,
+                padding: `${tokens.primitives.spacing['3']} ${tokens.primitives.spacing['6']}`,
                 backgroundColor: theme.secondary.base,
                 color: theme.text.inverse,
                 border: `1px solid ${theme.border.neon}`,
@@ -206,8 +206,8 @@ export const DarkThemePreview: Story = {
 
           <div
             style={{
-              marginTop: tokens.spacing['8'],
-              padding: tokens.spacing['6'],
+              marginTop: tokens.primitives.spacing['8'],
+              padding: tokens.primitives.spacing['6'],
               backgroundColor: theme.surface.secondary,
               borderRadius: tokens.primitives.radius.md,
               border: `1px solid ${theme.border.secondary}`,
@@ -217,7 +217,7 @@ export const DarkThemePreview: Story = {
               style={{
                 fontSize: tokens.primitives.typography.fontSize['2xl'],
                 fontWeight: parseInt(tokens.primitives.typography.fontWeight.bold),
-                marginBottom: tokens.spacing['4'],
+                marginBottom: tokens.primitives.spacing['4'],
                 color: theme.text.neonCyan,
               }}
             >
@@ -231,8 +231,8 @@ export const DarkThemePreview: Story = {
           {theme.gradients && (
             <div
               style={{
-                marginTop: tokens.spacing['8'],
-                padding: tokens.spacing['8'],
+                marginTop: tokens.primitives.spacing['8'],
+                padding: tokens.primitives.spacing['8'],
                 background: theme.gradients.primary,
                 borderRadius: tokens.primitives.radius.lg,
                 textAlign: 'center',

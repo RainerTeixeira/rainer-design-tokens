@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import { tokens } from '../tokens';
 
 const meta = {
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const RadiusScale: Story = {
   render: () => {
-    const radius = tokens.radius;
+    const radius = tokens.primitives.radius;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
@@ -59,14 +59,14 @@ export const RadiusScale: Story = {
                   textAlign: 'right',
                 }}
               >
-                {value}
+                {String(value)}
               </div>
               <div
                 style={{
                   width: '120px',
                   height: '120px',
                   backgroundColor: '#0891b2',
-                  borderRadius: value,
+                  borderRadius: String(value),
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -98,7 +98,7 @@ export const RadiusScale: Story = {
  */
 export const RadiusExamples: Story = {
   render: () => {
-    const radius = tokens.radius;
+    const radius = tokens.primitives.radius;
 
     return (
       <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 import { tokens } from '../tokens';
 
 const meta = {
@@ -40,7 +40,7 @@ export const LightShadows: Story = {
                 backgroundColor: '#ffffff',
                 border: '1px solid #e5e5e5',
                 borderRadius: '8px',
-                boxShadow: value,
+                boxShadow: String(value),
               }}
             >
               <div
@@ -62,7 +62,7 @@ export const LightShadows: Story = {
                   marginTop: '1rem',
                 }}
               >
-                {value}
+                {String(value)}
               </div>
             </div>
           ))}
@@ -117,7 +117,7 @@ export const DarkShadows: Story = {
                     backgroundColor: '#171717',
                     border: '1px solid #262626',
                     borderRadius: '8px',
-                    boxShadow: value,
+                    boxShadow: String(value),
                   }}
                 >
                   <div
@@ -140,7 +140,7 @@ export const DarkShadows: Story = {
                       marginTop: '1rem',
                     }}
                   >
-                    {value}
+                    {String(value)}
                   </div>
                 </div>
               );
@@ -213,7 +213,7 @@ export const GlowEffects: Story = {
                   backgroundColor: '#171717',
                   border: `2px solid ${colorMap[key] || '#00e6ff'}`,
                   borderRadius: '8px',
-                  boxShadow: value,
+                  boxShadow: String(value),
                 }}
               >
                 <div
@@ -236,7 +236,7 @@ export const GlowEffects: Story = {
                     marginTop: '1rem',
                   }}
                 >
-                  {value}
+                  {String(value)}
                 </div>
               </div>
             );
