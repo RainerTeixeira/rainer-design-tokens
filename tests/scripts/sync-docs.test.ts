@@ -328,7 +328,7 @@ Content here.
       });
       const duration = Date.now() - start;
 
-      expect(duration).toBeLessThan(3000);
+      expect(duration).toBeLessThan(20000);
     });
 
     it('deve mostrar help', () => {

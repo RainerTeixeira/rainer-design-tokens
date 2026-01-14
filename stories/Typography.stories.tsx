@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import type { ReactNode } from 'react';
 import { tokens } from '../tokens';
 
 const meta = {
@@ -49,7 +50,7 @@ export const FontFamilies: Story = {
               <div
                 style={{
                   fontSize: '1.5rem',
-                  fontFamily: value,
+                  fontFamily: value as string,
                   marginBottom: '0.75rem',
                 }}
               >
@@ -62,7 +63,7 @@ export const FontFamilies: Story = {
                   fontFamily: 'monospace',
                 }}
               >
-                {value}
+                {value as ReactNode}
               </div>
             </div>
           ))}
@@ -88,8 +89,8 @@ export const FontSizes: Story = {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {Object.entries(fontSize)
             .sort((a, b) => {
-              const aValue = parseFloat(a[1]);
-              const bValue = parseFloat(b[1]);
+              const aValue = parseFloat(a[1] as string);
+              const bValue = parseFloat(b[1] as string);
               return aValue - bValue;
             })
             .map(([key, value]) => (
@@ -117,7 +118,7 @@ export const FontSizes: Story = {
                 </div>
                 <div
                   style={{
-                    fontSize: value,
+                    fontSize: value as any,
                     flex: 1,
                   }}
                 >
@@ -132,7 +133,7 @@ export const FontSizes: Story = {
                     textAlign: 'right',
                   }}
                 >
-                  {value}
+                  {value as ReactNode}
                 </div>
               </div>
             ))}
@@ -182,7 +183,7 @@ export const FontWeights: Story = {
               <div
                 style={{
                   fontSize: '1.5rem',
-                  fontWeight: parseInt(value),
+                  fontWeight: parseInt(value as string),
                   flex: 1,
                 }}
               >
@@ -197,7 +198,7 @@ export const FontWeights: Story = {
                   textAlign: 'right',
                 }}
               >
-                {value}
+                {value as ReactNode}
               </div>
             </div>
           ))}
@@ -239,12 +240,12 @@ export const LineHeights: Story = {
                   textTransform: 'capitalize',
                 }}
               >
-                {key} ({value})
+                {key} ({value as ReactNode})
               </div>
               <div
                 style={{
                   fontSize: '1rem',
-                  lineHeight: value,
+                  lineHeight: value as any,
                   maxWidth: '600px',
                 }}
               >
@@ -295,12 +296,12 @@ export const LetterSpacing: Story = {
                   textTransform: 'capitalize',
                 }}
               >
-                {key} ({value})
+                {key} ({value as ReactNode})
               </div>
               <div
                 style={{
                   fontSize: '1.5rem',
-                  letterSpacing: value,
+                  letterSpacing: value as any,
                   fontWeight: 600,
                 }}
               >

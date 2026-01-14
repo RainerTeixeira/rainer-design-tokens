@@ -6,24 +6,24 @@ Este documento mantém um registro completo de todas as mudanças significativas
 
 ## 📦 Versões Publicadas
 
-- **[2.6.0]** (2026-01-05) — Reestruturação completa com primitives/semantics/themes
-- **[2.5.0]** (2026-01-05) — Scripts otimizados e build automatizado
-- **[2.4.0]** (2026-01-05) — Storybook completo e documentação
-- **[2.3.0]** (2026-01-05) — Temas TypeScript e CSS variables
-- **[2.2.0]** (2026-01-05) — Integração Tailwind CSS
-- **[2.1.0]** (2026-01-05) — Sistema de tokens expandido
-- **[2.0.0]** (2026-01-05) — Sistema profissional W3C Design Tokens
-- **[1.0.6]** (2026-01-05) — Tokens de animação
-- **[1.0.5]** (2026-01-05) — Tailwind v4 e tokens compostos
-- **[1.0.4]** (2026-01-05) — Suporte a animações
-- **[1.0.3]** (2026-01-05) — Atualizações de timestamp
-- **[1.0.2]** (2026-01-05) — Cores primitivas
-- **[1.0.1]** (2026-01-05) — Refatoração inicial
-- **[1.0.0]** (2026-01-05) — Lançamento inicial
+- **[2.6.0]** (2026-01-13) — Reestruturação completa com primitives/semantics/themes
+- **[2.5.0]** (2026-01-13) — Scripts otimizados e build automatizado
+- **[2.4.0]** (2026-01-13) — Storybook completo e documentação
+- **[2.3.0]** (2026-01-13) — Temas TypeScript e CSS variables
+- **[2.2.0]** (2026-01-13) — Integração Tailwind CSS
+- **[2.1.0]** (2026-01-13) — Sistema de tokens expandido
+- **[2.0.0]** (2026-01-13) — Sistema profissional W3C Design Tokens
+- **[1.0.6]** (2026-01-13) — Tokens de animação
+- **[1.0.5]** (2026-01-13) — Tailwind v4 e tokens compostos
+- **[1.0.4]** (2026-01-13) — Suporte a animações
+- **[1.0.3]** (2026-01-13) — Atualizações de timestamp
+- **[1.0.2]** (2026-01-13) — Cores primitivas
+- **[1.0.1]** (2026-01-13) — Refatoração inicial
+- **[1.0.0]** (2026-01-13) — Lançamento inicial
 
 ---
 
-## [2.6.0] - 2026-01-05
+## [2.6.0] - 2026-01-13
 
 ### 🎉 Major Release - Reestruturação Completa
 
@@ -99,7 +99,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.5.0] - 2026-01-05
+## [2.5.0] - 2026-01-13
 
 ### ✨ Adicionado
 
@@ -122,7 +122,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.4.0] - 2026-01-05
+## [2.4.0] - 2026-01-13
 
 ### ✨ Adicionado
 
@@ -145,7 +145,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.3.0] - 2026-01-05
+## [2.3.0] - 2026-01-13
 
 ### ✨ Adicionado
 
@@ -167,7 +167,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.2.0] - 2026-01-05
+## [2.2.0] - 2026-01-13
 
 ### ✨ Adicionado
 
@@ -185,7 +185,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.1.0] - 2026-01-05
+## [2.1.0] - 2026-01-13
 
 ### ✨ Adicionado
 
@@ -203,7 +203,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.0.0] - 2026-01-05
+## [2.0.0] - 2026-01-13
 
 ### 💥 Breaking Changes
 
@@ -227,7 +227,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [1.0.0] - 2026-01-05
+## [1.0.0] - 2026-01-13
 
 ### ✨ Adicionado
 
@@ -309,6 +309,6 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 ---
 
 **Versão:** 2.6.0
-**Última Atualização:** 05 de Janeiro de 2026
+**Última Atualização:** 13 de Janeiro de 2026
 **Autor:** [object Object]
 **Licença:** MIT

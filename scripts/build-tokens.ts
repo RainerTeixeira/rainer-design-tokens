@@ -38,20 +38,7 @@ interface ColorToken {
   [key: string]: string | ColorToken;
 }
 
-interface ChangelogEntry {
-  version: string;
-  content: string;
-  timestamp?: string;
-}
 
-interface CommitInfo {
-  hash: string;
-  message: string;
-  author: string;
-  date: string;
-  scope?: string;
-  type?: string;
-}
 
 // Utilitários
 const colors = {
@@ -778,29 +765,6 @@ function generateChangelog(commits: Commit[]): string {
  * Implementação robusta que previne duplicação e gerencia entradas corretamente
  */
 
-/**
- * Extrai entradas de changelog existentes de forma segura
- * @param content - Conteúdo bruto do arquivo changelog
- * @returns Array de entradas estruturadas
- */
-function parseChangelogEntries(content: string): ChangelogEntry[] {
-  const entries: ChangelogEntry[] = [];
-  
-  // Regex melhorada para encontrar entradas de changelog (formato: # Changelog - v{version})
-  // Usando lookahead negativo para não incluir o próximo cabeçalho
-  const entryRegex = /# Changelog - v([\d.]+)\s*\n([\s\S]*?)(?=\n---\n\n# Changelog|$)/g;
-  let match;
-  
-  while ((match = entryRegex.exec(content)) !== null) {
-    entries.push({
-      version: match[1],
-      content: match[2].trim(),
-      timestamp: undefined // Poderia ser extraído do conteúdo se necessário
-    });
-  }
-  
-  return entries;
-}
 
 /**
  * Verifica se uma versão já existe no changelog
@@ -812,37 +776,6 @@ function versionExists(content: string, version: string): boolean {
   // Usar regex simples para verificar se a versão já existe
   const versionRegex = new RegExp(`# Changelog - v${version.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'm');
   return versionRegex.test(content);
-}
-
-/**
- * Limpa duplicatas no changelog mantendo apenas a primeira ocorrência de cada versão
- * @param content - Conteúdo bruto do changelog
- * @returns Conteúdo limpo sem duplicatas
- */
-// TODO: Implementar uso desta função para limpar duplicatas no changelog
-function cleanDuplicateEntries(content: string): string {
-  // Dividir o conteúdo por "---" que separa as entradas
-  const sections = content.split(/\n---\n\n/);
-  const seenVersions = new Set<string>();
-  const cleanSections: string[] = [];
-  
-  for (const section of sections) {
-    // Extrair versão usando regex
-    const versionMatch = section.match(/# Changelog - v([\d.]+)/);
-    if (versionMatch) {
-      const version = versionMatch[1];
-      if (!seenVersions.has(version)) {
-        seenVersions.add(version);
-        cleanSections.push(section);
-      }
-    } else {
-      // Manter seções que não têm versão (cabeçalho, etc.)
-      cleanSections.push(section);
-    }
-  }
-  
-  // Reconstruir o changelog limpo
-  return cleanSections.join('\n\n---\n\n');
 }
 
 /**

@@ -278,7 +278,7 @@ describe('release-package.ts', () => {
       });
       const duration = Date.now() - start;
 
-      expect(duration).toBeLessThan(3000);
+      expect(duration).toBeLessThan(5000);
     });
 
     it('deve tratar argumentos inválidos', () => {

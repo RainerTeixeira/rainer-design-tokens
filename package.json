@@ -7,7 +7,7 @@
     "email": "suporte@rainersoft.com.br"
   },
   "license": "MIT",
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@10.28.0",
   "keywords": [
     "design-tokens",
     "css-variables",
@@ -80,7 +80,7 @@
     "ts-jest": "^29.1.1",
     "tsup": "^8.0.1",
     "tsx": "^4.20.6",
-    "typescript": "^5.3.3",
+    "typescript": "^5.9.3",
     "vite": "5.4.10"
   },
   "repository": {

@@ -256,7 +256,7 @@ export default config;
 
 ## 📝 Changelog
 
-### v2.7.0 (2026-01-05)
+### v2.7.0 (2026-01-13)
 
 **🏗️ Arquitetura DTCG Corrigida**
 
@@ -273,7 +273,7 @@ export default config;
 - CSS gerado com valores hexadecimais, não referências
 - Temas light/dark funcionais e testados
 
-### v2.6.0 (2026-01-05)
+### v2.6.0 (2026-01-13)
 
 **🚀 Sistema de Tokens Profissional**
 
@@ -283,7 +283,7 @@ export default config;
 - ✅ **Novos Tokens**: Motion, Breakpoints, Z-Index
 - ✅ **320+ Testes**: Cobertura completa do sistema
 
-### v2.2.0 (2026-01-05)
+### v2.2.0 (2026-01-13)
 
 **🚀 Melhorias de Governança e CI/CD**
 
@@ -292,7 +292,7 @@ export default config;
 - ✅ **Build Sequencial**: Pipeline garantindo ordem correta
 - ✅ **Zero Hardcode Enforcement**: Validação rigorosa
 
-### v2.1.0 (2026-01-05)
+### v2.1.0 (2026-01-13)
 
 **🎯 Arquitetura Limpa - Zero Redundância**
 
@@ -329,6 +329,6 @@ MIT © Rainer Teixeira
 ---
 
 **Versão:** 2.6.0
-**Última Atualização:** 05 de Janeiro de 2026
+**Última Atualização:** 13 de Janeiro de 2026
 **Autor:** [object Object]
 **Licença:** MIT
