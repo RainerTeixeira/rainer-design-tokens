@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/theme.json",
   "$description": "Z-index layer system - Organized stacking context",
-  "$generated": "2026-01-14T00:35:11.200Z",
+  "$generated": "2026-01-14T00:49:20.781Z",
   "$source": "design system layer standards",
   "zIndex": {
     "base": 0,
