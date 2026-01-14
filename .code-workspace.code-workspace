@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "rainer-design-tokens",
+			"path": "."
+		},
+		{
+			"name": "rainer-ui",
+			"path": "../rainer-ui"
+		},
+		{
+			"name": "rainer-utils",
+			"path": "../rainer-utils"
+		},
+		{
+			"name": "rainer-erp",
+			"path": "../rainer-erp"
+		}
+	]
+}
