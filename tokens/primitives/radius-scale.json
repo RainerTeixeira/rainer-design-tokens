@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/theme.json",
   "$description": "Border radius tokens - Generated from spacing scale",
-  "$generated": "2026-01-14T00:50:31.795Z",
+  "$generated": "2026-01-14T00:51:39.925Z",
   "$source": "primitives/spacing-scale.json",
   "radius": {
     "none": "0px",

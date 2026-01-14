@@ -1,6 +1,6 @@
 {
   "name": "@rainersoft/design-tokens",
-  "version": "2.9.0",
+  "version": "3.0.0",
   "description": "Design tokens globais (CSS Variables, Tailwind config, temas) para o ecossistema Rainersoft",
   "author": {
     "name": "Rainer Teixeira",
