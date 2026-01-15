@@ -478,7 +478,7 @@ var motionTokens = {
 
 var $schema$7 = "https://json.schemastore.org/theme.json";
 var $description$7 = "Border radius tokens - Generated from spacing scale";
-var $generated$2 = "2026-01-15T00:16:08.771Z";
+var $generated$2 = "2026-01-15T00:16:55.474Z";
 var $source$2 = "primitives/spacing-scale.json";
 var radius = {
 	none: "0px",
@@ -501,7 +501,7 @@ var radiusScale = {
 
 var $schema$6 = "https://json.schemastore.org/theme.json";
 var $description$6 = "Responsive breakpoints - Mobile-first approach";
-var $generated$1 = "2026-01-15T00:16:08.781Z";
+var $generated$1 = "2026-01-15T00:16:55.481Z";
 var $source$1 = "industry standards + spacing.json reference";
 var $spacingReference = {
 	baseUnit: "0.25rem",
@@ -527,7 +527,7 @@ var breakpoints_default = {
 
 var $schema$5 = "https://json.schemastore.org/theme.json";
 var $description$5 = "Z-index layer system - Organized stacking context";
-var $generated = "2026-01-15T00:16:08.783Z";
+var $generated = "2026-01-15T00:16:55.483Z";
 var $source = "design system layer standards";
 var zIndex = {
 	base: 0,
