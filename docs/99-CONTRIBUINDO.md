@@ -518,7 +518,7 @@ Ao contribuir, você concorda que suas contribuições serão licenciadas sob a 
 
 ---
 
-**Versão:** 2.6.0
-**Última Atualização:** 13 de Janeiro de 2026
+**Versão:** 3.0.0
+**Última Atualização:** 14 de Janeiro de 2026
 **Autor:** [object Object]
 **Licença:** MIT
