@@ -1,59 +1,76 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$description": "Dark theme - Override de tokens semânticos com valores escuros",
+  "$description": "Dark Cyberpunk Theme - Tema escuro futurista com estética cyberpunk",
   "_comments": {
-    "color": "Tema dark com valores específicos que sobrescrevem os semânticos"
+    "color": "Tema dark cyberpunk com cores neon, gradientes e alta contraste"
   },
   "color": {
     "background": {
-      "primary": "{palette.gray.900}",
-      "secondary": "{palette.gray.800}",
-      "tertiary": "{palette.gray.700}",
-      "disabled": "{palette.gray.700}",
-      "overlay": "rgba(0, 0, 0, 0.8)",
-      "inverse": "{palette.white}"
+      "primary": "{palette.gray.950}",
+      "secondary": "{palette.gray.900}",
+      "tertiary": "{palette.gray.800}",
+      "disabled": "{palette.gray.850}",
+      "overlay": "rgba(0, 0, 0, 0.85)",
+      "inverse": "{palette.gray.50}",
+      "glass": "rgba(15, 23, 42, 0.6)",
+      "neon": "rgba(6, 182, 212, 0.1)"
     },
     "text": {
       "primary": "{palette.gray.50}",
       "secondary": "{palette.gray.300}",
       "tertiary": "{palette.gray.400}",
       "disabled": "{palette.gray.500}",
-      "inverse": "{palette.gray.900}",
-      "onPrimary": "{palette.white}",
-      "onSecondary": "{palette.gray.900}",
-      "link": "{palette.blue.400}",
-      "linkHover": "{palette.blue.300}"
+      "inverse": "{palette.gray.950}",
+      "onPrimary": "{palette.gray.950}",
+      "onSecondary": "{palette.gray.50}",
+      "link": "{palette.cyan.400}",
+      "linkHover": "{palette.cyan.300}",
+      "neon": "{palette.cyan.400}",
+      "neonGlow": "{palette.cyan.300}"
     },
     "button": {
       "primary": {
-        "default": "{palette.blue.500}",
-        "hover": "{palette.blue.400}",
-        "active": "{palette.blue.300}",
-        "text": "{palette.white}"
+        "default": "{palette.cyan.600}",
+        "hover": "{palette.cyan.500}",
+        "active": "{palette.cyan.400}",
+        "text": "{palette.gray.950}",
+        "glow": "rgba(6, 182, 212, 0.5)"
       },
       "secondary": {
         "default": "{palette.gray.700}",
         "hover": "{palette.gray.600}",
         "active": "{palette.gray.500}",
-        "text": "{palette.gray.50}"
+        "text": "{palette.gray.50}",
+        "border": "{palette.cyan.600}"
       },
       "tertiary": {
         "default": "{palette.transparent}",
-        "hover": "{palette.gray.700}",
-        "active": "{palette.gray.600}",
-        "text": "{palette.gray.50}"
+        "hover": "{palette.gray.800}",
+        "active": "{palette.gray.700}",
+        "text": "{palette.cyan.400}",
+        "border": "{palette.cyan.600}"
       },
       "danger": {
-        "default": "{palette.red.500}",
-        "hover": "{palette.red.400}",
-        "active": "{palette.red.300}",
-        "text": "{palette.white}"
+        "default": "{palette.rose.600}",
+        "hover": "{palette.rose.500}",
+        "active": "{palette.rose.400}",
+        "text": "{palette.white}",
+        "glow": "rgba(244, 63, 94, 0.5)"
       },
       "success": {
-        "default": "{palette.green.500}",
-        "hover": "{palette.green.400}",
-        "active": "{palette.green.300}",
-        "text": "{palette.white}"
+        "default": "{palette.emerald.600}",
+        "hover": "{palette.emerald.500}",
+        "active": "{palette.emerald.400}",
+        "text": "{palette.gray.950}",
+        "glow": "rgba(16, 185, 129, 0.5)"
+      },
+      "neon": {
+        "default": "linear-gradient(135deg, {palette.cyan.600}, {palette.blue.600})",
+        "hover": "linear-gradient(135deg, {palette.cyan.500}, {palette.blue.500})",
+        "active": "linear-gradient(135deg, {palette.cyan.400}, {palette.blue.400})",
+        "text": "{palette.gray.950}",
+        "glow": "rgba(6, 182, 212, 0.8)",
+        "border": "{palette.cyan.400}"
       }
     },
     "border": {
@@ -61,106 +78,161 @@
       "light": "{palette.gray.600}",
       "medium": "{palette.gray.500}",
       "dark": "{palette.gray.400}",
-      "focus": "{palette.blue.400}",
-      "error": "{palette.red.400}",
-      "success": "{palette.green.400}",
-      "warning": "{palette.red.400}"
+      "focus": "{palette.cyan.400}",
+      "error": "{palette.rose.400}",
+      "success": "{palette.emerald.400}",
+      "warning": "{palette.amber.400}",
+      "neon": "{palette.cyan.400}",
+      "neonGlow": "rgba(6, 182, 212, 0.6)"
     },
     "status": {
       "success": {
-        "default": "{palette.green.500}",
-        "light": "{palette.green.900}",
-        "dark": "{palette.green.300}",
-        "text": "{palette.green.300}"
+        "default": "{palette.emerald.500}",
+        "light": "{palette.emerald.950}",
+        "dark": "{palette.emerald.300}",
+        "text": "{palette.emerald.300}",
+        "glow": "rgba(16, 185, 129, 0.4)"
       },
       "error": {
-        "default": "{palette.red.500}",
-        "light": "{palette.red.900}",
-        "dark": "{palette.red.300}",
-        "text": "{palette.red.300}"
+        "default": "{palette.rose.500}",
+        "light": "{palette.rose.950}",
+        "dark": "{palette.rose.300}",
+        "text": "{palette.rose.300}",
+        "glow": "rgba(244, 63, 94, 0.4)"
       },
       "warning": {
-        "default": "{palette.red.400}",
-        "light": "{palette.red.900}",
-        "dark": "{palette.red.300}",
-        "text": "{palette.red.200}"
+        "default": "{palette.amber.400}",
+        "light": "{palette.amber.950}",
+        "dark": "{palette.amber.300}",
+        "text": "{palette.amber.200}",
+        "glow": "rgba(251, 191, 36, 0.4)"
       },
       "info": {
-        "default": "{palette.blue.400}",
-        "light": "{palette.blue.900}",
-        "dark": "{palette.blue.300}",
-        "text": "{palette.blue.300}"
+        "default": "{palette.cyan.400}",
+        "light": "{palette.cyan.950}",
+        "dark": "{palette.cyan.300}",
+        "text": "{palette.cyan.300}",
+        "glow": "rgba(6, 182, 212, 0.4)"
       }
     },
     "interactive": {
       "link": {
-        "default": "{palette.blue.400}",
-        "hover": "{palette.blue.300}",
-        "visited": "{palette.purple.400}",
-        "active": "{palette.blue.200}"
+        "default": "{palette.cyan.400}",
+        "hover": "{palette.cyan.300}",
+        "visited": "{palette.violet.400}",
+        "active": "{palette.cyan.200}",
+        "glow": "rgba(6, 182, 212, 0.3)"
       },
       "focus": {
-        "ring": "{palette.blue.400}",
-        "ringOffset": "{palette.gray.900}"
+        "ring": "{palette.cyan.400}",
+        "ringOffset": "{palette.gray.950}",
+        "ringGlow": "rgba(6, 182, 212, 0.5)"
       }
     },
     "surface": {
       "elevated": "{palette.gray.800}",
-      "raised": "{palette.gray.700}",
-      "sunken": "{palette.gray.600}"
+      "raised": "{palette.gray.750}",
+      "sunken": "{palette.gray.850}",
+      "glass": "rgba(15, 23, 42, 0.4)",
+      "neon": "rgba(6, 182, 212, 0.05)",
+      "hologram": "linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1))"
+    },
+    "gradient": {
+      "cyberpunk": {
+        "primary": "linear-gradient(135deg, {palette.cyan.600}, {palette.blue.600}, {palette.violet.600})",
+        "secondary": "linear-gradient(135deg, {palette.rose.600}, {palette.orange.600})",
+        "tertiary": "linear-gradient(135deg, {palette.emerald.600}, {palette.cyan.600})",
+        "background": "linear-gradient(135deg, {palette.gray.950}, {palette.gray.900}, {palette.slate.900})"
+      },
+      "neon": {
+        "cyan": "linear-gradient(135deg, {palette.cyan.400}, {palette.cyan.600})",
+        "rose": "linear-gradient(135deg, {palette.rose.400}, {palette.rose.600})",
+        "emerald": "linear-gradient(135deg, {palette.emerald.400}, {palette.emerald.600})"
+      }
+    }
+  },
+  "shadow": {
+    "neon": {
+      "cyan": "0 0 20px rgba(6, 182, 212, 0.6), 0 0 40px rgba(6, 182, 212, 0.4)",
+      "rose": "0 0 20px rgba(244, 63, 94, 0.6), 0 0 40px rgba(244, 63, 94, 0.4)",
+      "emerald": "0 0 20px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4)",
+      "violet": "0 0 20px rgba(139, 92, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.4)"
+    },
+    "glow": {
+      "soft": "0 0 10px rgba(6, 182, 212, 0.3)",
+      "medium": "0 0 20px rgba(6, 182, 212, 0.5)",
+      "strong": "0 0 30px rgba(6, 182, 212, 0.7)"
     }
   },
   "_notes": {
     "background": {
-      "primary": "Fundo principal escuro - referencia: palette.gray.900",
-      "secondary": "Fundo secundário - referencia: palette.gray.800",
-      "tertiary": "Fundo terciário - referencia: palette.gray.700",
-      "disabled": "Fundo desabilitado - referencia: palette.gray.700",
-      "overlay": "Overlay com opacidade alta - referencia: palette.black com opacity 0.8",
-      "inverse": "Fundo invertido claro - referencia: palette.white"
+      "primary": "Fundo principal cyberpunk - quase preto com sutileza",
+      "secondary": "Fundo secundário - cinza escuro profundo",
+      "tertiary": "Fundo terciário - cinza médio escuro",
+      "disabled": "Fundo desabilitado - intermediário sutil",
+      "overlay": "Overlay com alta opacidade para imersão",
+      "inverse": "Fundo invertido - claro para contraste",
+      "glass": "Efeito glassmorfismo cyberpunk",
+      "neon": "Fundo com sutil brilho neon"
     },
     "text": {
-      "primary": "Texto principal claro - referencia: palette.gray.50",
-      "secondary": "Texto secundário - referencia: palette.gray.300",
-      "tertiary": "Texto terciário - referencia: palette.gray.400",
-      "disabled": "Texto desabilitado - referencia: palette.gray.500",
-      "inverse": "Texto invertido escuro - referencia: palette.gray.900",
-      "onPrimary": "Texto sobre primária - referencia: palette.white",
-      "onSecondary": "Texto sobre secundária - referencia: palette.gray.900",
-      "link": "Link padrão claro - referencia: palette.blue.400",
-      "linkHover": "Link hover - referencia: palette.blue.300"
+      "primary": "Texto principal branco/cinza claro",
+      "secondary": "Texto secundário cinza médio",
+      "tertiary": "Texto terciário cinza escuro",
+      "disabled": "Texto desabilitado cinza médio",
+      "inverse": "Texto invertido escuro",
+      "onPrimary": "Texto sobre fundo primário",
+      "onSecondary": "Texto sobre fundo secundário",
+      "link": "Link neon cyan",
+      "linkHover": "Link hover cyan mais claro",
+      "neon": "Texto neon com brilho",
+      "neonGlow": "Texto com efeito glow"
     },
     "button": {
-      "primary": "Botão primário - referencia: palette.blue.500 com hover/active mais claros",
-      "secondary": "Botão secundário escuro - referencia: palette.gray.700/600/500",
-      "tertiary": "Botão terciário transparente - referencia: palette.gray.*",
-      "danger": "Botão perigo - referencia: palette.red.500/400/300",
-      "success": "Botão sucesso - referencia: palette.green.500/400/300"
+      "primary": "Botão primário neon cyan com glow",
+      "secondary": "Botão secundário escuro com borda cyan",
+      "tertiary": "Botão terciário transparente com borda",
+      "danger": "Botão perigo neon rose",
+      "success": "Botão sucesso neon emerald",
+      "neon": "Botão com gradiente cyberpunk"
     },
     "border": {
-      "default": "Borda padrão escura - referencia: palette.gray.700",
-      "light": "Borda clara - referencia: palette.gray.600",
-      "medium": "Borda média - referencia: palette.gray.500",
-      "dark": "Borda mais escura - referencia: palette.gray.400",
-      "focus": "Borda foco claro - referencia: palette.blue.400",
-      "error": "Borda erro - referencia: palette.red.400",
-      "success": "Borda sucesso - referencia: palette.green.400",
-      "warning": "Borda aviso - referencia: palette.red.400"
+      "default": "Borda padrão cinza escuro",
+      "light": "Borda clara cinza médio",
+      "medium": "Borda média cinza",
+      "dark": "Borda escura cinza claro",
+      "focus": "Borda foco neon cyan",
+      "error": "Borda erro neon rose",
+      "success": "Borda sucesso neon emerald",
+      "warning": "Borda aviso neon amber",
+      "neon": "Borda com efeito neon",
+      "neonGlow": "Borda com brilho neon"
     },
     "status": {
-      "success": "Status sucesso - referencia: palette.green.500/900/300",
-      "error": "Status erro - referencia: palette.red.500/900/300",
-      "warning": "Status aviso - referencia: palette.red.400/900/300",
-      "info": "Status informação - referencia: palette.blue.400/900/300"
+      "success": "Status sucesso neon emerald",
+      "error": "Status erro neon rose",
+      "warning": "Status aviso neon amber",
+      "info": "Status informação neon cyan"
     },
     "interactive": {
-      "link": "Links interativos claros - referencia: palette.blue.400/300/200, palette.purple.400",
-      "focus": "Foco claro - referencia: palette.blue.400, palette.gray.900"
+      "link": "Links com efeitos neon",
+      "focus": "Foco com anel glow cyan"
     },
     "surface": {
-      "elevated": "Superfície elevada escura - referencia: palette.gray.800",
-      "raised": "Superfície levantada - referencia: palette.gray.700",
-      "sunken": "Superfície rebaixada - referencia: palette.gray.600"
+      "elevated": "Superfície elevada escura",
+      "raised": "Superfície levantada média",
+      "sunken": "Superfície rebaixada muito escura",
+      "glass": "Efeito glass cyberpunk",
+      "neon": "Superfície com brilho neon",
+      "hologram": "Efeito holográfico cyberpunk"
+    },
+    "gradient": {
+      "cyberpunk": "Gradientes temáticos cyberpunk",
+      "neon": "Gradientes neon puros"
+    },
+    "shadow": {
+      "neon": "Sombras neon coloridas",
+      "glow": "Efeitos de brilho variados"
     }
   }
 }
