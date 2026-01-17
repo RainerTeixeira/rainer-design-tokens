@@ -4,28 +4,110 @@
   "_comments": {
     "gradients": "Gradientes pré-definidos para uso consistente na aplicação",
     "text": "Gradientes para efeitos em textos e tipografia",
-    "background": "Gradientes para backgrounds e superfícies"
+    "background": "Gradientes para backgrounds e superfícies",
+    "cyberpunk": "Gradientes neon e cyberpunk para tema escuro",
+    "neon": "Gradientes com efeitos de brilho neon",
+    "status": "Gradientes para indicadores de status",
+    "categories": "Gradientes para categorias de componentes"
   },
   "gradients": {
     "text": {
       "primary": "linear-gradient(135deg, #00e6ff 0%, #7d00ff 100%)",
       "secondary": "linear-gradient(135deg, #ff00ff 0%, #00e6ff 100%)",
-      "accent": "linear-gradient(135deg, #ff7d00 0%, #ff00ff 100%)"
+      "accent": "linear-gradient(135deg, #ff7d00 0%, #ff00ff 100%)",
+      "cyberpunk": "linear-gradient(135deg, #00ffff 0%, #ff00ff 50%, #00ff00 100%)",
+      "neon": "linear-gradient(135deg, #00e6ff 0%, #7d00ff 100%)"
     },
     "background": {
       "hero": "linear-gradient(135deg, #00e6ff 0%, #7d00ff 100%)",
-      "subtle": "linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)"
+      "subtle": "linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)",
+      "cyberpunk": "linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #000a1a 100%)",
+      "neon": "linear-gradient(135deg, #001a33 0%, #0a001a 50%, #001a0a 100%)",
+      "glass": "linear-gradient(135deg, rgba(0, 230, 255, 0.1) 0%, rgba(125, 0, 255, 0.1) 100%)"
+    },
+    "cyberpunk": {
+      "primary": "linear-gradient(135deg, #00ffff 0%, #ff00ff 100%)",
+      "secondary": "linear-gradient(135deg, #ff00ff 0%, #00ff00 100%)",
+      "accent": "linear-gradient(135deg, #00ff00 0%, #ffff00 100%)",
+      "neon": "linear-gradient(135deg, #00e6ff 0%, #7d00ff 50%, #00ff00 100%)",
+      "glow": "linear-gradient(135deg, rgba(0, 230, 255, 0.8) 0%, rgba(125, 0, 255, 0.8) 100%)"
+    },
+    "neon": {
+      "cyan": "linear-gradient(135deg, #00ffff 0%, #00e6ff 100%)",
+      "purple": "linear-gradient(135deg, #ff00ff 0%, #7d00ff 100%)",
+      "green": "linear-gradient(135deg, #00ff00 0%, #00ff80 100%)",
+      "pink": "linear-gradient(135deg, #ff00ff 0%, #ff0080 100%)",
+      "yellow": "linear-gradient(135deg, #ffff00 0%, #ffaa00 100%)"
+    },
+    "status": {
+      "success": "linear-gradient(135deg, #00ff00 0%, #00cc00 100%)",
+      "warning": "linear-gradient(135deg, #ffaa00 0%, #ff6600 100%)",
+      "error": "linear-gradient(135deg, #ff0000 0%, #cc0000 100%)",
+      "info": "linear-gradient(135deg, #00e6ff 0%, #0099ff 100%)"
+    },
+    "categories": {
+      "ui": "linear-gradient(135deg, #3b82f6, #06b6d4)",
+      "forms": "linear-gradient(135deg, #22c55e, #10b981)",
+      "layout": "linear-gradient(135deg, #8b5cf6, #ec4899)",
+      "navigation": "linear-gradient(135deg, #f97316, #ef4444)",
+      "feedback": "linear-gradient(135deg, #eab308, #f97316)",
+      "overlays": "linear-gradient(135deg, #6366f1, #8b5cf6)",
+      "dataDisplay": "linear-gradient(135deg, #06b6d4, #3b82f6)",
+      "effects": "linear-gradient(135deg, #ec4899, #f43f5e)",
+      "social": "linear-gradient(135deg, #14b8a6, #06b6d4)",
+      "dashboard": "linear-gradient(135deg, #8b5cf6, #a855f7)",
+      "utilities": "linear-gradient(135deg, #6b7280, #475569)",
+      "providers": "linear-gradient(135deg, #10b981, #14b8a6)"
     }
   },
   "_notes": {
     "text": {
       "primary": "Gradiente ciano-roxo para textos principais com destaque",
       "secondary": "Gradiente rosa-ciano para textos secundários",
-      "accent": "Gradiente laranja-rosa para acentos e ênfases"
+      "accent": "Gradiente laranja-rosa para acentos e ênfases",
+      "cyberpunk": "Gradiente ciano-magenta-verde para temas cyberpunk",
+      "neon": "Gradiente ciano-roxo com brilho neon intenso"
     },
     "background": {
       "hero": "Gradiente ciano-roxo para seções herói e banners principais",
-      "subtle": "Gradiente sutil em tons de cinza para backgrounds discretos"
+      "subtle": "Gradiente sutil em tons de cinza para backgrounds discretos",
+      "cyberpunk": "Gradiente escuro com tons cyberpunk para temas noturnos",
+      "neon": "Gradiente neon escuro para efeitos de iluminação",
+      "glass": "Gradiente transparente com efeito glassmorphism"
+    },
+    "cyberpunk": {
+      "primary": "Gradiente ciano-magenta principal do tema cyberpunk",
+      "secondary": "Gradiente magenta-verde secundário",
+      "accent": "Gradiente verde-amarelo para destaques",
+      "neon": "Gradiente tricolor neon completo",
+      "glow": "Gradiente com transparência para efeitos de brilho"
+    },
+    "neon": {
+      "cyan": "Gradiente neon ciano para elementos tecnológicos",
+      "purple": "Gradiente neon roxo para elementos premium",
+      "green": "Gradiente neon verde para elementos de sucesso",
+      "pink": "Gradiente neon rosa para elementos vibrantes",
+      "yellow": "Gradiente neon amarelo para alertas e atenção"
+    },
+    "status": {
+      "success": "Gradiente verde para estados de sucesso",
+      "warning": "Gradiente laranja para estados de alerta",
+      "error": "Gradiente vermelho para estados de erro",
+      "info": "Gradiente azul para estados informativos"
+    },
+    "categories": {
+      "ui": "Gradiente azul-ciano para componentes de interface",
+      "forms": "Gradiente verde-esmeralda para formulários",
+      "layout": "Gradiente roxo-rosa para componentes de layout",
+      "navigation": "Gradiente laranja-vermelho para navegação",
+      "feedback": "Gradiente amarelo-laranja para feedback",
+      "overlays": "Gradiente índigo-roxo para componentes sobrepostos",
+      "dataDisplay": "Gradiente ciano-azul para visualização de dados",
+      "effects": "Gradiente rosa-rosa para efeitos visuais",
+      "social": "Gradiente teal-ciano para componentes sociais",
+      "dashboard": "Gradiente roxo-violeta para dashboards",
+      "utilities": "Gradiente cinza-slate para utilitários",
+      "providers": "Gradiente esmeralda-teal para providers"
     }
   }
 }
