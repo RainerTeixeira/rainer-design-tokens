@@ -1,0 +1,38 @@
+  {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Tamanhos de ícones padronizados - Dimensões padronizadas para várias densidades e contextos",
+  "$generated": "2026-01-17T14:01:57.500Z",
+  "$source": "primitives/spacing-scale.json",
+  "_comments": {
+    "iconSize": "Escala completa de tamanhos de ícone em unidades relativas (rem), alinhada à escala de espaçamento"
+  },
+  "iconSize": {
+    "2xs": "0.75rem",
+    "xs": "1rem",
+    "sm": "1.25rem",
+    "base": "1.5rem",
+    "md": "1.75rem",
+    "lg": "2rem",
+    "xl": "2.5rem",
+    "2xl": "3rem",
+    "3xl": "4rem",
+    "4xl": "5rem",
+    "5xl": "6rem",
+    "full": "100%"
+  },
+  "_notes": {
+    "scale": "Tamanhos derivados da escala de espaçamento (base 4px) convertida para rem, otimizados para ícones em UI e layout",
+    "2xs": "12px (0.75rem) - Para interfaces super densas (tabelas complexas, grids, listas de dados apertadas)",
+    "xs": "16px (1rem) - Para elementos compactos (tags, breadcrumbs, estados em texto pequeno)",
+    "sm": "20px (1.25rem) - Para navegação secundária, listas e ícones ao lado de texto pequeno/base",
+    "base": "24px (1.5rem) - Tamanho padrão para maioria dos ícones de UI (botões, inputs, toolbars)",
+    "md": "28px (1.75rem) - Para elementos com destaque moderado (cards, ações principais em listas)",
+    "lg": "32px (2rem) - Para ícones principais e CTAs em barras de ferramentas, hero compactos",
+    "xl": "40px (2.5rem) - Para seções de cabeçalho, destaques em cards grandes e métricas-chave",
+    "2xl": "48px (3rem) - Para elementos de marketing, hero sections e ilustrações simples",
+    "3xl": "64px (4rem) - Para destaques visuais em landing pages e seções de benefícios",
+    "4xl": "80px (5rem) - Para elementos decorativos grandes, ícones ilustrativos e empty states",
+    "5xl": "96px (6rem) - Para banners, hero full-width e ícones de suporte à ilustração",
+    "full": "100% - Para ícones responsivos que preenchem containers (ex: ícones em avatars, wrappers quadrados)"
+  }
+}

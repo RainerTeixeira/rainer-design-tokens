@@ -1,14 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$description": "Motion tokens - Durations, easings, and transitions for animations",
+  "$description": "Tokens de motion - Durações, curvas de easing e delays para animações e transições",
   "_comments": {
-    "duration": "Animation durations in milliseconds",
-    "easing": "Easing curves for different types of movement",
-    "delay": "Delays before starting animations"
+    "duration": "Durações de animação em milissegundos para diferentes velocidades de interação",
+    "easing": "Curvas de easing para diferentes comportamentos de movimento (entrada, saída, ênfase)",
+    "delay": "Delays antes de iniciar animações, úteis para sequenciamento e orquestração"
   },
   "motion": {
     "duration": {
       "instant": "0ms",
+      "ultraFast": "75ms",
       "fast": "100ms",
       "normal": "200ms",
       "slow": "300ms",
@@ -26,36 +27,51 @@
       "easeInCubic": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
       "easeOutCubic": "cubic-bezier(0.215, 0.61, 0.355, 1)",
       "easeInOutCubic": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "easeOutBack": "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+      "easeInBack": "cubic-bezier(0.6, -0.28, 0.735, 0.045)",
+      "easeInOutBack": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
       "spring": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
     },
     "delay": {
       "none": "0ms",
       "short": "50ms",
       "medium": "100ms",
-      "long": "200ms"
+      "long": "200ms",
+      "longer": "300ms"
     }
   },
   "_notes": {
     "duration": {
-      "instant": "Instant transition without animation",
-      "fast": "Fast animation for immediate feedback",
-      "normal": "Standard duration for common animations",
-      "slow": "Slow animation for smooth transitions",
-      "slower": "Very slow animation for heavy elements",
-      "slowest": "Slowest animation for maximum emphasis"
+      "instant": "Transição instantânea sem animação perceptível (use para mudanças de estado não visuais)",
+      "ultraFast": "Feedback ultra-rápido para micro interações (ex.: hovers sutis em interfaces densas)",
+      "fast": "Animação rápida para feedback imediato (ex.: clique em botão, pequenas mudanças de estado)",
+      "normal": "Duração padrão para transições comuns de UI (ex.: dropdowns, toasts)",
+      "slow": "Animação lenta para transições suaves de conteúdo (ex.: modais, drawers)",
+      "slower": "Animação bem lenta para elementos pesados ou grandes (ex.: transições de página)",
+      "slowest": "Animação mais lenta para máximo destaque ou momentos de storytelling (ex.: hero sections)"
     },
     "easing": {
-      "linear": "Constant movement without acceleration",
-      "easeIn": "Slow start, accelerates at the end",
-      "easeOut": "Fast start, decelerates at the end",
-      "easeInOut": "Smooth start and end with acceleration in the middle",
-      "spring": "Spring effect with natural bounce"
+      "linear": "Movimento constante sem aceleração; ideal para movimento contínuo e em loop (ex.: loaders)",
+      "easeIn": "Início lento e final mais rápido; bom para elementos entrando na tela a partir de fora do canvas",
+      "easeOut": "Início rápido e parada suave; ideal para elementos saindo ou encaixando em posição",
+      "easeInOut": "Início e fim suaves com aceleração no meio; padrão para a maioria das transições",
+      "easeInQuad": "Ease-in quadrático para aceleração um pouco mais marcada no final",
+      "easeOutQuad": "Ease-out quadrático para desaceleração um pouco mais marcada no final",
+      "easeInOutQuad": "Ease-in-out quadrático com easing mais forte que o easeInOut padrão",
+      "easeInCubic": "Ease-in cúbico para aceleração forte; use com moderação para entradas dramáticas",
+      "easeOutCubic": "Ease-out cúbico para desaceleração forte; bom para movimento com sensação de peso",
+      "easeInOutCubic": "Ease-in-out cúbico para transições muito suaves e polidas",
+      "easeOutBack": "Ultrapassa levemente o destino antes de estabilizar; ideal para feedback divertido e de ênfase",
+      "easeInBack": "Começa movendo um pouco para trás e depois acelera; adequado para entradas expressivas",
+      "easeInOutBack": "Estilo back tanto na entrada quanto na saída; personalidade forte, use em motion de marca",
+      "spring": "Movimento tipo mola com bounce natural; ótimo para scale, toggles e interações mais lúdicas"
     },
     "delay": {
-      "none": "No delay, immediate animation",
-      "short": "Short delay for quick feedback",
-      "medium": "Medium delay for sequences",
-      "long": "Long delay for emphasis"
+      "none": "Sem delay; use quando resposta imediata é crítica para a percepção de performance",
+      "short": "Delay curto para sequenciamento sutil entre elementos relacionados (ex.: itens de lista em stagger)",
+      "medium": "Delay médio para sequências perceptíveis e direcionamento de atenção",
+      "long": "Delay longo para animações orquestradas e fluxos de UI mais narrativos",
+      "longer": "Delay extra longo para coreografias de motion complexas; use com moderação"
     }
   }
 }

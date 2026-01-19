@@ -33,7 +33,7 @@
     "stories/**/*",
     ".storybook/**/*",
     "tsup.config.ts"
-, "OLD/OLD_accessibility.ts", "OLD/OLD_helpers.ts", "OLD/OLD_index.ts", "OLD/OLD_utilities.ts", "OLD/utilities", "OLD/core", "OLD/compliance", "OLD/helpers"  ],
+  ],
   "exclude": [
     "node_modules",
     "dist",

@@ -158,8 +158,8 @@
   --color-text-inverse: #ffffff;
   --color-text-on-primary: #ffffff;
   --color-text-on-secondary: #111827;
-  --color-text-link: #0284c7;
-  --color-text-link-hover: #0369a1;
+  --color-text-link: #2563eb;
+  --color-text-link-hover: #1d4ed8;
 
   /* Typography */
   --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -218,22 +218,22 @@
 /* ===== DARK THEME ===== */
 .dark, [data-theme="dark"] {
   /* Background */
-  --color-background-primary: {palette.gray.950};
+  --color-background-primary: #111827;
   --color-background-secondary: #111827;
   --color-background-tertiary: #1f2937;
-  --color-background-disabled: {palette.gray.850};
+  --color-background-disabled: #1f2937;
   --color-background-overlay: rgba(0, 0, 0, 0.85);
   --color-background-inverse: #f9fafb;
   --color-background-glass: rgba(15, 23, 42, 0.6);
-  --color-background-neon: rgba(6, 182, 212, 0.1);
+  --color-background-neon: rgba(6, 182, 212, 0.10);
 
   /* Text */
   --color-text-primary: #f9fafb;
   --color-text-secondary: #d1d5db;
   --color-text-tertiary: #9ca3af;
   --color-text-disabled: #6b7280;
-  --color-text-inverse: {palette.gray.950};
-  --color-text-on-primary: {palette.gray.950};
+  --color-text-inverse: #111827;
+  --color-text-on-primary: #111827;
   --color-text-on-secondary: #f9fafb;
   --color-text-link: #22d3ee;
   --color-text-link-hover: #67e8f9;

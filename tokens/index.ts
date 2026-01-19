@@ -12,7 +12,7 @@ import rawOpacityPrimitive from './primitives/opacity-scale.json';
 import rawLayoutPrimitive from './primitives/layout-units.json';
 import rawIconSizesPrimitive from './primitives/icon-scale.json';
 import rawGradientPrimitive from './primitives/gradient-tokens.json';
-// Sem�nticos (tokens com significado)
+// Semanticos (tokens com significado)
 import rawColorSemantic from './semantics/color-roles.json';
 import rawSpacingSemantic from './semantics/spacing-context.json';
 import rawTypographySemantic from './semantics/typography-roles.json';

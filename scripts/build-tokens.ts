@@ -25,7 +25,7 @@
  * @author Rainer Teixeira
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { execSync } from 'child_process';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -174,6 +174,36 @@ function resolveTokenReferences(value: string, palette: any): string {
   });
 }
 
+/**
+ * Converte um valor de token para uma variável CSS
+ * @param value - Valor do token a ser convertido
+ * @param keepReferences - Se true, mantém referências como variáveis CSS em vez de resolver
+ * @returns Valor formatado como variável CSS
+ */
+function tokenToCssVariable(value: string, keepReferences: boolean = false): string {
+  // Se já for uma variável CSS, retorna como está
+  if (value.startsWith('var(--')) {
+    return value;
+  }
+  
+  // Se for uma referência de paleta
+  if (value.startsWith('{palette.') && value.endsWith('}')) {
+    if (keepReferences) {
+      // Converte diretamente para variável CSS sem resolver
+      const path = value.slice(9, -1); // Remove {palette. e }
+      const keys = path.split('.');
+      const cssVarName = keys.join('-');
+      return `var(--color-${cssVarName})`;
+    } else {
+      // Para CSS vars, resolve o valor (comportamento original)
+      return value; // Será resolvido por resolveTokenReferences
+    }
+  }
+  
+  // Para outros valores, retorna como está
+  return value;
+}
+
 function flattenToCSSVars(
   obj: ColorToken | Record<string, string>,
   prefix: string = '',
@@ -190,7 +220,7 @@ function flattenToCSSVars(
       const resolvedValue = palette
         ? resolveTokenReferences(value, palette)
         : value;
-      vars.push(`  --${varName}: ${resolvedValue};`);
+      vars.push(`  --${varName}: ${tokenToCssVariable(resolvedValue, false)};`);
     } else if (typeof value === 'object' && value !== null) {
       vars.push(...flattenToCSSVars(value, varName, separator, palette));
     }
@@ -201,7 +231,8 @@ function flattenToCSSVars(
 
 function toTailwindObject(
   obj: ColorToken | Record<string, string>,
-  indent: number = 8
+  indent: number = 8,
+  palette?: any
 ): string {
   const spaces = ' '.repeat(indent);
   const lines: string[] = [];
@@ -210,10 +241,12 @@ function toTailwindObject(
     const camelKey = toCamelCase(key);
 
     if (typeof value === 'string') {
-      lines.push(`${spaces}${camelKey}: '${value}',`);
+      // Para Tailwind, mantém referências como variáveis CSS
+      const cssValue = tokenToCssVariable(value, true);
+      lines.push(`${spaces}${camelKey}: '${cssValue}',`);
     } else if (typeof value === 'object' && value !== null) {
       lines.push(`${spaces}${camelKey}: {`);
-      lines.push(toTailwindObject(value, indent + 2));
+      lines.push(toTailwindObject(value, indent + 2, palette));
       lines.push(`${spaces}},`);
     }
   }
@@ -381,7 +414,7 @@ function generateTokensJSON(tokens: Tokens): string {
   );
 
   const consolidated = {
-    $schema: 'https://json.schemastore.org/design-tokens.json',
+    $schema: 'https://json-schema.org/draft-07/schema#',
     $name: packageJson.name,
     $version: packageJson.version,
     $description: 'Universal design tokens export for Rainer Design System',
@@ -606,7 +639,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     typeof tokens.themes.light.background === 'object'
   ) {
     lines.push(`        background: {`);
-    lines.push(toTailwindObject(tokens.themes.light.background, 10));
+    lines.push(toTailwindObject(tokens.themes.light.background, 10, tokens.palette));
     lines.push(`        },`);
   }
 
@@ -616,7 +649,7 @@ function generateTailwindConfig(tokens: Tokens): string {
     typeof tokens.themes.light.text === 'object'
   ) {
     lines.push(`        text: {`);
-    lines.push(toTailwindObject(tokens.themes.light.text, 10));
+    lines.push(toTailwindObject(tokens.themes.light.text, 10, tokens.palette));
     lines.push(`        },`);
   }
 
@@ -931,6 +964,14 @@ function main() {
 
     // 📦 2. Gerar formatos de saída
     console.log('📦 === GERANDO FORMATOS DE SAÍDA ===');
+    
+    // Criar pasta formats se não existir
+    const formatsDir = join(__dirname, '..', 'formats');
+    if (!existsSync(formatsDir)) {
+      mkdirSync(formatsDir, { recursive: true });
+      console.log('📁 Pasta formats/ criada');
+    }
+    
     const tokens = loadAllTokens();
 
     // Gerar tokens.json

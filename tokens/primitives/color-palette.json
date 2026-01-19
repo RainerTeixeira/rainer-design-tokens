@@ -1,21 +1,26 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$description": "Paleta de cores primitiva - Cores base, nunca mudam com tema",
+  "$description": "Paleta de cores primitiva — conjunto base de cores do design system que não sofre alteração entre temas (fixa e estável)",
+  "_meta": {
+    "version": "1.0.0",
+    "source": "Tailwind-like scale adapted to product design language",
+    "lastUpdated": "2026-01-17"
+  },
   "_comments": {
-    "palette": "Cores fundamentais do sistema de design",
-    "white": "Branco puro",
-    "black": "Preto puro",
-    "transparent": "Transparente",
-    "gray": "Escala de cinzas neutros",
-    "blue": "Azul para elementos interativos e informativos",
-    "cyan": "Ciano para elementos tecnológicos e destaque",
-    "purple": "Roxo para destaque e elementos premium",
-    "pink": "Rosa para elementos vibrantes e chamativos",
-    "red": "Vermelho para alertas e erros",
-    "orange": "Laranja para avisos e atenção",
-    "yellow": "Amarelo para destaque e alertas leves",
-    "green": "Verde para sucesso e confirmações",
-    "emerald": "Verde esmeralda para elementos naturais"
+    "palette": "Cores fundamentais do sistema de design, organizadas em escalas tonais contínuas de 50 (mais claro) a 900 (mais escuro)",
+    "white": "Branco puro, utilizado para fundos neutros, estados vazios e alto contraste em temas claros",
+    "black": "Preto puro, utilizado para texto de altíssimo contraste, overlays e elementos estruturais em temas escuros",
+    "transparent": "Cor totalmente transparente, usada para superfícies e estados que não devem alterar o fundo",
+    "gray": "Escala de cinzas neutros, base para textos, ícones, bordas e superfícies estruturais",
+    "blue": "Azul para elementos interativos, estados informativos e ações principais (links, CTAs primários)",
+    "cyan": "Ciano tecnológico, usado para destaques futuristas, elementos de status e identidade digital",
+    "purple": "Roxo para elementos premium, planos avançados, branding sofisticado e destaques especiais",
+    "pink": "Rosa vibrante para elementos chamativos, promocionais, marketing e comunicações de alto impacto",
+    "red": "Vermelho para erros, alertas críticos, estados destrutivos e mensagens de bloqueio",
+    "orange": "Laranja para avisos, atenção moderada, estados de risco e indicadores intermediários",
+    "yellow": "Amarelo para destaques leves, alertas informativos, tooltips e mensagens de aviso suave",
+    "green": "Verde para sucesso padrão, confirmações, estados concluídos e feedback positivo geral",
+    "emerald": "Verde esmeralda para elementos naturais, sustentáveis, orgânicos e variações de sucesso alternativo"
   },
   "palette": {
     "white": "#ffffff",
@@ -143,16 +148,16 @@
     }
   },
   "_notes": {
-    "palette": "Todas as cores seguem padrão de escala 50-900 onde 50 é mais claro e 900 é mais escuro",
-    "gray": "Cinza neutro balanceado para textos e backgrounds",
-    "blue": "Azul céu usado para links, botões primários e elementos interativos",
-    "cyan": "Ciano vibrante para elementos tecnológicos, futuristas e destaque",
-    "purple": "Roxo vibrante para elementos premium e destaque visual",
-    "pink": "Rosa para elementos vibrantes, chamativos e femininos",
-    "red": "Vermelho para estados de erro, alertas críticos e ações destrutivas",
-    "orange": "Laranja para avisos, atenção e elementos de destaque secundário",
-    "yellow": "Amarelo para destaque leve, alertas informativos e atenção",
-    "green": "Verde para feedback positivo, sucesso e confirmações",
-    "emerald": "Verde esmeralda para elementos naturais, orgânicos e sucesso alternativo"
+    "palette": "Todas as escalas seguem o padrão 50–900, onde 50 representa o tom mais claro (mais próximo do branco) e 900 o tom mais escuro (mais próximo do preto). Utilize 500 como ponto de partida para cor de marca ou cor base e ajuste para mais claro/escuro conforme o contexto.",
+    "gray": "Cinza neutro balanceado, ideal para textos (400–800), ícones, bordas (200–400) e superfícies de fundo (50–200) sem interferir na hierarquia de cor.",
+    "blue": "Azul céu voltado para elementos interativos: links, botões primários, ícones de ação e estados informativos. Tons 400–600 para estados padrão, 700–800 para hover/ativo e 100–200 para fundos sutis.",
+    "cyan": "Ciano vibrante com caráter tecnológico, indicado para realces futuristas, indicadores de status especial, elementos de identidade digital e temas cyberpunk/neon.",
+    "purple": "Roxo vibrante usado para planos premium, paywalls, destaques de upgrade, badges de nível e elementos que comunicam exclusividade.",
+    "pink": "Rosa intenso aplicado em campanhas promocionais, comunicações de marketing, componentes festivos e elementos que exigem alto nível de atenção visual.",
+    "red": "Vermelho reservado para estados de erro, alertas críticos, confirmações destrutivas e mensagens de bloqueio. Utilize tons claros (50–200) para fundos de alerta e tons médios/escuros (400–700) para textos e ícones.",
+    "orange": "Laranja para avisos importantes, estados de risco moderado, mensagens de atenção e passos intermediários em fluxos de alerta. Complementa o vermelho sem competir com erros críticos.",
+    "yellow": "Amarelo para destaque leve, mensagens informativas, tooltips, rótulos de atenção e estados de aviso não críticos. Ideal em combinação com ícones escuros para garantir legibilidade.",
+    "green": "Verde para feedback positivo geral: sucesso de ações, estados concluídos, confirmações e indicadores de saúde do sistema. Tons 400–600 para estados principais, 50–200 para fundos suaves de sucesso.",
+    "emerald": "Verde esmeralda associado a temas naturais, ecossustentáveis, orgânicos e variações de sucesso com caráter mais sofisticado, podendo ser usado em diferenciação de planos ou métricas de impacto positivo."
   }
 }

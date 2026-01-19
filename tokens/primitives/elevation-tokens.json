@@ -1,39 +1,41 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$description": "Escala de sombras - Valores de elevação e profundidade visual",
+  "$description": "Escala de sombras - Valores de elevação e profundidade visual consistentes para superfícies e estados interativos",
+  "$generated": "2026-01-17T14:01:57.500Z",
+  "$source": "primitives/spacing-scale.json",
   "_comments": {
-    "shadows": "Escala completa de sombras em diferentes níveis de intensidade"
+    "shadows": "Escala completa de sombras em diferentes níveis de intensidade, alinhada à hierarquia de elevação do sistema"
   },
   "shadows": {
-    "xs": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-    "sm": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
-    "base": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1)",
-    "md": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)",
-    "lg": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
-    "xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-    "2xl": "0 50px 100px -20px rgba(0, 0, 0, 0.3)",
-    "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.05)",
+    "xs": "0 1px 2px 0 rgba(15, 23, 42, 0.05)",
+    "sm": "0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.06)",
+    "base": "0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06)",
+    "md": "0 10px 15px -3px rgba(15, 23, 42, 0.10), 0 4px 6px -4px rgba(15, 23, 42, 0.08)",
+    "lg": "0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.10)",
+    "xl": "0 25px 50px -12px rgba(15, 23, 42, 0.25)",
+    "2xl": "0 50px 100px -20px rgba(15, 23, 42, 0.30)",
+    "inner": "inset 0 2px 4px 0 rgba(15, 23, 42, 0.06)",
     "glow": {
-      "cyan": "0 0 20px rgba(0, 230, 255, 0.5), 0 0 40px rgba(0, 230, 255, 0.3)",
-      "pink": "0 0 20px rgba(255, 0, 255, 0.5), 0 0 40px rgba(255, 0, 255, 0.3)",
-      "purple": "0 0 20px rgba(125, 0, 255, 0.5), 0 0 40px rgba(125, 0, 255, 0.3)",
-      "green": "0 0 20px rgba(0, 255, 0, 0.5), 0 0 40px rgba(0, 255, 0, 0.3)"
+      "cyan": "0 0 20px rgba(6, 182, 212, 0.55), 0 0 40px rgba(6, 182, 212, 0.35)",
+      "pink": "0 0 20px rgba(236, 72, 153, 0.55), 0 0 40px rgba(236, 72, 153, 0.35)",
+      "purple": "0 0 20px rgba(139, 92, 246, 0.55), 0 0 40px rgba(139, 92, 246, 0.35)",
+      "green": "0 0 20px rgba(34, 197, 94, 0.55), 0 0 40px rgba(34, 197, 94, 0.35)"
     }
   },
   "_notes": {
-    "xs": "Sombra sutil para elementos pequenos (badges, tags)",
-    "sm": "Sombra leve para botões, inputs e elementos interativos",
-    "base": "Sombra padrão para cards, dropdowns básicos",
-    "md": "Sombra média para modais, popovers, elementos destacados",
-    "lg": "Sombra grande para modais grandes, sidebars, menus",
-    "xl": "Sombra extra grande para elementos flutuantes importantes",
-    "2xl": "Sombra máxima para destaque visual (overlays, hero sections)",
-    "inner": "Sombra interna para inputs focados, botões pressionados",
+    "xs": "Sombra sutil para separação mínima de superfícies muito leves (badges, tags, chips) - referência: elevação mínima",
+    "sm": "Sombra leve para botões, inputs e elementos interativos em superfícies claras - ideal para hover suave",
+    "base": "Sombra padrão para cards, dropdowns básicos e painéis flutuantes de baixa ênfase",
+    "md": "Sombra média para modais pequenos, popovers e elementos de destaque moderado",
+    "lg": "Sombra grande para modais grandes, sidebars, drawers e menus principais",
+    "xl": "Sombra extra grande para elementos flutuantes importantes, como overlays contextuais",
+    "2xl": "Sombra máxima para destaque visual intenso (overlays principais, hero sections flutuantes)",
+    "inner": "Sombra interna para inputs focados, botões pressionados, estados ativos e superfícies recuadas",
     "glow": {
-      "cyan": "Brilho ciano para elementos tecnológicos, futuristas",
-      "pink": "Brilho rosa para elementos vibrantes, chamativos",
-      "purple": "Brilho roxo para elementos mágicos/premium",
-      "green": "Brilho verde para elementos de sucesso, status ativo"
+      "cyan": "Brilho ciano para elementos tecnológicos, indicadores de status e ações primárias futuristas",
+      "pink": "Brilho rosa para elementos vibrantes, promocionais e de alto destaque visual",
+      "purple": "Brilho roxo para elementos premium, mágicos ou relacionados a planos avançados",
+      "green": "Brilho verde para elementos de sucesso, status ativo, confirmações e estados positivos persistentes"
     }
   }
 }

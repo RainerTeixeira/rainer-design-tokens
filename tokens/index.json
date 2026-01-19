@@ -1,8 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$description": "Design tokens index - Organized structure with primitives, semantics, and themes",
-  "$version": "2.7.0",
+  "$description": "Índice principal de design tokens – ponto único que organiza primitivas, tokens semânticos e temas",
+  "$version": "2.7.1",
   "primitives": {
+    "_description": "Tokens primitivos – valores brutos e neutros, sem contexto de uso. Servem como base para todos os demais tokens.",
     "color": "./primitives/color-palette.json",
     "spacing": "./primitives/spacing-scale.json",
     "typography": "./primitives/typography-base.json",
@@ -17,6 +18,7 @@
     "icon-sizes": "./primitives/icon-scale.json"
   },
   "semantics": {
+    "_description": "Tokens semânticos – mapeiam primitivas para papéis de uso (ex.: success, danger, surface) garantindo consistência entre produtos.",
     "color": "./semantics/color-roles.json",
     "spacing": "./semantics/spacing-context.json",
     "typography": "./semantics/typography-roles.json",
@@ -26,14 +28,17 @@
     "motion": "./semantics/motion-roles.json"
   },
   "themes": {
+    "_description": "Temas – combinam tokens semânticos em variações visuais (ex.: claro/escuro) sem alterar a estrutura do design system.",
     "light": "./themes/theme-light.json",
     "dark": "./themes/theme-dark.json"
   },
   "metadata": {
     "created": "2026-01-03",
-    "updated": "2026-01-03",
+    "updated": "2026-01-17",
     "structure": "primitives + semantics + themes",
-    "format": "json-only",
-    "version": "2.7.0"
+    "format": "json",
+    "version": "2.7.1",
+    "maintainer": "Codeium Design System",
+    "notes": "Arquivo índice canônico de todos os design tokens. Deve ser usado como fonte única de verdade por ferramentas, pipelines e integrações (Figma, Storybook, apps web/mobile, etc.)."
   }
 }

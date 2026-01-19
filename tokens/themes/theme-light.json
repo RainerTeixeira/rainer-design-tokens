@@ -1,166 +1,166 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "$description": "Light theme - Tema claro (valores padrão dos semânticos)",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$description": "Light theme - Tema claro (usa os valores padrão dos tokens semânticos)",
   "_comments": {
-    "color": "Tema light usa os mesmos valores dos tokens semânticos (padrão)"
+    "color": "O tema light referencia diretamente os tokens semânticos como valores padrão."
   },
   "color": {
     "background": {
-      "primary": "{palette.white}",
-      "secondary": "{palette.gray.50}",
-      "tertiary": "{palette.gray.100}",
-      "disabled": "{palette.gray.100}",
+      "primary": "#ffffff",
+      "secondary": "#f9fafb",
+      "tertiary": "#f3f4f6",
+      "disabled": "#f3f4f6",
       "overlay": "rgba(0, 0, 0, 0.5)",
-      "inverse": "{palette.black}"
+      "inverse": "#000000"
     },
     "text": {
-      "primary": "{palette.gray.900}",
-      "secondary": "{palette.gray.600}",
-      "tertiary": "{palette.gray.400}",
-      "disabled": "{palette.gray.300}",
-      "inverse": "{palette.white}",
-      "onPrimary": "{palette.white}",
-      "onSecondary": "{palette.gray.900}",
-      "link": "{palette.blue.600}",
-      "linkHover": "{palette.blue.700}"
+      "primary": "#111827",
+      "secondary": "#4b5563",
+      "tertiary": "#9ca3af",
+      "disabled": "#d1d5db",
+      "inverse": "#ffffff",
+      "onPrimary": "#ffffff",
+      "onSecondary": "#111827",
+      "link": "#2563eb",
+      "linkHover": "#1d4ed8"
     },
     "button": {
       "primary": {
-        "default": "{palette.blue.500}",
-        "hover": "{palette.blue.600}",
-        "active": "{palette.blue.700}",
-        "text": "{palette.white}"
+        "default": "#3b82f6",
+        "hover": "#2563eb",
+        "active": "#1d4ed8",
+        "text": "#ffffff"
       },
       "secondary": {
-        "default": "{palette.gray.200}",
-        "hover": "{palette.gray.300}",
-        "active": "{palette.gray.400}",
-        "text": "{palette.gray.900}"
+        "default": "#e5e7eb",
+        "hover": "#d1d5db",
+        "active": "#9ca3af",
+        "text": "#111827"
       },
       "tertiary": {
-        "default": "{palette.transparent}",
-        "hover": "{palette.gray.100}",
-        "active": "{palette.gray.200}",
-        "text": "{palette.gray.900}"
+        "default": "transparent",
+        "hover": "#f9fafb",
+        "active": "#e5e7eb",
+        "text": "#111827"
       },
       "danger": {
-        "default": "{palette.red.500}",
-        "hover": "{palette.red.600}",
-        "active": "{palette.red.700}",
-        "text": "{palette.white}"
+        "default": "#ef4444",
+        "hover": "#dc2626",
+        "active": "#b91c1c",
+        "text": "#ffffff"
       },
       "success": {
-        "default": "{palette.green.500}",
-        "hover": "{palette.green.600}",
-        "active": "{palette.green.700}",
-        "text": "{palette.white}"
+        "default": "#22c55e",
+        "hover": "#16a34a",
+        "active": "#15803d",
+        "text": "#ffffff"
       }
     },
     "border": {
-      "default": "{palette.gray.200}",
-      "light": "{palette.gray.100}",
-      "medium": "{palette.gray.300}",
-      "dark": "{palette.gray.400}",
-      "focus": "{palette.blue.500}",
-      "error": "{palette.red.500}",
-      "success": "{palette.green.500}",
-      "warning": "{palette.red.400}"
+      "default": "#e5e7eb",
+      "light": "#f3f4f6",
+      "medium": "#d1d5db",
+      "dark": "#9ca3af",
+      "focus": "#3b82f6",
+      "error": "#ef4444",
+      "success": "#22c55e",
+      "warning": "#f87171"
     },
     "status": {
       "success": {
-        "default": "{palette.green.500}",
-        "light": "{palette.green.50}",
-        "dark": "{palette.green.700}",
-        "text": "{palette.green.700}"
+        "default": "#22c55e",
+        "light": "#f0fdf4",
+        "dark": "#15803d",
+        "text": "#15803d"
       },
       "error": {
-        "default": "{palette.red.500}",
-        "light": "{palette.red.50}",
-        "dark": "{palette.red.700}",
-        "text": "{palette.red.700}"
+        "default": "#ef4444",
+        "light": "#fef2f2",
+        "dark": "#b91c1c",
+        "text": "#b91c1c"
       },
       "warning": {
-        "default": "{palette.red.400}",
-        "light": "{palette.red.50}",
-        "dark": "{palette.red.600}",
-        "text": "{palette.red.800}"
+        "default": "#f87171",
+        "light": "#fef2f2",
+        "dark": "#dc2626",
+        "text": "#991b1b"
       },
       "info": {
-        "default": "{palette.blue.500}",
-        "light": "{palette.blue.50}",
-        "dark": "{palette.blue.700}",
-        "text": "{palette.blue.700}"
+        "default": "#3b82f6",
+        "light": "#eff6ff",
+        "dark": "#1d4ed8",
+        "text": "#1d4ed8"
       }
     },
     "interactive": {
       "link": {
-        "default": "{palette.blue.600}",
-        "hover": "{palette.blue.700}",
-        "visited": "{palette.purple.600}",
-        "active": "{palette.blue.800}"
+        "default": "#2563eb",
+        "hover": "#1d4ed8",
+        "visited": "#9333ea",
+        "active": "#1e40af"
       },
       "focus": {
-        "ring": "{palette.blue.500}",
-        "ringOffset": "{palette.white}"
+        "ring": "#3b82f6",
+        "ringOffset": "#ffffff"
       }
     },
     "surface": {
-      "elevated": "{palette.white}",
-      "raised": "{palette.gray.50}",
-      "sunken": "{palette.gray.100}"
+      "elevated": "#ffffff",
+      "raised": "#f9fafb",
+      "sunken": "#f3f4f6"
     }
   },
   "_notes": {
     "background": {
-      "primary": "Fundo principal - referencia: palette.white",
-      "secondary": "Fundo secundário - referencia: palette.gray.50",
-      "tertiary": "Fundo terciário - referencia: palette.gray.100",
-      "disabled": "Fundo desabilitado - referencia: palette.gray.100",
-      "overlay": "Overlay com opacidade - referencia: palette.black com opacity",
-      "inverse": "Fundo invertido - referencia: palette.black"
+      "primary": "Fundo principal da aplicação - referência: palette.white",
+      "secondary": "Fundo secundário para seções alternadas - referência: palette.gray.50",
+      "tertiary": "Fundo terciário para elementos aninhados - referência: palette.gray.100",
+      "disabled": "Fundo para estados desabilitados - referência: palette.gray.100",
+      "overlay": "Fundo para overlays e modais com opacidade - referência: palette.black com alpha",
+      "inverse": "Fundo invertido para alto contraste - referência: palette.black"
     },
     "text": {
-      "primary": "Texto principal - referencia: palette.gray.900",
-      "secondary": "Texto secundário - referencia: palette.gray.600",
-      "tertiary": "Texto terciário - referencia: palette.gray.400",
-      "disabled": "Texto desabilitado - referencia: palette.gray.300",
-      "inverse": "Texto invertido - referencia: palette.white",
-      "onPrimary": "Texto sobre primária - referencia: palette.white",
-      "onSecondary": "Texto sobre secundária - referencia: palette.gray.900",
-      "link": "Link padrão - referencia: palette.blue.600",
-      "linkHover": "Link hover - referencia: palette.blue.700"
+      "primary": "Texto principal com maior contraste - referência: palette.gray.900",
+      "secondary": "Texto secundário com contraste médio - referência: palette.gray.600",
+      "tertiary": "Texto terciário com contraste reduzido - referência: palette.gray.400",
+      "disabled": "Texto para estados desabilitados - referência: palette.gray.300",
+      "inverse": "Texto para fundos escuros - referência: palette.white",
+      "onPrimary": "Texto sobre a cor de fundo primária - referência: palette.white",
+      "onSecondary": "Texto sobre a cor de fundo secundária - referência: palette.gray.900",
+      "link": "Cor padrão para links - referência: palette.blue.600",
+      "linkHover": "Cor de link em estado hover - referência: palette.blue.700"
     },
     "button": {
-      "primary": "Botão primário - referencia: palette.blue.*",
-      "secondary": "Botão secundário - referencia: palette.gray.*",
-      "tertiary": "Botão terciário - referencia: palette.gray.*",
-      "danger": "Botão perigo - referencia: palette.red.*",
-      "success": "Botão sucesso - referencia: palette.green.*"
+      "primary": "Botão de ação primária - referência: palette.blue.*",
+      "secondary": "Botão de ação secundária - referência: palette.gray.*",
+      "tertiary": "Botão de ação terciária / menos prioritária - referência: palette.gray.*",
+      "danger": "Botão para ações destrutivas ou de alto risco - referência: palette.red.*",
+      "success": "Botão para ações de sucesso ou confirmação - referência: palette.green.*"
     },
     "border": {
-      "default": "Borda padrão - referencia: palette.gray.200",
-      "light": "Borda clara - referencia: palette.gray.100",
-      "medium": "Borda média - referencia: palette.gray.300",
-      "dark": "Borda escura - referencia: palette.gray.400",
-      "focus": "Borda foco - referencia: palette.blue.500",
-      "error": "Borda erro - referencia: palette.red.500",
-      "success": "Borda sucesso - referencia: palette.green.500",
-      "warning": "Borda aviso - referencia: palette.red.400"
+      "default": "Borda padrão para componentes - referência: palette.gray.200",
+      "light": "Borda sutil para divisores e contornos leves - referência: palette.gray.100",
+      "medium": "Borda com ênfase intermediária - referência: palette.gray.300",
+      "dark": "Borda com alto contraste - referência: palette.gray.400",
+      "focus": "Borda ou indicador de foco - referência: palette.blue.500",
+      "error": "Borda para estados de erro - referência: palette.red.500",
+      "success": "Borda para estados de sucesso - referência: palette.green.500",
+      "warning": "Borda para estados de aviso - referência: palette.red.400"
     },
     "status": {
-      "success": "Status sucesso - referencia: palette.green.*",
-      "error": "Status erro - referencia: palette.red.*",
-      "warning": "Status aviso - referencia: palette.red.*",
-      "info": "Status informação - referencia: palette.blue.*"
+      "success": "Cores de feedback positivo / sucesso - referência: palette.green.*",
+      "error": "Cores de feedback de erro - referência: palette.red.*",
+      "warning": "Cores de aviso e atenção - referência: palette.red.*",
+      "info": "Cores para mensagens informativas - referência: palette.blue.*"
     },
     "interactive": {
-      "link": "Links interativos - referencia: palette.blue.*, palette.purple.*",
-      "focus": "Foco - referencia: palette.blue.*, palette.white"
+      "link": "Cores para links e navegação interativa - referência: palette.blue.*, palette.purple.*",
+      "focus": "Cores para indicação de foco de elementos interativos - referência: palette.blue.*, palette.white"
     },
     "surface": {
-      "elevated": "Superfície elevada - referencia: palette.white",
-      "raised": "Superfície levantada - referencia: palette.gray.50",
-      "sunken": "Superfície rebaixada - referencia: palette.gray.100"
+      "elevated": "Superfície elevada (cards, modais) - referência: palette.white",
+      "raised": "Superfície levemente elevada - referência: palette.gray.50",
+      "sunken": "Superfície rebaixada (por exemplo, campos em foco) - referência: palette.gray.100"
     }
   }
 }

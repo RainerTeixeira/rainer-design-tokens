@@ -1,9 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$description": "Border tokens - Width and style definitions",
+  "$description": "Tokens de borda - Escala de espessuras e estilos de linha para composição de componentes",
   "_comments": {
-    "width": "Border thickness for different visual emphasis levels",
-    "style": "Line styles for different design purposes"
+    "border": "Tokens primitivos de borda usados como base para tokens semânticos",
+    "width": "Espessuras de borda em pixels, organizadas por nível de ênfase visual",
+    "style": "Estilos de linha para diferentes funções e padrões de comunicação visual"
   },
   "border": {
     "width": {
@@ -21,16 +22,16 @@
   },
   "_notes": {
     "width": {
-      "none": "Completely removes the border",
-      "thin": "For subtle dividers and discrete outlines (e.g., separators)",
-      "base": "Standard outline for most components (e.g., cards, inputs)",
-      "thick": "For maximum emphasis (e.g., primary buttons, critical alerts)"
+      "none": "Remove completamente a borda, usado quando o contorno visual não é necessário",
+      "thin": "Borda sutil para divisores, linhas de separação e contornos discretos",
+      "base": "Espessura padrão para a maioria dos componentes (ex.: cards, inputs, containers)",
+      "thick": "Espessura reforçada para estados de destaque ou alta prioridade (ex.: alerts críticos, foco intenso)"
     },
     "style": {
-      "solid": "Standard style for most use cases",
-      "dashed": "For interactive elements or drop areas (e.g., upload)",
-      "dotted": "To indicate focused states or decorative elements",
-      "double": "For special visual effects or emphasis"
+      "solid": "Estilo padrão e mais legível, indicado para a maioria dos casos de uso",
+      "dashed": "Indicado para zonas interativas, estados de placeholder ou áreas de drop (ex.: upload)",
+      "dotted": "Adequado para detalhes decorativos ou estados auxiliares de foco/realce",
+      "double": "Usado com moderação para efeitos especiais, molduras e ênfases de alto destaque"
     }
   }
 }

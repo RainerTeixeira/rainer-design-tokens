@@ -25,11 +25,9 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./src/css-vars.css": "./src/css-vars.css",
-    "./formats/css-vars.css": "./formats/css-vars.css",
-    "./formats/tokens.json": "./formats/tokens.json",
-    "./formats/tailwind.config": "./formats/tailwind.config.ts",
-    "./package.json": "./package.json"
+    "./css-vars.css": "./formats/css-vars.css",
+    "./tokens.json": "./formats/tokens.json",
+    "./tailwind.config": "./formats/tailwind.config.ts"
   },
   "files": [
     "dist",
