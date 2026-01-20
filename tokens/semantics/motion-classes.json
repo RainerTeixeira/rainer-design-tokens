@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Classes CSS utilitárias para motion baseadas nos tokens de duração e easing",
+  "motionClasses": {
+    "transition": {
+      "default": "transition-all duration-200 ease-in-out",
+      "fast": "transition-all duration-150 ease-in-out",
+      "slow": "transition-all duration-300 ease-in-out",
+      "color": "transition-colors duration-200 ease-in-out",
+      "transform": "transition-transform duration-200 ease-in-out",
+      "opacity": "transition-opacity duration-200 ease-in-out"
+    }
+  }
+}

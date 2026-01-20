@@ -12,6 +12,7 @@ import rawOpacityPrimitive from './primitives/opacity-scale.json';
 import rawLayoutPrimitive from './primitives/layout-units.json';
 import rawIconSizesPrimitive from './primitives/icon-scale.json';
 import rawGradientPrimitive from './primitives/gradient-tokens.json';
+import rawGradientDirectionsPrimitive from './primitives/gradient-directions.json';
 // Semanticos (tokens com significado)
 import rawColorSemantic from './semantics/color-roles.json';
 import rawSpacingSemantic from './semantics/spacing-context.json';
@@ -20,6 +21,8 @@ import rawBorderSemantic from './semantics/border-roles.json';
 import rawLayoutSemantic from './semantics/layout-structure.json';
 import rawElevationSemantic from './semantics/elevation-roles.json';
 import rawMotionSemantic from './semantics/motion-roles.json';
+import rawLayoutClassesSemantic from './semantics/layout-classes.json';
+import rawMotionClassesSemantic from './semantics/motion-classes.json';
 
 // Temas (completos)
 import rawLightTheme from './themes/theme-light.json';
@@ -51,6 +54,9 @@ const iconSizesPrimitive =
   (rawIconSizesPrimitive as any).iconSize || rawIconSizesPrimitive;
 const gradientPrimitive =
   (rawGradientPrimitive as any).gradients || rawGradientPrimitive;
+const gradientDirectionsPrimitive =
+  (rawGradientDirectionsPrimitive as any).gradientDirections ||
+  rawGradientDirectionsPrimitive;
 
 // Resolver temas para exportação plana (facilita consumo e garante identidade)
 const lightTheme = (rawLightTheme as any).color || rawLightTheme;
@@ -72,6 +78,7 @@ export const tokens = {
     layout: layoutPrimitive,
     iconSize: iconSizesPrimitive,
     gradients: gradientPrimitive,
+    gradientDirections: gradientDirectionsPrimitive,
   },
   // Semanticos (com significado)
   semantics: {
@@ -82,6 +89,10 @@ export const tokens = {
     layout: rawLayoutSemantic.layout || rawLayoutSemantic,
     elevation: rawElevationSemantic.elevation || rawElevationSemantic,
     motion: rawMotionSemantic.motion || rawMotionSemantic,
+    layoutClasses:
+      (rawLayoutClassesSemantic as any).layoutClasses || rawLayoutClassesSemantic,
+    motionClasses:
+      (rawMotionClassesSemantic as any).motionClasses || rawMotionClassesSemantic,
   },
   // Temas (completos)
   themes: {
@@ -106,6 +117,7 @@ export {
   layoutPrimitive,
   iconSizesPrimitive,
   gradientPrimitive,
+  gradientDirectionsPrimitive,
   // Exportar também as versões 'raw' se necessário
   rawColorPrimitive,
   rawSpacingPrimitive,
@@ -120,6 +132,7 @@ export {
   rawLayoutPrimitive,
   rawIconSizesPrimitive,
   rawGradientPrimitive,
+  rawGradientDirectionsPrimitive,
 };
 export {
   // Exportar semânticos já normalizados (sem wrapper JSON)
@@ -137,3 +150,7 @@ export const layoutSemantic = rawLayoutSemantic.layout || rawLayoutSemantic;
 export const elevationSemantic =
   rawElevationSemantic.elevation || rawElevationSemantic;
 export const motionSemantic = rawMotionSemantic.motion || rawMotionSemantic;
+export const layoutClassesSemantic =
+  (rawLayoutClassesSemantic as any).layoutClasses || rawLayoutClassesSemantic;
+export const motionClassesSemantic =
+  (rawMotionClassesSemantic as any).motionClasses || rawMotionClassesSemantic;

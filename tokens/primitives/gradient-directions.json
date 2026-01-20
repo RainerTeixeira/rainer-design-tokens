@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Direções de gradiente para uso com Tailwind ou CSS utilities",
+  "gradientDirections": {
+    "toTop": "to-t",
+    "toRight": "to-r",
+    "toBottom": "to-b",
+    "toLeft": "to-l",
+    "toTopRight": "to-tr",
+    "toTopLeft": "to-tl",
+    "toBottomRight": "to-br",
+    "toBottomLeft": "to-bl"
+  }
+}

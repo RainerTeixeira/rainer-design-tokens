@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$description": "Classes utilitárias padronizadas para componentes e seções",
+  "layoutClasses": {
+    "components": {
+      "container": "w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      "spacing": "space-y-4 sm:space-y-6 md:space-y-8",
+      "card": {
+        "base": "rounded-lg border bg-card text-card-foreground shadow-sm",
+        "hover": "transition-all duration-200 hover:shadow-lg"
+      },
+      "button": {
+        "base": "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+      },
+      "input": {
+        "base": "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+      }
+    },
+    "sections": {
+      "container": "w-full max-w-6xl mx-auto px-6 py-12"
+    }
+  }
+}
