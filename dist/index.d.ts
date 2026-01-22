@@ -1,5 +1,5 @@
-var $schema$c = "http://json-schema.org/draft-07/schema#";
-var $description$c = "Paleta de cores primitiva — conjunto base de cores do design system que não sofre alteração entre temas (fixa e estável)";
+var $schema$d = "http://json-schema.org/draft-07/schema#";
+var $description$d = "Paleta de cores primitiva — conjunto base de cores do design system que não sofre alteração entre temas (fixa e estável)";
 var _meta = {
 	version: "1.0.0",
 	source: "Tailwind-like scale adapted to product design language",
@@ -160,16 +160,16 @@ var _notes$9 = {
 	emerald: "Verde esmeralda associado a temas naturais, ecossustentáveis, orgânicos e variações de sucesso com caráter mais sofisticado, podendo ser usado em diferenciação de planos ou métricas de impacto positivo."
 };
 var colorPalette = {
-	$schema: $schema$c,
-	$description: $description$c,
+	$schema: $schema$d,
+	$description: $description$d,
 	_meta: _meta,
 	_comments: _comments$9,
 	palette: palette,
 	_notes: _notes$9
 };
 
-var $schema$b = "http://json-schema.org/draft-07/schema#";
-var $description$b = "Tokens de espaçamento - Escala consistente baseada em grid de 8pt";
+var $schema$c = "http://json-schema.org/draft-07/schema#";
+var $description$c = "Tokens de espaçamento - Escala consistente baseada em grid de 8pt";
 var _comments$8 = {
 	spacing: "Escala de espaçamento consistente para todo o sistema"
 };
@@ -248,15 +248,15 @@ var _notes$8 = {
 	"3.5": "14px - Espaçamento médio"
 };
 var spacingScale = {
-	$schema: $schema$b,
-	$description: $description$b,
+	$schema: $schema$c,
+	$description: $description$c,
 	_comments: _comments$8,
 	spacing: spacing,
 	_notes: _notes$8
 };
 
-var $schema$a = "http://json-schema.org/draft-07/schema#";
-var $description$a = "Primitivas de tipografia - Font families, tamanhos, pesos e espaçamento";
+var $schema$b = "http://json-schema.org/draft-07/schema#";
+var $description$b = "Primitivas de tipografia - Font families, tamanhos, pesos e espaçamento";
 var _comments$7 = {
 	fontFamily: "Famílias de fontes como valores crus",
 	fontSize: "Tamanhos de fonte seguindo escala modular",
@@ -363,15 +363,15 @@ var _notes$7 = {
 	}
 };
 var typographyBase = {
-	$schema: $schema$a,
-	$description: $description$a,
+	$schema: $schema$b,
+	$description: $description$b,
 	_comments: _comments$7,
 	typography: typography$1,
 	_notes: _notes$7
 };
 
-var $schema$9 = "http://json-schema.org/draft-07/schema#";
-var $description$9 = "Escala de sombras - Valores de elevação e profundidade visual consistentes para superfícies e estados interativos";
+var $schema$a = "http://json-schema.org/draft-07/schema#";
+var $description$a = "Escala de sombras - Valores de elevação e profundidade visual consistentes para superfícies e estados interativos";
 var $generated$3 = "2026-01-17T14:01:57.500Z";
 var $source$3 = "primitives/spacing-scale.json";
 var _comments$6 = {
@@ -410,8 +410,8 @@ var _notes$6 = {
 	}
 };
 var elevationTokens = {
-	$schema: $schema$9,
-	$description: $description$9,
+	$schema: $schema$a,
+	$description: $description$a,
 	$generated: $generated$3,
 	$source: $source$3,
 	_comments: _comments$6,
@@ -419,8 +419,8 @@ var elevationTokens = {
 	_notes: _notes$6
 };
 
-var $schema$8 = "http://json-schema.org/draft-07/schema#";
-var $description$8 = "Tokens de motion - Durações, curvas de easing e delays para animações e transições";
+var $schema$9 = "http://json-schema.org/draft-07/schema#";
+var $description$9 = "Tokens de motion - Durações, curvas de easing e delays para animações e transições";
 var _comments$5 = {
 	duration: "Durações de animação em milissegundos para diferentes velocidades de interação",
 	easing: "Curvas de easing para diferentes comportamentos de movimento (entrada, saída, ênfase)",
@@ -495,16 +495,16 @@ var _notes$5 = {
 	}
 };
 var motionTokens = {
-	$schema: $schema$8,
-	$description: $description$8,
+	$schema: $schema$9,
+	$description: $description$9,
 	_comments: _comments$5,
 	motion: motion,
 	_notes: _notes$5
 };
 
-var $schema$7 = "https://json.schemastore.org/theme.json";
-var $description$7 = "Border radius tokens - Generated from spacing scale";
-var $generated$2 = "2026-01-18T15:09:31.635Z";
+var $schema$8 = "https://json.schemastore.org/theme.json";
+var $description$8 = "Border radius tokens - Generated from spacing scale";
+var $generated$2 = "2026-01-22T20:49:52.474Z";
 var $source$2 = "primitives/spacing-scale.json";
 var radius = {
 	none: "0px",
@@ -518,16 +518,16 @@ var radius = {
 	full: "9999px"
 };
 var radiusScale = {
-	$schema: $schema$7,
-	$description: $description$7,
+	$schema: $schema$8,
+	$description: $description$8,
 	$generated: $generated$2,
 	$source: $source$2,
 	radius: radius
 };
 
-var $schema$6 = "https://json.schemastore.org/theme.json";
-var $description$6 = "Responsive breakpoints - Mobile-first approach";
-var $generated$1 = "2026-01-18T15:09:31.640Z";
+var $schema$7 = "https://json.schemastore.org/theme.json";
+var $description$7 = "Responsive breakpoints - Mobile-first approach";
+var $generated$1 = "2026-01-22T20:49:52.475Z";
 var $source$1 = "industry standards + spacing.json reference";
 var $spacingReference = {
 	baseUnit: "0.25rem",
@@ -543,17 +543,17 @@ var breakpoints = {
 	"3xl": "1920px"
 };
 var breakpoints_default = {
-	$schema: $schema$6,
-	$description: $description$6,
+	$schema: $schema$7,
+	$description: $description$7,
 	$generated: $generated$1,
 	$source: $source$1,
 	$spacingReference: $spacingReference,
 	breakpoints: breakpoints
 };
 
-var $schema$5 = "https://json.schemastore.org/theme.json";
-var $description$5 = "Z-index layer system - Organized stacking context";
-var $generated = "2026-01-18T15:09:31.642Z";
+var $schema$6 = "https://json.schemastore.org/theme.json";
+var $description$6 = "Z-index layer system - Organized stacking context";
+var $generated = "2026-01-22T20:49:52.476Z";
 var $source = "design system layer standards";
 var zIndex = {
 	base: 0,
@@ -566,15 +566,15 @@ var zIndex = {
 	max: 9999
 };
 var zIndexLayers = {
-	$schema: $schema$5,
-	$description: $description$5,
+	$schema: $schema$6,
+	$description: $description$6,
 	$generated: $generated,
 	$source: $source,
 	zIndex: zIndex
 };
 
-var $schema$4 = "http://json-schema.org/draft-07/schema#";
-var $description$4 = "Tokens de borda - Escala de espessuras e estilos de linha para composição de componentes";
+var $schema$5 = "http://json-schema.org/draft-07/schema#";
+var $description$5 = "Tokens de borda - Escala de espessuras e estilos de linha para composição de componentes";
 var _comments$4 = {
 	border: "Tokens primitivos de borda usados como base para tokens semânticos",
 	width: "Espessuras de borda em pixels, organizadas por nível de ênfase visual",
@@ -609,15 +609,15 @@ var _notes$4 = {
 	}
 };
 var borderTokens = {
-	$schema: $schema$4,
-	$description: $description$4,
+	$schema: $schema$5,
+	$description: $description$5,
 	_comments: _comments$4,
 	border: border,
 	_notes: _notes$4
 };
 
-var $schema$3 = "http://json-schema.org/draft-07/schema#";
-var $description$3 = "Tokens de opacidade - Níveis de transparência";
+var $schema$4 = "http://json-schema.org/draft-07/schema#";
+var $description$4 = "Tokens de opacidade - Níveis de transparência";
 var _comments$3 = {
 	opacity: "Escala de valores de opacidade de 0 a 1"
 };
@@ -648,15 +648,15 @@ var _notes$3 = {
 	"100": "Completamente opaco"
 };
 var opacityScale = {
-	$schema: $schema$3,
-	$description: $description$3,
+	$schema: $schema$4,
+	$description: $description$4,
 	_comments: _comments$3,
 	opacity: opacity,
 	_notes: _notes$3
 };
 
-var $schema$2 = "http://json-schema.org/draft-07/schema#";
-var $description$2 = "Tokens de layout - Sistema de grid, container e espaçamento";
+var $schema$3 = "http://json-schema.org/draft-07/schema#";
+var $description$3 = "Tokens de layout - Sistema de grid, container e espaçamento";
 var _comments$2 = {
 	container: "Larguras máximas de containers em diferentes tamanhos",
 	gutter: "Escala de espaçamento entre elementos do grid",
@@ -720,15 +720,15 @@ var _notes$2 = {
 	}
 };
 var layoutUnits = {
-	$schema: $schema$2,
-	$description: $description$2,
+	$schema: $schema$3,
+	$description: $description$3,
 	_comments: _comments$2,
 	layout: layout,
 	_notes: _notes$2
 };
 
-var $schema$1 = "http://json-schema.org/draft-07/schema#";
-var $description$1 = "Tamanhos de ícones padronizados - Dimensões padronizadas para várias densidades e contextos";
+var $schema$2 = "http://json-schema.org/draft-07/schema#";
+var $description$2 = "Tamanhos de ícones padronizados - Dimensões padronizadas para várias densidades e contextos";
 var _comments$1 = {
 	iconSize: "Escala completa de tamanhos de ícone em unidades relativas (rem)"
 };
@@ -761,15 +761,15 @@ var _notes$1 = {
 	full: "100% - Para ícones responsivos que preenchem containers"
 };
 var iconScale = {
-	$schema: $schema$1,
-	$description: $description$1,
+	$schema: $schema$2,
+	$description: $description$2,
 	_comments: _comments$1,
 	iconSize: iconSize,
 	_notes: _notes$1
 };
 
-var $schema = "http://json-schema.org/draft-07/schema#";
-var $description = "Gradientes - Tokens de gradiente para elementos visuais, alinhados à paleta primitiva";
+var $schema$1 = "http://json-schema.org/draft-07/schema#";
+var $description$1 = "Gradientes - Tokens de gradiente para elementos visuais, alinhados à paleta primitiva";
 var _comments = {
 	gradients: "Gradientes pré-definidos para uso consistente na aplicação",
 	text: "Gradientes para efeitos em textos e tipografia",
@@ -881,11 +881,29 @@ var _notes = {
 	}
 };
 var gradientTokens = {
-	$schema: $schema,
-	$description: $description,
+	$schema: $schema$1,
+	$description: $description$1,
 	_comments: _comments,
 	gradients: gradients,
 	_notes: _notes
+};
+
+var $schema = "http://json-schema.org/draft-07/schema#";
+var $description = "Direções de gradiente para uso com Tailwind ou CSS utilities";
+var gradientDirections = {
+	toTop: "to-t",
+	toRight: "to-r",
+	toBottom: "to-b",
+	toLeft: "to-l",
+	toTopRight: "to-tr",
+	toTopLeft: "to-tl",
+	toBottomRight: "to-br",
+	toBottomLeft: "to-bl"
+};
+var gradientDirections_default = {
+	$schema: $schema,
+	$description: $description,
+	gradientDirections: gradientDirections
 };
 
 declare const colorPrimitive: any;
@@ -901,6 +919,7 @@ declare const opacityPrimitive: any;
 declare const layoutPrimitive: any;
 declare const iconSizesPrimitive: any;
 declare const gradientPrimitive: any;
+declare const gradientDirectionsPrimitive: any;
 declare const lightTheme$1: any;
 declare const darkTheme$1: any;
 declare const tokens: {
@@ -918,6 +937,7 @@ declare const tokens: {
         layout: any;
         iconSize: any;
         gradients: any;
+        gradientDirections: any;
     };
     semantics: {
         color: {
@@ -1659,6 +1679,8 @@ declare const tokens: {
                 };
             };
         };
+        layoutClasses: any;
+        motionClasses: any;
     };
     themes: {
         light: any;
@@ -2405,6 +2427,8 @@ declare const motionSemantic: {
         };
     };
 };
+declare const layoutClassesSemantic: any;
+declare const motionClassesSemantic: any;
 
 /**
  * Tipos agnósticos para Design Tokens
@@ -3072,4 +3096,4 @@ declare const colors: any;
 declare const typography: any;
 declare const cssVarsPath = "./src/css-vars.css";
 
-export { BACKGROUND, type BackgroundKey, type BreakpointTokens, type ColorPalette, type ColorScale, type ContrastResult, DEFAULT_DARK_COLORS, DEFAULT_LIGHT_COLORS, type DarkTheme, type DesignTokens, gradientPrimitive as GRADIENTS, GRADIENT_DIRECTIONS, type GradientDirection, type GradientTokens, type LightTheme, MOTION, type MotionTokens, type MotionTransitionKey, type RadiusScale, shadowsPrimitive as SHADOWS, type SemanticColors, type ShadowScale, type SpacingScale, type ThemeColors, type ThemeConfig, type ThemeContextValue, type ThemeMode, type Themes, type TokensContextValue, type TypographyTokens, type ZIndexTokens, borderPrimitive, borderSemantic, breakpointsPrimitive, colorPrimitive, colorSemantic, colors, cssVarsPath, darkTheme$1 as darkTheme, elevationSemantic, gradientPrimitive, iconSizesPrimitive, layoutPrimitive, layoutSemantic, lightTheme$1 as lightTheme, motionPrimitive, motionSemantic, motionPrimitive as motionTokens, opacityPrimitive, radiusPrimitive, borderTokens as rawBorderPrimitive, breakpoints_default as rawBreakpointsPrimitive, colorPalette as rawColorPrimitive, gradientTokens as rawGradientPrimitive, iconScale as rawIconSizesPrimitive, layoutUnits as rawLayoutPrimitive, motionTokens as rawMotionPrimitive, opacityScale as rawOpacityPrimitive, radiusScale as rawRadiusPrimitive, elevationTokens as rawShadowsPrimitive, spacingScale as rawSpacingPrimitive, typographyBase as rawTypographyPrimitive, zIndexLayers as rawZIndexPrimitive, shadowsPrimitive, spacingPrimitive, spacingSemantic, themes, tokens, typography, typographyPrimitive, typographySemantic, validateContrast, zIndexPrimitive };
+export { BACKGROUND, type BackgroundKey, type BreakpointTokens, type ColorPalette, type ColorScale, type ContrastResult, DEFAULT_DARK_COLORS, DEFAULT_LIGHT_COLORS, type DarkTheme, type DesignTokens, gradientPrimitive as GRADIENTS, GRADIENT_DIRECTIONS, type GradientDirection, type GradientTokens, type LightTheme, MOTION, type MotionTokens, type MotionTransitionKey, type RadiusScale, shadowsPrimitive as SHADOWS, type SemanticColors, type ShadowScale, type SpacingScale, type ThemeColors, type ThemeConfig, type ThemeContextValue, type ThemeMode, type Themes, type TokensContextValue, type TypographyTokens, type ZIndexTokens, borderPrimitive, borderSemantic, breakpointsPrimitive, colorPrimitive, colorSemantic, colors, cssVarsPath, darkTheme$1 as darkTheme, elevationSemantic, gradientDirectionsPrimitive, gradientPrimitive, iconSizesPrimitive, layoutClassesSemantic, layoutPrimitive, layoutSemantic, lightTheme$1 as lightTheme, motionClassesSemantic, motionPrimitive, motionSemantic, motionPrimitive as motionTokens, opacityPrimitive, radiusPrimitive, borderTokens as rawBorderPrimitive, breakpoints_default as rawBreakpointsPrimitive, colorPalette as rawColorPrimitive, gradientDirections_default as rawGradientDirectionsPrimitive, gradientTokens as rawGradientPrimitive, iconScale as rawIconSizesPrimitive, layoutUnits as rawLayoutPrimitive, motionTokens as rawMotionPrimitive, opacityScale as rawOpacityPrimitive, radiusScale as rawRadiusPrimitive, elevationTokens as rawShadowsPrimitive, spacingScale as rawSpacingPrimitive, typographyBase as rawTypographyPrimitive, zIndexLayers as rawZIndexPrimitive, shadowsPrimitive, spacingPrimitive, spacingSemantic, themes, tokens, typography, typographyPrimitive, typographySemantic, validateContrast, zIndexPrimitive };
