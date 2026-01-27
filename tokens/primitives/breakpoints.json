@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/theme.json",
   "$description": "Responsive breakpoints - Mobile-first approach",
-  "$generated": "2026-01-22T20:49:52.475Z",
+  "$generated": "2026-01-27T20:19:07.846Z",
   "$source": "industry standards + spacing.json reference",
   "$spacingReference": {
     "baseUnit": "0.25rem",
