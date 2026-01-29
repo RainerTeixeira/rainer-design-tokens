@@ -38,8 +38,6 @@ interface ColorToken {
   [key: string]: string | ColorToken;
 }
 
-
-
 // Utilitários
 const colors = {
   reset: '\x1b[0m',
@@ -994,6 +992,7 @@ function main() {
     const tailwindPath = join(__dirname, '..', 'formats', 'tailwind.config.ts');
     writeFileSync(tailwindPath, tailwindConfig, 'utf-8');
     console.log('✅ tailwind.config.ts gerado!');
+
     console.log('✅ Formatos de saída gerados!\n');
 
     // 📝 3. Gerar changelog
