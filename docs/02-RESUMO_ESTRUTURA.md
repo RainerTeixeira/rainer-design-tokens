@@ -231,7 +231,7 @@ import tokensJson from '@rainersoft/design-tokens/formats/tokens.json';
 
 ## 📅 Última Atualização
 
-**Data**: Janeiro de 2026
+**Data**: Fevereiro de 2026
 **Versão**: 2.6.0  
 **Atualização**: Reestruturação completa com primitives/semantics/themes
 
@@ -243,13 +243,13 @@ import tokensJson from '@rainersoft/design-tokens/formats/tokens.json';
 ---
 
 **Versão:** 3.0.0
-**Última Atualização:** 14 de Janeiro de 2026
+**Última Atualização:** 05 de Fevereiro de 2026
 **Autor:** [object Object]
 **Licença:** MIT
 
 ---
 
 **Versão:** 3.0.0
-**Última Atualização:** 14 de Janeiro de 2026
+**Última Atualização:** 05 de Fevereiro de 2026
 **Autor:** [object Object]
 **Licença:** MIT

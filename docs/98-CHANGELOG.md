@@ -6,7 +6,7 @@ Este documento mantém um registro de todas as mudanças na biblioteca `@rainers
 
 ---
 
-## [2.6.0] - 2026-01-14
+## [2.6.0] - 2026-02-05
 
 ### 🎉 Major Release - Reestruturação Completa
 
@@ -43,7 +43,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.5.0] - 2026-01-14
+## [2.5.0] - 2026-02-05
 
 ### ✨ Adicionado
 
@@ -60,7 +60,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.4.0] - 2026-01-14
+## [2.4.0] - 2026-02-05
 
 ### ✨ Adicionado
 
@@ -76,7 +76,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.3.0] - 2026-01-14
+## [2.3.0] - 2026-02-05
 
 ### ✨ Adicionado
 
@@ -93,7 +93,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.2.0] - 2026-01-14
+## [2.2.0] - 2026-02-05
 
 ### ✨ Adicionado
 
@@ -105,7 +105,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.1.0] - 2026-01-14
+## [2.1.0] - 2026-02-05
 
 ### ✨ Adicionado
 
@@ -117,7 +117,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [2.0.0] - 2026-01-14
+## [2.0.0] - 2026-02-05
 
 ### 💥 Breaking Changes
 
@@ -134,7 +134,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ---
 
-## [1.0.0] - 2026-01-14
+## [1.0.0] - 2026-02-05
 
 ### ✨ Adicionado
 
@@ -203,7 +203,7 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 
 ## 📅 Última Atualização
 
-**Data**: Janeiro de 2026
+**Data**: Fevereiro de 2026
 **Versão**: 2.6.0  
 **Próxima**: v2.7.0
 
@@ -215,6 +215,6 @@ Esta versão implementa uma reestruturação completa do sistema de tokens, segu
 ---
 
 **Versão:** 3.0.0
-**Última Atualização:** 14 de Janeiro de 2026
+**Última Atualização:** 05 de Fevereiro de 2026
 **Autor:** [object Object]
 **Licença:** MIT
